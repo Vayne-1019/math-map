@@ -1,0 +1,209 @@
+=== meta
+title: 整除性
+author: 謝盛剛
+pages: 304-311
+units: N-1-1, N-1-2, N-1-3, N-1-4, A-3-4
+status: 完成
+
+=== text
+<h3>一、帶餘除法</h3>
+<p>整數相加、相減、相乘都得到整數，但兩個整數的商就不一定是整數了。小學就學過帶餘除法，例如 179 除以 34 商 5 餘 9，寫成 $179=34\times5+9$。一般地：</p>
+
+=== 定理 1 | 帶餘除法
+zh: 設 $a,b$ 是給定的整數，$b>0$，則有唯一的一對整數 $q,r$ 滿足
+$$a=bq+r,\qquad0\le r<b.\tag{1}$$
+sol: 取 $q=\left[\frac ab\right]$，$r=a-bq$，⟦這樣 r 為什麼在 0 到 b 之間｜$q\le\frac ab<q+1$，乘以 $b$ 得 $bq\le a<bq+b$，即 $0\le a-bq<b$。⟧即得 (1)。若另有 $q',r'$ 也滿足 (1)，則 $b(q-q')=r'-r$，即 $b|q-q'|=|r'-r|$。但 $|r'-r|<b$，所以只能 $q-q'=0$、$r'=r$。唯一性成立。
+
+=== text
+<p>(1) 中 $q$ 叫做 $a$ 除以 $b$ 的（不完全）商，$r$ 叫做<b>餘數</b>。$r=0$ 時 $a=bq$，稱 $b$ <b>整除</b> $a$，記作 $b\mid a$；也說 $a$ 是 $b$ 的倍數，$b$ 是 $a$ 的因數（約數）。</p>
+<p>用 $n$ 作除數，餘數只有 $0,1,\dots,n-1$ 這 $n$ 種可能。特別地，用 2 作除數，餘數為 0 的是偶數，為 1 的是奇數。</p>
+
+=== 例 1
+zh: 若 $n$ 是奇數，則 $8\mid n^2-1$。
+sol: 設 $n=2k+1$，則
+$$n^2-1=(2k+1)^2-1=4k^2+4k=8\cdot\frac{k(k+1)}2.$$
+$k$ 與 $k+1$ 中必有一個偶數，所以 $\frac{k(k+1)}2$ 是整數，$8\mid n^2-1$。
+
+=== 例 2
+zh: $n$ 個連續整數中恰有一個是 $n$ 的倍數。
+sol: 設這 $n$ 個數是 $m,m+1,\dots,m+n-1$，$m=nq+t$（$0\le t\le n-1$）。$t=0$ 時 $m$ 就是 $n$ 的倍數；$1\le t\le n-1$ 時，$m+(n-t)=n(q+1)$ 是 $n$ 的倍數，而 $1\le n-t\le n-1$，它在這 $n$ 個數中。<br>
+又 $n$ 的兩個不同倍數至少相差 $n$，而這 $n$ 個數中任兩個至多相差 $n-1$，所以不可能有兩個 $n$ 的倍數。
+
+=== text
+<h3>二、唯一分解定理與最大公因數</h3>
+<p>大於 1 的整數，若能寫成兩個大於 1 的整數之積，叫做<b>合數</b>；否則叫做<b>質數</b>。1 既不是質數也不是合數。</p>
+
+=== 定理 2 | 算術基本定理
+zh: 任何大於 1 的整數都能表示成質數的乘積；若不計因子的次序，表示法是唯一的。
+
+=== text
+<p>定理 2 是初等數論中最重要的定理，叫做正整數的唯一分解定理或算術基本定理。把質因數由小到大排列，相同的合併，就是另一種說法：若 $n\ge2$，則 $n$ 可唯一地表示成
+$$n=p_1^{\alpha_1}p_2^{\alpha_2}\cdots p_s^{\alpha_s},\tag{2}$$
+其中 $p_1<\cdots<p_s$ 是質數，$\alpha_i$ 是正整數。(2) 叫做 $n$ 的<b>標準分解式</b>。為了方便，有時也在標準分解式中添上某些質數的零次方。</p>
+
+=== 定理 3
+zh: 設 $p$ 是質數，$p\mid ab$，則 $p\mid a$ 或 $p\mid b$。
+sol: 由定理 2 立刻推出：$ab$ 的標準分解式就是 $a$ 與 $b$ 的標準分解式合併而成，質數 $p$ 出現在 $ab$ 中，就一定出現在 $a$ 或 $b$ 中。
+
+=== 例 3
+zh: 若 $\sqrt[n]a$ 和 $\sqrt[n]b$ 都是整數，且 $\sqrt[n]a\mid\sqrt[n]b$，則 $a\mid b$。
+sol: 設 $\sqrt[n]a=p_1^{\alpha_1}\cdots p_s^{\alpha_s}$，$\sqrt[n]b=p_1^{\beta_1}\cdots p_s^{\beta_s}$（$\alpha_i,\beta_i\ge0$）。由 $\sqrt[n]a\mid\sqrt[n]b$，$\alpha_i\le\beta_i$。⟦為什麼｜若某個 $\alpha_i>\beta_i$，$p_i^{\alpha_i}$ 整除 $\sqrt[n]a$ 卻不整除 $\sqrt[n]b$，與整除矛盾。⟧又 $a=p_1^{n\alpha_1}\cdots p_s^{n\alpha_s}$，$b=p_1^{n\beta_1}\cdots p_s^{n\beta_s}$，而 $n\alpha_i\le n\beta_i$，所以 $a\mid b$。
+
+=== text
+<p>由 (2)，$n=p_1^{\alpha_1}\cdots p_s^{\alpha_s}$ 的正因數 $d$ 都可寫成 $d=p_1^{\beta_1}\cdots p_s^{\beta_s}$（$0\le\beta_i\le\alpha_i$）。$\beta_i$ 有 $\alpha_i+1$ 種取法，所以 $n$ 的正因數個數是
+$$d(n)=(1+\alpha_1)(1+\alpha_2)\cdots(1+\alpha_s).$$
+例如 $72=2^3\cdot3^2$，$d(72)=4\times3=12$。</p>
+<p>兩個整數 $a,b$ 至少有公因數 1。若只有 1 這個正公因數，就稱 $a$ 與 $b$ <b>互質</b>。$a,b$ 的公因數中必有一個最大的，叫做<b>最大公因數</b>，記作 $(a,b)$；$a,b$ 互質就是 $(a,b)=1$。</p>
+<p>若 $a=p_1^{\alpha_1}\cdots p_s^{\alpha_s}$，$b=p_1^{\beta_1}\cdots p_s^{\beta_s}$（可含零次方），則⟦顯然｜公因數的每個質因數次方不能超過 $a$ 中的、也不能超過 $b$ 中的，所以最多取兩者的較小值。⟧
+$$(a,b)=p_1^{\gamma_1}\cdots p_s^{\gamma_s},\quad\gamma_i=\min(\alpha_i,\beta_i).$$
+容易看出 $a,b$ 的公因數都是 $(a,b)$ 的因數。$a,b$ 的公倍數中最小的正數叫<b>最小公倍數</b>，記作 $[a,b]$，⟦同理｜公倍數的每個質因數次方要同時不少於 $a$ 中的與 $b$ 中的，最少取兩者的較大值。⟧
+$$[a,b]=p_1^{\mu_1}\cdots p_s^{\mu_s},\quad\mu_i=\max(\alpha_i,\beta_i),$$
+而且 $a,b$ 的公倍數都是 $[a,b]$ 的倍數。因為 $\min(\alpha_i,\beta_i)+\max(\alpha_i,\beta_i)=\alpha_i+\beta_i$，所以（$a,b>0$ 時）
+$$(a,b)\,[a,b]=ab.$$</p>
+
+=== 例 4
+zh: 證明 $\left(\dfrac a{(a,b)},\dfrac b{(a,b)}\right)=1$。
+sol: 設 $\left(\dfrac a{(a,b)},\dfrac b{(a,b)}\right)=d$，則 $d\mid\dfrac a{(a,b)}$，所以 $d\,(a,b)\mid a$；同理 $d\,(a,b)\mid b$。所以 $d\,(a,b)$ 也是 $a,b$ 的公因數，又 $(a,b)$ 是最大的公因數，所以 $d=1$。
+
+=== 例 5
+zh: 若 $(a,b)=1$，則 $[a,b]=ab$。
+sol: 由 $ab=(a,b)[a,b]$ 即得。
+
+=== 例 6
+zh: 若 $(a,c)=1$，$a\mid b$，$c\mid b$，則 $ac\mid b$。
+sol: 由唯一分解定理：$a$ 與 $c$ 沒有共同的質因數，所以 $a$ 的質因數次方與 $c$ 的質因數次方各自都在 $b$ 中，合起來 $ac$ 的每個質因數次方都不超過 $b$ 中的。或者：$[a,c]\mid b$，而由例 5，$[a,c]=ac$。
+
+=== 例 7 | 既約分數的唯一性
+zh: 若 $(a,b)=(c,d)=1$，$a,b,c,d>0$，且 $\dfrac ab=\dfrac cd$，則 $a=c$，$b=d$。
+sol: 由 $ad=bc$：$a\mid bc$ 且 $(a,b)=1$，所以 $a\mid c$（下面定理 4 的 3°，或由唯一分解定理）；同理 $c\mid ad$、$(c,d)=1$ 得 $c\mid a$。所以 $a=c$，再由 $ad=bc$ 得 $b=d$。這就是既約分數的唯一性。
+
+=== text
+<h3>三、輾轉相除法</h3>
+<p>用分解質因數求最大公因數說來容易，真正做起來並不簡單（大數不好分解）。下面介紹另一種求最大公因數的方法：<b>輾轉相除法</b>。</p>
+
+=== 定理 4
+zh: 設 $a,b$ 不同時為零，則<br>1° 對任何整數 $x$，$(a,b)=(a,b-ax)=(a-bx,b)$；<br>2° 存在整數 $x,y$ 使 $ax+by=(a,b)$；<br>3° 若 $(a,b)=1$，$a\mid bc$，則 $a\mid c$。
+sol: <b>1°</b> 只需證第一個等式。$a,b$ 的公因數 $d$ 也整除 $b-ax$；反之，$a$ 與 $b-ax$ 的公因數也整除 $b=(b-ax)+ax$。所以兩組公因數完全相同，最大的也相同。<br>
+<b>2°</b> 不妨設 $a\ge b\ge0$（換號、交換不影響結論），對較小的 $b$ 用歸納法。$b=0$ 時 $(a,0)=a$，取 $x=1,y=0$ 即可。設 $b\ge1$，令 $a=bq+r$，$0\le r<b$。由 1°，$(a,b)=(a-bq,b)=(b,r)$。因為 $r<b$，由歸納假設存在 $x_1,y_1$ 使
+$$(b,r)=bx_1+ry_1=bx_1+(a-bq)y_1=ay_1+b(x_1-qy_1).$$
+取 $x=y_1$，$y=x_1-qy_1$ 即得。<br>
+<b>3°</b> 由 2°，有 $x,y$ 使 $ax+by=1$，所以 $acx+bcy=c$。$a\mid acx$，$a\mid bc$，所以 $a\mid c$。
+
+=== text
+<p>定理 4 的 1°、2° 不但給出求 $(a,b)$ 的方法，也給出求一組 $x,y$ 使 $ax+by=(a,b)$ 的方法。</p>
+
+=== 例 8
+zh: 求 $(327,180)$，並把它寫成 $327x+180y$ 的形式。
+sol: 反覆用 1°（每次減去較小數的適當倍數）：
+$$\begin{aligned}(327,180)&=(327-180,180)=(147,180)=(147,180-147)=(147,33)\\&=(147-4\times33,33)=(15,33)=(15,33-2\times15)=(15,3)=3.\end{aligned}$$
+再倒推回去：
+$$\begin{aligned}3&=33-2\times15=33-2\times(147-4\times33)=9\times33-2\times147\\&=9\times(180-147)-2\times147=9\times180-11\times147\\&=9\times180-11\times(327-180)=20\times180-11\times327.\end{aligned}$$
+ans: $(327,180)=3=20\times180-11\times327$
+
+=== text
+<p>定理 4 的 2° 叫做<b>貝祖（Bézout）定理</b>，在初等數論中應用很廣。若 $ax_0+by_0=c$，則 $x=x_0+bt$，$y=y_0-at$ 也滿足 $ax+by=c$，⟦驗算｜$a(x_0+bt)+b(y_0-at)=ax_0+by_0+abt-abt=c$。⟧所以滿足 $ax+by=(a,b)$ 的 $x,y$ 有無窮多組。</p>
+<p>關於多個整數的最大公因數，有下面兩個定理。</p>
+
+=== 定理 5
+zh: $(a_1,a_2,\dots,a_n)=\big((a_1,\dots,a_{n-1}),a_n\big)$。
+sol: 設質數 $p$ 在 $a_1,\dots,a_n$ 的分解式中的次數各為 $\alpha_1,\dots,\alpha_n$。$p$ 在左邊的次數是 $\min(\alpha_1,\dots,\alpha_n)$；在 $(a_1,\dots,a_{n-1})$ 中是 $\min(\alpha_1,\dots,\alpha_{n-1})$，所以在右邊是 $\min\big(\min(\alpha_1,\dots,\alpha_{n-1}),\alpha_n\big)=\min(\alpha_1,\dots,\alpha_n)$。每個質數在兩邊的次數都相同，所以兩邊相等。
+
+=== 定理 6
+zh: 設 $a_1,\dots,a_n$ 不全為零，則存在整數 $x_1,\dots,x_n$ 使
+$$a_1x_1+a_2x_2+\cdots+a_nx_n=(a_1,a_2,\dots,a_n).$$
+sol: 對 $n$ 用歸納法，$n=2$ 就是定理 4 的 2°。由定理 5 與 2°，存在 $s,t$ 使 $s\,(a_1,\dots,a_{n-1})+ta_n=(a_1,\dots,a_n)$。由歸納假設，存在 $u_1,\dots,u_{n-1}$ 使 $u_1a_1+\cdots+u_{n-1}a_{n-1}=(a_1,\dots,a_{n-1})$。取 $x_i=su_i$（$i\le n-1$），$x_n=t$ 即得。
+
+=== text
+<p>定理 4 和定理 6 揭示了一個重要事實：<b>若干個不全為零的整數的任一個公因數，都是它們的最大公因數的因數</b>。⟦為什麼｜公因數 $d$ 整除每個 $a_i$，就整除 $a_1x_1+\cdots+a_nx_n=(a_1,\dots,a_n)$。⟧</p>
+<h3>四、整值多項式</h3>
+<p>變數取整數時，整係數多項式的值當然是整數；但有些係數不是整數的多項式，變數取整數時也總取整數值，例如 $f(n)=\frac{n^2}2+\frac n2=\frac{n(n+1)}2$。變數取整數時值也是整數的多項式叫做<b>整值多項式</b>。什麼樣的多項式是整值多項式？</p>
+<p>最基本的一類整值多項式是
+$$\binom x0=1,\qquad\binom xr=\frac{x(x-1)\cdots(x-r+1)}{r!}\quad(r\ge1).$$
+當 $0\le x\le r-1$ 時 $\binom xr=0$；$x\ge r$ 時 $\binom xr=\mathrm C_x^r$；$x<0$ 時
+$$\binom xr=(-1)^r\frac{(-x)(-x+1)\cdots(-x+r-1)}{r!}=(-1)^r\mathrm C_{r-x-1}^r,$$
+都是整數。注意這裡 $\binom xr$ 是多項式，不是組合數（$x$ 可以是任何數）。</p>
+
+=== 定理 7
+zh: 多項式 $P(x)$ 是整值多項式的充要條件是：存在整數 $a_k,a_{k-1},\dots,a_0$，使
+$$P(x)=a_k\binom xk+a_{k-1}\binom x{k-1}+\cdots+a_1\binom x1+a_0\binom x0.\tag{3}$$
+sol: 充分性顯然（每個 $\binom xr$ 都是整值的）。下面對次數 $k$ 用歸納法證必要性。$k=0$ 時顯然。<br>
+任一個 $n$ 次多項式 $Q(x)$ 都可唯一地寫成
+$$Q(x)=\alpha_n\binom xn+\alpha_{n-1}\binom x{n-1}+\cdots+\alpha_1\binom x1+\alpha_0,\quad\alpha_i\in\mathbb R,$$
+⟦為什麼可以、而且唯一｜依次代 $x=0,1,\dots,n$：$x=0$ 時只剩 $\alpha_0$；$x=1$ 時只剩 $\alpha_1+\alpha_0$；……每代一次只多出一個新的未知數，所以 $\alpha_0,\alpha_1,\dots,\alpha_n$ 逐個確定。兩邊都是 $n$ 次多項式、在 $n+1$ 個點相等，就恆等。⟧<br>
+設 $P(x)$ 是 $k+1$ 次整值多項式，寫成
+$$P(x)=a_{k+1}\binom x{k+1}+a_k\binom xk+\cdots+a_1\binom x1+a_0,\quad a_i\in\mathbb R.\tag{4}$$
+$P(x+1)$ 也是整值的，所以 $Q(x)=P(x+1)-P(x)$ 是整值多項式。當 $r\ge1$ 時
+$$\binom{x+1}r-\binom xr=\frac{x(x-1)\cdots(x-r+2)}{r!}\big[(x+1)-(x-r+1)\big]=\binom x{r-1},$$
+⟦提出公因式｜兩項都含 $x(x-1)\cdots(x-r+2)$，第一項多一個 $(x+1)$，第二項多一個 $(x-r+1)$，相減得 $r$，與分母的 $r!$ 約成 $(r-1)!$。⟧所以
+$$Q(x)=a_{k+1}\binom xk+a_k\binom x{k-1}+\cdots+a_2\binom x1+a_1.$$
+$Q$ 是 $k$ 次整值多項式，由歸納假設和表示法的唯一性，$a_1,\dots,a_{k+1}$ 都是整數。又 $a_0=P(0)$ 也是整數。所以 (4) 的係數都是整數。
+
+=== text
+<p>把 $P(x)$ 展開成 (3) 來判斷往往很繁，下面是另一個判斷的充要條件。</p>
+
+=== 定理 8
+zh: $k$ 次多項式 $P(x)$ 為整值多項式的充要條件是：它在某 $k+1$ 個連續整數上的值都是整數。
+sol: 必要性顯然。對 $k$ 用歸納法證充分性，$k=0$ 時顯然。設 $P(x)$ 是 $k+1$ 次多項式，在 $x=n,n+1,\dots,n+k+1$ 時取整數值。寫成 (4) 的形式，則 $P(x+1)$ 在 $x=n,\dots,n+k$ 時取整數值，所以 $k$ 次多項式
+$$Q(x)=P(x+1)-P(x)=a_{k+1}\binom xk+\cdots+a_2\binom x1+a_1$$
+在 $k+1$ 個連續整數 $n,\dots,n+k$ 上取整數值。由歸納假設 $Q$ 是整值多項式，再由定理 7（與表示法的唯一性），$a_{k+1},\dots,a_1$ 都是整數。最後
+$$a_0=P(n)-a_{k+1}\binom n{k+1}-\cdots-a_1\binom n1$$
+也是整數，所以 $P(x)$ 是整值多項式。<br>
+例如 $P(x)=\frac{x^3-x}6$ 是 3 次，$P(0)=0,P(1)=0,P(2)=1,P(3)=4$ 都是整數，所以它是整值多項式，即 $6\mid x^3-x$ 對一切整數成立。
+
+=== 習題 1
+zh: 設 $p$ 為質數，$1\le k\le p-1$，則 $p\mid\mathrm C_p^k$。
+sol: $\mathrm C_p^k=p\cdot\dfrac{(p-1)\cdots(p-k+1)}{k!}$ 是整數，所以 $k!\mid p(p-1)\cdots(p-k+1)$。$1\le k\le p-1$ 時 $(p,k!)=1$，⟦為什麼互質｜$k!$ 的質因數都不超過 $k<p$，所以不含 $p$。⟧由定理 4 的 3°，$k!\mid(p-1)\cdots(p-k+1)$，所以 $\mathrm C_p^k$ 是 $p$ 乘上一個整數，$p\mid\mathrm C_p^k$。
+
+=== 習題 2
+zh: 若 $n$ 是大於 9 的奇合數，則 $n^2\mid(n-1)!$。
+hint: 分 $n=p^2$ 與 $n\ne p^2$ 兩種情形，在 $1,\dots,n-1$ 中找出四個數。
+sol: 若 $n=p^2$，因 $n>9$ 是奇數，$p\ge5$，$n-1\ge4p$。⟦為什麼｜$p^2-1-4p=(p-2)^2-5\ge4$。⟧所以 $1,\dots,n-1$ 中有 $p,2p,3p,4p$，因此 $p^4=n^2\mid(n-1)!$。<br>
+若 $n\ne p^2$，設 $p$ 是 $n$ 的最小質因數，$p\ge3$，則 $\frac np>p\ge3$。$1,\dots,n-1$ 中有 $p,\ 2p,\ \frac np,\ \frac{2n}p$，這四個數互不相等，⟦為什麼不相等｜$\frac np>p$ 且 $\frac np$ 是奇數，不等於 $2p$；$\frac{2n}p>2p$；$\frac{2n}p\le\frac{2n}3<n$。⟧所以 $p\cdot2p\cdot\frac np\cdot\frac{2n}p=4n^2$ 整除 $(n-1)!$。<br>
+（$n$ 若是質數，結論不成立；$n=9$ 時 $81\nmid8!$。）
+
+=== 習題 3
+zh: 證明 $\left(2^m-1,\ 2^n-1\right)=2^{(m,n)}-1$。
+sol: 設 $d=(m,n)$。顯然 $2^d-1$ 整除 $2^m-1$ 和 $2^n-1$。⟦為什麼｜$m=dk$，$2^m-1=(2^d)^k-1=(2^d-1)\big((2^d)^{k-1}+\cdots+1\big)$。⟧反過來，設 $D$ 是 $2^m-1$ 和 $2^n-1$ 的公因數。取正整數 $x,y$ 使 $mx-ny=d$（由貝祖定理，可調整成 $x,y>0$）。則 $D\mid2^{mx}-1$，$D\mid2^{ny}-1$，所以
+$$D\mid(2^{mx}-1)-(2^{ny}-1)=2^{ny}(2^d-1).$$
+$D$ 是奇數，所以 $D\mid2^d-1$。因此 $2^d-1$ 就是最大公因數。
+
+=== 習題 4
+zh: 若整數 $a$ 的 $n$ 次方根不是整數，則它必是無理數。
+hint: 用反證法及唯一分解定理。
+sol: 設 $\sqrt[n]a=\frac pq$，$(p,q)=1$，$q>1$。則 $p^n=aq^n$，$q$ 的某個質因數 $r$ 整除 $p^n$，由定理 3 得 $r\mid p$，與 $(p,q)=1$ 矛盾。所以 $q=1$，$\sqrt[n]a$ 是整數。
+
+=== 習題 5 | Legendre 公式
+zh: 設 $p$ 為質數，則 $n!$ 的標準分解式中 $p$ 的次數為 $\left[\dfrac np\right]+\left[\dfrac n{p^2}\right]+\cdots$。
+hint: 考慮 $1,2,\dots,n$ 中被 $p,p^2,\dots$ 整除的數的個數。
+sol: $1,\dots,n$ 中，被 $p$ 整除的有 $\left[\frac np\right]$ 個，被 $p^2$ 整除的有 $\left[\frac n{p^2}\right]$ 個……一個恰被 $p^j$ 整除（不被 $p^{j+1}$ 整除）的數，對 $n!$ 中 $p$ 的次數貢獻 $j$，在上面的和中也恰被數了 $j$ 次（在被 $p,p^2,\dots,p^j$ 整除的那幾項各數一次）。所以和就是 $p$ 的次數。例如 $100!$ 中 5 的次數是 $20+4=24$。
+
+=== 習題 6
+zh: 設 $b>0$，則有整數 $q,r$ 使 $a=bq+r$，$|r|\le\frac b2$；當 $|r|\ne\frac b2$ 時，這種表示法是唯一的。
+hint: 與定理 1 的證明類似。
+sol: 由定理 1，$a=bq_0+r_0$，$0\le r_0<b$。若 $r_0\le\frac b2$，取 $q=q_0,r=r_0$；否則取 $q=q_0+1$，$r=r_0-b$，此時 $-\frac b2<r<0$。唯一性：若 $a=bq+r=bq'+r'$，則 $b|q-q'|=|r-r'|\le|r|+|r'|$。若 $|r|,|r'|$ 都小於 $\frac b2$，則 $|r-r'|<b$，所以 $q=q'$。（若 $|r|=\frac b2$，例如 $5=2\cdot2+1=2\cdot3-1$，就有兩種表示。）
+
+=== 習題 7
+zh: 設 $n$ 是奇合數，則 $n$ 個連續正整數之積必是它們的和的倍數。
+hint: 設 $n=n_1n_2$，$n_2\ge n_1\ge3$，在這 $n$ 個數中找 $n_1$ 的倍數、$n_2$ 的倍數，避開正中間那個數。
+sol: 設這 $n$ 個數是 $m,m+1,\dots,m+n-1$，和為 $n\left(m+\frac{n-1}2\right)$，其中 $s=m+\frac{n-1}2$ 正是中間那個數。設 $n=n_1n_2$，$n_2\ge n_1\ge3$。這 $n$ 個數中有 $n_2\ge3$ 個 $n_1$ 的倍數，其中必有一個不是 $s$，記為 $a_1$；又有 $n_1\ge3$ 個 $n_2$ 的倍數，其中必有一個既不是 $s$ 也不是 $a_1$，記為 $a_2$。$s,a_1,a_2$ 是乘積中三個不同的因數，所以
+$$n_1n_2\,s\mid s\,a_1a_2\mid m(m+1)\cdots(m+n-1).$$
+（$n$ 是質數時不一定成立，例如 $2\cdot3\cdot4=24$ 不是 $2+3+4=9$ 的倍數。）
+
+=== 習題 8
+src: 第 29 屆國際數學奧林匹亞，第 6 題
+zh: 正整數 $a,b$ 使 $ab+1$ 整除 $a^2+b^2$。證明 $\dfrac{a^2+b^2}{ab+1}$ 是完全平方數。
+hint: 對 $a,b$ 中較小者用歸納法（或無窮遞降）。
+sol: 設 $\dfrac{a^2+b^2}{ab+1}=k$，假設 $k$ 不是完全平方數。在所有滿足 $a^2+b^2=k(ab+1)$ 的正整數對中，取 $a+b$ 最小的一對，不妨 $a\ge b$。把它看成 $a$ 的二次方程
+$$a^2-kb\,a+(b^2-k)=0.$$
+它的另一根 $a'=kb-a=\dfrac{b^2-k}a$ 是整數。⟦兩個式子｜由韋達定理，兩根之和 $kb$、之積 $b^2-k$。第一式說明 $a'$ 是整數。⟧<br>
+若 $a'<0$，則 $a'^2-kba'+b^2-k\ge a'^2+k+b^2-k>0$，⟦為什麼｜$a'\le-1$ 時 $-kba'\ge kb\ge k$。⟧不可能等於 0。若 $a'=0$，則 $b^2=k$，與 $k$ 不是平方數矛盾。所以 $a'>0$，$(a',b)$ 也是一組正整數解。但 $a'=\dfrac{b^2-k}a<\dfrac{b^2}a\le a$，所以 $a'+b<a+b$，與最小性矛盾。故 $k$ 是完全平方數。<br>
+例如 $(a,b)=(8,2)$：$\frac{68}{17}=4$；$(30,8)$：$\frac{964}{241}=4$。
+
+=== 習題 9
+src: 第 10 屆國際數學奧林匹亞，1968 年
+zh: 設 $n$ 為正整數，求 $M=\left[\dfrac{n+1}2\right]+\left[\dfrac{n+2}{2^2}\right]+\cdots+\left[\dfrac{n+2^{k-1}}{2^k}\right]+\cdots$。
+hint: 對 $n$ 用歸納法，或用恆等式 $\left[x+\frac12\right]=[2x]-[x]$。
+sol: 對任何實數 $x$，$\left[x+\frac12\right]=[2x]-[x]$。⟦驗證｜設 $x=m+\theta$，$0\le\theta<1$。$\theta<\frac12$ 時兩邊都是 $m$；$\theta\ge\frac12$ 時兩邊都是 $m+1$。⟧取 $x=\frac n{2^k}$：
+$$\left[\frac{n+2^{k-1}}{2^k}\right]=\left[\frac n{2^k}+\frac12\right]=\left[\frac n{2^{k-1}}\right]-\left[\frac n{2^k}\right].$$
+對 $k=1,2,\dots$ 求和，右邊逐項相消，而 $k$ 夠大時 $\left[\frac n{2^k}\right]=0$，所以 $M=[n]=n$。
+ans: $M=n$

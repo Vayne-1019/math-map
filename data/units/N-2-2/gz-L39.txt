@@ -1,0 +1,23 @@
+=== meta
+title: 費馬、歐拉、威爾遜
+from: gz-L39
+order: 20
+
+=== body
+<div class="hero">與 $n$ 互質的數乘上一個縮系 → 還是那個縮系，只是<b>換了順序</b><br>兩邊相乘再消去 → <b>$a^{\varphi(n)}\equiv1\pmod n$</b><br>$n=p$ 質數時就是費馬小定理</div>
+<div class="cards">
+<div class="card"><h4>① 歐拉定理</h4><div class="rule">$(a,n)=1\Rightarrow a^{\varphi(n)}\equiv1$</div>
+<div class="eg">$\varphi(12)=4$（$1,5,7,11$）<br>$5^4=625=52\times12+1$ <span class="pill">指數模 φ(n)</span></div></div>
+<div class="card"><h4>② 費馬小定理</h4><div class="rule">$n^p\equiv n\pmod p$</div>
+<div class="eg">$2^{10}=1024\equiv1\pmod{11}$<br>⇒ $2^{1000}\equiv1\pmod{11}$</div></div>
+<div class="card"><h4>③ 階整除一切</h4><div class="rule">最小的 $r$：$a^r\equiv1$，則 $a^l\equiv1\iff r\mid l$</div>
+<div class="eg">$7^4\equiv1\pmod{100}$<br>$7^{7^7}$：只看指數模 4 → 43</div></div>
+<div class="card"><h4>④ 威爾遜定理</h4><div class="rule">$(p-1)!\equiv-1\pmod p$</div>
+<div class="eg">$p=7$：$2\cdot4\equiv1,\ 3\cdot5\equiv1$<br>$6!\equiv1\cdot6\equiv-1$ <span class="pill">倒數配對</span></div></div>
+</div>
+<p>為什麼可以消去？⟦與模互質才能約｜$ab\equiv ac\pmod n$ 且 $(a,n)=1$ 才能推出 $b\equiv c$。反例：$3\cdot3\equiv3\cdot1\pmod6$，但 $3\not\equiv1$。縮系裡的數都與 $n$ 互質，所以可以消。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>$(a,n)\ne1$ 也套歐拉定理：$2^{\varphi(4)}=4\not\equiv1\pmod4$</li>
+<li>以為階就是 $\varphi(n)$：階只是 $\varphi(n)$ 的<b>因數</b>（$2$ 模 7 的階是 3，不是 6）</li>
+<li>$\varphi(p^k)=p^k-p^{k-1}$，不是 $p^k-1$</li></ul></div>
+<div class="bottomline">大次方取餘數：先找「多少次方會回到 1」，指數就能對它取模。</div>
