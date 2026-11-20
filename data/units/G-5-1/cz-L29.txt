@@ -1,0 +1,22 @@
+=== meta
+title: 鏡射：沿線對摺
+from: cz-L29
+order: 20
+
+=== body
+<div class="hero">看到<b>角平分線</b>或<b>中垂線</b> → 沿它對摺一次<br>摺過去的點落在另一邊上，線段、角都不變</div>
+<figure class="bkfig"><svg viewBox="0 0 269 190" width="269" role="img" aria-label="角平分線與對稱點">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="89.4,22 22,168 246.6,168"/><line x1="22" y1="168" x2="155" y2="82.9"/><line x1="246.6" y1="168" x2="56.5" y2="93.3"/><line x1="89.4" y1="22" x2="136.1" y2="95"/><line x1="89.4" y1="22" x2="60.7" y2="95"/><line x1="60.7" y1="95" x2="136.1" y2="95" stroke="#c2562b" stroke-width="2"/><line x1="136.1" y1="95" x2="182.8" y2="168" stroke-dasharray="5 4"/><line x1="60.7" y1="95" x2="32.1" y2="168" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="89.4" y="15.9" text-anchor="middle">A</text><text x="14.2" y="180.7" text-anchor="middle">B</text><text x="254.4" y="180.7" text-anchor="middle">C</text><text x="162.8" y="80" text-anchor="middle">E</text><text x="45.5" y="98.2" text-anchor="middle">F</text><text x="107.4" y="129.2" text-anchor="middle">O</text><text x="52.9" y="92.1" text-anchor="middle">G</text><text x="143.9" y="92.1" text-anchor="middle">H</text><text x="182.8" y="183.9" text-anchor="middle">A<tspan font-size="10">1</tspan></text><text x="32.1" y="183.9" text-anchor="middle">A<tspan font-size="10">2</tspan></text></g>
+</svg><figcaption>$A_1$、$A_2$ 是 $A$ 關於 $BE$、$CF$ 的對稱點，都在 $BC$ 上（延長 $AH$、$AG$，虛線）</figcaption></figure>
+<div class="cards">
+<div class="card"><h4>① 角平分線上摺</h4><div class="rule">$A$ 關於 $\angle B$ 平分線的像落在 $BC$ 上</div>
+<div class="eg">$AH\perp BE$ ⇒ $H$ 是 $AA_1$ 中點，$GH$ 成中位線 <span class="pill">中點</span></div></div>
+<div class="card"><h4>② 讓條件集中</h4><div class="rule">把分散的邊摺到同一處</div>
+<div class="eg">外切四邊形：$D,C$ 摺到 $AB$ 上，$C'D'=c$ <span class="pill">搬到一起</span></div></div>
+<div class="card"><h4>③ 中垂線對稱</h4><div class="rule">$l$ 垂直平分 $BC$，對稱點仍在圓上</div>
+<div class="eg">蝴蝶定理：$S\to S'$，證 $\triangle AMS\cong\triangle ANS'$ <span class="pill">圓不變</span></div></div>
+</div>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul><li>沒先確認對稱點<b>真的落在</b>那條邊上（例：$AB$ 要夠長）</li></ul></div>
+<div class="bottomline">一條平分線 = 一面鏡子；照一下，條件就湊在一起了。</div>
