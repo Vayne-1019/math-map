@@ -1,0 +1,23 @@
+=== meta
+title: 定值問題：先用特殊位置猜答案
+from: cz-L33
+order: 50
+
+=== body
+<div class="hero">動點在動，某個量卻不變 → 先把動點放到<b>特殊位置</b>，算出那個定值<br>再把「是定值」改寫成「等於這個值」來證</div>
+<figure class="bkfig"><svg viewBox="0 0 250 177" width="250" role="img" aria-label="正方形中周長為 2 的三角形">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,22 22,154.9 154.9,154.9 154.9,22"/><polygon points="22,81.8 116.3,22 154.9,154.9"/><line x1="154.9" y1="22" x2="228" y2="22" stroke-dasharray="5 4"/><line x1="154.9" y1="154.9" x2="228" y2="22" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="19.1" text-anchor="middle">A</text><text x="14.2" y="167.6" text-anchor="middle">B</text><text x="162.7" y="167.6" text-anchor="middle">C</text><text x="154.9" y="15.9" text-anchor="middle">D</text><text x="11" y="86.7" text-anchor="middle">P</text><text x="116.3" y="15.9" text-anchor="middle">Q</text><text x="235.8" y="19.1" text-anchor="middle">E</text></g>
+</svg><figcaption>證法一：延長 $AD$ 到 $E$ 使 $DE=PB$，連 $CE$（虛線）</figcaption></figure>
+<div class="cards">
+<div class="card"><h4>① 推到端點</h4><div class="rule">$P$ 移到 $A$，$Q$ 跟著到 $D$</div>
+<div class="eg">$\angle PCQ$ 變成 $\angle ACD=45^\circ$，於是證 $\angle PCQ=45^\circ$ <span class="pill">猜定值</span></div></div>
+<div class="card"><h4>② 特殊化整個圖形</h4><div class="rule">一般三角形 → 正三角形</div>
+<div class="eg">取中心：$\frac{PD_1}{AD}+\cdots=\frac13\times3=1$ <span class="pill">猜 1</span></div></div>
+<div class="card"><h4>③ 參數計算</h4><div class="rule">設一個參數，算完消掉</div>
+<div class="eg">$PA=2r\sin\theta$、$PT=2\sqrt{r^2+Rr}\sin\theta$，比值 $\sqrt{\frac r{R+r}}$ <span class="pill">消參數</span></div></div>
+</div>
+<p>定點怎麼找？⟦取對稱位置｜例：$l$ 上動點 $A$ 的切點弦 $EF$。取 $OA\perp l$ 的位置，由對稱，定點在垂線 $OC$ 上，再證 $OP=\frac{OE^2}{OC}$ 不變。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul><li>只驗證了特殊位置就當作證明；特殊位置只是用來<b>猜</b>，證明要對一般位置</li></ul></div>
+<div class="bottomline">先猜後證：特殊位置定答案，一般位置做證明。</div>

@@ -1,0 +1,25 @@
+=== meta
+title: 西瓦定理：三條線交於一點
+from: cz-L27
+order: 20
+
+=== body
+<div class="hero">$AD,BE,CF$ 共點 ⇔ $\dfrac{BD}{DC}\cdot\dfrac{CE}{EA}\cdot\dfrac{AF}{FB}=1$<br>和孟氏定理長得一樣，差在<b>分點都在邊上</b>（或恰兩個在延長線上）</div>
+<figure class="bkfig"><svg viewBox="0 0 262 200" width="262" role="img" aria-label="西瓦定理">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="115.6,22 22,178 240.4,178"/><line x1="115.6" y1="22" x2="100.7" y2="178"/><line x1="22" y1="178" x2="172.6" y2="93.3"/><line x1="240.4" y1="178" x2="59.6" y2="115.4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="115.6" y="15.9" text-anchor="middle">A</text><text x="14.2" y="190.7" text-anchor="middle">B</text><text x="248.2" y="190.7" text-anchor="middle">C</text><text x="100.7" y="193.9" text-anchor="middle">D</text><text x="180.4" y="90.4" text-anchor="middle">E</text><text x="51.8" y="112.5" text-anchor="middle">F</text><text x="97.4" y="128.3" text-anchor="middle">P</text></g>
+</svg><figcaption>$AD,BE,CF$ 交於 $P$</figcaption></figure>
+<div class="cards">
+<div class="card"><h4>① 證法：兩次孟氏</h4><div class="rule">$\triangle ADC$ 截線 $BPE$<br>$\triangle ADB$ 截線 $CPF$</div>
+<div class="eg">兩式相除，$\frac{AP}{PD}$ 消掉 <span class="pill">相除</span></div></div>
+<div class="card"><h4>② 逆定理證共點</h4><div class="rule">算出三個比，乘起來 $=1$</div>
+<div class="eg">內切圓切點：$\frac{BX_1}{X_1C}=\frac{s-b}{s-c}$ 等，乘積 $1$ ⇒ 熱爾岡點 <span class="pill">切線長</span></div></div>
+<div class="card"><h4>③ 化成共線</h4><div class="rule">兩線交點 $Z$，證 $X,Y,Z$ 共線</div>
+<div class="eg">$AA',BB'$ 交於 $E$，證 $E,D,D'$ 共線 <span class="pill">轉化</span></div></div>
+</div>
+<p>垂線共點用<b>卡諾定理</b>：⟦公式｜過 $A_1,B_1,C_1$ 的三條垂線共點 ⇔ $BA_1^2-A_1C^2+CB_1^2-B_1A^2+AC_1^2-C_1B^2=0$。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>比例要「繞一圈」：$B\to D\to C\to E\to A\to F\to B$，順序錯就不成立</li>
+<li>西瓦是<b>頂點連到對邊</b>的三條線；孟氏是<b>一條</b>截線</li></ul></div>
+<div class="bottomline">三線共點 → 算三個比相乘；不好算就化成三點共線。</div>

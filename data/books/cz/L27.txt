@@ -1,0 +1,169 @@
+=== meta
+title: 線共點
+author: 劉亞強
+pages: 213-223
+units: G-3-2
+status: 完成
+
+=== text
+<p>線共點與點共線一樣，是平面幾何中常見的現象。正因為有許多共線、共點，幾何圖形才有穩定、完美的結構，不同元素之間也產生許多有趣的聯繫。</p>
+<p>證三條（或更多）直線共點的方法很多，最常見的是<b>化為點共線</b>：要證直線 $MN$、$PQ$、$XY$ 共點，設 $Z$ 是 $MN$ 與 $PQ$ 的交點，只要證 $X$、$Y$、$Z$ 三點共線，第三條直線就過前兩條的交點。反過來，要證三點 $X,Y,Z$ 共線，若已知過 $Z$ 有兩條直線 $MN$、$PQ$，也只須證三線 $MN$、$PQ$、$XY$ 共點。兩類問題可以互相轉化。</p>
+
+=== 例 1
+zh: $O$ 是 $\triangle ABC$ 的外心。證明：直線 $AC$ 分別關於 $AB$、$BC$ 對稱所得的兩條直線，與直線 $BO$ 共點。
+sol: <figure class="bkfig"><svg viewBox="0 0 320 139" width="320" role="img" aria-label="對稱直線與外心">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="63.9,27.3 22,76.2 77.9,107.7"/><line x1="63.9" y1="27.3" x2="77.9" y2="107.7"/><line x1="38.9" y1="26.8" x2="298" y2="31.6"/><line x1="54.5" y1="116.9" x2="296.3" y2="22"/><line x1="22" y1="76.2" x2="272.9" y2="31.2" stroke="#c2562b" stroke-width="2"/><line x1="63.9" y1="27.3" x2="103.9" y2="61.5" stroke-dasharray="5 4"/><line x1="77.9" y1="107.7" x2="103.9" y2="61.5" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"><circle cx="62.9" cy="68.9" r="2.4"/><circle cx="103.9" cy="61.5" r="2.4"/></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="63.9" y="21.2" text-anchor="middle">A</text><text x="11" y="81.1" text-anchor="middle">B</text><text x="77.9" y="123.6" text-anchor="middle">C</text><text x="283.9" y="36.1" text-anchor="middle">D</text><text x="62.9" y="84.8" text-anchor="middle">O</text><text x="103.9" y="55.4" text-anchor="middle">I</text></g>
+</svg><figcaption>$AC$ 關於 $AB$、$BC$ 的對稱直線交於 $D$；$I$ 是 $\triangle ACD$ 的內心；紅線 $BD$ 過外心 $O$</figcaption></figure>
+<p><b>證</b>　設兩條對稱直線交於 $D$，證 $B$、$O$、$D$ 三點共線。由對稱，$AB$、$CB$ 是 $\triangle ACD$ 的外角平分線，$B$ 是旁心。設 $I$ 是 $\triangle ACD$ 的內心，⟦易知｜旁心與內心都在 $\angle ADC$ 的平分線上。⟧$D$、$I$、$B$ 三點共線。</p>
+<p>$AI$ 平分 $\angle CAD$，所以 $\angle BAI=90^\circ$（同一角的內、外角平分線互相垂直）；同理 $\angle BCI=90^\circ$。所以 $A,B,C,I$ 四點共圓，且 $BI$ 是直徑，$BI$ 過 $\triangle ABC$ 的外心 $O$，故 $B,O,D$ 共線。</p>
+<p><b>說明</b>　換個角度看同一個問題，可得：設 $I$、$I_A$ 是 $\triangle ABC$ 的內心與 $BC$ 外側的旁心，則四邊形 $IBI_AC$ 內接於圓，$\angle A$ 的平分線過這個圓的圓心 $D$；進一步可證 $D$ 在 $\triangle ABC$ 的外接圓上，是弧 $BC$ 的中點。</p>
+<figure class="bkfig"><svg viewBox="0 0 194 260" width="194" role="img" aria-label="內心、旁心與弧中點">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="85.6,22.8 37.2,141.9 156.3,141.9"/><circle cx="96.8" cy="96.8" r="74.8"/><circle cx="96.8" cy="171.5" r="66.5"/><line x1="85.6" y1="22.8" x2="101.7" y2="237.8"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="85.6" y="16.7" text-anchor="middle">A</text><text x="26.2" y="146.8" text-anchor="middle">B</text><text x="167.3" y="146.8" text-anchor="middle">C</text><text x="102.8" y="110.1" text-anchor="middle">I</text><text x="107.8" y="176.4" text-anchor="middle">D</text><text x="101.7" y="253.7" text-anchor="middle">I<tspan font-size="10">A</tspan></text></g>
+</svg><figcaption>$I,B,I_A,C$ 共圓，圓心 $D$ 在 $\angle A$ 的平分線上，也在外接圓上</figcaption></figure>
+=== 例 2
+zh: 正 $\triangle ABC$ 的 $BC$ 邊中點與正 $\triangle A'B'C'$ 的 $B'C'$ 邊中點同為點 $O$，並且從 $A$ 到 $B$ 再到 $C$ 的轉向與從 $A'$ 到 $B'$ 再到 $C'$ 的轉向相同。證明：若 $D$、$D'$ 分別是 $AC$、$A'C'$ 的中點，則 $AA'$、$BB'$、$DD'$ 三線共點。
+sol: <figure class="bkfig"><svg viewBox="0 0 215 230" width="215" role="img" aria-label="兩個正三角形共用邊中點">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="121.3,27.2 49.6,151.5 193.1,151.5"/><polygon points="23.4,134.2 111.4,208 131.3,94.9"/><line x1="126.1" y1="22" x2="22" y2="135.7"/><line x1="50.7" y1="152.5" x2="25.6" y2="129.5"/><line x1="26.7" y1="130.6" x2="157.2" y2="89.3" stroke="#c2562b" stroke-width="2"/><line x1="49.6" y1="151.5" x2="157.2" y2="89.3" stroke-dasharray="5 4"/><line x1="121.3" y1="27.2" x2="121.3" y2="151.5" stroke-dasharray="5 4"/><line x1="23.4" y1="134.2" x2="121.3" y2="151.5" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="121.3" y="21.1" text-anchor="middle">A</text><text x="41.8" y="164.1" text-anchor="middle">B</text><text x="200.9" y="164.1" text-anchor="middle">C</text><text x="121.3" y="167.4" text-anchor="middle">O</text><text x="13.2" y="131.3" text-anchor="middle">A′</text><text x="111.4" y="223.9" text-anchor="middle">B′</text><text x="145.8" y="99.8" text-anchor="middle">C′</text><text x="165" y="86.4" text-anchor="middle">D</text><text x="77.4" y="108.5" text-anchor="middle">D′</text><text x="15.7" y="135.5" text-anchor="middle">E</text></g>
+</svg><figcaption>$O$ 是 $BC$ 與 $B'C'$ 共同的中點；$AA'$、$BB'$ 交於 $E$；紅線 $EDD'$</figcaption></figure>
+<p><b>證</b>　設 $AA'$ 與 $BB'$ 交於 $E$，仍然證三點 $E,D,D'$ 共線。連 $AO$、$A'O$、$BD$、$B'D'$、$DE$、$D'E$。由 $\angle AOB=\angle A'OB'=90^\circ$ 得 $\angle AOA'=\angle BOB'$（都等於 $90^\circ-\angle A'OB$）。又 $\frac{AO}{BO}=\frac{A'O}{B'O}=\sqrt3$，所以 $\triangle AOA'\sim\triangle BOB'$，而且這兩個三角形的對應邊互相垂直⟦為什麼｜把 $\triangle BOB'$ 繞 $O$ 轉 $90^\circ$ 再放大 $\sqrt3$ 倍，就得到 $\triangle AOA'$。⟧，所以 $AA'\perp BB'$。</p>
+<p>於是 $\angle AEB=\angle ADB=90^\circ$，$A,D,B,E$ 四點共圓，$\angle AED=\angle ABD=30^\circ$。同理 $\angle A'ED'=30^\circ$，所以 $D$、$D'$、$E$ 共線。</p>
+=== 例 3 | 西瓦定理
+zh: <p>在 $\triangle ABC$ 的三邊 $BC$、$CA$、$AB$ 或其延長線上各有一點 $D$、$E$、$F$。證明 $AD$、$BE$、$CF$ 共點的充分必要條件是</p>
+$$\frac{BD}{DC}\cdot\frac{CE}{EA}\cdot\frac{AF}{FB}=1.\quad\text{①}$$
+sol: <figure class="bkfig"><svg viewBox="0 0 262 200" width="262" role="img" aria-label="西瓦定理">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="115.6,22 22,178 240.4,178"/><line x1="115.6" y1="22" x2="100.7" y2="178"/><line x1="22" y1="178" x2="172.6" y2="93.3"/><line x1="240.4" y1="178" x2="59.6" y2="115.4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="115.6" y="15.9" text-anchor="middle">A</text><text x="14.2" y="190.7" text-anchor="middle">B</text><text x="248.2" y="190.7" text-anchor="middle">C</text><text x="100.7" y="193.9" text-anchor="middle">D</text><text x="180.4" y="90.4" text-anchor="middle">E</text><text x="51.8" y="112.5" text-anchor="middle">F</text><text x="97.4" y="128.3" text-anchor="middle">P</text></g>
+</svg><figcaption>$AD,BE,CF$ 交於 $P$</figcaption></figure>
+<p><b>證</b>　必要性：設 $AD,BE,CF$ 交於 $P$。對 $\triangle ADC$ 與截線 $BPE$ 用孟氏定理，</p>
+$$\frac{DB}{BC}\cdot\frac{CE}{EA}\cdot\frac{AP}{PD}=1;\quad\text{②}$$
+<p>對 $\triangle ADB$ 與截線 $CPF$，</p>
+$$\frac{DC}{CB}\cdot\frac{BF}{FA}\cdot\frac{AP}{PD}=1.\quad\text{③}$$
+<p>②÷③ 即得 ①。</p>
+<p>充分性用同一法：設 $AD$ 與 $BE$ 交於 $P$，$CP$ 交 $AB$ 於 $F'$。由必要性 $\frac{BD}{DC}\cdot\frac{CE}{EA}\cdot\frac{AF'}{F'B}=1$，與 ① 比較得 $\frac{AF}{FB}=\frac{AF'}{F'B}$，由合比 $\frac{AB}{FB}=\frac{AB}{F'B}$，$F$ 與 $F'$ 重合，三線共點。</p>
+<p><b>註</b>　必要性就是<b>西瓦（Ceva）定理</b>，充分性是它的逆定理。下面舉一些用逆定理證共點的例子。</p>
+=== 例 4
+zh: 已知 $AD$ 是 $\triangle ABC$ 的高，$M$、$N$ 分別是 $AB$、$AC$ 邊上的點，且 $AD$ 平分 $\angle MDN$。證明 $AD$、$BN$、$CM$ 三線共點。
+sol: <figure class="bkfig"><svg viewBox="0 0 270 191" width="270" role="img" aria-label="高平分兩線的夾角">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="168.9,22 22,168.9 217.9,168.9"/><line x1="168.9" y1="22" x2="168.9" y2="168.9"/><line x1="168.9" y1="168.9" x2="117.5" y2="73.4"/><line x1="168.9" y1="168.9" x2="199.1" y2="112.7"/><line x1="22" y1="168.9" x2="199.1" y2="112.7"/><line x1="217.9" y1="168.9" x2="117.5" y2="73.4"/><line x1="89.8" y1="22" x2="248" y2="22" stroke-dasharray="5 4"/><line x1="168.9" y1="168.9" x2="89.8" y2="22" stroke-dasharray="5 4"/><line x1="168.9" y1="168.9" x2="248" y2="22" stroke-dasharray="5 4"/><polyline points="168.9,163.9 173.9,163.9 173.9,168.9" stroke-width="1"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="168.9" y="15.9" text-anchor="middle">A</text><text x="14.2" y="181.6" text-anchor="middle">B</text><text x="225.6" y="181.6" text-anchor="middle">C</text><text x="168.9" y="184.8" text-anchor="middle">D</text><text x="109.7" y="70.5" text-anchor="middle">M</text><text x="210.1" y="117.6" text-anchor="middle">N</text><text x="255.8" y="19.1" text-anchor="middle">P</text><text x="82" y="19.1" text-anchor="middle">Q</text></g>
+</svg><figcaption>$AD\perp BC$ 且平分 $\angle MDN$；過 $A$ 作 $BC$ 的平行線交 $DN$、$DM$ 於 $P$、$Q$（虛線）</figcaption></figure>
+<p><b>證</b>　過 $A$ 作 $BC$ 的平行線，分別交 $DN$、$DM$ 於 $P$、$Q$。$\triangle ANP\sim\triangle CND$，$\frac{CN}{NA}=\frac{DC}{AP}$；同理 $\frac{AM}{MB}=\frac{AQ}{BD}$。由已知 $\angle ADP=\angle ADQ$，直角 $\triangle ADP\cong\triangle ADQ$，$AP=AQ$。所以</p>
+$$\frac{CN}{NA}\cdot\frac{AM}{MB}\cdot\frac{BD}{DC}=\frac{DC}{AP}\cdot\frac{AQ}{BD}\cdot\frac{BD}{DC}=1,$$
+<p>由西瓦定理的逆定理，$AD,BN,CM$ 三線共點。</p>
+<p>上面的過程可逆：若 $D,M,N$ 分別在 $BC,AB,CA$ 上，$AD$ 平分 $\angle MDN$，且 $AD,BN,CM$ 交於一點，則 $AD$ 是高（見習題 2）。</p>
+=== 例 5
+zh: $\triangle ABC$ 是正三角形，$D$、$E$、$F$、$M$、$N$、$P$ 分別是 $BC$、$CA$、$AB$、$FD$、$FB$、$DC$ 的中點。證明直線 $AM$、$EN$、$FP$ 共點。
+sol: <figure class="bkfig"><svg viewBox="0 0 219 210" width="219" role="img" aria-label="正三角形中的三線共點">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="109.4,36.6 22,188 196.8,188"/><polygon points="109.4,188 153.1,112.3 65.7,112.3"/><line x1="112.2" y1="22" x2="87.9" y2="148.5"/><line x1="162.5" y1="109.1" x2="81.3" y2="137.2"/><line x1="62" y1="109.1" x2="94.4" y2="137.2"/><line x1="65.7" y1="112.3" x2="109.4" y2="188"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="109.4" y="30.5" text-anchor="middle">A</text><text x="14.2" y="200.7" text-anchor="middle">B</text><text x="204.6" y="200.7" text-anchor="middle">C</text><text x="109.4" y="203.9" text-anchor="middle">D</text><text x="160.9" y="109.4" text-anchor="middle">E</text><text x="57.9" y="109.4" text-anchor="middle">F</text><text x="98.6" y="155" text-anchor="middle">M</text><text x="32.9" y="155" text-anchor="middle">N</text><text x="153.1" y="203.9" text-anchor="middle">P</text><text x="101.7" y="138.8" text-anchor="middle">O</text></g>
+</svg><figcaption>$D,E,F$ 是三邊中點，$M,N,P$ 是 $FD,FB,DC$ 的中點</figcaption></figure>
+<p><b>證一</b>　設 $AM$ 與 $EN$ 交於 $O$，證 $F,O,P$ 共線。連 $FO$、$FP$。⟦顯然｜$AF=EF=\frac12AB$（$\triangle AFE$ 是正三角形）；$FM=\frac12FD=\frac12FB=FN$。⟧$AF=EF$、$FM=FN$，又 $\angle AFM=\angle EFN=120^\circ$，所以 $\triangle AFM\cong\triangle EFN$，$\angle FAM=\angle FEN$。同理 $\angle FAM=\angle DFP$。由 $\angle FAO=\angle FEO$，$A,E,O,F$ 四點共圓，$\angle EAO=\angle EFO$。於是</p>
+$$\angle DFO=60^\circ-\angle EFO=60^\circ-\angle EAO=\angle FAM=\angle DFP,$$
+<p>⟦第三個等號｜$\angle EAO+\angle FAM=\angle EAF=60^\circ$。⟧所以 $F,O,P$ 共線。</p>
+<p><b>證二</b>　在 $BC$ 下方再拼五個邊長 $\frac12AB$ 的正三角形，得到大正三角形 $AQT$。易證 $M,N,P$ 分別在直線 $AR$、$DT$、$FT$ 上，設 $AR$ 與 $DT$ 交於 $U$。</p>
+<figure class="bkfig"><svg viewBox="0 0 250 222" width="250" role="img" aria-label="把正三角形格子延伸">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="125,22 22,200.4 228,200.4"/><line x1="56.3" y1="140.9" x2="193.7" y2="140.9"/><polygon points="125,140.9 159.3,81.5 90.7,81.5"/><polygon points="56.3,140.9 90.7,200.4 125,140.9"/><polygon points="125,140.9 159.3,200.4 193.7,140.9 90.7,200.4"/><line x1="125" y1="22" x2="90.7" y2="200.4" stroke="#c2562b" stroke-width="2"/><line x1="73.5" y1="111.2" x2="228" y2="200.4" stroke="#c2562b" stroke-width="2"/><line x1="90.7" y1="81.5" x2="228" y2="200.4" stroke="#c2562b" stroke-width="2"/><line x1="73.5" y1="111.2" x2="159.3" y2="81.5"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="125" y="15.9" text-anchor="middle">A</text><text x="45.3" y="145.8" text-anchor="middle">B</text><text x="204.7" y="145.8" text-anchor="middle">C</text><text x="125" y="156.8" text-anchor="middle">D</text><text x="167.1" y="78.6" text-anchor="middle">E</text><text x="82.9" y="78.6" text-anchor="middle">F</text><text x="62.5" y="116.1" text-anchor="middle">N</text><text x="118.8" y="116.1" text-anchor="middle">M</text><text x="159.3" y="134.8" text-anchor="middle">P</text><text x="14.2" y="213.1" text-anchor="middle">Q</text><text x="90.7" y="216.3" text-anchor="middle">R</text><text x="159.3" y="216.3" text-anchor="middle">S</text><text x="235.8" y="213.1" text-anchor="middle">T</text><text x="93.4" y="133.9" text-anchor="middle">U</text></g>
+</svg><figcaption>證二：在 $BC$ 下方補五個邊長 $\frac12AB$ 的正三角形，拼成大正三角形 $AQT$</figcaption></figure>
+<p>看 $\triangle ANT$：$\frac{NF}{FA}=\frac12$，$\frac{AE}{ET}=\frac12$，而</p>
+$$\frac{TU}{UN}=\frac{TD+DU}{UN}=\frac{2DN+DU}{UN}=\frac{2(DU+UN)+DU}{UN}=2+3\cdot\frac{DU}{UN}=2+3\cdot\frac{DR}{AN}=2+3\cdot\frac23=4,$$
+<p>⟦這幾步｜$D$ 是 $NT$ 的三等分點（$TD=2DN$）；$AN\parallel DR$（都平行於 $AB$ 方向），$\triangle UDR\sim\triangle UNA$，$\frac{DU}{UN}=\frac{DR}{NA}$；$DR=\frac12AB$、$AN=\frac34AB$。⟧所以 $\frac{NF}{FA}\cdot\frac{AE}{ET}\cdot\frac{TU}{UN}=\frac12\cdot\frac12\cdot4=1$，由西瓦定理的逆定理，$AU$（即 $AM$）、$NE$、$TF$（即 $FP$）共點。</p>
+<p><b>說明</b>　三角形的三條高、中線、角平分線、邊的中垂線都共點，交點分別是垂心、重心、內心、外心；旁心是一個角的平分線與另兩角外角平分線的交點。用西瓦定理的逆定理不難證明這些事實，留作練習。</p>
+<p>又設 $X_1,Y_1,Z_1$ 是內切圓在 $BC,CA,AB$ 上的切點，$X_2,Y_2,Z_2$ 是旁切圓在這三邊上的切點，不難證明 $AY_1=AZ_1=CY_2=BZ_2$、$BZ_1=BX_1=AZ_2=CX_2$、$CX_1=CY_1=BX_2=AY_2$（切線長，請讀者完成），所以</p>
+$$\frac{BX_1}{X_1C}\cdot\frac{CY_1}{Y_1A}\cdot\frac{AZ_1}{Z_1B}=1,\qquad\frac{BX_2}{X_2C}\cdot\frac{CY_2}{Y_2A}\cdot\frac{AZ_2}{Z_2B}=1.$$
+<p>因此：(1) 頂點與對邊上內切圓切點的連線共點（<b>熱爾岡點</b>）；(2) 頂點與對邊上旁切圓切點的連線共點（<b>奈格爾點</b>）。</p>
+=== 例 6
+zh: 自 $\triangle ABC$ 的三邊分別向外作正三角形 $BCA_1$、$CAB_1$、$ABC_1$。證明直線 $AA_1$、$BB_1$、$CC_1$ 共點。
+sol: <figure class="bkfig"><svg viewBox="0 0 258 250" width="258" role="img" aria-label="費馬點">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="129.8,33.4 66,121 189.5,121" stroke-width="2"/><polygon points="66,121 127.8,228 189.5,121"/><polygon points="189.5,121 235.6,25.5 129.8,33.4"/><polygon points="129.8,33.4 22,22 66,121"/><line x1="129.8" y1="33.4" x2="127.8" y2="228"/><line x1="66" y1="121" x2="235.6" y2="25.5"/><line x1="189.5" y1="121" x2="22" y2="22"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="129.8" y="27.3" text-anchor="middle">A</text><text x="55" y="125.9" text-anchor="middle">B</text><text x="200.5" y="125.9" text-anchor="middle">C</text><text x="127.8" y="243.9" text-anchor="middle">A<tspan font-size="10">1</tspan></text><text x="245.8" y="22.6" text-anchor="middle">B<tspan font-size="10">1</tspan></text><text x="11.7" y="19.1" text-anchor="middle">C<tspan font-size="10">1</tspan></text></g>
+</svg><figcaption>三邊上向外作正三角形；$AA_1,BB_1,CC_1$ 交於費馬點</figcaption></figure>
+<p><b>證</b>　設 $AA_1,BB_1,CC_1$ 分別交 $BC,CA,AB$ 於 $A_2,B_2,C_2$，$B$、$C$ 到 $AA_1$ 的距離為 $p$、$q$。則</p>
+$$\frac{BA_2}{A_2C}=\frac pq=\frac{S_{\triangle ABA_1}}{S_{\triangle ACA_1}}=\frac{AB\cdot BA_1\sin\angle ABA_1}{AC\cdot CA_1\sin\angle ACA_1}=\frac{AB\cdot BA_1\sin(B+60^\circ)}{AC\cdot CA_1\sin(C+60^\circ)}.$$
+<p>同理</p>
+$$\frac{CB_2}{B_2A}=\frac{BC\cdot CB_1\sin(C+60^\circ)}{BA\cdot AB_1\sin(A+60^\circ)},\qquad\frac{AC_2}{C_2B}=\frac{CA\cdot AC_1\sin(A+60^\circ)}{CB\cdot BC_1\sin(B+60^\circ)}.$$
+<p>三式相乘，因為 $BA_1=CA_1=BC$、$CB_1=AB_1=CA$、$AC_1=BC_1=AB$，右邊全部約掉，乘積為 $1$。由西瓦定理的逆定理，三線共點，這點稱為<b>費馬點</b>。</p>
+=== text
+<p>三線共點的充要條件除了例 3，還有所謂<b>卡諾定理</b>，即下面的例 7。</p>
+
+=== 例 7 | 卡諾定理
+zh: <p>設 $A_1$、$B_1$、$C_1$ 分別是 $\triangle ABC$ 的邊 $BC$、$CA$、$AB$ 或其延長線上的一點。證明：分別過 $A_1$、$B_1$、$C_1$ 且與所在邊垂直的三條直線共點的充分必要條件是</p>
+$$BA_1^2-A_1C^2+CB_1^2-B_1A^2+AC_1^2-C_1B^2=0.\quad\text{①}$$
+sol: <figure class="bkfig"><svg viewBox="0 0 262 200" width="262" role="img" aria-label="卡諾定理">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="120.8,22 22,178 240.4,178"/><line x1="120.8" y1="115.6" x2="120.8" y2="178"/><line x1="120.8" y1="115.6" x2="166" y2="81"/><line x1="120.8" y1="115.6" x2="78.5" y2="88.8"/><line x1="120.8" y1="115.6" x2="120.8" y2="22" stroke-dasharray="5 4"/><line x1="120.8" y1="115.6" x2="22" y2="178" stroke-dasharray="5 4"/><line x1="120.8" y1="115.6" x2="240.4" y2="178" stroke-dasharray="5 4"/><polyline points="120.8,173 125.8,173 125.8,178" stroke-width="1"/><polyline points="162,84 165.1,88 169,84.9" stroke-width="1"/><polyline points="82.7,91.5 85.4,87.3 81.2,84.6" stroke-width="1"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="120.8" y="15.9" text-anchor="middle">A</text><text x="14.2" y="190.7" text-anchor="middle">B</text><text x="248.2" y="190.7" text-anchor="middle">C</text><text x="131.8" y="120.5" text-anchor="middle">P</text><text x="120.8" y="193.9" text-anchor="middle">A<tspan font-size="10">1</tspan></text><text x="176.2" y="78.1" text-anchor="middle">B<tspan font-size="10">1</tspan></text><text x="68.2" y="85.9" text-anchor="middle">C<tspan font-size="10">1</tspan></text></g>
+</svg><figcaption>三條垂線交於 $P$；連 $PA,PB,PC$（虛線）</figcaption></figure>
+<p><b>證</b>　必要性：設三條垂線交於 $P$。由勾股定理 $A_1P^2=PB^2-BA_1^2=PC^2-A_1C^2$，即</p>
+$$PB^2-PC^2=BA_1^2-A_1C^2.\quad\text{②}$$
+<p>同理 $PC^2-PA^2=CB_1^2-B_1A^2$③，$PA^2-PB^2=AC_1^2-C_1B^2$④。三式相加，左邊為 $0$，得 ①。</p>
+<p>充分性：設 $P$ 是過 $A_1$、$B_1$ 的兩條垂線的交點，則 ②③ 成立。代入 ① 得 ④，即 $PA^2-PB^2=AC_1^2-C_1B^2$，這表示 $P$ 在 $AB$ 上的射影就是 $C_1$⟦為什麼｜到 $A$、$B$ 距離平方差為定值的點，在一條垂直於 $AB$ 的直線上（第 23 講的「共用一條高，相減」）；這條直線過 $C_1$。⟧，$PC_1\perp AB$，三條垂線交於 $P$。</p>
+<p>有些共點問題用卡諾定理比用西瓦定理方便。</p>
+=== 例 8
+zh: $A_1$、$B_1$、$C_1$ 分別是 $\triangle ABC$ 的邊 $BC$、$CA$、$AB$ 所在直線上的點，過它們且與所在邊垂直的三條直線共點。證明：分別過 $A$、$B$、$C$ 且與直線 $B_1C_1$、$C_1A_1$、$A_1B_1$ 垂直的三條直線也共點。
+sol: <p><b>證</b>　由卡諾定理（必要性），$BA_1^2-A_1C^2+CB_1^2-B_1A^2+AC_1^2-C_1B^2=0$。把它重新分組，就是對 $\triangle A_1B_1C_1$ 與點 $A$、$B$、$C$ 而言</p>
+$$B_1A^2-AC_1^2+C_1B^2-BA_1^2+A_1C^2-CB_1^2=0$$
+<p>⟦怎麼看出來｜把 $\triangle A_1B_1C_1$ 的卡諾條件照樣寫出來：邊 $B_1C_1$ 配點 $A$ 得 $B_1A^2-AC_1^2$，邊 $C_1A_1$ 配點 $B$ 得 $C_1B^2-BA_1^2$，邊 $A_1B_1$ 配點 $C$ 得 $A_1C^2-CB_1^2$。三項加起來正好是原式乘以 $-1$。點不在邊上也沒關係：$A$ 換成它在 $B_1C_1$ 上的垂足，$B_1A^2-AC_1^2$ 的值不變。⟧。再由卡諾定理（充分性，這時 $A,B,C$ 是「垂足」所在位置，不必在邊上），過 $A$、$B$、$C$ 而與 $B_1C_1$、$C_1A_1$、$A_1B_1$ 垂直的直線交於一點。</p>
+=== 例 9
+zh: $A_1$、$B_1$、$C_1$ 是 $\triangle ABC$ 的邊 $BC$、$CA$、$AB$ 的中點，$A_2$、$B_2$、$C_2$ 是點 $M$ 在直線 $BC$、$CA$、$AB$ 上的射影。分別過 $A_1$、$B_1$、$C_1$ 作直線 $B_2C_2$、$C_2A_2$、$A_2B_2$ 的垂線。證明這三條垂線共點。
+sol: <figure class="bkfig"><svg viewBox="0 0 275 220" width="275" role="img" aria-label="中點與垂足三角形">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="110,22 22,198 253,198"/><polygon points="77,198 156.1,78.7 55,132"/><line x1="77" y1="143" x2="77" y2="198"/><line x1="77" y1="143" x2="156.1" y2="78.7"/><line x1="77" y1="143" x2="55" y2="132"/><line x1="137.5" y1="198" x2="104.6" y2="135.6" stroke-dasharray="5 4"/><line x1="181.5" y1="110" x2="104.6" y2="135.6" stroke-dasharray="5 4"/><line x1="66" y1="110" x2="104.6" y2="135.6" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="110" y="15.9" text-anchor="middle">A</text><text x="14.2" y="210.7" text-anchor="middle">B</text><text x="260.8" y="210.7" text-anchor="middle">C</text><text x="66" y="147.9" text-anchor="middle">M</text><text x="137.5" y="213.9" text-anchor="middle">A<tspan font-size="10">1</tspan></text><text x="191.8" y="107.1" text-anchor="middle">B<tspan font-size="10">1</tspan></text><text x="55.7" y="107.1" text-anchor="middle">C<tspan font-size="10">1</tspan></text><text x="77" y="213.9" text-anchor="middle">A<tspan font-size="10">2</tspan></text><text x="166.3" y="75.9" text-anchor="middle">B<tspan font-size="10">2</tspan></text><text x="40.5" y="136.9" text-anchor="middle">C<tspan font-size="10">2</tspan></text></g>
+</svg><figcaption>$A_2B_2C_2$ 是 $M$ 的垂足三角形；過各邊中點作垂線（虛線）交於一點</figcaption></figure>
+<p><b>證</b>　$BC$ 的垂線也就是 $B_1C_1$ 的垂線（$B_1C_1\parallel BC$）。所以已知條件說的是：分別過 $A_2,B_2,C_2$ 與 $\triangle A_1B_1C_1$ 的邊 $B_1C_1$、$C_1A_1$、$A_1B_1$ 垂直的直線共點於 $M$。由例 8（把 $\triangle A_1B_1C_1$ 與 $\triangle A_2B_2C_2$ 的角色對調），結論成立。</p>
+=== 例 10
+zh: $I_A$、$I_B$、$I_C$ 是 $\triangle ABC$ 的旁心，$I$ 是內心，$D$、$E$ 分別是 $AB$、$AC$ 的中點。過 $A$ 作 $BI$ 的平行線交 $CI$ 於 $P$，作 $CI$ 的平行線交 $BI$ 於 $Q$，作 $I_AI_B$ 的平行線交 $I_CI_A$ 於 $R$，作 $I_CI_A$ 的平行線交 $I_AI_B$ 於 $S$。證明直線 $DE$、$PQ$、$RS$ 共點或互相平行。
+sol: <figure class="bkfig"><svg viewBox="0 0 269 260" width="269" role="img" aria-label="旁心三角形中的三線共點">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="177.4,238 247.1,22 62.5,86.9"/><polygon points="117.5,67.5 98.9,134.7 210.8,134.7"/><line x1="117.5" y1="67.5" x2="177.4" y2="238"/><line x1="98.9" y1="134.7" x2="132.2" y2="109.3"/><line x1="210.8" y1="134.7" x2="132.2" y2="109.3"/><line x1="117.5" y1="67.5" x2="83.3" y2="93.5"/><line x1="117.5" y1="67.5" x2="166.4" y2="83.3"/><line x1="117.5" y1="67.5" x2="96.8" y2="131.9"/><line x1="117.5" y1="67.5" x2="198.2" y2="173.6"/><line x1="22" y1="101.1" x2="164.1" y2="101.1" stroke="#c2562b" stroke-width="2"/><line x1="22" y1="101.1" x2="166.4" y2="83.3" stroke="#c2562b" stroke-width="2"/><line x1="22" y1="101.1" x2="198.2" y2="173.6" stroke="#c2562b" stroke-width="2"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="117.5" y="61.4" text-anchor="middle">A</text><text x="87.9" y="139.6" text-anchor="middle">B</text><text x="221.8" y="139.6" text-anchor="middle">C</text><text x="143.2" y="114.2" text-anchor="middle">I</text><text x="100.4" y="98.2" text-anchor="middle">D</text><text x="164.1" y="95" text-anchor="middle">E</text><text x="72.3" y="98.4" text-anchor="middle">P</text><text x="174.2" y="80.4" text-anchor="middle">Q</text><text x="85.8" y="136.8" text-anchor="middle">R</text><text x="209.2" y="178.5" text-anchor="middle">S</text><text x="177.4" y="253.9" text-anchor="middle">I<tspan font-size="10">A</tspan></text><text x="257.3" y="19.1" text-anchor="middle">I<tspan font-size="10">B</tspan></text><text x="52.3" y="84" text-anchor="middle">I<tspan font-size="10">C</tspan></text><text x="11" y="106" text-anchor="middle">O</text></g>
+</svg><figcaption>$AP\parallel BI$、$AQ\parallel CI$、$AR\parallel I_AI_B$、$AS\parallel I_CI_A$；紅線 $DE$、$PQ$、$RS$ 交於一點</figcaption></figure>
+<p><b>證</b>　設 $A$ 在 $BI$、$CI$、$I_CI_A$、$I_AI_B$ 上的射影分別是 $K$、$L$、$M$、$N$。由上一講例 2，$K,L,M,N$ 都在直線 $DE$ 上。</p>
+<p>由 $AP\parallel BI$、$BI\perp I_CI_A$，得 $AP\perp I_CI_A$，而 $M$ 是 $A$ 在 $I_CI_A$ 上的射影，所以 $A,P,M$ 共線。同理 $A,L,R$ 共線，$A,K,S$ 共線，$A,N,Q$ 共線。</p>
+<p>在 $\triangle MPI_C$ 與 $\triangle NQI_B$ 中，$MP$ 與 $NQ$ 交於 $A$，$PI_C$ 與 $QI_B$ 交於 $I$，$MI_C$ 與 $NI_B$ 交於 $I_A$，而 $A,I,I_A$ 共線，由戴沙格定理的逆定理，$I_BI_C$、$PQ$、$MN$ 共點或互相平行。$A,I,I_A$ 同時也是 $\triangle LRI_C$ 與 $\triangle KSI_B$ 對應邊（所在直線）的交點，所以 $I_BI_C$、$RS$、$KL$ 共點或互相平行。而 $MN$、$KL$ 都就是直線 $DE$。</p>
+<p>若 $I_CI_B$ 與 $DE$ 相交，$PQ$、$RS$ 也都過這個交點；若 $I_CI_B\parallel DE$，則 $DE,PQ,RS$ 互相平行。</p>
+=== 習題 1
+zh: 以 $\triangle ABC$ 的邊 $AB$、$AC$ 為邊分別向外作正方形 $ABEF$、$ACGH$，$AD$ 是 $\triangle ABC$ 的高。證明 $AD$、$BG$、$CE$ 三線共點。
+sol: <figure class="bkfig"><svg viewBox="0 0 260 208" width="260" role="img" aria-label="兩邊上的正方形與高">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="144.9,133.7 74.1,185.9 185.9,185.9" stroke-width="2"/><polygon points="144.9,133.7 74.1,185.9 22,115.1 92.8,63"/><polygon points="144.9,133.7 185.9,185.9 238,144.9 197,92.8"/><line x1="144.9" y1="185.9" x2="144.9" y2="22" stroke-dasharray="5 4"/><line x1="74.1" y1="185.9" x2="238" y2="144.9"/><line x1="185.9" y1="185.9" x2="22" y2="115.1"/><line x1="144.9" y1="22" x2="74.1" y2="185.9" stroke-dasharray="5 4"/><line x1="144.9" y1="22" x2="185.9" y2="185.9" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="155.9" y="138.6" text-anchor="middle">A</text><text x="66.4" y="198.5" text-anchor="middle">B</text><text x="193.6" y="198.5" text-anchor="middle">C</text><text x="144.9" y="201.8" text-anchor="middle">D</text><text x="11" y="120" text-anchor="middle">E</text><text x="92.8" y="56.9" text-anchor="middle">F</text><text x="249" y="149.8" text-anchor="middle">G</text><text x="197" y="86.7" text-anchor="middle">H</text><text x="144.9" y="15.9" text-anchor="middle">K</text></g>
+</svg><figcaption>延長 $DA$ 到 $K$ 使 $AK=BC$（虛線）；$AD,BG,CE$ 是 $\triangle KBC$ 的三條高</figcaption></figure>
+<p>延長 $DA$ 到 $K$，使 $AK=BC$。⟦易證｜$AK=CB$、$AC=CG$，$\angle KAC=180^\circ-\angle DAC=90^\circ+\angle ACB=\angle BCG$，所以 $\triangle KAC\cong\triangle BCG$。而 $AK\perp CB$、$AC\perp CG$，兩個三角形差一個 $90^\circ$ 旋轉，第三邊也垂直：$KC\perp BG$。⟧$BG\perp CK$，同理 $CE\perp BK$。所以 $AD$、$BG$、$CE$ 是 $\triangle KBC$ 的三條高所在直線，共點。</p>
+=== 習題 2
+zh: 在 $\triangle ABC$ 的邊 $BC$、$CA$、$AB$ 上各有一點 $D$、$E$、$F$，已知 $AD$ 平分 $\angle EDF$，且 $AD$、$BE$、$CF$ 交於一點。證明 $AD$ 是 $\triangle ABC$ 的高。
+sol: <figure class="bkfig"><svg viewBox="0 0 239 200" width="239" role="img" aria-label="例 4 的逆命題">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="158.5,22 22,178 217,178"/><line x1="158.5" y1="22" x2="158.5" y2="178"/><line x1="158.5" y1="178" x2="187.8" y2="100"/><line x1="158.5" y1="178" x2="117.5" y2="68.8"/><line x1="22" y1="178" x2="187.8" y2="100"/><line x1="217" y1="178" x2="117.5" y2="68.8"/><line x1="100" y1="22" x2="217" y2="22" stroke-dasharray="5 4"/><line x1="117.5" y1="68.8" x2="100" y2="22" stroke-dasharray="5 4"/><line x1="187.8" y1="100" x2="217" y2="22" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="158.5" y="15.9" text-anchor="middle">A</text><text x="14.2" y="190.7" text-anchor="middle">B</text><text x="224.8" y="190.7" text-anchor="middle">C</text><text x="158.5" y="193.9" text-anchor="middle">D</text><text x="198.8" y="104.9" text-anchor="middle">E</text><text x="106.5" y="73.7" text-anchor="middle">F</text><text x="224.8" y="19.1" text-anchor="middle">P</text><text x="92.2" y="19.1" text-anchor="middle">Q</text></g>
+</svg><figcaption>過 $A$ 作 $BC$ 的平行線交 $DE$、$DF$ 於 $P$、$Q$（虛線）</figcaption></figure>
+<p>過 $A$ 作 $BC$ 的平行線，與 $DE$、$DF$ 分別交於 $P$、$Q$。由 $\frac{CE}{EA}=\frac{DC}{AP}$、$\frac{AF}{FB}=\frac{AQ}{BD}$ 及西瓦定理 $\frac{BD}{DC}\cdot\frac{CE}{EA}\cdot\frac{AF}{FB}=1$，得 $AP=AQ$。$AD$ 既是 $\angle PDQ$ 的平分線又是中線，所以 $PD=QD$，$AD\perp PQ$，即 $AD\perp BC$。</p>
+=== 習題 3
+zh: $\triangle ABC$ 的頂點 $B$、$C$ 在 $\angle A$ 的外角平分線上的射影分別為 $B'$、$C'$，$AD$ 是 $\angle A$ 的（內角）平分線。證明 $AD$、$BC'$、$CB'$ 三線共點。
+sol: <figure class="bkfig"><svg viewBox="0 0 280 156" width="280" role="img" aria-label="外角平分線上的射影">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="107.6,45.3 35.2,134.4 258,134.4" stroke-width="2"/><line x1="22" y1="60.6" x2="237.9" y2="22"/><line x1="35.2" y1="134.4" x2="22" y2="60.6"/><line x1="258" y1="134.4" x2="237.9" y2="22"/><line x1="107.6" y1="45.3" x2="123.5" y2="134.4"/><line x1="35.2" y1="134.4" x2="237.9" y2="22"/><line x1="258" y1="134.4" x2="22" y2="60.6"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="107.6" y="39.2" text-anchor="middle">A</text><text x="27.4" y="147.1" text-anchor="middle">B</text><text x="265.8" y="147.1" text-anchor="middle">C</text><text x="123.5" y="150.3" text-anchor="middle">D</text><text x="7.5" y="65.5" text-anchor="middle">B′</text><text x="248.2" y="19.1" text-anchor="middle">C′</text></g>
+</svg><figcaption>$B',C'$ 是 $B,C$ 在外角平分線上的射影；$AD$ 是內角平分線</figcaption></figure>
+<p>設 $AD$ 與 $BC'$ 交於 $P_1$、與 $CB'$ 交於 $P_2$。$AD$、$BB'$、$CC'$ 都垂直於外角平分線，互相平行，所以 $\frac{AP_1}{BB'}=\frac{AC'}{B'C'}$，$\frac{AP_2}{CC'}=\frac{AB'}{B'C'}$。又 $\triangle AB'B\sim\triangle AC'C$（直角三角形，$\angle BAB'=\angle CAC'$），$\frac{AB'}{BB'}=\frac{AC'}{CC'}$。由此 $AP_1=AP_2$，三線共點。</p>
+<p><b>註</b>　原書題目寫「$AD$ 為 $\triangle ABC$ 的高」，但解答用到 $AD\parallel BB'$，這只在 $AD$ 是內角平分線時成立；按「高」的版本，三線一般不共點（用坐標驗算可知），這裡改為角平分線。</p>
+=== 習題 4
+zh: 設 $P$ 是 $\triangle ABC$ 內任意一點，$AP$、$BP$、$CP$ 分別交對邊於 $D$、$E$、$F$。求 $\triangle DEF$ 面積的最大值（以 $\triangle ABC$ 的面積表示），並確定此時點 $P$ 的位置。
+sol: <p>設 $\frac{BD}{DC}=\lambda$，$\frac{CE}{EA}=\mu$，$\frac{AF}{FB}=\gamma$，由西瓦定理 $\lambda\mu\gamma=1$。</p>
+$$\frac{S_{\triangle AEF}}{S_{\triangle ABC}}=\frac{AF\cdot AE}{AB\cdot AC}=\frac{\gamma}{1+\gamma}\cdot\frac{1}{1+\mu}=\frac{\gamma}{(1+\gamma)(1+\mu)},$$
+<p>同理 $\frac{S_{\triangle BDF}}{S_{\triangle ABC}}=\frac{\lambda}{(1+\lambda)(1+\gamma)}$，$\frac{S_{\triangle CDE}}{S_{\triangle ABC}}=\frac{\mu}{(1+\mu)(1+\lambda)}$。所以</p>
+$$\frac{S_{\triangle DEF}}{S_{\triangle ABC}}=1-\Big(\frac{\gamma}{(1+\gamma)(1+\mu)}+\frac{\lambda}{(1+\lambda)(1+\gamma)}+\frac{\mu}{(1+\mu)(1+\lambda)}\Big)=\frac{2}{(1+\lambda)(1+\mu)(1+\gamma)}.$$
+<p>⟦最後一步｜通分後分子是 $(1+\lambda)(1+\mu)(1+\gamma)-[\gamma(1+\lambda)+\lambda(1+\mu)+\mu(1+\gamma)]=1+\lambda\mu\gamma=2$。⟧由算幾不等式 $1+\lambda\ge2\sqrt\lambda$ 等，分母 $\ge8\sqrt{\lambda\mu\gamma}=8$，所以 $S_{\triangle DEF}\le\frac14S_{\triangle ABC}$，等號當且僅當 $\lambda=\mu=\gamma=1$，即 $P$ 是重心。</p>
+ans: 最大值 $\frac14S_{\triangle ABC}$，此時 $P$ 是重心

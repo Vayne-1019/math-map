@@ -1,0 +1,25 @@
+=== meta
+title: 全等三角形：找不到就自己造
+from: cz-L19
+order: 20
+
+=== body
+<div class="hero">要證兩線段或兩角相等 → 找兩個<b>全等三角形</b>分別含有它們<br>圖上沒有現成的 → <b>添輔助線造一對</b></div>
+<figure class="bkfig"><svg viewBox="0 0 230 205" width="230" role="img" aria-label="正三角形 ABC 與延長線上的點 D、E">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,183.1 136.5,183.1 115,22"/><line x1="57.8" y1="121.1" x2="93.5" y2="183.1"/><line x1="93.5" y1="183.1" x2="115" y2="22"/><line x1="136.5" y1="183.1" x2="208" y2="183.1" stroke-dasharray="5 4"/><line x1="115" y1="22" x2="208" y2="183.1" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="195.8" text-anchor="middle">B</text><text x="93.5" y="199" text-anchor="middle">C</text><text x="136.5" y="199" text-anchor="middle">D</text><text x="46.8" y="126" text-anchor="middle">A</text><text x="115" y="15.9" text-anchor="middle">E</text><text x="208" y="199" text-anchor="middle">F</text></g>
+</svg><figcaption>證法一：延長 $BD$ 到 $F$ 使 $BF=BE$（虛線），$\triangle BEF$ 是正三角形</figcaption></figure>
+<div class="cards">
+<div class="card"><h4>① 補成對稱圖形</h4><div class="rule">有 $60^\circ$ 角 → 補成正三角形</div>
+<div class="eg">例：延長 $BD$ 到 $F$ 使 $BF=BE$，$\triangle BEF$ 正三角形，$\triangle BCE\cong\triangle FDE$ <span class="pill">補全</span></div></div>
+<div class="card"><h4>② 取中點，造一樣大的</h4><div class="rule">兩三角形一大一小 → 在大的裡面截一個</div>
+<div class="eg">正方形邊長 2：取 $AD$ 中點 $P$，$DP=1=MB$ <span class="pill">截長</span></div></div>
+<div class="card"><h4>③ 旋轉 60° 的一對</h4><div class="rule">兩個正三角形共頂點 → 一對全等</div>
+<div class="eg">$\triangle ACD\cong\triangle BCE$，夾角都是 $60^\circ+\angle BCD$ <span class="pill">共頂點</span></div></div>
+</div>
+<p>同一法：先造出具有性質的圖形，再證它就是原圖形。⟦為什麼可以｜例：要證 $\angle A$ 的平分線過 $F$，先證 $AF$ 是平分線；角平分線只有一條，所以就是它。前提是「具有該性質的圖形唯一」。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>全等式字母沒照對應順序：$A\leftrightarrow E$、$B\leftrightarrow D$ 要寫 $\triangle ABC\cong\triangle EDF$</li>
+<li>「兩邊及其中一邊的對角」（SSA）<b>不能</b>判定全等</li></ul></div>
+<div class="bottomline">先問「哪兩個三角形該全等」，缺什麼邊、角，就用輔助線補什麼。</div>

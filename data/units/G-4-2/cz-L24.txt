@@ -1,0 +1,25 @@
+=== meta
+title: 證四點共圓的三招
+from: cz-L24
+order: 20
+
+=== body
+<div class="hero">四點共圓是<b>直線形與圓之間的橋</b><br>證出共圓 → 立刻多出一堆相等的角</div>
+<figure class="bkfig"><svg viewBox="0 0 137 230" width="137" role="img" aria-label="直徑、切線與兩條弦">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="68.4" cy="161.6" r="46.4"/><line x1="22" y1="161.6" x2="114.9" y2="161.6"/><line x1="22" y1="161.6" x2="114.9" y2="29"/><line x1="22" y1="161.6" x2="114.9" y2="105.8"/><line x1="114.9" y1="175.5" x2="114.9" y2="22"/><line x1="114.9" y1="161.6" x2="52.5" y2="117.9" stroke-dasharray="5 4"/><line x1="52.5" y1="117.9" x2="90.2" y2="120.6" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="11" y="166.5" text-anchor="middle">A</text><text x="122.6" y="174.3" text-anchor="middle">B</text><text x="52.5" y="111.8" text-anchor="middle">C</text><text x="98" y="117.7" text-anchor="middle">D</text><text x="125.9" y="33.9" text-anchor="middle">E</text><text x="125.9" y="110.7" text-anchor="middle">F</text></g>
+</svg><figcaption>$AB$ 是直徑，過 $B$ 的切線交 $AC$、$AD$ 的延長線於 $E$、$F$；連 $BC$、$CD$（虛線）</figcaption></figure>
+<div class="cards">
+<div class="card"><h4>① 到一點等距</h4><div class="rule">先猜圓心</div>
+<div class="eg">正方形對角線上一點 $P$ 引出的 $E,F,G,H$：圓心是正方形中心 <span class="pill">定義</span></div></div>
+<div class="card"><h4>② 同側張角相等</h4><div class="rule">$\angle AEF=\angle ADF$ ⇒ $A,F,D,E$ 共圓</div>
+<div class="eg">特例：兩個直角看同一線段 ⇒ 以它為直徑 <span class="pill">看同一弦</span></div></div>
+<div class="card"><h4>③ 對角互補／外角 = 內對角</h4><div class="rule">$\angle CDA=\angle CEF$ ⇒ $C,D,F,E$ 共圓</div>
+<div class="eg">$AB$ 直徑、$B$ 處切線：$\angle CDA=\angle CBA=\angle AEB$ <span class="pill">外角</span></div></div>
+</div>
+<p>五點共圓？⟦拆成兩組｜先證 $P,Q,N,C$ 共圓、再證 $Q,N,M,C$ 共圓；兩個圓都過不共線的 $Q,N,C$，所以是同一個圓。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>用「張角相等」時忘了確認兩點在線段的<b>同側</b></li>
+<li>對邊之和相等 ⇔ 有<b>內切</b>圓；對角互補 ⇔ 有<b>外接</b>圓，不要混用</li></ul></div>
+<div class="bottomline">要角相等，先找共圓；要共圓，先找相等的角。</div>

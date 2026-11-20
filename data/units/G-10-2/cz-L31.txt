@@ -1,0 +1,20 @@
+=== meta
+title: 到三頂點距離和的最小值
+from: cz-L31
+order: 20
+
+=== body
+<div class="hero">$DA+DB+DC$ 最小 → 把 $\triangle CDA$ 繞 $C$ 轉 $60^\circ$<br>三段變成<b>一條折線</b> $A'D'+D'D+DB$，拉直就是 $A'B$</div>
+<figure class="bkfig"><svg viewBox="0 0 280 135" width="280" role="img" aria-label="直角三角形的費馬點">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="100.7,22 258,112.8 100.7,112.8" stroke-width="2"/><line x1="123.1" y1="86.9" x2="100.7" y2="22"/><line x1="123.1" y1="86.9" x2="258" y2="112.8"/><line x1="123.1" y1="86.9" x2="100.7" y2="112.8"/><line x1="22" y1="67.4" x2="258" y2="112.8" stroke-dasharray="5 4"/><line x1="100.7" y1="112.8" x2="22" y2="67.4" stroke-dasharray="5 4"/><line x1="22" y1="67.4" x2="89.4" y2="80.4" stroke-dasharray="5 4"/><line x1="100.7" y1="112.8" x2="89.4" y2="80.4" stroke-dasharray="5 4"/><line x1="22" y1="67.4" x2="22" y2="112.8" stroke-dasharray="5 4"/><line x1="22" y1="112.8" x2="100.7" y2="112.8" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="100.7" y="15.9" text-anchor="middle">A</text><text x="269" y="117.7" text-anchor="middle">B</text><text x="100.7" y="128.7" text-anchor="middle">C</text><text x="130.9" y="84" text-anchor="middle">D</text><text x="7.5" y="72.3" text-anchor="middle">A′</text><text x="89.4" y="74.3" text-anchor="middle">D′</text><text x="22" y="128.7" text-anchor="middle">E</text></g>
+</svg><figcaption>把 $\triangle CDA$ 繞 $C$ 轉 $60^\circ$ 到 $\triangle CD'A'$；$DA+DB+DC=A'D'+D'D+DB\ge A'B$（虛線）</figcaption></figure>
+<div class="cards">
+<div class="card"><h4>① 轉 60°</h4><div class="rule">$\triangle CDD'$ 正三角形</div>
+<div class="eg">$DC=DD'$、$DA=D'A'$ <span class="pill">換線段</span></div></div>
+<div class="card"><h4>② 拉直</h4><div class="rule">最小值 $=A'B$</div>
+<div class="eg">斜邊 $2$、兩股 $1,\sqrt3$：最小值 $\sqrt7$ <span class="pill">費馬點</span></div></div>
+</div>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul><li>三角形有一角 $\ge120^\circ$ 時，最小值點就是那個頂點，不能用這個轉法</li></ul></div>
+<div class="bottomline">三段距離和 → 轉 60° 變一條折線 → 兩點之間直線最短。</div>

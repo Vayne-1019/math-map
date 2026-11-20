@@ -1,0 +1,25 @@
+=== meta
+title: 截長補短：把「和」化成「相等」
+from: cz-L20
+order: 20
+
+=== body
+<div class="hero">要證 $a+b=c$ → 化成<b>兩條線段相等</b><br><b>截長</b>：在 $c$ 上截一段 $=a$，證剩下 $=b$<br><b>補短</b>：把 $a$ 接長 $b$，證接出來的 $=c$</div>
+<figure class="bkfig"><svg viewBox="0 0 300 151" width="300" role="img" aria-label="頂角 100° 的等腰三角形">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="150,22 22,129.4 278,129.4"/><line x1="22" y1="129.4" x2="200.6" y2="64.4"/><line x1="200.6" y1="64.4" x2="189.1" y2="129.4" stroke-dasharray="5 4"/><line x1="200.6" y1="64.4" x2="212" y2="129.4" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="150" y="15.9" text-anchor="middle">A</text><text x="11" y="134.3" text-anchor="middle">B</text><text x="289" y="134.3" text-anchor="middle">C</text><text x="208.3" y="61.5" text-anchor="middle">E</text><text x="189.1" y="145.3" text-anchor="middle">F</text><text x="212" y="145.3" text-anchor="middle">D</text></g>
+</svg><figcaption>證法二：在 $BC$ 上取 $BF=BA$、$BD=BE$，連 $EF$、$ED$（虛線）</figcaption></figure>
+<div class="cards">
+<div class="card"><h4>① 截長</h4><div class="rule">$BC$ 上取 $BD=BE$</div>
+<div class="eg">剩下證 $DC=AE$（$\angle A=100^\circ$ 的例子）<span class="pill">在長的上切</span></div></div>
+<div class="card"><h4>② 補短</h4><div class="rule">延長 $BE$ 到 $F$，$EF=AE$</div>
+<div class="eg">剩下證 $BF=BC$，即 $\angle BCF=\angle BFC$ <span class="pill">把短的接長</span></div></div>
+<div class="card"><h4>③ 角平分線 → 翻折</h4><div class="rule">沿平分線把三角形摺過去</div>
+<div class="eg">$BA$ 摺到 $BC$ 上：取 $BF=BA$，$\triangle ABE\cong\triangle FBE$ <span class="pill">翻折</span></div></div>
+</div>
+<p>倍、分也一樣：$a=2b$ 就是 $b+b=a$。⟦例｜要證 $DE=\frac12AB$，取 $AB$ 中點 $F$（把 $AB$ 折半），再證 $DE=DF$。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>截出來的點要確認<b>真的落在線段上</b>（必要時比較長短）</li>
+<li>有絕對值 $|AB-AC|$ 時忘了分 $AB=AC$、$AB\gt AC$、$AB\lt AC$ 討論</li></ul></div>
+<div class="bottomline">和差倍分 → 截長或補短 → 回到全等三角形證相等。</div>

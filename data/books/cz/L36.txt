@@ -1,0 +1,156 @@
+=== meta
+title: 幾何問題的代數解法（一）
+author: 嚴鎮軍
+pages: 293-300
+units: G-7-5, G-2-5
+status: 完成
+
+=== text
+<p>平面幾何中，許多幾何量（角度、線段長、面積等）之間的關係是用代數關係表示的：多邊形內角和定理、勾股定理、圓冪定理、各種比例式定理（相似形、角平分線定理等）、正弦與餘弦定理、各種面積公式等等。利用它們，可以用代數方法和三角方法解許多平面幾何問題。就初中範圍而言，大致包括兩方面：</p>
+<ol><li>把題目涉及的量（已知量與未知量）用已知的幾何定理聯繫成代數式，再用代數方法（計算、代入、消元、恆等變形、解方程）求出未知量或完成證明。</li>
+<li>引入三角函數，把角和線段這兩個基本元素聯繫起來，許多問題就能用三角法解決。正弦定理和餘弦定理是三角與幾何的紐帶，揭示了三角形邊角之間的數量關係。三角形是最基本的圖形，各種幾何問題大都離不開它，所以這兩個定理用途極廣，特別是證明相等或不等關係、判定三角形形狀、求定值與最值等方面。</li></ol>
+<h3>一、幾何量的計算</h3>
+
+=== 例 1
+zh: 正方形 $OPQR$ 內接於 $\triangle ABC$（$O$ 在 $AB$ 上，$R$ 在 $AC$ 上，$P$、$Q$ 在 $BC$ 上）。已知 $\triangle AOR$、$\triangle BOP$、$\triangle CQR$ 的面積分別是 $S_1=1$、$S_2=3$、$S_3=1$。求正方形的邊長。
+sol: <figure class="bkfig"><svg viewBox="0 0 280 162" width="280" role="img" aria-label="三角形的內接正方形">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="199,22 22,140 258,140"/><polygon points="140,61.3 140,140 218.7,140 218.7,61.3"/><line x1="199" y1="22" x2="199" y2="140" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="199" y="15.9" text-anchor="middle">A</text><text x="11" y="144.9" text-anchor="middle">B</text><text x="269" y="144.9" text-anchor="middle">C</text><text x="132.2" y="58.5" text-anchor="middle">O</text><text x="140" y="155.9" text-anchor="middle">P</text><text x="218.7" y="155.9" text-anchor="middle">Q</text><text x="226.4" y="58.5" text-anchor="middle">R</text><text x="199" y="155.9" text-anchor="middle">D</text><text x="191.2" y="58.5" text-anchor="middle">F</text></g>
+</svg><figcaption>正方形 $OPQR$ 內接於 $\triangle ABC$；作高 $AD$（虛線）。圖按答案邊長 $2$ 畫</figcaption></figure>
+<p><b>解</b>　作 $\triangle ABC$ 的高 $AD$，交 $OR$ 於 $F$。設正方形邊長為 $x$。由題 $OR\cdot AF=2S_1=2$，所以 $AF=\frac2x$；同理 $BP=\frac6x$，$QC=\frac2x$。於是</p>
+$$S_{\triangle ABC}=\tfrac12AD\cdot BC=\tfrac12\Big(x+\frac2x\Big)\Big(\frac6x+x+\frac2x\Big)=\tfrac12\Big(x^2+10+\frac{16}{x^2}\Big).$$
+<p>又 $S_{\triangle ABC}=S_1+S_2+S_3+S_{OPQR}=5+x^2$，所以 $\frac12\big(x^2+10+\frac{16}{x^2}\big)=5+x^2$，即 $x^4=16$，$x=2$。</p>
+ans: $2$
+
+=== 例 2 | 斯特瓦爾特定理
+zh: <p>在 $\triangle ABC$ 中，$AB=c$，$AC=b$，$D$ 在 $BC$ 上，且 $BD=q_1$，$CD=q_2$，則</p>
+$$AD^2=\frac{b^2q_1+c^2q_2}{q_1+q_2}-q_1q_2.\quad\text{①}$$
+sol: <figure class="bkfig"><svg viewBox="0 0 250 168" width="250" role="img" aria-label="斯特瓦爾特定理">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="155.9,22 22,145.6 228,145.6"/><line x1="155.9" y1="22" x2="99.2" y2="145.6"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="155.9" y="15.9" text-anchor="middle">A</text><text x="11" y="150.5" text-anchor="middle">B</text><text x="239" y="150.5" text-anchor="middle">C</text><text x="99.2" y="161.5" text-anchor="middle">D</text><text x="81.2" y="80.9" text-anchor="middle">c</text><text x="199.7" y="80.9" text-anchor="middle">b</text><text x="60.6" y="160.8" font-size="12" text-anchor="middle">q₁</text><text x="163.6" y="160.8" font-size="12" text-anchor="middle">q₂</text></g>
+</svg><figcaption>$D$ 把 $BC$ 分成 $q_1,q_2$</figcaption></figure>
+<p><b>證</b>　在 $\triangle ABD$ 中用餘弦定理：$AD^2=c^2+q_1^2-2cq_1\cos B$。② 設 $BC=a$，由餘弦定理 $\cos B=\frac{a^2+c^2-b^2}{2ac}$，代入 ②，並用 $a=q_1+q_2$ 整理⟦整理｜$AD^2=c^2+q_1^2-\frac{q_1}a(a^2+c^2-b^2)=\frac{c^2(a-q_1)+b^2q_1}a+q_1^2-q_1a=\frac{c^2q_2+b^2q_1}{q_1+q_2}-q_1q_2$。⟧得 ①。</p>
+<p><b>說明</b>　由這個定理可以得到三角形中特殊線段的計算公式（用三邊表示）：</p>
+<p>(1) 若 $AD$ 是 $a$ 邊上的中線（記為 $m_a$），$q_1=q_2=\frac a2$，代入 ① 得 $m_a=\frac12\sqrt{2b^2+2c^2-a^2}$；同理 $m_b=\frac12\sqrt{2c^2+2a^2-b^2}$，$m_c=\frac12\sqrt{2a^2+2b^2-c^2}$。</p>
+<p>(2) 若 $AD$ 是 $a$ 邊上的角平分線（記為 $t_a$），$\frac{q_1}c=\frac{q_2}b=\frac a{b+c}$，$q_1=\frac{ac}{b+c}$，$q_2=\frac{ab}{b+c}$，代入 ① 整理得</p>
+$$t_a^2=\frac{bc(b+c+a)(b+c-a)}{(b+c)^2},\qquad t_a=\frac2{b+c}\sqrt{bcp(p-a)},$$
+<p>其中 $p=\frac12(a+b+c)$。請讀者用字母輪換寫出 $t_b,t_c$。</p>
+<p>(3) 三邊上高的公式已在第 23 講求出。</p>
+=== 例 3
+zh: $P$、$Q$ 是海上的兩座燈塔。從海圖上知道，以 $PQ$ 為弦、所含圓周角為 $45^\circ$ 的弓形內是危險區，有許多暗礁。一艘海輪開始時看到兩座燈塔都在它的北偏東 $60^\circ$，向東航行一段距離後，看到燈塔 $P$ 恰在它的正北，燈塔 $Q$ 在它的北偏東 $m^\circ$（$\sin m^\circ=\frac{\sqrt{57}}{19}$）。問海輪繼續向東航行是否有觸礁的危險？
+sol: <figure class="bkfig"><svg viewBox="0 0 290 151" width="290" role="img" aria-label="燈塔與航線">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="168.8" cy="70.4" r="31.6"/><line x1="22" y1="129.3" x2="268" y2="129.3"/><line x1="22" y1="129.3" x2="207.9" y2="22"/><line x1="138.2" y1="129.3" x2="138.2" y2="62.3" stroke-dasharray="5 4"/><line x1="138.2" y1="129.3" x2="176.9" y2="39.9" stroke-dasharray="5 4"/><line x1="168.8" y1="70.4" x2="138.2" y2="62.3"/><line x1="168.8" y1="70.4" x2="176.9" y2="39.9"/><line x1="157.6" y1="51.1" x2="202.8" y2="129.3" stroke-dasharray="5 4"/><line x1="168.8" y1="70.4" x2="168.8" y2="129.3" stroke-dasharray="5 4"/><line x1="22" y1="129.3" x2="22" y2="35.4"/><polyline points="138.2,124.3 133.2,124.3 133.2,129.3" stroke-width="1"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="142" text-anchor="middle">A</text><text x="130.4" y="59.4" text-anchor="middle">P</text><text x="176.9" y="33.8" text-anchor="middle">Q</text><text x="179.8" y="75.3" text-anchor="middle">O</text><text x="157.6" y="45" text-anchor="middle">C</text><text x="138.2" y="145.2" text-anchor="middle">B</text><text x="202.8" y="145.2" text-anchor="middle">D</text><text x="168.8" y="145.2" text-anchor="middle">M</text><text x="33" y="39.6" font-style="normal" font-size="12" text-anchor="middle">北</text><text x="268" y="122.5" font-style="normal" font-size="12" text-anchor="middle">東</text></g>
+</svg><figcaption>$\angle POQ=90^\circ$ 的圓是危險區邊界；船從 $A$ 向東，$B$ 在 $P$ 的正南（按真實比例畫）</figcaption></figure>
+<p><b>解</b>　設 $\odot O$ 是含弦 $PQ$ 的圓，$\angle POQ=90^\circ$⟦為什麼｜圓周角 $45^\circ$ 對應圓心角 $90^\circ$。⟧。開始時在 $A$，正東方向為 $AT$，$\angle PAT=30^\circ$。$B$ 在 $AT$ 上、在 $P$ 的正南（$PB\perp AT$），$\angle PBQ=m^\circ$。作 $OC\perp PQ$（$C$ 是垂足），交 $AT$ 於 $D$；作 $OM\perp AT$（$M$ 是垂足）。</p>
+<p>令 $AP=2a$，$PQ=2b$，則 $PB=a$，$PC=CQ=CO=b$。在 $\triangle PQB$ 中 $\angle BPQ=120^\circ$，由餘弦定理及正弦定理</p>
+$$BQ^2=PQ^2+PB^2-2PQ\cdot PB\cos120^\circ=\Big(\frac{PQ\sin120^\circ}{\sin m^\circ}\Big)^2,$$
+<p>即 $4b^2+a^2+2ab=19b^2$⟦右邊｜$\big(\frac{2b\cdot\frac{\sqrt3}2}{\sqrt{57}/19}\big)^2=\frac{3b^2\cdot361}{57}=19b^2$。⟧。解得 $a=3b$（$a=-5b$ 捨去），所以 $AC=AP+PC=7b$，$CD=\frac1{\sqrt3}AC=\frac7{\sqrt3}b$，$OD=CD-CO=\big(\frac7{\sqrt3}-1\big)b$。所以</p>
+$$OM=\frac{\sqrt3}2OD=\frac{7-\sqrt3}2b\gt \sqrt2b=OP.$$
+<p>⟦為什麼｜$\angle CDA=90^\circ-30^\circ=60^\circ$，在直角 $\triangle OMD$ 中 $OM=OD\sin60^\circ$。數值上 $\frac{7-\sqrt3}2\approx2.63$，$\sqrt2\approx1.41$。⟧圓心到航線的距離大於半徑，直線 $AT$ 不與 $\odot O$ 相交，海輪沒有觸礁的危險。</p>
+ans: 沒有觸礁的危險
+
+=== text
+<h3>二、幾何命題的證明</h3>
+
+=== 例 4
+zh: 在 $\triangle ABC$ 中，$\angle C=90^\circ$，$BC=AC$，$AD$ 平分 $\angle BAC$。求證：$AB=AC+CD$。
+sol: <figure class="bkfig"><svg viewBox="0 0 150 150" width="150" role="img" aria-label="等腰直角三角形的角平分線">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,22 128,128 22,128"/><line x1="22" y1="22" x2="65.9" y2="128"/><polyline points="27,128 27,123 22,123" stroke-width="1"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="22" y="15.9" text-anchor="middle">A</text><text x="139" y="132.9" text-anchor="middle">B</text><text x="14.2" y="140.7" text-anchor="middle">C</text><text x="65.9" y="143.9" text-anchor="middle">D</text></g>
+</svg><figcaption>等腰直角三角形，$AD$ 平分 $\angle BAC$</figcaption></figure>
+<p><b>證</b>　設 $AC=BC=a$，則 $AB=\sqrt2a$。$AD$ 平分 $\angle BAC$，$\frac{CD}{BD}=\frac{AC}{AB}$。令 $CD=x$，則 $BD=a-x$，於是 $\frac x{a-x}=\frac a{\sqrt2a}$，即 $x(\sqrt2+1)=a$，$x=(\sqrt2-1)a$。所以 $AC+CD=a+(\sqrt2-1)a=\sqrt2a=AB$。</p>
+=== 例 5
+zh: 設 $CEDF$ 是一個已知圓的內接矩形，過 $D$ 作該圓的切線，與 $CE$ 的延長線交於 $A$，與 $CF$ 的延長線交於 $B$。求證：$AE\cdot BC^3=BF\cdot AC^3$。
+sol: <figure class="bkfig"><svg viewBox="0 0 300 160" width="300" role="img" aria-label="圓內接矩形與切線（三角法）">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="95.9" cy="80" r="58"/><polygon points="22,138 278,138 95.9,22"/><polygon points="95.9,22 43.3,104.5 95.9,138 148.5,55.5"/><line x1="95.9" y1="22" x2="95.9" y2="138" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="150.7" text-anchor="middle">A</text><text x="285.8" y="150.7" text-anchor="middle">B</text><text x="95.9" y="15.9" text-anchor="middle">C</text><text x="95.9" y="153.9" text-anchor="middle">D</text><text x="35.6" y="101.6" text-anchor="middle">E</text><text x="156.3" y="52.6" text-anchor="middle">F</text></g>
+</svg><figcaption>同第 22 講例 5；以 $\angle A=\alpha$ 為參數，$CD\perp AB$（虛線）</figcaption></figure>
+<p><b>證</b>　取 $\angle A=\alpha$ 為參數計算。連 $CD$，由題設 $CD\perp AB$，再由直角三角形的性質 $\angle BCD=\angle BDF=\alpha$。不妨設 $AB=1$，於是</p>
+$$\begin{aligned}AC&=\cos\alpha,&BC&=\sin\alpha,\\AD&=AC\cos\alpha=\cos^2\alpha,&BD&=BC\sin\alpha=\sin^2\alpha,\\AE&=AD\cos\alpha=\cos^3\alpha,&BF&=BD\sin\alpha=\sin^3\alpha,\end{aligned}$$
+<p>所以 $AE\cdot BC^3=\cos^3\alpha\sin^3\alpha=BF\cdot AC^3$。（比較第 22 講例 5 的綜合證法。）</p>
+=== 例 6
+zh: $O$ 是凸五邊形 $ABCDE$ 內一點，且 $\angle1=\angle2$，$\angle3=\angle4$，$\angle5=\angle6$，$\angle7=\angle8$（角的編號見圖）。求證：$\angle9$ 與 $\angle10$ 相等或互補。
+sol: <figure class="bkfig"><svg viewBox="0 0 229 220" width="229" role="img" aria-label="五邊形內一點與十個角">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="114.5,22 207.1,89.2 171.7,198 57.3,198 22,89.2"/><line x1="118.3" y1="126.8" x2="114.5" y2="22"/><line x1="118.3" y1="126.8" x2="207.1" y2="89.2"/><line x1="118.3" y1="126.8" x2="171.7" y2="198"/><line x1="118.3" y1="126.8" x2="57.3" y2="198"/><line x1="118.3" y1="126.8" x2="22" y2="89.2"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="125.8" y="46.9" font-style="normal" font-size="10" text-anchor="middle">1</text><text x="104" y="47.3" font-style="normal" font-size="10" text-anchor="middle">8</text><text x="183.3" y="90.2" font-style="normal" font-size="10" text-anchor="middle">10</text><text x="190.9" y="110.6" font-style="normal" font-size="10" text-anchor="middle">3</text><text x="167.8" y="178.1" font-style="normal" font-size="10" text-anchor="middle">2</text><text x="150.3" y="191" font-style="normal" font-size="10" text-anchor="middle">5</text><text x="79.1" y="191.7" font-style="normal" font-size="10" text-anchor="middle">4</text><text x="62" y="178.3" font-style="normal" font-size="10" text-anchor="middle">7</text><text x="38.4" y="110.4" font-style="normal" font-size="10" text-anchor="middle">6</text><text x="45.8" y="89.9" font-style="normal" font-size="10" text-anchor="middle">9</text><text x="114.5" y="15.9" text-anchor="middle">A</text><text x="218.1" y="94.1" text-anchor="middle">B</text><text x="179.5" y="210.7" text-anchor="middle">C</text><text x="49.6" y="210.7" text-anchor="middle">D</text><text x="11" y="94.1" text-anchor="middle">E</text><text x="129.3" y="131.7" text-anchor="middle">O</text></g>
+</svg><figcaption>角的編號：$\angle1=\angle OAB$、$\angle2=\angle OCB$、$\angle3=\angle OBC$、…、$\angle9=\angle OEA$、$\angle10=\angle OBA$（示意圖，不按題設比例）</figcaption></figure>
+<p><b>分析</b>　$\angle9$、$\angle10$ 都是三角形的內角，只要證 $\sin\angle9=\sin\angle10$。怎樣把兩者聯繫起來？$\angle1$ 與 $\angle10$ 在同一個三角形內，正弦定理把 $\sin\angle1$ 與 $\sin\angle10$ 聯繫起來，再由 $\angle1=\angle2$ 把 $\sin\angle2$ 與 $\sin\angle10$ 聯繫起來；而 $\angle3$ 與 $\angle2$ 又在同一個三角形內……反覆利用相等的角與正弦定理，最終把 $\sin\angle9$ 與 $\sin\angle10$ 聯繫起來。</p>
+<p><b>證</b>　依次對 $\triangle AOB$、$\triangle BOC$、$\triangle COD$、$\triangle DOE$、$\triangle EOA$ 用正弦定理，並利用題設：</p>
+$$\frac{OA}{\sin\angle10}=\frac{OB}{\sin\angle1}=\frac{OB}{\sin\angle2}=\frac{OC}{\sin\angle3}=\frac{OC}{\sin\angle4}=\frac{OD}{\sin\angle5}=\frac{OD}{\sin\angle6}=\frac{OE}{\sin\angle7}=\frac{OE}{\sin\angle8}=\frac{OA}{\sin\angle9}.$$
+<p>所以 $\sin\angle9=\sin\angle10$。又 $\angle9$、$\angle10$ 都是三角形的內角，所以它們相等或互補。</p>
+=== 例 7
+zh: $ABCD$ 是正方形，$E$ 是 $BA$ 的中點，$F$、$G$ 分別在 $BC$ 和 $CD$ 上，使 $AG\parallel EF$。求證：$FG$ 與正方形 $ABCD$ 的內切圓相切。
+sol: <p><b>分析</b>　取 $BC$、$CD$ 的中點 $P$、$Q$，它們是內切圓 $\odot O$ 與 $BC$、$CD$ 的切點。若 $FG$ 與 $\odot O$ 相切，則 $PF+QG=FG$（切線長）。反之，若這個等式成立，也能說明 $FG$ 與 $\odot O$ 相切：只要作 $F'G'\parallel FG$（$F',G'$ 分別在 $PC$、$QC$ 上）且 $F'G'$ 與 $\odot O$ 相切，則 $PF'+QG'=F'G'$，比較即知 $F$ 與 $F'$、$G$ 與 $G'$ 重合⟦為什麼｜把平行於 $FG$ 的直線往 $C$ 推，$PF+QG-FG$ 單調變化，只在相切時為 $0$。⟧。</p>
+<figure class="bkfig"><svg viewBox="0 0 200 200" width="200" role="img" aria-label="正方形與內切圓的切線">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,22 22,178 178,178 178,22"/><circle cx="100" cy="100" r="78"/><line x1="22" y1="22" x2="178" y2="139"/><line x1="22" y1="100" x2="126" y2="178"/><line x1="126" y1="178" x2="178" y2="139" stroke="#c2562b" stroke-width="2"/></g>
+<g fill="currentColor"><circle cx="100" cy="100" r="2.4"/></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="19.1" text-anchor="middle">A</text><text x="14.2" y="190.7" text-anchor="middle">B</text><text x="185.8" y="190.7" text-anchor="middle">C</text><text x="185.8" y="19.1" text-anchor="middle">D</text><text x="11" y="104.9" text-anchor="middle">E</text><text x="126" y="193.9" text-anchor="middle">F</text><text x="189" y="143.9" text-anchor="middle">G</text><text x="100" y="193.9" text-anchor="middle">P</text><text x="189" y="104.9" text-anchor="middle">Q</text><text x="100" y="93.9" text-anchor="middle">O</text></g>
+</svg><figcaption>$AG\parallel EF$；紅線 $FG$ 與內切圓相切（圖中 $GD=1.5$）</figcaption></figure>
+<p><b>證</b>　基於同一法，只要證 $PF+QG=FG$。設正方形邊長為 $2$，令 $GD=x$，則 $CG=2-x$，$QG=x-1$。由題設易得 $\triangle BEF\sim\triangle DGA$⟦為什麼｜$EF\parallel AG$，兩個直角三角形的銳角相等：$\angle BEF=\angle DGA$（兩組邊分別平行）。⟧，所以 $\frac{BF}{BE}=\frac{DA}{DG}$，$BF=\frac2x$。所以 $CF=2-\frac2x$，$PF=\frac2x-1$，</p>
+$$PF+QG=\frac2x-1+x-1=x+\frac2x-2.$$
+<p>再由勾股定理</p>
+$$FG^2=CF^2+CG^2=\Big(2-\frac2x\Big)^2+(2-x)^2=x^2+\frac4{x^2}+4-4x-\frac8x+4=\Big(x+\frac2x-2\Big)^2,$$
+<p>所以 $PF+QG=FG$。</p>
+<p>從以上例題看出，用代數方法和三角方法解幾何題思路明快，往往不需要或很少需要添加輔助線。此外，許多著名定理（孟氏定理、托勒密定理、切割線定理、蝴蝶定理等）都可以用正弦、餘弦定理證明。</p>
+=== 例 8 | 蝴蝶定理
+zh: 過 $\odot O$ 的弦 $AB$ 的中點 $M$ 任作兩條弦 $CD$ 和 $EF$，連 $CF$ 和 $ED$ 交 $AB$ 於 $P$、$Q$。求證：$PM=MQ$。
+sol: <figure class="bkfig"><svg viewBox="0 0 220 220" width="220" role="img" aria-label="蝴蝶定理（三角法）">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="110" cy="110" r="88"/><line x1="31.4" y1="149.6" x2="188.6" y2="149.6"/><line x1="53.2" y1="42.8" x2="134" y2="194.7"/><line x1="185.8" y1="65.4" x2="73.5" y2="190.1"/><line x1="53.2" y1="42.8" x2="73.5" y2="190.1"/><line x1="185.8" y1="65.4" x2="134" y2="194.7"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="20.4" y="154.5" text-anchor="middle">A</text><text x="199.6" y="154.5" text-anchor="middle">B</text><text x="53.2" y="36.7" text-anchor="middle">C</text><text x="141.7" y="207.4" text-anchor="middle">D</text><text x="193.6" y="62.5" text-anchor="middle">E</text><text x="65.8" y="202.8" text-anchor="middle">F</text><text x="110" y="165.5" text-anchor="middle">M</text><text x="68" y="143.5" text-anchor="middle">P</text><text x="152" y="143.5" text-anchor="middle">Q</text></g>
+</svg><figcaption>$M$ 是弦 $AB$ 中點；$CD$、$EF$ 過 $M$；$CF$、$ED$ 交 $AB$ 於 $P$、$Q$</figcaption></figure>
+<p><b>證</b>　令 $\alpha,\beta,\gamma,\delta$ 表示圖中四對相等的角：$\angle FCD=\angle FED=\alpha$，$\angle CFE=\angle CDE=\beta$（同弧所對的圓周角），$\angle PMF=\angle QME=\gamma$，$\angle CMP=\angle DMQ=\delta$（對頂角）。由正弦定理</p>
+$$\frac{PM}{\sin\alpha}=\frac{CP}{\sin\delta},\quad\frac{QD}{\sin\delta}=\frac{MQ}{\sin\beta},\quad\frac{EQ}{\sin\gamma}=\frac{MQ}{\sin\alpha},\quad\frac{PM}{\sin\beta}=\frac{PF}{\sin\gamma}.$$
+<p>四式相乘並約分，得 $CP\cdot PF\cdot MQ^2=EQ\cdot QD\cdot PM^2$。① 令 $PM=x$，$MQ=y$，$AM=MB=a$，由相交弦定理 $CP\cdot PF=AP\cdot PB=(a-x)(a+x)=a^2-x^2$，同理 $EQ\cdot QD=a^2-y^2$。代入 ① 得 $(a^2-x^2)y^2=(a^2-y^2)x^2$，化簡得 $x=y$，即 $PM=MQ$。</p>
+=== 習題 1
+zh: 設 $H$ 是 $\triangle ABC$ 的垂心，$O$ 是外心，且 $\angle B=60^\circ$。求證：$BH=BO$。
+sol: <p>$\angle AHB+\angle C=180^\circ$⟦為什麼｜$H$ 與兩個垂足、$C$ 構成的四邊形有兩個直角。⟧，所以 $\sin\angle AHB=\sin C$。$\angle ABC=60^\circ$ 使 $\angle BAH=30^\circ$，在 $\triangle ABH$ 中由正弦定理 $BH=\frac{AB\sin30^\circ}{\sin\angle AHB}=\frac{AB}{2\sin C}$。又對 $\triangle ABC$ 用正弦定理 $\frac{AB}{\sin C}=2BO$（外接圓直徑），所以 $BH=BO$。</p>
+=== 習題 2
+zh: <p>$\triangle ABC$ 被過一點 $P$ 的三條線段 $AD$、$BE$、$CF$ 分成 6 個小三角形，各小三角形的面積已標在圖上。求 $x$、$y$。</p>
+<figure class="bkfig"><svg viewBox="0 0 252 200" width="252" role="img" aria-label="三角形分成六塊">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="126,22 22,178 230,178"/><line x1="126" y1="22" x2="140.9" y2="178"/><line x1="22" y1="178" x2="195.3" y2="126"/><line x1="230" y1="178" x2="63.6" y2="115.6"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="109.1" y="97.5" font-style="normal" font-size="11" text-anchor="middle">84</text><text x="74.4" y="149.5" font-style="normal" font-size="11" text-anchor="middle">y</text><text x="100.1" y="170.3" font-style="normal" font-size="11" text-anchor="middle">40</text><text x="169.5" y="170.3" font-style="normal" font-size="11" text-anchor="middle">30</text><text x="187.6" y="153" font-style="normal" font-size="11" text-anchor="middle">35</text><text x="153" y="101" font-style="normal" font-size="11" text-anchor="middle">x</text><text x="126" y="15.9" text-anchor="middle">A</text><text x="11" y="182.9" text-anchor="middle">B</text><text x="241" y="182.9" text-anchor="middle">C</text><text x="140.9" y="193.9" text-anchor="middle">D</text><text x="203.1" y="123.1" text-anchor="middle">E</text><text x="55.8" y="112.7" text-anchor="middle">F</text><text x="137.6" y="137.2" text-anchor="middle">P</text></g>
+</svg><figcaption>六個小三角形的面積（按答案 $x=70$、$y=56$ 的比例畫）</figcaption></figure>
+sol: 利用同高三角形的面積比等於底邊之比：$BD:DC=40:30=4:3$，$BP:PE=S_{\triangle BPC}:S_{\triangle PEC}=70:35=2$。所以 $(84+y):x=2$，即 $2x=84+y$①；又 $(84+y+40):(x+35+30)=BD:DC=4:3$，即 $4x=112+3y$②。聯立解得 $x=70$，$y=56$。
+ans: $x=70$，$y=56$
+
+=== 習題 3
+zh: 已知 $D$ 是 $\triangle ABC$ 的邊 $AC$ 上一點，$AD:DC=2:1$，$\angle C=45^\circ$，$\angle ADB=60^\circ$。求證：$AB$ 是 $\triangle BCD$ 的外接圓的切線。
+sol: <figure class="bkfig"><svg viewBox="0 0 178 150" width="178" role="img" aria-label="證明切線">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="156.4,128 128,22 22,128"/><line x1="128" y1="22" x2="66.8" y2="128"/><line x1="128" y1="22" x2="128" y2="128" stroke-dasharray="5 4"/><polyline points="128,123 133,123 133,128" stroke-width="1"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="167.4" y="132.9" text-anchor="middle">A</text><text x="128" y="15.9" text-anchor="middle">B</text><text x="11" y="132.9" text-anchor="middle">C</text><text x="66.8" y="143.9" text-anchor="middle">D</text><text x="135.8" y="125.1" text-anchor="middle">E</text></g>
+</svg><figcaption>$AD:DC=2:1$，$\angle C=45^\circ$，$\angle ADB=60^\circ$；作 $BE\perp AC$（虛線，$E$ 在 $D$、$A$ 之間）</figcaption></figure>
+<p>由切割線定理的逆定理，只需證 $AB^2=AC\cdot AD$。作 $BE\perp AC$ 於 $E$，不妨設 $AD=2$，$CD=1$，則 $AC=3$。設 $ED=x$，$\angle EDB=60^\circ$，$BE=\sqrt3x$；又 $\angle ECB=45^\circ$，$BE=EC=1+x$。所以 $1+x=\sqrt3x$，$x=\frac{\sqrt3+1}2$，$BE=\frac{3+\sqrt3}2$，$AE=AD-DE=2-x=\frac{3-\sqrt3}2$。於是 $AB^2=AE^2+BE^2=6=AC\cdot AD$。</p>
+=== 習題 4
+zh: 設 $P$ 是定角 $\angle MAN$ 的平分線上一定點，過 $A$、$P$ 兩點任作一圓與 $\angle MAN$ 的兩邊分別交於 $B$、$C$。求證：$AB+AC$ 為定值。
+sol: <figure class="bkfig"><svg viewBox="0 0 210 200" width="210" role="img" aria-label="過角平分線上兩點的圓">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><line x1="22.3" y1="100" x2="169" y2="22"/><line x1="22.3" y1="100" x2="169" y2="178"/><line x1="22.3" y1="100" x2="188.4" y2="100" stroke-dasharray="5 4"/><circle cx="69" cy="95.1" r="47"/><line x1="115.7" y1="100" x2="99.2" y2="59.1" stroke-dasharray="5 4"/><line x1="115.7" y1="100" x2="91" y2="136.6" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="11.3" y="104.9" text-anchor="middle">A</text><text x="126.7" y="104.9" text-anchor="middle">P</text><text x="99.2" y="53" text-anchor="middle">B</text><text x="91" y="152.5" text-anchor="middle">C</text><text x="180" y="26.9" text-anchor="middle">M</text><text x="180" y="182.9" text-anchor="middle">N</text></g>
+</svg><figcaption>$P$ 在 $\angle MAN$ 的平分線上；過 $A,P$ 的圓交兩邊於 $B,C$</figcaption></figure>
+<p>設 $AP=m$，$\angle BAP=\angle CAP=\alpha$（定角）。連 $PB$、$PC$，有 $PB=PC$（等角對等弦）。應用餘弦定理並移項，</p>
+$$AB^2-(2m\cos\alpha)AB+(m^2-PB^2)=0,\qquad AC^2-(2m\cos\alpha)AC+(m^2-PB^2)=0,$$
+<p>即 $AB$、$AC$ 是方程 $x^2-(2m\cos\alpha)x+(m^2-PB^2)=0$ 的兩根，所以 $AB+AC=2m\cos\alpha$（定值）。</p>
+ans: $2AP\cos\frac A2$
+
+=== 習題 5
+zh: 已知 $\triangle ABC$ 的三條高 $h_a=6$，$h_b=4$，$h_c=3$，求 $S_{\triangle ABC}$。
+sol: <p>$ah_a=bh_b=ch_c$，所以可設 $a=2k$，$b=3k$，$c=4k$。由此 $\cos A=\frac{9+16-4}{24}=\frac78$，$\sin A=\frac{\sqrt{15}}8$。而 $b=\frac{h_c}{\sin A}$，$c=\frac{h_b}{\sin A}$，所以</p>
+$$S_{\triangle ABC}=\tfrac12bc\sin A=\frac{h_bh_c}{2\sin A}=\frac{12}{2\cdot\frac{\sqrt{15}}8}=\frac{16}5\sqrt{15}.$$
+ans: $\dfrac{16\sqrt{15}}5$
+
+=== 習題 6
+zh: 已知梯形 $ABCD$（$AD\parallel BC$），$AC$ 和 $BD$ 交於 $E$，$BE:ED=3:1$，兩底 $AD$、$BC$ 與對角線 $BD$ 的和為 $20$，$\angle ADB=60^\circ$，梯形 $ABCD$ 的面積為 $24\sqrt3$。求各邊的長。
+sol: <p>$\angle DBC=\angle ADB=60^\circ$，所以</p>
+$$S_{ABCD}=S_{\triangle ADB}+S_{\triangle BDC}=\tfrac12AD\cdot BD\sin60^\circ+\tfrac12BD\cdot BC\sin60^\circ=24\sqrt3,$$
+<p>即 $BD(AD+BC)=96$①，又 $BD+(AD+BC)=20$②。解得 $BD=12$、$AD+BC=8$，或 $BD=8$、$AD+BC=12$。又 $\triangle AED\sim\triangle CEB$，$BC:AD=BE:ED=3:1$。第一組得 $AD=2$、$BC=6$，對 $\triangle BAD$ 用餘弦定理 $AB^2=4+144-24=124$，$AB=2\sqrt{31}$；同理 $CD^2=144+36-72=108$，$CD=6\sqrt3$。第二組 $AD=3$、$BC=9$、$BD=8$，$AB=7$，$CD=\sqrt{73}$。</p>
+ans: $AD=2,BC=6,AB=2\sqrt{31},CD=6\sqrt3$；或 $AD=3,BC=9,AB=7,CD=\sqrt{73}$

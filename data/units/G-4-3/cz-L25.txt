@@ -1,0 +1,25 @@
+=== meta
+title: 圓冪定理與它的逆定理
+from: cz-L25
+order: 20
+
+=== body
+<div class="hero">過 $P$ 的任一直線交圓於 $A$、$B$：<b>$PA\cdot PB$ 是定值</b>（$P$ 的冪）<br>切線時 $A=B$：$PT^2=PA\cdot PB$<br>反過來：乘積相等 ⇒ <b>四點共圓</b>／<b>相切</b></div>
+<figure class="bkfig"><svg viewBox="0 0 280 193" width="280" role="img" aria-label="兩圓相交與過公共弦上一點的弦">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="96.5" cy="96.5" r="74.5"/><circle cx="199" cy="96.5" r="59"/><line x1="157.9" y1="54.2" x2="157.9" y2="138.8"/><line x1="45.9" y1="151.2" x2="165.2" y2="67.7"/><line x1="149.1" y1="65" x2="235.6" y2="142.8"/></g>
+<g fill="currentColor"><circle cx="96.5" cy="96.5" r="2.4"/><circle cx="199" cy="96.5" r="2.4"/></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="157.9" y="48.1" text-anchor="middle">A</text><text x="157.9" y="154.7" text-anchor="middle">B</text><text x="168.9" y="77.7" text-anchor="middle">P</text><text x="38.1" y="163.9" text-anchor="middle">C</text><text x="173" y="64.8" text-anchor="middle">D</text><text x="141.4" y="62.1" text-anchor="middle">E</text><text x="243.4" y="155.5" text-anchor="middle">F</text><text x="82" y="101.4" text-anchor="middle">O<tspan font-size="10">1</tspan></text><text x="213.5" y="101.4" text-anchor="middle">O<tspan font-size="10">2</tspan></text></g>
+</svg><figcaption>$P$ 在公共弦 $AB$ 上</figcaption></figure>
+<div class="cards">
+<div class="card"><h4>① 正用：得到比例</h4><div class="rule">$PA\cdot PB=PC\cdot PD$</div>
+<div class="eg">$P$ 在公共弦上：兩個圓的冪都等於 $PA\cdot PB$，所以 $PC\cdot PD=PE\cdot PF$ <span class="pill">傳遞</span></div></div>
+<div class="card"><h4>② 逆用：證共圓</h4><div class="rule">$PA\cdot PB=PA'\cdot PB'$ ⇒ 共圓</div>
+<div class="eg">$AF\cdot FO=DF\cdot FG$ ⇒ $A,D,O,G$ 共圓 <span class="pill">定理 1′</span></div></div>
+<div class="card"><h4>③ 逆用：證相切</h4><div class="rule">$PT^2=PA\cdot PB$ ⇒ $PT$ 切圓 $ABT$</div>
+<div class="eg">$OB^2=OM\cdot OA$ ⇒ $OB$ 切圓 $ABM$ <span class="pill">定理 2′</span></div></div>
+</div>
+<p>常和<b>射影定理</b>連用：⟦例｜切線 $AB$、$AC$，$F$ 是 $BC$ 中點，則 $BF^2=AF\cdot FO$（直角 $\triangle ABO$ 斜邊上的高），把圓冪的乘積轉到 $AO$ 這條線上。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>乘積都要從<b>同一點 $P$</b> 量起，不是 $PA\cdot AB$</li>
+<li>用逆定理時，$P$ 要同在兩線段內、或同在兩線段外</li></ul></div>
+<div class="bottomline">圓冪 = 把「圓」翻譯成「乘積」；逆定理再把乘積翻譯回「圓」。</div>

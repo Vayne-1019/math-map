@@ -1,0 +1,26 @@
+=== meta
+title: 相似三角形：比例的搬運工
+from: cz-L21
+order: 20
+
+=== body
+<div class="hero">相似 ⇒ 對應角相等、對應邊<b>成比例</b><br>平行線一畫就有相似（<b>A 字型、X 字型</b>）<br>面積比 = 相似比的<b>平方</b></div>
+<figure class="bkfig"><svg viewBox="0 0 300 146" width="300" role="img" aria-label="平行四邊形對角線上一點">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="73.2,22 22,124.4 226.8,124.4 278,22"/><line x1="73.2" y1="22" x2="226.8" y2="124.4"/><line x1="52.7" y1="63" x2="242.9" y2="92.2"/><line x1="114.2" y1="124.4" x2="216.6" y2="22"/><line x1="52.7" y1="63" x2="216.6" y2="22" stroke="#c2562b" stroke-width="2"/><line x1="114.2" y1="124.4" x2="242.9" y2="92.2" stroke="#c2562b" stroke-width="2"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="65.4" y="19.1" text-anchor="middle">A</text><text x="14.2" y="137.1" text-anchor="middle">B</text><text x="234.6" y="137.1" text-anchor="middle">C</text><text x="285.8" y="19.1" text-anchor="middle">D</text><text x="159.2" y="73.2" text-anchor="middle">P</text><text x="41.7" y="67.9" text-anchor="middle">E</text><text x="253.9" y="97.1" text-anchor="middle">G</text><text x="114.2" y="140.3" text-anchor="middle">F</text><text x="216.6" y="15.9" text-anchor="middle">H</text></g>
+</svg><figcaption>過對角線上一點 $P$ 的兩條直線；要證兩條紅線平行</figcaption></figure>
+<div class="cards">
+<div class="card"><h4>① 平行出相似</h4><div class="rule">$AH\parallel FC$ ⇒ $\triangle PAH\sim\triangle PCF$</div>
+<div class="eg">X 字型：$\frac{PC}{PA}=\frac{PF}{PH}=\frac{PG}{PE}$ ⇒ $EH\parallel FG$ <span class="pill">比相等 ⇒ 平行</span></div></div>
+<div class="card"><h4>② 兩邊成比例＋夾角</h4><div class="rule">$\frac{PA}{QA}=\frac{AD}{AB}$，$\angle PAQ=\angle DAB$</div>
+<div class="eg">得 $\triangle PAQ\sim\triangle DAB$，把 $PQ$ 和 $BD$ 連上關係 <span class="pill">SAS 相似</span></div></div>
+<div class="card"><h4>③ 面積比 = 邊比²</h4><div class="rule">$\sqrt{\text{面積}}$ 與邊長成正比</div>
+<div class="eg">小三角形面積 $4,9,49$ ⇒ 邊比 $2:3:7$，大三角形 $\sqrt S=2+3+7$，$S=144$ <span class="pill">開根號再相加</span></div></div>
+</div>
+<p>算面積時，同底三角形的面積比 = 高的比，高常用相似求。⟦例｜$\square ABCD$ 面積 1，$AE\parallel CM$ 且 $CM=2AE$，則 $Q$ 到 $AD$ 的距離是全高的 $\frac13$。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>相似的<b>對應順序</b>寫錯，比例式就跟著錯</li>
+<li>面積比直接當成邊比用（忘了開根號）</li>
+<li>「兩個三角形相似」沒指定對應時，要<b>分情況</b>（如 $\triangle PAD\sim\triangle PBC$ 或 $\sim\triangle CBP$）</li></ul></div>
+<div class="bottomline">要比例 → 找平行線或等角 → 造相似三角形。</div>

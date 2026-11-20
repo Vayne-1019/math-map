@@ -1,0 +1,25 @@
+=== meta
+title: 比例式與等積式：待定線段法
+from: cz-L22
+order: 40
+
+=== body
+<div class="hero">$ab=cd$ → 改寫成 $\frac ac=\frac db$ → 找一對<b>相似三角形</b><br>四條線段不在一對三角形裡 → 引進<b>待定線段 $x$</b> 當橋樑</div>
+<figure class="bkfig"><svg viewBox="0 0 230 230" width="230" role="img" aria-label="角平分線延長到外接圓">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="115" cy="115" r="93" stroke-dasharray="5 4"/><polygon points="84.6,27.1 28.3,148.5 201.7,148.5"/><line x1="84.6" y1="27.1" x2="105" y2="148.5"/><line x1="105" y1="148.5" x2="115" y2="208" stroke-dasharray="5 4"/><line x1="28.3" y1="148.5" x2="115" y2="208" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="84.6" y="21" text-anchor="middle">A</text><text x="17.3" y="153.4" text-anchor="middle">B</text><text x="212.7" y="153.4" text-anchor="middle">C</text><text x="112.8" y="145.7" text-anchor="middle">D</text><text x="115" y="223.9" text-anchor="middle">P</text></g>
+</svg><figcaption>作外接圓（虛線），延長角平分線 $AD$ 交圓於 $P$，連 $BP$</figcaption></figure>
+<div class="cards">
+<div class="card"><h4>① 單純比例</h4><div class="rule">$\frac ab=\frac cd$：$a,b,c,d$ 兩兩在一對相似三角形</div>
+<div class="eg">$OP\cdot OQ=OA^2$ ⇔ $\triangle OPA\sim\triangle OAQ$ <span class="pill">等積改比例</span></div></div>
+<div class="card"><h4>② $\frac{ab}{cd}=\frac ef$</h4><div class="rule">拆成 $\frac ac=\frac ex$、$\frac bd=\frac xf$</div>
+<div class="eg">$\frac{BC^3}{AC^3}=\frac{BF}{x}\cdot\frac xy\cdot\frac y{AE}$，每一段都是 $\frac{BC}{AC}$ <span class="pill">連乘</span></div></div>
+<div class="card"><h4>③ $ab+cd=ef$</h4><div class="rule">在 $f$ 上取點分成 $x+y$，<br>使 $ab=ex$、$cd=ey$</div>
+<div class="eg">$AD^2=AB\cdot AC-BD\cdot CD$：延長 $AD$ 到外接圓上的 $P$ <span class="pill">分點</span></div></div>
+</div>
+<p>待定點怎麼找？⟦倒推｜先假設點 $P$ 已經找到，把要的等式寫成比例式，看它要哪一對三角形相似，再反推 $P$ 的作法（例如「作 $\angle PBA=\angle DAC$」或「$P$ 在外接圓上」）。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>比例式裡的四條線段，<b>同一個三角形的兩邊要放在同一側</b>（同為分子或同為分母時要對應）</li>
+<li>相交弦、割線定理的乘積要從<b>同一個點</b>量起</li></ul></div>
+<div class="bottomline">比例找相似；找不到相似，就造一條待定線段把它拆開。</div>
