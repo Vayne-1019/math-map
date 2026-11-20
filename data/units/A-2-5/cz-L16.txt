@@ -1,0 +1,22 @@
+=== meta
+title: 應用題：多設未知數，再看整數與不等式
+from: cz-L16
+order: 40
+
+=== body
+<div class="hero">應用題列方程時，<b>需要幾個量就設幾個</b>，不必一個方程對一個未知數<br>方程不夠時，加上「<b>整數</b>」「<b>不等式</b>」條件就能定下答案</div>
+<div class="cards">
+<div class="card"><h4>① 輔助未知數</h4><div class="rule">設了也不必求出來</div>
+<div class="eg">抽水：泵速 $x$、原水 $y$、泉速 $z$<br>$60x=y+5z$，$70x=y+7z$<br>⇒ $y=35x,\ z=5x$，$x$ 約掉</div></div>
+<div class="card"><h4>② 分段列式</h4><div class="rule">不知道落在哪一段就分情形</div>
+<div class="eg">電費超過 24 度改價<br>三種情形，兩種被整除性排除</div></div>
+<div class="card"><h4>③ 整數 + 估計</h4><div class="rule">不定方程配合範圍</div>
+<div class="eg">$20x-9y=360$，$0\le y\le24$<br>⇒ $20\mid y$，$y=20$</div></div>
+<div class="card"><h4>④ 假設最小量是 1</h4><div class="rule">先算比例，最後再縮放</div>
+<div class="eg">九塊正方形拼矩形：設 $h=1$<br>一路推出 $e=7$，剛好吻合</div></div>
+</div>
+<p>最佳安排題的原則：⟦為什麼｜兩組做上衣、褲子的效率比 $\frac{a_1}{b_1}>\frac{a_2}{b_2}$ 時，把一些褲子從第一組換給第二組做，換來的上衣數會更多。所以「比值大的組專做上衣，比值小的組專做褲子」。⟧ 讓<b>相對效率</b>最高的人做他最擅長的事。</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>總量除以容量就當答案：箱子不能拆，13.5 噸要 11 輛 1.5 噸的車，不是 9 輛</li>
+<li>只給出一個可行方案，卻沒證明更少不行（要舉反例）</li></ul></div>
+<div class="bottomline">先把題意翻成等式和不等式，再用整數性質把答案逼出來。</div>

@@ -1,0 +1,160 @@
+=== meta
+title: 簡單不等式的證明
+author: 嚴鎮軍
+pages: 74-80
+units: A-4-1, A-7-4
+status: 完成
+
+=== text
+<p>不等式的證明雖然是高中數學的內容，但初中數學競賽中常有一些簡單的不等式證明，通常以比較兩個（或多個）量的大小的形式出現。所以在競賽培訓中，講一些不等式的基本性質和證明簡單不等式的常用方法是有益的。</p>
+<h3>一、不等式的基本性質</h3>
+<p>不等式的定義是：</p>
+$$a>b\iff a-b>0,\qquad a\lt b\iff a-b\lt 0,\qquad a=b\iff a-b=0.$$
+<p>由定義很容易推出下列性質：</p>
+<ol>
+<li>反身性：$a>b\iff b\lt a$。</li>
+<li>遞移性：$a>b$，$b>c\Rightarrow a>c$。</li>
+<li>加法單調性：$a>b\iff a+c>b+c$。</li>
+<li>乘法單調性：$a>b$，$c>0\Rightarrow ac>bc$；$a>b$，$c\lt 0\Rightarrow ac\lt bc$。</li>
+<li>$a>b$，$ab>0\Rightarrow\dfrac1a\lt\dfrac1b$。</li>
+<li>乘法法則：$a>b>0$，$c>d>0\Rightarrow ac>bd$。</li>
+<li>乘方法則：$a>b>0\Rightarrow a^n>b^n$（$n$ 為自然數）。</li>
+<li>開方法則：$a>b>0\Rightarrow\sqrt[n]a>\sqrt[n]b$（$n$ 為自然數）。</li>
+</ol>
+<p>下面證明性質 7。因為 $a>b>0$，所以 $a-b>0$，$a^{n-1}+a^{n-2}b+\cdots+b^{n-1}>0$，從而</p>
+$$a^n-b^n=(a-b)(a^{n-1}+a^{n-2}b+\cdots+b^{n-1})>0,$$
+<p>即 $a^n>b^n$。性質 8 可以用反證法並利用性質 7 證明（留作練習，見習題 2）。</p>
+<h3>二、不等式的證明</h3>
+<p>證明不等式的基本途徑，是以上述性質為依據，通過代數變形（因式分解、配方、拆項、併項、通分等），逐步推出要證的不等式。下面介紹初中範圍內的一些常用方法。</p>
+<p><b>1. 比較法</b>　通常有兩種形式：</p>
+<p>(1) <b>差值比較法</b>（又稱差減法）：由定義，要證 $a>b$，只需證 $a-b>0$。前面性質 7 的證明就是用這個方法，性質 1–6 也都可以用它證明。</p>
+<p>(2) <b>商值比較法</b>（又稱商除法）：若 $b>0$，要證 $a>b$，只需證 $\frac ba\lt 1$ 或 $\frac ab>1$。⟦為什麼｜以 $\frac ab>1$ 為例：兩邊乘以正數 $b$（乘法單調性）得 $a>b$。若證的是 $\frac ba\lt 1$，此時 $a>0$，兩邊乘以 $a$ 得 $b\lt a$。⟧</p>
+
+=== 例 1
+zh: 若 $a\lt b\lt c$，$x\lt y\lt z$，試問下列四個代數式 $A=ax+by+cz$，$B=ax+bz+cy$，$C=ay+bx+cz$，$D=az+by+cx$ 中，哪一個的值最大？
+sol: <b>分析</b>　可以先取一組滿足條件的特殊數，看看哪個最大，由此猜測結果，再給出嚴格證明。例如取 $a=x=0$，$b=y=1$，$c=z=2$，則 $A=5$，$B=4$，$C=4$，$D=1$，以 $A$ 最大。
+<b>解</b>　$A-B=b(y-z)+c(z-y)=(y-z)(b-c)$。由 $b\lt c$，$y\lt z$，兩個因式都是負的，所以 $A-B>0$，即 $A>B$。同理可證 $A>C$，$A>D$。⟦同理｜$A-C=a(x-y)+b(y-x)=(x-y)(a-b)>0$；$A-D=a(x-z)+c(z-x)=(x-z)(a-c)>0$。⟧所以 $A$ 最大。
+<b>說明</b>　(1) 請讀者自行證明 $A,B,C,D$ 中以 $D$ 最小。(2) 若把 $D$ 改成 $D_1=az+bx+cy$，仍以 $A$ 最大，但差 $A-D_1$ 一下子看不出大於 $0$。可以先作差 $B-D_1=(a-b)(x-z)>0$ 得 $B>D_1$，再由已證的 $A>B$ 得 $A>D_1$（遞移性）。
+⟦這題的意義｜這是「排序不等式」的特例：兩組數同樣由小到大配對時乘積和最大，一組正序一組反序時最小。⟧
+
+=== 例 2
+zh: 設 $n$ 是自然數，試比較 $A=\dfrac{2^n+1}{2^{n+1}+1}$ 與 $B=\dfrac{2^{n+1}+1}{2^{n+2}+1}$ 的大小。
+sol: 令 $2^n=m$，則 $2^{n+1}=2m$，$2^{n+2}=4m$。用商值比較：
+$$\frac AB=\frac{m+1}{2m+1}\div\frac{2m+1}{4m+1}=\frac{(m+1)(4m+1)}{(2m+1)^2}=\frac{4m^2+5m+1}{4m^2+4m+1}>1.$$
+又 $B>0$，所以 $A>B$。
+
+=== 例 3
+zh: 設正有理數 $a_1$ 是 $\sqrt3$ 的一個近似值，令 $a_2=1+\dfrac2{a_1+1}$。求證：(1) $\sqrt3$ 介於 $a_1$ 與 $a_2$ 之間；(2) $a_2$ 比 $a_1$ 更接近 $\sqrt3$；(3) 寫出比 $a_2$ 更接近 $\sqrt3$ 的另一個有理近似值；(4) 分析研究上述結論，提出一種求 $\sqrt3$ 的有理近似值的方法。
+sol: (1) 由題設
+$$\sqrt3-a_2=\sqrt3-\frac{a_1+3}{a_1+1}=-\frac{\sqrt3-1}{a_1+1}(\sqrt3-a_1).\qquad①$$
+⟦怎麼化的｜通分：$\sqrt3-\frac{a_1+3}{a_1+1}=\frac{\sqrt3a_1+\sqrt3-a_1-3}{a_1+1}$，分子 $=a_1(\sqrt3-1)-\sqrt3(\sqrt3-1)=-(\sqrt3-1)(\sqrt3-a_1)$。⟧
+$\sqrt3$ 是無理數，$a_1$ 是有理數，所以 $\sqrt3-a_1\neq0$。又 $\frac{\sqrt3-1}{a_1+1}>0$，由①可見 $\sqrt3-a_2$ 與 $\sqrt3-a_1$ 異號：若 $a_1\lt\sqrt3$，則 $\sqrt3\lt a_2$；若 $a_1>\sqrt3$，則 $a_2\lt\sqrt3$。所以 $\sqrt3$ 介於 $a_1$ 與 $a_2$ 之間。
+(2) 要證 $|\sqrt3-a_2|\lt|\sqrt3-a_1|$ ②。由①，
+$$\left|\frac{\sqrt3-a_2}{\sqrt3-a_1}\right|=\frac{\sqrt3-1}{a_1+1}.$$
+$a_1>0$，所以 $a_1+1>1>\sqrt3-1$，比值小於 $1$，②得證。
+(3) 令 $a_3=1+\dfrac2{a_2+1}$。由 (2) 的結論（把 $a_1$ 換成 $a_2$），$a_3$ 是比 $a_2$ 更接近 $\sqrt3$ 的有理數。
+(4) 由 (2)(3)，得到求 $\sqrt3$ 的有理近似值的方法：從 $a_1$ 開始，依次令
+$$a_{n+1}=1+\frac2{a_n+1}\qquad(n=1,2,\dots),$$
+則後一個數比前一個更接近 $\sqrt3$。例如 $a_1=1$：$a_2=2$，$a_3=\frac53$，$a_4=\frac74$，$a_5=\frac{19}{11}\approx1.727$。
+（原書 (3)(4) 的遞推式印成 $1+\frac1{a_n+1}$，應與題設一致為 $1+\frac2{a_n+1}$；前者逼近的是 $\sqrt2$。）
+
+=== text
+<p><b>2. 其他方法舉例</b></p>
+
+=== 例 4
+zh: 已知實數 $a,b,c$ 滿足 $a+b+c=0$，$abc=8$。求證：$\dfrac1a+\dfrac1b+\dfrac1c\lt 0$。
+sol: 因為
+$$\frac1a+\frac1b+\frac1c=\frac{bc+ca+ab}{abc}=\frac{bc+ca+ab}8,$$
+所以只需證 $ab+bc+ca\lt 0$。$abc=8$，所以 $a,b,c$ 都不為 $0$，從而 $a^2+b^2+c^2>0$。又
+$$(a+b+c)^2=a^2+b^2+c^2+2(ab+bc+ca)=0,$$
+所以 $ab+bc+ca=-\frac12(a^2+b^2+c^2)\lt 0$。
+<b>說明</b>　這個方法叫<b>分析法</b>：為了證明某個不等式，經過代數變形，改為證明另一個比較容易證明的不等式，並且從後一個不等式成立能推出前一個不等式成立。
+
+=== 例 5
+zh: 設 $x,y$ 是正實數，且 $x+y=1$，求證 $\Big(1+\dfrac1x\Big)\Big(1+\dfrac1y\Big)\ge9$。
+sol: 由題設 $0\lt x\lt 1$，$y=1-x$，原不等式變為
+$$\Big(1+\frac1x\Big)\Big(1+\frac1{1-x}\Big)\ge9.\qquad①$$
+兩邊乘以 $x(1-x)>0$，得到與①等價的不等式 $(x+1)(2-x)\ge9x(1-x)$，即
+$$2+x-x^2\ge9x-9x^2.\qquad②$$
+因為 $2+x-x^2-(9x-9x^2)=8x^2-8x+2=2(2x-1)^2\ge0$，所以②成立，從而①成立。等號在 $x=y=\frac12$ 時成立。
+<b>說明</b>　通過配方把一個式子化成平方的形式，再用「平方數非負」，這種技巧在不等式證明中很常用。
+
+=== 例 6
+zh: 若 $a>0$，且 $a^2-2ab+c^2=0$，$bc>a^2$。試判定 $a,b,c$ 的大小關係。
+sol: 因為 $2ab=a^2+c^2>0$，又 $a>0$，所以 $b>0$。又 $bc>a^2>0$，所以 $c>0$。
+把 $a^2-2ba+c^2=0$ 看成 $a$ 的二次方程，$a$ 是它的實根，所以 $\Delta=4b^2-4c^2\ge0$，即 $b^2\ge c^2$。$b,c>0$，所以 $b\ge c$。
+下面證明只能 $b>c$：若 $b=c$，則 $a^2-2ab+c^2=a^2-2ac+c^2=(a-c)^2=0$，得 $a=c$，即 $a=b=c$，與 $bc>a^2$ 矛盾。
+所以 $b>c>0$，$b^2>bc>a^2$，從而 $b>a$。再由 $a^2+c^2=2ab>2a^2$ 得 $c^2>a^2$，$c>a$。
+綜上 $b>c>a$。
+
+=== 例 7
+zh: 設 $x_1,x_2,x_3,x_4,x_5$ 是自然數，且 $x_1+x_2+x_3+x_4+x_5=x_1x_2x_3x_4x_5$，試求 $x_5$ 的最大值。
+sol: 條件等式是對稱的，不妨設 $x_1\le x_2\le x_3\le x_4\le x_5$。條件兩邊除以 $x_1x_2x_3x_4x_5$：
+$$\begin{aligned}1&=\frac1{x_2x_3x_4x_5}+\frac1{x_1x_3x_4x_5}+\frac1{x_1x_2x_4x_5}+\frac1{x_1x_2x_3x_5}+\frac1{x_1x_2x_3x_4}\\&\le\frac1{x_4x_5}+\frac1{x_4x_5}+\frac1{x_4x_5}+\frac1{x_4}+\frac1{x_5}=\frac{3+x_4+x_5}{x_4x_5}.\end{aligned}$$
+⟦為什麼可以放大｜每一項分母裡，把較小的自然數 $x_1,x_2,x_3$ 換成 $1$，分母變小，分數變大。例如第一項 $\frac1{x_2x_3x_4x_5}\le\frac1{x_4x_5}$；第四項 $\frac1{x_1x_2x_3x_5}\le\frac1{x_5}$。⟧
+所以 $x_4x_5\le3+x_4+x_5$，即
+$$(x_4-1)(x_5-1)\le4.\qquad①$$
+分兩種情形：
+(1) 若 $x_4=1$，則 $x_1=x_2=x_3=x_4=1$，條件等式變成 $4+x_5=x_5$，不可能。
+(2) 若 $x_4\ge2$，則 $x_4-1\ge1$，由①得 $x_5-1\le4$，$x_5\le5$。取 $x_1=x_2=x_3=1$，$x_4=2$，$x_5=5$，驗證 $1+1+1+2+5=10=1\cdot1\cdot1\cdot2\cdot5$，所以 $x_5=5$ 可以取到。
+所以 $x_5$ 的最大值是 $5$。
+<b>說明</b>　問題中的文字有對稱性時，可以先把它們按一定順序排列（如設 $x_1\le x_2\le\cdots\le x_5$），對解題常有幫助。這是數學中的<b>排序思想</b>。
+
+=== 例 8
+zh: 設 $a_1,a_2,\dots,a_n$ 是 $n$（$n>1$）個互不相同的自然數，求證：$\dfrac1{a_1^2}+\dfrac1{a_2^2}+\cdots+\dfrac1{a_n^2}\lt 2$。
+sol: 不等式關於 $a_1,\dots,a_n$ 對稱，且它們各不相等，不妨設 $1\le a_1\lt a_2\lt\cdots\lt a_n$。從而 $a_1\ge1$，$a_2\ge2$，…，$a_n\ge n$⟦為什麼｜嚴格遞增的自然數，每一個至少比前一個大 $1$，從 $a_1\ge1$ 一路推上去得 $a_k\ge k$。⟧，所以
+$$\frac1{a_1^2}\le1,\quad\frac1{a_2^2}\le\frac1{2^2},\quad\dots,\quad\frac1{a_n^2}\le\frac1{n^2}.$$
+把這 $n$ 個同向不等式相加，再把每個 $\frac1{k^2}$ 放大成 $\frac1{(k-1)k}$ 並裂項：
+$$\begin{aligned}\frac1{a_1^2}+\cdots+\frac1{a_n^2}&\le1+\frac1{2^2}+\frac1{3^2}+\cdots+\frac1{n^2}\\&\lt 1+\frac1{1\cdot2}+\frac1{2\cdot3}+\cdots+\frac1{(n-1)n}\\&=1+\Big(1-\frac12\Big)+\Big(\frac12-\frac13\Big)+\cdots+\Big(\frac1{n-1}-\frac1n\Big)\\&=2-\frac1n\lt 2.\end{aligned}$$
+<b>說明</b>　這個方法叫<b>放縮法</b>：要證 $a\le b$，依次證明幾個中間不等式 $a\le c$，$c\le d$，$d\le b$，再由遞移性得 $a\le b$。
+
+=== 習題 1
+zh: 填空：
+(1) 若 $a>b>c>0$，$l_1=\sqrt{(a+c)^2+b^2}$，$l_2=\sqrt{a^2+(b+c)^2}$，$l_3=\sqrt{(a+b)^2+c^2}$，則乘積 $l_1l_2$，$l_1l_3$，$l_2l_3$，$l_2^2$，$l_3^2$ 中最小的一個是 ____。
+(2) 若 $c>1$，$a=\sqrt{c+1}-\sqrt c$，$b=\sqrt c-\sqrt{c-1}$，則 $a,b$ 的大小關係是 ____。
+ans: (1) $l_2^2$；(2) $b>a$。
+sol: (1) $l_1^2=S+2ac$，$l_2^2=S+2bc$，$l_3^2=S+2ab$，其中 $S=a^2+b^2+c^2$。$bc\lt ac\lt ab$，所以 $l_2\lt l_1\lt l_3$，最小的乘積是 $l_2\cdot l_2=l_2^2$。
+(2) 分子有理化：$a=\dfrac1{\sqrt{c+1}+\sqrt c}$，$b=\dfrac1{\sqrt c+\sqrt{c-1}}$，$a$ 的分母較大，所以 $a\lt b$。
+
+=== 習題 2
+zh: 證明性質 8：$a>b>0\Rightarrow\sqrt[n]a>\sqrt[n]b$。
+sol: 反證法。若 $\sqrt[n]a\lt\sqrt[n]b$，由性質 7 得 $(\sqrt[n]a)^n\lt(\sqrt[n]b)^n$，即 $a\lt b$，與 $a>b$ 矛盾。又 $\sqrt[n]a=\sqrt[n]b$ 時兩邊 $n$ 次方得 $a=b$，也不可能。所以 $\sqrt[n]a>\sqrt[n]b$。
+
+=== 習題 3
+zh: 若 $a,b,m$ 是正數，且 $a\lt b$，求證：$\dfrac{a+m}{b+m}>\dfrac ab$。
+sol: 左 $-$ 右 $=\dfrac{b(a+m)-a(b+m)}{b(b+m)}=\dfrac{m(b-a)}{b(b+m)}>0$。
+
+=== 習題 4
+zh: 若 $a>0$，$b>0$，$n$ 是大於 $1$ 的自然數，求證：$a^n+b^n\ge a^{n-1}b+ab^{n-1}$。
+sol: 左 $-$ 右 $=a^{n-1}(a-b)-b^{n-1}(a-b)=(a-b)(a^{n-1}-b^{n-1})$。若 $a\ge b$，兩個因式都 $\ge0$；若 $a\lt b$，兩個因式都 $\lt 0$（性質 7）。總之乘積 $\ge0$。
+
+=== 習題 5
+zh: 已知 $a,b,c$ 是實數，$x=a^2-b$，$y=b^2-c$，$z=c^2-a+1$。求證：$x,y,z$ 中至少有一個是正數。
+sol: 配方得
+$$x+y+z=\Big(a-\frac12\Big)^2+\Big(b-\frac12\Big)^2+\Big(c-\frac12\Big)^2+\frac14>0.$$
+三個數之和為正，所以至少有一個大於 $0$。
+
+=== 習題 6
+zh: 求證：$\dfrac12\cdot\dfrac34\cdot\dfrac56\cdots\dfrac{99}{100}\lt\dfrac1{10}$。
+sol: 令 $x=\frac12\cdot\frac34\cdot\frac56\cdots\frac{99}{100}$，$y=\frac23\cdot\frac45\cdot\frac67\cdots\frac{100}{101}$。對應的每一個因數都有 $\frac{2k-1}{2k}\lt\frac{2k}{2k+1}$⟦為什麼｜交叉相乘：$(2k-1)(2k+1)=4k^2-1\lt 4k^2$。⟧，所以 $x\lt y$。而 $xy=\frac1{101}$（連乘後中間全部約掉），所以
+$$x^2\lt xy=\frac1{101},\qquad x\lt\frac1{\sqrt{101}}\lt\frac1{10}.$$
+
+=== 習題 7
+zh: 設 $a,b,c$ 都不小於 $1$，求證：$(1+a)(1+b)(1+c)\ge2(1+a+b+c)$。
+sol:
+$$\begin{aligned}(1+a)(1+b)(1+c)&=8\Big(1+\frac{a-1}2\Big)\Big(1+\frac{b-1}2\Big)\Big(1+\frac{c-1}2\Big)\\&\ge8\Big(1+\frac{a-1}2+\frac{b-1}2+\frac{c-1}2\Big)\\&=2(2a+2b+2c-2)\ge2(1+a+b+c).\end{aligned}$$
+⟦中間的不等號｜令 $u,v,w\ge0$，$(1+u)(1+v)(1+w)$ 展開是 $1+u+v+w$ 再加上 $uv+vw+wu+uvw\ge0$。⟧最後一步是因為 $2a+2b+2c-2-(1+a+b+c)=a+b+c-3\ge0$。
+
+=== 習題 8
+zh: 已知 $x,y$ 是實數，求證：(1) $x^2-3xy+3y^2\ge0$；(2) $x^2-xy+y^2-2x-y+3>0$。
+sol: (1) 左 $=\Big(x-\frac32y\Big)^2+\frac34y^2\ge0$。（原書此題印成「$>0$」，但 $x=y=0$ 時等號成立，所以應為 $\ge0$，或限定 $x,y$ 不全為零。）
+(2) 先對 $x$ 配方，再對 $y$ 配方：
+$$\text{左}=\Big(x-\frac{y+2}2\Big)^2+\frac34\Big(y-\frac43\Big)^2+\frac23>0.$$
+
+=== 習題 9
+zh: 設 $x_1,x_2,\dots,x_7$ 是自然數，且 $x_1\lt x_2\lt\cdots\lt x_7$，$x_1+x_2+\cdots+x_7=159$。試求 $x_1+x_2+x_3+x_4$ 的最大值。
+ans: $84$
+sol: 由題設 $x_2\ge x_1+1$，$x_3\ge x_1+2$，…，$x_7\ge x_1+6$，所以 $159\ge7x_1+21$，$x_1\le\frac{138}7$，$x_1\le19$。
+同樣，$x_5\ge x_4+1$，$x_6\ge x_4+2$，$x_7\ge x_4+3$，且 $x_1+x_2+x_3\le3x_4-6$。記 $S=x_1+x_2+x_3+x_4\le4x_4-6$，則
+$$159-S=x_5+x_6+x_7\ge3x_4+6\ge\frac34(S+6)+6,$$
+解得 $S\le\frac{594}7\lt 85$，所以 $S\le84$。取 $19,20,22,23,24,25,26$（和為 $159$），$S=19+20+22+23=84$。所以最大值是 $84$。

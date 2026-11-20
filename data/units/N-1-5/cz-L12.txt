@@ -1,0 +1,20 @@
+=== meta
+title: 按餘數分類：每一類都要顧到
+from: cz-L12
+order: 20
+
+=== body
+<div class="hero">要證「對所有整數 $a$，$n\mid f(a)$」？<br>把 $a$ 寫成 $nk,\,nk+1,\dots,nk+n-1$，<b>逐類檢查</b><br>其實只要看餘數 $r$ 代進去的結果</div>
+<div class="cards">
+<div class="card"><h4>① 分類</h4><div class="rule">$a=nk+r$，$r=0,1,\dots,n-1$</div>
+<div class="eg">$5\mid a^5-a$：<br>$r=0,1,2,3,4$ 時 $r^5$ 除以 5 仍餘 $r$</div></div>
+<div class="card"><h4>② 只算餘數</h4><div class="rule">同餘的數做加乘，餘數跟著算</div>
+<div class="eg">$1982^n$ 的末位只看 $2^n$<br>週期 $2,4,8,6$</div></div>
+<div class="card"><h4>③ 分類 + 分解</h4><div class="rule">先分解，看哪一類讓哪個因式整除</div>
+<div class="eg">$a^5-a=a(a-1)(a+1)(a^2+1)$<br>$r=2,3$ 時 $5\mid a^2+1$</div></div>
+</div>
+<p>連續整數最好用：⟦三連乘被 3 整除｜$a,a+1,a+2$ 被 3 除的餘數恰好是 $0,1,2$ 各一次，所以一定有一個是 3 的倍數。同理 $n$ 個連續整數中必有 $n$ 的倍數。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>漏掉一類：例如只驗 $n=4k+1$ 就說「只有它」，結果 $4k+2$、$4k+3$ 也成立</li>
+<li>負數的餘數：$-7=3\times(-3)+2$，餘數是 $2$，不是 $-1$</li></ul></div>
+<div class="bottomline">分類要完整、互不重疊；每一類只看餘數就夠。</div>

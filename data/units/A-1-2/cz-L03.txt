@@ -1,0 +1,22 @@
+=== meta
+title: 條件等式的四種證法
+from: cz-L03
+order: 30
+
+=== body
+<div class="hero">從條件推結論，關鍵是找<b>兩者之間的橋</b><br>代入、推導、倒推、消元：四條路選一條</div>
+<div class="cards">
+<div class="card"><h4>① 代入法</h4><div class="rule">連比設 $k$，全部代進去</div>
+<div class="eg">$\frac p{x^2-yz}=\frac q{y^2-zx}=\frac r{z^2-xy}=k$<br>$p=k(x^2-yz)$… <span class="pill">設比值</span></div></div>
+<div class="card"><h4>② 綜合法</h4><div class="rule">從條件往前推</div>
+<div class="eg">$a+b=c+d$ 立方，減 $a^3+b^3=c^3+d^3$<br>⇒ $ab(a+b)=cd(c+d)$</div></div>
+<div class="card"><h4>③ 分析法</h4><div class="rule">從結論倒推，每步可逆</div>
+<div class="eg">$a^2+b^2+c^2=(a+b-c)^2$<br>$\iff c(a+b)=ab\iff\frac1a+\frac1b=\frac1c$</div></div>
+<div class="card"><h4>④ 消去法</h4><div class="rule">結論裡沒有的字母，消掉它</div>
+<div class="eg">$ax^2+bx+c=0$、$mx^2+nx+p=0$<br>消 $x^2$ 解出 $x$ 再代回</div></div>
+</div>
+<p>分式的利器是<b>拆項</b>：$\dfrac{b-c}{(a-b)(a-c)}=\dfrac1{a-b}-\dfrac1{a-c}$。⟦什麼時候能拆｜分子剛好等於分母兩個因式的差：$(a-c)-(a-b)=b-c$。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>分析法寫成單向「⇒」：必須每步都能倒回來（$\iff$）才算證明</li>
+<li>兩邊約掉 $a+b$ 前沒討論 $a+b=0$ 的情形</li></ul></div>
+<div class="bottomline">先看結論缺什麼、條件多什麼，再決定是代、推、倒推還是消。</div>

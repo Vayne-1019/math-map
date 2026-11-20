@@ -1,0 +1,240 @@
+=== meta
+title: 絕對值與根式
+author: 嚴鎮軍
+pages: 30-38
+units: A-1-1, A-1-3
+status: 完成
+
+=== text
+<h3>一、絕對值</h3>
+<p>實數 $a$ 的絕對值記作 $|a|$，定義是</p>
+$$|a|=\begin{cases}a,&a\ge0,\\-a,&a\lt 0.\end{cases}$$
+<p>由定義，任何數的絕對值都是非負的。從幾何上看，若 $a$ 在數線上對應點 $A$，$O$ 是原點，則 $|a|$ 就是線段 $OA$ 的長。絕對值有以下重要性質（各字母都是實數）：</p>
+<ol>
+<li>$|a|\ge a$，$|a|\ge-a$。</li>
+<li>若 $|a|=|b|$，則 $a=b$（$a,b$ 同號時），或 $a=-b$（$a,b$ 異號時），或 $a=b=0$。</li>
+<li>$|ab|=|a|\cdot|b|$；$\left|\dfrac ab\right|=\dfrac{|a|}{|b|}$（$b\neq0$）。</li>
+<li>若 $a>0$，則 $|x|\le a\iff -a\le x\le a$；$|x|\ge a\iff x\le-a$ 或 $x\ge a$。</li>
+<li>$|a|-|b|\le|a+b|\le|a|+|b|$。</li>
+</ol>
+<p>性質 1–4 直接由定義得到，性質 5 在例 3 證明。</p>
+
+=== 例 1
+zh: 解方程 $|x-2|+|x+3|=6$。
+sol: <b>分析</b>　處理絕對值的基本辦法是<b>去掉絕對值符號</b>。方法之一是依定義，按絕對值裡面式子的正負分段討論。分段點是使某個絕對值為 $0$ 的數，這裡是 $-3$ 和 $2$，它們把數線分成三段。
+<b>解</b>　當 $x\lt -3$ 時，方程為 $-(x-2)-(x+3)=6$，即 $2x=-7$，$x=-\tfrac72$（確實 $\lt -3$）。
+當 $-3\le x\lt 2$ 時，方程為 $-(x-2)+(x+3)=6$，即 $5=6$，這段無解。
+當 $x\ge2$ 時，方程為 $(x-2)+(x+3)=6$，即 $2x=5$，$x=\tfrac52$。
+所以方程的解是 $x=-\tfrac72$ 或 $x=\tfrac52$。
+⟦幾何看法｜$|x-2|+|x+3|$ 是點 $x$ 到 $2$ 和到 $-3$ 的距離和。兩點相距 $5$，夾在中間的點距離和恰為 $5$，所以 $=6$ 的點在兩側各一個，各往外多走 $\frac12$：$2+\frac12$ 和 $-3-\frac12$。⟧
+
+=== 例 2
+zh: 解方程組 $\begin{cases}|x-1|+|y-5|=1,\\y=5+|x-1|.\end{cases}$
+sol: 由第二個方程，$y-5=|x-1|\ge0$，所以 $|y-5|=y-5=|x-1|$。代入第一個方程得 $2|x-1|=1$，$|x-1|=\tfrac12$，即 $x-1=\pm\tfrac12$，$x_1=\tfrac32$，$x_2=\tfrac12$。兩種情形都有 $y=5+\tfrac12=\tfrac{11}2$。所以有兩組解：
+$$\Big(\frac32,\frac{11}2\Big),\qquad\Big(\frac12,\frac{11}2\Big).$$
+
+=== text
+<p>去絕對值符號的另一個方法是利用 $|a|^2=a^2$，把兩邊平方。不過這個方法用在例 2、例 3 就不太好處理，但用來證明性質 5 很方便。</p>
+
+=== 例 3
+zh: 設 $a,b$ 為實數，求證：$|a|-|b|\le|a+b|\le|a|+|b|$。
+sol: 先證右邊。因為 $ab\le|ab|=|a|\cdot|b|$（性質 1、3），
+$$(a+b)^2=a^2+2ab+b^2\le|a|^2+2|a||b|+|b|^2=(|a|+|b|)^2.$$
+兩邊都非負，開方得 $|a+b|\le|a|+|b|$。⟦為什麼可以開方｜若 $u,v\ge0$ 且 $u^2\le v^2$，則 $u\le v$（否則 $u>v\ge0$ 會推出 $u^2>v^2$）。這裡 $u=|a+b|$，$v=|a|+|b|$。⟧
+左邊可以仿照證明，也可以用剛證好的右邊：
+$$|a+b|+|b|=|a+b|+|-b|\ge|(a+b)+(-b)|=|a|,$$
+所以 $|a+b|\ge|a|-|b|$。
+
+=== text
+<h3>二、根式</h3>
+<p>學根式要先弄清楚幾個基本概念：算術根、同次根式、同類根式、最簡根式。根式的化簡、求值與恆等式的證明，都建立在根式的運算性質上，再配合配方、乘法公式、待定係數、設參數、分母（或分子）有理化等方法。</p>
+<p><b>1. 算術根</b></p>
+<p>正數 $a$ 的正 $n$ 次方根（$n$ 為大於 $1$ 的自然數）叫做 $a$ 的 <b>$n$ 次算術根</b>；把 $0$ 也算進來，算術根記為 $\sqrt[n]a$（$a\ge0$）。所以只有非負數才有算術根，而且算術根是非負數。通常說的根式 $\sqrt[n]a$（$a\ge0$）都是指算術根。當 $n$ 為偶數時，對任何實數 $a$ 都有</p>
+$$\sqrt[n]{a^n}=|a|.$$
+<p>所以 $\sqrt{(-2)^2}=2$，而不是 $-2$，也不是 $\pm2$。</p>
+<p><b>公式</b>　$\sqrt[mn]{a^{mp}}=\sqrt[n]{a^p}$ 只有在 $\sqrt[n]{a^p}$ 是算術根時才成立。⟦反例｜$a=-1$，$m=2,n=3,p=1$：左邊 $\sqrt[6]{(-1)^2}=1$，右邊 $\sqrt[3]{-1}=-1$。$a$ 是負數時，奇次根 $\sqrt[3]{a}$ 不是算術根，不能隨便「約分」根指數。⟧解題時很容易在算術根的概念上出錯，要特別留心。</p>
+
+=== 例 4
+zh: 化簡：$\sqrt[3]a\cdot\sqrt[6]{-a}$。
+sol: <b>分析</b>　$\sqrt[6]{-a}$ 有意義，所以 $a\le0$。這時 $\sqrt[3]a$ 不是算術根，不能寫成 $\sqrt[6]{a^2}$。
+<b>解</b>　因為 $a\le0$，先把負號提到根號外：$\sqrt[3]a=-\sqrt[3]{-a}=-\sqrt[6]{(-a)^2}$。所以
+$$\text{原式}=-\sqrt[6]{(-a)^2}\cdot\sqrt[6]{-a}=-\sqrt[6]{(-a)^3}=-\sqrt{-a}.$$
+
+=== 例 5
+zh: 作函數 $y=\sqrt{4x^2+4x+1}+\sqrt{x^2-2x+1}$ 的圖形，並求其最小值。
+sol: 根號內都是完全平方，由 $\sqrt{a^2}=|a|$：
+$$y=|2x+1|+|x-1|=\begin{cases}-(2x+1)-(x-1)=-3x,&x\le-\tfrac12,\\2x+1-(x-1)=x+2,&-\tfrac12\lt x\le1,\\2x+1+x-1=3x,&x>1.\end{cases}$$
+圖形是一條折線，如下圖。由圖可見，$x=-\tfrac12$ 時 $y$ 有最小值 $\tfrac32$，沒有最大值。
+<figure class="bkfig"><svg viewBox="0 0 330 250" width="330" role="img" aria-label="y=|2x+1|+|x−1| 的折線圖">
+<g fill="none" stroke="currentColor" stroke-width="1">
+<line x1="20" y1="230" x2="320" y2="230"/><line x1="152" y1="245" x2="152" y2="20"/>
+<polyline points="316,234 320,230 316,226"/><polyline points="148,24 152,20 156,24"/>
+<line x1="117" y1="188" x2="117" y2="230" stroke-dasharray="4 3"/><line x1="222" y1="146" x2="222" y2="230" stroke-dasharray="4 3"/>
+<line x1="117" y1="188" x2="152" y2="188" stroke-dasharray="4 3"/><line x1="222" y1="146" x2="152" y2="146" stroke-dasharray="4 3"/>
+</g>
+<polyline points="40,95.6 117,188 222,146 313,36.8" fill="none" stroke="#c2562b" stroke-width="2.2"/>
+<g fill="currentColor"><circle cx="117" cy="188" r="3"/><circle cx="222" cy="146" r="3"/></g>
+<g fill="currentColor" font-size="13">
+<text x="310" y="246" font-style="italic">x</text><text x="158" y="28" font-style="italic">y</text><text x="156" y="244">O</text>
+<text x="100" y="246">−½</text><text x="218" y="246">1</text>
+<text x="158" y="184">3/2</text><text x="158" y="142">3</text>
+<text x="40" y="80">y=−3x</text><text x="168" y="176">y=x+2</text><text x="250" y="80">y=3x</text>
+</g></svg><figcaption>折點在 $x=-\frac12$ 與 $x=1$；最低點 $(-\frac12,\frac32)$</figcaption></figure>
+<b>說明</b>　形如 $y=|a_1x+b_1|\pm|a_2x+b_2|\pm\cdots\pm|a_nx+b_n|$ 的函數，圖形總是一條折線，轉折點的橫坐標就是使各個絕對值裡的一次式為零的數。
+
+=== 例 6
+zh: 函數 $y=|x+1|+|x-1|+|x-2|$ 的最小值是 ____。
+ans: $3$
+sol: $y$ 的圖形是一條折線，最小值必定出現在某個轉折點。⟦為什麼｜在兩個相鄰轉折點之間 $y$ 是一次函數，一次函數在線段上的最小值落在端點；最外側兩段一段遞減、一段遞增（斜率是 $\pm3$），所以最小值一定在某個轉折點。⟧計算三個轉折點：$x=-1$ 時 $y=0+2+3=5$；$x=1$ 時 $y=2+0+1=3$；$x=2$ 時 $y=3+1+0=4$。所以最小值是 $3$。
+
+=== text
+<p><b>2. 分母（或分子）有理化</b></p>
+
+=== 例 7
+zh: 化簡：$\dfrac{\sqrt x+1}{x\sqrt x+x+\sqrt x}\div\dfrac1{x^2-\sqrt x}$（$x>0$，$x\neq1$）。
+sol: 把被除式的分子有理化：$\sqrt x+1=\dfrac{x-1}{\sqrt x-1}$。於是
+$$\text{原式}=\frac{x-1}{(\sqrt x-1)(x\sqrt x+x+\sqrt x)}\cdot(x^2-\sqrt x).$$
+而 $(\sqrt x-1)(x\sqrt x+x+\sqrt x)=\sqrt x(\sqrt x-1)(x+\sqrt x+1)=\sqrt x\,(x\sqrt x-1)=x^2-\sqrt x$⟦中間那步｜立方差：令 $t=\sqrt x$，$(t-1)(t^2+t+1)=t^3-1=x\sqrt x-1$。⟧，所以
+$$\text{原式}=\frac{x-1}{x^2-\sqrt x}\cdot(x^2-\sqrt x)=x-1.$$
+
+=== 例 8
+zh: 化簡 $M=\dfrac2{\sqrt{4-3\sqrt[4]5+2\sqrt[4]{25}-\sqrt[4]{125}}}$。
+sol: 設 $\sqrt[4]5=x$，則 $\sqrt[4]{25}=x^2$，$\sqrt[4]{125}=x^3$，且 $x^4=5$，$x^5=5x$，$x^6=5x^2$。先算 $M^2$，把分母分成兩組再乘「共軛式」：
+$$M^2=\frac4{4-3x+2x^2-x^3}=-\frac4{(x^3+3x)-(2x^2+4)}=-\frac{4\big[(x^3+3x)+(2x^2+4)\big]}{(x^3+3x)^2-(2x^2+4)^2}.$$
+分母 $=x^6+6x^4+9x^2-4x^4-16x^2-16=5x^2+30+9x^2-20-16x^2-16=-2x^2-6$⟦代換｜$x^6=5x^2$，$6x^4=30$，$-4x^4=-20$。奇次項全部消失了——這正是把分母分成「奇次一組、偶次一組」的用意。⟧，所以
+$$M^2=\frac{4(x^3+2x^2+3x+4)}{2x^2+6}=\frac{2(x^3+2x^2+3x+4)}{x^2+3}.$$
+再乘 $\dfrac{x^2-3}{x^2-3}$，分母變成 $x^4-9=-4$：
+$$\begin{aligned}M^2&=\frac{2(x^5+2x^4-2x^2-9x-12)}{x^4-9}=\frac{2(5x+10-2x^2-9x-12)}{5-9}\\&=x^2+2x+1=(x+1)^2.\end{aligned}$$
+$M>0$，所以 $M=x+1=\sqrt[4]5+1$。
+<b>說明</b>　整個計算其實就是一步一步把分母有理化。也可以直接驗算：$(x+1)^2(4-3x+2x^2-x^3)=-x^5+5x+4=4$。
+
+=== text
+<p><b>3. 某些特殊形式的根式</b></p>
+<p>二次複合根式 $\sqrt{a\pm2\sqrt b}$ 可以用待定係數法化簡。令</p>
+$$\sqrt{a\pm2\sqrt b}=\sqrt x\pm\sqrt y,\qquad①$$
+<p>兩邊平方得 $a\pm2\sqrt b=x+y\pm2\sqrt{xy}$。若能選 $x,y$ 使</p>
+$$x+y=a\quad②,\qquad xy=b\quad③,$$
+<p>①就成立。解這個方程組（不妨設 $x>y$）得</p>
+$$\sqrt{a\pm2\sqrt b}=\sqrt{\frac{a+\sqrt{a^2-4b}}2}\pm\sqrt{\frac{a-\sqrt{a^2-4b}}2}.$$
+<p>要注意：只有當 $a>0$，$b>0$，且 $a^2-4b$ 是完全平方數時，用這個公式化簡才有意義；否則等於沒化簡。實際化簡時用「湊數」：心算找出兩個數，<b>和是 $a$、積是 $b$</b>。例如 $\sqrt{5-2\sqrt6}$：和 $5$、積 $6$ 的兩數是 $3,2$，所以等於 $\sqrt3-\sqrt2$。</p>
+
+=== 例 9
+zh: 設 $\sqrt{23-6\sqrt{10+4\sqrt{3-2\sqrt2}}}$ 的整數部分為 $x$，小數部分為 $y$，求 $x+y+\dfrac2y$。
+sol: 由內往外一層一層化簡：
+$$\begin{aligned}\text{原式}&=\sqrt{23-6\sqrt{10+4\sqrt{2-2\sqrt2+1}}}=\sqrt{23-6\sqrt{10+4(\sqrt2-1)}}\\&=\sqrt{23-6\sqrt{6+2\sqrt8}}=\sqrt{23-6(2+\sqrt2)}\\&=\sqrt{11-6\sqrt2}=3-\sqrt2=1+(2-\sqrt2).\end{aligned}$$
+⟦每一層的湊數｜$3-2\sqrt2=(\sqrt2-1)^2$；$6+2\sqrt8$：和 $6$、積 $8$ 的兩數是 $4,2$，得 $2+\sqrt2$；$11-6\sqrt2=11-2\sqrt{18}$：和 $11$、積 $18$ 的兩數是 $9,2$，得 $3-\sqrt2$。⟧
+因為 $0\lt 2-\sqrt2\lt 1$，所以 $x=1$，$y=2-\sqrt2$。於是
+$$x+y+\frac2y=3-\sqrt2+\frac2{2-\sqrt2}=3-\sqrt2+\frac{2(2+\sqrt2)}2=5.$$
+
+=== 例 10
+zh: 化簡 $M=\sqrt{8+\sqrt{40+8\sqrt5}}+\sqrt{8-\sqrt{40+8\sqrt5}}$。
+sol: <b>分析</b>　$\sqrt{40+8\sqrt5}$ 不能用上面的方法化簡（和 $40$、積 $80$ 的兩數不是整數），改用「先平方」的辦法：兩個根式的和平方後，交叉項是兩個根號內數相乘，會變簡單。
+<b>解</b>
+$$\begin{aligned}M^2&=8+\sqrt{40+8\sqrt5}+8-\sqrt{40+8\sqrt5}+2\sqrt{64-(40+8\sqrt5)}\\&=16+2\sqrt{24-8\sqrt5}=16+4\sqrt{6-2\sqrt5}\\&=16+4(\sqrt5-1)=12+4\sqrt5.\end{aligned}$$
+因為 $M>0$，所以 $M=\sqrt{12+4\sqrt5}=\sqrt{12+2\sqrt{20}}=\sqrt{10}+\sqrt2$。
+
+=== 例 11
+zh: 設 $a\ge\dfrac18$，求證：$\sqrt[3]{a+\dfrac{a+1}3\sqrt{\dfrac{8a-1}3}}+\sqrt[3]{a-\dfrac{a+1}3\sqrt{\dfrac{8a-1}3}}=1$。①
+sol: 當 $a=\tfrac18$ 時，左邊 $=\sqrt[3]{\tfrac18}+\sqrt[3]{\tfrac18}=1$。
+若 $a>\tfrac18$，把①的左邊設為 $x$，用公式 $(u+v)^3=u^3+v^3+3uv(u+v)$：
+$$x^3=2a+3\sqrt[3]{a^2-\Big(\frac{a+1}3\Big)^2\frac{8a-1}3}\cdot x=2a-(2a-1)x.$$
+⟦立方根內的計算｜$a^2-\frac{(a+1)^2(8a-1)}{27}=\frac{27a^2-(8a^3+15a^2+6a-1)}{27}=\frac{-8a^3+12a^2-6a+1}{27}=\frac{(1-2a)^3}{27}$，開立方得 $\frac{1-2a}3$，乘以 $3$ 是 $1-2a$。⟧
+即 $x^3+(2a-1)x-2a=0$，分解為
+$$(x-1)(x^2+x+2a)=0.$$
+$x^2+x+2a=0$ 的判別式 $\Delta=1-8a\lt 0$，沒有實根，所以 $x=1$。
+<b>說明</b>　①的左邊很難直接計算，所以先把它設為未知數 $x$，再用解方程的辦法求出 $x$。求 $\sqrt[3]{a+\sqrt b}\pm\sqrt[3]{a-\sqrt b}$ 這類複合根式的值，常用這個方法。
+
+=== 例 12
+zh: 化簡 $A=\sqrt{21-4\sqrt5+8\sqrt3-4\sqrt{15}}$。
+sol: 根號內有三個不同的根式，猜測它是三項的平方。令 $A=\sqrt x+\sqrt y-\sqrt z$，則
+$$21-4\sqrt5+8\sqrt3-4\sqrt{15}=x+y+z+2\sqrt{xy}-2\sqrt{xz}-2\sqrt{yz}.$$
+如果能找到 $x,y,z$ 使
+$$2\sqrt{xy}=8\sqrt3,\quad2\sqrt{xz}=4\sqrt{15},\quad2\sqrt{yz}=4\sqrt5\qquad①$$
+且 $x+y+z=21$，問題就解決了。①的三式相乘⟦算一下｜左邊相乘 $=8\sqrt{x^2y^2z^2}=8xyz$；右邊 $=8\cdot4\cdot4\cdot\sqrt{3\cdot15\cdot5}=128\cdot15=1920$。⟧得 $xyz=240$，$\sqrt{xyz}=4\sqrt{15}$。分別除以①中的三式（先各除以 $2$）：
+$$\sqrt z=\frac{4\sqrt{15}}{4\sqrt3}=\sqrt5,\quad\sqrt y=\frac{4\sqrt{15}}{2\sqrt{15}}=2,\quad\sqrt x=\frac{4\sqrt{15}}{2\sqrt5}=2\sqrt3.$$
+所以 $x=12$，$y=4$，$z=5$，正好滿足 $x+y+z=21$。又 $2\sqrt3+2-\sqrt5>0$，故
+$$A=2+2\sqrt3-\sqrt5.$$
+
+=== 例 13
+zh: 求滿足條件 $\sqrt{a-2\sqrt6}=\sqrt x-\sqrt y$ 的自然數 $a,x,y$。
+sol: 兩邊平方：$a-2\sqrt6=x+y-2\sqrt{xy}$，即
+$$(a-x-y)-2\sqrt6=-2\sqrt{xy}.$$
+再兩邊平方整理：
+$$(a-x-y)^2+4(6-xy)=4(a-x-y)\sqrt6.\qquad①$$
+$x,y,a$ 是自然數，左邊是整數，而 $\sqrt6$ 是無理數，所以只能 $a-x-y=0$⟦為什麼｜若 $a-x-y\neq0$，則 $\sqrt6=\frac{\text{左邊}}{4(a-x-y)}$ 是有理數，矛盾。⟧，即 $x+y=a$；再由①得 $xy=6$。又由題設 $\sqrt x-\sqrt y\ge0$，且不能為 $0$（否則 $a=2\sqrt6$ 不是自然數），所以 $x>y$。只有兩種情況：
+$x=6,y=1,a=7$；或 $x=3,y=2,a=5$。
+
+=== text
+<p><b>4. 等式的證明</b></p>
+
+=== 例 14
+zh: 設 $x>0$，$y>0$，且 $\sqrt x(\sqrt x+2\sqrt y)=\sqrt y(6\sqrt x+5\sqrt y)$，求證：$\dfrac{x+\sqrt{xy}-y}{2x+\sqrt{xy}+3y}=\dfrac12$。
+sol: 條件式展開移項為 $x-4\sqrt{xy}-5y=0$，把 $\sqrt x,\sqrt y$ 看成未知數，像二次式一樣分解：
+$$(\sqrt x-5\sqrt y)(\sqrt x+\sqrt y)=0.$$
+$\sqrt x+\sqrt y>0$，所以 $\sqrt x=5\sqrt y$，$x=25y$，$\sqrt{xy}=5y$。於是
+$$\text{左邊}=\frac{25y+5y-y}{50y+5y+3y}=\frac{29y}{58y}=\frac12.$$
+
+=== 例 15
+zh: 設 $ax^3=by^3=cz^3$，且 $\dfrac1x+\dfrac1y+\dfrac1z=1$，求證：$\sqrt[3]{ax^2+by^2+cz^2}=\sqrt[3]a+\sqrt[3]b+\sqrt[3]c$。
+sol: 設連比的值：令 $ax^3=by^3=cz^3=k^3$，則 $a=\dfrac{k^3}{x^3}$，$b=\dfrac{k^3}{y^3}$，$c=\dfrac{k^3}{z^3}$。所以
+$$\sqrt[3]a+\sqrt[3]b+\sqrt[3]c=k\Big(\frac1x+\frac1y+\frac1z\Big)=k.$$
+另一方面，
+$$\sqrt[3]{ax^2+by^2+cz^2}=\sqrt[3]{ax^3\cdot\frac1x+by^3\cdot\frac1y+cz^3\cdot\frac1z}=\sqrt[3]{k^3\Big(\frac1x+\frac1y+\frac1z\Big)}=k.$$
+兩邊都等於 $k$，得證。
+
+=== 習題 1
+zh: 填空：
+(1) 等式 $\left|\dfrac{a-b}a\right|=\dfrac{b-a}a$ 成立的條件是 ____。
+(2) 若 $|1-x|=1+|x|$，則 $\sqrt{(x-1)^2}=$ ____。
+(3) 若 $|x-8y|+(4y-1)^2+\sqrt{8z-3x}=0$，則 $x+y+z=$ ____。
+ans: (1) $b>a>0$ 或 $b\lt a\lt 0$ 或 $b=a\neq0$；(2) $1-x$；(3) $3$。
+sol: (1) 等式成立 $\iff\dfrac{b-a}a\ge0$（且 $a\neq0$）：$a>0$ 時要 $b\ge a$，$a\lt 0$ 時要 $b\le a$。
+(2) $|1-x|=1+|x|$ 只在 $x\le0$ 時成立⟦為什麼｜由三角不等式 $|1-x|=|1+(-x)|\le1+|x|$，等號成立當且僅當 $1$ 與 $-x$ 同號，即 $-x\ge0$。⟧，此時 $\sqrt{(x-1)^2}=|x-1|=1-x$。
+(3) 三個非負數之和為 $0$，所以 $x=8y$，$4y=1$，$8z=3x$，得 $y=\tfrac14$，$x=2$，$z=\tfrac34$。
+
+=== 習題 2
+zh: (1) 若 $x=\sqrt{19-8\sqrt3}$，求 $\dfrac{x^4-6x^3-2x^2+18x+23}{x^2-8x+15}$ 的值。
+(2) 若 $x=\sqrt2+\sqrt3$，求 $x^6-2\sqrt2x^5-x^4+x^3-2\sqrt3x^2+2x-\sqrt2$ 的值。
+ans: (1) $5$；(2) $\sqrt3$。
+sol: (1) 見第 3 講例 2：$x=4-\sqrt3$，$(x-4)^2=3$。
+(2) 由 $x=\sqrt2+\sqrt3$，有 $x(x-2\sqrt2)=(\sqrt3+\sqrt2)(\sqrt3-\sqrt2)=1$ 及 $x(x-2\sqrt3)=(\sqrt2+\sqrt3)(\sqrt2-\sqrt3)=-1$。所以
+$$\begin{aligned}\text{原式}&=x^4(x^2-2\sqrt2x-1)+x(x^2-2\sqrt3x+1)+x-\sqrt2\\&=x^4\big[x(x-2\sqrt2)-1\big]+x\big[x(x-2\sqrt3)+1\big]+x-\sqrt2\\&=0+0+\sqrt3.\end{aligned}$$
+
+=== 習題 3
+zh: 解方程：(1) $\big|x-|2x+1|\big|=3$；(2) $\sqrt{x-2}+\sqrt y+\sqrt{z-1}=\dfrac12(x+y+z)$。
+ans: (1) $x=-\tfrac43$ 或 $x=2$；(2) $x=3$，$y=1$，$z=2$。
+sol: (1) 當 $x\lt -\tfrac12$ 時，原式 $=|x+2x+1|=|3x+1|=3$，解得 $x=\tfrac23$（不合，捨去）或 $x=-\tfrac43$；$x=-\tfrac12$ 不滿足方程；當 $x>-\tfrac12$ 時，原式 $=|x-2x-1|=|x+1|=3$，解得 $x=2$ 或 $x=-4$（捨去）。
+(2) 方程可變形為
+$$(\sqrt{x-2}-1)^2+(\sqrt y-1)^2+(\sqrt{z-1}-1)^2=0,$$
+⟦怎麼配｜展開左邊 $=(x-2)+y+(z-1)+3-2(\sqrt{x-2}+\sqrt y+\sqrt{z-1})=x+y+z-2(\cdots)$，令它為 $0$ 正是原方程乘以 $2$。⟧所以 $\sqrt{x-2}=\sqrt y=\sqrt{z-1}=1$。
+
+=== 習題 4
+zh: 化簡 $\sqrt[3]{20+14\sqrt2}+\sqrt[3]{20-14\sqrt2}$。
+hint: 根號內的式子可以配成完全立方。
+ans: $4$
+sol: $(2+\sqrt2)^3=8+12\sqrt2+12+2\sqrt2=20+14\sqrt2$，同理 $(2-\sqrt2)^3=20-14\sqrt2$。所以原式 $=(2+\sqrt2)+(2-\sqrt2)=4$。
+（原書題目第二項印成 $\sqrt[3]{20-14\sqrt3}$，答案印成 $1$；依提示「配成完全立方」，應為 $\sqrt[3]{20-14\sqrt2}$，答案是 $4$。也可以仿例 11：設和為 $x$，得 $x^3=40+6x$，$(x-4)(x^2+4x+10)=0$，$x=4$。）
+
+=== 習題 5
+zh: 設 $x^{\frac13}+y^{\frac13}+z^{\frac13}=0$，求證：$(x+y+z)^3=27xyz$。
+sol: 把 $x^{\frac13}+y^{\frac13}=-z^{\frac13}$ 兩邊立方：
+$$x+y+3x^{\frac13}y^{\frac13}\big(x^{\frac13}+y^{\frac13}\big)=-z,$$
+把括號換成 $-z^{\frac13}$ 並移項：$x+y+z=3(xyz)^{\frac13}$。再兩邊立方即得。
+
+=== 習題 6
+zh: 化簡 $\sqrt{11+2(1+\sqrt5)(1+\sqrt7)}$。
+ans: $1+\sqrt5+\sqrt7$
+sol: 令原式 $=\sqrt x+\sqrt y+\sqrt z$（仿例 12）。根號內 $=11+2+2\sqrt5+2\sqrt7+2\sqrt{35}=13+2\sqrt5+2\sqrt7+2\sqrt{35}$，而 $(1+\sqrt5+\sqrt7)^2=1+5+7+2\sqrt5+2\sqrt7+2\sqrt{35}$，正好相同。
+
+=== 習題 7
+zh: (1) 若 $x,y$ 是有理數，且 $\sqrt{x-\sqrt{50}}=y-\sqrt2$，求 $x,y$。
+(2) 已知 $\sqrt{2009}=\sqrt x+\sqrt y$，且 $0\lt x\lt y$，求整數對 $(x,y)$。
+ans: (1) $x=\tfrac{33}4$，$y=\tfrac52$；(2) $(41,1476)$，$(164,1025)$，$(369,656)$。
+sol: (1) 平方：$x-5\sqrt2=y^2+2-2\sqrt2\,y$。$x,y$ 有理，比較有理部分和 $\sqrt2$ 的係數：$x=y^2+2$，$2y=5$。得 $y=\tfrac52$，$x=\tfrac{33}4=8\tfrac14$，且 $y-\sqrt2>0$ 符合。
+(2) $\sqrt{2009}=7\sqrt{41}$。由此可見 $x$ 必為 $41t^2$ 的形式，$y$ 必為 $41k^2$ 的形式，且 $t+k=7$（$t,k$ 為正整數）。⟦為什麼｜$\sqrt y=7\sqrt{41}-\sqrt x$，平方得 $y=2009+x-14\sqrt{41x}$，所以 $\sqrt{41x}$ 是有理數，$41x$ 是完全平方，$x=41t^2$。同理 $y=41k^2$。⟧因 $x\lt y$，$t\lt k$：$t=1,k=6$；$t=2,k=5$；$t=3,k=4$。
+
+=== 習題 8
+zh: 已知 $A=\sqrt{3+\sqrt5}$，$B=\sqrt{3-\sqrt5}$，求證：$11\lt A^3-B^3\lt 12\lt A^3+B^3\lt 13$。
+sol: $A^2+B^2=6$，$AB=\sqrt{9-5}=2$。所以 $(A+B)^2=10$，$A+B=\sqrt{10}$；$(A-B)^2=2$，$A-B=\sqrt2$。於是
+$$\begin{aligned}A^3-B^3&=(A-B)^3+3AB(A-B)=2\sqrt2+6\sqrt2=\sqrt{128},\\A^3+B^3&=(A+B)^3-3AB(A+B)=10\sqrt{10}-6\sqrt{10}=\sqrt{160}.\end{aligned}$$
+而 $121\lt 128\lt 144\lt 160\lt 169$，開方即得。

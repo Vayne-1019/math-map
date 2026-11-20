@@ -1,0 +1,21 @@
+=== meta
+title: 對數題三件事：換底、互換、首尾數
+from: cz-L17
+order: 30
+
+=== body
+<div class="hero">底數不同 → <b>換底</b>到同一個底<br>指數難算 → 改寫成<b>對數式</b>（$a^x=N\iff x=\log_aN$）<br>問位數、首位數字 → 看<b>首數與尾數</b></div>
+<div class="cards">
+<div class="card"><h4>① 換底公式</h4><div class="rule">$\log_aN=\frac{\log_bN}{\log_ba}$，$\log_ab=\frac1{\log_ba}$</div>
+<div class="eg">$\log_xa=24,\log_ya=40,\log_{xyz}a=12$<br>$\frac1{12}=\frac1{24}+\frac1{40}+\log_az$<br>⇒ $\log_za=60$</div></div>
+<div class="card"><h4>② 拆數再組合</h4><div class="rule">把已知數分解成質因數</div>
+<div class="eg">$245=7^2\cdot5$，$1372=7^3\cdot4$<br>$\log4=2-2\log5$ 消去 $\log5$</div></div>
+<div class="card"><h4>③ 首數 = 位數 − 1</h4><div class="rule">$\log x=m+\alpha$，$0\le\alpha\lt 1$</div>
+<div class="eg">$\log5^{100}=69.89\cdots$<br>70 位數；$\log7.2\lt 0.89\lt\log8$ ⇒ 首位是 7</div></div>
+</div>
+<p>小數的對數：⟦例子｜$\log\frac1x=-m-\alpha=-(m+1)+(1-\alpha)$，所以 $\frac1x$ 的尾數是 $1-\alpha$（當 $\alpha>0$）。⟧ 尾數要保持在 $[0,1)$，負的部分要「借 1」。</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>$\log(a+b)\neq\log a+\log b$；$\log_a M^k=k\log_aM$ 只對 $M>0$ 成立</li>
+<li>解對數方程後沒驗根：真數要正、底數要正且不等於 1</li>
+<li>近似值 $\log2=0.3010$ 乘 100 會放大誤差，要用區間估計</li></ul></div>
+<div class="bottomline">先統一底數，再把對數式和指數式互換到好算的那一邊。</div>

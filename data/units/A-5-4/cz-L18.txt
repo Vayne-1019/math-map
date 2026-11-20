@@ -1,0 +1,20 @@
+=== meta
+title: 對數不等式：先看底數比 1 大還是小
+from: cz-L18
+order: 30
+
+=== body
+<div class="hero">底數 $a>1$：真數大 ⇔ 對數大（<b>同向</b>）<br>底數 $0\lt a\lt 1$：真數大 ⇔ 對數小（<b>反向</b>）<br>比大小常常是拿對數去跟「整數」比，例如 $\log_\pi10$ 和 $2=\log_\pi\pi^2$</div>
+<div class="cards">
+<div class="card"><h4>① 湊成同一個對數</h4><div class="rule">換底後合併成 $\log_c(\cdots)$</div>
+<div class="eg">$\log_{19}5+2\log_{19}3+3\log_{19}2$<br>$=\log_{19}360\lt\log_{19}361=2$</div></div>
+<div class="card"><h4>② 底數小於 1 要翻轉</h4><div class="rule">每套一層 $b^{(\cdot)}$，不等號反一次</div>
+<div class="eg">$b=\frac12$，$b\lt a\lt 1$<br>⇒ $b^b\gt b^a\gt b$</div></div>
+<div class="card"><h4>③ 換元成二次</h4><div class="rule">令 $t=\log x$，用判別式或配方</div>
+<div class="eg">$y=(\log_2x-1)(\log_2x-2)$<br>$=\big(t-\frac32\big)^2-\frac14$</div></div>
+</div>
+<p>換元後別忘了 $t$ 的範圍：⟦例子｜$x\ge1$ 且 $a>1$ 時 $t=\log_ax\ge0$。只用判別式會得到整個圓上的範圍，要再和 $t\ge0$ 取交集。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>底數小於 1 時忘了翻轉不等號</li>
+<li>只用判別式，忽略了變數本身的範圍（例如 $x\ge1$ 推出 $\log_ax$ 的正負）</li></ul></div>
+<div class="bottomline">對數比大小：統一底數，判斷底數與 1 的大小，再決定不等號方向。</div>

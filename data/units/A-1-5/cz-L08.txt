@@ -1,0 +1,20 @@
+=== meta
+title: 冪和不用解方程：一切化成 e₁、e₂、e₃
+from: cz-L08
+order: 30
+
+=== body
+<div class="hero">$x,y,z$ 的對稱式都能用<br>$e_1=x+y+z$，$e_2=xy+yz+zx$，$e_3=xyz$ 表示<br>題目給冪和 → 先換成 $e_1,e_2,e_3$ → 再組出要的東西</div>
+<div class="cards">
+<div class="card"><h4>① 二次</h4><div class="rule">$x^2+y^2+z^2=e_1^2-2e_2$</div>
+<div class="eg">$e_1=1$，平方和 $=2$<br>⇒ $e_2=-\frac12$</div></div>
+<div class="card"><h4>② 三次</h4><div class="rule">$\sum x^3-3e_3=e_1(\sum x^2-e_2)$</div>
+<div class="eg">$3-3e_3=1\cdot\frac52$<br>⇒ $e_3=\frac16$</div></div>
+<div class="card"><h4>③ 往上遞推</h4><div class="rule">$x,y,z$ 是 $t^3-e_1t^2+e_2t-e_3=0$ 的根</div>
+<div class="eg">$x^3=x^2+\frac12x+\frac16$，乘 $x$ 再加總<br>$\sum x^4=3+1+\frac16=\frac{25}6$</div></div>
+</div>
+<p>為什麼可以遞推？⟦理由｜每個根都滿足 $t^3=e_1t^2-e_2t+e_3$。乘以 $t^{k}$ 再對三個根求和，得 $p_{k+3}=e_1p_{k+2}-e_2p_{k+1}+e_3p_k$，其中 $p_k=x^k+y^k+z^k$。⟧ 兩個變數時同理，用 $x+y$、$xy$。</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>$x^2+y^2+z^2$ 的公式是 $e_1^2-2e_2$，常漏掉係數 $2$</li>
+<li>急著解出 $x,y,z$：通常是無理數甚至複數，根本不必要</li></ul></div>
+<div class="bottomline">對稱式的值只由 e₁、e₂、e₃ 決定，先求它們就夠了。</div>

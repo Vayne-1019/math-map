@@ -1,0 +1,20 @@
+=== meta
+title: 找有理根：候選名單是有限的
+from: cz-L02
+order: 20
+
+=== body
+<div class="hero">整係數多項式的有理根 $\dfrac qp$：<br><b>分子 $q$ 整除常數項</b>，<b>分母 $p$ 整除首項係數</b><br>先列名單，再逐一代入，找到一個根就降一次</div>
+<div class="cards">
+<div class="card"><h4>① 列候選</h4><div class="rule">$q\mid a_0,\ p\mid a_n$</div>
+<div class="eg">$x^3+x^2-10x-6$：首項 $1$<br>候選只有 $\pm1,\pm2,\pm3,\pm6$</div></div>
+<div class="card"><h4>② 代入找根</h4><div class="rule">$f(r)=0\Rightarrow (x-r)\mid f(x)$</div>
+<div class="eg">$f(3)=27+9-30-6=0$ <span class="pill">因式定理</span></div></div>
+<div class="card"><h4>③ 綜合除法降次</h4><div class="rule">商式的次數少 1</div>
+<div class="eg">$\begin{array}{c|rrrr}3&1&1&-10&-6\\&&3&12&6\\\hline&1&4&2&0\end{array}$<br>$f=(x-3)(x^2+4x+2)$</div></div>
+</div>
+<p>兩個免算的快篩：⟦係數和為 0｜$f(1)$ 就是全部係數相加，和為 $0$ 則 $x=1$ 是根。⟧ → $x=1$ 是根；⟦奇次和 = 偶次和｜$f(-1)=$ 偶次項係數和 $-$ 奇次項係數和，兩者相等時為 $0$。⟧ → $x=-1$ 是根。</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>首項係數不是 1 時忘了分母候選，例如 $3x^3-2x^2+9x-6$ 的根是 $\tfrac23$</li>
+<li>定理只說「有理根一定在名單裡」，名單裡的數不一定是根</li></ul></div>
+<div class="bottomline">高次式先找一個有理根，降成二次，剩下交給求根公式。</div>

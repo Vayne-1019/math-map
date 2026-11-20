@@ -1,0 +1,20 @@
+=== meta
+title: 二次函數的極值：先看對稱軸在哪
+from: cz-L06
+order: 20
+
+=== body
+<div class="hero">閉區間上的最值，只看<b>對稱軸 $x=-\frac b{2a}$ 落在區間的哪裡</b><br>在區間外 → 最值都在端點；在區間內 → 一個在頂點，一個在<b>離軸較遠的端點</b></div>
+<div class="cards">
+<div class="card"><h4>① 軸在區間外</h4><div class="rule">函數單調，兩端點就是答案</div>
+<div class="eg">$f(x)=-2x^2+10x$，$3\le x\le4$<br>軸 $x=\frac52\lt 3$ → 遞減<br>最大 $f(3)=12$</div></div>
+<div class="card"><h4>② 軸在區間內</h4><div class="rule">頂點一個，遠端點一個</div>
+<div class="eg">$-\frac52\big(x-\frac25\big)^2+\frac{29}{10}$，$-1\le x\le1$<br>最大 $\frac{29}{10}$，最小 $f(-1)=-2$</div></div>
+<div class="card"><h4>③ 分式：判別式法</h4><div class="rule">把 $y$ 當參數，要求 $x$ 有實根</div>
+<div class="eg">$y=\frac{x^2-3x+4}{x^2+3x+4}$<br>$\Delta\ge0$ ⇒ $\frac17\le y\le7$</div></div>
+</div>
+<p>條件極值：用條件<b>消元</b>變成一元二次函數，但別忘了被消掉的變數帶來的範圍。⟦例子｜$x^2+2y^2=1$ 消去 $y^2=\frac12(1-x^2)$ 時，要記下 $y^2\ge0$ 帶來的 $-1\le x\le1$。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>判別式法算出 $y\le A$ 就說最大值是 $A$：要找到真的使 $y=A$ 的 $x$。$y=\frac{x^2-1}{x^2+1}$ 永遠到不了 $1$</li>
+<li>直接拿頂點值當答案，沒檢查頂點在不在區間裡</li></ul></div>
+<div class="bottomline">畫出對稱軸和區間，最值的位置一眼就看出來。</div>

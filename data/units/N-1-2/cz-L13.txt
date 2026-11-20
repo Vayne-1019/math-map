@@ -1,0 +1,22 @@
+=== meta
+title: 質數的兩把刀：分解與「p 整除乘積」
+from: cz-L13
+order: 20
+
+=== body
+<div class="hero">證明<b>不是質數</b> → 找出一個真因數（分解、整除特徵）<br>用到<b>是質數</b> → $p\mid ab\Rightarrow p\mid a$ 或 $p\mid b$，$p\mid a^2\Rightarrow p^2\mid a^2$</div>
+<div class="cards">
+<div class="card"><h4>① 分解找因數</h4><div class="rule">記得檢查因數不是 1</div>
+<div class="eg">$n^4+4=(n^2-2n+2)(n^2+2n+2)$<br>$n\ge2$ 時兩者都 $\ge2$</div></div>
+<div class="card"><h4>② 數碼和不變</h4><div class="rule">重排後仍被 3 整除</div>
+<div class="eg">$1,2,\dots,1986$ 隨意排<br>數碼和 $\equiv993\times1987\equiv0\pmod3$</div></div>
+<div class="card"><h4>③ 一個 p 變兩個</h4><div class="rule">$p\mid k^2\Rightarrow p\mid k\Rightarrow p^2\mid k^2$</div>
+<div class="eg">數碼和 210：$3\mid n$ 但 $9\nmid n$<br>⇒ $n$ 不是平方數</div></div>
+<div class="card"><h4>④ 按 3、6 分類</h4><div class="rule">大於 3 的質數是 $6k\pm1$</div>
+<div class="eg">$p,\ p+2$ 都是質數<br>⇒ $p=6k+5$，$6\mid p+1$</div></div>
+</div>
+<p>為什麼 $p\mid ab$ 就能拆開？⟦理由｜若 $p\nmid a$，因為 $p$ 只有因數 $1,p$，所以 $(p,a)=1$；互質時 $p\mid ab$ 推出 $p\mid b$。合數不行：$6\mid2\times3$ 但 $6\nmid2$、$6\nmid3$。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>找到分解卻沒檢查其中一個因數可能等於 1（如 $n=1$ 時 $n^2-2n+2=1$）</li>
+<li>把「$p\mid ab\Rightarrow p\mid a$ 或 $p\mid b$」用在合數上</li></ul></div>
+<div class="bottomline">質數題：要嘛分解出真因數，要嘛用「質數整除乘積必整除其一」。</div>

@@ -1,0 +1,23 @@
+=== meta
+title: [x] 與 {x}：先拆開，再分段
+from: cz-L15
+order: 20
+
+=== body
+<div class="hero">$[x]$ = 不超過 $x$ 的<b>最大整數</b>，$\{x\}=x-[x]\in[0,1)$<br>做題三步：<b>估計</b>夾出整數、<b>拆成</b> $[x]+\{x\}$、<b>分段</b>討論小數部分</div>
+<div class="cards">
+<div class="card"><h4>① 估計</h4><div class="rule">找整數 $n$ 使 $n\le x\lt n+1$</div>
+<div class="eg">$20^2\lt 429\lt 21^2$<br>⇒ $[\sqrt{429}]=20$</div></div>
+<div class="card"><h4>② 整數可以搬出來</h4><div class="rule">$[x+n]=[x]+n$（$n$ 整數）</div>
+<div class="eg">$\big[\frac{x^2+y^2}{x^2}\big]=1+\big[\frac{y^2}{x^2}\big]$</div></div>
+<div class="card"><h4>③ 分段</h4><div class="rule">$y=\{x\}$ 依 $\frac12$、$\frac13$ 等分段</div>
+<div class="eg">$[x]+[x+\frac12]=[2x]$<br>$y\lt\frac12$ 兩邊都 $0$；$y\ge\frac12$ 兩邊都 $1$</div></div>
+<div class="card"><h4>④ 配對求和</h4><div class="rule">$\{a\}+\{b\}$ 是整數就只能 $0$ 或 $1$</div>
+<div class="eg">$\big[\frac{23k}{101}\big]+\big[\frac{23(101-k)}{101}\big]=22$</div></div>
+</div>
+<p>和的取整：⟦為什麼｜$[x+y]=[x]+[y]+[\{x\}+\{y\}]$，而 $0\le\{x\}+\{y\}\lt 2$，所以最後一項是 $0$ 或 $1$。⟧ $[x]+[y]\le[x+y]\le[x]+[y]+1$。</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>負數：$[-3.5]=-4$，不是 $-3$</li>
+<li>$[x]^3$ 與 $[x^3]$ 不同；$[2x]$ 與 $2[x]$ 也不同（$x=0.6$ 時是 $1$ 和 $0$）</li>
+<li>$x\lt y$ 不代表 $[x]\lt[y]$，只有 $[x]\le[y]$</li></ul></div>
+<div class="bottomline">把 x 拆成整數部分加小數部分，整數部分提出去，小數部分分段討論。</div>

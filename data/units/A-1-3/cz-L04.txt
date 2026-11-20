@@ -1,0 +1,20 @@
+=== meta
+title: 雙重根號：湊出「和」與「積」
+from: cz-L04
+order: 20
+
+=== body
+<div class="hero">$\sqrt{a\pm2\sqrt b}=\sqrt x\pm\sqrt y$<br>只要找到兩數：<b>和是 $a$</b>、<b>積是 $b$</b>（取 $x>y$）</div>
+<div class="cards">
+<div class="card"><h4>① 湊數</h4><div class="rule">$x+y=a,\ xy=b$</div>
+<div class="eg">$\sqrt{11-6\sqrt2}=\sqrt{11-2\sqrt{18}}$<br>$9+2=11,\ 9\times2=18$ → $3-\sqrt2$</div></div>
+<div class="card"><h4>② 湊不出來就平方</h4><div class="rule">兩根式相加，先算 $M^2$</div>
+<div class="eg">$M=\sqrt{8+\sqrt{40+8\sqrt5}}+\sqrt{8-\sqrt{40+8\sqrt5}}$<br>$M^2=12+4\sqrt5$，$M=\sqrt{10}+\sqrt2$</div></div>
+<div class="card"><h4>③ 三項也行</h4><div class="rule">設 $\sqrt x+\sqrt y-\sqrt z$</div>
+<div class="eg">$\sqrt{21-4\sqrt5+8\sqrt3-4\sqrt{15}}$<br>$=2+2\sqrt3-\sqrt5$</div></div>
+</div>
+<p>算術根一定非負：$\sqrt{a^2}=|a|$。⟦例子｜$\sqrt{(-2)^2}=2$，不是 $-2$，也不是 $\pm2$。化簡 $\sqrt{(1-\sqrt2)^2}$ 要寫 $\sqrt2-1$。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>$\sqrt{(\sqrt2-3)^2}$ 寫成 $\sqrt2-3$（負數！應為 $3-\sqrt2$）</li>
+<li>減號時大的放前面：$\sqrt{5-2\sqrt6}=\sqrt3-\sqrt2$，不是 $\sqrt2-\sqrt3$</li></ul></div>
+<div class="bottomline">雙重根號先湊「和、積」；湊不出來就把整個式子平方。</div>

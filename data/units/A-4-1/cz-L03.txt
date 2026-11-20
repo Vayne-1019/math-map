@@ -1,0 +1,20 @@
+=== meta
+title: 配成平方和 = 0，一個方程變三個
+from: cz-L03
+order: 20
+
+=== body
+<div class="hero">幾個<b>非負數</b>加起來等於 $0$ ⇒ <b>每一個都是 $0$</b><br>所以：把條件配成平方和，就能一次拿到好幾個等式</div>
+<div class="cards">
+<div class="card"><h4>① 認出非負的東西</h4><div class="rule">$A^2\ge0,\ |B|\ge0,\ \sqrt C\ge0$</div>
+<div class="eg">$A^2+|B|+\sqrt C=0$<br>⇒ $A=B=C=0$</div></div>
+<div class="card"><h4>② 把平方項分組配方</h4><div class="rule">每組 $p^2-2pq+q^2$</div>
+<div class="eg">$14(a^2+b^2+c^2)=(a+2b+3c)^2$<br>⇒ $(2a-b)^2+(3a-c)^2+(3b-2c)^2=0$<br>⇒ $a:b:c=1:2:3$</div></div>
+<div class="card"><h4>③ 常見配法</h4><div class="rule">$\sum x_i^2-\frac{(\sum x_i)^2}n=\sum(x_i-\bar x)^2$</div>
+<div class="eg">$m^4+n^4+p^4+t^4-4mnpt$<br>$=(m^2-n^2)^2+(p^2-t^2)^2+2(mn-pt)^2$</div></div>
+</div>
+<p>怎麼分組？⟦看交叉項｜$-4ab$ 配 $4a^2$ 和 $b^2$ 成 $(2a-b)^2$；$-6ac$ 配 $9a^2$ 和 $c^2$；$-12bc$ 配 $9b^2$ 和 $4c^2$。把每個平方項的係數拆給它出現的交叉項，剛好用完就成功。⟧ 每一個交叉項決定一組。</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>平方項係數分配不完或不夠 → 換一種分法，不要硬湊</li>
+<li>只在<b>實數</b>範圍成立：複數的平方和為 0 不代表各項為 0</li></ul></div>
+<div class="bottomline">看到「一個等式卻要求好幾個值」，先試著配成平方和。</div>

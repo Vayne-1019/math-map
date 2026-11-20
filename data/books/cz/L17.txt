@@ -1,0 +1,217 @@
+=== meta
+title: 指數與對數
+author: 嚴鎮軍
+pages: 126-133
+units: A-1-4, A-5-4
+status: 完成
+
+=== text
+<p>指數與對數的常見題大致有：求值問題、恆等式的證明、常用對數問題、指數方程和對數方程、綜合題等。解決這些問題的基本方法，是在指數及對數的運算法則和性質的基礎上進行代數變形；解題時還常常要用到<b>指數式與對數式的互相轉換</b>：$a^x=N\iff x=\log_aN$（$a>0$，$a\neq1$，$N>0$）。</p>
+<p>本講用到的對數運算法則（$a,b>0$ 且不為 $1$，$M,N>0$）：</p>
+$$\log_a(MN)=\log_aM+\log_aN,\quad\log_a\frac MN=\log_aM-\log_aN,\quad\log_aM^k=k\log_aM,\quad\log_aN=\frac{\log_bN}{\log_ba}.$$
+<p>最後一個是<b>換底公式</b>。$\log$ 不寫底數時表示以 $10$ 為底的常用對數。</p>
+<h3>一、求值問題</h3>
+<p>這是指數與對數最基本的問題。</p>
+
+=== 例 1
+zh: 設 $a>0$，$x=\dfrac12\big(a^{\frac1n}-a^{-\frac1n}\big)$，求 $\big(x+\sqrt{1+x^2}\big)^n$ 的值。
+sol: <b>解法一</b>　由題設
+$$1+x^2=1+\frac14\big(a^{\frac1n}-a^{-\frac1n}\big)^2=\frac14\big(a^{\frac1n}+a^{-\frac1n}\big)^2.$$
+⟦為什麼｜$(u-v)^2+4uv=(u+v)^2$，而 $u=a^{\frac1n}$、$v=a^{-\frac1n}$ 的乘積 $uv=1$，所以 $4+(u-v)^2=(u+v)^2$。⟧因為 $a^{\frac1n}+a^{-\frac1n}>0$，所以 $\sqrt{1+x^2}=\frac12\big(a^{\frac1n}+a^{-\frac1n}\big)$，從而 $x+\sqrt{1+x^2}=a^{\frac1n}$，故
+$$\big(x+\sqrt{1+x^2}\big)^n=a.$$
+<b>解法二</b>　令 $y=a^{\frac1n}$，由 $x=\frac12(y-y^{-1})$ 得 $y^2-2xy-1=0$，解得 $y=x+\sqrt{1+x^2}$（因 $y>0$，捨去負根）。所以 $\big(x+\sqrt{1+x^2}\big)^n=y^n=a$。
+
+=== 例 2
+zh: 已知 $\log245=m$，$\log1372=n$，求 $\log7$ 的值。
+sol: <b>分析</b>　這類題（已知某些數的對數，求另一些數的對數）要善於駕馭數的分解及組合。關鍵在於把 $\log245$ 及 $\log1372$ 用 $\log7$ 表示出來。
+<b>解</b>　因為 $245=7^2\times5$，$1372=7^3\times4$，所以
+$$\log245=2\log7+\log5=m,\qquad①\qquad\log1372=3\log7+\log4=n.\qquad②$$
+又 $\log4=\log\frac{100}{25}=2-2\log5$，代入②得
+$$3\log7-2\log5=n-2.\qquad③$$
+①$\times2+$③消去 $\log5$：$7\log7=2m+n-2$，所以
+$$\log7=\frac{2m+n-2}7.$$
+
+=== 例 3
+zh: 如果 $60^a=3$，$60^b=5$，求 $12^{\frac{1-a-b}{2(1-b)}}$ 的值。
+sol: 由題設 $a=\log_{60}3$，$b=\log_{60}5$，所以
+$$1-a-b=\log_{60}\frac{60}{15}=\log_{60}4,\qquad2(1-b)=2\log_{60}\frac{60}5=2\log_{60}12,$$
+$$\frac{1-a-b}{2(1-b)}=\frac{\log_{60}4}{2\log_{60}12}=\frac{\log_{60}2}{\log_{60}12}=\log_{12}2.$$
+⟦最後一步｜換底公式倒過來用：$\frac{\log_{60}2}{\log_{60}12}=\log_{12}2$。⟧從而 $12^{\frac{1-a-b}{2(1-b)}}=12^{\log_{12}2}=2$。
+
+=== 例 4
+zh: 設 $x,y,z>1$，$a>0$，已知 $\log_xa=24$，$\log_ya=40$，$\log_{xyz}a=12$，求 $\log_za$。
+sol: <b>解法一</b>　由題設 $xyz>1$，$a\neq1$。用換底公式 $\log_ab=\frac1{\log_ba}$，
+$$\frac1{12}=\log_axyz=\log_ax+\log_ay+\log_az=\frac1{24}+\frac1{40}+\log_az,$$
+所以 $\log_az=\frac1{12}-\frac1{24}-\frac1{40}=\frac1{60}$，$\log_za=60$。
+<b>解法二</b>　由題設 $x^{24}=a$，$y^{40}=a$，$(xyz)^{12}=a$，所以
+$$z^{12}=\frac a{x^{12}y^{12}}=\frac a{a^{\frac12}a^{\frac3{10}}}=a^{\frac15},$$
+即 $a=z^{60}$，$\log_za=60$。
+<b>註</b>　例 3 和例 4 的解法一都用了換底公式，這個公式對解許多題目都很有用。
+
+=== text
+<h3>二、恆等式的證明</h3>
+
+=== 例 5
+zh: 已知 $(2a)^x=a$，$\log_{3a}2a=y$，求證：$2^{1-xy}=3^{y-xy}$。
+sol: 對 $2^{1-xy}=3^{y-xy}$ 取以 $a$ 為底的對數，得 $(1-xy)\log_a2=y(1-x)\log_a3$。要證原式，即證
+$$\frac{\log_a2}{\log_a3}=\frac{y(1-x)}{1-xy}$$
+成立即可。下面用已知條件求出用 $x,y$ 表示的 $\log_a2$ 和 $\log_a3$。
+因為 $(2a)^x=a$，$(3a)^y=2a$，所以 $(3a)^{xy}=(2a)^x=a$。取以 $a$ 為底的對數得 $xy(\log_a3+1)=1$，
+$$\log_a3=\frac{1-xy}{xy}.\qquad①$$
+又 $x\log_a2a=1$，即 $x(\log_a2+1)=1$，所以
+$$\log_a2=\frac{1-x}x.\qquad②$$
+②$\div$①得 $\dfrac{\log_a2}{\log_a3}=\dfrac{(1-x)y}{1-xy}$，原式得證。
+
+=== 例 6
+zh: 已知 $x\neq1$，$3\log_ax=\log_2x+\log_bx$，求證：$b^3=(2b)^{\log_2a}$。
+sol: <b>分析</b>　條件中出現了三個不同的底數，應先用換底公式化成同一個底數。
+<b>證</b>　由換底公式，題設等式成為
+$$\frac{3\log_2x}{\log_2a}=\log_2x+\frac{\log_2x}{\log_2b}.$$
+因為 $x\neq1$，$\log_2x\neq0$，兩邊除以它：
+$$\frac3{\log_2a}=1+\frac1{\log_2b},$$
+即 $3\log_2b=\log_2a(\log_2b+1)=\log_2a\cdot\log_2(2b)$，亦即 $\log_2b^3=\log_2(2b)^{\log_2a}$，所以 $b^3=(2b)^{\log_2a}$。
+
+=== 例 7
+zh: 已知 $\mathrm{Rt}\triangle ABC$ 的兩條直角邊為 $a,b$，$\sin A=\dfrac12\sqrt{a^{1-\log_ab}}$，求證：$\log(a+b)-\dfrac12\log6=\dfrac12(\log a+\log b)$。
+sol: 在 $\mathrm{Rt}\triangle ABC$ 中，$\sin A=\dfrac a{\sqrt{a^2+b^2}}$（$a$ 是 $\angle A$ 的對邊）。又由題設
+$$\sin A=\frac12\sqrt{a^{\log_a\frac ab}}=\frac12\sqrt{\frac ab}.$$
+⟦指數怎麼化｜$1-\log_ab=\log_aa-\log_ab=\log_a\frac ab$，而 $a^{\log_aN}=N$。⟧所以
+$$\frac a{\sqrt{a^2+b^2}}=\frac12\sqrt{\frac ab},\quad\text{平方得}\quad a^2+b^2=4ab,\quad\text{即}\quad(a+b)^2=6ab.$$
+邊 $a,b$ 都大於零，所以 $a+b=\sqrt{6ab}$，於是 $\log(a+b)=\log\sqrt6+\log\sqrt{ab}$，即
+$$\log(a+b)-\frac12\log6=\frac12(\log a+\log b).$$
+
+=== text
+<h3>三、常用對數問題</h3>
+<p>正數 $x$ 的常用對數總可以寫成 $\log x=m+\alpha$，其中 $m$ 是整數，$0\le\alpha\lt 1$。$m$ 叫做 $\log x$ 的<b>首數</b>，$\alpha$ 叫做<b>尾數</b>。首數決定數的位數（$x\ge1$ 時，$x$ 是 $m+1$ 位數），尾數決定數字的排列（例如第一位數字）。⟦例子｜$\log 2340=3.3692$，首數 $3$ 表示 $2340$ 是 4 位數；$\log 2.34=0.3692$，尾數相同，所以兩數的數字排列相同。⟧利用常用對數的性質討論首數與尾數，是數學競賽中較常見的題目。</p>
+
+=== 例 8
+zh: 已知 $x$ 是正整數，且 $\dfrac1x$ 的常用對數的尾數小於 $x$ 的常用對數的尾數。求 $x$ 可能取哪些值。
+sol: <b>分析</b>　首數是整數，尾數是小於 $1$ 的非負數。先求出 $x$ 與 $\frac1x$ 的尾數的關係，再通過不等式分析 $x$ 可能取哪些值。
+<b>解</b>　設 $\log x=m+\alpha$，$m$ 為整數，$0\le\alpha\lt 1$。則
+$$\log\frac1x=-m-\alpha=-(m+1)+(1-\alpha).$$
+因為 $\alpha$ 大於 $\log\frac1x$ 的尾數，所以 $\alpha>0$⟦為什麼｜若 $\alpha=0$，則 $\log\frac1x=-m$ 的尾數也是 $0$，不會「小於」$\alpha$。⟧，從而 $0\lt\alpha\lt 1$，即 $0\lt 1-\alpha\lt 1$，所以 $\log\frac1x$ 的尾數為 $1-\alpha$。再由題設 $1-\alpha\lt\alpha$，所以 $\frac12\lt\alpha\lt 1$。由此
+$$m+\frac12\lt m+\alpha=\log x\lt m+1,\qquad10^{m+\frac12}\lt x\lt 10^{m+1}.\qquad①$$
+當 $m\lt 0$ 時，$10^{m+1}-10^{m+\frac12}\lt 10^{m+1}\le10^0=1$，而且 $10^{m+1}\le1$，所以這兩數之間沒有正整數。也就是說，要有滿足①的整數，需 $m\ge0$。
+綜上，對任意非負整數 $m$，$x$ 可取 $10^{m+\frac12}$ 與 $10^{m+1}$ 之間的一切整數。如 $m=0$ 時 $x$ 可取 $4,5,6,7,8,9$（$10^{\frac12}\approx3.16$）；$m=1$ 時 $x$ 可取 $32,33,\dots,98,99$；…。$x$ 可取的正整數有無窮多個。
+
+=== 例 9
+zh: 已知 $x,y$ 是正整數，$\log x$ 的首數為 $m$，尾數為 $\alpha$；$\log y$ 的首數為 $n$，尾數為 $\beta$。且 $m^2+n^2=5$，$\alpha+\beta=1$。(1) 求 $x,y$ 的關係式；(2) 若 $x\lt y$，求 $x$ 的一切可能的值。
+sol: (1) $x,y$ 是正整數，所以 $m,n$ 是非負整數。由 $m^2+n^2=5$ 得 $m=1,n=2$ 或 $m=2,n=1$，兩者都有 $m+n=3$。所以
+$$\log x+\log y=m+n+\alpha+\beta=4,\qquad xy=10^4.$$
+(2) 因為 $0\lt x\lt y$，所以 $x^2\lt xy=10^4$，即 $x\lt 100$，$\log x\lt 2$，這說明只能 $m=1$。於是 $10\le x\lt 100$；又 $\alpha+\beta=1$ 且 $\alpha,\beta\lt 1$ 表示 $\alpha>0$，所以 $x\neq10$，$10\lt x\lt 100$。再由 $x$ 是 $10^4=2^4\times5^4$ 的因數，得 $x$ 可能的值為 $16,20,25,40,50,80$。
+
+=== 例 10
+zh: 求 $5^{100}$ 的第一位數字（已知 $\log2=0.3010$，$\log3=0.4771$）。
+sol: $\log5^{100}=100\log5=100(1-\log2)$。由 $\log2=0.3010$（四捨五入值）有 $0.3010\le\log2\lt 0.3011$⟦為什麼這樣寫｜$0.3010$ 是四捨五入到第四位的近似值，真值約為 $0.30103$。乘以 $100$ 後誤差會放大，所以要用區間來估計。⟧，於是
+$$69.89\lt\log5^{100}\le69.90,$$
+即 $5^{100}=10^{69.89\cdots}$。所以 $5^{100}$ 與 $10^{0.89\cdots}$ 有相同的第一位數字。由於
+$$0.89\cdots\lt 0.9031=3\log2=\log8,\quad\text{所以}\quad10^{0.89\cdots}\lt 8.\qquad①$$
+又 $\log7.2=\log72-1=3\log2+2\log3-1=0.8572$，所以
+$$7.2\lt 10^{0.89\cdots}.\qquad②$$
+由①②可見 $10^{0.89\cdots}$ 的第一位數字是 $7$，從而 $5^{100}$ 的第一位數字是 $7$。
+（原書把 $\log7.2$ 的展開印成 $3\log2-2\log3-1$，應為 $+2\log3$，數值 $0.8572$ 是對的。）
+
+=== text
+<h3>四、指數方程、對數方程</h3>
+<p>解指數方程和對數方程要注意同解變形（變形後定義域可能改變，要驗根），對於含字母的方程要進行討論。</p>
+
+=== 例 11
+zh: 解方程 $\log_{0.5x}x^2-14\log_{16x}x^3+40\log_{4x}\sqrt x=0$。
+sol: 顯然 $x=1$ 滿足方程（三項都是 $0$）。若 $x\neq1$，用換底公式化成以 $x$ 為底：
+$$\frac{\log_xx^2}{\log_x0.5x}-\frac{14\log_xx^3}{\log_x16x}+\frac{40\log_x\sqrt x}{\log_x4x}=0.$$
+令 $\log_x2=y$，則 $\log_x0.5x=1-y$，$\log_x16x=1+4y$，$\log_x4x=1+2y$，上式化為
+$$\frac2{1-y}-\frac{42}{1+4y}+\frac{20}{1+2y}=0.$$
+去分母化簡得 $2y^2+3y-2=0$⟦去分母｜$2(1+4y)(1+2y)-42(1-y)(1+2y)+20(1-y)(1+4y)=20y^2+30y-20$。⟧，解得 $y_1=\frac12$，$y_2=-2$。相應地由 $\log_x2=\frac12$ 得 $x_1=4$，由 $\log_x2=-2$ 得 $x_2=\frac{\sqrt2}2$。經檢驗它們（連同 $x=1$）都滿足方程。
+
+=== 例 12
+zh: 求方程組 $\begin{cases}x^{x+y}=y^{12}&①\\y^{x+y}=x^3&②\end{cases}$ 的正整數解。
+sol: 因為只求正整數解，$x+y\neq0$。由②得 $y=x^{\frac3{x+y}}$，代入①得
+$$x^{x+y}=x^{\frac{36}{x+y}}.$$
+若 $x\neq1$，則指數相等：$x+y=\dfrac{36}{x+y}$，所以 $x+y=6$。代入②得 $y^6=x^3$，即 $x=y^2$。從而 $x=4$，$y=2$。
+若 $x=1$，由原方程組可見 $y=1$。
+所以共有兩組解 $(1,1)$ 及 $(4,2)$。
+
+=== 例 13
+zh: 解方程 $2\log x-\log(x-1)=\log a$。
+sol: 由方程可見 $x>1$，$a>0$。於是原方程可以改寫為 $\dfrac{x^2}{x-1}=a$，即 $x^2-ax+a=0$。解得
+$$x_{1,2}=\frac{a\pm\sqrt{a^2-4a}}2.$$
+$x$ 為實數，所以 $a^2-4a\ge0$，從而 $a\ge4$（$a>0$）。下面分兩種情形討論：
+(1) 若 $a=4$，則 $x_1=x_2=2$。
+(2) 若 $a>4$，則 $x_1=\dfrac{a+\sqrt{a^2-4a}}2>1$，且
+$$x_2-1=\frac{a-2-\sqrt{a^2-4a}}2=\frac2{a-2+\sqrt{a^2-4a}}>0.$$
+⟦分子有理化｜$(a-2)^2-(a^2-4a)=4$，所以 $a-2-\sqrt{a^2-4a}=\frac4{a-2+\sqrt{a^2-4a}}$。⟧所以 $x_2>1$。故 $a>4$ 時 $x_1,x_2$ 都是方程的根。
+（$0\lt a\lt 4$ 時方程無解。）
+
+=== 習題 1
+zh: 填空：
+(1) 一個兩位數的 30 次方是 34 位數，則這個兩位數是 ____（已知 $\log2=0.301$，$\log3=0.477$，$\log7=0.845$）。
+(2) $\log^32+\log^35+3\log2\log5=$ ____。
+(3) $3^{\log20}\cdot\big(\frac12\big)^{\log0.3}=$ ____。
+(4) 如果質數 $p,q$ 滿足關係式 $3p+5q=31$，那麼 $\log_2\dfrac p{3q+1}$ 的值是 ____。
+(5) 已知負數 $x,y,z$ 滿足 $2^x=3^y=6^z$，$2x,3y,6z$ 的大小關係是 ____。
+(6) $\log_23+\log_35+\log_58$ 的整數部分是 ____。
+ans: (1) $13$；(2) $1$；(3) $6$；(4) $-3$ 或 $0$；(5) $6z\lt 2x\lt 3y$；(6) $4$。
+sol: (1) 設這個兩位數為 $x$，$33\le30\log x\lt 34$，即 $1.1\le\log x\lt 1.134$。估算：$x=12$ 時 $30\log12=30(2\log2+\log3)=32.37\lt 33$；$x=14$ 時 $30\log14=30(\log2+\log7)=34.38>34$。所以 $x=13$。
+(2) 記 $a=\log2$，$b=\log5$，$a+b=1$。$a^3+b^3+3ab=(a+b)^3-3ab(a+b)+3ab=1$。
+(3) 取常用對數：$\log20\cdot\log3+\log0.3\cdot\log\frac12=(1+\log2)\log3-(\log3-1)\log2=\log3+\log2=\log6$，所以值是 $6$。
+(4) $3p+5q=31$，$p,q$ 為質數：$q$ 為奇數時 $3p$ 為偶數，$p=2$，$q=5$；$q=2$ 時 $p=7$。$\log_2\frac2{16}=-3$，$\log_2\frac77=0$。
+(5) 設 $2^x=3^y=6^z=t$，$0\lt t\lt 1$，$\log t\lt 0$。則 $2x=\dfrac{\log t}{\log\sqrt2}$，$3y=\dfrac{\log t}{\log\sqrt[3]3}$，$6z=\dfrac{\log t}{\log\sqrt[6]6}$。而 $\sqrt[6]6\lt\sqrt2\lt\sqrt[3]3$⟦怎麼比｜都化成 6 次方：$6$，$(\sqrt2)^6=8$，$(\sqrt[3]3)^6=9$。⟧，分子是同一個負數，分母越小值越小，所以 $6z\lt 2x\lt 3y$。
+(6) $\frac32\lt\log_23\lt 2$，$\frac43\lt\log_35\lt\frac32$，$\frac54\lt\log_58\lt\frac32$，推得 $\frac{49}{12}\lt$ 和 $\lt 5$，所以整數部分是 $4$。⟦這些估計怎麼來｜例如 $2^{3/2}=2\sqrt2\approx2.83\lt 3\lt 4$；$3^{4/3}=3\sqrt[3]3\approx4.33\lt 5\lt 3^{3/2}\approx5.2$；$5^{5/4}\approx7.48\lt 8\lt 5^{3/2}\approx11.2$。⟧
+
+=== 習題 2
+zh: $7^{100}$ 與 $11^{100}$ 各為 85、105 位數，$77^{20}$ 為幾位數？
+ans: 38 位數。
+sol: 由已知 $84\le\log7^{100}=100\log7\lt 85$，$104\le\log11^{100}=100\log11\lt 105$，可知 $0.84\le\log7\lt 0.85$，$1.04\le\log11\lt 1.05$，所以 $1.88\le\log77\lt 1.90$。於是 $37.6\le\log77^{20}=20\log77\lt 38$，故 $77^{20}$ 是 38 位數。
+
+=== 習題 3
+zh: $x$ 是一位整數，$\dfrac1x$ 的常用對數的尾數比 $x^2$ 的常用對數的尾數大，求 $x$（已知 $\log2=0.3010$，$\log3=0.4771$）。
+ans: $x=2$ 或 $4$。
+sol: $x=1$ 時兩個尾數都是 $0$，不合。$x\ge2$ 時 $0\lt\log x\lt 1$，$\log\frac1x=-\log x$ 的尾數為 $1-\log x$；$\log x^2=2\log x$。
+(1) 當 $\log x\lt\frac12$（即 $x\le3$）時，$x^2$ 的尾數為 $2\log x$。由 $1-\log x>2\log x$ 得 $\log x\lt\frac13=0.3333$，$x$ 是整數，所以 $x=2$。
+(2) 當 $\log x\ge\frac12$（即 $x\ge4$）時，尾數為 $2\log x-1$。由 $1-\log x>2\log x-1$ 得 $\log x\lt\frac23=0.6666\lt\log5$，所以 $x=4$。
+
+=== 習題 4
+zh: 已知 $x$ 和 $y$ 都是正整數，它們的常用對數的尾數之和等於 $1$，$x^2y$ 的常用對數的首數是 $3$。求 $x,y$ 的值。
+ans: $(x,y)=(2,500),(4,250),(5,200),(8,125),(20,5),(25,4),(50,2)$。
+sol: 令 $\log x=a+p$，$\log y=b+q$。$x,y$ 是正整數，所以首數 $a,b$ 都是非負整數；又 $0\le p\lt 1$，$0\le q\lt 1$，$p+q=1$，所以 $p>0$，$q>0$。於是
+$$\log x^2y=2\log x+\log y=(2a+b+1)+p.$$
+$0\lt p\lt 1$，所以 $2a+b+1$ 是 $\log x^2y$ 的首數，$2a+b+1=3$，即 $2a+b=2$。所以 $a=0,b=2$ 或 $a=1,b=0$。
+(1) 若 $a=0$，$b=2$，則 $\log xy=a+b+p+q=3$，$xy=1000$，$x$ 是一位數，$y$ 是三位數，有四組解 $(2,500),(4,250),(5,200),(8,125)$。
+(2) 若 $a=1$，$b=0$，則 $xy=100$，$x$ 是兩位數，$y$ 是一位數，有三組解 $(20,5),(25,4),(50,2)$。
+
+=== 習題 5
+zh: 若 $a,b,c$ 的對數各為 $p,q,r$，則 $a^{q-r}\cdot b^{r-p}\cdot c^{p-q}=1$。
+sol: $a^{\log b}=b^{\log a}$（兩邊取對數都是 $\log a\log b$），同理 $b^{\log c}=c^{\log b}$，$a^{\log c}=c^{\log a}$。所以
+$$\text{左}=\frac{a^{\log b}}{a^{\log c}}\cdot\frac{b^{\log c}}{b^{\log a}}\cdot\frac{c^{\log a}}{c^{\log b}}=1.$$
+（更直接：左邊取對數得 $p(q-r)+q(r-p)+r(p-q)=0$。）
+
+=== 習題 6
+zh: 已知 $\dfrac{x(y+z-x)}{\log x}=\dfrac{y(z+x-y)}{\log y}=\dfrac{z(x+y-z)}{\log z}$，且 $x\cdot y\cdot z=1$，求證：$x^yy^x=y^zz^y=z^xx^z$。
+sol: 設比值為 $\frac1k$。因為 $xyz=1$，$\frac1x=yz$ 等，所以
+$$y+z-x=kyz\log x\ ①,\qquad z+x-y=kxz\log y\ ②,\qquad x+y-z=kxy\log z\ ③.$$
+①$+$②得 $2z=kz(y\log x+x\log y)$，即 $\log(x^y\cdot y^x)=\frac2k$。同理②$+$③、③$+$①得 $\log(y^z\cdot z^y)=\log(z^x\cdot x^z)=\frac2k$。所以 $x^yy^x=y^zz^y=z^xx^z$。
+
+=== 習題 7
+zh: 已知 $2\log_mx=\log_kx+\log_nx$，且 $\log_kx\neq0$，求證：$n^2=(kn)^{\log_km}$。
+hint: 換為以 $k$ 為底的對數。
+sol: 由換底公式 $\log_mx=\frac{\log_kx}{\log_km}$，$\log_nx=\frac{\log_kx}{\log_kn}$。代入並除以 $\log_kx\neq0$：$\frac2{\log_km}=1+\frac1{\log_kn}$，即 $2\log_kn=\log_km(\log_kn+1)=\log_km\cdot\log_k(kn)$，亦即 $\log_kn^2=\log_k(kn)^{\log_km}$。（與例 6 同一個想法。）
+
+=== 習題 8
+zh: 解方程：$4^{-\frac1x}+6^{-\frac1x}=9^{-\frac1x}$。
+ans: $x=\dfrac{\log3-\log2}{\log(\sqrt5-1)-\log2}$
+sol: 兩邊除以 $9^{-\frac1x}$，令 $\big(\frac23\big)^{-\frac1x}=y$，方程成為 $y^2+y=1$，解出正根 $y=\frac{\sqrt5-1}2$。於是 $-\frac1x\log\frac23=\log\frac{\sqrt5-1}2$，即
+$$x=\frac{\log3-\log2}{\log(\sqrt5-1)-\log2}.$$
+
+=== 習題 9
+zh: 解方程：$x^{x^7}=7$。
+ans: $x=\sqrt[7]7$
+sol: 令 $x^7=y$，則 $x^y=7$，所以
+$$7\log x=\log y\ ①,\qquad y\log x=\log7\ ②.$$
+①$\div$②得 $\frac7y=\frac{\log y}{\log7}$，即 $y\log y=7\log7$。$y\log y$ 在 $y\ge1$ 時遞增，在 $0\lt y\lt 1$ 時為負，所以 $y=7$，$x=\sqrt[7]7$。
+
+=== 習題 10
+zh: 方程 $\dfrac{\log2x}{\log(x+a)}=2$，當 $a$ 為何值時有一解、二解、無解？
+ans: $a\le0$ 時有唯一解 $x=1-a+\sqrt{1-2a}$；$0\lt a\lt\frac12$ 時有兩解 $x=1-a\pm\sqrt{1-2a}$；$a\ge\frac12$ 時無解。
+sol: 方程等價於 $2x=(x+a)^2$，且 $x>0$，$x+a>0$，$x+a\neq1$。即 $x^2+2(a-1)x+a^2=0$，判別式 $4(1-2a)$。
+$a>\frac12$ 時無實根；$a=\frac12$ 時 $x=\frac12$，但 $x+a=1$，分母 $\log1=0$，不合，無解。
+$a\lt\frac12$ 時兩根 $x=1-a\pm\sqrt{1-2a}$，對應 $x+a=1\pm\sqrt{1-2a}$。大根總滿足 $x+a>1$；小根滿足 $x+a=1-\sqrt{1-2a}>0\iff a>0$（此時兩根之積 $a^2>0$、和 $2(1-a)>0$，兩根都正）。所以 $0\lt a\lt\frac12$ 時兩解，$a\le0$ 時只有大根一解。
