@@ -14,7 +14,7 @@ order: 30
 <div class="card"><h4>① 直化法</h4><div class="rule">作出長 $AD+BC$ 的線段</div>
 <div class="eg">$2EF=EF+FG\ge EG=AD+BC$ <span class="pill">接起來</span></div></div>
 <div class="card"><h4>② 補成等腰</h4><div class="rule">$BD=BE=a+c$</div>
-<div class="eg">$DE\le2b<a+c$ ⇒ $\angle B$ 最小 ⇒ $2\angle B<\angle A+\angle C$ <span class="pill">大邊對大角</span></div></div>
+<div class="eg">$DE\le2b\lt a+c$ ⇒ $\angle B$ 最小 ⇒ $2\angle B\lt \angle A+\angle C$ <span class="pill">大邊對大角</span></div></div>
 <div class="card"><h4>③ 夾角定理</h4><div class="rule">兩邊對應相等，夾角大 ⇔ 第三邊大</div>
 <div class="eg">四邊形邊長相同，$\angle A$ 變大 ⇒ $BD$ 變長 ⇒ $\angle C$ 變大 <span class="pill">連鎖</span></div></div>
 </div>

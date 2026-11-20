@@ -129,7 +129,7 @@ sol: <figure class="bkfig"><svg viewBox="0 0 124 230" width="124" role="img" ari
 <g fill="currentColor"><circle cx="22" cy="48.6" r="2.4"/><circle cx="22" cy="181.4" r="2.4"/><circle cx="22" cy="96.4" r="2.4"/></g>
 <g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="19.1" text-anchor="middle">A</text><text x="14.2" y="220.7" text-anchor="middle">B</text><text x="109.5" y="220.7" text-anchor="middle">C</text><text x="82.9" y="19.1" text-anchor="middle">D</text><text x="11" y="101.3" text-anchor="middle">P</text></g>
 </svg><figcaption>$AB=7$、$AD=2$、$BC=3$；圖中畫的是 $AP=\frac{14}5$ 那一個，另兩點在 $AP=1$、$AP=6$</figcaption></figure>
-<p>(1) 若 $\triangle PAD\sim\triangle PBC$：$\frac x{7-x}=\frac23$，$x=\frac{14}5<7$，可以。</p>
+<p>(1) 若 $\triangle PAD\sim\triangle PBC$：$\frac x{7-x}=\frac23$，$x=\frac{14}5\lt 7$，可以。</p>
 <p>(2) 若 $\triangle PAD\sim\triangle CBP$：$\frac x3=\frac2{7-x}$，$x(7-x)=6$，$x=1$ 或 $6$，都可以。</p>
 ans: 3 個
 

@@ -12,7 +12,7 @@ order: 20
 </svg><figcaption>三條高 $h_a,h_b,h_c$（虛線）與內切圓</figcaption></figure>
 <div class="cards">
 <div class="card"><h4>① 用面積換高</h4><div class="rule">$a=\frac{2S}{h_a}$</div>
-<div class="eg">$h_a=12,h_b=20$：$c>|a-b|$ ⇒ $h_c<\frac{12\cdot20}{8}=30$ <span class="pill">兩邊之差</span></div></div>
+<div class="eg">$h_a=12,h_b=20$：$c\gt |a-b|$ ⇒ $h_c\lt \frac{12\cdot20}{8}=30$ <span class="pill">兩邊之差</span></div></div>
 <div class="card"><h4>② 用面積換 $r$</h4><div class="rule">$h_a=r\big(1+\frac ba+\frac ca\big)$</div>
 <div class="eg">相加後三對 $\frac ba+\frac ab\ge2$ ⇒ $h_a+h_b+h_c\ge9r$ <span class="pill">算幾</span></div></div>
 <div class="card"><h4>③ 垂線段最短</h4><div class="rule">高 ≤ 同頂點的角平分線</div>

@@ -21,5 +21,5 @@ order: 20
 <p>倍、分也一樣：$a=2b$ 就是 $b+b=a$。⟦例｜要證 $DE=\frac12AB$，取 $AB$ 中點 $F$（把 $AB$ 折半），再證 $DE=DF$。⟧</p>
 <div class="pitfall"><h4>⚠ 最常錯</h4><ul>
 <li>截出來的點要確認<b>真的落在線段上</b>（必要時比較長短）</li>
-<li>有絕對值 $|AB-AC|$ 時忘了分 $AB=AC$、$AB>AC$、$AB<AC$ 討論</li></ul></div>
+<li>有絕對值 $|AB-AC|$ 時忘了分 $AB=AC$、$AB\gt AC$、$AB\lt AC$ 討論</li></ul></div>
 <div class="bottomline">和差倍分 → 截長或補短 → 回到全等三角形證相等。</div>

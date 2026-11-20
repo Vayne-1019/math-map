@@ -4,7 +4,7 @@ from: cz-L38
 order: 30
 
 === body
-<div class="hero">三角形各角都 $<120^\circ$：到三頂點距離和最小的點，是看三邊都成 <b>$120^\circ$</b> 的費馬點<br>有一角 $\ge120^\circ$：最小點就是那個頂點</div>
+<div class="hero">三角形各角都 $\lt 120^\circ$：到三頂點距離和最小的點，是看三邊都成 <b>$120^\circ$</b> 的費馬點<br>有一角 $\ge120^\circ$：最小點就是那個頂點</div>
 <figure class="bkfig"><svg viewBox="0 0 260 264" width="260" role="img" aria-label="費馬點">
 <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="124,43.8 72.1,131.6 199.9,131.6" stroke-width="2"/><polygon points="72.1,131.6 136,242.2 199.9,131.6"/><polygon points="199.9,131.6 238,22 124,43.8"/><polygon points="124,43.8 22,42.7 72.1,131.6"/><line x1="124" y1="43.8" x2="136" y2="242.2"/><line x1="72.1" y1="131.6" x2="238" y2="22"/><line x1="199.9" y1="131.6" x2="22" y2="42.7"/></g>
 <g fill="currentColor"></g>

@@ -73,15 +73,15 @@ sol: <p><b>證法一</b>　兩個角分屬 $\triangle ABD$ 與 $\triangle CDF$�
 <p>軸對稱變換的應用極為廣泛，再看幾個用它處理幾何不等式與極值的例子。</p>
 
 === 例 6
-zh: 凸四邊形 $ABCD$ 的對角線 $AC$ 與 $BD$ 交於 $O$，且 $AC\perp BD$，已知 $OA>OC$，$OB>OD$。證明 $BC+AD>AB+CD$。
+zh: 凸四邊形 $ABCD$ 的對角線 $AC$ 與 $BD$ 交於 $O$，且 $AC\perp BD$，已知 $OA\gt OC$，$OB\gt OD$。證明 $BC+AD\gt AB+CD$。
 sol: <figure class="bkfig"><svg viewBox="0 0 240 204" width="240" role="img" aria-label="對角線垂直的四邊形">
 <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="218,128.9 99.2,22 22,128.9 99.2,182.4"/><line x1="218" y1="128.9" x2="22" y2="128.9"/><line x1="99.2" y1="22" x2="99.2" y2="182.4"/><line x1="218" y1="128.9" x2="99.2" y2="75.5" stroke-dasharray="5 4"/><line x1="99.2" y1="22" x2="176.4" y2="128.9" stroke-dasharray="5 4"/><line x1="176.4" y1="128.9" x2="99.2" y2="75.5" stroke-dasharray="5 4"/></g>
 <g fill="currentColor"></g>
 <g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="229" y="133.8" text-anchor="middle">A</text><text x="99.2" y="15.9" text-anchor="middle">B</text><text x="11" y="133.8" text-anchor="middle">C</text><text x="99.2" y="198.3" text-anchor="middle">D</text><text x="91.4" y="141.6" text-anchor="middle">O</text><text x="176.4" y="144.8" text-anchor="middle">C′</text><text x="84.7" y="80.4" text-anchor="middle">D′</text><text x="164.2" y="98.3" text-anchor="middle">E</text></g>
 </svg><figcaption>$C'$、$D'$ 是 $C$、$D$ 關於 $BD$、$AC$ 的對稱點；連 $AD'$、$BC'$ 交於 $E$（虛線）</figcaption></figure>
-<p><b>證</b>　以 $BD$、$AC$ 為對稱軸，分別作 $BC$、$AD$ 的反射。因為 $AC\perp BD$ 且 $OA>OC$、$OB>OD$，$C$ 關於 $BD$ 的對稱點 $C'$ 落在線段 $OA$ 內部，$D$ 關於 $AC$ 的對稱點 $D'$ 落在線段 $OB$ 內部。連 $AD'$、$BC'$，設交點為 $E$。由三角不等式</p>
-$$BE+AE>AB,\qquad EC'+ED'>C'D'.$$
-<p>相加，並注意 $C'D'=CD$⟦為什麼｜$OC'=OC$、$OD'=OD$，且 $\angle C'OD'=\angle COD=90^\circ$。⟧、$AD'=AD$、$BC'=BC$，得 $AD'+BC'>AB+CD$，即 $AD+BC>AB+CD$。</p>
+<p><b>證</b>　以 $BD$、$AC$ 為對稱軸，分別作 $BC$、$AD$ 的反射。因為 $AC\perp BD$ 且 $OA\gt OC$、$OB\gt OD$，$C$ 關於 $BD$ 的對稱點 $C'$ 落在線段 $OA$ 內部，$D$ 關於 $AC$ 的對稱點 $D'$ 落在線段 $OB$ 內部。連 $AD'$、$BC'$，設交點為 $E$。由三角不等式</p>
+$$BE+AE\gt AB,\qquad EC'+ED'\gt C'D'.$$
+<p>相加，並注意 $C'D'=CD$⟦為什麼｜$OC'=OC$、$OD'=OD$，且 $\angle C'OD'=\angle COD=90^\circ$。⟧、$AD'=AD$、$BC'=BC$，得 $AD'+BC'\gt AB+CD$，即 $AD+BC\gt AB+CD$。</p>
 <p>這裡透過反射把有關的線段集中到 $\triangle ABO$ 內，結論便顯而易見。這種「透過反射使條件集中」的手法，例 3 也用過。</p>
 === 例 7
 zh: $\triangle DEF$ 是正 $\triangle ABC$ 的內接三角形，頂點 $D,E,F$ 分別在 $BC,CA,AB$ 上。證明：$\triangle DEF$ 的周長不小於 $\triangle ABC$ 周長的一半。
@@ -99,9 +99,9 @@ sol: <figure class="bkfig"><svg viewBox="0 0 270 189" width="270" role="img" ari
 <g fill="currentColor"></g>
 <g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="35.3" y="179.5" text-anchor="middle">A</text><text x="218" y="179.5" text-anchor="middle">B</text><text x="126.6" y="88.3" text-anchor="middle">C</text><text x="225.9" y="125.2" text-anchor="middle">C′</text><text x="210.2" y="15.9" text-anchor="middle">B′</text><text x="257.4" y="99.3" text-anchor="middle">l</text></g>
 </svg><figcaption>$AC+BC=AC'+BC'$；$l$ 過 $C$ 平行 $AB$，$B'$ 是 $B$ 關於 $l$ 的對稱點，$A,C,B'$ 共線（虛線）。$C'$ 必在 $l$ 與 $AB$ 之間</figcaption></figure>
-<p><b>證</b>　設 $\triangle ABC$ 是等腰三角形（$CA=CB$），$\triangle ABC'$ 不等腰，公共底邊 $AB$ 長度固定，且 $AC+BC=AC'+BC'$。下面證 $S_{\triangle ABC}>S_{\triangle ABC'}$。不妨設 $C$、$C'$ 在 $AB$ 同側。過 $C$ 作直線 $l\parallel AB$，只要證 $C'$ 在 $l$ 與 $AB$ 之間（高較小）。</p>
-<p>假設相反，設 $AC'$ 與 $l$ 交於 $P$（$C'$ 可能就在 $l$ 上；但 $P$ 不會是 $C$，否則 $AC'+BC'>AC+BC$）。作 $B$ 關於 $l$ 的對稱點 $B'$，因為 $\triangle ABC$ 等腰，$A,C,B'$ 共線⟦為什麼｜$l\parallel AB$，所以 $l$ 與 $CA$、$CB$ 的夾角都等於底角 $\angle CAB=\angle CBA$。反射後 $CB'$ 與 $l$ 的夾角也是這個底角，位在 $l$ 的另一側，正好落在 $CA$ 的延長線上。⟧。連 $BP$、$B'P$，則 $BP=B'P$，</p>
-$$AC'+BC'=AP+PC'+BC'\ge AP+BP=AP+B'P>AB'=AC+BC,$$
+<p><b>證</b>　設 $\triangle ABC$ 是等腰三角形（$CA=CB$），$\triangle ABC'$ 不等腰，公共底邊 $AB$ 長度固定，且 $AC+BC=AC'+BC'$。下面證 $S_{\triangle ABC}\gt S_{\triangle ABC'}$。不妨設 $C$、$C'$ 在 $AB$ 同側。過 $C$ 作直線 $l\parallel AB$，只要證 $C'$ 在 $l$ 與 $AB$ 之間（高較小）。</p>
+<p>假設相反，設 $AC'$ 與 $l$ 交於 $P$（$C'$ 可能就在 $l$ 上；但 $P$ 不會是 $C$，否則 $AC'+BC'\gt AC+BC$）。作 $B$ 關於 $l$ 的對稱點 $B'$，因為 $\triangle ABC$ 等腰，$A,C,B'$ 共線⟦為什麼｜$l\parallel AB$，所以 $l$ 與 $CA$、$CB$ 的夾角都等於底角 $\angle CAB=\angle CBA$。反射後 $CB'$ 與 $l$ 的夾角也是這個底角，位在 $l$ 的另一側，正好落在 $CA$ 的延長線上。⟧。連 $BP$、$B'P$，則 $BP=B'P$，</p>
+$$AC'+BC'=AP+PC'+BC'\ge AP+BP=AP+B'P\gt AB'=AC+BC,$$
 <p>與 $AC'+BC'=AC+BC$ 矛盾。</p>
 === 例 9
 zh: 證明：任意凸四邊形的面積不大於兩組對邊乘積之和的一半。
@@ -143,10 +143,10 @@ ans: $CM^2+DM^2=2R^2$（$R$ 為半徑）
 zh: 已知直線 $l$ 及位於 $l$ 同側的兩點 $A$、$B$。試在 $l$ 上取一點 $P$ 使 $PA+PB$ 最小。
 sol: <p>作 $A$ 關於 $l$ 的對稱點 $A'$，連 $A'B$ 與 $l$ 的交點就是所求的 $P$。對 $l$ 上任一點 $Q$，$QA+QB=QA'+QB\ge A'B=PA'+PB=PA+PB$。</p>
 === 習題 5
-zh: $P$ 是 $\triangle ABC$ 中 $\angle A$ 的外角平分線上一點（$P\ne A$）。證明：$PB+PC>AB+AC$。
+zh: $P$ 是 $\triangle ABC$ 中 $\angle A$ 的外角平分線上一點（$P\ne A$）。證明：$PB+PC\gt AB+AC$。
 sol: <figure class="bkfig"><svg viewBox="0 0 168 200" width="168" role="img" aria-label="外角平分線上一點">
 <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="83.2,93.3 22,178 106.7,178"/><line x1="138.8" y1="103.2" x2="22" y2="178"/><line x1="138.8" y1="103.2" x2="106.7" y2="178"/><line x1="62.3" y1="89.5" x2="145.7" y2="104.5"/><line x1="83.2" y1="93.3" x2="134.7" y2="22" stroke-dasharray="5 4"/><line x1="138.8" y1="103.2" x2="134.7" y2="22" stroke-dasharray="5 4"/></g>
 <g fill="currentColor"></g>
 <g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="75.4" y="90.4" text-anchor="middle">A</text><text x="14.2" y="190.7" text-anchor="middle">B</text><text x="106.7" y="193.9" text-anchor="middle">C</text><text x="149.8" y="108.1" text-anchor="middle">P</text><text x="134.7" y="15.9" text-anchor="middle">D</text></g>
 </svg><figcaption>$C$ 關於 $AP$ 的對稱點 $D$ 落在 $BA$ 的延長線上（虛線）</figcaption></figure>
-<p>$C$ 關於 $AP$ 的對稱點 $D$ 必在 $BA$ 的延長線上，$PD=PC$、$AD=AC$。所以 $PB+PC=PB+PD>BD=AB+AD=AB+AC$。這裡透過反射把折線 $AB+AC$ 化為直線段 $BD$，並把有關線段集中到 $\triangle BPD$ 中，參考例 6。</p>
+<p>$C$ 關於 $AP$ 的對稱點 $D$ 必在 $BA$ 的延長線上，$PD=PC$、$AD=AC$。所以 $PB+PC=PB+PD\gt BD=AB+AD=AB+AC$。這裡透過反射把折線 $AB+AC$ 化為直線段 $BD$，並把有關線段集中到 $\triangle BPD$ 中，參考例 6。</p>

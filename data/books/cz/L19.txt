@@ -48,7 +48,7 @@ $$BF=\tfrac12BE=a+\tfrac b2.$$
 <g fill="currentColor"></g>
 <g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="240.7" text-anchor="middle">B</text><text x="113.5" y="243.9" text-anchor="middle">C</text><text x="168.4" y="243.9" text-anchor="middle">D</text><text x="56.7" y="153.7" text-anchor="middle">A</text><text x="140.9" y="15.9" text-anchor="middle">E</text><text x="140.9" y="243.9" text-anchor="middle">F</text></g>
 </svg><figcaption>證法三：作 $EF\perp BD$（虛線），$F$ 正好是 $CD$ 的中點</figcaption></figure>
-<p>因為 $a<a+\frac b2<a+b$，即 $BC<BF<BD$，所以 $F$ 落在 $CD$ 上，而且</p>
+<p>因為 $a\lt a+\frac b2\lt a+b$，即 $BC\lt BF\lt BD$，所以 $F$ 落在 $CD$ 上，而且</p>
 $$CF=BF-BC=\tfrac b2,\qquad FD=CD-CF=\tfrac b2.$$
 <p>$F$ 是 $CD$ 的中點，$EF$ 是 $CD$ 的中垂線，所以 $EC=ED$。</p>
 === 例 3

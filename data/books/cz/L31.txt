@@ -6,7 +6,7 @@ units: G-5-1, G-10-2
 status: 完成
 
 === text
-<p>旋轉也是常用的幾何變換。如果一個變換使定點 $P$ 不動，其他點 $X$ 變成 $X'$，滿足 $PX=PX'$、$\angle XPX'=\theta$（$0^\circ<\theta\le180^\circ$），且從射線 $PX$ 轉到 $PX'$ 的方向是指定的方向，就稱為繞中心 $P$ 按給定方向旋轉角度 $\theta$。</p>
+<p>旋轉也是常用的幾何變換。如果一個變換使定點 $P$ 不動，其他點 $X$ 變成 $X'$，滿足 $PX=PX'$、$\angle XPX'=\theta$（$0^\circ\lt \theta\le180^\circ$），且從射線 $PX$ 轉到 $PX'$ 的方向是指定的方向，就稱為繞中心 $P$ 按給定方向旋轉角度 $\theta$。</p>
 <p>解題中最常用的是 $90^\circ$、$60^\circ$ 和 $180^\circ$ 的旋轉。涉及垂直（直角）的問題，適當地作 $90^\circ$ 旋轉往往能奏效。</p>
 
 === 例 1
@@ -146,13 +146,13 @@ sol: <figure class="bkfig"><svg viewBox="0 0 200 200" width="200" role="img" ari
 </svg><figcaption>把 $\triangle BMA$ 繞 $B$ 轉 $60^\circ$，$M$ 轉到 $MC$ 上的 $M'$</figcaption></figure>
 <p>把 $\triangle BMA$ 繞 $B$ 轉 $60^\circ$，使 $A$ 變到 $C$，設 $M$ 變到 $M'$。$\triangle BMM'$ 是正三角形，所以 $\angle BM'M+\angle BM'C=60^\circ+\angle AMB=60^\circ+120^\circ=180^\circ$，$M'$ 在線段 $MC$ 上。因而 $MC=MM'+M'C=MB+MA$。</p>
 === 習題 4
-zh: 在 $\triangle ABC$ 中，$AB=AC$，$D$ 是三角形內一點，若 $\angle ADC>\angle ADB$，證明：$DB>DC$。
+zh: 在 $\triangle ABC$ 中，$AB=AC$，$D$ 是三角形內一點，若 $\angle ADC\gt \angle ADB$，證明：$DB\gt DC$。
 sol: <figure class="bkfig"><svg viewBox="0 0 180 224" width="180" role="img" aria-label="等腰三角形內一點">
 <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="63.6,22 22,202.2 132.9,188.4"/><line x1="87.9" y1="150.2" x2="63.6" y2="22"/><line x1="87.9" y1="150.2" x2="22" y2="202.2"/><line x1="87.9" y1="150.2" x2="132.9" y2="188.4"/><line x1="63.6" y1="22" x2="158" y2="112.1" stroke-dasharray="5 4"/><line x1="132.9" y1="188.4" x2="158" y2="112.1" stroke-dasharray="5 4"/><line x1="87.9" y1="150.2" x2="158" y2="112.1" stroke-dasharray="5 4"/></g>
 <g fill="currentColor"></g>
 <g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="63.6" y="15.9" text-anchor="middle">A</text><text x="14.2" y="214.9" text-anchor="middle">B</text><text x="140.7" y="201.1" text-anchor="middle">C</text><text x="76.9" y="155.1" text-anchor="middle">D</text><text x="172.5" y="117" text-anchor="middle">D′</text></g>
 </svg><figcaption>把 $\triangle ABD$ 繞 $A$ 轉 $\angle BAC$ 到 $\triangle ACD'$（虛線）</figcaption></figure>
-<p>以 $A$ 為中心把 $\triangle ABD$ 轉 $\angle BAC$ 成 $\triangle ACD'$，連 $DD'$。$AD=AD'$，所以 $\angle ADD'=\angle AD'D$；又 $\angle AD'C=\angle ADB<\angle ADC$，所以 $\angle CD'D<\angle CDD'$，從而 $CD<CD'=BD$。</p>
+<p>以 $A$ 為中心把 $\triangle ABD$ 轉 $\angle BAC$ 成 $\triangle ACD'$，連 $DD'$。$AD=AD'$，所以 $\angle ADD'=\angle AD'D$；又 $\angle AD'C=\angle ADB\lt \angle ADC$，所以 $\angle CD'D\lt \angle CDD'$，從而 $CD\lt CD'=BD$。</p>
 === 習題 5
 zh: 證明：任意三角形的三條中線可以構成一個三角形。
 sol: 設 $A_1,B_1,C_1$ 分別是 $BC,CA,AB$ 的中點。作 $B$ 關於 $B_1$ 的對稱點 $D$，則 $ABCD$ 是平行四邊形。再取 $CD$ 的中點 $F$，容易證明 $\triangle AA_1F$ 的三條邊分別等於 $\triangle ABC$ 的三條中線⟦怎麼證｜$AA_1$ 本身是中線；$A_1F$ 是 $\triangle BCD$ 的中位線，$A_1F=\frac12BD=BB_1$；$AF$ 與 $CC_1$ 平行且相等（$AC_1CF$ 是平行四邊形，因 $AC_1\parallel FC$ 且都等於 $\frac12AB$）。⟧。

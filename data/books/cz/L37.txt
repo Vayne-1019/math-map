@@ -20,7 +20,7 @@ sol: <figure class="bkfig"><svg viewBox="0 0 161 200" width="161" role="img" ari
 $$\Delta=(a-c)^2-4(b-a)(c-b)=a^2+c^2+4b^2+2ac-4bc-4ab=(a+c-2b)^2=0,$$
 <p>即 $a+c=2b$，$b=\frac{a+c}2$。所以</p>
 $$\cos B=\frac{a^2+c^2-b^2}{2ac}=\frac{3(a^2+c^2)-2ac}{8ac}.$$
-<p>因為 $a^2+c^2\ge2ac$，所以 $\cos B\ge\frac12$，又 $0<B<180^\circ$，所以 $B\le60^\circ$。</p>
+<p>因為 $a^2+c^2\ge2ac$，所以 $\cos B\ge\frac12$，又 $0\lt B\lt 180^\circ$，所以 $B\le60^\circ$。</p>
 === 例 2
 zh: 已知 $\triangle ABC$ 中 $\angle B$ 為銳角，從 $A$ 向邊 $BC$ 或其延長線引垂線，交 $BC$ 於 $H$；從 $C$ 向邊 $AB$ 或其延長線引垂線，交 $AB$ 於 $K$。試問：當 $\frac{2BH}{BC}$、$\frac{2BK}{BA}$ 都是整數時，$\triangle ABC$ 是怎樣的三角形？並證明你的結論。
 sol: <figure class="bkfig"><svg viewBox="0 0 220 179" width="220" role="img" aria-label="兩條高的垂足">
@@ -28,22 +28,22 @@ sol: <figure class="bkfig"><svg viewBox="0 0 220 179" width="220" role="img" ari
 <g fill="currentColor"></g>
 <g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="139.3" y="15.9" text-anchor="middle">A</text><text x="14.2" y="169.6" text-anchor="middle">B</text><text x="205.8" y="169.6" text-anchor="middle">C</text><text x="139.3" y="172.8" text-anchor="middle">H</text><text x="90" y="66.9" text-anchor="middle">K</text></g>
 </svg><figcaption>$AH\perp BC$，$CK\perp AB$</figcaption></figure>
-<p><b>解法一</b>　設 $BC=a$，$AB=c$，又設 $\frac{2BH}{BC}=m$，$\frac{2BK}{BA}=n$（$m,n$ 是正整數），則 $BH=\frac{ma}2$，$BK=\frac{nc}2$。因為 $BH<c$、$BK<a$⟦為什麼｜直角三角形 $ABH$ 中斜邊 $AB=c$ 大於直角邊 $BH$；同理 $BK<BC$。⟧，所以 $\frac{ma}2<c$，$\frac{nc}2<a$，相乘得 $mn<4$。$m,n$ 是正整數，只有五種可能：$(m,n)=(1,1),(1,2),(1,3),(2,1),(3,1)$。</p>
+<p><b>解法一</b>　設 $BC=a$，$AB=c$，又設 $\frac{2BH}{BC}=m$，$\frac{2BK}{BA}=n$（$m,n$ 是正整數），則 $BH=\frac{ma}2$，$BK=\frac{nc}2$。因為 $BH\lt c$、$BK\lt a$⟦為什麼｜直角三角形 $ABH$ 中斜邊 $AB=c$ 大於直角邊 $BH$；同理 $BK\lt BC$。⟧，所以 $\frac{ma}2\lt c$，$\frac{nc}2\lt a$，相乘得 $mn\lt 4$。$m,n$ 是正整數，只有五種可能：$(m,n)=(1,1),(1,2),(1,3),(2,1),(3,1)$。</p>
 <p>(1) $m=n=1$：$BH=\frac a2$，$BK=\frac c2$，高也是中線，$\triangle ABC$ 是正三角形。</p>
 <p>(2) $m=1,n=2$：$BH=\frac a2$，$BK=c$，即 $K$ 與 $A$ 重合，$\triangle ABC$ 是 $\angle A$ 為直角的等腰直角三角形。</p>
 <p>(3) $m=1,n=3$：$BH=\frac a2$，$BK=\frac{3c}2$，這時 $\triangle ABC$ 是等腰三角形，頂角 $\angle A=120^\circ$⟦為什麼｜$BH=\frac a2$ 使 $AB=AC=c$，於是底邊 $a=2c\cos B$；而 $BK$ 是 $BC$ 在 $AB$ 上的射影，$BK=a\cos B=2c\cos^2B=\frac32c$，所以 $\cos^2B=\frac34$，$B=30^\circ$，$A=120^\circ$。⟧。</p>
 <p>(4) $m=2,n=1$：與 (2) 類似，是 $\angle C=90^\circ$ 的等腰直角三角形。</p>
 <p>(5) $m=3,n=1$：與 (3) 類似，是頂角 $\angle C=120^\circ$ 的等腰三角形。</p>
-<p><b>解法二</b>　$\angle BAC$、$\angle ACB$ 中至少有一個是銳角，不妨設 $\angle ACB$ 是銳角，則高 $AH$ 在三角形內，$BH<BC$，$0<\frac{2BH}{BC}<2$。它是正整數，所以 $\frac{2BH}{BC}=1$，$H$ 是 $BC$ 中點，$AB=AC$。記 $\alpha=\angle ABC=\angle ACB$（$\alpha<90^\circ$），設 $BC=l$，則 $BK=l\cos\alpha$。由餘弦定理 $BC^2+BA^2-2BC\cdot BA\cos\alpha=AC^2$，即 $BC-2BA\cos\alpha=0$，$BA=\frac l{2\cos\alpha}$。令 $\frac{2BK}{BA}=m$（正整數），則</p>
+<p><b>解法二</b>　$\angle BAC$、$\angle ACB$ 中至少有一個是銳角，不妨設 $\angle ACB$ 是銳角，則高 $AH$ 在三角形內，$BH\lt BC$，$0\lt \frac{2BH}{BC}\lt 2$。它是正整數，所以 $\frac{2BH}{BC}=1$，$H$ 是 $BC$ 中點，$AB=AC$。記 $\alpha=\angle ABC=\angle ACB$（$\alpha\lt 90^\circ$），設 $BC=l$，則 $BK=l\cos\alpha$。由餘弦定理 $BC^2+BA^2-2BC\cdot BA\cos\alpha=AC^2$，即 $BC-2BA\cos\alpha=0$，$BA=\frac l{2\cos\alpha}$。令 $\frac{2BK}{BA}=m$（正整數），則</p>
 $$m=4\cos^2\alpha.\quad\text{①}$$
-<p>因 $0<\cos\alpha<1$，$0<m<4$，$m=1,2,3$。(1) $m=1$：$\cos\alpha=\frac12$，$\alpha=60^\circ$，正三角形。(2) $m=2$：$\cos\alpha=\frac{\sqrt2}2$，$\alpha=45^\circ$，$\angle A$ 為直角的等腰直角三角形（若一開始設 $\angle A$ 為銳角，則是 $\angle C$ 為直角的等腰直角三角形）。(3) $m=3$：$\cos\alpha=\frac{\sqrt3}2$，$\alpha=30^\circ$，頂角 $\angle A$（或 $\angle C$）$=120^\circ$ 的等腰三角形。</p>
+<p>因 $0\lt \cos\alpha\lt 1$，$0\lt m\lt 4$，$m=1,2,3$。(1) $m=1$：$\cos\alpha=\frac12$，$\alpha=60^\circ$，正三角形。(2) $m=2$：$\cos\alpha=\frac{\sqrt2}2$，$\alpha=45^\circ$，$\angle A$ 為直角的等腰直角三角形（若一開始設 $\angle A$ 為銳角，則是 $\angle C$ 為直角的等腰直角三角形）。(3) $m=3$：$\cos\alpha=\frac{\sqrt3}2$，$\alpha=30^\circ$，頂角 $\angle A$（或 $\angle C$）$=120^\circ$ 的等腰三角形。</p>
 ans: 正三角形、等腰直角三角形，或頂角 $120^\circ$ 的等腰三角形
 
 === text
 <h3>二、幾何不等式和最值問題</h3>
 
 === 例 3
-zh: 在銳角 $\triangle ABC$ 中，$AC=1$，$AB=c$，外接圓半徑 $R\le1$。求證：$\cos A<c\le\cos A+\sqrt3\sin A$。
+zh: 在銳角 $\triangle ABC$ 中，$AC=1$，$AB=c$，外接圓半徑 $R\le1$。求證：$\cos A\lt c\le\cos A+\sqrt3\sin A$。
 sol: <p><b>分析</b>　結論涉及 $\cos A$、$\sin A$ 及邊 $c$，條件給了外接圓半徑，容易想到在餘弦定理中把 $a$ 用 $2R\sin A$ 表示，再用 $R\le1$ 得一個不等式。</p>
 <figure class="bkfig"><svg viewBox="0 0 187 200" width="187" role="img" aria-label="外接圓半徑不超過 1 的銳角三角形">
 <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="113,22 22,178 165,178"/><line x1="165" y1="178" x2="58.3" y2="115.8"/><polyline points="62.6,118.3 65.1,114 60.8,111.4" stroke-width="1"/></g>
@@ -52,9 +52,9 @@ sol: <p><b>分析</b>　結論涉及 $\cos A$、$\sin A$ 及邊 $c$，條件給�
 </svg><figcaption>銳角三角形，$CD\perp AB$，$D$ 在 $AB$ 上</figcaption></figure>
 <p><b>證</b>　設 $BC=a$，則 $4R^2\sin^2A=a^2=c^2+1-2c\cos A$。因 $R\le1$，$c^2-2(\cos A)c+1=4R^2\sin^2A\le4\sin^2A$，即</p>
 $$c^2-2(\cos A)c+(1-4\sin^2A)\le0,$$
-<p>解得 $\cos A-\sqrt3\sin A\le c\le\cos A+\sqrt3\sin A$⟦解二次不等式｜兩根是 $\cos A\pm\sqrt{\cos^2A-1+4\sin^2A}=\cos A\pm\sqrt3\sin A$。⟧。再作 $CD\perp AB$，因三角形是銳角三角形，$D$ 在 $AB$ 上，所以 $c=AB>AD=AC\cos A=\cos A$。</p>
+<p>解得 $\cos A-\sqrt3\sin A\le c\le\cos A+\sqrt3\sin A$⟦解二次不等式｜兩根是 $\cos A\pm\sqrt{\cos^2A-1+4\sin^2A}=\cos A\pm\sqrt3\sin A$。⟧。再作 $CD\perp AB$，因三角形是銳角三角形，$D$ 在 $AB$ 上，所以 $c=AB\gt AD=AC\cos A=\cos A$。</p>
 === 例 4
-zh: $AE$ 是半圓的直徑，且 $AE=2$，$B,C,D$ 在半圓上，又 $AB=a$，$BC=b$，$CD=c$，$DE=d$。求證：$a^2+b^2+c^2+d^2+abc+bcd<4$。
+zh: $AE$ 是半圓的直徑，且 $AE=2$，$B,C,D$ 在半圓上，又 $AB=a$，$BC=b$，$CD=c$，$DE=d$。求證：$a^2+b^2+c^2+d^2+abc+bcd\lt 4$。
 sol: <figure class="bkfig"><svg viewBox="0 0 250 147" width="250" role="img" aria-label="半圓上的折線">
 <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M228 125A103 103 0 0 0 22 125"/><line x1="22" y1="125" x2="228" y2="125"/><polyline points="22,125 46.1,58.8 116,22.4 203.9,58.8 228,125"/><line x1="22" y1="125" x2="116" y2="22.4" stroke-dasharray="5 4"/><line x1="116" y1="22.4" x2="228" y2="125" stroke-dasharray="5 4"/></g>
 <g fill="currentColor"></g>
@@ -62,8 +62,8 @@ sol: <figure class="bkfig"><svg viewBox="0 0 250 147" width="250" role="img" ari
 </svg><figcaption>$AE=2$ 是半圓直徑；連 $AC$、$CE$（虛線）</figcaption></figure>
 <p><b>證</b>　連 $AC$、$CE$。$\angle B=180^\circ-\angle AEC$（圓內接四邊形 $ABCE$），所以</p>
 $$AC^2=a^2+b^2-2ab\cos B=a^2+b^2+2ab\cos\angle AEC.$$
-<p>而 $2\cos\angle AEC=CE>c$⟦為什麼｜直角 $\triangle ACE$ 中 $CE=AE\cos\angle AEC=2\cos\angle AEC$；又 $\angle D$ 是鈍角（$\triangle CDE$ 內接於半圓、在直徑同側），所以 $CE>CD=c$。⟧，所以 $AC^2>a^2+b^2+abc$。同理 $CE^2>c^2+d^2+bcd$。再由勾股定理</p>
-$$a^2+b^2+c^2+d^2+abc+bcd<AC^2+CE^2=AE^2=4.$$
+<p>而 $2\cos\angle AEC=CE\gt c$⟦為什麼｜直角 $\triangle ACE$ 中 $CE=AE\cos\angle AEC=2\cos\angle AEC$；又 $\angle D$ 是鈍角（$\triangle CDE$ 內接於半圓、在直徑同側），所以 $CE\gt CD=c$。⟧，所以 $AC^2\gt a^2+b^2+abc$。同理 $CE^2\gt c^2+d^2+bcd$。再由勾股定理</p>
+$$a^2+b^2+c^2+d^2+abc+bcd\lt AC^2+CE^2=AE^2=4.$$
 === 例 5
 zh: 平面上有定線段 $AB=\sqrt3$，動點 $M$、$N$ 滿足 $AM=MN=NB=1$。記 $\triangle AMB$ 及 $\triangle MNB$ 的面積分別為 $S$、$T$，問在什麼條件下 $S^2+T^2$ 取最大值？
 sol: <figure class="bkfig"><svg viewBox="0 0 220 141" width="220" role="img" aria-label="一條定線段與三條單位線段">
@@ -75,7 +75,7 @@ sol: <figure class="bkfig"><svg viewBox="0 0 220 141" width="220" role="img" ari
 $$MB^2=1+3-2\sqrt3\cos A=4-2\sqrt3\cos A,\qquad MB^2=1+1-2\cos N=2-2\cos N.$$
 <p>兩式相減得 $\cos N=\sqrt3\cos A-1$。由面積公式</p>
 $$\begin{aligned}S^2+T^2&=\Big(\frac{\sqrt3}2\sin A\Big)^2+\Big(\frac12\sin N\Big)^2=\frac34(1-\cos^2A)+\frac14(1-\cos^2N)\\&=1-\frac34\cos^2A-\frac14(\sqrt3\cos A-1)^2=-\frac32\Big(\cos A-\frac1{2\sqrt3}\Big)^2+\frac78.\quad\text{①}\end{aligned}$$
-<p>下面說明 $A$ 的範圍是 $0<A<90^\circ$：若 $A=90^\circ$，$MB=2$；若 $A>90^\circ$，$MB>2$。兩者都有 $MB\ge MN+NB$，不可能。所以 $0<\cos A<1$。由 ①，當 $\cos A=\frac1{2\sqrt3}=\frac{\sqrt3}6$（$<1$）時，$S^2+T^2$ 取最大值 $\frac78$。</p>
+<p>下面說明 $A$ 的範圍是 $0\lt A\lt 90^\circ$：若 $A=90^\circ$，$MB=2$；若 $A\gt 90^\circ$，$MB\gt 2$。兩者都有 $MB\ge MN+NB$，不可能。所以 $0\lt \cos A\lt 1$。由 ①，當 $\cos A=\frac1{2\sqrt3}=\frac{\sqrt3}6$（$\lt 1$）時，$S^2+T^2$ 取最大值 $\frac78$。</p>
 ans: $\cos A=\frac{\sqrt3}6$ 時，最大值 $\frac78$
 
 === 例 6
@@ -105,7 +105,7 @@ sol: <figure class="bkfig"><svg viewBox="0 0 300 80" width="300" role="img" aria
 </svg><figcaption>$\angle ADC=8^\circ$；光線反射 $3$ 次後垂直射到 $B$（$\theta=58^\circ$）</figcaption></figure>
 <p><b>解</b>　設 $\angle DAR_1=\theta$（參數），$\theta_i$ 是第 $i$ 個反射點處光線與 $AD$ 或 $CD$ 所夾的銳角。於是 $\theta_1=\theta+8^\circ$⟦為什麼｜$\triangle AR_1D$ 的外角：$\theta_1=\angle DAR_1+\angle ADR_1$。⟧。對 $\triangle R_1R_2D$，$\theta_2=\theta_1+8^\circ=\theta+2\times8^\circ$；同理 $\theta_3=\theta+3\times8^\circ$，……一般地 $\theta_n=\theta+n\times8^\circ$。最後在 $\triangle R_nBD$ 中 $\angle R_nBD=90^\circ$，所以</p>
 $$90^\circ=\theta_n+8^\circ=\theta+(n+1)\times8^\circ,\qquad\theta=90^\circ-(n+1)\times8^\circ.\quad\text{①}$$
-<p>因 $\theta>0$，$90-(n+1)\times8>0$，$n<\frac{82}8<11$。由 ①，$\theta=2^\circ$ 時 $n$ 取最大值 $10$。</p>
+<p>因 $\theta\gt 0$，$90-(n+1)\times8\gt 0$，$n\lt \frac{82}8\lt 11$。由 ①，$\theta=2^\circ$ 時 $n$ 取最大值 $10$。</p>
 ans: $10$
 
 === 例 8
@@ -129,14 +129,14 @@ sol: <figure class="bkfig"><svg viewBox="0 0 190 190" width="190" role="img" ari
 </svg><figcaption>$\angle EDC=\angle ECD=15^\circ$；紅色 $\triangle ABE$ 是正三角形</figcaption></figure>
 <p><b>說明</b>　這是平面幾何的一道名題，許多書以它作為同一法證題的範例，這裡用代數方法（比較角的大小）證明。</p>
 <p><b>證</b>　由題設易知 $AE=BE$⟦為什麼｜$E$ 在 $CD$ 的中垂線上，也就是 $AB$ 的中垂線上。⟧，所以只要證 $\angle AEB=60^\circ$。令 $\angle AEB=2x$，$\angle BEC=y$，則 $\angle EBC=x$，$\angle ABE=90^\circ-x$。</p>
-<p>若 $\angle AEB=2x>60^\circ$，則 $x>30^\circ$，於是 $180^\circ=\angle BEC+\angle BCE+\angle EBC=y+75^\circ+x>y+105^\circ$，所以 $\angle BEC=y<75^\circ=\angle BCE$，從而 $BC<BE$。又 $BC=AB$，所以 $AB<BE$，$\angle AEB<\angle BAE=\angle ABE$，即 $2x<90^\circ-x$，$x<30^\circ$，與所設矛盾。</p>
-<p>若 $\angle AEB=2x<60^\circ$，即 $x<30^\circ$，仿上可導出 $x>30^\circ$（前面的推導是可逆的），也得矛盾。</p>
+<p>若 $\angle AEB=2x\gt 60^\circ$，則 $x\gt 30^\circ$，於是 $180^\circ=\angle BEC+\angle BCE+\angle EBC=y+75^\circ+x\gt y+105^\circ$，所以 $\angle BEC=y\lt 75^\circ=\angle BCE$，從而 $BC\lt BE$。又 $BC=AB$，所以 $AB\lt BE$，$\angle AEB\lt \angle BAE=\angle ABE$，即 $2x\lt 90^\circ-x$，$x\lt 30^\circ$，與所設矛盾。</p>
+<p>若 $\angle AEB=2x\lt 60^\circ$，即 $x\lt 30^\circ$，仿上可導出 $x\gt 30^\circ$（前面的推導是可逆的），也得矛盾。</p>
 <p>所以只能 $\angle AEB=60^\circ$，$\triangle ABE$ 是正三角形。</p>
 === 習題 1
-zh: 在 $\triangle ABC$ 中，$BC=a$，$CA=b$，$AB=c$，且 $c$ 是最大邊。如果 $ac\cos A+bc\cos B<4S$（$S$ 是 $\triangle ABC$ 的面積），求證：$\triangle ABC$ 是銳角三角形。
+zh: 在 $\triangle ABC$ 中，$BC=a$，$CA=b$，$AB=c$，且 $c$ 是最大邊。如果 $ac\cos A+bc\cos B\lt 4S$（$S$ 是 $\triangle ABC$ 的面積），求證：$\triangle ABC$ 是銳角三角形。
 sol: <p>由餘弦定理及面積公式</p>
-$$ac\cdot\frac{b^2+c^2-a^2}{2bc}+bc\cdot\frac{c^2+a^2-b^2}{2ac}<2ab\sin C\le2ab.$$
-<p>化簡得 $c^2<a^2+b^2$⟦化簡｜兩邊乘以 $2ab$：$a^2(b^2+c^2-a^2)+b^2(c^2+a^2-b^2)<4a^2b^2$，即 $c^2(a^2+b^2)<(a^2+b^2)^2$。⟧，所以最大角 $C$ 是銳角，三角形是銳角三角形。</p>
+$$ac\cdot\frac{b^2+c^2-a^2}{2bc}+bc\cdot\frac{c^2+a^2-b^2}{2ac}\lt 2ab\sin C\le2ab.$$
+<p>化簡得 $c^2\lt a^2+b^2$⟦化簡｜兩邊乘以 $2ab$：$a^2(b^2+c^2-a^2)+b^2(c^2+a^2-b^2)\lt 4a^2b^2$，即 $c^2(a^2+b^2)\lt (a^2+b^2)^2$。⟧，所以最大角 $C$ 是銳角，三角形是銳角三角形。</p>
 === 習題 2
 zh: 在 $\triangle ABC$ 中，$AB=AC=a$，$D$ 是底邊 $BC$ 延長線上一點，且 $AD=d$。試求 $BD\cdot CD$。
 sol: <figure class="bkfig"><svg viewBox="0 0 230 147" width="230" role="img" aria-label="等腰三角形底邊延長線上一點">
@@ -148,10 +148,10 @@ sol: <figure class="bkfig"><svg viewBox="0 0 230 147" width="230" role="img" ari
 ans: $d^2-a^2$
 
 === 習題 3
-zh: 已知銳角 $\triangle ABC$ 的三條邊長為 $a,b,c$，外接圓半徑為 $1$。求證：$\cos A+\cos B+\cos C<\frac12(a+b+c)$。
-sol: <p>銳角三角形中 $A>90^\circ-B$⟦為什麼｜$A+B=180^\circ-C>90^\circ$。⟧，所以 $\cos A<\cos(90^\circ-B)=\sin B$；同理 $\cos B<\sin C$，$\cos C<\sin A$。所以 $\cos A+\cos B+\cos C<\sin A+\sin B+\sin C$。再由 $\frac a{\sin A}=\frac b{\sin B}=\frac c{\sin C}=2$，$\sin A+\sin B+\sin C=\frac12(a+b+c)$。</p>
+zh: 已知銳角 $\triangle ABC$ 的三條邊長為 $a,b,c$，外接圓半徑為 $1$。求證：$\cos A+\cos B+\cos C\lt \frac12(a+b+c)$。
+sol: <p>銳角三角形中 $A\gt 90^\circ-B$⟦為什麼｜$A+B=180^\circ-C\gt 90^\circ$。⟧，所以 $\cos A\lt \cos(90^\circ-B)=\sin B$；同理 $\cos B\lt \sin C$，$\cos C\lt \sin A$。所以 $\cos A+\cos B+\cos C\lt \sin A+\sin B+\sin C$。再由 $\frac a{\sin A}=\frac b{\sin B}=\frac c{\sin C}=2$，$\sin A+\sin B+\sin C=\frac12(a+b+c)$。</p>
 === 習題 4
-zh: 在 $\triangle ABC$ 中，$AB=2\sqrt2$，$AC=\sqrt2$，$BC=2$。設 $P$ 是 $BC$ 上任一點，求證：$PA^2>PB\cdot PC$。
+zh: 在 $\triangle ABC$ 中，$AB=2\sqrt2$，$AC=\sqrt2$，$BC=2$。設 $P$ 是 $BC$ 上任一點，求證：$PA^2\gt PB\cdot PC$。
 sol: <figure class="bkfig"><svg viewBox="0 0 220 137" width="220" role="img" aria-label="邊上一點">
 <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="198,22 22,115.1 162.8,115.1"/><line x1="198" y1="22" x2="106.5" y2="115.1"/></g>
 <g fill="currentColor"></g>
@@ -159,7 +159,7 @@ sol: <figure class="bkfig"><svg viewBox="0 0 220 137" width="220" role="img" ari
 </svg><figcaption>$AB=2\sqrt2$，$AC=\sqrt2$，$BC=2$</figcaption></figure>
 <p>設 $BP=x$，則 $PC=2-x$。$\cos B=\frac{(2\sqrt2)^2+2^2-(\sqrt2)^2}{2\cdot2\sqrt2\cdot2}=\frac{5\sqrt2}8$，所以</p>
 $$PA^2=8+x^2-4\sqrt2x\cos B=x^2-5x+8,\qquad PB\cdot PC=2x-x^2.$$
-<p>所以 $PA^2-PB\cdot PC=2x^2-7x+8=2\big(x-\frac74\big)^2+\frac{15}8>0$。</p>
+<p>所以 $PA^2-PB\cdot PC=2x^2-7x+8=2\big(x-\frac74\big)^2+\frac{15}8\gt 0$。</p>
 === 習題 5
 zh: 已知 $\odot O$ 的半徑為 $1$，正方形 $ABCD$ 的邊長也為 $1$，$A$ 點固定在圓周上，$B$、$C$、$D$ 在圓內變動。求 $OA^2+OB^2+OC^2+OD^2$ 的最大值和最小值。
 sol: <figure class="bkfig"><svg viewBox="0 0 200 200" width="200" role="img" aria-label="圓內的單位正方形">

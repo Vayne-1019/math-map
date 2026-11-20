@@ -45,7 +45,7 @@ sol: <figure class="bkfig"><svg viewBox="0 0 280 193" width="280" role="img" ari
 <p><b>證</b>　先由定理 1 導出線段關係。$CD$ 與 $AB$ 是 $\odot O_1$ 中交於 $P$ 的兩條弦，所以 $PA\cdot PB=PC\cdot PD$。① 同理在 $\odot O_2$ 中 $PA\cdot PB=PE\cdot PF$。② 所以 $PC\cdot PD=PE\cdot PF$，由定理 1′ 知 $C$、$E$、$D$、$F$ 四點共圓。</p>
 <p>先由圓冪定理推出線段的比例關係，再用它的逆定理（1′、2′）得出結論，是常用的手法，本講許多例子都是這樣做的。</p>
 === 例 2
-zh: 平行四邊形 $ABCD$ 中，對角線 $AC>BD$，$M$ 是 $AC$ 上一點，且四邊形 $BCDM$ 內接於圓。證明：直線 $BD$ 是 $\triangle ABM$ 及 $\triangle ADM$ 的外接圓的公切線。
+zh: 平行四邊形 $ABCD$ 中，對角線 $AC\gt BD$，$M$ 是 $AC$ 上一點，且四邊形 $BCDM$ 內接於圓。證明：直線 $BD$ 是 $\triangle ABM$ 及 $\triangle ADM$ 的外接圓的公切線。
 sol: <figure class="bkfig"><svg viewBox="0 0 159 180" width="159" role="img" aria-label="平行四邊形與圓">
 <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="28.2,95.8 97.1,95.8 134.8,45.6 65.8,45.6"/><line x1="28.2" y1="95.8" x2="134.8" y2="45.6"/><line x1="97.1" y1="95.8" x2="65.8" y2="45.6"/><circle cx="100.3" cy="59" r="37"/><line x1="68" y1="77" x2="97.1" y2="95.8"/><line x1="68" y1="77" x2="65.8" y2="45.6"/><circle cx="62.7" cy="117.3" r="40.7" stroke-dasharray="5 4" stroke-width="1"/></g>
 <g fill="currentColor"></g>

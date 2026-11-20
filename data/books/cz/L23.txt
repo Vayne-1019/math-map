@@ -63,7 +63,7 @@ $$\begin{aligned}AD^2&=DD_1^2+AD_1^2\\&=(BD^2-BD_1^2)+(AM^2-MD_1^2)\\&=AM^2+BE^2
 <p>⟦同理｜從 $\triangle AFF_1$ 出發，經過 $C$ 與 $CE=CF$，得 $AF^2=AM^2+CE^2-CM^2=AM^2-ME_1^2+EE_1^2$。⟧，$AF^2=AM^2-ME_1^2+EE_1^2$，所以 $AD=AF$。</p>
 <p><b>說明</b>　本題可以推廣到多邊形：設 $M$ 是多邊形 $A_1A_2\cdots A_n$ 內一點，$MB_1\perp A_1A_2$，$MB_2\perp A_2A_3$，…，$MB_n\perp A_nA_1$（$B_i$ 在垂線上），且 $B_1A_2=A_2B_2$，$B_2A_3=A_3B_3$，…，$B_{n-1}A_n=A_nB_n$，則 $B_1A_1=A_1B_n$。證法相同。</p>
 === 例 3
-zh: 設在 $\triangle ABC$ 中，$AB>AC$，$AT$ 平分 $\angle A$ 交 $BC$ 於 $T$，$S$ 是 $BC$ 上一點，使 $BS=TC$。求證：$AS^2-AT^2=(AB-AC)^2$。
+zh: 設在 $\triangle ABC$ 中，$AB\gt AC$，$AT$ 平分 $\angle A$ 交 $BC$ 於 $T$，$S$ 是 $BC$ 上一點，使 $BS=TC$。求證：$AS^2-AT^2=(AB-AC)^2$。
 sol: <figure class="bkfig"><svg viewBox="0 0 265 190" width="265" role="img" aria-label="角平分線與對稱點">
 <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="199,22 22,168 243.2,168"/><line x1="199" y1="22" x2="110.3" y2="168"/><line x1="199" y1="22" x2="154.9" y2="168"/><line x1="199" y1="22" x2="199" y2="168" stroke-dasharray="5 4"/><polyline points="199,163 204,163 204,168" stroke-width="1"/></g>
 <g fill="currentColor"></g>
@@ -123,7 +123,7 @@ $$OA^2+OB^2=(OM^2+MA^2)+(ON^2+NB^2).\quad\text{①}$$
 $$OA^2+OB^2=OM^2+ON^2+4ON^2+4OM^2=5(OM^2+ON^2)=5OC^2.$$
 === 例 6
 zh: 設 $\triangle ABC$ 的三邊長為連續整數，且面積也是整數。證明：必有一條高把 $\triangle ABC$ 分成兩個勾股三角形（三邊都是整數的直角三角形），且這條高把底邊分成長度相差 $4$ 的兩段。
-sol: <p><b>證</b>　設 $AC=n+1$，$BC=n$，$AB=n-1$（$n>1$ 為整數），半周長 $p=\frac{3n}2$。由海龍公式</p>
+sol: <p><b>證</b>　設 $AC=n+1$，$BC=n$，$AB=n-1$（$n\gt 1$ 為整數），半周長 $p=\frac{3n}2$。由海龍公式</p>
 $$S=\sqrt{\tfrac32n\big(\tfrac32n-n+1\big)\big(\tfrac32n-n\big)\big(\tfrac32n-n-1\big)}=\tfrac14n\sqrt{3(n^2-4)},\quad\text{①}$$
 <p>即 $3n^2(n^2-4)=16S^2$。② $S$ 是整數，$3$ 是質數且 $3\nmid16$，所以 $3\mid S^2$，$3\mid S$。令 $S=3m$，代入 ② 得 $n^2(n^2-4)=48m^2$，即</p>
 $$(n^2-2)^2=4(12m^2+1).$$

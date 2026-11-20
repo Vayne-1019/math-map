@@ -49,8 +49,8 @@ sol: <figure class="bkfig"><svg viewBox="0 0 290 151" width="290" role="img" ari
 <p>令 $AP=2a$，$PQ=2b$，則 $PB=a$，$PC=CQ=CO=b$。在 $\triangle PQB$ 中 $\angle BPQ=120^\circ$，由餘弦定理及正弦定理</p>
 $$BQ^2=PQ^2+PB^2-2PQ\cdot PB\cos120^\circ=\Big(\frac{PQ\sin120^\circ}{\sin m^\circ}\Big)^2,$$
 <p>即 $4b^2+a^2+2ab=19b^2$⟦右邊｜$\big(\frac{2b\cdot\frac{\sqrt3}2}{\sqrt{57}/19}\big)^2=\frac{3b^2\cdot361}{57}=19b^2$。⟧。解得 $a=3b$（$a=-5b$ 捨去），所以 $AC=AP+PC=7b$，$CD=\frac1{\sqrt3}AC=\frac7{\sqrt3}b$，$OD=CD-CO=\big(\frac7{\sqrt3}-1\big)b$。所以</p>
-$$OM=\frac{\sqrt3}2OD=\frac{7-\sqrt3}2b>\sqrt2b=OP.$$
-<p>⟦為什麼 OM=√3/2·OD｜$\angle CDA=90^\circ-30^\circ=60^\circ$，在直角 $\triangle OMD$ 中 $OM=OD\sin60^\circ$。數值上 $\frac{7-\sqrt3}2\approx2.63$，$\sqrt2\approx1.41$。⟧圓心到航線的距離大於半徑，直線 $AT$ 不與 $\odot O$ 相交，海輪沒有觸礁的危險。</p>
+$$OM=\frac{\sqrt3}2OD=\frac{7-\sqrt3}2b\gt \sqrt2b=OP.$$
+<p>⟦為什麼｜$\angle CDA=90^\circ-30^\circ=60^\circ$，在直角 $\triangle OMD$ 中 $OM=OD\sin60^\circ$。數值上 $\frac{7-\sqrt3}2\approx2.63$，$\sqrt2\approx1.41$。⟧圓心到航線的距離大於半徑，直線 $AT$ 不與 $\odot O$ 相交，海輪沒有觸礁的危險。</p>
 ans: 沒有觸礁的危險
 
 === text

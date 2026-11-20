@@ -72,7 +72,7 @@ sol: <figure class="bkfig"><svg viewBox="0 0 219 210" width="219" role="img" ari
 <p><b>解</b>　$S_{\triangle AED}=S_{\triangle CDE}$，兩個三角形同底 $ED$，所以它們在 $ED$ 上的高相等，$AC\parallel DE$。同理 $BE\parallel CD$。所以 $CDEF$ 是平行四邊形（$F$ 是 $AC$ 與 $BE$ 的交點）。</p>
 <p>$S_{\triangle AEF}=S_{\triangle ABE}-S_{\triangle ABF}=S_{\triangle ABC}-S_{\triangle ABF}=S_{\triangle BCF}$。又 $S_{\triangle CEF}=S_{\triangle CDE}=S_{\triangle ABC}$。所以</p>
 $$\frac{S_{\triangle ABF}}{S_{\triangle BCF}}=\frac{AF}{CF}=\frac{S_{\triangle AEF}}{S_{\triangle CEF}}=\frac{S_{\triangle BCF}}{S_{\triangle ABC}}=\frac{CF}{AC},$$
-<p>⟦這串等號｜第一、三個：同高三角形面積比等於底的比；第二個：$\triangle AEF$、$\triangle CEF$ 同高，底是 $AF$、$CF$；第四個：$\triangle BCF$、$\triangle ABC$ 同高，底是 $CF$、$CA$。⟧所以 $CF^2=AF\cdot AC=(AC-CF)AC$。① 記 $\frac{CF}{AC}=x>0$，① 兩邊除以 $AC^2$ 得 $x^2+x-1=0$，$x=\frac{\sqrt5-1}2$（捨去負根）。由此 $S_{\triangle AEF}=\frac{\sqrt5-1}2S_{\triangle CEF}=\frac{\sqrt5-1}2$⟦為什麼｜$\frac{S_{\triangle AEF}}{S_{\triangle CEF}}=\frac{AF}{CF}=\frac{CF}{AC}=x$。⟧，所以</p>
+<p>⟦這串等號｜第一、三個：同高三角形面積比等於底的比；第二個：$\triangle AEF$、$\triangle CEF$ 同高，底是 $AF$、$CF$；第四個：$\triangle BCF$、$\triangle ABC$ 同高，底是 $CF$、$CA$。⟧所以 $CF^2=AF\cdot AC=(AC-CF)AC$。① 記 $\frac{CF}{AC}=x\gt 0$，① 兩邊除以 $AC^2$ 得 $x^2+x-1=0$，$x=\frac{\sqrt5-1}2$（捨去負根）。由此 $S_{\triangle AEF}=\frac{\sqrt5-1}2S_{\triangle CEF}=\frac{\sqrt5-1}2$⟦為什麼｜$\frac{S_{\triangle AEF}}{S_{\triangle CEF}}=\frac{AF}{CF}=\frac{CF}{AC}=x$。⟧，所以</p>
 $$S_{ABCDE}=S_{CDEF}+S_{\triangle ABC}+S_{\triangle AEF}=2+1+\frac{\sqrt5-1}2=\frac{5+\sqrt5}2.$$
 ans: $\dfrac{5+\sqrt5}2$
 
@@ -89,8 +89,8 @@ sol: <figure class="bkfig"><svg viewBox="0 0 220 223" width="220" role="img" ari
 <p><b>證</b>　設 $AD,BE$ 交於 $P$；$AD,CF$ 交於 $Q$；$BE,CF$ 交於 $R$。若 $P,Q,R$ 不重合，它們構成 $\triangle PQR$。因為 $AD$、$BE$ 都把面積等分，</p>
 $$S_{APEF}+S_{\triangle PED}=S_{PDCB}+S_{\triangle ABP},\qquad S_{PDCB}+S_{\triangle PED}=S_{APEF}+S_{\triangle APB},$$
 <p>兩式相加得 $S_{\triangle APB}=S_{\triangle PED}$，即 $\frac12AP\cdot BP\sin\angle APB=\frac12EP\cdot DP\sin\angle DPE$。對頂角相等，所以</p>
-$$AP\cdot BP=EP\cdot DP=(ER+RP)(DQ+QP)>ER\cdot DQ.$$
-<p>同理 $CQ\cdot DQ>AP\cdot FR$，$FR\cdot ER>BP\cdot CQ$。三個不等式相乘，兩邊都是 $AP\cdot BP\cdot CQ\cdot DQ\cdot ER\cdot FR$，得到「$X>X$」，矛盾。所以 $AD$、$BE$、$CF$ 交於一點。</p>
+$$AP\cdot BP=EP\cdot DP=(ER+RP)(DQ+QP)\gt ER\cdot DQ.$$
+<p>同理 $CQ\cdot DQ\gt AP\cdot FR$，$FR\cdot ER\gt BP\cdot CQ$。三個不等式相乘，兩邊都是 $AP\cdot BP\cdot CQ\cdot DQ\cdot ER\cdot FR$，得到「$X\gt X$」，矛盾。所以 $AD$、$BE$、$CF$ 交於一點。</p>
 === 例 7
 zh: 設 $O$ 是凸四邊形 $ABCD$ 內一定點，如果過 $O$ 的所有直線都把四邊形的周長等分。求證：$ABCD$ 是平行四邊形。
 sol: <figure class="bkfig"><svg viewBox="0 0 249 220" width="249" role="img" aria-label="過定點的直線平分周長">

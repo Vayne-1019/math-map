@@ -14,7 +14,7 @@ order: 20
 <div class="card"><h4>① 將軍飲馬</h4><div class="rule">$l$ 同側兩點 $A,B$：$A\to A'$</div>
 <div class="eg">$PA+PB=PA'+PB\ge A'B$，交點就是最小 <span class="pill">一次反射</span></div></div>
 <div class="card"><h4>② 外角平分線上一點</h4><div class="rule">$C\to D$（在 $BA$ 延長線上）</div>
-<div class="eg">$PB+PC=PB+PD>BD=AB+AC$ <span class="pill">化折為直</span></div></div>
+<div class="eg">$PB+PC=PB+PD\gt BD=AB+AC$ <span class="pill">化折為直</span></div></div>
 <div class="card"><h4>③ 多次反射展開</h4><div class="rule">內接三角形周長的兩倍 ≥ 平移距離</div>
 <div class="eg">正三角形邊長 1：內接 $\triangle DEF$ 周長 $\ge\frac32$ <span class="pill">展開</span></div></div>
 </div>
