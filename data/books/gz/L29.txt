@@ -1,0 +1,144 @@
+=== meta
+title: 數學歸納法應用中的命題轉化
+author: 蘇淳
+pages: 232-240
+units: A-7-2, A-7-5
+status: 完成
+
+=== text
+<p>命題轉化是證明時常用的手法：要證的命題 $A$ 不容易直接證明，就改證另一個命題 $B$，再由兩者之間的邏輯關係推出 $A$。用數學歸納法證題時，這種手法也常常用到。下面看一些例子。</p>
+
+=== 例 1 | 正弦和
+zh: 若 $n$ 個正角 $\alpha_1+\alpha_2+\cdots+\alpha_n=\pi$，證明 $\sin\alpha_1+\sin\alpha_2+\cdots+\sin\alpha_n\le n\sin\dfrac\pi n$。
+sol: $n=1$ 時兩邊相等。但假設 $n=k$ 成立後，要推 $n=k+1$ 就有麻煩：$n=k$ 的不等式是在 $\alpha_1+\cdots+\alpha_k=\pi$ 的條件下成立的，而現在要在 $\alpha_1+\cdots+\alpha_{k+1}=\pi$ 的條件下證明，$\alpha_1,\dots,\alpha_k$ 的和不再是 $\pi$，歸納假設已經用不上了。這就斷絕了直接用歸納法的可能。
+<br>不直接證原命題，改證：
+<br><b>若 $n$ 個正角滿足 $\alpha_1+\cdots+\alpha_n\le\pi$，則 $\dfrac1n(\sin\alpha_1+\cdots+\sin\alpha_n)\le\sin\dfrac{\alpha_1+\cdots+\alpha_n}n$。</b>
+<br>它不但能推出原命題，也為歸納法開了路。
+<br>$n=1$ 時顯然成立。為了方便後面的過渡，先看 $n=2$：設 $\alpha_1+\alpha_2\le\pi$，則 $\sin\frac{\alpha_1+\alpha_2}2\ge0$，
+$$\begin{aligned}&amp;(\sin\alpha_1+\sin\alpha_2)-2\sin\frac{\alpha_1+\alpha_2}2\\&amp;=2\sin\frac{\alpha_1+\alpha_2}2\cos\frac{\alpha_1-\alpha_2}2-2\sin\frac{\alpha_1+\alpha_2}2\\&amp;=2\sin\frac{\alpha_1+\alpha_2}2\Big(\cos\frac{\alpha_1-\alpha_2}2-1\Big)\le0,\end{aligned}$$
+⟦第一個等號｜和差化積：$\sin x+\sin y=2\sin\frac{x+y}2\cos\frac{x-y}2$。⟧
+即 $\frac12(\sin\alpha_1+\sin\alpha_2)\le\sin\frac{\alpha_1+\alpha_2}2$。
+<br>假設 $n\le k$ 時命題成立，要證 $n=k+1$ 時也成立。分兩種情況：
+<br>(1) $k+1=2m$ 為偶數。當 $\alpha_1+\cdots+\alpha_{2m}\le\pi$ 時，前 $m$ 個與後 $m$ 個的和都不超過 $\pi$，由歸納假設（$m\le k$）
+$$\begin{aligned}&amp;\frac1{k+1}(\sin\alpha_1+\cdots+\sin\alpha_{k+1})\\&amp;=\frac12\Big[\frac1m(\sin\alpha_1+\cdots+\sin\alpha_m)+\frac1m(\sin\alpha_{m+1}+\cdots+\sin\alpha_{2m})\Big]\\&amp;\le\frac12\Big[\sin\frac{\alpha_1+\cdots+\alpha_m}m+\sin\frac{\alpha_{m+1}+\cdots+\alpha_{2m}}m\Big].\end{aligned}$$
+再由 $n=2$ 的結果⟦能用 n = 2 嗎｜兩個角 $\frac{\alpha_1+\cdots+\alpha_m}m$ 與 $\frac{\alpha_{m+1}+\cdots+\alpha_{2m}}m$ 之和是 $\frac{\alpha_1+\cdots+\alpha_{2m}}m\le\frac\pi m\le\pi$。⟧，上式
+$$\le\sin\frac12\Big(\frac{\alpha_1+\cdots+\alpha_m}m+\frac{\alpha_{m+1}+\cdots+\alpha_{2m}}m\Big)=\sin\frac{\alpha_1+\cdots+\alpha_{k+1}}{k+1}.$$
+(2) $k+1=2m+1$ 為奇數。記 $\beta=\frac{\alpha_1+\cdots+\alpha_{k+1}}{k+1}$，把它當作第 $2m+2$ 個角補進去，湊成偶數個。$\alpha_1+\cdots+\alpha_{2m+1}\le\pi$，所以前 $m$ 個之和或後 $m+1$ 個之和至少有一個不超過 $\frac\pi2$，不妨設 $\alpha_{m+1}+\cdots+\alpha_{2m+1}\le\frac\pi2$⟦為什麼可以「不妨設」｜命題對角的順序是對稱的，可以重新編號。若前 $m$ 個之和 $\le\frac\pi2$，把它們和後面的角對調位置即可。⟧。於是 $\alpha_1+\cdots+\alpha_{m+1}\le\pi$，並且
+$$\alpha_{m+2}+\cdots+\alpha_{2m+1}+\beta\le\frac\pi2+\frac{\pi}{2m+1}\le\pi.$$
+兩組各 $m+1$ 個角（$m+1\le k$），由歸納假設和 $n=2$ 的結果，
+$$\begin{aligned}&amp;\frac1{k+2}\big(\sin\alpha_1+\cdots+\sin\alpha_{k+1}+\sin\beta\big)\\&amp;=\frac12\Big[\frac1{m+1}(\sin\alpha_1+\cdots+\sin\alpha_{m+1})\\&amp;\qquad+\frac1{m+1}(\sin\alpha_{m+2}+\cdots+\sin\alpha_{2m+1}+\sin\beta)\Big]\\&amp;\le\frac12\Big[\sin\frac{\alpha_1+\cdots+\alpha_{m+1}}{m+1}+\sin\frac{\alpha_{m+2}+\cdots+\alpha_{2m+1}+\beta}{m+1}\Big]\\&amp;\le\sin\frac{(\alpha_1+\cdots+\alpha_{2m+1})+\beta}{2m+2}=\sin\beta.\end{aligned}$$
+⟦最後一個等號｜$\alpha_1+\cdots+\alpha_{2m+1}=(2m+1)\beta$，加上 $\beta$ 是 $(2m+2)\beta$。⟧
+兩端乘以 $k+2$ 再消去 $\sin\beta$，得 $\frac1{k+1}(\sin\alpha_1+\cdots+\sin\alpha_{k+1})\le\sin\beta$，奇數情形也成立。
+<br>所以對一切正整數 $n$，只要正角 $\alpha_1+\cdots+\alpha_n\le\pi$，就有 $\sin\alpha_1+\cdots+\sin\alpha_n\le n\sin\frac{\alpha_1+\cdots+\alpha_n}n$。特別地，和等於 $\pi$ 時就是原命題。
+<br>這裡證明了一個<b>比原命題更強</b>的命題，讓歸納法的路走得通，從而達到目的。這種手法叫「<b>主動加強命題</b>」，用歸納法證題時常常採用。
+
+=== 例 2 | 1988 年合肥市高中競賽
+src: 1988 年安徽省合肥市高中數學競賽
+zh: 設 $A_n=3^{3^{\cdot^{\cdot^{3}}}}$（共 $n$ 重 3），$B_n=8^{8^{\cdot^{\cdot^{8}}}}$（共 $n$ 重 8）。證明：對一切正整數 $n$，$A_{n+1}&gt;B_n$。
+sol: 許多考生試圖直接用歸納法證 $A_{n+1}&gt;B_n$，結果都沒成功。最好的辦法是主動加強命題，改證 $A_{n+1}&gt;3B_n$。
+<br>$n=1$：$A_2=3^3=27&gt;24=3\cdot8=3B_1$。
+<br>假設 $A_{k+1}&gt;3B_k$，則
+$$A_{k+2}=3^{A_{k+1}}&gt;3^{3B_k}=27^{B_k}&gt;24^{B_k}=3^{B_k}\cdot8^{B_k}&gt;3B_{k+1}.$$
+⟦最後一步｜$8^{B_k}=B_{k+1}$，而 $3^{B_k}&gt;3$。⟧
+所以對一切正整數 $n$，$A_{n+1}&gt;3B_n&gt;B_n$。
+<br>乍看難以理解：較弱的命題怎麼會比較強的命題更難證？細想就明白：證較強的命題時，起步的驗證雖然略麻煩，但只是驗證具體數值，難度增加有限；然而因此換到一個<b>較強的歸納假設</b>，過渡時處在更有利的位置。這大概就是較強的命題反而更容易證的根本原因。不過要強調：加強了歸納假設之後，對 $n=k+1$ 也要推出<b>加強後</b>的結論，而不是只推出原來較弱的結論就了事。
+<br>批改試卷時，發現有考生這樣「證明」：$n=1$ 時 $A_2=27&gt;2\cdot8=2B_1$；假設 $A_{k+1}&gt;2B_k$，則 $A_{k+2}=3^{A_{k+1}}&gt;3^{2B_k}=9^{B_k}&gt;8^{B_k}=B_{k+1}$，所以 $A_{n+1}&gt;B_n$。
+<br>這種「證明」似是而非，是錯的。由 $n=1$ 的觀察知道 $A_2&gt;2B_1$，所以可以假設 $A_{k+1}&gt;2B_k$；但如果不能在這個假設下推出 $A_{k+2}&gt;2B_{k+1}$，就說明「$A_{n+1}&gt;2B_n$」這種性質<b>不具有繼承性</b>：我們觀察了 $n=1$ 之後，憑什麼能假設 $n=k$ 時也有 $A_{k+1}&gt;2B_k$ 呢？反之，若能由 $A_{k+1}&gt;2B_k$ 推出 $A_{k+2}&gt;2B_{k+1}$，就證明了這個性質有繼承性，一切推導才合情合理。用加強命題的手法時，這一點要特別注意。
+
+=== text
+<p>1988 年全國高中數學聯賽中，也有一道需要用加強命題處理的題目：</p>
+
+=== 例 3 | 1988 年全國高中數學聯賽
+src: 1988 年全國高中數學聯賽
+zh: 已知 $a_1=1$，$a_2=2$，
+$$a_{n+2}=\begin{cases}5a_{n+1}-3a_n,&amp;a_n\cdot a_{n+1}\text{ 為偶數},\\a_{n+1}-a_n,&amp;a_n\cdot a_{n+1}\text{ 為奇數}.\end{cases}$$
+證明：對一切正整數 $n$，$a_n\ne0$。
+sol: 若直接證「$a_n\ne0$」：$n=1,2$ 時成立，也可以假設 $a_k\ne0$、$a_{k+1}\ne0$，但無法由遞推式斷定 $a_{k+2}\ne0$。所以要在命題轉化上下功夫。
+<br>多觀察幾項：$a_1=1$，$a_2=2$，$a_3=7$，$a_4=29$，$a_5=22$，$a_6=23$，$a_7=49$，$a_8=26$，$a_9=-17$，……有奇有偶，但都不是 4 的倍數。再看它們除以 4 的餘數：$1,2,3,1,2,3,1,2,3,\dots$，規律很明顯。於是猜測：對一切正整數 $n$，
+$$a_{3n-2}\equiv1,\quad a_{3n-1}\equiv2,\quad a_{3n}\equiv3\pmod4.$$
+$n=1$ 時 $a_1=1$、$a_2=2$、$a_3=7\equiv3$，猜測正確。假設 $n=k$ 時正確：$a_{3k-2}\equiv1$，$a_{3k-1}\equiv2$，$a_{3k}\equiv3\pmod4$。由遞推公式⟦怎麼知道用哪一條｜$a_na_{n+1}$ 的奇偶由兩數除以 4 的餘數決定：$2\times3$ 為偶，$3\times1$ 為奇，$1\times2$ 為偶。⟧
+$$\begin{aligned}a_{3k+1}&amp;=5a_{3k}-3a_{3k-1}\equiv15-6=9\equiv1\pmod4,\\a_{3k+2}&amp;=a_{3k+1}-a_{3k}\equiv1-3=-2\equiv2\pmod4,\\a_{3k+3}&amp;=5a_{3k+2}-3a_{3k+1}\equiv10-3=7\equiv3\pmod4.\end{aligned}$$
+猜測對 $n=k+1$ 也正確，所以對一切 $n$ 都正確。這就證明了「對一切 $n$，$a_n$ 都不是 4 的倍數」；而 0 是 4 的倍數，所以 $a_n\ne0$。
+<br>這裡除了轉化命題，還用了「加大跨度、增多起點」的技巧，以跨度 3 前進。至於「怎樣轉化命題」，則是透過觀察數列的前若干項，發現規律、提出猜測，再進而證明。注重觀察具體而簡單的情形，從中發掘規律、啟發思路，是學習與研究數學的一大法寶。
+
+=== 例 4 | 1963 年莫斯科數學奧林匹亞
+src: 1963 年莫斯科數學奧林匹亞
+zh: 已知 $a_1=a_2=1$，$a_{n+2}=\dfrac{a_{n+1}^2+2}{a_n}$。證明：對一切正整數 $n$，$a_n$ 都是整數。
+sol: 局面和例 3 類似：可以假設「$a_k$、$a_{k+1}$ 都是整數」，卻無法由遞推式斷定 $a_{k+2}$ 是整數（有除法）。所以必須在命題轉化上下功夫。
+<br>觀察前幾項：$a_1=1$，$a_2=1$，$a_3=3$，$a_4=11$，$a_5=41$，$a_6=153$，……。這次運氣不如上次：各項都是整數，卻看不出明顯的規律。怎麼辦？
+<br>細細分析目標：如果遞推關係不僅能寫成原來的樣子，還能寫成 $a_{n+2}=\alpha a_{n+1}+\beta a_n$，而且 $\alpha,\beta$ 都是整數，命題不就顯然了嗎？目前這只是一種「奢望」，但有奢望總比沒有好，奢望往往能導致有益的發現。用待定係數法試試：代入 $a_1,a_2,a_3$ 得 $\alpha+\beta=3$；代入 $a_2,a_3,a_4$ 得 $3\alpha+\beta=11$。解得 $\alpha=4$、$\beta=-1$。那麼是否對一切 $n$ 都有 $a_{n+2}=4a_{n+1}-a_n$？用歸納法證明：
+<br>$n=1$ 時 $a_3=4a_2-a_1$。假設 $n=k$ 時 $a_{k+2}=4a_{k+1}-a_k$，即
+$$a_{k+2}+a_k=4a_{k+1}.\tag{1}$$
+要證 $a_{k+3}=4a_{k+2}-a_{k+1}$。由定義
+$$a_{k+2}=\frac{a_{k+1}^2+2}{a_k},\tag{2}$$
+$$a_{k+3}=\frac{a_{k+2}^2+2}{a_{k+1}}.\tag{3}$$
+由 (2) 得
+$$2=a_{k+2}a_k-a_{k+1}^2.\tag{4}$$
+把 (4)、(1) 代入 (3)：
+$$\begin{aligned}a_{k+3}&amp;=\frac{a_{k+2}^2+a_{k+2}a_k-a_{k+1}^2}{a_{k+1}}=\frac{a_{k+2}(a_{k+2}+a_k)-a_{k+1}^2}{a_{k+1}}\\&amp;=\frac{4a_{k+1}a_{k+2}-a_{k+1}^2}{a_{k+1}}=4a_{k+2}-a_{k+1}.\end{aligned}$$
+猜測對 $n=k+1$ 也成立，所以對一切 $n$，$a_{n+2}=4a_{n+1}-a_n$。利用這個遞推式再用一次歸納法，就不難證得對一切 $n$，$a_n$ 都是整數⟦第二次歸納｜$a_1,a_2$ 是整數；若 $a_k,a_{k+1}$ 是整數，則 $a_{k+2}=4a_{k+1}-a_k$ 也是整數。⟧。
+<br>從這些例題可以看到「命題轉化」在歸納法中的重要作用，也看到觀察、猜測乃至「奢望」對實現命題轉化的重要意義。
+
+=== 習題 1
+zh: 設 $a_1,a_2,\dots,a_n,\dots$ 是一個給定的正數數列，再按下述方式構造多項式序列：$f_0(x)=1$，$f_1(x)=x$，$f_{n+1}(x)=(1+a_n)xf_n(x)-a_nf_{n-1}(x)$（$n\ge1$）。證明：對一切正整數 $n$，$f_n(x)$ 的實根全都介於 $-1$ 與 $+1$ 之間。
+hint: 轉換命題，改證：$|x|\ge1$ 時 $|f_{n+1}(x)|\ge|f_n(x)|$。
+sol: 對 $|x|\ge1$ 歸納證明 $|f_{n+1}(x)|\ge|f_n(x)|$。$n=0$：$|f_1(x)|=|x|\ge1=|f_0(x)|$。若 $|f_n(x)|\ge|f_{n-1}(x)|$，則
+$$|f_{n+1}(x)|\ge(1+a_n)|x||f_n(x)|-a_n|f_{n-1}(x)|\ge(1+a_n)|f_n(x)|-a_n|f_n(x)|=|f_n(x)|.$$
+於是 $|x|\ge1$ 時 $|f_n(x)|\ge|f_0(x)|=1$，$f_n(x)\ne0$，所以實根都在 $-1$ 與 $1$ 之間（嚴格在開區間內）。
+
+=== 習題 2
+zh: 證明：存在無窮多個具有如下性質的正整數：(1) 各位數字都不為零；(2) 都能被自己的各位數字之和整除。
+hint: 轉化命題，考察數列 $1,111,111111111,\dots,\underbrace{11\cdots1}_{3^n\text{ 個 }1},\dots$。
+sol: 記 $R_m=\underbrace{11\cdots1}_{m}$，它的數字和是 $m$。歸納證明 $3^n\mid R_{3^n}$。$n=0$：$R_1=1$。若 $3^n\mid R_{3^n}$，則
+$$R_{3^{n+1}}=R_{3^n}\big(10^{2\cdot3^n}+10^{3^n}+1\big),$$
+後一個因數的數字和是 3，是 3 的倍數，所以 $3^{n+1}\mid R_{3^{n+1}}$。這無窮多個 $R_{3^n}$ 都符合要求。
+
+=== 習題 3
+zh: 設 $a_1=1,a_2,a_3,\dots$ 是一個正整數無窮數列，當 $m&gt;1$ 時 $a_m\le1+a_1+a_2+\cdots+a_{m-1}$。證明：每個正整數 $n$ 或者是該數列中的項，或者是其中某些項之和。
+hint: 約定 $a_0=0$；加強為：$1\le n\le a_1+\cdots+a_m$ 的每個 $n$ 都是 $a_1,\dots,a_m$ 中某些項之和。
+sol: 記 $S_m=a_1+\cdots+a_m$，對 $m$ 歸納證明：$1\le n\le S_m$ 的每個 $n$ 都是 $a_1,\dots,a_m$ 中若干不同項之和（只有一項時就是該項）。$m=1$：$n=1=a_1$。設對 $m$ 成立，看 $S_m&lt;n\le S_{m+1}$：$n-a_{m+1}\le S_m$，且 $n-a_{m+1}\ge S_m+1-a_{m+1}\ge0$（因為 $a_{m+1}\le1+S_m$）。若它是 0，$n=a_{m+1}$；否則由歸納假設它是 $a_1,\dots,a_m$ 中若干項之和，再加上 $a_{m+1}$ 即可。因為 $S_m\to\infty$，每個正整數都被涵蓋。
+
+=== 習題 4
+zh: 證明：對任何正整數 $n$，都存在正整數 $m$，使 $(\sqrt2-1)^n=\sqrt m-\sqrt{m-1}$。
+hint: 轉換命題，改證：存在正整數 $a,b$ 使 $(1-\sqrt2)^n=a-b\sqrt2$，且 $a^2-2b^2=(-1)^n$。
+sol: $n=1$：$a=b=1$。若 $(1-\sqrt2)^n=a-b\sqrt2$、$a^2-2b^2=(-1)^n$，則
+$$(1-\sqrt2)^{n+1}=(a-b\sqrt2)(1-\sqrt2)=(a+2b)-(a+b)\sqrt2,$$
+而 $(a+2b)^2-2(a+b)^2=-(a^2-2b^2)=(-1)^{n+1}$。
+<br>$n$ 為偶數時 $(\sqrt2-1)^n=a-b\sqrt2=\sqrt{a^2}-\sqrt{2b^2}$，取 $m=a^2$，則 $m-1=2b^2$；$n$ 為奇數時 $(\sqrt2-1)^n=b\sqrt2-a=\sqrt{2b^2}-\sqrt{a^2}$，取 $m=2b^2$，則 $m-1=a^2$。
+
+=== 習題 5
+zh: 設函數 $f$ 的定義域與值域都是正整數集，且 $f(n+1)&gt;f(f(n))$。證明對一切正整數 $n$，$f(n)=n$。
+hint: 先證較弱的命題：若 $m\ge n$，則 $f(m)\ge n$。
+sol: 對 $n$ 歸納證明「$m\ge n\Rightarrow f(m)\ge n$」。$n=1$ 顯然。設對 $n$ 成立，取 $m\ge n+1$：$m-1\ge n$，所以 $f(m-1)\ge n$，再對 $f(m-1)$ 用一次假設得 $f(f(m-1))\ge n$，於是 $f(m)&gt;f(f(m-1))\ge n$，即 $f(m)\ge n+1$。
+<br>特別地 $f(n)\ge n$，所以 $f(n+1)&gt;f(f(n))\ge f(n)$，$f$ 嚴格遞增。若某個 $f(n)\ge n+1$，則 $f(f(n))\ge f(n+1)$，與 $f(n+1)&gt;f(f(n))$ 矛盾。所以 $f(n)=n$。
+
+=== 習題 6
+zh: 設 $a,b,c$ 是方程 $x^3-x^2-x-1=0$ 的三個根。證明：(1) $a,b,c$ 互不相同；(2) $\dfrac{a^{1989}-b^{1989}}{a-b}+\dfrac{b^{1989}-c^{1989}}{b-c}+\dfrac{c^{1989}-a^{1989}}{c-a}$ 是整數。
+sol: (1) 若有重根，它也是導數 $3x^2-2x-1=(3x+1)(x-1)$ 的根；但 $x=1$ 與 $x=-\frac13$ 代入原方程都不為 0，所以三根互異。
+<br>(2) 記 $f(n)$ 為題中式子把 1989 換成 $n$。因為 $a^3=a^2+a+1$，$a^{n+1}=a^n+a^{n-1}+a^{n-2}$，$b,c$ 也一樣，所以每一項（從而 $f$）都滿足
+$$f(k+1)=f(k)+f(k-1)+f(k-2).$$
+而 $f(0)=0$，$f(1)=3$，$f(2)=2(a+b+c)=2$（韋達定理 $a+b+c=1$），都是整數。由歸納法，$f(n)$ 對一切 $n$ 都是整數，特別是 $f(1989)$。
+
+=== 習題 7
+zh: 圓周上分布著 1988 個點，每個點上都標著 $+1$ 或 $-1$。如果從某點開始，沿任何方向繞圓周前進到任何一點時，所經過的數的和都是正數，就稱該點為「好點」。證明：如果標作 $-1$ 的點少於 663 個，則圓周上至少有一個好點。
+hint: 加強命題：若 $-1$ 的點不多於 $n$ 個，則在 $3n+2$ 個點中至少有一個好點（$1988=3\cdot662+2$）。
+sol: 對 $n$ 歸納。$n=0$：沒有 $-1$，每點都是好點。設 $n=k$ 時成立，看 $3k+5$ 個點、$-1$ 不超過 $k+1$ 個的情形（若沒有 $-1$ 則顯然）。取一個 $-1$ 點 $X$，再取 $X$ 兩側各自最近的 $+1$ 點 $L$、$R$（$L$ 與 $X$ 之間、$X$ 與 $R$ 之間都只有 $-1$）。去掉 $L,X,R$，剩下 $3k+2$ 個點、$-1$ 不超過 $k$ 個，由歸納假設有好點 $G$（$G$ 是 $+1$，不在 $L$ 與 $R$ 之間）。
+<br>放回 $L,X,R$ 後，$G$ 仍是好點：從 $G$ 順時針走，若先遇到 $L$，則從 $L$ 到 $X$ 之前，部分和比去掉時多 1；到 $X$ 時多出的 $+1$ 與 $-1$ 抵消，之後一直到 $R$ 之前部分和和原來相同；過了 $R$ 又多 1。所以每一步的部分和都不小於去掉時對應的部分和，仍為正。逆時針走時 $L,R$ 的角色互換，同理。所以 $3k+5$ 個點中也有好點。
+<br>取 $n=662$ 即得原題。
+
+=== 習題 8
+zh: 有一個兩端無限的數列 $\dots,a_{-n},\dots,a_{-1},a_0,a_1,\dots,a_n,\dots$，其中每一項都等於它兩邊鄰項之和的 $\frac14$。證明：如果數列中有某兩項（不一定相鄰）相等，則一定有無窮多對兩兩相等的項。
+hint: 若 $i&lt;j$、$a_i=a_j$，則對一切滿足 $k+l=i+j$、$k&lt;l$ 的下標，也有 $a_k=a_l$。
+sol: 條件即 $a_{n+1}=4a_n-a_{n-1}$。設 $a_i=a_j$，$i&lt;j$，考察關於「中心」$\frac{i+j}2$ 對稱的兩項之差。
+<br>若 $i+j=2c$ 為偶數，令 $b_t=a_{c+t}-a_{c-t}$，則 $b_{t+1}=4b_t-b_{t-1}$⟦為什麼｜$a_{c+t+1}=4a_{c+t}-a_{c+t-1}$，$a_{c-t-1}=4a_{c-t}-a_{c-t+1}$，相減即得。⟧，且 $b_0=0$。由歸納法 $b_t=b_1u_t$，其中 $u_0=0$、$u_1=1$、$u_{t+1}=4u_t-u_{t-1}$，$u_t$ 對 $t\ge1$ 都是正數（$u_t$ 遞增）。因為 $b_{(j-i)/2}=a_j-a_i=0$，所以 $b_1=0$，從而一切 $b_t=0$。
+<br>若 $i+j=2c+1$ 為奇數，令 $e_s=a_{c+1+s}-a_{c-s}$（$s\ge0$），同樣 $e_{s+1}=4e_s-e_{s-1}$，且 $e_{-1}=-e_0$，於是 $e_s=e_0v_s$，$v_0=1$、$v_1=5$、…都是正數。由 $e_{(j-i-1)/2}=0$ 得 $e_0=0$，一切 $e_s=0$。
+<br>兩種情形都得到無窮多對相等的項。
+
+=== 習題 9
+zh: 數列 $a_0,a_1,a_2,\dots$ 滿足 $a_0=\frac12$，$a_{k+1}=a_k+\frac1na_k^2$（$k=0,1,2,\dots$），其中 $n$ 是某個固定的正整數。證明 $1-\frac1n&lt;a_n&lt;1$。
+hint: 可以證明更精細的估計：$1\le k\le n$ 時 $\frac{n+1}{2n-k+2}&lt;a_k&lt;\frac n{2n-k}$。
+sol: 數列遞增且為正。由遞推式
+$$\frac1{a_k}-\frac1{a_{k+1}}=\frac{a_{k+1}-a_k}{a_ka_{k+1}}=\frac{a_k}{na_{k+1}}.$$
+因為 $a_{k+1}&gt;a_k$，右邊小於 $\frac1n$；把 $k=0,\dots,n-1$ 相加，$\frac1{a_0}-\frac1{a_n}&lt;1$，即 $\frac1{a_n}&gt;1$，$a_n&lt;1$。
+<br>於是 $k\le n$ 時 $a_k&lt;1$，$a_{k+1}=a_k\big(1+\frac{a_k}n\big)&lt;a_k\cdot\frac{n+1}n$，右邊 $\frac{a_k}{na_{k+1}}&gt;\frac1{n+1}$。相加得 $2-\frac1{a_n}&gt;\frac n{n+1}$，即
+$$a_n&gt;\frac{n+1}{n+2}=1-\frac1{n+2}&gt;1-\frac1n.$$

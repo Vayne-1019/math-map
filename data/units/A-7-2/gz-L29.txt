@@ -1,0 +1,22 @@
+=== meta
+title: 證不動就換題：加強命題、猜出規律
+from: gz-L29
+order: 60
+
+=== body
+<div class="hero">歸納假設<b>太弱</b>推不動時，改證一個<b>更強</b>的命題<br>假設變強了，過渡反而更容易<br>不知道怎麼加強？先算前幾項，<b>猜</b>出規律</div>
+<div class="cards">
+<div class="card"><h4>① 放寬條件</h4><div class="rule">「和 $=\pi$」改成「和 $\le\pi$」</div>
+<div class="eg">$\frac1n\sum\sin\alpha_i\le\sin\frac{\sum\alpha_i}n$<br>才能把 $n$ 個角拆兩半各用假設</div></div>
+<div class="card"><h4>② 加強結論</h4><div class="rule">$A_{n+1}&gt;B_n$ 改證 $A_{n+1}&gt;3B_n$</div>
+<div class="eg">$3^{3B_k}=27^{B_k}&gt;3^{B_k}\cdot8^{B_k}&gt;3B_{k+1}$ <span class="pill">多一倍餘裕</span></div></div>
+<div class="card"><h4>③ 猜餘數</h4><div class="rule">$a_n\ne0$ 改證「不是 4 的倍數」</div>
+<div class="eg">模 4：$1,2,3,1,2,3,\dots$<br>以跨度 3 證明</div></div>
+<div class="card"><h4>④ 找線性遞推</h4><div class="rule">$a_{n+2}=\frac{a_{n+1}^2+2}{a_n}$</div>
+<div class="eg">待定係數得 $a_{n+2}=4a_{n+1}-a_n$<br>整數性立刻顯然</div></div>
+</div>
+<p>加強命題的歸納，過渡時要推出<b>加強後</b>的結論。⟦錯誤示範｜假設 $A_{k+1}&gt;2B_k$，推出 $A_{k+2}&gt;9^{B_k}&gt;B_{k+1}$——只推回弱結論，沒證到 $A_{k+2}&gt;2B_{k+1}$，鏈子在下一環就斷了。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>假設用了強版本，結論只證弱版本 → 「繼承性」沒證到</li>
+<li>猜出的規律只驗了前幾項就當成已知，忘了用歸納法真正證明</li></ul></div>
+<div class="bottomline">推不動時別硬推：讓命題更強、更具體，再歸納。</div>
