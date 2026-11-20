@@ -1,0 +1,20 @@
+=== meta
+title: 待定係數法：先猜形式，再比係數
+from: cz-L01
+order: 20
+
+=== body
+<div class="hero">知道答案<b>長什麼樣</b>，只差幾個數？<br>先用字母佔位 → 展開 → <b>同次項係數相等</b> → 解方程組</div>
+<div class="cards">
+<div class="card"><h4>① 決定形式</h4><div class="rule">最高次部分先分解</div>
+<div class="eg">$3x^2+5xy-2y^2=(3x-y)(x+2y)$<br>所以設原式 $=(3x-y+a)(x+2y+b)$</div></div>
+<div class="card"><h4>② 比較係數</h4><div class="rule">每一次項各給一個方程</div>
+<div class="eg">$x$：$a+3b=1$<br>$y$：$2a-b=9$<br>常數：$ab=-4$ <span class="pill">解出 a=4, b=−1</span></div></div>
+<div class="card"><h4>③ 或代特殊值</h4><div class="rule">恆等式對所有 x 都成立</div>
+<div class="eg">令 $x=y=0$：$ab=-4$<br>令 $x=1,y=0$：$(3+a)(1+b)=0$</div></div>
+</div>
+<p>方程比未知數多時，解完一定要代回<b>多出來的方程</b>檢驗。⟦為什麼｜例如用 $2a-b=9$ 與 $ab=-4$ 聯立，會多得一組 $a=\tfrac12,b=-8$，它不滿足 $a+3b=1$，必須捨去。若全部方程聯立無解，就證明原式不能分解成所設的形式。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>代特殊值得到的解沒有回頭驗算，留下假解</li>
+<li>方程組無解不是算錯，而是「不能這樣分解」的證明</li></ul></div>
+<div class="bottomline">形式猜對，剩下就是解方程組；無解也是答案。</div>

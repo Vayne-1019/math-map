@@ -1,0 +1,20 @@
+=== meta
+title: 輪換式分解：找到一個因式，送你三個
+from: cz-L02
+order: 20
+
+=== body
+<div class="hero">輪換式：$a\to b\to c\to a$ 輪一圈，式子<b>不變</b><br>代 $a=b$ 得 $0$ ⇒ $a-b$ 是因式 ⇒ <b>$b-c$、$c-a$ 也是</b><br>剩下的因式也是輪換式，用待定係數補齊</div>
+<div class="cards">
+<div class="card"><h4>① 選主元代值</h4><div class="rule">看成 $a$ 的多項式，試 $a=b$、$a=-b$、$a=b+c$</div>
+<div class="eg">$f(a)=a^3(b-c)+\cdots$<br>$f(b)=0$ ⇒ $(a-b)\mid f$</div></div>
+<div class="card"><h4>② 輪換送因式</h4><div class="rule">一個變三個</div>
+<div class="eg">$(a-b)(b-c)(c-a)$</div></div>
+<div class="card"><h4>③ 補剩下的</h4><div class="rule">一次：$k(a+b+c)+l$<br>二次：$k\sum a^2+l\sum ab$</div>
+<div class="eg">比 $a^3$ 係數、代 $a=0,b=1,c=-1$ 解 $k,l$</div></div>
+</div>
+<p>結果：$a^3(b-c)+b^3(c-a)+c^3(a-b)=-(a-b)(b-c)(c-a)(a+b+c)$。<br>二元對稱式則先改寫成 $x+y$、$xy$：$x^4+(x+y)^4+y^4=2(x^2+xy+y^2)^2$。⟦怎麼改寫｜$x^4+y^4=(x+y)^4-4xy(x+y)^2+2(xy)^2$，所以原式 $=2\big[(x+y)^4-2xy(x+y)^2+(xy)^2\big]=2\big[(x+y)^2-xy\big]^2$。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>剩下的因式忘了檢查次數：原式 4 次、已有 3 個一次因式，只剩 1 次</li>
+<li>非齊次式的剩餘因式要帶常數 $l$，不能只設 $k(a+b+c)$</li></ul></div>
+<div class="bottomline">輪換式只要找到一個因式，其餘靠對稱性免費拿到。</div>
