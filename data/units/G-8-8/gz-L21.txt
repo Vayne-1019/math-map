@@ -1,0 +1,20 @@
+=== meta
+title: 解析法證幾何：保持對稱，讓幾何幫代數
+from: gz-L21
+order: 40
+
+=== body
+<div class="hero">證明題用坐標，<b>不一定要讓 0 越多越好</b><br>保住<b>對稱性</b>，才能只算一半、另一半「同理」<br>反過來，解析幾何題要記得<b>幾何定義</b>（焦點、準線、圓心距）</div>
+<div class="cards">
+<div class="card"><h4>① 最一般的坐標</h4><div class="rule">四邊形設 $A_i(x_i,y_i)$</div>
+<div class="eg">只算橫坐標：<br>$4\big(\frac{x_1+x_3}2-\frac{x_2+x_4}2\big)^2+(x_1-x_3)^2+(x_2-x_4)^2$<br>$=\sum(x_i-x_{i+1})^2$ <span class="pill">縱坐標同理</span></div></div>
+<div class="card"><h4>② 對等的點設成對等</h4><div class="rule">$B(b,0)$、$C(c,0)$，不設 $C(-c,0)$</div>
+<div class="eg">算出 $k_{HE}$ 後，<br>$b\leftrightarrow c$ 互換就得 $k_{HF}=-k_{HE}$ <span class="pill">互換即可</span></div></div>
+<div class="card"><h4>③ 用定義代替計算</h4><div class="rule">拋物線上：到焦點 = 到準線</div>
+<div class="eg">$y=x^2$ 上長 $l$ 的弦，中點到 $x$ 軸<br>$\ge\frac12(AF+BF)-\frac14\ge\frac l2-\frac14$ <span class="pill">折線 ≥ 線段</span></div></div>
+</div>
+<p>有向面積：$S_{\triangle ABC}=\frac12\begin{vmatrix}1&amp;x_A&amp;y_A\\1&amp;x_B&amp;y_B\\1&amp;x_C&amp;y_C\end{vmatrix}$，逆時針為正。⟦為什麼好用｜行列式對某一行是線性的：幾個行列式只差一行時，可以把那一行相加合成一個。取 $x$ 軸平行於某方向，讓 $y$ 坐標兩兩相同，就能用上這一點。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>為了「好算」把對稱的點設成 $(b,0)$、$(-c,0)$，結果每一半都得重算</li>
+<li>例如拋物線 $y=x^2$ 的焦點是 $(0,\frac14)$ 不是 $(0,1)$：$x^2=4py$ 的 $p=\frac14$</li></ul></div>
+<div class="bottomline">證明題的坐標要保住對稱；解析幾何題先想幾何定義。</div>
