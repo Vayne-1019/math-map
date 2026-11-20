@@ -12,30 +12,71 @@ status: 完成
 
 === 例 1
 zh: 銳角 $\triangle ABC$ 的頂點 $A$ 與外心 $O$ 連成線段，由 $A$ 作高 $AH$。證明：$\angle BAH=\angle OAC$。
-sol: <figure class="bkfig"><svg viewBox="0 0 230 230" width="230" role="img" aria-label="外接圓、外心與高">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="115" cy="115" r="93"/><polygon points="131.1,23.4 30.7,154.3 195.5,161.5"/><line x1="131.1" y1="23.4" x2="125.3" y2="158.4"/><line x1="131.1" y1="23.4" x2="115" y2="115"/><line x1="115" y1="115" x2="98.9" y2="206.6" stroke-dasharray="5 4"/><line x1="98.9" y1="206.6" x2="195.5" y2="161.5" stroke-dasharray="5 4"/><polyline points="125.5,153.4 130.5,153.7 130.2,158.6" stroke-width="1"/></g>
-<g fill="currentColor"><circle cx="115" cy="115" r="2.4"/></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="131.1" y="17.3" text-anchor="middle">A</text><text x="19.7" y="159.2" text-anchor="middle">B</text><text x="206.5" y="166.4" text-anchor="middle">C</text><text x="125.3" y="174.3" text-anchor="middle">H</text><text x="104" y="119.9" text-anchor="middle">O</text><text x="98.9" y="222.5" text-anchor="middle">D</text></g>
-</svg><figcaption>延長 $AO$ 交圓於 $D$，連 $CD$（虛線）</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (131.1, 23.4)
+B = (30.7, 154.3)
+C = (195.5, 161.5)
+O = circumcenter(A, B, C)
+k = circle(O, A)
+D = second(k, A, O)
+H = foot(A, B, C)
+draw poly A B C
+draw seg A H
+draw seg A O
+draw seg O D dash
+draw seg D C dash
+draw circle k
+right A H B
+</pre><figcaption>延長 $AO$ 交圓於 $D$，連 $CD$（虛線）</figcaption></figure>
 <p><b>證</b>　作外接圓，延長 $AO$ 交圓於 $D$，$AD$ 是直徑。$\angle CDA$ 與 $\angle CBA$ 對同一段弧 $AC$，所以 $\angle CDA=\angle CBA$。而 $\triangle CAD$（直徑所對的圓周角 $\angle ACD=90^\circ$）與 $\triangle HAB$ 都是直角三角形，所以</p>
 $$\angle DAC=90^\circ-\angle CDA=90^\circ-\angle B=\angle BAH.$$
 === 例 2
 zh: $\odot O_1$ 與 $\odot O_2$ 相交於 $A$。過 $A$ 引直線交 $\odot O_1$ 於 $B$、交 $\odot O_2$ 於 $C$，在 $B$、$C$ 作圓的切線交於 $D$。證明 $\angle BDC$ 是定值，即與過 $A$ 的直線的選擇無關。
-sol: <figure class="bkfig"><svg viewBox="0 0 250 256" width="250" role="img" aria-label="兩圓相交與切線">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="179.2" cy="89.3" r="48.8"/><circle cx="89.3" cy="89.3" r="67.3"/><line x1="40.7" y1="135.9" x2="218.7" y2="118.1"/><line x1="218.7" y1="118.1" x2="134.3" y2="233.9"/><line x1="40.7" y1="135.9" x2="134.3" y2="233.9"/><line x1="146.3" y1="53.4" x2="146.3" y2="125.3" stroke-dasharray="5 4"/><line x1="146.3" y1="53.4" x2="218.7" y2="118.1" stroke-dasharray="5 4"/><line x1="146.3" y1="53.4" x2="40.7" y2="135.9" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"><circle cx="179.2" cy="89.3" r="2.4"/><circle cx="89.3" cy="89.3" r="2.4"/></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="146.3" y="141.2" text-anchor="middle">A</text><text x="229.7" y="123" text-anchor="middle">B</text><text x="29.7" y="140.8" text-anchor="middle">C</text><text x="134.3" y="249.8" text-anchor="middle">D</text><text x="146.3" y="47.3" text-anchor="middle">E</text><text x="189.5" y="86.5" text-anchor="middle">O<tspan font-size="10">1</tspan></text><text x="79.1" y="86.5" text-anchor="middle">O<tspan font-size="10">2</tspan></text></g>
-</svg><figcaption>過 $A$ 的直線交兩圓於 $B$、$C$，兩條切線交於 $D$；$E$ 是兩圓的另一個交點（虛線）</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">O1 = (179.2, 89.3)
+O2 = (89.3, 89.3)
+A = (146.3, 125.3)
+k1 = circle(O1, A)
+k2 = circle(O2, A)
+E = meet(k1, k2, 146.3, 53.4)
+C = on(k2, 40.7, 135.9)
+B = second(k1, A, C)
+x = rotate(O1, B, 90)
+y = rotate(O2, C, 90)
+D = inter(B, x, C, y)
+draw seg C A B
+draw seg B D C
+draw seg E A dash
+draw seg E B dash
+draw seg E C dash
+draw circle k1
+draw circle k2
+</pre><figcaption>過 $A$ 的直線交兩圓於 $B$、$C$，兩條切線交於 $D$；$E$ 是兩圓的另一個交點（虛線）</figcaption></figure>
 <p><b>證</b>　設 $E$ 是兩圓的另一個交點。由弦切角定理，$\angle DCB=\angle AEC$，$\angle DBC=\angle AEB$⟦為什麼｜$\angle DCB$ 是切線 $CD$ 與弦 $CA$ 的夾角，等於弧 $CA$ 所對的圓周角 $\angle AEC$；$\angle DBC$ 同理在 $\odot O_1$ 中。⟧，所以</p>
 $$\begin{aligned}\angle BDC&=180^\circ-\angle DBC-\angle DCB=180^\circ-\angle AEB-\angle AEC\\&=180^\circ-\angle BEC=\angle EBC+\angle ECB=\angle ABE+\angle ACE.\end{aligned}$$
 <p>而 $\angle ABE$、$\angle ACE$ 分別是 $\odot O_1$、$\odot O_2$ 中弦 $AE$ 所對的圓周角，都是定值，所以 $\angle BDC$ 也是定值。</p>
 === 例 3
 zh: 在 $\angle AOB$ 內取一點 $C$，由 $C$ 作 $OA$ 的垂線 $CD$、$OB$ 的垂線 $CE$；再由 $D$ 作 $OB$ 的垂線 $DN$，由 $E$ 作 $OA$ 的垂線 $EM$。證明：$OC\perp MN$。
-sol: <figure class="bkfig"><svg viewBox="0 0 300 208" width="300" role="img" aria-label="角內一點與四條垂線">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><line x1="22" y1="185.8" x2="203.9" y2="22"/><line x1="22" y1="185.8" x2="278" y2="185.8"/><line x1="187.3" y1="122.2" x2="144.9" y2="75.1"/><line x1="187.3" y1="122.2" x2="187.3" y2="185.8"/><line x1="144.9" y1="75.1" x2="144.9" y2="185.8"/><line x1="187.3" y1="185.8" x2="113.3" y2="103.5"/><line x1="113.3" y1="103.5" x2="144.9" y2="185.8" stroke="#c2562b" stroke-width="2"/><line x1="187.3" y1="122.2" x2="244.6" y2="185.8" stroke-dasharray="5 4"/><line x1="187.3" y1="122.2" x2="187.3" y2="36.9" stroke-dasharray="5 4"/><line x1="244.6" y1="185.8" x2="187.3" y2="36.9" stroke-dasharray="5 4"/><line x1="22" y1="185.8" x2="187.3" y2="122.2" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="198.4" text-anchor="middle">O</text><text x="203.9" y="15.9" text-anchor="middle">A</text><text x="289" y="190.7" text-anchor="middle">B</text><text x="198.3" y="127.1" text-anchor="middle">C</text><text x="137.2" y="72.2" text-anchor="middle">D</text><text x="187.3" y="201.7" text-anchor="middle">E</text><text x="144.9" y="201.7" text-anchor="middle">N</text><text x="105.5" y="100.7" text-anchor="middle">M</text><text x="244.6" y="201.7" text-anchor="middle">P</text><text x="179.6" y="34" text-anchor="middle">Q</text></g>
-</svg><figcaption>延長 $DC$、$EC$ 交 $OB$、$OA$ 於 $P$、$Q$，連 $PQ$（虛線）；$C$ 是 $\triangle OPQ$ 的垂心</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">O = (22, 185.8)
+A = (203.9, 22)
+B = (278, 185.8)
+C = (187.3, 122.2)
+D = foot(C, O, A)
+E = foot(C, O, B)
+P = inter(D, C, O, B)
+Q = inter(E, C, O, A)
+M = foot(E, O, A)
+N = foot(D, O, B)
+draw seg O A
+draw seg O B
+draw seg C D
+draw seg C E
+draw seg D N
+draw seg E M
+draw seg M N accent
+draw seg C P dash
+draw seg C Q dash
+draw seg P Q dash
+draw seg O C dash
+</pre><figcaption>延長 $DC$、$EC$ 交 $OB$、$OA$ 於 $P$、$Q$，連 $PQ$（虛線）；$C$ 是 $\triangle OPQ$ 的垂心</figcaption></figure>
 <p><b>證</b>　延長 $DC$、$EC$，分別交 $OB$、$OA$ 於 $P$、$Q$，連 $PQ$。在 $\triangle OPQ$ 中，高 $PD$ 與 $QE$ 交於 $C$，所以 $C$ 是垂心，$OC\perp PQ$。只要證 $MN\parallel PQ$。</p>
 <p>$\angle QDP$、$\angle QEP$ 都是直角，所以 $P$、$E$、$D$、$Q$ 在以 $PQ$ 為直徑的圓上，$\angle EDP=\angle EQP$（同對弧 $EP$）。⟦類似地｜$\angle DME=\angle DNE=90^\circ$，所以 $D$、$E$、$N$、$M$ 在以 $DE$ 為直徑的圓上，$\angle MND$ 與 $\angle MED$ 同對弧 $MD$。⟧，$\angle MND=\angle MED$。又 $EM\parallel PD$（都垂直 $OA$），$\angle EDP=\angle MED$。所以 $\angle MND=\angle EQP$，再加上 $ND\parallel EQ$（都垂直 $OB$），得 $MN\parallel PQ$。</p>
 === text
@@ -48,31 +89,78 @@ sol: <figure class="bkfig"><svg viewBox="0 0 300 208" width="300" role="img" ari
 === 例 4
 zh: $P$ 是正方形 $ABCD$ 對角線 $AC$ 上任一點，過 $P$ 作兩鄰邊的平行線，與正方形交於 $E$、$F$、$G$、$H$。證明這四點共圓。
 sol: <p><b>證</b>　用方法 1（定義），關鍵是先看出（或猜出）圓心。設正方形的中心為 $O$，連 $OE$、$OF$、$OG$、$OH$。</p>
-<figure class="bkfig"><svg viewBox="0 0 200 200" width="200" role="img" aria-label="正方形對角線上一點">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="27.6,27.6 27.6,172.4 172.4,172.4 172.4,27.6"/><line x1="27.6" y1="27.6" x2="172.4" y2="172.4"/><line x1="27.6" y1="172.4" x2="172.4" y2="27.6"/><line x1="71" y1="27.6" x2="71" y2="172.4"/><line x1="27.6" y1="71" x2="172.4" y2="71"/><line x1="100" y1="100" x2="71" y2="27.6" stroke-dasharray="5 4"/><line x1="100" y1="100" x2="71" y2="172.4" stroke-dasharray="5 4"/><line x1="100" y1="100" x2="27.6" y2="71" stroke-dasharray="5 4"/><line x1="100" y1="100" x2="172.4" y2="71" stroke-dasharray="5 4"/><circle cx="100" cy="100" r="78" stroke-dasharray="5 4" stroke-width="1"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="19.8" y="24.7" text-anchor="middle">A</text><text x="19.8" y="185.1" text-anchor="middle">B</text><text x="180.2" y="185.1" text-anchor="middle">C</text><text x="180.2" y="24.7" text-anchor="middle">D</text><text x="71" y="21.5" text-anchor="middle">E</text><text x="71" y="188.3" text-anchor="middle">F</text><text x="16.6" y="75.9" text-anchor="middle">G</text><text x="183.4" y="75.9" text-anchor="middle">H</text><text x="63.3" y="83.7" text-anchor="middle">P</text><text x="111" y="104.9" text-anchor="middle">O</text></g>
-</svg><figcaption>$O$ 是正方形中心；$OE=OF=OG=OH$（虛線），四點在以 $O$ 為圓心的圓上</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A = (27.6, 27.6)
+C = (172.4, 172.4)
+O = mid(A, C)
+B = rotate(A, O, 90)
+D = rotate(C, O, 90)
+AC = line(A, C)
+P = on(AC, 71, 71)
+E = foot(P, A, D)
+F = foot(P, B, C)
+G = foot(P, A, B)
+H = foot(P, C, D)
+k = circle(O, E)
+draw poly A B C D
+draw seg A C
+draw seg B D
+draw seg O E dash
+draw seg O F dash
+draw seg O G dash
+draw seg O H dash
+draw circle k dash
+</pre><figcaption>$O$ 是正方形中心；$OE=OF=OG=OH$（虛線），四點在以 $O$ 為圓心的圓上</figcaption></figure>
 $$\angle OAG=\angle OAE=\angle ODH=\angle OBF=45^\circ,$$
 <p>且 $OA=OB=OD$，$AG=AE=DH=BF$⟦為什麼｜$P$ 在對角線 $AC$ 上，到 $AB$、$AD$ 等距，所以 $AG=AE$；$DH$ 等於 $H$ 所在水平線到 $AD$ 的距離，也就是 $AG$；$BF$ 等於 $F$ 所在鉛直線到 $AB$ 的距離，也就是 $AE$。⟧，所以 $\triangle OAG\cong\triangle OAE\cong\triangle ODH\cong\triangle OBF$，$OG=OE=OH=OF$，四點在以 $O$ 為圓心的圓上。</p>
 === 例 5
 zh: $AB$ 是圓的直徑，延長兩弦 $AC$、$AD$，與過 $B$ 的切線交於 $E$、$F$。證明 $C$、$D$、$F$、$E$ 四點共圓。
-sol: <figure class="bkfig"><svg viewBox="0 0 137 230" width="137" role="img" aria-label="直徑、切線與兩條弦">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="68.4" cy="161.6" r="46.4"/><line x1="22" y1="161.6" x2="114.9" y2="161.6"/><line x1="22" y1="161.6" x2="114.9" y2="29"/><line x1="22" y1="161.6" x2="114.9" y2="105.8"/><line x1="114.9" y1="175.5" x2="114.9" y2="22"/><line x1="114.9" y1="161.6" x2="52.5" y2="117.9" stroke-dasharray="5 4"/><line x1="52.5" y1="117.9" x2="90.2" y2="120.6" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="11" y="166.5" text-anchor="middle">A</text><text x="122.6" y="174.3" text-anchor="middle">B</text><text x="52.5" y="111.8" text-anchor="middle">C</text><text x="98" y="117.7" text-anchor="middle">D</text><text x="125.9" y="33.9" text-anchor="middle">E</text><text x="125.9" y="110.7" text-anchor="middle">F</text></g>
-</svg><figcaption>$AB$ 是直徑，過 $B$ 的切線交 $AC$、$AD$ 的延長線於 $E$、$F$；連 $BC$、$CD$（虛線）</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (22, 161.6)
+B = (114.9, 161.6)
+o = mid(A, B)
+k = circle(o, A)
+u = rotate(A, B, 90)
+t = line(B, u)
+E = on(t, 114.9, 29)
+F = on(t, 114.9, 105.8)
+C = second(k, A, E)
+D = second(k, A, F)
+draw seg A B
+draw seg A C E
+draw seg A D F
+draw seg E F B
+draw circle k
+draw seg B C dash
+draw seg C D dash
+</pre><figcaption>$AB$ 是直徑，過 $B$ 的切線交 $AC$、$AD$ 的延長線於 $E$、$F$；連 $BC$、$CD$（虛線）</figcaption></figure>
 <p><b>證</b>　連 $BC$、$CD$。$\angle CDA$ 與 $\angle CBA$ 同對弧 $AC$，所以 $\angle CDA=\angle CBA$。又 $\triangle ACB$（$\angle ACB=90^\circ$）與 $\triangle ABE$（$\angle ABE=90^\circ$）都是直角三角形，共用 $\angle A$，所以 $\angle CBA=\angle AEB$。於是 $\angle CDA=\angle AEB$，即四邊形 $CDFE$ 在 $D$ 的外角等於內對角 $\angle CEF$，$C$、$D$、$F$、$E$ 四點共圓。</p>
 === text
 <p>下面的例 6 是五點共圓。要證五點、六點……共圓，除了像例 4 那樣用定義，也常化成幾個四點共圓的問題。</p>
 
 === 例 6
 zh: 設 $P$、$M$ 分別在正方形 $ABCD$ 的邊 $DC$、$BC$ 上，$PM$ 與以 $A$ 為圓心、$AB$ 為半徑的圓相切，線段 $PA$、$MA$ 分別交對角線 $BD$ 於 $Q$、$N$。證明 $P$、$Q$、$N$、$M$、$C$ 五點共圓。
-sol: <figure class="bkfig"><svg viewBox="0 0 211 230" width="211" role="img" aria-label="正方形與四分之一圓的切線">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,22 22,178.2 178.2,178.2 178.2,22"/><path d="M22 178.2A156.2 156.2 0 0 0 178.2 22"/><line x1="22" y1="178.2" x2="178.2" y2="22"/><line x1="178.2" y1="106.8" x2="68.3" y2="178.2"/><line x1="22" y1="22" x2="178.2" y2="106.8"/><line x1="22" y1="22" x2="68.3" y2="178.2"/><line x1="22" y1="22" x2="107.1" y2="153" stroke-dasharray="5 4"/><circle cx="123.2" cy="142.5" r="65.5" stroke-dasharray="5 4" stroke-width="1"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="19.1" text-anchor="middle">A</text><text x="14.2" y="190.8" text-anchor="middle">B</text><text x="185.9" y="190.8" text-anchor="middle">C</text><text x="185.9" y="19.1" text-anchor="middle">D</text><text x="189.2" y="111.7" text-anchor="middle">P</text><text x="68.3" y="194.1" text-anchor="middle">M</text><text x="131" y="74.1" text-anchor="middle">Q</text><text x="46.7" y="147.4" text-anchor="middle">N</text><text x="99.3" y="165.6" text-anchor="middle">T</text></g>
-</svg><figcaption>$PM$ 與以 $A$ 為圓心、$AB$ 為半徑的圓（弧）切於 $T$；細虛線是 $P,Q,N,M,C$ 所在的圓</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (22, 22)
+C = (178.2, 178.2)
+o = mid(A, C)
+B = rotate(A, o, 90)
+D = rotate(C, o, 90)
+k = circle(A, B)
+DC = line(D, C)
+BC = line(B, C)
+P = on(DC, 178.2, 106.8)
+M = on(BC, 68.3, 178.2)
+T = tangent(P, k, 107.1, 153)
+Q = inter(A, P, B, D)
+N = inter(A, M, B, D)
+k5 = circle3(Q, N, C)
+draw poly A B C D
+draw seg B D
+draw seg A P
+draw seg A M
+draw seg P M
+draw seg A T dash
+draw circle k dash
+draw circle k5 dash
+</pre><figcaption>$PM$ 與以 $A$ 為圓心、$AB$ 為半徑的圓（弧）切於 $T$；細虛線是 $P,Q,N,M,C$ 所在的圓</figcaption></figure>
 <p><b>證</b>　先證 $P$、$Q$、$N$、$C$ 共圓。記 $T$ 為 $PM$ 與圓的切點。$PD$ 也與圓相切（於 $D$），所以直角 $\triangle ATP\cong\triangle ADP$（HL），$PA$ 平分 $\angle TAD$。同理 $MA$ 平分 $\angle TAB$。所以 $\angle MAP=\frac12\angle BAD=45^\circ=\angle NDP$，$P$、$D$、$A$、$N$ 四點共圓（$A$、$D$ 在 $NP$ 同側，看 $NP$ 的張角相等）。</p>
 <p>於是 $\angle DPQ=\angle DPA=\angle DNA$。又 $\triangle ADN\cong\triangle CDN$（關於 $BD$ 對稱），$\angle DNA=\angle DNC$。所以 $\angle DPQ=\angle DNC=\angle QNC$，四邊形 $PQNC$ 在 $P$ 的外角等於內對角，$P$、$Q$、$N$、$C$ 共圓。</p>
 <p>⟦類似地｜$\angle MAQ=45^\circ=\angle QBM$，所以 $M$、$B$、$A$、$Q$ 共圓，$\angle BMN=\angle BMA=\angle BQA$；又 $\triangle ABQ\cong\triangle CBQ$，$\angle BQA=\angle BQC$。所以 $\angle BMN=\angle NQC$，四邊形 $MNQC$ 在 $M$ 的外角等於內對角。⟧可證 $Q$、$N$、$M$、$C$ 也共圓。兩個圓都過不共線的三點 $Q$、$N$、$C$，所以是同一個圓（$\triangle QNC$ 的外接圓），五點共圓。</p>
@@ -81,29 +169,77 @@ sol: <figure class="bkfig"><svg viewBox="0 0 211 230" width="211" role="img" ari
 
 === 例 7
 zh: 在凸五邊形 $ABCDE$ 中，$\angle ABC=\angle ADE$，$\angle AEC=\angle ADB$。證明：$\angle BAC=\angle DAE$。
-sol: <figure class="bkfig"><svg viewBox="0 0 230 200" width="230" role="img" aria-label="凸五邊形 ABCDE">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="102.7,55.5 171.2,22 208,85.7 118.2,156.7 22,178.4"/><line x1="171.2" y1="22" x2="118.2" y2="156.7"/><line x1="208" y1="85.7" x2="22" y2="178.4"/><line x1="102.7" y1="55.5" x2="208" y2="85.7"/><line x1="102.7" y1="55.5" x2="118.2" y2="156.7"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="91.7" y="60.4" text-anchor="middle">A</text><text x="171.2" y="15.9" text-anchor="middle">B</text><text x="219" y="90.6" text-anchor="middle">C</text><text x="118.2" y="172.6" text-anchor="middle">D</text><text x="14.2" y="191.1" text-anchor="middle">E</text><text x="142.1" y="128.9" text-anchor="middle">F</text></g>
-</svg><figcaption>對角線 $BD$、$CE$ 交於 $F$</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (102.7, 55.5)
+B = (171.2, 22)
+C = (208, 85.7)
+D = (118.2, 156.7)
+E = (22, 178.4)
+F = inter(B, D, C, E)
+draw poly A B C D E
+draw seg B D
+draw seg C E
+draw seg A C
+draw seg A D
+</pre><figcaption>對角線 $BD$、$CE$ 交於 $F$</figcaption></figure>
 <p><b>證</b>　設對角線 $BD$、$CE$ 交於 $F$。由 $\angle AEC=\angle ADB$，即 $\angle AEF=\angle ADF$，$A$、$F$、$D$、$E$ 四點共圓，所以 $\angle AFE=\angle ADE=\angle ABC$，從而 $A$、$B$、$C$、$F$ 四點共圓（四邊形 $ABCF$ 在 $F$ 的外角等於內對角 $\angle ABC$）。於是</p>
 $$\angle BAC=\angle BFC=\angle EFD=\angle DAE.$$
 <p>⟦三個等號｜$\angle BAC=\angle BFC$：圓 $ABCF$ 中同對弧 $BC$；$\angle BFC=\angle EFD$：對頂角；$\angle EFD=\angle EAD$：圓 $AFDE$ 中同對弧 $ED$。⟧兩組四點共圓相輔相成。</p>
 === 例 8
 zh: 從 $\odot O$ 外一點 $P$ 引兩條切線 $PA$、$PB$（$A$、$B$ 為切點），割線 $PCD$ 交圓於 $C$、$D$；過 $B$ 作 $CD$ 的平行線交圓於 $E$，連 $AE$ 交 $CD$ 於 $F$。證明 $F$ 是 $CD$ 的中點。
-sol: <figure class="bkfig"><svg viewBox="0 0 300 186" width="300" role="img" aria-label="切線、割線與平行弦">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="93.1" cy="93.1" r="71.1"/><line x1="278" y1="78.9" x2="115.3" y2="25.5"/><line x1="278" y1="78.9" x2="125.3" y2="156.5"/><line x1="278" y1="78.9" x2="157" y2="61.9"/><line x1="125.3" y1="156.5" x2="44.7" y2="145.2"/><line x1="115.3" y1="25.5" x2="44.7" y2="145.2"/><line x1="93.1" y1="93.1" x2="115.3" y2="25.5" stroke-dasharray="5 4"/><line x1="93.1" y1="93.1" x2="98.7" y2="53.7" stroke-dasharray="5 4"/><line x1="115.3" y1="25.5" x2="125.3" y2="156.5" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"><circle cx="93.1" cy="93.1" r="2.4"/></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="289" y="83.8" text-anchor="middle">P</text><text x="115.3" y="19.4" text-anchor="middle">A</text><text x="125.3" y="172.4" text-anchor="middle">B</text><text x="48.1" y="42.6" text-anchor="middle">C</text><text x="149.2" y="59" text-anchor="middle">D</text><text x="36.9" y="157.8" text-anchor="middle">E</text><text x="98.7" y="47.6" text-anchor="middle">F</text><text x="85.3" y="105.8" text-anchor="middle">O</text></g>
-</svg><figcaption>$PA$、$PB$ 是切線，$BE\parallel CD$；連 $AB$、$OA$、$OF$（虛線）</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">O = (93.1, 93.1)
+k = circler(O, 71.1)
+P = (278, 78.9)
+A = tangent(P, k, 115.3, 25.5)
+B = tangent(P, k, 125.3, 156.5)
+C = on(k, 48.1, 42.6)
+D = second(k, C, P)
+mcd = foot(O, C, D)
+E = reflect(B, O, mcd)
+F = inter(A, E, C, D)
+draw seg P A
+draw seg P B
+draw seg P D C
+draw seg B E
+draw seg A E
+draw seg A B dash
+draw seg O A dash
+draw seg O F dash
+draw circle k
+</pre><figcaption>$PA$、$PB$ 是切線，$BE\parallel CD$；連 $AB$、$OA$、$OF$（虛線）</figcaption></figure>
 <p><b>證</b>　問題等價於證 $OF\perp CD$。連 $AB$，由弦切角定理 $\angle AEB=\angle ABP$。又 $CD\parallel BE$，$\angle AFP=\angle AEB=\angle ABP$，所以 $P$、$A$、$F$、$B$ 四點共圓。另一方面 $OA\perp PA$、$OB\perp PB$，所以 $P$、$A$、$O$、$B$ 四點共圓（以 $OP$ 為直徑）。兩圓都過 $P$、$A$、$B$，是同一個圓，$P$、$A$、$F$、$O$、$B$ 五點共圓，$\angle OFP=\angle OAP=90^\circ$，即 $OF\perp CD$，$F$ 是弦 $CD$ 的中點。</p>
 === 例 9
 zh: $AB$ 是 $\odot O$ 的直徑，$BP$ 是切線，$PEF$ 是過 $O$ 的割線，$PCD$ 是任意割線。$AD$、$AC$ 分別與 $PEF$ 交於 $H$、$G$。證明：$OH=OG$。
-sol: <figure class="bkfig"><svg viewBox="0 0 270 185" width="270" role="img" aria-label="直徑、切線與兩條割線">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="92.6" cy="92.6" r="70.6"/><line x1="92.6" y1="22" x2="92.6" y2="163.2"/><line x1="92.6" y1="163.2" x2="248" y2="163.2"/><line x1="248" y1="163.2" x2="28.3" y2="63.4"/><line x1="248" y1="163.2" x2="23.5" y2="107.3"/><line x1="92.6" y1="22" x2="23.5" y2="107.3"/><line x1="92.6" y1="22" x2="146.7" y2="138"/><line x1="146.7" y1="138" x2="38.5" y2="88.8" stroke-dasharray="5 4"/><line x1="85.1" y1="122.6" x2="92.6" y2="113.4" stroke-dasharray="5 4"/><line x1="92.6" y1="92.6" x2="85.1" y2="122.6" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"><circle cx="92.6" cy="92.6" r="2.4"/></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="92.6" y="15.9" text-anchor="middle">A</text><text x="92.6" y="179.2" text-anchor="middle">B</text><text x="259" y="168.2" text-anchor="middle">P</text><text x="164.7" y="119" text-anchor="middle">E</text><text x="20.6" y="60.5" text-anchor="middle">F</text><text x="146.7" y="153.9" text-anchor="middle">C</text><text x="12.5" y="112.2" text-anchor="middle">D</text><text x="142.2" y="108.8" text-anchor="middle">G</text><text x="50.8" y="67.5" text-anchor="middle">H</text><text x="27.5" y="93.7" text-anchor="middle">K</text><text x="103.6" y="118.3" text-anchor="middle">L</text><text x="85.1" y="138.5" text-anchor="middle">M</text><text x="103.6" y="97.5" text-anchor="middle">O</text></g>
-</svg><figcaption>過 $C$ 作 $PEF$ 的平行線交 $AB$、$AD$ 於 $L$、$K$；$M$ 是 $CD$ 中點（虛線為輔助線）</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (92.6, 22)
+B = (92.6, 163.2)
+O = mid(A, B)
+k = circle(O, A)
+u = rotate(O, B, 90)
+t = line(B, u)
+P = on(t, 248, 163.2)
+lineP = line(P, O)
+F = meet(lineP, k, 28.3, 63.4)
+E = meet(lineP, k, 156.9, 121.8)
+D = on(k, 23.5, 107.3)
+C = second(k, D, P)
+G = inter(A, C, P, F)
+H = inter(A, D, P, F)
+mC = mid(C, F)
+y = reflectp(P, mC)
+L = inter(C, y, A, B)
+K = inter(C, y, A, D)
+M = mid(C, D)
+draw seg A B
+draw seg B P
+draw seg P E F
+draw seg P C D
+draw seg A C
+draw seg A D
+draw seg C L K dash
+draw seg M L dash
+draw seg O M dash
+draw circle k
+right O M C
+</pre><figcaption>過 $C$ 作 $PEF$ 的平行線交 $AB$、$AD$ 於 $L$、$K$；$M$ 是 $CD$ 中點（虛線為輔助線）</figcaption></figure>
 <p><b>證</b>　過 $C$ 作 $PEF$ 的平行線，分別交 $AB$、$AD$ 於 $L$、$K$。由平行線，</p>
 $$\frac{HO}{KL}=\frac{AO}{AL}=\frac{OG}{LC},$$
 <p>所以問題化為證 $KL=LC$。取 $DC$ 的中點 $M$，只要證 $ML\parallel DK$。</p>
@@ -113,11 +249,21 @@ $$\frac{HO}{KL}=\frac{AO}{AL}=\frac{OG}{LC},$$
 
 === 例 10
 zh: 以銳角 $\triangle ABC$ 的三邊為邊，向外作三個相似的銳角三角形 $\triangle AC_1B$、$\triangle BA_1C$、$\triangle CB_1A$（其中 $\angle AB_1C=\angle ABC_1=\angle A_1BC$，$\angle BA_1C=\angle BAC_1=\angle B_1AC$）。證明：(1) $\triangle AC_1B$、$\triangle BA_1C$、$\triangle CB_1A$ 的外接圓交於一點；(2) 線段 $AA_1$、$BB_1$、$CC_1$ 交於一點。
-sol: <figure class="bkfig"><svg viewBox="0 0 230 225" width="230" role="img" aria-label="三角形外側三個相似三角形">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="162,129.1 58.6,142.9 117.2,53.3" stroke-width="2"/><polygon points="162,129.1 123.9,202.7 58.6,142.9"/><polygon points="58.6,142.9 22,22 117.2,53.3"/><polygon points="117.2,53.3 208,27.9 162,129.1"/><line x1="162" y1="129.1" x2="22" y2="22" stroke="#c2562b" stroke-width="2"/><line x1="58.6" y1="142.9" x2="208" y2="27.9" stroke="#c2562b" stroke-width="2"/><line x1="117.2" y1="53.3" x2="123.9" y2="202.7" stroke="#c2562b" stroke-width="2"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="173" y="134" text-anchor="middle">A</text><text x="47.6" y="147.8" text-anchor="middle">B</text><text x="117.2" y="47.2" text-anchor="middle">C</text><text x="130.1" y="101.2" text-anchor="middle">D</text><text x="7.5" y="26.9" text-anchor="middle">A<tspan font-size="10">1</tspan></text><text x="218.3" y="25.1" text-anchor="middle">B<tspan font-size="10">1</tspan></text><text x="123.9" y="218.6" text-anchor="middle">C<tspan font-size="10">1</tspan></text></g>
-</svg><figcaption>三邊外側的三個相似銳角三角形；紅線 $AA_1$、$BB_1$、$CC_1$ 交於 $D$</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (162, 129.1)
+B = (58.6, 142.9)
+C = (117.2, 53.3)
+A1 = (22, 22)
+B1 = (208, 27.9)
+C1 = (123.9, 202.7)
+D = inter(A, A1, B, B1)
+draw poly A B C
+draw poly A C1 B
+draw poly B A1 C
+draw poly C B1 A
+draw seg A A1 accent
+draw seg B B1 accent
+draw seg C C1 accent
+</pre><figcaption>三邊外側的三個相似銳角三角形；紅線 $AA_1$、$BB_1$、$CC_1$ 交於 $D$</figcaption></figure>
 <p><b>證</b>　(1) 設 $D$ 是 $AA_1$ 與 $BB_1$ 的交點（三個三角形都是銳角三角形，$D$ 必在 $\triangle ABC$ 內）。由已知易得 $\angle A_1CA=\angle B_1CB$⟦為什麼｜兩者都等於 $\angle ACB$ 加上三個相似三角形在 $C$ 處的那個角。⟧，以及 $\frac{A_1C}{BC}=\frac{AC}{B_1C}$（由 $\triangle BA_1C\sim\triangle B_1AC$ 的對應邊），所以 $\triangle A_1CA\sim\triangle BCB_1$，$\angle DBC=\angle DA_1C$，$B$、$D$、$C$、$A_1$ 四點共圓。同理 $A$、$D$、$C$、$B_1$ 四點共圓，即 $D$ 是 $\triangle A_1BC$ 與 $\triangle AB_1C$ 外接圓的交點。進一步，</p>
 $$\angle ADB=180^\circ-\angle ADB_1=180^\circ-\angle ACB_1=180^\circ-\angle AC_1B,$$
 <p>所以 $A$、$D$、$B$、$C_1$ 四點共圓，$\triangle AC_1B$ 的外接圓也過 $D$。</p>
@@ -129,11 +275,27 @@ $$\angle CDB_1=\angle B_1AC=\angle BAC_1=\angle BDC_1,$$
 
 === 例 11
 zh: 設四邊形 $ABCD$ 中 $AB+CD=BC+AD$。證明 $ABCD$ 有內切圓。
-sol: <figure class="bkfig"><svg viewBox="0 0 205 230" width="205" role="img" aria-label="對邊和相等的四邊形與內切圓">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,65.5 60.2,208 183.4,136.8 141.6,22"/><circle cx="101.9" cy="107.2" r="66.4"/><line x1="101.9" y1="107.2" x2="22" y2="65.5" stroke-dasharray="5 4"/><line x1="101.9" y1="107.2" x2="60.2" y2="208" stroke-dasharray="5 4"/><line x1="101.9" y1="107.2" x2="183.4" y2="136.8" stroke-dasharray="5 4"/><line x1="101.9" y1="107.2" x2="141.6" y2="22" stroke-dasharray="5 4"/><polygon points="55,188.5 77.6,197.9 141.6,22" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="62.7" text-anchor="middle">A</text><text x="52.4" y="220.7" text-anchor="middle">B</text><text x="194.4" y="141.7" text-anchor="middle">C</text><text x="149.4" y="19.1" text-anchor="middle">D</text><text x="44" y="193.4" text-anchor="middle">M</text><text x="77.6" y="213.8" text-anchor="middle">N</text><text x="112.9" y="112.1" text-anchor="middle">O</text></g>
-</svg><figcaption>$AM=AD$，$CN=CD$；$\angle A$、$\angle B$、$\angle C$ 的平分線是 $\triangle MND$ 三邊的中垂線（虛線）</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (22, 65.5)
+B = (60.2, 208)
+C = (183.4, 136.8)
+D = (141.6, 22)
+AB = line(A, B)
+BC = line(B, C)
+kA = circle(A, D)
+kC = circle(C, D)
+M = meet(kA, AB, 55, 188.5)
+N = meet(kC, BC, 77.6, 197.9)
+O = circumcenter(M, N, D)
+tt = foot(O, A, B)
+k = circle(O, tt)
+draw poly A B C D
+draw circle k
+draw seg O A dash
+draw seg O B dash
+draw seg O C dash
+draw seg O D dash
+draw poly M N D dash
+</pre><figcaption>$AM=AD$，$CN=CD$；$\angle A$、$\angle B$、$\angle C$ 的平分線是 $\triangle MND$ 三邊的中垂線（虛線）</figcaption></figure>
 <p><b>證</b>　想法類似例 3：把圓心作出來。不妨設 $AB\ge AD$，由 $AB+CD=BC+AD$ 得 $BC\ge CD$。在 $AB$ 上取 $M$ 使 $AM=AD$，在 $BC$ 上取 $N$ 使 $CN=CD$（$M$、$N$ 可能都與 $B$ 重合，不影響論證），則 $BM=AB-AD=BC-CD=BN$，三角形 $ADM$、$CDN$、$BMN$ 都是等腰三角形。</p>
 <p>所以 $\angle A$、$\angle B$、$\angle C$ 的平分線恰好是 $\triangle MND$ 三邊的中垂線，交於一點 $O$（$\triangle MND$ 的外心）。$O$ 在三個角的平分線上，到 $AB$、$BC$、$CD$、$DA$ 四邊的距離相等，所以以 $O$ 為圓心有一圓內切於 $ABCD$。</p>
 === text
@@ -141,49 +303,129 @@ sol: <figure class="bkfig"><svg viewBox="0 0 205 230" width="205" role="img" ari
 
 === 例 12
 zh: 圓內接四邊形 $ABCD$ 的對角線 $AC$、$BD$ 的交點在四邊上的射影，依次連成的四邊形必有內切圓。
-sol: <figure class="bkfig"><svg viewBox="0 0 240 240" width="240" role="img" aria-label="圓內接四邊形對角線交點的射影">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="120" cy="120" r="98"/><polygon points="71,35.1 212.1,86.5 169,204.9 27.9,153.5" stroke-width="2"/><line x1="71" y1="35.1" x2="169" y2="204.9"/><line x1="212.1" y1="86.5" x2="27.9" y2="153.5"/><line x1="120" y1="120" x2="141.5" y2="60.8"/><line x1="120" y1="120" x2="190.5" y2="145.7"/><line x1="120" y1="120" x2="98.5" y2="179.2"/><line x1="120" y1="120" x2="49.5" y2="94.3"/><polygon points="141.5,60.8 190.5,145.7 98.5,179.2 49.5,94.3" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="71" y="29" text-anchor="middle">A</text><text x="223.1" y="91.4" text-anchor="middle">B</text><text x="176.8" y="217.5" text-anchor="middle">C</text><text x="16.9" y="158.4" text-anchor="middle">D</text><text x="120" y="135.9" text-anchor="middle">O</text><text x="151.8" y="57.9" text-anchor="middle">A<tspan font-size="10">1</tspan></text><text x="205" y="150.6" text-anchor="middle">B<tspan font-size="10">1</tspan></text><text x="98.5" y="195.1" text-anchor="middle">C<tspan font-size="10">1</tspan></text><text x="35" y="99.2" text-anchor="middle">D<tspan font-size="10">1</tspan></text></g>
-</svg><figcaption>$O$ 在四邊上的射影 $A_1,B_1,C_1,D_1$ 連成的四邊形（虛線）有內切圓，圓心是 $O$</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (71, 35.1)
+B = (212.1, 86.5)
+C = (169, 204.9)
+D = (27.9, 153.5)
+O = inter(A, C, B, D)
+A1 = foot(O, A, B)
+B1 = foot(O, B, C)
+C1 = foot(O, C, D)
+D1 = foot(O, D, A)
+k = circle(O, A)
+draw poly A B C D
+draw seg A C
+draw seg B D
+draw seg O A1
+draw seg O B1
+draw seg O C1
+draw seg O D1
+draw poly A1 B1 C1 D1 dash
+draw circle k
+</pre><figcaption>$O$ 在四邊上的射影 $A_1,B_1,C_1,D_1$ 連成的四邊形（虛線）有內切圓，圓心是 $O$</figcaption></figure>
 <p><b>證</b>　由交點 $O$ 向 $AB$、$BC$、$CD$、$DA$ 作垂線 $OA_1$、$OB_1$、$OC_1$、$OD_1$。$\angle OA_1A=\angle OD_1A=90^\circ$，所以 $O$、$A_1$、$A$、$D_1$ 四點共圓，$\angle OA_1D_1=\angle OAD_1=\angle CAD$。類似地 $\angle OA_1B_1=\angle OBB_1=\angle DBC$。而 $\angle CAD$ 與 $\angle DBC$ 同對弧 $CD$，所以 $\angle OA_1D_1=\angle OA_1B_1$，$OA_1$ 平分 $\angle B_1A_1D_1$。同理 $OB_1$、$OC_1$、$OD_1$ 分別平分 $\angle A_1B_1C_1$、$\angle B_1C_1D_1$、$\angle C_1D_1A_1$。所以 $O$ 到四邊形 $A_1B_1C_1D_1$ 四邊的距離相等，它有以 $O$ 為圓心的內切圓。</p>
 === 習題 1
 zh: 在直角 $\triangle ABC$ 的斜邊 $AB$ 上向形外作中心為 $O$ 的正方形。證明：$CO$ 平分直角 $C$。
-sol: <figure class="bkfig"><svg viewBox="0 0 155 210" width="155" role="img" aria-label="斜邊上的正方形">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,77.3 132.7,77.3 55.2,26.6"/><polygon points="22,77.3 132.7,77.3 132.7,188 22,188"/><line x1="55.2" y1="26.6" x2="77.3" y2="132.7" stroke="#c2562b" stroke-width="2"/><polyline points="51.9,31.6 56.9,34.9 60.2,29.9" stroke-width="1"/><circle cx="77.3" cy="77.3" r="55.3" stroke-dasharray="5 4" stroke-width="1"/></g>
-<g fill="currentColor"><circle cx="77.3" cy="132.7" r="2.4"/></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="11" y="82.2" text-anchor="middle">A</text><text x="143.7" y="82.2" text-anchor="middle">B</text><text x="55.2" y="20.5" text-anchor="middle">C</text><text x="88.3" y="137.6" text-anchor="middle">O</text></g>
-</svg><figcaption>$O$、$C$ 都在以 $AB$ 為直徑的圓（虛線）上</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (22, 77.3)
+B = (132.7, 77.3)
+m = mid(A, B)
+kab = circle(m, A)
+C = on(kab, 55.2, 26.6)
+b2 = rotate(A, B, 90)
+a2 = rotate(B, A, -90)
+O = mid(A, b2)
+draw poly A B C
+draw poly A B b2 a2
+draw circle kab dash
+draw seg C O accent
+right A C B
+</pre><figcaption>$O$、$C$ 都在以 $AB$ 為直徑的圓（虛線）上</figcaption></figure>
 <p>$\angle AOB=\angle ACB=90^\circ$，所以 $O$、$C$ 在以 $AB$ 為直徑的圓上。又 $AO=BO$，等弦對等圓周角，$\angle BCO=\angle OCA$。</p>
 === 習題 2
 zh: 由頂點為 $A$ 的角內任一點 $M$ 向角的兩邊作垂線 $MP$、$MQ$，由 $A$ 向線段 $PQ$ 作垂線 $AK$。證明：$\angle PAK=\angle MAQ$。
-sol: <figure class="bkfig"><svg viewBox="0 0 218 190" width="218" role="img" aria-label="角內一點的兩條垂線">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><line x1="22" y1="168" x2="195.7" y2="168"/><line x1="22" y1="168" x2="136.1" y2="22"/><line x1="149.4" y1="104.3" x2="149.4" y2="168"/><line x1="149.4" y1="104.3" x2="101.2" y2="66.7"/><line x1="149.4" y1="168" x2="101.2" y2="66.7"/><line x1="22" y1="168" x2="125.9" y2="118.6"/><line x1="22" y1="168" x2="149.4" y2="104.3" stroke-dasharray="5 4"/><polyline points="149.4,163 144.4,163 144.4,168" stroke-width="1"/><polyline points="105.1,69.7 102,73.7 98.1,70.6" stroke-width="1"/><polyline points="121.4,120.7 119.2,116.2 123.7,114.1" stroke-width="1"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="180.7" text-anchor="middle">A</text><text x="160.4" y="109.2" text-anchor="middle">M</text><text x="149.4" y="183.9" text-anchor="middle">P</text><text x="93.4" y="63.8" text-anchor="middle">Q</text><text x="125.9" y="112.5" text-anchor="middle">K</text></g>
-</svg><figcaption>$P$、$Q$ 在以 $AM$ 為直徑的圓上</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (22, 168)
+M = (149.4, 104.3)
+r1 = (195.7, 168)
+r2 = (136.1, 22)
+P = foot(M, A, r1)
+Q = foot(M, A, r2)
+K = foot(A, P, Q)
+draw seg A r1
+draw seg A r2
+draw seg M P
+draw seg M Q
+draw seg P Q
+draw seg A K
+draw seg A M dash
+right M P A
+right M Q A
+right A K P
+</pre><figcaption>$P$、$Q$ 在以 $AM$ 為直徑的圓上</figcaption></figure>
 <p>$P$、$Q$ 在以 $AM$ 為直徑的圓上，所以 $\angle QMA=\angle QPA$。三角形 $PAK$ 與 $MAQ$ 都是直角三角形，所以 $\angle PAK=90^\circ-\angle QPA=90^\circ-\angle QMA=\angle MAQ$。</p>
 === 習題 3
 zh: 在四邊形 $ABCD$ 內取一點 $M$，使 $ABMD$ 為平行四邊形。證明：若 $\angle CBM=\angle CDM$，則 $\angle ACD=\angle BCM$。
-sol: <figure class="bkfig"><svg viewBox="0 0 210 220" width="210" role="img" aria-label="四邊形內的平行四邊形">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="55.2,198 22,109.4 188.2,22 166,198"/><polygon points="55.2,198 22,109.4 132.8,109.4 166,198"/><line x1="132.8" y1="109.4" x2="188.2" y2="22"/><line x1="55.2" y1="198" x2="188.2" y2="22"/><polygon points="22,109.4 77.4,22 188.2,22" stroke-dasharray="5 4"/><line x1="55.2" y1="198" x2="77.4" y2="22" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="55.2" y="213.9" text-anchor="middle">A</text><text x="11" y="114.3" text-anchor="middle">B</text><text x="199.2" y="26.9" text-anchor="middle">C</text><text x="173.8" y="210.7" text-anchor="middle">D</text><text x="132.8" y="103.3" text-anchor="middle">M</text><text x="77.4" y="15.9" text-anchor="middle">N</text></g>
-</svg><figcaption>取 $N$ 使 $BMCN$ 是平行四邊形（虛線）</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (55.2, 198)
+B = (22, 109.4)
+C = (188.2, 22)
+D = (166, 198)
+m1 = mid(B, D)
+M = reflectp(A, m1)
+m2 = mid(B, C)
+N = reflectp(M, m2)
+draw poly A B C D
+draw poly A B M D
+draw seg M C
+draw seg A C
+draw seg B N C dash
+draw seg A N dash
+</pre><figcaption>取 $N$ 使 $BMCN$ 是平行四邊形（虛線）</figcaption></figure>
 <p>取點 $N$ 使 $BMCN$ 是平行四邊形。$AD\parallel BM\parallel NC$ 且 $AD=BM=NC$，所以 $ADCN$ 是平行四邊形，$AN=DC$，於是 $\triangle ABN\cong\triangle DMC$（SSS）。所以 $\angle NCB=\angle CBM=\angle CDM=\angle NAB$，$A$、$B$、$N$、$C$ 四點共圓。所以 $\angle ACD=\angle NAC=\angle NBC=\angle BCM$。</p>
 === 習題 4
 zh: 設 $D$ 是等腰直角三角形（$\angle A=90^\circ$）底邊 $BC$ 的中點，過 $C$、$D$ 兩點（但不過 $A$）作一圓交 $AC$ 於 $E$，連 $BE$ 交圓於 $F$。證明：$AF\perp BE$。
-sol: <figure class="bkfig"><svg viewBox="0 0 220 172" width="220" role="img" aria-label="等腰直角三角形與過 C、D 的圓">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="109.9,22 22,109.9 197.8,109.9"/><circle cx="153.8" cy="105.5" r="44.2"/><line x1="22" y1="109.9" x2="128" y2="69.7"/><line x1="109.9" y1="22" x2="128" y2="69.7" stroke="#c2562b" stroke-width="2"/><line x1="109.9" y1="22" x2="109.9" y2="109.9" stroke-dasharray="5 4"/><line x1="109.9" y1="109.9" x2="128" y2="69.7" stroke-dasharray="5 4"/><polyline points="126.2,65 121.5,66.8 123.3,71.5" stroke-width="1"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="109.9" y="15.9" text-anchor="middle">A</text><text x="11" y="114.8" text-anchor="middle">B</text><text x="208.8" y="114.8" text-anchor="middle">C</text><text x="109.9" y="125.8" text-anchor="middle">D</text><text x="157.2" y="58.7" text-anchor="middle">E</text><text x="120.2" y="66.8" text-anchor="middle">F</text></g>
-</svg><figcaption>連 $AD$、$DF$（虛線）；$A$、$B$、$D$、$F$ 共圓</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (109.9, 22)
+B = (22, 109.9)
+C = (197.8, 109.9)
+D = mid(B, C)
+x = (153.8, 61.3)
+k = circle3(C, D, x)
+E = second(k, C, A)
+F = second(k, E, B)
+draw poly A B C
+draw seg A D dash
+draw seg B F E
+draw seg D F dash
+draw seg A F accent
+right A F B
+draw circle k
+</pre><figcaption>連 $AD$、$DF$（虛線）；$A$、$B$、$D$、$F$ 共圓</figcaption></figure>
 <p>連 $AD$、$DF$。$\angle BFD=\angle DCE=45^\circ$（圓內接四邊形 $DCEF$ 的外角）$=\angle BAD$，所以 $A$、$B$、$D$、$F$ 四點共圓，$\angle AFB=\angle ADB=90^\circ$。</p>
 === 習題 5
 zh: 設 $\odot O$ 是 $\triangle ABC$ 的內切圓，與 $BC$、$CA$、$AB$ 的切點分別為 $D$、$E$、$F$。過 $D$ 作 $BC$ 的垂線，與 $EF$ 交於 $G$，連 $AG$ 並延長交 $BC$ 於 $H$。證明：$BH=HC$。
-sol: <figure class="bkfig"><svg viewBox="0 0 230 236" width="230" role="img" aria-label="內切圓與切點連線">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="85.9,22 22,213.8 208,213.8"/><circle cx="102.4" cy="155.9" r="58"/><line x1="151.3" y1="124.7" x2="47.4" y2="137.5"/><line x1="102.4" y1="213.8" x2="102.4" y2="130.8"/><line x1="85.9" y1="22" x2="115" y2="213.8"/><line x1="49.7" y1="130.8" x2="155.1" y2="130.8" stroke-dasharray="5 4"/><line x1="102.4" y1="155.9" x2="151.3" y2="124.7" stroke-dasharray="5 4"/><line x1="102.4" y1="155.9" x2="47.4" y2="137.5" stroke-dasharray="5 4"/><line x1="102.4" y1="155.9" x2="49.7" y2="130.8" stroke-dasharray="5 4"/><line x1="102.4" y1="155.9" x2="155.1" y2="130.8" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="85.9" y="15.9" text-anchor="middle">A</text><text x="11" y="218.7" text-anchor="middle">B</text><text x="219" y="218.7" text-anchor="middle">C</text><text x="102.4" y="229.7" text-anchor="middle">D</text><text x="162.3" y="129.6" text-anchor="middle">E</text><text x="36.4" y="142.4" text-anchor="middle">F</text><text x="110.2" y="127.9" text-anchor="middle">G</text><text x="115" y="229.7" text-anchor="middle">H</text><text x="110.2" y="168.5" text-anchor="middle">O</text><text x="38.7" y="135.7" text-anchor="middle">I</text><text x="166.1" y="135.7" text-anchor="middle">J</text></g>
-</svg><figcaption>過 $G$ 作 $IJ\parallel BC$，連 $OE$、$OF$、$OI$、$OJ$（虛線）</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (85.9, 22)
+B = (22, 213.8)
+C = (208, 213.8)
+O = incenter(A, B, C)
+D = foot(O, B, C)
+E = foot(O, C, A)
+F = foot(O, A, B)
+k = circle(O, D)
+d1 = rotate(B, D, 90)
+G = inter(E, F, D, d1)
+H = inter(A, G, B, C)
+gc = mid(G, C)
+Z = reflectp(B, gc)
+I = inter(G, Z, A, B)
+J = inter(G, Z, A, C)
+draw poly A B C
+draw circle k
+draw seg O E dash
+draw seg O F dash
+draw seg O I dash
+draw seg O J dash
+draw seg I G J dash
+draw seg D G
+draw seg E F
+draw seg A G H
+right G D C
+</pre><figcaption>過 $G$ 作 $IJ\parallel BC$，連 $OE$、$OF$、$OI$、$OJ$（虛線）</figcaption></figure>
 <p>過 $G$ 作 $BC$ 的平行線交 $AB$、$AC$ 於 $I$、$J$，則 $DG\perp IJ$，且 $\frac{IG}{BH}=\frac{GJ}{HC}$（以 $A$ 為中心的位似）。只要證 $IG=GJ$。連 $OE$、$OF$、$OI$、$OJ$。$\angle OGJ=\angle OEJ=90^\circ$，$G$、$J$、$E$、$O$ 共圓，$\angle GEO=\angle GJO$；同理 $\angle GIO=\angle GFO$。又 $OE=OF$，$\angle GEO=\angle GFO$，所以 $\angle GIO=\angle GJO$。而 $OG\perp IJ$，所以 $IG=GJ$，進而 $BH=HC$。</p>
