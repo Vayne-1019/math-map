@@ -64,6 +64,8 @@ main { max-width: 920px; margin: 0 auto; padding-block: 24px 64px;
 .key { background: var(--accent-weak); border-radius: 6px; padding: 8px 12px; margin: .6em 0; }
 .key b { color: var(--accent); }
 mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; max-width: 100%; }
+mjx-container.mwide { display: block; max-width: 100%; overflow-x: auto; overflow-y: hidden; margin: .35em 0; padding-bottom: 2px; }
+.item, .panel, .card { min-width: 0; }
 
 /* entrance */
 .doors { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
@@ -1273,7 +1275,7 @@ app.addEventListener('click', e => {
   const b = e.target.closest('.obt'); if (!b) return;
   const x = b.nextElementSibling, open = b.getAttribute('aria-expanded') !== 'true';
   b.setAttribute('aria-expanded', open); x.hidden = !open;
-  if (open && window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([x]).catch(() => {});
+  if (open && window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([x]).then(() => fitMath(x)).catch(() => {}); else if (open) fitMath(x);
 });
 
 /* ===================== ROUTER ===================== */
@@ -1302,8 +1304,17 @@ function route(keep) {
   if (keep !== true) window.scrollTo(0, 0);
   if (window.JXG) app.querySelectorAll('.demo').forEach(el => { const f = DEMOS[el.dataset.demo]; if (f) try { f(el); } catch (err) { el.textContent = '互動圖載入失敗：' + err.message; } });
   else app.querySelectorAll('.demo').forEach(el => { el.textContent = '互動圖需要網路載入繪圖元件。'; });
-  if (window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([app]).catch(() => {});
+  if (window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([app]).then(() => fitMath(app)).catch(() => {});
 }
+/* 太寬的數學式（MathJax 不會自動換行）改成獨立一行、框內左右捲動，避免整頁被撐寬 */
+function fitMath(root) {
+  root.querySelectorAll('mjx-container').forEach(m => {
+    if (m.offsetParent === null) return;
+    const box = m.parentElement.closest('.obx, .eg, .card, .body, details > div, .item, .panel, li, p') || app;
+    if (m.getBoundingClientRect().width > box.clientWidth - 4) m.classList.add('mwide');
+  });
+}
+window.addEventListener('toggle', e => { if (e.target.tagName === 'DETAILS' && e.target.open) fitMath(e.target); }, true);
 window.addEventListener('hashchange', () => route());
 function boot() { route(); }
 if (window.MathJax && MathJax.startup && MathJax.startup.promise) MathJax.startup.promise.then(boot); else boot();

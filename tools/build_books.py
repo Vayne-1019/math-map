@@ -53,7 +53,7 @@ def parse(path):
 
 def meta_of(blocks):
     m = next((b for b in blocks if b["kind"] == "meta"), {})
-    return {k: v for k, v in m.items() if k not in ("kind", "label", "title")}
+    return {k: v for k, v in m.items() if k not in ("kind", "label") and v != ""}
 
 
 def book_info(book):
