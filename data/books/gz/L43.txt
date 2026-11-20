@@ -22,19 +22,19 @@ $$A(x-\alpha_1)^{m_1}(x-\alpha_2)^{m_2}\cdots(x-\alpha_s)^{m_s}.$$
 zh: $n$ 次多項式至多有 $n$ 個不同的根。
 
 === 例 1
-zh: 令 $\omega=\cos\dfrac{2\pi}n+i\sin\dfrac{2\pi}n$。求證：<br>(1) $x^n-1=(x-1)(x-\omega)(x-\omega^2)\cdots(x-\omega^{n-1})$；<br>(2) $1+\omega+\omega^2+\cdots+\omega^{n-1}=0$（$n\ge2$）；<br>(3) $(1-\omega)(1-\omega^2)\cdots(1-\omega^{n-1})=n$；<br>(4) $\sin\dfrac\pi n\sin\dfrac{2\pi}n\cdots\sin\dfrac{(n-1)\pi}n=\dfrac n{2^{n-1}}$。
+zh: 令 $\omega=\cos\dfrac{2\pi}n+i\sin\dfrac{2\pi}n$。求證：<br>(1) $$x^n-1=(x-1)(x-\omega)(x-\omega^2)\cdots(x-\omega^{n-1})$$；<br>(2) $1+\omega+\omega^2+\cdots+\omega^{n-1}=0$（$n\ge2$）；<br>(3) $(1-\omega)(1-\omega^2)\cdots(1-\omega^{n-1})=n$；<br>(4) $\sin\dfrac\pi n\sin\dfrac{2\pi}n\cdots\sin\dfrac{(n-1)\pi}n=\dfrac n{2^{n-1}}$。
 sol: (1) $x^n=1$ 的 $n$ 個複數根是
 $$\cos\frac{2k\pi}n+i\sin\frac{2k\pi}n=\omega^k,\qquad 0\le k\le n-1,$$
 ⟦為什麼是這 n 個｜由棣美弗定理 $(\omega^k)^n=\cos2k\pi+i\sin2k\pi=1$；$k=0,\dots,n-1$ 時輻角互不相同，是 $n$ 個不同的根，而 $n$ 次方程至多 $n$ 個根。⟧所以 $x^n-1$ 的唯一分解就是 (1)。
-(2) 由 $\omega^n=1$ 且 $\omega\ne1$，
+<br>(2) 由 $\omega^n=1$ 且 $\omega\ne1$，
 $$1+\omega+\cdots+\omega^{n-1}=\frac{\omega^n-1}{\omega-1}=0.$$
-(3) 由 $x^n-1=(x-1)(1+x+x^2+\cdots+x^{n-1})$ 知，$1+x+\cdots+x^{n-1}=0$ 的根就是 $x^n=1$ 中 $x\ne1$ 的那些，即 $\omega,\omega^2,\dots,\omega^{n-1}$。所以
+(3) 由 $$x^n-1=(x-1)(1+x+x^2+\cdots+x^{n-1})$$ 知，$1+x+\cdots+x^{n-1}=0$ 的根就是 $x^n=1$ 中 $x\ne1$ 的那些，即 $\omega,\omega^2,\dots,\omega^{n-1}$。所以
 $$1+x+x^2+\cdots+x^{n-1}=(x-\omega)(x-\omega^2)\cdots(x-\omega^{n-1}),$$
 取 $x=1$ 即得 (3)。
-(4) 對 (3) 兩邊取絕對值：$|1-\omega|\,|1-\omega^2|\cdots|1-\omega^{n-1}|=n$。而對 $1\le k\le n-1$，
+<br>(4) 對 (3) 兩邊取絕對值：$|1-\omega|\,|1-\omega^2|\cdots|1-\omega^{n-1}|=n$。而對 $1\le k\le n-1$，
 $$\begin{aligned}|1-\omega^k|&=\Big|\Big(1-\cos\frac{2k\pi}n\Big)-i\sin\frac{2k\pi}n\Big|\\&=\sqrt{\Big(1-\cos\frac{2k\pi}n\Big)^2+\sin^2\frac{2k\pi}n}=\sqrt{2-2\cos\frac{2k\pi}n}\\&=\sqrt{4\sin^2\frac{k\pi}n}=2\sin\frac{k\pi}n.\end{aligned}$$
 ⟦最後兩步｜半角公式 $1-\cos2\theta=2\sin^2\theta$；又 $0\lt \frac{k\pi}n\lt \pi$，$\sin\frac{k\pi}n>0$，開根號不必加絕對值。⟧
-所以 $2^{n-1}\sin\frac\pi n\sin\frac{2\pi}n\cdots\sin\frac{(n-1)\pi}n=n$，兩邊除以 $2^{n-1}$ 即得。
+<br>所以 $2^{n-1}\sin\frac\pi n\sin\frac{2\pi}n\cdots\sin\frac{(n-1)\pi}n=n$，兩邊除以 $2^{n-1}$ 即得。
 
 === text
 <h3>二、實數範圍內的分解</h3>
@@ -53,11 +53,11 @@ $$A\big[(x-\alpha_1)^2+\beta_1^2\big]^{m_1}\cdots\big[(x-\alpha_s)^2+\beta_s^2\b
 zh: 在實數範圍內分解 $x^4+x^3+x^2+x+1$。
 sol: <b>解法一</b>（用根）：令 $\omega=\cos\frac{2\pi}5+i\sin\frac{2\pi}5$。由例 1 (3)，四個根是 $\omega,\omega^2,\omega^3,\omega^4$，其中 $\omega^4=\bar\omega$、$\omega^3=\overline{\omega^2}$ 互為共軛。把共軛的配成一對：
 $$\begin{aligned}x^4+x^3+x^2+x+1&=\big[(x-\omega)(x-\omega^4)\big]\big[(x-\omega^2)(x-\omega^3)\big]\\&=\Big(x^2-2x\cos\frac{2\pi}5+1\Big)\Big(x^2-2x\cos\frac{4\pi}5+1\Big).\end{aligned}$$
-⟦共軛一對乘起來｜$(x-\omega)(x-\bar\omega)=x^2-(\omega+\bar\omega)x+\omega\bar\omega=x^2-2x\,\mathrm{Re}\,\omega+|\omega|^2$，而 $|\omega|=1$。⟧
-<b>解法二</b>（倒數對稱）：提出 $x^2$，令 $t=x+\frac1x$：
+⟦共軛一對乘起來｜$$(x-\omega)(x-\bar\omega)=x^2-(\omega+\bar\omega)x+\omega\bar\omega=x^2-2x\,\mathrm{Re}\,\omega+|\omega|^2$$，而 $|\omega|=1$。⟧
+<br><b>解法二</b>（倒數對稱）：提出 $x^2$，令 $t=x+\frac1x$：
 $$\begin{aligned}x^4+x^3+x^2+x+1&=x^2\Big[\Big(x^2+\frac1{x^2}\Big)+\Big(x+\frac1x\Big)+1\Big]\\&=x^2\big[t^2+t-1\big]\\&=x^2\Big(t-\frac{-1+\sqrt5}2\Big)\Big(t-\frac{-1-\sqrt5}2\Big)\\&=\Big(x^2-\frac{\sqrt5-1}2x+1\Big)\Big(x^2+\frac{\sqrt5+1}2x+1\Big).\end{aligned}$$
 ⟦第二行怎麼來｜$x^2+\frac1{x^2}=\big(x+\frac1x\big)^2-2=t^2-2$，所以括號內是 $t^2-2+t+1=t^2+t-1$。⟧
-解法一適用於知道全部複數根的情形；解法二適用於係數左右對稱的 $ax^4+bx^3+cx^2+bx+a$。比較兩種答案，順便得到
+<br>解法一適用於知道全部複數根的情形；解法二適用於係數左右對稱的 $ax^4+bx^3+cx^2+bx+a$。比較兩種答案，順便得到
 $$\cos\frac{2\pi}5=\frac{\sqrt5-1}4,\qquad\cos\frac{4\pi}5=\frac{-\sqrt5-1}4.$$
 ans: $\Big(x^2-\frac{\sqrt5-1}2x+1\Big)\Big(x^2+\frac{\sqrt5+1}2x+1\Big)$
 
@@ -65,7 +65,7 @@ ans: $\Big(x^2-\frac{\sqrt5-1}2x+1\Big)\Big(x^2+\frac{\sqrt5+1}2x+1\Big)$
 zh: $P(x)$ 是實係數首一多項式，次數 $\ge1$，而且沒有實根。求證 $P(x)$ 可以寫成兩個實係數多項式的平方和。
 sol: 沒有實根，所以由定理 2，
 $$P(x)=\big[(x-\alpha_1)^2+\beta_1^2\big]^{m_1}\cdots\big[(x-\alpha_s)^2+\beta_s^2\big]^{m_s}.$$
-每個因子 $(x-\alpha)^2+\beta^2=\big[(x-\alpha)+\beta i\big]\big[(x-\alpha)-\beta i\big]$。設
+每個因子 $$(x-\alpha)^2+\beta^2=\big[(x-\alpha)+\beta i\big]\big[(x-\alpha)-\beta i\big]$$。設
 $$\big[(x-\alpha_1)+\beta_1i\big]^{m_1}\cdots\big[(x-\alpha_s)+\beta_si\big]^{m_s}=Q_1(x)+Q_2(x)i,$$
 $Q_1,Q_2$ 是實係數多項式。把每個 $i$ 換成 $-i$（取共軛），⟦為什麼可以這樣換｜$x$ 取實數時，左邊每個因子取共軛就是把 $+\beta i$ 換成 $-\beta i$，而共軛保持乘法；右邊的共軛是 $Q_1-Q_2i$。兩邊都是多項式，對所有實數 $x$ 相等就恆等。⟧得
 $$\big[(x-\alpha_1)-\beta_1i\big]^{m_1}\cdots\big[(x-\alpha_s)-\beta_si\big]^{m_s}=Q_1(x)-Q_2(x)i.$$
@@ -91,7 +91,7 @@ $$f(x)\equiv f_1(x)\pmod c$$
 === 定理 3 | 高斯引理
 zh: 兩個本原多項式 $f(x)$ 與 $g(x)$ 的乘積仍是本原多項式。
 sol: 假如 $f(x)g(x)$ 各項係數的最大公因數 $d>1$，取 $d$ 的質因數 $p$，則 $f(x)g(x)\equiv0\pmod p$；而 $f,g$ 是本原的，所以 $f\not\equiv0$、$g\not\equiv0\pmod p$。
-把 $f,g$ 中是 $p$ 的倍數的係數全換成 $0$，得到非零多項式 $f_1,g_1$，$fg\equiv f_1g_1\pmod p$。$f_1,g_1$ 的首項係數 $a,b$ 都不被 $p$ 整除，所以 $f_1g_1$ 的首項係數 $ab$ 也不被 $p$ 整除，⟦為什麼｜$p$ 是質數，$p\mid ab$ 就會有 $p\mid a$ 或 $p\mid b$。⟧$f_1g_1\not\equiv0\pmod p$，於是 $fg\not\equiv0\pmod p$，矛盾。
+<br>把 $f,g$ 中是 $p$ 的倍數的係數全換成 $0$，得到非零多項式 $f_1,g_1$，$fg\equiv f_1g_1\pmod p$。$f_1,g_1$ 的首項係數 $a,b$ 都不被 $p$ 整除，所以 $f_1g_1$ 的首項係數 $ab$ 也不被 $p$ 整除，⟦為什麼｜$p$ 是質數，$p\mid ab$ 就會有 $p\mid a$ 或 $p\mid b$。⟧$f_1g_1\not\equiv0\pmod p$，於是 $fg\not\equiv0\pmod p$，矛盾。
 
 === 定理 4 | 高斯引理（有理分解可化為整係數分解）
 zh: 如果整係數多項式 $P(x)$ 能分解為兩個有理係數多項式 $f(x)$ 與 $g(x)$ 的乘積，則存在有理數 $\lambda$，使 $P(x)$ 是整係數多項式 $\lambda f(x)$ 與 $\lambda^{-1}g(x)$ 的乘積。
@@ -104,7 +104,7 @@ $\frac st$ 是既約分數。$P(x)$ 是整係數，所以 $t$ 整除 $F(x)G(x)$ 
 === 例 5
 zh: 求有理數 $k$，使 $\cos k\pi$ 也是有理數。
 sol: 記 $\omega=\cos k\pi+i\sin k\pi$，設 $k=\frac mn$（$m,n$ 為整數，$n>0$）。則 $\omega^{2n}=\cos2m\pi+i\sin2m\pi=1$，$\omega$ 是 $x^{2n}-1$ 的根。
-若 $\omega$ 是實數，$\cos k\pi=\pm1$。否則 $\omega,\bar\omega$ 都是根，$x^{2n}-1$ 被有理係數多項式
+<br>若 $\omega$ 是實數，$\cos k\pi=\pm1$。否則 $\omega,\bar\omega$ 都是根，$x^{2n}-1$ 被有理係數多項式
 $$(x-\omega)(x-\bar\omega)=x^2-2x\cos k\pi+1$$
 整除。由定理 4，$x^{2n}-1$ 是整係數多項式 $c(x^2-2x\cos k\pi+1)$ 與另一個整係數多項式的乘積。比較首項係數，$c=\pm1$，所以 $2\cos k\pi$ 是整數。再由 $|\cos k\pi|\le1$ 知
 $$\cos k\pi\in\Big\{0,\ \pm\frac12,\ \pm1\Big\},$$
@@ -116,23 +116,23 @@ ans: $k=\dfrac t2$ 或 $\dfrac t3$（$t$ 為整數），此時 $\cos k\pi\in\{0,
 
 === 例 6
 src: 1962–1963 年波蘭數學競賽
-zh: 證明 $P(x)=x^5-3x^4+6x^3-3x^2+9x-6$ 在整數範圍內不可約。
+zh: 證明 $$P(x)=x^5-3x^4+6x^3-3x^2+9x-6$$ 在整數範圍內不可約。
 sol: 注意除了首項，其他係數都是 $3$ 的倍數，所以 $P(x)\equiv x^5\pmod3$。
-設在整數範圍內 $P(x)=f(x)g(x)$，$\deg f=m\ge1$，$\deg g=k\ge1$。把 $f,g$ 中 $3$ 的倍數的係數全換成 $0$，得到 $f_1,g_1$，則
+<br>設在整數範圍內 $P(x)=f(x)g(x)$，$\deg f=m\ge1$，$\deg g=k\ge1$。把 $f,g$ 中 $3$ 的倍數的係數全換成 $0$，得到 $f_1,g_1$，則
 $$f_1(x)g_1(x)\equiv f(x)g(x)\equiv x^5\pmod3.$$
 $f_1,g_1$ 的最低次非零係數 $a,b$ 都不被 $3$ 整除，所以 $f_1g_1$ 的最低次非零係數 $ab$ 也不被 $3$ 整除，它只能是 $x^5$ 那一項。可見 $f_1g_1=abx^5$，也就是 $f_1(x)=ax^m$，$g_1(x)=bx^k$。⟦為什麼 f₁ 只有一項｜如果 $f_1$ 有兩項以上，$f_1g_1$ 的最低次項次數就會小於最高次項次數，至少出現兩個不被 3 整除的係數（最低次與最高次），與 $\equiv x^5$ 矛盾。⟧
-所以 $f(x)$ 與 $g(x)$ 的常數項都被 $3$ 整除（$m,k\ge1$，常數項被換成 $0$ 了），$P(x)=f(x)g(x)$ 的常數項 $-6$ 就應被 $9$ 整除，但 $9\nmid-6$，矛盾。
+<br>所以 $f(x)$ 與 $g(x)$ 的常數項都被 $3$ 整除（$m,k\ge1$，常數項被換成 $0$ 了），$P(x)=f(x)g(x)$ 的常數項 $-6$ 就應被 $9$ 整除，但 $9\nmid-6$，矛盾。
 
 === 定理 5 | 艾森斯坦判別法
-zh: 設 $f(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0$ 是整係數多項式。如果存在質數 $p$，使 $p\nmid a_n$，但 $p\mid a_i$（$0\le i\le n-1$），且 $p^2\nmid a_0$，則 $f(x)$ 在有理數範圍內不可約。
+zh: 設 $$f(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0$$ 是整係數多項式。如果存在質數 $p$，使 $p\nmid a_n$，但 $p\mid a_i$（$0\le i\le n-1$），且 $p^2\nmid a_0$，則 $f(x)$ 在有理數範圍內不可約。
 sol: 把例 6 的 $3$ 換成 $p$：$f(x)\equiv a_nx^n\pmod p$。若 $f=gh$ 是整係數分解，兩者次數都 $\ge1$，同樣的論證得到 $g,h$ 的常數項都被 $p$ 整除，於是 $p^2\mid a_0$，矛盾。所以 $f(x)$ 在整數範圍內不可約；再由定理 4，在有理數範圍內也不可約。
 
 === 例 7
 zh: 證明 $x^4+x^3+x^2+x+1$ 在有理數範圍內不可約。
-sol: <b>證法一</b>（平移後用艾森斯坦）：設 $f(x)=x^4+x^3+x^2+x+1=f_1(x)f_2(x)$ 是有理數範圍內的分解。令 $y=x-1$，則 $f(y+1)=f_1(y+1)f_2(y+1)$ 也是分解。但由 $f(x)=\dfrac{x^5-1}{x-1}$，
+sol: <b>證法一</b>（平移後用艾森斯坦）：設 $$f(x)=x^4+x^3+x^2+x+1=f_1(x)f_2(x)$$ 是有理數範圍內的分解。令 $y=x-1$，則 $f(y+1)=f_1(y+1)f_2(y+1)$ 也是分解。但由 $f(x)=\dfrac{x^5-1}{x-1}$，
 $$f(y+1)=\frac{(y+1)^5-1}{y}=y^4+5y^3+10y^2+10y+5,$$
 取 $p=5$，由定理 5 知 $f(y+1)$ 不可約，矛盾。
-<b>證法二</b>（用實數分解）：把有理分解 $f=f_1f_2$ 右邊的因式再分到實數範圍，得到的就是例 2 的
+<br><b>證法二</b>（用實數分解）：把有理分解 $f=f_1f_2$ 右邊的因式再分到實數範圍，得到的就是例 2 的
 $$f(x)=\Big(x^2-\frac{\sqrt5-1}2x+1\Big)\Big(x^2+\frac{\sqrt5+1}2x+1\Big).$$
 由實數範圍的唯一分解，$f_1(x)$（不妨設首一）只能是這兩個實不可約因式中某些的乘積。它不能恰好是其中一個（兩個都含無理係數），所以 $\deg f_1\ge1$ 時 $f_1$ 只能是兩者的乘積 $f(x)$，於是 $f_2=1$。這就證明了不可約。
 
@@ -157,7 +157,7 @@ ans: $2^k$ 個，$k$ 是 $n$ 的二進位表示中 $1$ 的個數
 === 例 9
 zh: 設 $0\le k\le2^n-1$，證明組合數 $C_{2^n-1}^k$ 是奇數。
 sol: 這是例 8 的特例。$2^n-1=2^{n-1}+2^{n-2}+\cdots+2+1$ 的二進位有 $n$ 個 $1$，所以 $(x+1)^{2^n-1}$ 有 $2^n$ 個奇數係數——而它總共也只有 $2^n$ 個係數，所以全是奇數。
-也可以直接算：
+<br>也可以直接算：
 $$\begin{aligned}(x+1)^{2^n-1}&\equiv(x^{2^{n-1}}+1)(x^{2^{n-2}}+1)\cdots(x^2+1)(x+1)\\&=\frac{(x^{2^{n-1}}+1)\cdots(x^2+1)(x+1)(x-1)}{x-1}=\frac{x^{2^n}-1}{x-1}\\&=x^{2^n-1}+\cdots+x^2+x+1\pmod2,\end{aligned}$$
 ⟦分子怎麼收起來｜從右邊一路用平方差：$(x+1)(x-1)=x^2-1$，$(x^2+1)(x^2-1)=x^4-1$，……最後得 $x^{2^n}-1$。⟧係數全為 $1$。於是 $(x+1)^{2^n-1}$ 的展開係數 $C_{2^n-1}^k$ 全是奇數。
 
@@ -178,7 +178,7 @@ $$n^4-20n^2+4=(n^2-2)^2-16n^2=(n^2+4n-2)(n^2-4n-2).$$
 zh: 證明有無窮多個自然數 $a$，使得對任意自然數 $n$，$n^4+a$ 都不是質數。
 sol: 對每個大於 $1$ 的整數 $m$，取 $a=4m^4$。則
 $$\begin{aligned}n^4+4m^4&=(n^2+2m^2)^2-4m^2n^2\\&=(n^2+2m^2+2mn)(n^2+2m^2-2mn),\end{aligned}$$
-而 $n^2+2m^2\pm2mn=(n\pm m)^2+m^2\ge m^2\ge4$，所以 $n^4+a$ 總是合數。
+而 $$n^2+2m^2\pm2mn=(n\pm m)^2+m^2\ge m^2\ge4$$，所以 $n^4+a$ 總是合數。
 
 === text
 <p><b>2. $1+x^m+x^{2m}+\cdots+x^{(n-1)m}$ 的有理分解</b></p>
@@ -192,7 +192,7 @@ zh: 在有理數範圍內分解 $x^{12}+x^9+x^6+x^3+1$。
 sol:
 $$\begin{aligned}\text{原式}&=\frac{x^{15}-1}{x^3-1}=\frac{x^5-1}{x-1}\cdot\frac{x^{10}+x^5+1}{x^2+x+1}\\&=(x^4+x^3+x^2+x+1)(x^8-x^7+x^5-x^4+x^3-x+1).\end{aligned}$$
 ⟦拆法｜$x^{15}-1=(x^5-1)(x^{10}+x^5+1)$，$x^3-1=(x-1)(x^2+x+1)$。$x^2+x+1$ 的根是 $\omega$（$\omega^3=1$，$\omega\ne1$），而 $\omega^{10}+\omega^5+1=\omega+\omega^2+1=0$，所以 $x^2+x+1$ 整除 $x^{10}+x^5+1$，做長除法得第二個因式。⟧
-ans: $(x^4+x^3+x^2+x+1)(x^8-x^7+x^5-x^4+x^3-x+1)$
+ans: $$(x^4+x^3+x^2+x+1)(x^8-x^7+x^5-x^4+x^3-x+1)$$
 
 === 例 13
 zh: 對什麼 $n$，多項式 $1+x^2+x^4+\cdots+x^{2n-2}$ 被 $1+x+x^2+\cdots+x^{n-1}$ 整除？
@@ -205,10 +205,10 @@ ans: $n$ 為奇數
 <p><b>3. $\omega=\cos\frac{2\pi}n+i\sin\frac{2\pi}n$ 的性質 $1+\omega+\omega^2+\cdots+\omega^{n-1}=0$ 的應用</b></p>
 
 === 例 14
-zh: 求 $\cos5^\circ+\cos77^\circ+\cos149^\circ+\cos221^\circ+\cos293^\circ$。
+zh: 求 $$\cos5^\circ+\cos77^\circ+\cos149^\circ+\cos221^\circ+\cos293^\circ$$。
 sol: 五個角度依次差 $72^\circ=\frac{360^\circ}5$。記 $\alpha=\cos5^\circ+i\sin5^\circ$，$\omega=\cos72^\circ+i\sin72^\circ$，則所求的數是複數
 $$A=\alpha+\alpha\omega+\alpha\omega^2+\alpha\omega^3+\alpha\omega^4$$
-的實部。⟦為什麼｜由棣美弗定理 $\alpha\omega^k=\cos(5^\circ+72^\circ k)+i\sin(5^\circ+72^\circ k)$，$k=0,\dots,4$ 正好是題目的五個角。⟧ 但
+的實部。⟦為什麼｜由棣美弗定理 $$\alpha\omega^k=\cos(5^\circ+72^\circ k)+i\sin(5^\circ+72^\circ k)$$，$k=0,\dots,4$ 正好是題目的五個角。⟧ 但
 $$A=\alpha(1+\omega+\omega^2+\omega^3+\omega^4)=\alpha\cdot\frac{\omega^5-1}{\omega-1}=0,$$
 所以所求的數是 $0$。
 ans: $0$
@@ -222,17 +222,17 @@ $$P(1)+\omega Q(1)=0,\qquad P(1)+\omega^2Q(1)=0.$$
 === 習題 1
 zh: 把 $x^8+x^4+1$ 分解成不可約因式的乘積：(1) 在有理數域上；(2) 在實數域上；(3) 在複數域上。
 hint: $x^8+x^4+1=(x^4+1)^2-x^4$；或寫成 $\dfrac{x^{12}-1}{x^4-1}$。
-ans: (1) $(x^2+x+1)(x^2-x+1)(x^4-x^2+1)$；(2) $(x^2+x+1)(x^2-x+1)(x^2-\sqrt3x+1)(x^2+\sqrt3x+1)$；(3) $(x-\omega)(x-\omega^2)(x-\omega^4)(x-\omega^5)(x-\omega^7)(x-\omega^8)(x-\omega^{10})(x-\omega^{11})$，$\omega=\cos\frac\pi6+i\sin\frac\pi6$
-sol: (1) $x^8+x^4+1=(x^4+1)^2-x^4=(x^4+x^2+1)(x^4-x^2+1)$，而 $x^4+x^2+1=(x^2+1)^2-x^2=(x^2+x+1)(x^2-x+1)$。也可以這樣看：
+ans: (1) $$(x^2+x+1)(x^2-x+1)(x^4-x^2+1)$$；(2) $$(x^2+x+1)(x^2-x+1)(x^2-\sqrt3x+1)(x^2+\sqrt3x+1)$$；(3) $$(x-\omega)(x-\omega^2)(x-\omega^4)(x-\omega^5)(x-\omega^7)(x-\omega^8)(x-\omega^{10})(x-\omega^{11})$$，$\omega=\cos\frac\pi6+i\sin\frac\pi6$
+sol: (1) $$x^8+x^4+1=(x^4+1)^2-x^4=(x^4+x^2+1)(x^4-x^2+1)$$，而 $$x^4+x^2+1=(x^2+1)^2-x^2=(x^2+x+1)(x^2-x+1)$$。也可以這樣看：
 $$\text{原式}=\frac{x^{12}-1}{x^4-1}=\frac{x^6+1}{x^2+1}\cdot\frac{x^3+1}{x+1}\cdot\frac{x^3-1}{x-1}=(x^4-x^2+1)(x^2-x+1)(x^2+x+1).$$
 （$x^4-x^2+1$ 沒有有理根；它的實數分解是 (2) 中的 $(x^2-\sqrt3x+1)(x^2+\sqrt3x+1)$，兩個因式都沒有實根，所以若它有有理二次因式，由實數範圍的唯一分解只能是這兩者之一，但它們含 $\sqrt3$，所以在有理範圍內不可再分。）
-(2) $x^4-x^2+1=(x^2+1)^2-3x^2=(x^2-\sqrt3x+1)(x^2+\sqrt3x+1)$。三個二次因式判別式都小於 $0$，實範圍內不可再分。
-(3) 由 $\dfrac{x^{12}-1}{x^4-1}$，根是 $12$ 次單位根中不是 $4$ 次單位根的那 $8$ 個，即 $\omega^k$，$k=1,2,4,5,7,8,10,11$。
+<br>(2) $$x^4-x^2+1=(x^2+1)^2-3x^2=(x^2-\sqrt3x+1)(x^2+\sqrt3x+1)$$。三個二次因式判別式都小於 $0$，實範圍內不可再分。
+<br>(3) 由 $\dfrac{x^{12}-1}{x^4-1}$，根是 $12$ 次單位根中不是 $4$ 次單位根的那 $8$ 個，即 $\omega^k$，$k=1,2,4,5,7,8,10,11$。
 
 === 習題 2
 zh: 求證：對任意複係數多項式 $f(x)$，存在多項式 $g(x)$ 使 $f(x)\mid g(x^{100})$。
 hint: 把 $f$ 在複數範圍內分解，再用 $(x-a)\mid(x^{100}-a^{100})$。
-sol: 設 $f(x)=A(x-\alpha_1)^{m_1}\cdots(x-\alpha_s)^{m_s}$。取 $g(x)=A(x-\alpha_1^{100})^{m_1}\cdots(x-\alpha_s^{100})^{m_s}$，則 $g(x^{100})=A(x^{100}-\alpha_1^{100})^{m_1}\cdots(x^{100}-\alpha_s^{100})^{m_s}$。因為 $(x-\alpha_i)\mid(x^{100}-\alpha_i^{100})$，所以 $f(x)\mid g(x^{100})$。（$f$ 是非零常數時取 $g=1$。）
+sol: 設 $f(x)=A(x-\alpha_1)^{m_1}\cdots(x-\alpha_s)^{m_s}$。取 $g(x)=A(x-\alpha_1^{100})^{m_1}\cdots(x-\alpha_s^{100})^{m_s}$，則 $$g(x^{100})=A(x^{100}-\alpha_1^{100})^{m_1}\cdots(x^{100}-\alpha_s^{100})^{m_s}$$。因為 $(x-\alpha_i)\mid(x^{100}-\alpha_i^{100})$，所以 $f(x)\mid g(x^{100})$。（$f$ 是非零常數時取 $g=1$。）
 
 === 習題 3
 zh: 求證 $x^4-10x^2+1$ 在有理數域上不可約。
@@ -281,7 +281,7 @@ $$\begin{aligned}&(x^{9999}+x^{8888}+\cdots+x^{1111}+1)-(x^9+x^8+\cdots+x+1)\\&=
 
 === 習題 10
 src: 1957–1958 年波蘭數學競賽
-zh: $n$ 是大於 $1$ 的自然數。求證 $\cos\dfrac{2\pi}n+\cos\dfrac{4\pi}n+\cdots+\cos\dfrac{2n\pi}n=0$。
+zh: $n$ 是大於 $1$ 的自然數。求證 $$\cos\dfrac{2\pi}n+\cos\dfrac{4\pi}n+\cdots+\cos\dfrac{2n\pi}n=0$$。
 sol: 令 $\omega=\cos\frac{2\pi}n+i\sin\frac{2\pi}n$，則
 $$\omega+\omega^2+\cdots+\omega^n=\omega\cdot\frac{\omega^n-1}{\omega-1}=0,$$
 取實部即得。
@@ -308,6 +308,6 @@ hint: 仿例 15，代入五次單位根。
 sol: 令 $\omega=\cos\frac{2\pi}5+i\sin\frac{2\pi}5$。取 $x=\omega^k$（$1\le k\le4$），右邊為 $0$，得四個等式
 $$P(1)+\omega^kQ(1)+\omega^{2k}R(1)=0.$$
 四式相加，利用 $\sum_{k=1}^4\omega^k=\sum_{k=1}^4\omega^{2k}=-1$，得 $4P(1)-Q(1)-R(1)=0$。
-又把每個等式乘以 $\omega^k$：$\omega^kP(1)+\omega^{2k}Q(1)+\omega^{3k}R(1)=0$，$k=1,2,3,4$ 相加得 $-P(1)-Q(1)-R(1)=0$。
-兩式相減得 $5P(1)=0$，$P(1)=0$，所以 $(x-1)\mid P(x)$。
-<b>附註</b>：更一般地，若 $P_i(x)$（$0\le i\le4$）是多項式，且 $P_1(x^5)+xP_2(x^5)+x^2P_3(x^5)+x^3P_4(x^5)=(x^4+x^3+x^2+x+1)P_0(x)$，則 $x-1$ 整除每個 $P_i(x)$。證法相同：代入 $\omega^k$ 後分別乘以 $1,\omega^k,\omega^{2k},\omega^{3k}$ 再對 $k$ 求和，依次解出 $P_1(1)=P_2(1)=P_3(1)=P_4(1)=0$，最後代 $x=1$ 得 $5P_0(1)=0$。
+<br>又把每個等式乘以 $\omega^k$：$\omega^kP(1)+\omega^{2k}Q(1)+\omega^{3k}R(1)=0$，$k=1,2,3,4$ 相加得 $-P(1)-Q(1)-R(1)=0$。
+<br>兩式相減得 $5P(1)=0$，$P(1)=0$，所以 $(x-1)\mid P(x)$。
+<br><b>附註</b>：更一般地，若 $P_i(x)$（$0\le i\le4$）是多項式，且 $$P_1(x^5)+xP_2(x^5)+x^2P_3(x^5)+x^3P_4(x^5)=(x^4+x^3+x^2+x+1)P_0(x)$$，則 $x-1$ 整除每個 $P_i(x)$。證法相同：代入 $\omega^k$ 後分別乘以 $1,\omega^k,\omega^{2k},\omega^{3k}$ 再對 $k$ 求和，依次解出 $P_1(1)=P_2(1)=P_3(1)=P_4(1)=0$，最後代 $x=1$ 得 $5P_0(1)=0$。

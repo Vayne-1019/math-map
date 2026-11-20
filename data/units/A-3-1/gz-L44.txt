@@ -13,7 +13,7 @@ order: 50
 <div class="card"><h4>③ 重根判別</h4><div class="rule">$\alpha$ 是重根 ⇔ $f(\alpha)=f'(\alpha)=0$</div>
 <div class="eg">$x^3-3x^2+4$：$f'=3x^2-6x$ 的根 $0,2$<br>$f(2)=0$ ⇒ $2$ 是重根</div></div>
 <div class="card"><h4>④ 湊出 1</h4><div class="rule">$(f,g)=1$ ⇔ 有 $S,T$ 使 $Sf+Tg=1$</div>
-<div class="eg">$x(x^3+x^2+1)+(1-x-x^2)(x^2+1)=1$ <span class="pill">倒著代回去</span></div></div>
+<div class="eg">$x(x^3+x^2+1)$<br>$+(1-x-x^2)(x^2+1)=1$ <span class="pill">倒著代回去</span></div></div>
 </div>
 <p>已知除以 $x^2+1$、$x^2+2$ 的餘式，怎麼求除以兩者乘積的餘式？⟦多項式版中國剩餘定理｜$(x^2+2)-(x^2+1)=1$，所以 $x^2+2$ 是「除 $x^2+1$ 餘 1、除 $x^2+2$ 餘 0」，$-(x^2+1)$ 反過來。餘式 $=R_1\cdot(x^2+2)+R_2\cdot(-(x^2+1))$，再化簡。⟧</p>
 <div class="pitfall"><h4>⚠ 最常錯</h4><ul>

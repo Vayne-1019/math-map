@@ -21,32 +21,32 @@ $$\frac{a-b}{b-c}=1,$$
 zh: 求常數 $A,B,C,D,p,q$，使
 $$\begin{aligned}A(x-p)^2+B(x-q)^2&=5x^2+8x+14,\\ C(x-p)^2+D(x-q)^2&=x^2+10x+7.\end{aligned}$$
 sol: 如果 $A=0$ 或 $B=0$，例如 $5x^2+8x+14=B(x-q)^2$，則 $5x^2+8x+14=0$ 兩根相等，判別式應為 $0$；但判別式 $8^2-4\times5\times14=-216\ne0$，矛盾。所以 $A,B$ 都不是 $0$。
-考慮帶參數 $\lambda$ 的二次三項式
+<br>考慮帶參數 $\lambda$ 的二次三項式
 $$f(x)=\lambda(5x^2+8x+14)+(x^2+10x+7)=(5\lambda+1)x^2+(8\lambda+10)x+14\lambda+7.$$
-當 $\lambda=-\frac CA$ 時，$f(x)=(\lambda B+D)(x-q)^2$；⟦為什麼｜$\lambda\big[A(x-p)^2+B(x-q)^2\big]+C(x-p)^2+D(x-q)^2$，取 $\lambda A+C=0$ 就消掉 $(x-p)^2$。⟧ 同理 $\lambda=-\frac DB$ 時 $f(x)$ 是 $(x-p)^2$ 的倍數。也就是這兩個 $\lambda$ 使 $f(x)=0$ 有重根，判別式為 $0$：
+當 $\lambda=-\frac CA$ 時，$f(x)=(\lambda B+D)(x-q)^2$；⟦為什麼｜$$\lambda\big[A(x-p)^2+B(x-q)^2\big]+C(x-p)^2+D(x-q)^2$$，取 $\lambda A+C=0$ 就消掉 $(x-p)^2$。⟧ 同理 $\lambda=-\frac DB$ 時 $f(x)$ 是 $(x-p)^2$ 的倍數。也就是這兩個 $\lambda$ 使 $f(x)=0$ 有重根，判別式為 $0$：
 $$(8\lambda+10)^2-4(5\lambda+1)(14\lambda+7)=-216\lambda^2-36\lambda+72=0,$$
 即 $6\lambda^2+\lambda-2=0$，$\lambda=\frac12$ 或 $-\frac23$。代回：
 $$\lambda=\tfrac12:\ f=\tfrac72(x+2)^2,\qquad \lambda=-\tfrac23:\ f=-\tfrac73(x-1)^2.$$
 所以 $\{p,q\}=\{1,-2\}$。
-當 $p=1$、$q=-2$ 時，在 $A(x-1)^2+B(x+2)^2=5x^2+8x+14$ 中取 $x=-2$ 得 $9A=18$，$A=2$；取 $x=1$ 得 $9B=27$，$B=3$。同樣由 $C(x-1)^2+D(x+2)^2=x^2+10x+7$ 得 $C=-1$，$D=2$。
-當 $p=-2$、$q=1$ 時，同理得 $A=3$，$B=2$，$C=2$，$D=-1$。⟦和原書不同處｜原書這一組印成「$C=2$，$A=-1$，$D=3$，$B=2$」，代回不成立；由對稱性應是 $A,B$ 與 $C,D$ 各自對調。⟧
+<br>當 $p=1$、$q=-2$ 時，在 $$A(x-1)^2+B(x+2)^2=5x^2+8x+14$$ 中取 $x=-2$ 得 $9A=18$，$A=2$；取 $x=1$ 得 $9B=27$，$B=3$。同樣由 $$C(x-1)^2+D(x+2)^2=x^2+10x+7$$ 得 $C=-1$，$D=2$。
+<br>當 $p=-2$、$q=1$ 時，同理得 $A=3$，$B=2$，$C=2$，$D=-1$。⟦和原書不同處｜原書這一組印成「$C=2$，$A=-1$，$D=3$，$B=2$」，代回不成立；由對稱性應是 $A,B$ 與 $C,D$ 各自對調。⟧
 ans: $(A,B,C,D,p,q)=(2,3,-1,2,1,-2)$ 或 $(3,2,2,-1,-2,1)$
 
 === 例 3
 src: 第 7 屆 IMO（1965）
 zh: 求所有實數四元組 $(x_1,x_2,x_3,x_4)$，使其中任一數加上其餘三數之積都等於 $2$。
 sol: 若某個 $x_i=0$，則對其餘三數 $x_j,x_k,x_l$ 有 $x_j=x_j+x_ix_kx_l=2$，同樣 $x_k=x_l=2$，而 $x_i+x_jx_kx_l=0+8\ne2$，矛盾。所以四數都不是 $0$，它們的乘積 $A\ne0$。
-這時對任一個 $x_i$，其餘三數之積是 $\frac A{x_i}$，條件變成
+<br>這時對任一個 $x_i$，其餘三數之積是 $\frac A{x_i}$，條件變成
 $$x_i+\frac A{x_i}=2,\qquad x_i^2-2x_i+A=0.$$
 即：<b>四個數都是同一個二次方程 $x^2-2x+A=0$ 的根</b>。這個方程至多兩個根。
-<b>四數不全相等</b>：設 $x_1\ne x_i$，則 $x_1,x_i$ 是 $x^2-2x+A=0$ 僅有的兩根，$x_1x_i=A$。⟦為什麼 A ≠ 1｜$A=1$ 時 $x^2-2x+1=(x-1)^2$ 只有一個根，不可能 $x_1\ne x_i$。⟧ 於是其餘兩數 $x_j,x_k$ 滿足 $x_jx_k=\frac{x_1x_ix_jx_k}{x_1x_i}=\frac AA=1$。若 $x_j\ne x_k$，則它們也是僅有的兩根，$A=x_jx_k=1$，矛盾。故 $x_j=x_k$，$x_j^2=1$。若 $x_j=1$，代入方程得 $A=1$，仍矛盾；所以 $x_j=x_k=-1$，由 $(-1)^2+2+A=0$ 得 $A=-3$。$x_1,x_i$ 是 $x^2-2x-3=0$ 的兩根，一個是 $3$、一個是 $-1$。所以四數中一個是 $3$，另外三個是 $-1$。
-<b>四數全相等</b>：$x_1+x_1^3=2$，$x_1^3+x_1-2=(x_1-1)(x_1^2+x_1+2)=0$，而 $x_1^2+x_1+2=0$ 沒有實數解，所以 $x_1=x_2=x_3=x_4=1$。
-⟦驗算｜$3+(-1)^3=2$，$-1+3\cdot(-1)(-1)=2$；$1+1=2$。⟧
+<br><b>四數不全相等</b>：設 $x_1\ne x_i$，則 $x_1,x_i$ 是 $x^2-2x+A=0$ 僅有的兩根，$x_1x_i=A$。⟦為什麼 A ≠ 1｜$A=1$ 時 $x^2-2x+1=(x-1)^2$ 只有一個根，不可能 $x_1\ne x_i$。⟧ 於是其餘兩數 $x_j,x_k$ 滿足 $x_jx_k=\frac{x_1x_ix_jx_k}{x_1x_i}=\frac AA=1$。若 $x_j\ne x_k$，則它們也是僅有的兩根，$A=x_jx_k=1$，矛盾。故 $x_j=x_k$，$x_j^2=1$。若 $x_j=1$，代入方程得 $A=1$，仍矛盾；所以 $x_j=x_k=-1$，由 $(-1)^2+2+A=0$ 得 $A=-3$。$x_1,x_i$ 是 $x^2-2x-3=0$ 的兩根，一個是 $3$、一個是 $-1$。所以四數中一個是 $3$，另外三個是 $-1$。
+<br><b>四數全相等</b>：$x_1+x_1^3=2$，$$x_1^3+x_1-2=(x_1-1)(x_1^2+x_1+2)=0$$，而 $x_1^2+x_1+2=0$ 沒有實數解，所以 $x_1=x_2=x_3=x_4=1$。
+<br>⟦驗算｜$3+(-1)^3=2$，$-1+3\cdot(-1)(-1)=2$；$1+1=2$。⟧
 ans: $(1,1,1,1)$，或一個 $3$、三個 $-1$（共 4 種排法）
 
 === text
 <h3>二、韋達定理</h3>
-<p>設 $n$ 次方程 $a_0x^n+a_1x^{n-1}+\cdots+a_{n-1}x+a_n=0$ 的 $n$ 個複數根是 $x_1,\dots,x_n$，則</p>
+<p>設 $n$ 次方程 $$a_0x^n+a_1x^{n-1}+\cdots+a_{n-1}x+a_n=0$$ 的 $n$ 個複數根是 $x_1,\dots,x_n$，則</p>
 $$a_0x^n+a_1x^{n-1}+\cdots+a_n=a_0(x-x_1)(x-x_2)\cdots(x-x_n).$$
 <p>把右邊展開，比較兩邊係數，得</p>
 $$\begin{aligned}\sigma_1&=x_1+x_2+\cdots+x_n=-\frac{a_1}{a_0},\\ \sigma_2&=x_1x_2+x_1x_3+\cdots+x_{n-1}x_n=\frac{a_2}{a_0},\\ &\ \ \vdots\\ \sigma_k&=\sum_{1\le i_1\lt i_2\lt\cdots\lt i_k\le n}x_{i_1}x_{i_2}\cdots x_{i_k}=(-1)^k\frac{a_k}{a_0},\\ &\ \ \vdots\\ \sigma_n&=x_1x_2\cdots x_n=(-1)^n\frac{a_n}{a_0}.\end{aligned}$$
@@ -58,7 +58,7 @@ zh: 方程 $x^3+ax^2+bx+c=0$ 有三個成等差數列的實根，實數 $a,b,c$ 
 sol: 三根 $x_1,x_2,x_3$ 成等差數列，$x_1+x_3=2x_2$，所以 $3x_2=x_1+x_2+x_3=-a$，$x_2=-\frac a3$。代入原方程：
 $$\Big(-\frac a3\Big)^3+a\Big(-\frac a3\Big)^2+b\Big(-\frac a3\Big)+c=0,\qquad\text{即}\ 2a^3-9ab+27c=0.$$
 ⟦化簡｜$-\frac{a^3}{27}+\frac{a^3}9-\frac{ab}3+c=\frac{2a^3}{27}-\frac{ab}3+c$，乘 $27$。⟧
-剩下要保證另外兩根 $x_1,x_3$ 是實數。$x_1+x_3=2x_2=-\frac{2a}3$，又由 $x_1x_2+x_1x_3+x_2x_3=b$ 得
+<br>剩下要保證另外兩根 $x_1,x_3$ 是實數。$x_1+x_3=2x_2=-\frac{2a}3$，又由 $x_1x_2+x_1x_3+x_2x_3=b$ 得
 $$x_1x_3=b-(x_1+x_3)x_2=b-\frac29a^2.$$
 所以 $x_1,x_3$ 是 $x^2+\frac23ax+\big(b-\frac29a^2\big)=0$ 的兩根，兩根都是實數的充要條件是判別式
 $$\Big(\frac23a\Big)^2-4\Big(b-\frac29a^2\Big)=\frac43a^2-4b\ge0,\quad\text{即}\ a^2-3b\ge0.$$
@@ -69,7 +69,7 @@ ans: $2a^3-9ab+27c=0$ 且 $a^2-3b\ge0$
 <p>$\sigma_k(x_1,\dots,x_n)$ 都是 $x_1,\dots,x_n$ 的函數，而且把 $n$ 個變數的位置任意調換，函數值不變。具有這種性質的函數稱為<b>對稱函數</b>；是多項式時稱為<b>對稱多項式</b>。$\sigma_1,\dots,\sigma_n$ 這 $n$ 個特別稱為<b>基本對稱多項式</b>。此外還有許多別的對稱函數，例如<b>冪和</b> $s_m=x_1^m+x_2^m+\cdots+x_n^m$。</p>
 <p>高等代數中可以證明：所有對稱多項式都能寫成 $\sigma_1,\dots,\sigma_n$ 的多項式。這裡不證這個一般結論，但要會一些簡單的表示式：</p>
 $$x_1^2+\cdots+x_n^2=(x_1+\cdots+x_n)^2-2\sum_{i\lt j}x_ix_j=\sigma_1^2-2\sigma_2.$$
-<p>$n=2$ 時，$x_1^3+x_2^3=(x_1+x_2)^3-3(x_1+x_2)x_1x_2=\sigma_1^3-3\sigma_1\sigma_2$。$n=3$ 時，由 $x_1^3+x_2^3+x_3^3-3x_1x_2x_3=(x_1+x_2+x_3)(x_1^2+x_2^2+x_3^2-x_1x_2-x_1x_3-x_2x_3)$ 得</p>
+<p>$n=2$ 時，$$x_1^3+x_2^3=(x_1+x_2)^3-3(x_1+x_2)x_1x_2=\sigma_1^3-3\sigma_1\sigma_2$$。$n=3$ 時，由 $$x_1^3+x_2^3+x_3^3-3x_1x_2x_3=(x_1+x_2+x_3)(x_1^2+x_2^2+x_3^2-x_1x_2-x_1x_3-x_2x_3)$$ 得</p>
 $$x_1^3+x_2^3+x_3^3=\sigma_1(\sigma_1^2-3\sigma_2)+3\sigma_3.$$
 <p>一般的 $n$ 也有</p>
 $$\begin{aligned}x_1^3+\cdots+x_n^3&=(x_1+\cdots+x_n)(x_1^2+\cdots+x_n^2)-\sum_{i\ne j}x_i^2x_j\\&=\sigma_1(\sigma_1^2-2\sigma_2)-(\sigma_1\sigma_2-3\sigma_3)=\sigma_1^3-3\sigma_1\sigma_2+3\sigma_3.\end{aligned}$$
@@ -85,18 +85,18 @@ $$\begin{aligned}(2y_1^2-1)+(2y_2^2-1)&=2(y_1^2+y_2^2)-2=\frac{2b^2-4ac-2a^2}{a^
 所求方程為
 $$a^2\cos^22x-(2b^2-4ac-2a^2)\cos2x+(4c^2-2b^2+4ac+a^2)=0.$$
 <b>解法二</b>：由原方程得 $a\cos^2x+c=-b\cos x$，兩邊平方：$(a\cos^2x+c)^2=b^2\cos^2x$。將 $\cos^2x=\frac{1+\cos2x}2$ 代入並整理，即得同一個方程。
-⟦用原題數字驗算｜IMO 原題取 $a=4,b=2,c=-1$：得 $16\cos^22x+8\cos2x-4=0$，即 $4\cos^22x+2\cos2x-1=0$，和原方程同形。⟧
+<br>⟦用原題數字驗算｜IMO 原題取 $a=4,b=2,c=-1$：得 $16\cos^22x+8\cos2x-4=0$，即 $4\cos^22x+2\cos2x-1=0$，和原方程同形。⟧
 
 === 例 6
 src: 1964–1965 年波蘭數學競賽
 zh: $x_1$ 與 $x_2$ 是方程 $x^2+px-1=0$ 的兩根，其中 $p$ 為奇數。求證：對任何整數 $n\ge0$，$x_1^n+x_2^n$ 和 $x_1^{n+1}+x_2^{n+1}$ 都是互質的整數。
 sol: 由 $x_1x_2=-1$ 知 $x_1,x_2$ 都不是 $0$。對 $n$ 用數學歸納法。
-$n=0$ 時，$x_1^0+x_2^0=2$ 與 $x_1+x_2=-p$ 是互質的整數（$p$ 是奇數）。
-設已知 $x_1^n+x_2^n$ 與 $x_1^{n+1}+x_2^{n+1}$ 是互質的整數。則
+<br>$n=0$ 時，$x_1^0+x_2^0=2$ 與 $x_1+x_2=-p$ 是互質的整數（$p$ 是奇數）。
+<br>設已知 $x_1^n+x_2^n$ 與 $x_1^{n+1}+x_2^{n+1}$ 是互質的整數。則
 $$\begin{aligned}x_1^{n+2}+x_2^{n+2}&=(x_1+x_2)(x_1^{n+1}+x_2^{n+1})-x_1x_2(x_1^n+x_2^n)\\&=-p(x_1^{n+1}+x_2^{n+1})+(x_1^n+x_2^n)\end{aligned}$$
 是整數，而且
 $$\begin{aligned}&(x_1^{n+1}+x_2^{n+1},\ x_1^{n+2}+x_2^{n+2})\\&=\big(x_1^{n+1}+x_2^{n+1},\ x_1^{n+2}+x_2^{n+2}-(x_1+x_2)(x_1^{n+1}+x_2^{n+1})\big)\\&=\big(x_1^{n+1}+x_2^{n+1},\ x_1^n+x_2^n\big)=1.\end{aligned}$$
-⟦第三行｜$x_1^{n+2}+x_2^{n+2}-(x_1+x_2)(x_1^{n+1}+x_2^{n+1})=-x_1x_2(x_1^n+x_2^n)=x_1^n+x_2^n$；而 $x_1+x_2=-p$ 是整數，減去整數倍不改變最大公因數。⟧
+⟦第三行｜$$x_1^{n+2}+x_2^{n+2}-(x_1+x_2)(x_1^{n+1}+x_2^{n+1})=-x_1x_2(x_1^n+x_2^n)=x_1^n+x_2^n$$；而 $x_1+x_2=-p$ 是整數，減去整數倍不改變最大公因數。⟧
 
 === 例 7
 zh: 設 $x,y,z$ 為複數，$f(n)=x^n+y^n+z^n$，且 $f(n)=n$ 對 $n=1,2,3$ 成立。求 $f(4),f(5),f(6)$。
@@ -113,20 +113,20 @@ $$\begin{aligned}f(4)&=3+1+\tfrac16=\tfrac{25}6,\\ f(5)&=\tfrac{25}6+\tfrac32+\t
 ans: $f(4)=\frac{25}6$，$f(5)=6$，$f(6)=\frac{103}{12}$
 
 === text
-<p><b>牛頓公式</b>：一般地，對任意複數 $x_1,\dots,x_n$，記 $s_m=x_1^m+\cdots+x_n^m$。$x_1,\dots,x_n$ 是 $x^n-\sigma_1x^{n-1}+\sigma_2x^{n-2}-\cdots+(-1)^n\sigma_n=0$ 的根，當 $m\ge n$ 時它們也是</p>
+<p><b>牛頓公式</b>：一般地，對任意複數 $x_1,\dots,x_n$，記 $s_m=x_1^m+\cdots+x_n^m$。$x_1,\dots,x_n$ 是 $$x^n-\sigma_1x^{n-1}+\sigma_2x^{n-2}-\cdots+(-1)^n\sigma_n=0$$ 的根，當 $m\ge n$ 時它們也是</p>
 $$x^m-\sigma_1x^{m-1}+\sigma_2x^{m-2}-\cdots+(-1)^n\sigma_nx^{m-n}=0$$
 <p>的根。把 $x=x_1,\dots,x_n$ 分別代入，再把 $n$ 個等式相加，得</p>
 $$s_m-s_{m-1}\sigma_1+s_{m-2}\sigma_2-\cdots+(-1)^ns_{m-n}\sigma_n=0\qquad(m\ge n).$$
 <h3>四、根的相反數、倒數、平方</h3>
-<p>設 $x_1,\dots,x_n$ 是 $n$ 次方程 $f(x)=a_0x^n+a_1x^{n-1}+\cdots+a_{n-1}x+a_n=0$ 的根。不必求根，就能寫出以它們的相反數、倒數或平方為根的新方程。</p>
+<p>設 $x_1,\dots,x_n$ 是 $n$ 次方程 $$f(x)=a_0x^n+a_1x^{n-1}+\cdots+a_{n-1}x+a_n=0$$ 的根。不必求根，就能寫出以它們的相反數、倒數或平方為根的新方程。</p>
 <p><b>一次變換</b>：對常數 $\alpha\ne0$、$\beta$，以 $\alpha x_i+\beta$ 為根的方程是</p>
 $$\varphi(x)=a_0\big[x-(\alpha x_1+\beta)\big]\cdots\big[x-(\alpha x_n+\beta)\big]=\alpha^nf\Big(\frac{x-\beta}\alpha\Big)=0.$$
-<p>⟦為什麼等於 αⁿf(⋯)｜每個因子 $x-(\alpha x_i+\beta)=\alpha\big(\frac{x-\beta}\alpha-x_i\big)$，提出 $n$ 個 $\alpha$，剩下的正是 $a_0\prod\big(\frac{x-\beta}\alpha-x_i\big)=f\big(\frac{x-\beta}\alpha\big)$。⟧展開即 $a_0(x-\beta)^n+a_1\alpha(x-\beta)^{n-1}+\cdots+a_n\alpha^n$。特別地，取 $\alpha=-1$、$\beta=0$，以 $-x_i$ 為根的方程是 $a_0x^n-a_1x^{n-1}+a_2x^{n-2}-\cdots+(-1)^na_n=0$。</p>
+<p>⟦為什麼等於 αⁿf(⋯)｜每個因子 $x-(\alpha x_i+\beta)=\alpha\big(\frac{x-\beta}\alpha-x_i\big)$，提出 $n$ 個 $\alpha$，剩下的正是 $a_0\prod\big(\frac{x-\beta}\alpha-x_i\big)=f\big(\frac{x-\beta}\alpha\big)$。⟧展開即 $$a_0(x-\beta)^n+a_1\alpha(x-\beta)^{n-1}+\cdots+a_n\alpha^n$$。特別地，取 $\alpha=-1$、$\beta=0$，以 $-x_i$ 為根的方程是 $$a_0x^n-a_1x^{n-1}+a_2x^{n-2}-\cdots+(-1)^na_n=0$$。</p>
 <p><b>倒數</b>：$a_n\ne0$ 時所有 $x_i\ne0$，以 $\frac1{x_i}$ 為根的方程是係數倒過來寫：</p>
 $$x^nf\Big(\frac1x\Big)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0=0.$$
 <p><b>平方</b>：以 $y=x^2$ 為未知數、以 $x_i^2$ 為根的方程是</p>
 $$\begin{aligned}\varphi(y)&=a_0^2(y-x_1^2)\cdots(y-x_n^2)=a_0^2(x^2-x_1^2)\cdots(x^2-x_n^2)\\&=\big[a_0(x-x_1)\cdots(x-x_n)\big]\big[(-1)^na_0(-x-x_1)\cdots(-x-x_n)\big]\\&=(-1)^nf(x)f(-x).\end{aligned}$$
-<p>也就是把 $(a_0x^n+a_1x^{n-1}+\cdots+a_n)\big(a_0x^n-a_1x^{n-1}+\cdots+(-1)^na_n\big)$ 乘出來（只剩偶次項），再把 $x^2$ 換成 $y$。</p>
+<p>也就是把 $$(a_0x^n+a_1x^{n-1}+\cdots+a_n)\big(a_0x^n-a_1x^{n-1}+\cdots+(-1)^na_n\big)$$ 乘出來（只剩偶次項），再把 $x^2$ 換成 $y$。</p>
 
 === 例 8
 zh: 已知 $r,s,t$ 是 $x^3+ax^2+bx+c=0$ 的三個根。<br>(1) 求以 $r^2,s^2,t^2$ 為根的三次方程。<br>(2) 假定 $c\ne0$，求 $\dfrac1{r^2}+\dfrac1{s^2}+\dfrac1{t^2}$。
@@ -138,7 +138,7 @@ $$x^3+(2b-a^2)x^2+(b^2-2ac)x-c^2=0.$$
 $$-c^2x^3+(b^2-2ac)x^2+(2b-a^2)x+1=0.$$
 由韋達定理
 $$\frac1{r^2}+\frac1{s^2}+\frac1{t^2}=-\frac{b^2-2ac}{-c^2}=\frac{b^2-2ac}{c^2}.$$
-ans: (1) $x^3+(2b-a^2)x^2+(b^2-2ac)x-c^2=0$；(2) $\dfrac{b^2-2ac}{c^2}$
+ans: (1) $$x^3+(2b-a^2)x^2+(b^2-2ac)x-c^2=0$$；(2) $\dfrac{b^2-2ac}{c^2}$
 
 === text
 <h3>五、實根</h3>
@@ -151,7 +151,7 @@ $$\begin{aligned}&\Big(x^3-x^2-\frac12x-\frac16\Big)\Big(x^3+x^2-\frac12x+\frac1
 知以 $x_1^2,x_2^2,x_3^2$ 為根的方程是 $x^3-2x^2-\frac1{12}x-\frac1{36}=0$。於是
 $$x_1^2x_2^2+x_1^2x_3^2+x_2^2x_3^2=-\frac1{12}\lt0,$$
 但非負數的兩兩乘積之和不能是負的，所以 $x_1,x_2,x_3$ 不能全是實數。
-也可以一開始就直接算：
+<br>也可以一開始就直接算：
 $$x_1^2x_2^2+x_1^2x_3^2+x_2^2x_3^2=\sigma_2^2-2\sigma_1\sigma_3=\Big(-\frac12\Big)^2-2\times1\times\frac16=-\frac1{12}\lt0.$$
 
 === 例 10
@@ -179,15 +179,15 @@ zh: 如果整係數方程 $ax^2+bx+c=0$（$a\ne0$）有有理根，求證 $a,b,c
 sol: 設既約分數 $\frac rs$ 是根，則 $a\big(\frac rs\big)^2+b\frac rs+c=0$，即
 $$ar^2+brs+cs^2=0.$$
 如果 $a,b,c$ 都是奇數：$r,s$ 互質，至少有一個是奇數。
-・$r,s$ 都是奇數：$ar^2+brs+cs^2$ 是三個奇數之和，是奇數；
-・$r,s$ 一奇一偶：是兩個偶數與一個奇數之和，也是奇數。
-總之不能等於 $0$，矛盾。
+<br>・$r,s$ 都是奇數：$ar^2+brs+cs^2$ 是三個奇數之和，是奇數；
+<br>・$r,s$ 一奇一偶：是兩個偶數與一個奇數之和，也是奇數。
+<br>總之不能等於 $0$，矛盾。
 
 === 例 13 | 有理根定理
-zh: 如果既約分數 $\frac rs$ 是整係數方程 $P(x)=a_0x^n+a_1x^{n-1}+\cdots+a_{n-1}x+a_n=0$ 的根，則 $r\mid a_n$，$s\mid a_0$。
+zh: 如果既約分數 $\frac rs$ 是整係數方程 $$P(x)=a_0x^n+a_1x^{n-1}+\cdots+a_{n-1}x+a_n=0$$ 的根，則 $r\mid a_n$，$s\mid a_0$。
 sol:
 $$s^nP\Big(\frac rs\Big)=a_0r^n+a_1r^{n-1}s+\cdots+a_{n-1}rs^{n-1}+a_ns^n=0.$$
-於是 $a_ns^n=-r\big(a_0r^{n-1}+a_1r^{n-2}s+\cdots+a_{n-1}s^{n-1}\big)$ 被 $r$ 整除，由 $r,s$ 互質得 $r\mid a_n$。又 $a_0r^n=-s\big(a_1r^{n-1}+\cdots+a_{n-1}rs^{n-2}+a_ns^{n-1}\big)$，由 $r,s$ 互質得 $s\mid a_0$。
+於是 $$a_ns^n=-r\big(a_0r^{n-1}+a_1r^{n-2}s+\cdots+a_{n-1}s^{n-1}\big)$$ 被 $r$ 整除，由 $r,s$ 互質得 $r\mid a_n$。又 $$a_0r^n=-s\big(a_1r^{n-1}+\cdots+a_{n-1}rs^{n-2}+a_ns^{n-1}\big)$$，由 $r,s$ 互質得 $s\mid a_0$。
 
 === 例 14
 src: 1967–1968 年波蘭數學競賽
@@ -198,7 +198,7 @@ sol: 設 $f(x)=0$ 有整數根 $x_0$，則 $f(x)=(x-x_0)Q(x)$，$Q(x)$ 是整係
 zh: 求方程 $n^2(n-1)^2=4(m^2-1)$ 的整數解 $m$ 與 $n$。
 sol: 移項成平方差：$4m^2-n^2(n-1)^2=4$，
 $$\big[2m+n(n-1)\big]\big[2m-n(n-1)\big]=4.$$
-兩個因子之差是 $2n(n-1)$，是偶數，所以它們奇偶性相同；乘積是 $4$，只能同時為 $2$ 或同時為 $-2$。⟦為什麼不能是 1×4｜$1$ 與 $4$ 奇偶不同；$-1\times-4$ 也一樣。⟧ 由 $2m+n(n-1)=2m-n(n-1)=\pm2$ 得 $n(n-1)=0$，$n=0$ 或 $1$，$m=\pm1$。
+兩個因子之差是 $2n(n-1)$，是偶數，所以它們奇偶性相同；乘積是 $4$，只能同時為 $2$ 或同時為 $-2$。⟦為什麼不能是 1×4｜$1$ 與 $4$ 奇偶不同；$-1\times-4$ 也一樣。⟧ 由 $$2m+n(n-1)=2m-n(n-1)=\pm2$$ 得 $n(n-1)=0$，$n=0$ 或 $1$，$m=\pm1$。
 ans: $n=0$ 或 $1$，$m=\pm1$（共 4 組）
 
 === text
@@ -207,7 +207,7 @@ ans: $n=0$ 或 $1$，$m=\pm1$（共 4 組）
 === 習題 1
 src: 1956 年北京數學競賽
 zh: 方程 $x^2-px+q=0$ 的兩根為 $r$ 和 $s$，且都不為 $0$。求以 $r^2+\dfrac1{s^2}$ 和 $s^2+\dfrac1{r^2}$ 為根的二次方程。
-ans: $q^2x^2-(p^2-2q)(q^2+1)x+(q^2+1)^2=0$
+ans: $$q^2x^2-(p^2-2q)(q^2+1)x+(q^2+1)^2=0$$
 sol: $r+s=p$，$rs=q$，$r^2+s^2=p^2-2q$。兩根之和
 $$\Big(r^2+\frac1{s^2}\Big)+\Big(s^2+\frac1{r^2}\Big)=(r^2+s^2)+\frac{r^2+s^2}{(rs)^2}=(p^2-2q)\Big(1+\frac1{q^2}\Big),$$
 兩根之積
@@ -225,16 +225,16 @@ $$(a-\sqrt[3]c)^2-4\sqrt[3]{c^2}=(a-3\sqrt[3]c)(a+\sqrt[3]c)\gt0,$$
 即 $\sqrt[3]c$ 嚴格介於 $-a$ 與 $\frac a3$ 之間，也就是 $c$ 介於 $-a^3$ 與 $\frac{a^3}{27}$ 之間。⟦x₂ 與另兩根不同｜$x_2=-\sqrt[3]c$ 代入這個二次式得 $\sqrt[3]c(3\sqrt[3]c-a)$，在上述範圍內且 $c\ne0$ 時不為 $0$。⟧
 
 === 習題 3
-zh: 解方程 $\sqrt[3]{(8-x)^2}+\sqrt[3]{(27+x)^2}=\sqrt[3]{(8-x)(27+x)}+7$。
+zh: 解方程 $$\sqrt[3]{(8-x)^2}+\sqrt[3]{(27+x)^2}=\sqrt[3]{(8-x)(27+x)}+7$$。
 ans: $x=0$ 或 $x=-19$
 sol: 令 $u=\sqrt[3]{8-x}$，$v=\sqrt[3]{27+x}$，則 $u^2+v^2=uv+7$，且 $u^3+v^3=35$。於是
 $$u+v=\frac{u^3+v^3}{u^2+v^2-uv}=\frac{35}7=5,\qquad uv=\frac13\big[(u+v)^2-(u^2+v^2-uv)\big]=\frac{25-7}3=6.$$
 $u,v$ 是 $t^2-5t+6=0$ 的根，為 $2,3$。$u=2$ 得 $x=0$；$u=3$ 得 $x=-19$。
 
 === 習題 4
-zh: 不展開括號而解方程 $(12x-1)(6x-1)(4x-1)(3x-1)=5$。
+zh: 不展開括號而解方程 $$(12x-1)(6x-1)(4x-1)(3x-1)=5$$。
 ans: $x=\frac12,\ -\frac1{12},\ \frac{5\pm\sqrt{39}\,i}{24}$
-sol: 兩邊乘以 $2\times3\times4$：$(12x-1)(12x-2)(12x-3)(12x-4)=2\times3\times4\times5$。令 $y=12x$，得
+sol: 兩邊乘以 $2\times3\times4$：$$(12x-1)(12x-2)(12x-3)(12x-4)=2\times3\times4\times5$$。令 $y=12x$，得
 $$(y-1)(y-2)(y-3)(y-4)=2\times3\times4\times5.$$
 易見 $y=6$ 和 $y=-1$ 是解。設另外兩解為 $y_1,y_2$，由韋達定理
 $$y_1+y_2=(1+2+3+4)-6-(-1)=5,\qquad y_1y_2=\frac{1\times2\times3\times4-2\times3\times4\times5}{(-1)\times6}=16.$$
@@ -255,7 +255,7 @@ ans: $z=\frac{a^2-b^2}{2a}$，$x,y=\frac{a^2+b^2\pm\sqrt{(3a^2-b^2)(3b^2-a^2)}}{
 sol:
 $$0=(x+y)^2-(x^2+y^2)-2xy=(a-z)^2-(b^2-z^2)-2z^2=-2az+(a^2-b^2).$$
 當 $a=0$ 時 $b$ 應為 $0$，$z$ 為任意值，由 $x+y=-z$、$xy=z^2$ 得 $x,y=\frac{-1\pm\sqrt3i}2z$。
-當 $a\ne0$ 時 $z=\frac{a^2-b^2}{2a}$，由 $x+y=a-z=\frac{a^2+b^2}{2a}$ 與 $xy=z^2$ 解出
+<br>當 $a\ne0$ 時 $z=\frac{a^2-b^2}{2a}$，由 $x+y=a-z=\frac{a^2+b^2}{2a}$ 與 $xy=z^2$ 解出
 $$x,y=\frac{a^2+b^2\pm\sqrt{(3a^2-b^2)(3b^2-a^2)}}{4a}.$$
 要使 $x,y,z$ 為不同的正數，首先應 $a\gt0$，$b\ne0$，$a^2\gt b^2$（$z\gt0$），且 $(3a^2-b^2)(3b^2-a^2)\gt0$（$x\ne y$ 且為實數），於是 $|b|\lt a\lt\sqrt3|b|$。此時 $z$ 不滿足 $x,y$ 所滿足的方程 $t^2-(a-z)t+z^2=0$（代入 $t=z$ 得 $z(3z-a)$，而 $0\lt z\lt\frac a3$），所以 $x,y,z$ 確實互不相同。
 
@@ -263,21 +263,21 @@ $$x,y=\frac{a^2+b^2\pm\sqrt{(3a^2-b^2)(3b^2-a^2)}}{4a}.$$
 zh: 已知數 $x,y,z$ 滿足 $x+y+z=3$，$x^2+y^2+z^2=5$，$x^3+y^3+z^3=7$，求 $x^4+y^4+z^4$。
 hint: 仿例 7，用牛頓公式。
 ans: $9$
-sol: $\sigma_1=3$，$\sigma_2=\frac{9-5}2=2$。由 $s_3=\sigma_1s_2-\sigma_2s_1+3\sigma_3$ 得 $7=15-6+3\sigma_3$，$\sigma_3=-\frac23$。再由牛頓公式 $s_4=\sigma_1s_3-\sigma_2s_2+\sigma_3s_1=21-10-2=9$。
+sol: $\sigma_1=3$，$\sigma_2=\frac{9-5}2=2$。由 $s_3=\sigma_1s_2-\sigma_2s_1+3\sigma_3$ 得 $7=15-6+3\sigma_3$，$\sigma_3=-\frac23$。再由牛頓公式 $$s_4=\sigma_1s_3-\sigma_2s_2+\sigma_3s_1=21-10-2=9$$。
 
 === 習題 8
-zh: 求證：實係數方程 $P(x)=a_0x^n+a_1x^{n-1}+\cdots+x^2+x+1=0$（$n\ge2$）的根不能全是實數。
+zh: 求證：實係數方程 $$P(x)=a_0x^n+a_1x^{n-1}+\cdots+x^2+x+1=0$$（$n\ge2$）的根不能全是實數。
 hint: 看根的倒數的平方和。
-sol: 不妨設 $a_0\ne0$。$P(0)=1\ne0$，根都不是 $0$。設根為 $x_1,\dots,x_n$，則 $\frac1{x_1},\dots,\frac1{x_n}$ 滿足係數倒過來的方程 $x^n+x^{n-1}+x^{n-2}+\cdots+a_1x+a_0=0$，所以
+sol: 不妨設 $a_0\ne0$。$P(0)=1\ne0$，根都不是 $0$。設根為 $x_1,\dots,x_n$，則 $\frac1{x_1},\dots,\frac1{x_n}$ 滿足係數倒過來的方程 $$x^n+x^{n-1}+x^{n-2}+\cdots+a_1x+a_0=0$$，所以
 $$\sum\frac1{x_i^2}=\Big(\sum\frac1{x_i}\Big)^2-2\sum_{i\lt j}\frac1{x_ix_j}=(-1)^2-2\times1=-1\lt0,$$
 $x_1,\dots,x_n$ 不能全是實數。
 
 === 習題 9
 zh: 求證：對整數 $n\gt1$，方程 $1+2x+3x^2+\cdots+nx^{n-1}=n^2$ 有一個有理根在 $1$ 與 $2$ 之間。
-hint: 方程即 $nx^{n-1}+(n-1)x^{n-2}+\cdots+2x-(n+1)(n-1)=0$，由有理根定理考慮 $\frac{n+1}n$。
+hint: 方程即 $$nx^{n-1}+(n-1)x^{n-2}+\cdots+2x-(n+1)(n-1)=0$$，由有理根定理考慮 $\frac{n+1}n$。
 sol: 驗證 $x=\frac{n+1}n$ 是根。利用
 $$1+2x+\cdots+nx^{n-1}=\frac{nx^{n+1}-(n+1)x^n+1}{(x-1)^2}\quad(x\ne1),$$
-⟦這個求和公式｜對 $1+x+\cdots+x^n=\frac{x^{n+1}-1}{x-1}$ 兩邊求導；或用錯位相減。⟧ 代入 $x=\frac{n+1}n$：分子中 $nx^{n+1}-(n+1)x^n=x^n\big(nx-(n+1)\big)=0$，所以分子為 $1$，分母為 $\frac1{n^2}$，值等於 $n^2$。而 $1\lt\frac{n+1}n\le\frac32\lt2$。
+⟦這個求和公式｜對 $1+x+\cdots+x^n=\frac{x^{n+1}-1}{x-1}$ 兩邊求導；或用錯位相減。⟧ 代入 $x=\frac{n+1}n$：分子中 $$nx^{n+1}-(n+1)x^n=x^n\big(nx-(n+1)\big)=0$$，所以分子為 $1$，分母為 $\frac1{n^2}$，值等於 $n^2$。而 $1\lt\frac{n+1}n\le\frac32\lt2$。
 
 === 習題 10
 zh: 解方程組
@@ -295,4 +295,4 @@ src: 1978 年全國中學數學競賽
 zh: 求方程組 $\begin{cases}x+y+z=0,\\ x^3+y^3+z^3=-18\end{cases}$ 的整數解。
 ans: $\{x,y,z\}=\{1,2,-3\}$（6 組排列）
 sol: $z=-(x+y)$，$x^3+y^3-(x+y)^3=-18$，$3xy(x+y)=18$，即 $xyz=-6$。由 $x+y+z=0$ 知 $x,y,z$ 中有兩個正、一個負，而且負數的絕對值最大，⟦為什麼｜積為負且三數不全負（和為 0），所以恰一個負數；它的絕對值等於兩個正數之和，因而最大。⟧它應為 $-3$（若為 $-6,-2,-1$，另兩數的和與積分別是 $6,1$；$2,3$；$1,6$，都沒有整數解），其餘兩數為 $1$ 和 $2$。
-另解：由 $s_3=\sigma_1^3-3\sigma_1\sigma_2+3\sigma_3$ 與 $\sigma_1=0$ 直接得 $-18=3\sigma_3$，$xyz=-6$，以下相同。
+<br>另解：由 $s_3=\sigma_1^3-3\sigma_1\sigma_2+3\sigma_3$ 與 $\sigma_1=0$ 直接得 $-18=3\sigma_3$，$xyz=-6$，以下相同。
