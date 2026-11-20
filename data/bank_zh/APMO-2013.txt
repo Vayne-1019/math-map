@@ -1,0 +1,22 @@
+=== P1
+zh: 設 $ABC$ 為銳角三角形，$AD$、$BE$、$CF$ 為其三條高，$O$ 為其外接圓的圓心。證明線段 $OA$、$OF$、$OB$、$OD$、$OC$、$OE$ 將三角形 $ABC$ 分割成三對面積相等的三角形。
+src: apmo2013-1
+=== P2
+zh: 求所有正整數 $n$，使得
+$$\frac{n^2+1}{\lfloor\sqrt{n}\rfloor^2+2}$$
+為整數。此處 $\lfloor r \rfloor$ 表示不超過 $r$ 的最大整數。
+src: apmo2013-2
+=== P3
+zh: 對 $2k$ 個實數 $a_1, a_2, \ldots, a_k, b_1, b_2, \ldots, b_k$，定義數列
+$$X_n = \sum_{i=1}^{k} \lfloor a_i n + b_i \rfloor \quad (n = 1, 2, \ldots).$$
+若數列 $X_n$ 構成等差數列，證明 $\sum_{i=1}^{k} a_i$ 必為整數。此處 $\lfloor r \rfloor$ 表示不超過 $r$ 的最大整數。
+src: apmo2013-3
+=== P4
+zh: 設 $a$、$b$ 為正整數，$A$、$B$ 為有限整數集，滿足：
+(i) $A$ 與 $B$ 不相交；
+(ii) 若整數 $i$ 屬於 $A$ 或屬於 $B$，則 $i + a$ 屬於 $A$，或 $i - b$ 屬於 $B$。
+證明 $a|A| = b|B|$。此處 $|X|$ 表示集合 $X$ 的元素個數。
+src: apmo2013-4
+=== P5
+zh: 設四邊形 $ABCD$ 內接於圓 $\omega$，點 $P$ 位於直線 $AC$ 的延長線上，使得 $PB$ 與 $PD$ 皆與 $\omega$ 相切。過 $C$ 的切線與 $PD$ 交於 $Q$，與直線 $AD$ 交於 $R$。設 $E$ 為直線 $AQ$ 與 $\omega$ 的第二個交點。證明 $B$、$E$、$R$ 三點共線。
+src: apmo2013-5

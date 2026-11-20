@@ -1,0 +1,26 @@
+=== P1
+zh: 設 $a_1, a_2, a_3, \ldots, a_n$ 為非負整數所成的數列，其中 $n$ 為正整數。令
+$$A_n = \frac{a_1 + a_2 + \cdots + a_n}{n}.$$
+證明
+$$a_1!\,a_2!\cdots a_n! \ge \left(\lfloor A_n \rfloor !\right)^n,$$
+其中 $\lfloor A_n \rfloor$ 表示不超過 $A_n$ 的最大整數，且 $a! = 1 \times 2 \times \cdots \times a$（$a \ge 1$），$0! = 1$。等號何時成立？
+src: apmo2002-1
+=== P2
+zh: 求所有正整數 $a$、$b$，使得
+$$\frac{a^2 + b}{b^2 - a} \quad \text{與} \quad \frac{b^2 + a}{a^2 - b}$$
+皆為整數。
+src: apmo2002-2
+=== P3
+zh: 設 $ABC$ 為正三角形。設 $P$ 為邊 $AC$ 上的一點，$Q$ 為邊 $AB$ 上的一點，使得三角形 $ABP$ 與 $ACQ$ 皆為銳角三角形。設 $R$ 為三角形 $ABP$ 的垂心，$S$ 為三角形 $ACQ$ 的垂心。設 $T$ 為線段 $BP$ 與 $CQ$ 的交點。求所有可能的 $\angle CBP$ 與 $\angle BCQ$ 之值，使得三角形 $TRS$ 為正三角形。
+src: apmo2002-3
+=== P4
+zh: 設 $x, y, z$ 為正實數，且滿足
+$$\frac{1}{x} + \frac{1}{y} + \frac{1}{z} = 1.$$
+證明
+$$\sqrt{x + yz} + \sqrt{y + zx} + \sqrt{z + xy} \ge \sqrt{xyz} + \sqrt{x} + \sqrt{y} + \sqrt{z}.$$
+src: apmo2002-4
+=== P5
+zh: 設 $\mathbb{R}$ 為所有實數所成的集合。求所有從 $\mathbb{R}$ 到 $\mathbb{R}$ 的函數 $f$，使得
+(i) 滿足 $f(s) = 0$ 的實數 $s$ 只有有限多個；
+(ii) 對所有實數 $x, y$，皆有 $f(x^4 + y) = x^3 f(x) + f(f(y))$。
+src: apmo2002-5
