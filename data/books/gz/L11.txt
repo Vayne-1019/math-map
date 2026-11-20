@@ -163,7 +163,7 @@ sol: <b>分析.</b> $36-14=22$，所以已經擺了 $11$ 張骨牌。條件「14
 zh: 討論函數 $y=\dfrac{x}{\sqrt{1+x^2}}$ 的單調性。
 hint: 先看奇偶性，再對 $x>0$ 改寫成 $y=\dfrac{1}{\sqrt{1+\frac1{x^2}}}$。
 ans: 在 $(-\infty,+\infty)$ 上遞增。
-sol: $y(-x)=-y(x)$，是奇函數，所以在 $(-\infty,0]$ 與 $[0,+\infty)$ 上單調性相同⟦為什麼｜若 $0\le a<b$ 時 $y(a)\lt y(b)$，則 $-b\lt -a\le0$ 時 $y(-b)=-y(b)\lt -y(a)=y(-a)$，也是遞增。⟧。當 $x>0$ 時，$y=\dfrac{1}{\sqrt{1+\frac{1}{x^2}}}$，一層一層看：
+sol: $y(-x)=-y(x)$，是奇函數，所以在 $(-\infty,0]$ 與 $[0,+\infty)$ 上單調性相同⟦為什麼｜若 $0\le a\lt b$ 時 $y(a)\lt y(b)$，則 $-b\lt -a\le0$ 時 $y(-b)=-y(b)\lt -y(a)=y(-a)$，也是遞增。⟧。當 $x>0$ 時，$y=\dfrac{1}{\sqrt{1+\frac{1}{x^2}}}$，一層一層看：
 $$x^2\nearrow\ \Rightarrow\ \tfrac1{x^2}\searrow\ \Rightarrow\ \sqrt{1+\tfrac1{x^2}}\searrow\ \Rightarrow\ y\nearrow.$$
 又 $y(0)=0$，$x\lt 0$ 時 $y\lt 0$，$x>0$ 時 $y>0$，兩段接起來，$y$ 在整個 $\mathbb R$ 上遞增。
 

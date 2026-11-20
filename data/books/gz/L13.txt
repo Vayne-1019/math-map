@@ -8,7 +8,7 @@ status: 完成
 === text
 <p>不等式本身結構漂亮、證明又不容易，是各種考試（特別是數學競賽）的熱門題目。證明不等式，就是對原式做代數變形，而變形的依據是不等式的基本性質。先把這些性質分類列出（以下若不特別聲明，字母都代表實數）。</p>
 <h3>不等式的基本性質</h3>
-<p><b>1. 基本特徵（定義）</b>：$a\ge b\iff a-b\ge0$，$a<b\iff a-b\lt 0$。這是證明不等式最根本的出發點。</p>
+<p><b>1. 基本特徵（定義）</b>：$a\ge b\iff a-b\ge0$，$a\lt b\iff a-b\lt 0$。這是證明不等式最根本的出發點。</p>
 <p><b>2. 對一個不等式變形</b>：</p>
 <p>(1) $a>b\iff b\lt a$（對稱性）；(2) $a>b\iff a+c>b+c$（加法保序）；(3) $a>b,\ c>0\Rightarrow ac>bc$；$a>b,\ c\lt 0\Rightarrow ac\lt bc$（乘法保序）；(4) $a>b$ 且 $a,b$ 同號 $\Rightarrow\dfrac1a\lt \dfrac1b$；(5) $a>b>0\Rightarrow a^n>b^n,\ \sqrt[n]a>\sqrt[n]b$（$n$ 為正整數）。</p>
 <p>⟦(4) 為什麼要同號｜$\frac1b-\frac1a=\frac{a-b}{ab}$，$a-b>0$，只有 $ab>0$（同號）時才大於 $0$。反例：$2>-1$，但 $\frac12>-1$。⟧</p>
