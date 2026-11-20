@@ -13,6 +13,7 @@ status: 完成
 <li>方程 $ax^2+bx+c=0$（$a\neq0$）的判別式為 $\Delta=b^2-4ac$。當 $a,b,c$ 都是整數時，方程有有理數根的充要條件是 $\Delta$ 為完全平方數。⟦為什麼｜根是 $\frac{-b\pm\sqrt\Delta}{2a}$，$a,b$ 是整數，所以根是有理數 $\iff\sqrt\Delta$ 是有理數 $\iff$ 整數 $\Delta$ 是完全平方數（整數的平方根若是有理數，必是整數）。⟧</li>
 <li>二次三項式 $ax^2+bx+c$（$a\neq0$）是 $x$ 的一次式的完全平方，充要條件是 $\Delta=0$。⟦為什麼｜配方：$ax^2+bx+c=a\big(x+\frac b{2a}\big)^2-\frac{\Delta}{4a}$。$\Delta=0$ 時就是 $a\big(x+\frac b{2a}\big)^2$。⟧</li>
 </ol>
+<p><b>先看最簡單的例子。</b>$x^2-5x+6=0$ 中 $a=1,b=-5,c=6$，判別式 $\Delta=(-5)^2-4\cdot1\cdot6=1$ 是完全平方數，兩根 $\frac{5\pm1}2$ 是有理數（$2$ 和 $3$）。再看 $x^2-2=0$：$\Delta=8$ 不是完全平方數，兩根是 $\pm\sqrt2$，都是無理數。⟦為什麼 $\Delta$ 要是完全平方數｜根是 $\frac{-b\pm\sqrt\Delta}{2a}$。若 $\sqrt\Delta$ 是無理數，這個根（$a,b$ 是整數）也是無理數。⟧</p>
 <p>此外還要靈活運用數的知識（奇偶性、整除、質數等）。</p>
 
 === 例 1
