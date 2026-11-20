@@ -155,7 +155,7 @@ $$3S\ge S+S_1+S_2=(a+b+c)(A+B+C)=\pi(a+b+c),$$
 即第一個不等式。第二個：$\cos A\ge\cos B\ge\cos C$ 與 $A\le B\le C$ 反序，同理 $3\sum A\cos A\le(A+B+C)\sum\cos A=\pi\sum\cos A$，而 $\sum\cos A>0$。⟦另一種寫法｜第一個也可由 $(a-b)(A-B)\ge0$、$(b-c)(B-C)\ge0$、$(c-a)(C-A)\ge0$ 三式相加展開得到。⟧
 (7) 設 $A$ 是最大角。若 $\triangle ABC$ 是銳角三角形，則 $60^\circ\le A\lt 90^\circ$。因 $h_b\le t_b\lt 1$，$h_c\le t_c\lt 1$，
 $$\triangle=\frac12h_c\cdot AB=\frac12h_c\cdot\frac{h_b}{\sin A}\lt \frac1{2\sin A}\le\frac1{2\sin60^\circ}=\frac1{\sqrt3}.$$
-⟦AB 為什麼是 h_b / sin A｜$B$ 到 $AC$ 的高 $h_b=AB\sin A$。⟧
+⟦AB 怎麼換｜$B$ 到 $AC$ 的高 $h_b=AB\sin A$。⟧
 若 $\triangle ABC$ 不是銳角三角形（$A\ge90^\circ$），則 $AC\le t_c\lt 1$，$AB\le t_b\lt 1$⟦為什麼｜$C$ 的角平分線與 $AB$ 交於 $L$，在 $\triangle ACL$ 中 $\angle A\ge90^\circ$ 是最大角，所以 $CL=t_c\ge AC$。⟧，所以 $\triangle\le\frac12AB\cdot AC\lt \frac12\lt \frac1{\sqrt3}$。
 (8) 用代換 (1)–(3)：$\cot\frac A2=\frac xr$ 等。由冪平均 $\sum u^3\ge\frac{(\sum u)^3}9$ 及例 11 $\sum\cot\frac A2\ge3\sqrt3$，得 $\sum\cot^3\frac A2\ge\frac{(3\sqrt3)^3}9=9\sqrt3$。
 (9) 用代換：$p-a=x$ 等，$\frac1{r^2}=\frac{x+y+z}{xyz}=\frac1{yz}+\frac1{zx}+\frac1{xy}$。而 $\frac1{x^2}+\frac1{y^2}+\frac1{z^2}\ge\frac1{xy}+\frac1{yz}+\frac1{zx}$（即 $u^2+v^2+w^2\ge uv+vw+wu$）。
