@@ -1,0 +1,165 @@
+=== meta
+title: 從特殊情形著手解題（一）
+author: 嚴鎮軍
+pages: 352-358
+units: C-4-6, C-4-1
+status: 完成
+
+=== text
+<h3>一、化歸和分類討論</h3>
+<p>複雜的題目通常是由簡單的基本題組合、變化而來的。所以如果能用某種手段（換元、變形、反證法等都是）把複雜題<b>化歸</b>成一個或幾個基本題，就是一種非常重要的解題策略。</p>
+<p>化歸的一個重要手段是：<b>先分析一個或幾個簡單的特殊情形，再從中歸納、發現一般規律，找到解題途徑</b>，也就是從特殊到一般。有時甚至只要把特殊情形討論清楚，一般情形就能輕易化歸成特殊情形。</p>
+
+=== 例 1
+zh: 平面上任意給定 $7$ 條直線，其中任兩條都不平行。求證：一定能找出兩條直線，它們的交角（指不超過 $90^\circ$ 的那個角）小於 $26^\circ$。
+sol: <b>分析</b>：有一個很特殊的情形：$7$ 條直線交於同一點。而一般情形可以用平移化歸成這個特殊情形。
+<figure class="bkfig"><svg viewBox="0 0 220 200" width="200" role="img" aria-label="7條直線交於一點A">
+  <g fill="none" stroke="currentColor" stroke-width="1.3">
+    <line x1="20" y1="100" x2="200" y2="100"/><line x1="25.4" y1="130.8" x2="194.6" y2="69.2"/><line x1="46.4" y1="163.6" x2="173.6" y2="36.4"/>
+    <line x1="79.2" y1="184.6" x2="140.8" y2="15.4"/><line x1="117.8" y1="189.7" x2="102.2" y2="10.3"/><line x1="155" y1="177.9" x2="65" y2="22.1"/><line x1="187.9" y1="145" x2="32.1" y2="55"/>
+  </g>
+  <g fill="currentColor"><circle cx="110" cy="100" r="2.5"/></g>
+  <g fill="currentColor" font-size="14" font-style="italic"><text x="96" y="120">A</text></g>
+</svg><figcaption>7 條直線過同一點，把周角分成 14 個角</figcaption></figure>
+<b>證明</b>：先看特殊情形：$7$ 條直線 $l_1,\dots,l_7$ 交於一點 $A$。它們在 $A$ 處形成 $14$ 個以 $A$ 為頂點的角，$\angle1+\angle2+\dots+\angle14=360^\circ$。$360^\circ\div14=\left(25\frac57\right)^\circ$，由抽屜原則（平均值的說法），這 $14$ 個角中至少有一個不超過 $\left(25\frac57\right)^\circ$，小於 $26^\circ$。⟦這個角就是兩條直線的交角嗎｜$14$ 個角中每一個都夾在相鄰的兩條直線之間；它小於 $90^\circ$，所以正是這兩條直線的交角。⟧ 特殊情形成立。
+一般情形：任給 $7$ 條直線 $m_1,\dots,m_7$（任兩條不平行）。任取一點 $A$，過 $A$ 作 $l_i\parallel m_i$（$i=1,\dots,7$）。兩條直線 $m_i,m_j$ 的交角等於 $l_i,l_j$ 的交角（平行線的同位角相等），這就化歸成剛才的特殊情形，命題得證。
+
+=== 例 2
+zh: 大小兩個矩形 $ABCD$ 和 $AB'C'D'$ 如圖固定疊在一起（共用頂點 $A$）。已知 $AB=a$，$AD=b$，$AB'=\lambda a$，$AD'=\mu b$。$P,Q$ 是小矩形紙片上任意兩點，$R$ 是大矩形紙片上任一點。求證
+$$S_{\triangle PQR}\le\frac12ab(\lambda+\mu-\lambda\mu),$$
+並說明 $P,Q,R$ 在什麼位置時等號成立。
+sol: <b>分析</b>：一個特殊情形是 $PQ$ 平行於矩形的一邊，例如 $PQ\parallel AB$：這時 $PQ\le\lambda a$，$R$ 到 $PQ$ 的距離 $\le b$，$S_{\triangle PQR}\le\frac12\lambda ab$，容易估計。一般情形可以用割補法化歸成這種「邊平行於矩形」的三角形。
+<figure class="bkfig"><svg viewBox="0 0 280 210" width="270" role="img" aria-label="兩矩形與三角形PQR，直角三角形PQT">
+  <g fill="none" stroke="currentColor" stroke-width="1.5">
+    <rect x="20" y="20" width="240" height="170"/><rect x="20" y="96.5" width="144" height="93.5"/>
+    <polygon points="145,170 110,130 220,45"/>
+  </g>
+  <g fill="none" stroke="#c2562b" stroke-width="1.3" stroke-dasharray="5 4"><polyline points="110,130 110,170 145,170"/><line x1="110" y1="170" x2="220" y2="45"/></g>
+  <g fill="currentColor" font-size="14" font-style="italic">
+    <text x="6" y="204">A</text><text x="262" y="204">B</text><text x="262" y="18">C</text><text x="6" y="18">D</text><text x="158" y="204">B′</text><text x="0" y="100">D′</text><text x="166" y="92">C′</text>
+    <text x="146" y="184">P</text><text x="96" y="128">Q</text><text x="224" y="44">R</text><text x="98" y="182">T</text>
+  </g>
+</svg><figcaption>紅色虛線：直角三角形 PQT 的兩直角邊平行於矩形的邊，連 RT</figcaption></figure>
+<b>證明</b>：以 $PQ$ 為斜邊，在 $\triangle PQR$ 的外側作直角 $\triangle PQT$，兩直角邊平行於矩形的兩鄰邊（$TP\parallel AB$，$TQ\parallel AD$）。令 $TP=e$，$TQ=f$，因 $P,Q$ 都在小矩形上，$e\le\lambda a$，$f\le\mu b$。連 $RT$，分兩種情形：
+(1) $RT$ 與線段 $PQ$ 相交（如圖）。這時
+$$S_{\triangle PQR}=S_{\triangle TPR}+S_{\triangle TQR}-S_{\triangle PTQ}.$$
+$\triangle TPR$ 的底 $TP=e$ 是水平的，高不超過 $b$；$\triangle TQR$ 的底 $TQ=f$ 是鉛直的，高不超過 $a$。所以
+$$\begin{aligned}S_{\triangle PQR}&\le\tfrac12be+\tfrac12af-\tfrac12ef\\&=\tfrac12\big[ab-(a-e)(b-f)\big]\\&\le\tfrac12\big[ab-(a-\lambda a)(b-\mu b)\big]\\&=\tfrac12(\lambda+\mu-\lambda\mu)ab.\end{aligned}$$
+⟦第二個 ≤ 的理由｜$e\le\lambda a$，所以 $a-e\ge a-\lambda a\ge0$；同理 $b-f\ge b-\mu b\ge0$。兩個非負數都變小，乘積變小，減去較小的數結果較大。⟧
+(2) $RT$ 與線段 $PQ$ 不相交。這時 $Q$ 落在 $\triangle PTR$ 內（或 $P$ 落在 $\triangle QTR$ 內），不妨設前者，則
+$$S_{\triangle PQR}\le S_{\triangle PTR}\le\tfrac12\lambda ab&lt;\tfrac12(\lambda+\mu-\lambda\mu)ab.$$
+最後一個不等號成立，因為 $0&lt;\lambda&lt;1$，$0&lt;\mu&lt;1$，$\mu-\lambda\mu=\mu(1-\lambda)>0$。
+綜合兩種情形，不等式得證。
+從圖上容易看出，當 $P,Q,R$ 分別與 $B',D',C$ 重合時面積最大。用割補法算得
+$$S_{\triangle B'D'C}=\tfrac12(\lambda+\mu-\lambda\mu)ab,$$
+⟦怎麼算｜大矩形面積 $ab$ 減去三個直角三角形：$\triangle AB'D'$ 為 $\frac12\lambda\mu ab$，$\triangle B'BC$ 為 $\frac12(1-\lambda)ab$，$\triangle D'CD$ 為 $\frac12(1-\mu)ab$。$ab-\frac12ab\big[\lambda\mu+(1-\lambda)+(1-\mu)\big]=\frac12ab(\lambda+\mu-\lambda\mu)$。⟧
+這就是等號成立的情形。
+
+=== 例 3
+zh: 設四邊形 $ABCD$ 有外接圓。求證：對任意自然數 $n\ge4$，可以把 $ABCD$ 分成 $n$ 個都有外接圓的四邊形。
+sol: 若 $ABCD$ 是等腰梯形：等腰梯形一定有外接圓，只要在梯形內作 $n-1$ 條與底邊平行的線段，就把它分成 $n$ 個等腰梯形，結論成立。
+若 $ABCD$ 不是等腰梯形，只要把它分成幾個有外接圓的四邊形，其中一個是等腰梯形，問題就化歸成上面的情形。
+<figure class="bkfig"><svg viewBox="0 0 270 200" width="260" role="img" aria-label="圓內接四邊形ABCD分成四塊，其中APQD是等腰梯形">
+  <g fill="none" stroke="currentColor" stroke-width="1.5">
+    <polygon points="187.6,16.6 240.1,183.1 54.7,175 65.7,49.3"/>
+    <polyline points="193.8,181.1 150.8,44.9 111.7,55.3 101.1,177"/><line x1="187.6" y1="16.6" x2="150.8" y2="44.9"/><line x1="65.7" y1="49.3" x2="111.7" y2="55.3"/>
+  </g>
+  <g fill="currentColor" font-size="14" font-style="italic">
+    <text x="190" y="14">A</text><text x="244" y="194">B</text><text x="38" y="190">C</text><text x="48" y="46">D</text>
+    <text x="146" y="62">P</text><text x="110" y="72">Q</text><text x="96" y="194">R</text><text x="190" y="196">S</text>
+  </g>
+</svg><figcaption>ABSP、CDQR、APQD 是等腰梯形，PSRQ 的四個角與 ABCD 的對應相等</figcaption></figure>
+設 $ABCD$ 不是等腰梯形。圓內接四邊形對角互補：$\angle A+\angle C=\angle B+\angle D=180^\circ$。不妨設 $\angle A\ge\angle C$，$\angle D\ge\angle B$，則 $\angle A\ge90^\circ\ge\angle C$，$\angle D\ge90^\circ\ge\angle B$。於是可以在 $ABCD$ 內取點 $P,Q$，使 $\angle BAP=\angle B$，$\angle CDQ=\angle C$，且 $PQ\parallel AD$；再作 $PS\parallel AB$，$QR\parallel DC$，分別交 $BC$ 於 $S,R$。
+$ABSP$ 和 $CDQR$ 都是等腰梯形（一組對邊平行、底角相等）。又
+$$\angle PAD=\angle A-\angle B=\angle D-\angle C=\angle ADQ,$$
+⟦中間的等號｜$\angle A+\angle C=\angle B+\angle D$，移項得 $\angle A-\angle B=\angle D-\angle C$。⟧
+所以 $APQD$（$PQ\parallel AD$，底角相等）也是等腰梯形。再由作圖可知，四邊形 $PSRQ$ 的四個內角與 $ABCD$ 的四個內角對應相等⟦為什麼｜$PS\parallel AB$、$QR\parallel DC$、$PQ\parallel AD$，而 $SR$ 就在 $BC$ 上，所以 $PSRQ$ 的四邊分別平行於 $ABCD$ 的四邊，對應角相等。⟧，它的對角也互補，有外接圓。這樣 $ABCD$ 被分成四個有外接圓的四邊形，其中有等腰梯形。再把其中一個等腰梯形照前面的方法分成 $n-3$ 個等腰梯形，總共就是 $n$ 個。
+
+=== text
+<p>所謂<b>分類討論</b>，就是把問題不重複、不遺漏地分成幾個特殊情形，每一種分別解決，問題就完全解決了。每一種特殊情形都等於給題目多加了一個條件，比較容易處理，所以分類討論是重要的解題方法。題目中出現「對於一切（所有、任何）$x$……」時常常用到。</p>
+
+=== 例 4
+zh: 商店的糖果有 $3$ 公斤和 $5$ 公斤兩種包裝，貨源充足。求證：凡購買 $N$ 公斤（$N$ 是自然數，$N\ge8$）糖果，都不用拆包。
+sol: 問題就是證明：對任何自然數 $N\ge8$，存在非負整數 $m,n$ 使 $N=3m+5n$。按 $N$ 除以 $3$ 的餘數分類：
+(1) $N=3k$（$k\ge3$）：給 $k$ 包 $3$ 公斤的。
+(2) $N=3k+1$（$k\ge3$）：$3k+1=3(k-3)+5\times2$，給 $k-3$ 包 $3$ 公斤的和 $2$ 包 $5$ 公斤的。
+(3) $N=3k+2$（$k\ge2$）：$3k+2=3(k-1)+5\times1$，給 $k-1$ 包 $3$ 公斤的和 $1$ 包 $5$ 公斤的。
+⟦k 的範圍怎麼來｜$N\ge8$：$3k\ge8$ 得 $k\ge3$；$3k+1\ge8$ 得 $k\ge3$（正好保證 $k-3\ge0$）；$3k+2\ge8$ 得 $k\ge2$（保證 $k-1\ge0$）。⟧
+
+=== text
+<h3>二、考察使結論成立的特殊情況</h3>
+<p>許多題目可以分兩步解決：先觀察分析，找出一個<b>使結論顯然成立的特殊情況</b>，先處理掉；再假設「不是這種情況」來證明。「不是特殊情況」這個假設，等於多了一個條件（有點像反證法多了反設），對第二步的論證有幫助。</p>
+
+=== 例 5
+zh: 某班有 $50$ 名學生，男女生各一半，他們圍成一圈席地而坐開營火晚會。求證：一定能找到一位學生，他（她）兩旁都是女生。
+sol: 結論只要求某個學生（不限男女）兩旁都是女生，一個使結論顯然成立的特殊情況是：某個男生兩旁都是女生。
+若有某個男生兩旁都是女生，結論已成立。否則，每個男生旁邊至少有一個男生（這就是新增的條件）。把連坐的男生看成一組，每組至少 $2$ 人，$25$ 個男生最多分成 $12$ 組。各組之間隔著女生，大家圍成一圈，所以 $25$ 個女生也至多分成 $12$ 組⟦為什麼｜圍成一圈時，男生組和女生組交替出現，組數相等。⟧。$25$ 個女生分成至多 $12$ 組，必有一組至少 $3$ 人⟦顯然｜若每組至多 $2$ 人，$12$ 組至多 $24$ 人，不到 $25$。⟧，三個連坐的女生中，中間那位兩旁都是女生。
+
+=== 例 6
+zh: 平面上給定 $25$ 個點，已知其中任意三點中總有兩點的距離小於 $1$。證明：總可以從中找出 $13$ 點，它們都在某個半徑為 $1$ 的圓的內部。
+sol: 特殊情況：若有一點 $A$，其餘 $24$ 點都在以 $A$ 為圓心、半徑 $1$ 的圓內，結論已成立。
+否則，可以找到兩點 $A,B$，$AB\ge1$。在其餘 $23$ 點中任取一點 $C$，$A,B,C$ 三點中有兩點距離小於 $1$，而 $AB\ge1$，所以 $AC&lt;1$ 或 $BC&lt;1$，即 $C$ 在以 $A$ 或以 $B$ 為圓心、半徑 $1$ 的圓內。由抽屜原則，這兩個圓中有一個至少含 $23$ 點中的 $12$ 點，再加上它的圓心，就有 $13$ 點。
+
+=== text
+<p>還有許多題目，經過觀察分析能「看」出：只要出現某種特殊情況，結論就成立。剩下的工作是論證這種特殊情況確實能實現。</p>
+
+=== 例 7
+zh: 平面上隨意給出 $1000$ 萬個點。能否用一條直線把它們隔開，使直線的兩側各有 $500$ 萬個點？
+sol: <b>分析</b>：先取一條直線 $l$，使所有點都在 $l$ 的同一側，再把 $l$ 往點的那一側平移。如果移動過程中每次至多碰到一個點（這需要論證），那麼移到越過第 $500$ 萬個點、還沒碰到第 $5000001$ 個點時停下，兩側就各有 $500$ 萬個點。要讓 $l$ 一次只碰到一個點，只要 $l$ 不平行於任兩個已知點的連線。
+<b>解</b>：能。記 $2n$ 個點（$n=5\times10^6$）。取一條直線 $l$，使所有點都在它的同一側⟦顯然｜點只有有限多個，取一條離它們夠遠的直線即可，例如在所有點的最低者下方再畫一條水平線。⟧，並且 $l$ 不平行於任兩點的連線（這種連線只有有限多條，而方向有無窮多種，一定避得開）。於是這 $2n$ 個點到 $l$ 的距離兩兩不同⟦為什麼｜若兩點到 $l$ 的距離相同（又在同側），它們的連線就平行於 $l$。⟧，依次排成
+$$d_1&lt;d_2&lt;\dots&lt;d_n&lt;d_{n+1}&lt;\dots&lt;d_{2n}.$$
+再取直線 $l_1\parallel l$（在點的那一側），使它到 $l$ 的距離 $d$ 滿足 $d_n&lt;d&lt;d_{n+1}$，則 $l_1$ 的兩側各有 $500$ 萬個點。
+
+=== 習題 1
+zh: 設自然數 $n\ge6$。求證：任一個正方形都可以分成 $n$ 個正方形。
+sol: <figure class="bkfig"><svg viewBox="0 0 280 95" width="280" role="img" aria-label="正方形分成6、7、8個正方形">
+  <g fill="none" stroke="currentColor" stroke-width="1.3">
+    <rect x="8" y="8" width="72" height="72"/><path d="M8,56h72M56,8v72M8,56h0M32,56v24M56,32h24"/>
+    <rect x="104" y="8" width="72" height="72"/><path d="M104,44h72M140,8v72M158,44v36M140,62h36"/>
+    <rect x="200" y="8" width="72" height="72"/><path d="M200,62h72M254,8v72M218,62v18M236,62v18M254,26h18M254,44h18"/>
+  </g>
+  <g fill="currentColor" font-size="12"><text x="36" y="93">6</text><text x="134" y="93">7</text><text x="230" y="93">8</text></g>
+</svg><figcaption>左起：n = 6、7、8 的分法</figcaption></figure>
+上圖是 $n=6,7,8$ 的分法：$6$ 個是把正方形分成 $3\times3$ 格再把左上 $2\times2$ 合併；$7$ 個是先分成 $4$ 個，再把其中一個分成 $4$ 個；$8$ 個是分成 $4\times4$ 格再把左上 $3\times3$ 合併。
+把任一個小正方形再分成 $4$ 個，正方形個數增加 $3$。所以從 $6,7,8$ 出發，可以得到 $9,10,11$，再得到 $12,13,14$……所有 $n\ge6$ 都做得到。（可以證明 $n=2,3,5$ 時做不到。）
+
+=== 習題 2
+zh: 試證：任給 $100$ 個正方形紙片，都可以把它們剪成適當的形狀，再拼成一個大正方形（不能有剩餘的小塊）。
+sol: 只要對兩個正方形證明就夠了：能把兩個拼成一個，就可以一個一個依次拼下去，$100$ 個拼 $99$ 次。
+兩個正方形邊長 $a\ge b$。把它們並排放好、底邊對齊：大的佔 $[0,a]$，小的佔 $[a,a+b]$。在底邊上取點 $P$，使它到左端的距離是 $b$。從 $P$ 剪到大正方形的左上角，再從 $P$ 剪到小正方形的右上角。兩刀長都是 $\sqrt{a^2+b^2}$，剪下的兩個直角三角形（兩股都是 $a,b$）分別繞頂點轉到上方，正好拼成一個邊長 $\sqrt{a^2+b^2}$ 的正方形。這也是勾股定理的一種證法。⟦面積對得上｜新正方形面積 $a^2+b^2$，等於兩個原正方形面積之和，沒有多也沒有少。⟧
+
+=== 習題 3
+zh: 已知 $P_1,P_2,P_3,P_4$ 四點在 $\triangle ABC$ 的邊上。求證：存在 $i,j,k$，使 $S_{\triangle P_iP_jP_k}\le\dfrac14S$，其中 $S=S_{\triangle ABC}$。
+sol: 若有三點在同一條邊上，這三點的三角形面積為 $0$，結論成立。下設每條邊上至多兩點。
+(1) 四點分布在三條邊上：設 $P_1,P_2$ 在 $AB$ 上，$P_3$ 在 $BC$ 上，$P_4$ 在 $CA$ 上。
+(a) 若 $P_3P_4\parallel AB$：$P_1$ 到 $P_3P_4$ 的距離等於 $A$ 到 $P_3P_4$ 的距離，所以 $S_{\triangle P_1P_3P_4}=S_{\triangle AP_3P_4}$。令 $\dfrac{AP_4}{AC}=\lambda$，則 $\dfrac{CP_3}{CB}=\dfrac{CP_4}{CA}=1-\lambda$，
+$$S_{\triangle AP_3P_4}=\lambda S_{\triangle AP_3C}=\lambda(1-\lambda)S\le\tfrac14S.$$
+⟦最後一步｜$\lambda(1-\lambda)=\frac14-\left(\lambda-\frac12\right)^2\le\frac14$。⟧
+(b) 若 $P_3P_4$ 不平行於 $AB$，不妨設 $P_4$ 比 $P_3$ 離 $AB$ 遠。過 $P_3$ 作 $P_3E\parallel AB$ 交 $CA$ 於 $E$，交 $P_1P_4$ 於 $D$。$D$ 在線段 $P_1P_4$ 上，所以 $S_{\triangle P_1P_2P_3}$ 與 $S_{\triangle P_4P_2P_3}$ 中有一個不超過 $S_{\triangle DP_2P_3}$⟦為什麼｜三角形以 $P_2P_3$ 為底，頂點沿線段 $P_1P_4$ 移動時，到直線 $P_2P_3$ 的距離是一次變化的，中間點 $D$ 的距離介於兩端之間。⟧。而 $DP_3\le EP_3$，$S_{\triangle DP_2P_3}\le S_{\triangle EP_2P_3}=S_{\triangle P_1EP_3}\le\tfrac14S$（最後一步由 (a)：$EP_3\parallel AB$）。
+(2) 四點只分布在兩條邊上：設 $P_1,P_2$ 在 $AB$ 上（$P_1$ 離 $B$ 較遠），$P_3,P_4$ 在 $BC$ 上（$P_4$ 離 $B$ 較遠）。對 $\triangle P_1BP_4$ 用 (1) 的結論（四點都在它的邊上），存在一個三角形，面積 $\le\frac14S_{\triangle P_1BP_4}\le\frac14S$。
+
+=== 習題 4
+zh: 一袋糖分給 $10$ 個小孩，每人至少一塊。求證：必有一些小孩，他們所得糖數之和是 $10$ 的倍數。
+sol: 設各人得 $a_1,a_2,\dots,a_{10}$ 塊。考慮 $10$ 個數
+$$s_1=a_1,\ s_2=a_1+a_2,\ \dots,\ s_{10}=a_1+a_2+\dots+a_{10}.$$
+若其中有 $10$ 的倍數，結論成立。否則它們除以 $10$ 的餘數只有 $1\sim9$ 共 $9$ 種，必有 $s_i,s_j$（$i>j$）同餘，於是 $s_i-s_j=a_{j+1}+\dots+a_i$ 是 $10$ 的倍數。
+
+=== 習題 5
+zh: 平面上有 $2n+1$ 個點。求證：可以作一個圓，使圓內、圓外各有 $n$ 個點，還有一個點在圓周上。
+sol: 記這些點為 $P_1,\dots,P_{2n+1}$。取一點 $O$，使 $OP_i$ 兩兩不相等⟦怎麼取｜$OP_i=OP_j$ 表示 $O$ 在 $P_iP_j$ 的垂直平分線上。這種直線只有有限多條，$O$ 取在它們之外即可（也不取在已知點上）。⟧。不妨設 $r_1&lt;r_2&lt;\dots&lt;r_{2n+1}$（$r_i=OP_i$），則以 $O$ 為圓心、$r_{n+1}$ 為半徑的圓就是所求。
+
+=== 習題 6
+zh: 求所有的質數 $p$，使 $p+10$ 和 $p+14$ 都是質數。
+sol: 按 $p$ 除以 $3$ 的餘數分類。若 $p=3k+1$，則 $p+14=3(k+5)$ 是合數；若 $p=3k+2$，則 $p+10=3(k+4)$ 是合數；若 $p=3k$，$p$ 是質數只有 $k=1$，$p=3$。此時 $13,17$ 都是質數。
+ans: $p=3$。
+
+=== 習題 7
+zh: 把平面上每一點任意染成紅色或白色。求證：一定存在邊長為 $1$ 或 $\sqrt3$ 的正三角形，它的 $3$ 個頂點同色。
+sol: <figure class="bkfig"><svg viewBox="0 0 200 200" width="190" role="img" aria-label="以O為圓心半徑1的圓，A、D、E、C">
+  <g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="100" cy="100" r="70"/><polyline points="160.6,65 100,30 39.4,65 100,100 160.6,65"/><line x1="100" y1="30" x2="100" y2="170"/></g>
+  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><polygon points="160.6,65 39.4,65 100,170"/></g>
+  <g fill="currentColor" font-size="14" font-style="italic"><text x="95" y="24">A</text><text x="164" y="64">D</text><text x="22" y="64">E</text><text x="104" y="112">O</text><text x="95" y="188">C</text></g>
+</svg><figcaption>△OAD、△OAE 邊長 1；虛線 △CDE 邊長 √3</figcaption></figure>
+若已有邊長 $1$ 的同色正三角形，結論成立。否則：平面上一定有兩個異色點 $A,B$ 且 $AB=1$⟦為什麼一定有｜若距離 $1$ 的兩點總是同色，任取邊長 $1$ 的正三角形，三個頂點兩兩距離 $1$，就全部同色了，與假設矛盾。⟧。以 $AB$ 為底作腰長 $2$ 的等腰 $\triangle ABC$，$C$ 與 $A,B$ 中的一個異色，不妨設 $A$ 紅、$C$ 白，$AC=2$。設 $AC$ 的中點 $O$ 是紅色（若是白色，把下面的論證改用 $C$，紅白對調）。以 $O$ 為圓心、$1$ 為半徑作圓，在圓上取 $D,E$，使 $\triangle OAD$、$\triangle OAE$ 都是邊長 $1$ 的正三角形。
+若 $D,E$ 中有紅點，$\triangle OAD$ 或 $\triangle OAE$ 三頂點全紅，邊長 $1$，與假設矛盾。所以 $D,E$ 都是白點。而 $\angle DOE=120^\circ$，$\angle DOC=\angle EOC=120^\circ$，$\triangle CDE$ 是邊長 $\sqrt3$ 的正三角形，三頂點全白。
+⟦O 是白色時｜這時 $O$、$C$ 都白，在 $AC$ 上 $OC=1$；以 $O$ 為圓心作圓，取 $D,E$ 使 $\triangle OCD$、$\triangle OCE$ 是正三角形。若 $D,E$ 有白點就得到邊長 $1$ 的白色正三角形；否則 $D,E$ 都紅，$\triangle ADE$ 是邊長 $\sqrt3$ 的紅色正三角形。⟧

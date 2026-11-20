@@ -1,0 +1,20 @@
+=== meta
+title: 觀察、聯想、猜證
+from: cz-L44
+order: 45
+
+=== body
+<div class="hero">先算<b>前幾個特例</b>，猜出規律或答案<br>再<b>證明</b>它：猜是找方向，證才算數</div>
+<div class="cards">
+<div class="card"><h4>① 猜公式</h4><div class="rule">$n=1,2,3$ 試出規律</div>
+<div class="eg">$12=3\times4$，$1122=33\times34$，$111222=333\times334$<br>猜 $\underbrace{1\cdots1}_n\underbrace{2\cdots2}_n=\underbrace{3\cdots3}_n\times(\underbrace{3\cdots3}_n+1)$</div></div>
+<div class="card"><h4>② 猜答案再證唯一</h4><div class="rule">特殊情形先解出來</div>
+<div class="eg">$x=\sqrt{2+\sqrt{2+\sqrt{2+\sqrt{2+x}}}}$<br>先解 $x=\sqrt{2+x}$ 得 $x=2$<br>再證 $x>2$、$x&lt;2$ 都不行</div></div>
+<div class="card"><h4>③ 形狀聯想</h4><div class="rule">看起來像什麼公式？</div>
+<div class="eg">$(z-x)^2-4(x-y)(y-z)$ 像 $b^2-4ac$<br>造方程 $(x-y)t^2+(z-x)t+(y-z)=0$，$t=1$ 是根</div></div>
+</div>
+<p>極值題也一樣：⟦任三點成直角三角形最多幾點｜矩形四頂點可以，猜答案是 4；再用「最長的線段是斜邊，其餘點都在以它為直徑的圓上」證明 5 點不行。⟧ 先用直覺猜出答案 4，再證明 5 不行。</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>猜出規律就停：例子再多也不是證明</li>
+<li>猜到一個根就以為只有它：要另外證明唯一</li></ul></div>
+<div class="bottomline">特例負責「看出答案」，證明負責「保證答案」。</div>

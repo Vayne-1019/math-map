@@ -1,0 +1,20 @@
+=== meta
+title: 從特殊情形著手：化歸與分類
+from: cz-L43
+order: 40
+
+=== body
+<div class="hero">一般情形太難 → 先做<b>最特殊的情形</b><br>再想辦法把一般情形<b>化歸</b>過去，或把所有情形<b>分類</b>逐一解決</div>
+<div class="cards">
+<div class="card"><h4>① 化歸</h4><div class="rule">一般 → 平移、旋轉 → 特殊</div>
+<div class="eg">7 條不平行直線，必有交角 $&lt;26^\circ$<br>先看 7 線共點：$360^\circ\div14\approx25.7^\circ$<br>一般情形平移成共點 <span class="pill">交角不變</span></div></div>
+<div class="card"><h4>② 分類討論</h4><div class="rule">不重不漏，每類多一個條件</div>
+<div class="eg">$N\ge8$ 都能寫成 $3m+5n$：<br>$3k$；$3k+1=3(k-3)+10$；$3k+2=3(k-1)+5$</div></div>
+<div class="card"><h4>③ 先剔除顯然成立的情況</h4><div class="rule">剩下的情況多了「不是它」這個條件</div>
+<div class="eg">男女各 25 圍一圈：若有男生夾在兩女之間就好；否則男生成組 → 至多 12 組 → 女生也至多 12 組 → 有 3 女連坐</div></div>
+</div>
+<p>遞推式的特殊情形：⟦正方形分成 n 個正方形｜先做出 $n=6,7,8$，再利用「把一個正方形切成 4 個，個數 $+3$」得到所有 $n\ge6$。⟧ 先做出幾個起點，再用「$+3$」推到所有 $n$。</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>只驗證了特殊情形就宣稱一般成立：一定要有化歸那一步</li>
+<li>分類有遺漏：按餘數分類最不容易漏</li></ul></div>
+<div class="bottomline">卡住時問自己：這題最簡單的版本長什麼樣？一般情形能不能變成它？</div>
