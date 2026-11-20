@@ -16,5 +16,5 @@ order: 30
 <p>為什麼不是 3 的倍數就抵消？⟦等比級數｜$s$ 不是 3 的倍數時 $\omega^s\ne1$，$1+\omega^s+\omega^{2s}=\dfrac{1-\omega^{3s}}{1-\omega^s}=0$。幾何上：三個向量平均分布在圓上，和為 0。⟧</p>
 <div class="pitfall"><h4>⚠ 最常錯</h4><ul>
 <li>忘了 $\omega_k^{-r}$：直接平均 $(1+\omega_k)^n$ 只會得到 $r=0$ 的那一類</li>
-<li>公式要 $0\le r<m$</li></ul></div>
+<li>公式要 $0\le r\lt m$</li></ul></div>
 <div class="bottomline">「每隔 $m$ 項取一項」= 用 $m$ 次單位根平均一次。</div>

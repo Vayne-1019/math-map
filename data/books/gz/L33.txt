@@ -41,8 +41,8 @@ sol: 用<b>貢獻法</b>證明。數 $|S|$ 時，$S$ 的每個元素貢獻 1，�
 
 === 定理 2 | 容斥原理
 zh: 設 $A_1,A_2,\dots,A_k$ 是 $S$ 的子集，則
-$$\begin{aligned}|\overline{A_1}\cap\cdots\cap\overline{A_k}|=\;&|S|-\sum_{i}|A_i|+\sum_{i<j}|A_i\cap A_j|\\&-\sum_{i<j<l}|A_i\cap A_j\cap A_l|+\cdots\\&+(-1)^k|A_1\cap A_2\cap\cdots\cap A_k|.\end{aligned}\tag{3}$$
-其中 $\sum_i|A_i|=|A_1|+\cdots+|A_k|$，$\sum_{i<j}|A_i\cap A_j|$ 是所有兩兩交集元素個數的和（共 $\mathrm C_k^2$ 項），依此類推。<br>
+$$\begin{aligned}|\overline{A_1}\cap\cdots\cap\overline{A_k}|=\;&|S|-\sum_{i}|A_i|+\sum_{i\lt j}|A_i\cap A_j|\\&-\sum_{i\lt j\lt l}|A_i\cap A_j\cap A_l|+\cdots\\&+(-1)^k|A_1\cap A_2\cap\cdots\cap A_k|.\end{aligned}\tag{3}$$
+其中 $\sum_i|A_i|=|A_1|+\cdots+|A_k|$，$\sum_{i\lt j}|A_i\cap A_j|$ 是所有兩兩交集元素個數的和（共 $\mathrm C_k^2$ 項），依此類推。<br>
 $k=2$ 時 (3) 就是 (2)；$k=3$ 時 (3) 成為
 $$\begin{aligned}|\overline{A_1}\cap\overline{A_2}\cap\overline{A_3}|=\;&|S|-|A_1|-|A_2|-|A_3|\\&+|A_1\cap A_2|+|A_1\cap A_3|+|A_2\cap A_3|\\&-|A_1\cap A_2\cap A_3|.\end{aligned}\tag{4}$$
 sol: 以 (4) 為例用貢獻法證明，一般的 $k$ 證法相同。設 $x\in S$：
@@ -92,7 +92,7 @@ ans: $3^n-3\cdot2^n+3$
 
 === 定理 4 | 並集形式的容斥原理
 zh: 設 $A_1,\dots,A_k$ 是 $S$ 的子集，則
-$$\begin{aligned}|A_1\cup\cdots\cup A_k|=\;&\sum_i|A_i|-\sum_{i<j}|A_i\cap A_j|\\&+\sum_{i<j<l}|A_i\cap A_j\cap A_l|-\cdots\\&+(-1)^{k-1}|A_1\cap\cdots\cap A_k|.\end{aligned}\tag{6}$$
+$$\begin{aligned}|A_1\cup\cdots\cup A_k|=\;&\sum_i|A_i|-\sum_{i\lt j}|A_i\cap A_j|\\&+\sum_{i\lt j\lt l}|A_i\cap A_j\cap A_l|-\cdots\\&+(-1)^{k-1}|A_1\cap\cdots\cap A_k|.\end{aligned}\tag{6}$$
 sol: 由 (3)，只要證
 $$|\overline{A_1}\cap\cdots\cap\overline{A_k}|=|S|-|A_1\cup\cdots\cup A_k|.$$
 仍用貢獻法。若 $x$ 不在任何 $A_i$ 中，它在左邊的交集裡，貢獻 1；它不在並集裡，對右邊貢獻 $1-0=1$。若 $x$ 在某些 $A_i$ 中，它不在左邊的交集裡，貢獻 0；它在並集裡，右邊貢獻 $1-1=0$。兩邊相同。⟦其實就是｜「一個都不屬於」與「至少屬於一個」互為補集，這正是式 (1)。⟧
@@ -139,6 +139,6 @@ ans: 見解答
 === 習題 3
 zh: 給定 1987 個集合，每個集合恰有 45 個元素，任兩個集合的並集恰有 89 個元素。求這 1987 個集合的並集所含元素的個數。
 hint: 先證任兩個集合恰有一個公共元素；再仿例 4 證明有一個元素是全部集合的公共元素。
-sol: 由推論 1，$|A_i\cap A_j|=45+45-89=1$，任兩個集合恰有一個公共元素。仿例 4：取集合 $A$，它和其餘 1986 個集合都相交；若 $A$ 的每個元素至多屬於另外 44 個集合，則至多 $45\times44=1980<1986$ 個集合和 $A$ 相交，矛盾。所以 $A$ 中有元素 $a$ 至少屬於另外 45 個集合。若某集合 $B$ 不含 $a$，它和 $A$ 及那 45 個集合（共 46 個）的公共元素兩兩不同，$|B|\ge46$，矛盾。所以 $a$ 是全體的公共元素，並集元素個數為
+sol: 由推論 1，$|A_i\cap A_j|=45+45-89=1$，任兩個集合恰有一個公共元素。仿例 4：取集合 $A$，它和其餘 1986 個集合都相交；若 $A$ 的每個元素至多屬於另外 44 個集合，則至多 $45\times44=1980\lt 1986$ 個集合和 $A$ 相交，矛盾。所以 $A$ 中有元素 $a$ 至少屬於另外 45 個集合。若某集合 $B$ 不含 $a$，它和 $A$ 及那 45 個集合（共 46 個）的公共元素兩兩不同，$|B|\ge46$，矛盾。所以 $a$ 是全體的公共元素，並集元素個數為
 $$44\times1987+1=87429.$$
 ans: $87429$

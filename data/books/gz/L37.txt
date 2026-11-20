@@ -45,7 +45,7 @@ $$b_n-2b_{n-1}=-(b_{n-1}-2b_{n-2})=\cdots=(-1)^{n-1}(b_1-2b_0).$$
 由 $a_0=2$ 得 $2^{b_0}+2^{-b_0}=2$，即 $\left(2^{b_0/2}-2^{-b_0/2}\right)^2=0$，所以 $b_0=0$；由 $2^{b_1}+2^{-b_1}=\frac52$ 可取 $b_1=1$。於是 $b_n-2b_{n-1}=(-1)^{n-1}$，第二個方括號是 $2^{1}+2^{-1}=2+\frac12$，正好和最後一項抵消。所以只要 $b_n$ 滿足 (5) 且 $b_0=0,b_1=1$，(4) 就滿足 (3)。由第 36 講立刻算出
 $$b_n=\frac13\left(2^n-(-1)^n\right).$$
 ⟦解法｜特徵方程 $x^2=x+2$ 的根 $2,-1$；設 $b_n=A2^n+B(-1)^n$，由 $b_0=0$、$b_1=1$ 得 $A=\frac13,B=-\frac13$。⟧<br>
-因為 $2^n=(3-1)^n=3q+(-1)^n$（$q$ 是整數），⟦二項式展開｜$(3-1)^n$ 展開後除了最後一項 $(-1)^n$ 外都含因數 3。⟧所以 $b_n$ 是整數，且 $n\ge1$ 時 $b_n\ge1$，$0<2^{-b_n}<1$。由 $a_n=2^{b_n}+2^{-b_n}$ 得
+因為 $2^n=(3-1)^n=3q+(-1)^n$（$q$ 是整數），⟦二項式展開｜$(3-1)^n$ 展開後除了最後一項 $(-1)^n$ 外都含因數 3。⟧所以 $b_n$ 是整數，且 $n\ge1$ 時 $b_n\ge1$，$0\lt 2^{-b_n}\lt 1$。由 $a_n=2^{b_n}+2^{-b_n}$ 得
 $$[a_n]=2^{b_n}=2^{\frac{2^n-(-1)^n}3}.$$
 解法和例 1 不同，但最後還是歸結到求一個滿足常係數線性遞推的數列。
 
@@ -67,11 +67,11 @@ ans: $a_n=10^{n-1}$
 === 例 4
 src: 第 24 屆美國普特南數學競賽，1963 年
 zh: 設 $f(n)$ 是定義在自然數集上、取自然數值的嚴格遞增函數。若 $f(2)=2$，且當 $m,n$ 互質時 $f(mn)=f(m)f(n)$，證明對一切正整數 $n$，$f(n)=n$。
-sol: <b>先證 $f(3)=3$。</b>因為 $f$ 嚴格遞增，$f(3)>f(2)=2$；只要證 $f(3)<4$。利用互質相乘的條件：
-$$f(3)f(7)=f(21)<f(22)=f(2)f(11)=2f(11)<2f(14)=2f(2)f(7)=4f(7),$$
-所以 $f(3)<4$，$f(3)=3$。⟦為什麼挑 21、22、14｜要把 $f(3)$ 夾住：$21=3\times7$、$22=2\times11$、$14=2\times7$ 都是互質相乘，而且 $21<22$、$11<14$ 讓我們能用遞增性，最後兩邊都出現 $f(7)$ 可以約掉。⟧<br>
+sol: <b>先證 $f(3)=3$。</b>因為 $f$ 嚴格遞增，$f(3)>f(2)=2$；只要證 $f(3)\lt 4$。利用互質相乘的條件：
+$$f(3)f(7)=f(21)\lt f(22)=f(2)f(11)=2f(11)\lt 2f(14)=2f(2)f(7)=4f(7),$$
+所以 $f(3)\lt 4$，$f(3)=3$。⟦為什麼挑 21、22、14｜要把 $f(3)$ 夾住：$21=3\times7$、$22=2\times11$、$14=2\times7$ 都是互質相乘，而且 $21\lt 22$、$11\lt 14$ 讓我們能用遞增性，最後兩邊都出現 $f(7)$ 可以約掉。⟧<br>
 又由 $f(2)=f(1\cdot2)=f(1)f(2)$ 得 $f(1)=1$。<br>
-<b>再用最小反例。</b>若結論不成立，設 $n_0$ 是使 $f(n)\ne n$ 的最小正整數，則 $n_0\ge4$，且 $f(k)=k$（$k<n_0$）。因為 $f(n_0)>f(n_0-1)=n_0-1$ 且 $f(n_0)\ne n_0$，所以 $f(n_0)>n_0$。由嚴格遞增，$f(n_0+1)>f(n_0)>n_0$，即 $f(n_0+1)>n_0+1$⟦為什麼多 1｜$f(n_0+1)>f(n_0)\ge n_0+1$，所以 $f(n_0+1)\ge n_0+2>n_0+1$。⟧；依此類推，
+<b>再用最小反例。</b>若結論不成立，設 $n_0$ 是使 $f(n)\ne n$ 的最小正整數，則 $n_0\ge4$，且 $f(k)=k$（$k\lt n_0$）。因為 $f(n_0)>f(n_0-1)=n_0-1$ 且 $f(n_0)\ne n_0$，所以 $f(n_0)>n_0$。由嚴格遞增，$f(n_0+1)>f(n_0)>n_0$，即 $f(n_0+1)>n_0+1$⟦為什麼多 1｜$f(n_0+1)>f(n_0)\ge n_0+1$，所以 $f(n_0+1)\ge n_0+2>n_0+1$。⟧；依此類推，
 $$f(n)>n\quad(n\ge n_0).\tag{6}$$
 若 $n_0$ 是奇數，2 與 $n_0-2$ 互質，所以 $f(2(n_0-2))=f(2)f(n_0-2)=2(n_0-2)$。但 $n_0\ge4$ 時 $2(n_0-2)\ge n_0$，由 (6) 應有 $f(2(n_0-2))>2(n_0-2)$，矛盾。<br>
 若 $n_0$ 是偶數，2 與 $n_0-1$ 互質，所以 $f(2(n_0-1))=2f(n_0-1)=2(n_0-1)$。但 $2(n_0-1)>n_0$，由 (6) 應有 $f(2(n_0-1))>2(n_0-1)$，矛盾。<br>
@@ -86,18 +86,18 @@ $$[\alpha],[2\alpha],\dots,[n\alpha],\dots\tag{7}$$
 $$[\beta],[2\beta],\dots,[n\beta],\dots\tag{8}$$
 合起來恰好不重複地構成全體正整數。<br>
 <i>證明。</i>$\alpha,\beta>1$，⟦為什麼大於 1｜$\frac1\alpha,\frac1\beta$ 都是正數，和為 1，所以各自小於 1。⟧所以 $[(n+1)\alpha]\ge[n\alpha+1]=[n\alpha]+1$，(7) 嚴格遞增，同理 (8) 也是，各自沒有重複。<br>
-若兩列有公共數 $k$：$[n\alpha]=[m\beta]=k$，則 $n\alpha=k+\theta$，$m\beta=k+\varphi$，$0<\theta,\varphi<1$（無理數不會是整數）。於是
+若兩列有公共數 $k$：$[n\alpha]=[m\beta]=k$，則 $n\alpha=k+\theta$，$m\beta=k+\varphi$，$0\lt \theta,\varphi\lt 1$（無理數不會是整數）。於是
 $$n+m=\frac{k+\theta}\alpha+\frac{k+\varphi}\beta=k+\frac\theta\alpha+\frac\varphi\beta,$$
-而 $0<\frac\theta\alpha+\frac\varphi\beta<\frac1\alpha+\frac1\beta=1$，$n+m$ 不是整數，矛盾。<br>
-再證每個正整數 $k$ 都出現。令 $n=\left[\frac{k+1}\alpha\right]$，則 $n\alpha<k+1$（$\alpha$ 是無理數，不會相等）。若 $n\alpha>k$，則 $k=[n\alpha]$ 在 (7) 中。否則 $n\alpha<k$，即 $n<\frac k\alpha$；又 $n>\frac{k+1}\alpha-1$。用 $1-\frac1\alpha=\frac1\beta$：
+而 $0\lt \frac\theta\alpha+\frac\varphi\beta\lt \frac1\alpha+\frac1\beta=1$，$n+m$ 不是整數，矛盾。<br>
+再證每個正整數 $k$ 都出現。令 $n=\left[\frac{k+1}\alpha\right]$，則 $n\alpha\lt k+1$（$\alpha$ 是無理數，不會相等）。若 $n\alpha>k$，則 $k=[n\alpha]$ 在 (7) 中。否則 $n\alpha\lt k$，即 $n\lt \frac k\alpha$；又 $n>\frac{k+1}\alpha-1$。用 $1-\frac1\alpha=\frac1\beta$：
 $$\beta(k-n)>\beta k-\frac{\beta k}\alpha=\beta k\cdot\frac1\beta=k,$$
-$$\beta(k-n)<\beta k-\beta\left(\frac{k+1}\alpha-1\right)=\beta(k+1)\left(1-\frac1\alpha\right)=k+1,$$
+$$\beta(k-n)\lt \beta k-\beta\left(\frac{k+1}\alpha-1\right)=\beta(k+1)\left(1-\frac1\alpha\right)=k+1,$$
 所以 $[\beta(k-n)]=k$，$k$ 在 (8) 中。命題得證。<br>
 <b>回到例 5。</b>對滿足 $\frac1\alpha+\frac1\beta=1$ 的無理數 $\alpha,\beta$，令 $f(n)=[n\alpha]$，$g(n)=[n\beta]$，則 (i)、(ii) 成立。現在選
 $$\alpha=\frac{1+\sqrt5}2,\qquad\beta=\frac{3+\sqrt5}2=\alpha^2=\alpha+1,$$
 容易驗證 $\frac1\alpha+\frac1\beta=1$。⟦驗證｜$\frac1\alpha=\frac{\sqrt5-1}2$，$\frac1\beta=\frac{2}{3+\sqrt5}=\frac{3-\sqrt5}2$，相加為 1。⟧要證 (iii)，即
 $$[n\beta]=\big[[n\alpha]\alpha\big]+1.\tag{9}$$
-一方面，$[n\alpha]\alpha<n\alpha\cdot\alpha=n\beta$，所以 $\big[[n\alpha]\alpha\big]\le[n\beta]$；由命題，兩列沒有公共數，等號不成立，所以 $[n\beta]\ge\big[[n\alpha]\alpha\big]+1$。<br>
+一方面，$[n\alpha]\alpha\lt n\alpha\cdot\alpha=n\beta$，所以 $\big[[n\alpha]\alpha\big]\le[n\beta]$；由命題，兩列沒有公共數，等號不成立，所以 $[n\beta]\ge\big[[n\alpha]\alpha\big]+1$。<br>
 另一方面，$[n\beta]=[n\alpha+n]=[n\alpha]+n$，又 $\alpha=1+\frac1\alpha$，所以
 $$[n\alpha]\alpha=[n\alpha]+\frac{[n\alpha]}\alpha>[n\alpha]+\frac{n\alpha-1}\alpha=[n\alpha]+n-\frac1\alpha=[n\beta]-\frac1\alpha>[n\beta]-1,$$
 所以 $[n\beta]\le\big[[n\alpha]\alpha\big]+1$。兩方面合起來就是 (9)。⟦還要說明 f、g 是唯一的｜(i)(ii)(iii) 決定了 $f$、$g$：由 (i)(ii) 與遞增，$f(1)$ 必須是 1，之後每一步 $f(n+1)$ 都是還沒出現的最小正整數，$g(n)$ 由 (iii) 決定。所以滿足條件的 $f$ 只有一個，就是 $[n\alpha]$。⟧<br>
@@ -143,8 +143,8 @@ ans: $a_n=7^{b_n}+7^{-b_n}$，$b_n=\dfrac13\left[2^n-(-1)^n\right]$
 === 習題 5
 zh: 設 $f(n)$、$g(n)$ 是由下列三個條件確定的自然數列：(i) $f(1)=1$；(ii) $g(n)=na-1-f(n)$，$a$ 是一個大於 4 的整數；(iii) $f(n+1)$ 是與 $f(1),\dots,f(n),g(1),\dots,g(n)$ 這 $2n$ 個數都不同的最小自然數。證明存在常數 $p,q$，使 $f(n)=[pn]$，$g(n)=[qn]$。
 hint: 取 $p,q$ 為二次方程 $x^2-ax+a=0$ 的兩根，用例 5 的命題。
-sol: 取 $p=\dfrac{a-\sqrt{a^2-4a}}2$，$q=\dfrac{a+\sqrt{a^2-4a}}2$。則 $p<q$，$p+q=a$，$pq=a$，所以 $\frac1p+\frac1q=\frac{p+q}{pq}=1$，從而 $1<p<2<q$。<br>
+sol: 取 $p=\dfrac{a-\sqrt{a^2-4a}}2$，$q=\dfrac{a+\sqrt{a^2-4a}}2$。則 $p\lt q$，$p+q=a$，$pq=a$，所以 $\frac1p+\frac1q=\frac{p+q}{pq}=1$，從而 $1\lt p\lt 2\lt q$。<br>
 $p,q$ 都是無理數：若 $p$ 是有理數，則 $a^2-4a=r^2$ 是完全平方。$a$ 與 $r$ 奇偶性相同，⟦為什麼同奇偶｜$r^2=a^2-4a\equiv a^2\pmod 2$，所以 $r\equiv a\pmod2$。⟧所以 $p,q$ 都是整數，由 $\frac1p+\frac1q=1$ 得 $p=q=2$，$a=4$，與 $a>4$ 矛盾。<br>
 令 $f(n)=[pn]$，$g(n)=[qn]$。則 $f(1)=[p]=1$，(i) 成立。$pn$ 不是整數，所以 $[na-pn]=na-[pn]-1$，⟦為什麼減 1｜$na$ 是整數，$pn$ 的小數部分 $\theta\in(0,1)$，$na-pn=(na-[pn]-1)+(1-\theta)$。⟧即
 $$g(n)=[qn]=[(a-p)n]=na-1-f(n),$$
-(ii) 成立。最後，設 $k<f(n+1)$。由例 5 的命題，$k$ 出現在 $\{f(j)\}$ 或 $\{g(j)\}$ 中；若 $k=f(j)$，因為 $f$ 遞增，$j\le n$；若 $k=g(j)$，因為 $k<f(n+1)<g(n+1)$，也有 $j\le n$。所以比 $f(n+1)$ 小的數都在那 $2n$ 個數中，而 $f(n+1)$ 本身不在其中（兩列不重複），(iii) 成立。條件 (i)–(iii) 唯一確定 $f,g$，所以 $f(n)=[pn]$，$g(n)=[qn]$。
+(ii) 成立。最後，設 $k\lt f(n+1)$。由例 5 的命題，$k$ 出現在 $\{f(j)\}$ 或 $\{g(j)\}$ 中；若 $k=f(j)$，因為 $f$ 遞增，$j\le n$；若 $k=g(j)$，因為 $k\lt f(n+1)\lt g(n+1)$，也有 $j\le n$。所以比 $f(n+1)$ 小的數都在那 $2n$ 個數中，而 $f(n+1)$ 本身不在其中（兩列不重複），(iii) 成立。條件 (i)–(iii) 唯一確定 $f,g$，所以 $f(n)=[pn]$，$g(n)=[qn]$。

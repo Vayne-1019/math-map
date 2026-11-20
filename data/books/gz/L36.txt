@@ -60,9 +60,9 @@ zh: 設 $x_1,x_2$ 是遞推關係 $a_n=c_1a_{n-1}+c_2a_{n-2}$ 的特徵方程 $x
 $$\alpha_1+\alpha_2=1,\qquad\alpha_1x_1+\alpha_2x_2=1,$$
 解得 $\alpha_1=\dfrac{x_1}{\sqrt5}$，$\alpha_2=\dfrac{-x_2}{\sqrt5}$。⟦解聯立｜由第一式 $\alpha_2=1-\alpha_1$，代入第二式：$\alpha_1(x_1-x_2)=1-x_2=x_1$（因為 $x_1+x_2=1$），而 $x_1-x_2=\sqrt5$。⟧所以
 $$a_n=\frac1{\sqrt5}\left(x_1^{n+1}-x_2^{n+1}\right)=\frac1{\sqrt5}\left[\left(\frac{1+\sqrt5}2\right)^{n+1}-\left(\frac{1-\sqrt5}2\right)^{n+1}\right].\tag{9}$$
-實際計算時，因為 $|x_2|=\frac{\sqrt5-1}2<1$，第二項很小：
+實際計算時，因為 $|x_2|=\frac{\sqrt5-1}2\lt 1$，第二項很小：
 $$a_n=\begin{cases}\left[\dfrac1{\sqrt5}\left(\dfrac{1+\sqrt5}2\right)^{n+1}\right],&n\text{ 為奇數},\\[2ex]\left[\dfrac1{\sqrt5}\left(\dfrac{1+\sqrt5}2\right)^{n+1}\right]+1,&n\text{ 為偶數}.\end{cases}$$
-這裡 $[x]$ 是 $x$ 的整數部分。⟦奇偶為什麼不同｜$x_2<0$。$n$ 為奇數時 $x_2^{n+1}>0$，$a_n$ 比 $\frac{x_1^{n+1}}{\sqrt5}$ 小一點點（小於 1），所以 $a_n$ 是它的整數部分；$n$ 為偶數時 $x_2^{n+1}<0$，$a_n$ 比它大一點點，所以要加 1。⟧</p>
+這裡 $[x]$ 是 $x$ 的整數部分。⟦奇偶為什麼不同｜$x_2\lt 0$。$n$ 為奇數時 $x_2^{n+1}>0$，$a_n$ 比 $\frac{x_1^{n+1}}{\sqrt5}$ 小一點點（小於 1），所以 $a_n$ 是它的整數部分；$n$ 為偶數時 $x_2^{n+1}\lt 0$，$a_n$ 比它大一點點，所以要加 1。⟧</p>
 
 === 例 1 | 不許兩個 1 相鄰
 zh: 用 1、2、3 三個數字構造 $n$ 位數，但不允許兩個 1 緊挨著（例如 $n=5$ 時 31213 可以，11233、31112 不可以）。能構造多少個這樣的 $n$ 位數？
@@ -86,7 +86,7 @@ $$x^k=c_1x^{k-1}+c_2x^{k-2}+\cdots+c_k.\tag{11}$$</p>
 zh: 若 (10) 的特徵方程有 $k$ 個不同的根 $x_1,\dots,x_k$，則 $a_n=\alpha_1x_1^n+\alpha_2x_2^n+\cdots+\alpha_kx_k^n$，其中 $\alpha_1,\dots,\alpha_k$ 由初始值 $a_0,\dots,a_{k-1}$ 確定。
 
 === 定理 3
-zh: 若 (10) 的特徵方程 (11) 有 $r$ 個（$r<k$）不同的根 $x_1,\dots,x_r$，重數分別為 $m_1,\dots,m_r$（$m_1+\cdots+m_r=k$），則
+zh: 若 (10) 的特徵方程 (11) 有 $r$ 個（$r\lt k$）不同的根 $x_1,\dots,x_r$，重數分別為 $m_1,\dots,m_r$（$m_1+\cdots+m_r=k$），則
 $$a_n=P_1(n)x_1^n+P_2(n)x_2^n+\cdots+P_r(n)x_r^n,$$
 其中 $P_i(n)$ 是 $n$ 的次數不超過 $m_i-1$ 的多項式，由初始值 $a_0,\dots,a_{k-1}$ 確定。（證明從略。）
 

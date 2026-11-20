@@ -32,7 +32,7 @@ $$8x+5y=37.\tag{3}$$
 $$1=3-2=3-(5-3)=2\times3-5=2\times(8-5)-5=2\times8-3\times5.$$
 所以 (3) 有一組解 $x_0=2\times37=74$，$y_0=-3\times37=-111$，通解為
 $$x=74-5t,\qquad y=-111+8t\qquad(t\in\mathbb Z).$$
-求正整數解，要 $x>0,y>0$：$\frac{111}8<t<\frac{74}5$，即 $13.875<t<14.8$，只有 $t=14$，得 $x=4,y=1$。⟦驗算｜$24\times4+15\times1=96+15=111$。⟧
+求正整數解，要 $x>0,y>0$：$\frac{111}8\lt t\lt \frac{74}5$，即 $13.875\lt t\lt 14.8$，只有 $t=14$，得 $x=4,y=1$。⟦驗算｜$24\times4+15\times1=96+15=111$。⟧
 ans: 通解 $x=74-5t,\ y=-111+8t$；正整數解 $x=4,\ y=1$
 
 === 定理 2 | 最大不能表示的數
@@ -86,23 +86,23 @@ $$x_n^2-Dy_n^2=(x_n+y_n\sqrt D)(x_n-y_n\sqrt D)=(x_1^2-Dy_1^2)^n=1.$$
 zh: 若 $\varepsilon=x_1+y_1\sqrt D$ 是 (6) 的最小正解，則 $x_n+y_n\sqrt D=\varepsilon^n$（$n=1,2,\dots$）給出 (6) 的全部正解。（證明從略。）
 
 === 引理
-zh: 設 $\alpha$ 是無理數，$Q\ge1$ 是整數，則必有整數 $x,y$，$1\le y\le Q$，使 $|x-\alpha y|<\frac1Q$。
+zh: 設 $\alpha$ 是無理數，$Q\ge1$ 是整數，則必有整數 $x,y$，$1\le y\le Q$，使 $|x-\alpha y|\lt \frac1Q$。
 sol: 用 $\{x\}=x-[x]$ 表示小數部分。把 $\{0\cdot\alpha\},\{1\cdot\alpha\},\dots,\{Q\alpha\}$ 這 $Q+1$ 個數連同 1 按大小排在 $[0,1]$ 上，把 $[0,1]$ 分成 $Q+1$ 個小區間。$\alpha$ 是無理數，這些點互不相同，小區間長度都大於 0，而總長為 1，所以其中必有一個長度小於 $\frac1{Q+1}$。<br>
 若這個區間是 $[\{m\alpha\},\{n\alpha\}]$（$m\ne n$），則
-$$\big|\,[m\alpha]-[n\alpha]-(m-n)\alpha\,\big|=\big|\{n\alpha\}-\{m\alpha\}\big|<\frac1{Q+1}.$$
-$1\le|m-n|\le Q$，取 $y=|m-n|$ 及對應的 $x$ 即可。若這個區間是 $[\{n\alpha\},1]$，同樣可證。⟦這種情形｜$1-\{n\alpha\}<\frac1{Q+1}$，即 $\big|([n\alpha]+1)-n\alpha\big|<\frac1{Q+1}$；$n\ne0$（因為 $\{0\}=0$ 離 1 很遠，除非 $Q=0$），取 $y=n$，$x=[n\alpha]+1$。⟧
+$$\big|\,[m\alpha]-[n\alpha]-(m-n)\alpha\,\big|=\big|\{n\alpha\}-\{m\alpha\}\big|\lt \frac1{Q+1}.$$
+$1\le|m-n|\le Q$，取 $y=|m-n|$ 及對應的 $x$ 即可。若這個區間是 $[\{n\alpha\},1]$，同樣可證。⟦這種情形｜$1-\{n\alpha\}\lt \frac1{Q+1}$，即 $\big|([n\alpha]+1)-n\alpha\big|\lt \frac1{Q+1}$；這裡 $n\ne0$（若 $n=0$，區間就是整個 $[0,1]$，長度不會小於 $\frac1{Q+1}$），取 $y=n$，$x=[n\alpha]+1$。⟧
 
 === 推論
-zh: 設 $\alpha$ 是無理數，則必有無窮多個分數 $\frac xy$ 使 $\left|\alpha-\frac xy\right|<\frac1{y^2}$。
-sol: 用反證法。若只有有限多個，設它們與 $\alpha$ 的最小距離為 $\tau$，$\alpha$ 是無理數，$\tau>0$。取整數 $Q>\frac1\tau$，由引理，有 $x,y$，$1\le y\le Q$，使 $|x-\alpha y|<\frac1Q<\tau$。於是
-$$\left|\frac xy-\alpha\right|<\frac1{Qy}\le\frac1{y^2},\qquad\left|\frac xy-\alpha\right|<\frac\tau y\le\tau.$$
+zh: 設 $\alpha$ 是無理數，則必有無窮多個分數 $\frac xy$ 使 $\left|\alpha-\frac xy\right|\lt \frac1{y^2}$。
+sol: 用反證法。若只有有限多個，設它們與 $\alpha$ 的最小距離為 $\tau$，$\alpha$ 是無理數，$\tau>0$。取整數 $Q>\frac1\tau$，由引理，有 $x,y$，$1\le y\le Q$，使 $|x-\alpha y|\lt \frac1Q\lt \tau$。於是
+$$\left|\frac xy-\alpha\right|\lt \frac1{Qy}\le\frac1{y^2},\qquad\left|\frac xy-\alpha\right|\lt \frac\tau y\le\tau.$$
 第一個不等式說明 $\frac xy$ 在那有限多個分數之中，第二個卻說明它不在其中，矛盾。
 
 === 定理 5
-zh: 設 $\sqrt D$ 不是整數，則存在整數 $k$，$|k|<2\sqrt D+1$，使 $x^2-Dy^2=k$ 有無窮多組解。
-sol: 由推論，有無窮多對整數 $x,y$（$y>0$）使 $\left|\frac xy-\sqrt D\right|<\frac1{y^2}$，於是
-$$\left|\frac xy+\sqrt D\right|\le2\sqrt D+\left|\frac xy-\sqrt D\right|<2\sqrt D+\frac1{y^2}\le2\sqrt D+1,$$
-兩式相乘：$\left|\frac{x^2}{y^2}-D\right|<\frac1{y^2}(2\sqrt D+1)$，即 $|x^2-Dy^2|<2\sqrt D+1$。這樣的整數 $k$ 只有有限多個，而 $(x,y)$ 有無窮多對，所以必有一個 $k$ 使 $x^2-Dy^2=k$ 有無窮多組解。⟦還要 k ≠ 0｜$D$ 不是平方數，$x^2=Dy^2$ 沒有 $y\ne0$ 的整數解，所以 $k\ne0$。⟧
+zh: 設 $\sqrt D$ 不是整數，則存在整數 $k$，$|k|\lt 2\sqrt D+1$，使 $x^2-Dy^2=k$ 有無窮多組解。
+sol: 由推論，有無窮多對整數 $x,y$（$y>0$）使 $\left|\frac xy-\sqrt D\right|\lt \frac1{y^2}$，於是
+$$\left|\frac xy+\sqrt D\right|\le2\sqrt D+\left|\frac xy-\sqrt D\right|\lt 2\sqrt D+\frac1{y^2}\le2\sqrt D+1,$$
+兩式相乘：$\left|\frac{x^2}{y^2}-D\right|\lt \frac1{y^2}(2\sqrt D+1)$，即 $|x^2-Dy^2|\lt 2\sqrt D+1$。這樣的整數 $k$ 只有有限多個，而 $(x,y)$ 有無窮多對，所以必有一個 $k$ 使 $x^2-Dy^2=k$ 有無窮多組解。⟦還要 k ≠ 0｜$D$ 不是平方數，$x^2=Dy^2$ 沒有 $y\ne0$ 的整數解，所以 $k\ne0$。⟧
 
 === 定理 6
 zh: 方程 (6) 有非零解（因而由定理 3 有無窮多解）。
@@ -182,7 +182,7 @@ $$(n-2)!\equiv0\pmod{n-1}.$$
 $$(n-2)!\equiv\underbrace{1+1+\cdots+1}_{k\text{ 個}}=k\pmod{n-1}.$$
 於是 $n-1\mid k$，$k\ge n-1$，從而
 $$(n-1)!=n^k-1\ge n^{n-1}-1.$$
-但 $n\ge6$ 時 $(n-1)!<n^{n-1}-1$，⟦為什麼｜$(n-1)!$ 是 $n-1$ 個都小於 $n$ 的數相乘，所以 $(n-1)!\le(n-1)^{n-1}<n^{n-1}-1$。⟧矛盾。所以方程只有三組解。
+但 $n\ge6$ 時 $(n-1)!\lt n^{n-1}-1$，⟦為什麼｜$(n-1)!$ 是 $n-1$ 個都小於 $n$ 的數相乘，所以 $(n-1)!\le(n-1)^{n-1}\lt n^{n-1}-1$。⟧矛盾。所以方程只有三組解。
 ans: $(n,k)=(2,1),(3,1),(5,2)$
 
 === 例 9
@@ -214,8 +214,8 @@ $$x=tu(u+v),\quad y=tv(u+v),\quad z=tuv,\qquad(u,v)=1,\ t,u,v>0.$$
 
 === 習題 2
 zh: 設 $x>y>0$，$(x,y)=1$。售油處有裝 $x$ 千克和 $y$ 千克的容器各一只。證明：只要顧客要買的油是整數千克，就可以只用這兩只容器進行銷售。
-sol: $y=1$ 時只用 $y$ 容器就行。設 $y>1$，顧客要 $a$ 千克，$a=yq+r$，$0\le r<y$。先用 $y$ 容器量 $q$ 次倒給顧客，再量出 $r$ 千克。<br>
-因為 $(x,y)=1$，有正整數 $m,n$ 使 $my-nx=r$。⟦為什麼可以取正的｜由貝祖定理有整數解，再用通解 $m+xt$、$n+yt$ 把 $t$ 取大即可。⟧操作：把 $y$ 容器裝滿油，逐次倒入 $x$ 容器；$x$ 容器裝滿時把它倒回油庫，再把 $y$ 容器剩下的油倒入 $x$ 容器；$y$ 倒空了就再裝滿……如此下去，到 $x$ 容器第 $n$ 次倒空時，看 $y$ 容器中的餘油，設為 $t$ 千克，$0\le t<y$。⟦為什麼小於 y｜$x$ 剛被裝滿，代表 $y$ 剛倒出一些油，所以 $y$ 裡不是滿的。⟧設此時 $y$ 共裝了 $m'$ 次，則 $m'y-nx=t$。與 $my-nx=r$ 相減：$(m'-m)y=t-r$，而 $|t-r|<y$，所以 $t=r$。把 $y$ 容器裡這 $r$ 千克給顧客即可。<br>
+sol: $y=1$ 時只用 $y$ 容器就行。設 $y>1$，顧客要 $a$ 千克，$a=yq+r$，$0\le r\lt y$。先用 $y$ 容器量 $q$ 次倒給顧客，再量出 $r$ 千克。<br>
+因為 $(x,y)=1$，有正整數 $m,n$ 使 $my-nx=r$。⟦為什麼可以取正的｜由貝祖定理有整數解，再用通解 $m+xt$、$n+yt$ 把 $t$ 取大即可。⟧操作：把 $y$ 容器裝滿油，逐次倒入 $x$ 容器；$x$ 容器裝滿時把它倒回油庫，再把 $y$ 容器剩下的油倒入 $x$ 容器；$y$ 倒空了就再裝滿……如此下去，到 $x$ 容器第 $n$ 次倒空時，看 $y$ 容器中的餘油，設為 $t$ 千克，$0\le t\lt y$。⟦為什麼小於 y｜$x$ 剛被裝滿，代表 $y$ 剛倒出一些油，所以 $y$ 裡不是滿的。⟧設此時 $y$ 共裝了 $m'$ 次，則 $m'y-nx=t$。與 $my-nx=r$ 相減：$(m'-m)y=t-r$，而 $|t-r|\lt y$，所以 $t=r$。把 $y$ 容器裡這 $r$ 千克給顧客即可。<br>
 例如 $x=5,y=3$ 要 1 千克：$3$ 倒進 $5$，再裝 $3$ 倒到 $5$ 滿，$3$ 容器剩 1 千克。
 
 === 習題 3
@@ -240,8 +240,8 @@ zh: 求 $y^2=1+x+x^2+x^3+x^4$ 的整數解。
 hint: 把 $4y^2$ 夾在兩個相鄰的平方數之間。
 sol: $4y^2=4x^4+4x^3+4x^2+4x+4$。比較
 $$(2x^2+x)^2=4x^4+4x^3+x^2,\qquad(2x^2+x+2)^2=4x^4+4x^3+9x^2+4x+4.$$
-$4y^2-(2x^2+x)^2=3x^2+4x+4>0$（判別式 $16-48<0$），$(2x^2+x+2)^2-4y^2=5x^2\ge0$，所以
-$$2x^2+x<2|y|\le2x^2+x+2.$$
+$4y^2-(2x^2+x)^2=3x^2+4x+4>0$（判別式 $16-48\lt 0$），$(2x^2+x+2)^2-4y^2=5x^2\ge0$，所以
+$$2x^2+x\lt 2|y|\le2x^2+x+2.$$
 ⟦為什麼可以開根號比較｜$2x^2+x=x(2x+1)\ge0$ 對整數 $x$ 成立，兩邊都非負。⟧<br>
 若 $2|y|=2x^2+x+2$，則 $5x^2=0$，$x=0$，$y=\pm1$。<br>
 若 $2|y|=2x^2+x+1$，則 $(2x^2+x+1)^2=4y^2$，展開得 $4x^4+4x^3+5x^2+2x+1=4x^4+4x^3+4x^2+4x+4$，即 $x^2-2x-3=0$，$x=3$ 或 $-1$，對應 $|y|=11$ 或 $1$。<br>
@@ -259,10 +259,10 @@ sol: 顯然 $x>1$。<br>
 • $y=1$：$x=2$。<br>
 • $x=2$：$2^y=y^2+1$，$y=1$ 是解；$y=2,3,4$ 不是；$y\ge5$ 時 $2^y>y^2+1$。<br>
 • $y=2$：$x^2=2^x+1$，$x=3$ 是解；$x=4$ 不是；$x\ge5$ 時 $2^x>x^2$。<br>
-剩下 $x,y\ge3$ 的情形。只要證：對任何 $m>n\ge3$，$m^n<n^m-1$（於是 $n^m\ne m^n+1$，且 $m^n\ne n^m+1$）。先證 $\left(1+\frac1n\right)^n<2.75$：用二項式定理展開，
-$$\left(1+\frac1n\right)^n=1+1+\frac{n(n-1)}{2!\,n^2}+\cdots<1+1+\frac1{2!}+\frac1{3!}+\cdots+\frac1{n!}<2.75.$$
-⟦最後一步｜$\frac1{k!}\le\frac16\cdot\frac1{4^{k-3}}$（$k\ge3$），所以 $\frac1{3!}+\frac1{4!}+\cdots<\frac16\cdot\frac43=\frac29$，總和 $<2.5+0.23<2.75$。⟧令 $r=m-n\ge1$。由 $1+\frac rn\le\left(1+\frac1n\right)^r$，⟦伯努利不等式｜$(1+h)^r\ge1+rh$，取 $h=\frac1n$。⟧
-$$m^n=n^n\left(1+\frac rn\right)^n\le n^n\left[\left(1+\frac1n\right)^n\right]^r<n^n\cdot2.75^r=n^m\left(\frac{2.75}n\right)^r<0.92\,n^m.$$
+剩下 $x,y\ge3$ 的情形。只要證：對任何 $m>n\ge3$，$m^n\lt n^m-1$（於是 $n^m\ne m^n+1$，且 $m^n\ne n^m+1$）。先證 $\left(1+\frac1n\right)^n\lt 2.75$：用二項式定理展開，
+$$\left(1+\frac1n\right)^n=1+1+\frac{n(n-1)}{2!\,n^2}+\cdots\lt 1+1+\frac1{2!}+\frac1{3!}+\cdots+\frac1{n!}\lt 2.75.$$
+⟦最後一步｜$\frac1{k!}\le\frac16\cdot\frac1{4^{k-3}}$（$k\ge3$），所以 $\frac1{3!}+\frac1{4!}+\cdots\lt \frac16\cdot\frac43=\frac29$，總和 $\lt 2.5+0.23\lt 2.75$。⟧令 $r=m-n\ge1$。由 $1+\frac rn\le\left(1+\frac1n\right)^r$，⟦伯努利不等式｜$(1+h)^r\ge1+rh$，取 $h=\frac1n$。⟧
+$$m^n=n^n\left(1+\frac rn\right)^n\le n^n\left[\left(1+\frac1n\right)^n\right]^r\lt n^n\cdot2.75^r=n^m\left(\frac{2.75}n\right)^r\lt 0.92\,n^m.$$
 所以 $n^m-m^n>0.08\,n^m\ge0.08\cdot3^4>1$。因此 $x,y\ge3$ 時無解。
 ans: $(x,y)=(2,1),(3,2)$
 

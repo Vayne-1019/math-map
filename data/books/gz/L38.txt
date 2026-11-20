@@ -11,8 +11,8 @@ status: 完成
 
 === 定理 1 | 帶餘除法
 zh: 設 $a,b$ 是給定的整數，$b>0$，則有唯一的一對整數 $q,r$ 滿足
-$$a=bq+r,\qquad0\le r<b.\tag{1}$$
-sol: 取 $q=\left[\frac ab\right]$，$r=a-bq$，⟦這樣 r 為什麼在 0 到 b 之間｜$q\le\frac ab<q+1$，乘以 $b$ 得 $bq\le a<bq+b$，即 $0\le a-bq<b$。⟧即得 (1)。若另有 $q',r'$ 也滿足 (1)，則 $b(q-q')=r'-r$，即 $b|q-q'|=|r'-r|$。但 $|r'-r|<b$，所以只能 $q-q'=0$、$r'=r$。唯一性成立。
+$$a=bq+r,\qquad0\le r\lt b.\tag{1}$$
+sol: 取 $q=\left[\frac ab\right]$，$r=a-bq$，⟦這樣 r 為什麼在 0 到 b 之間｜$q\le\frac ab\lt q+1$，乘以 $b$ 得 $bq\le a\lt bq+b$，即 $0\le a-bq\lt b$。⟧即得 (1)。若另有 $q',r'$ 也滿足 (1)，則 $b(q-q')=r'-r$，即 $b|q-q'|=|r'-r|$。但 $|r'-r|\lt b$，所以只能 $q-q'=0$、$r'=r$。唯一性成立。
 
 === text
 <p>(1) 中 $q$ 叫做 $a$ 除以 $b$ 的（不完全）商，$r$ 叫做<b>餘數</b>。$r=0$ 時 $a=bq$，稱 $b$ <b>整除</b> $a$，記作 $b\mid a$；也說 $a$ 是 $b$ 的倍數，$b$ 是 $a$ 的因數（約數）。</p>
@@ -39,7 +39,7 @@ zh: 任何大於 1 的整數都能表示成質數的乘積；若不計因子的�
 === text
 <p>定理 2 是初等數論中最重要的定理，叫做正整數的唯一分解定理或算術基本定理。把質因數由小到大排列，相同的合併，就是另一種說法：若 $n\ge2$，則 $n$ 可唯一地表示成
 $$n=p_1^{\alpha_1}p_2^{\alpha_2}\cdots p_s^{\alpha_s},\tag{2}$$
-其中 $p_1<\cdots<p_s$ 是質數，$\alpha_i$ 是正整數。(2) 叫做 $n$ 的<b>標準分解式</b>。為了方便，有時也在標準分解式中添上某些質數的零次方。</p>
+其中 $p_1\lt \cdots\lt p_s$ 是質數，$\alpha_i$ 是正整數。(2) 叫做 $n$ 的<b>標準分解式</b>。為了方便，有時也在標準分解式中添上某些質數的零次方。</p>
 
 === 定理 3
 zh: 設 $p$ 是質數，$p\mid ab$，則 $p\mid a$ 或 $p\mid b$。
@@ -84,7 +84,7 @@ sol: 由 $ad=bc$：$a\mid bc$ 且 $(a,b)=1$，所以 $a\mid c$（下面定理 4 
 === 定理 4
 zh: 設 $a,b$ 不同時為零，則<br>1° 對任何整數 $x$，$(a,b)=(a,b-ax)=(a-bx,b)$；<br>2° 存在整數 $x,y$ 使 $ax+by=(a,b)$；<br>3° 若 $(a,b)=1$，$a\mid bc$，則 $a\mid c$。
 sol: <b>1°</b> 只需證第一個等式。$a,b$ 的公因數 $d$ 也整除 $b-ax$；反之，$a$ 與 $b-ax$ 的公因數也整除 $b=(b-ax)+ax$。所以兩組公因數完全相同，最大的也相同。<br>
-<b>2°</b> 不妨設 $a\ge b\ge0$（換號、交換不影響結論），對較小的 $b$ 用歸納法。$b=0$ 時 $(a,0)=a$，取 $x=1,y=0$ 即可。設 $b\ge1$，令 $a=bq+r$，$0\le r<b$。由 1°，$(a,b)=(a-bq,b)=(b,r)$。因為 $r<b$，由歸納假設存在 $x_1,y_1$ 使
+<b>2°</b> 不妨設 $a\ge b\ge0$（換號、交換不影響結論），對較小的 $b$ 用歸納法。$b=0$ 時 $(a,0)=a$，取 $x=1,y=0$ 即可。設 $b\ge1$，令 $a=bq+r$，$0\le r\lt b$。由 1°，$(a,b)=(a-bq,b)=(b,r)$。因為 $r\lt b$，由歸納假設存在 $x_1,y_1$ 使
 $$(b,r)=bx_1+ry_1=bx_1+(a-bq)y_1=ay_1+b(x_1-qy_1).$$
 取 $x=y_1$，$y=x_1-qy_1$ 即得。<br>
 <b>3°</b> 由 2°，有 $x,y$ 使 $ax+by=1$，所以 $acx+bcy=c$。$a\mid acx$，$a\mid bc$，所以 $a\mid c$。
@@ -119,7 +119,7 @@ sol: 對 $n$ 用歸納法，$n=2$ 就是定理 4 的 2°。由定理 5 與 2°�
 <p>變數取整數時，整係數多項式的值當然是整數；但有些係數不是整數的多項式，變數取整數時也總取整數值，例如 $f(n)=\frac{n^2}2+\frac n2=\frac{n(n+1)}2$。變數取整數時值也是整數的多項式叫做<b>整值多項式</b>。什麼樣的多項式是整值多項式？</p>
 <p>最基本的一類整值多項式是
 $$\binom x0=1,\qquad\binom xr=\frac{x(x-1)\cdots(x-r+1)}{r!}\quad(r\ge1).$$
-當 $0\le x\le r-1$ 時 $\binom xr=0$；$x\ge r$ 時 $\binom xr=\mathrm C_x^r$；$x<0$ 時
+當 $0\le x\le r-1$ 時 $\binom xr=0$；$x\ge r$ 時 $\binom xr=\mathrm C_x^r$；$x\lt 0$ 時
 $$\binom xr=(-1)^r\frac{(-x)(-x+1)\cdots(-x+r-1)}{r!}=(-1)^r\mathrm C_{r-x-1}^r,$$
 都是整數。注意這裡 $\binom xr$ 是多項式，不是組合數（$x$ 可以是任何數）。</p>
 
@@ -152,13 +152,13 @@ $$a_0=P(n)-a_{k+1}\binom n{k+1}-\cdots-a_1\binom n1$$
 
 === 習題 1
 zh: 設 $p$ 為質數，$1\le k\le p-1$，則 $p\mid\mathrm C_p^k$。
-sol: $\mathrm C_p^k=p\cdot\dfrac{(p-1)\cdots(p-k+1)}{k!}$ 是整數，所以 $k!\mid p(p-1)\cdots(p-k+1)$。$1\le k\le p-1$ 時 $(p,k!)=1$，⟦為什麼互質｜$k!$ 的質因數都不超過 $k<p$，所以不含 $p$。⟧由定理 4 的 3°，$k!\mid(p-1)\cdots(p-k+1)$，所以 $\mathrm C_p^k$ 是 $p$ 乘上一個整數，$p\mid\mathrm C_p^k$。
+sol: $\mathrm C_p^k=p\cdot\dfrac{(p-1)\cdots(p-k+1)}{k!}$ 是整數，所以 $k!\mid p(p-1)\cdots(p-k+1)$。$1\le k\le p-1$ 時 $(p,k!)=1$，⟦為什麼互質｜$k!$ 的質因數都不超過 $k\lt p$，所以不含 $p$。⟧由定理 4 的 3°，$k!\mid(p-1)\cdots(p-k+1)$，所以 $\mathrm C_p^k$ 是 $p$ 乘上一個整數，$p\mid\mathrm C_p^k$。
 
 === 習題 2
 zh: 若 $n$ 是大於 9 的奇合數，則 $n^2\mid(n-1)!$。
 hint: 分 $n=p^2$ 與 $n\ne p^2$ 兩種情形，在 $1,\dots,n-1$ 中找出四個數。
 sol: 若 $n=p^2$，因 $n>9$ 是奇數，$p\ge5$，$n-1\ge4p$。⟦為什麼｜$p^2-1-4p=(p-2)^2-5\ge4$。⟧所以 $1,\dots,n-1$ 中有 $p,2p,3p,4p$，因此 $p^4=n^2\mid(n-1)!$。<br>
-若 $n\ne p^2$，設 $p$ 是 $n$ 的最小質因數，$p\ge3$，則 $\frac np>p\ge3$。$1,\dots,n-1$ 中有 $p,\ 2p,\ \frac np,\ \frac{2n}p$，這四個數互不相等，⟦為什麼不相等｜$\frac np>p$ 且 $\frac np$ 是奇數，不等於 $2p$；$\frac{2n}p>2p$；$\frac{2n}p\le\frac{2n}3<n$。⟧所以 $p\cdot2p\cdot\frac np\cdot\frac{2n}p=4n^2$ 整除 $(n-1)!$。<br>
+若 $n\ne p^2$，設 $p$ 是 $n$ 的最小質因數，$p\ge3$，則 $\frac np>p\ge3$。$1,\dots,n-1$ 中有 $p,\ 2p,\ \frac np,\ \frac{2n}p$，這四個數互不相等，⟦為什麼不相等｜$\frac np>p$ 且 $\frac np$ 是奇數，不等於 $2p$；$\frac{2n}p>2p$；$\frac{2n}p\le\frac{2n}3\lt n$。⟧所以 $p\cdot2p\cdot\frac np\cdot\frac{2n}p=4n^2$ 整除 $(n-1)!$。<br>
 （$n$ 若是質數，結論不成立；$n=9$ 時 $81\nmid8!$。）
 
 === 習題 3
@@ -180,7 +180,7 @@ sol: $1,\dots,n$ 中，被 $p$ 整除的有 $\left[\frac np\right]$ 個，被 $p
 === 習題 6
 zh: 設 $b>0$，則有整數 $q,r$ 使 $a=bq+r$，$|r|\le\frac b2$；當 $|r|\ne\frac b2$ 時，這種表示法是唯一的。
 hint: 與定理 1 的證明類似。
-sol: 由定理 1，$a=bq_0+r_0$，$0\le r_0<b$。若 $r_0\le\frac b2$，取 $q=q_0,r=r_0$；否則取 $q=q_0+1$，$r=r_0-b$，此時 $-\frac b2<r<0$。唯一性：若 $a=bq+r=bq'+r'$，則 $b|q-q'|=|r-r'|\le|r|+|r'|$。若 $|r|,|r'|$ 都小於 $\frac b2$，則 $|r-r'|<b$，所以 $q=q'$。（若 $|r|=\frac b2$，例如 $5=2\cdot2+1=2\cdot3-1$，就有兩種表示。）
+sol: 由定理 1，$a=bq_0+r_0$，$0\le r_0\lt b$。若 $r_0\le\frac b2$，取 $q=q_0,r=r_0$；否則取 $q=q_0+1$，$r=r_0-b$，此時 $-\frac b2\lt r\lt 0$。唯一性：若 $a=bq+r=bq'+r'$，則 $b|q-q'|=|r-r'|\le|r|+|r'|$。若 $|r|,|r'|$ 都小於 $\frac b2$，則 $|r-r'|\lt b$，所以 $q=q'$。（若 $|r|=\frac b2$，例如 $5=2\cdot2+1=2\cdot3-1$，就有兩種表示。）
 
 === 習題 7
 zh: 設 $n$ 是奇合數，則 $n$ 個連續正整數之積必是它們的和的倍數。
@@ -196,14 +196,14 @@ hint: 對 $a,b$ 中較小者用歸納法（或無窮遞降）。
 sol: 設 $\dfrac{a^2+b^2}{ab+1}=k$，假設 $k$ 不是完全平方數。在所有滿足 $a^2+b^2=k(ab+1)$ 的正整數對中，取 $a+b$ 最小的一對，不妨 $a\ge b$。把它看成 $a$ 的二次方程
 $$a^2-kb\,a+(b^2-k)=0.$$
 它的另一根 $a'=kb-a=\dfrac{b^2-k}a$ 是整數。⟦兩個式子｜由韋達定理，兩根之和 $kb$、之積 $b^2-k$。第一式說明 $a'$ 是整數。⟧<br>
-若 $a'<0$，則 $a'^2-kba'+b^2-k\ge a'^2+k+b^2-k>0$，⟦為什麼｜$a'\le-1$ 時 $-kba'\ge kb\ge k$。⟧不可能等於 0。若 $a'=0$，則 $b^2=k$，與 $k$ 不是平方數矛盾。所以 $a'>0$，$(a',b)$ 也是一組正整數解。但 $a'=\dfrac{b^2-k}a<\dfrac{b^2}a\le a$，所以 $a'+b<a+b$，與最小性矛盾。故 $k$ 是完全平方數。<br>
+若 $a'\lt 0$，則 $a'^2-kba'+b^2-k\ge a'^2+k+b^2-k>0$，⟦為什麼｜$a'\le-1$ 時 $-kba'\ge kb\ge k$。⟧不可能等於 0。若 $a'=0$，則 $b^2=k$，與 $k$ 不是平方數矛盾。所以 $a'>0$，$(a',b)$ 也是一組正整數解。但 $a'=\dfrac{b^2-k}a\lt \dfrac{b^2}a\le a$，所以 $a'+b\lt a+b$，與最小性矛盾。故 $k$ 是完全平方數。<br>
 例如 $(a,b)=(8,2)$：$\frac{68}{17}=4$；$(30,8)$：$\frac{964}{241}=4$。
 
 === 習題 9
 src: 第 10 屆國際數學奧林匹亞，1968 年
 zh: 設 $n$ 為正整數，求 $M=\left[\dfrac{n+1}2\right]+\left[\dfrac{n+2}{2^2}\right]+\cdots+\left[\dfrac{n+2^{k-1}}{2^k}\right]+\cdots$。
 hint: 對 $n$ 用歸納法，或用恆等式 $\left[x+\frac12\right]=[2x]-[x]$。
-sol: 對任何實數 $x$，$\left[x+\frac12\right]=[2x]-[x]$。⟦驗證｜設 $x=m+\theta$，$0\le\theta<1$。$\theta<\frac12$ 時兩邊都是 $m$；$\theta\ge\frac12$ 時兩邊都是 $m+1$。⟧取 $x=\frac n{2^k}$：
+sol: 對任何實數 $x$，$\left[x+\frac12\right]=[2x]-[x]$。⟦驗證｜設 $x=m+\theta$，$0\le\theta\lt 1$。$\theta\lt \frac12$ 時兩邊都是 $m$；$\theta\ge\frac12$ 時兩邊都是 $m+1$。⟧取 $x=\frac n{2^k}$：
 $$\left[\frac{n+2^{k-1}}{2^k}\right]=\left[\frac n{2^k}+\frac12\right]=\left[\frac n{2^{k-1}}\right]-\left[\frac n{2^k}\right].$$
 對 $k=1,2,\dots$ 求和，右邊逐項相消，而 $k$ 夠大時 $\left[\frac n{2^k}\right]=0$，所以 $M=[n]=n$。
 ans: $M=n$

@@ -31,11 +31,11 @@ $$\sum_{n=0}^{s}a_nx^n=\sum_{n=2}^{s+2}a_{n-2}x^{n-2}=\sum_{k=1}^{s+1}a_{k-1}x^{
 
 === 例 1 | 交錯和的部分和
 zh: 計算 $S_{n,m}=\displaystyle\sum_{k=0}^m(-1)^k\mathrm C_n^k$，$m\le n$。
-sol: $m=n$ 時由 (vi)，$S_{n,n}=0$。設 $m<n$，用 (ii) 把每一項拆開：
+sol: $m=n$ 時由 (vi)，$S_{n,n}=0$。設 $m\lt n$，用 (ii) 把每一項拆開：
 $$\begin{aligned}S_{n,m}&=1+\sum_{k=1}^m(-1)^k\left(\mathrm C_{n-1}^k+\mathrm C_{n-1}^{k-1}\right)\\&=1-(\mathrm C_{n-1}^1+\mathrm C_{n-1}^0)+(\mathrm C_{n-1}^2+\mathrm C_{n-1}^1)-\cdots\\&\quad+(-1)^m(\mathrm C_{n-1}^m+\mathrm C_{n-1}^{m-1})\\&=(-1)^m\mathrm C_{n-1}^m.\end{aligned}$$
 ⟦中間為什麼會整片消掉｜$1=\mathrm C_{n-1}^0$ 和 $-\mathrm C_{n-1}^0$ 抵消；$-\mathrm C_{n-1}^1$ 和下一組的 $+\mathrm C_{n-1}^1$ 抵消……每一組的第一項都和下一組的第二項抵消，只剩最後一組的 $(-1)^m\mathrm C_{n-1}^m$。⟧所以
-$$\sum_{k=0}^m(-1)^k\mathrm C_n^k=\begin{cases}0,&m=n,\\(-1)^m\mathrm C_{n-1}^m,&m<n.\end{cases}$$
-ans: $m=n$ 時為 $0$；$m<n$ 時為 $(-1)^m\mathrm C_{n-1}^m$
+$$\sum_{k=0}^m(-1)^k\mathrm C_n^k=\begin{cases}0,&m=n,\\(-1)^m\mathrm C_{n-1}^m,&m\lt n.\end{cases}$$
+ans: $m=n$ 時為 $0$；$m\lt n$ 時為 $(-1)^m\mathrm C_{n-1}^m$
 
 === 例 2
 zh: 計算 $\displaystyle\sum_{k=0}^n\frac1{2^k}\mathrm C_n^k$。
@@ -95,7 +95,7 @@ $$a_n=2^{2n-1}+\frac12\mathrm C_{2n}^n.$$
 
 === 例 8
 zh: 證明 $A_{mn}=\displaystyle\sum_{k=m}^n(-1)^k\mathrm C_n^k\mathrm C_k^m=(-1)^m\delta_{mn}$，$m\le n$。這裡 $\delta_{mn}=1$（$m=n$），$\delta_{mn}=0$（$m\ne n$）。
-sol: $m=n$ 時和式只有一項 $(-1)^m\mathrm C_m^m\mathrm C_m^m=(-1)^m$，成立。設 $m<n$，用 (iv)：
+sol: $m=n$ 時和式只有一項 $(-1)^m\mathrm C_m^m\mathrm C_m^m=(-1)^m$，成立。設 $m\lt n$，用 (iv)：
 $$A_{mn}=\sum_{k=m}^n(-1)^k\mathrm C_n^m\mathrm C_{n-m}^{k-m}=\mathrm C_n^m\sum_{k=m}^n(-1)^k\mathrm C_{n-m}^{k-m}.$$
 令 $j=k-m$，$k$ 從 $m$ 到 $n$ 時 $j$ 從 $0$ 到 $n-m$：
 $$A_{mn}=(-1)^m\mathrm C_n^m\sum_{j=0}^{n-m}(-1)^j\mathrm C_{n-m}^j=0,$$
@@ -161,7 +161,7 @@ hint: 由基本恆等式 (iii) 與例 8 即得。
 sol: 由 (iii)，$\frac1{k+1}\mathrm C_n^k=\frac1{n+1}\mathrm C_{n+1}^{k+1}$。記 $G(m)=\sum_{k=m}^n(-1)^k\mathrm C_{n+1}^{k+1}\mathrm C_k^m$，要證 $G(m)=(-1)^m$。<br>
 用 (ii)：$\mathrm C_k^m=\mathrm C_{k+1}^{m+1}-\mathrm C_k^{m+1}$，於是
 $$G(m)=\sum_{k=m}^n(-1)^k\mathrm C_{n+1}^{k+1}\mathrm C_{k+1}^{m+1}-G(m+1).$$
-⟦第二部分為什麼是 G(m+1)｜$\sum_{k=m}^n(-1)^k\mathrm C_{n+1}^{k+1}\mathrm C_k^{m+1}$ 中，$k=m$ 那項的 $\mathrm C_m^{m+1}=0$，所以從 $k=m+1$ 起算，就是 $G(m+1)$。⟧第一個和令 $K=k+1$，是 $-\sum_{K=m+1}^{n+1}(-1)^K\mathrm C_{n+1}^K\mathrm C_K^{m+1}=-A_{m+1,\,n+1}$，由例 8，$m<n$ 時它是 0。所以 $m<n$ 時 $G(m)=-G(m+1)$。又 $G(n)=(-1)^n\mathrm C_{n+1}^{n+1}\mathrm C_n^n=(-1)^n$，所以
+⟦第二部分為什麼是 G(m+1)｜$\sum_{k=m}^n(-1)^k\mathrm C_{n+1}^{k+1}\mathrm C_k^{m+1}$ 中，$k=m$ 那項的 $\mathrm C_m^{m+1}=0$，所以從 $k=m+1$ 起算，就是 $G(m+1)$。⟧第一個和令 $K=k+1$，是 $-\sum_{K=m+1}^{n+1}(-1)^K\mathrm C_{n+1}^K\mathrm C_K^{m+1}=-A_{m+1,\,n+1}$，由例 8，$m\lt n$ 時它是 0。所以 $m\lt n$ 時 $G(m)=-G(m+1)$。又 $G(n)=(-1)^n\mathrm C_{n+1}^{n+1}\mathrm C_n^n=(-1)^n$，所以
 $$G(m)=(-1)^{n-m}G(n)=(-1)^m,$$
 原式 $=\dfrac{G(m)}{n+1}=\dfrac{(-1)^m}{n+1}$。
 

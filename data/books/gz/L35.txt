@@ -75,14 +75,14 @@ $$\sum_{k=0}^{m-1}\omega_k^s=\sum_{k=0}^{m-1}\omega^k=\frac{1-\omega^m}{1-\omega
 </svg><figcaption>$m=3$：三個單位根平均分布在圓上，向量和為 0</figcaption></figure>
 
 === 例 4 | 單位根濾波公式
-zh: 設 $\omega_k=e^{\frac{2k\pi}mi}$，$r,m$ 為非負整數，$0\le r<m$。證明
+zh: 設 $\omega_k=e^{\frac{2k\pi}mi}$，$r,m$ 為非負整數，$0\le r\lt m$。證明
 $$\sum_{k=0}^{\left[\frac{n-r}m\right]}\mathrm C_n^{r+km}x^{r+km}=\frac1m\sum_{k=0}^{m-1}\omega_k^{-r}\left(1+x\omega_k\right)^n.\tag{10}$$
 sol: 由二項式定理，$(1+x\omega_k)^n=\sum_{l=0}^n\mathrm C_n^lx^l\omega_k^l$，所以右邊為
 $$\frac1m\sum_{k=0}^{m-1}\omega_k^{-r}\sum_{l=0}^n\mathrm C_n^lx^l\omega_k^l=\frac1m\sum_{l=0}^n\mathrm C_n^lx^l\sum_{k=0}^{m-1}\omega_k^{l-r}.$$
-⟦交換求和次序｜兩個有限和可以先對 $k$ 加或先對 $l$ 加，結果一樣；$\omega_k^{-r}\omega_k^{l}=\omega_k^{l-r}$。⟧由 (9)，$l-r$ 是 $m$ 的倍數時內層和為 $m$，否則為 $0$。所以只有 $l=r+qm$ 的項留下。$0\le l\le n$ 且 $0\le r<m$，所以 $q$ 從 $0$ 變到 $\left[\frac{n-r}m\right]$，⟦q 為什麼不能是負的｜$q\le-1$ 時 $l=r+qm\le r-m<0$，不在 $0$ 到 $n$ 之間。這就是為什麼要 $r<m$。⟧於是右邊等於 $\sum_{q=0}^{[(n-r)/m]}\mathrm C_n^{r+qm}x^{r+qm}$，即 (10)。
+⟦交換求和次序｜兩個有限和可以先對 $k$ 加或先對 $l$ 加，結果一樣；$\omega_k^{-r}\omega_k^{l}=\omega_k^{l-r}$。⟧由 (9)，$l-r$ 是 $m$ 的倍數時內層和為 $m$，否則為 $0$。所以只有 $l=r+qm$ 的項留下。$0\le l\le n$ 且 $0\le r\lt m$，所以 $q$ 從 $0$ 變到 $\left[\frac{n-r}m\right]$，⟦q 為什麼不能是負的｜$q\le-1$ 時 $l=r+qm\le r-m\lt 0$，不在 $0$ 到 $n$ 之間。這就是為什麼要 $r\lt m$。⟧於是右邊等於 $\sum_{q=0}^{[(n-r)/m]}\mathrm C_n^{r+qm}x^{r+qm}$，即 (10)。
 
 === 例 5
-zh: 證明當 $0\le r<m$ 時，
+zh: 證明當 $0\le r\lt m$ 時，
 $$\sum_{k=0}^{\left[\frac{n-r}m\right]}\mathrm C_n^{r+km}=\frac1m\sum_{k=0}^{m-1}\left(2\cos\frac{k\pi}m\right)^n\cos\frac{(n-2r)k\pi}m.\tag{11}$$
 sol: 在 (10) 中取 $x=1$：
 $$\sum_{k=0}^{\left[\frac{n-r}m\right]}\mathrm C_n^{r+km}=\frac1m\sum_{k=0}^{m-1}\omega_k^{-r}\left(1+\omega_k\right)^n.\tag{12}$$

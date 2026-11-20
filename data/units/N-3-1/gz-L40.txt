@@ -11,7 +11,7 @@ order: 20
 <div class="card"><h4>② 輾轉相除找特解</h4><div class="rule">$8x+5y=1$ 倒推</div>
 <div class="eg">$1=2\times8-3\times5$<br>乘 37：$x_0=74,\ y_0=-111$</div></div>
 <div class="card"><h4>③ 通解與限制</h4><div class="rule">$x=74-5t,\ y=-111+8t$</div>
-<div class="eg">要正整數：$13.875<t<14.8$<br>$t=14$：$(x,y)=(4,1)$</div></div>
+<div class="eg">要正整數：$13.875\lt t\lt 14.8$<br>$t=14$：$(x,y)=(4,1)$</div></div>
 <div class="card"><h4>④ 最大湊不出的數</h4><div class="rule">$(a,b)=1$：$ab-a-b$ 湊不出，更大的都湊得出</div>
 <div class="eg">3 元、5 元郵票：$15-3-5=7$ 元湊不出<br>8、9、10、… 都可以</div></div>
 </div>
