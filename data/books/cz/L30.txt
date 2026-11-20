@@ -1,0 +1,161 @@
+=== meta
+title: 平移
+author: 余紅兵
+pages: 240-247
+units: G-5-1
+status: 完成
+
+=== text
+<p>平移是我們較熟悉的一種幾何變換：每個點都沿指定方向移動同樣的距離。由定義，平移保持角的大小、角兩邊的方向不變，也保持線段平行且相等。對於證明兩線段相等、平行、兩角相等的問題，適當地平移常能使圖中元素的聯繫變明顯。</p>
+
+=== 例 1
+zh: 在正方形 $ABCD$ 中，$E$、$F$、$G$、$H$ 分別是各邊上的點（$E$ 在 $AB$、$G$ 在 $CD$、$H$ 在 $AD$、$F$ 在 $BC$ 上），且 $EG\perp HF$。證明 $EG=HF$。
+sol: <figure class="bkfig"><svg viewBox="0 0 200 200" width="200" role="img" aria-label="正方形中兩條互相垂直的線段">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,22 22,178 178,178 178,22"/><line x1="22" y1="107.8" x2="178" y2="66"/><line x1="68.8" y1="22" x2="110.6" y2="178"/><line x1="68.8" y1="22" x2="68.8" y2="178" stroke-dasharray="5 4"/><line x1="22" y1="107.8" x2="178" y2="107.8" stroke-dasharray="5 4"/><polyline points="91.9,89.1 90.7,84.2 85.8,85.5" stroke-width="1"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="19.1" text-anchor="middle">A</text><text x="14.2" y="190.7" text-anchor="middle">B</text><text x="185.8" y="190.7" text-anchor="middle">C</text><text x="185.8" y="19.1" text-anchor="middle">D</text><text x="11" y="112.7" text-anchor="middle">E</text><text x="189" y="70.9" text-anchor="middle">G</text><text x="68.8" y="15.9" text-anchor="middle">H</text><text x="110.6" y="193.9" text-anchor="middle">F</text><text x="68.8" y="193.9" text-anchor="middle">N</text><text x="189" y="112.7" text-anchor="middle">M</text></g>
+</svg><figcaption>把 $AB$、$AD$ 分別平移到 $HN$、$EM$（虛線）</figcaption></figure>
+<p><b>證</b>　把 $AB$、$AD$ 分別平移到 $HN$、$EM$ 的位置。⟦顯然｜$HN$ 與 $AB$ 平行且相等，$EM$ 與 $AD$ 平行且相等，而正方形 $AB=AD$。⟧$EM=AD=AB=HN$，且 $\angle GEM=\angle FHN$（兩組邊分別垂直）、$\angle HNF=\angle EMG=90^\circ$，所以 $\triangle EMG\cong\triangle HNF$，$EG=HF$。</p>
+<p>論證的關鍵是借助平移造出兩個全等三角形，這是非常基本的技術。</p>
+=== 例 2
+zh: 在 $\triangle ABC$ 中，$\angle A=90^\circ$，$BD$ 平分 $\angle ABC$，$AE\perp BC$ 且 $AE$ 與 $BD$ 交於 $F$。過 $F$ 作 $FG\parallel BC$（$G$ 在 $AC$ 上）。證明：$AD=GC$。
+sol: <figure class="bkfig"><svg viewBox="0 0 280 155" width="280" role="img" aria-label="直角三角形中的角平分線與高">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="98.7,22 258,132.5 22,132.5"/><line x1="98.7" y1="22" x2="98.7" y2="132.5"/><line x1="258" y1="132.5" x2="64.1" y2="71.9"/><line x1="56.6" y1="82.7" x2="98.7" y2="82.7"/><line x1="98.7" y1="82.7" x2="64.1" y2="132.5" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="98.7" y="15.9" text-anchor="middle">A</text><text x="269" y="137.4" text-anchor="middle">B</text><text x="11" y="137.4" text-anchor="middle">C</text><text x="56.3" y="69" text-anchor="middle">D</text><text x="98.7" y="148.4" text-anchor="middle">E</text><text x="106.5" y="79.8" text-anchor="middle">F</text><text x="45.6" y="87.6" text-anchor="middle">G</text><text x="64.1" y="148.4" text-anchor="middle">C′</text></g>
+</svg><figcaption>$FG\parallel BC$；把 $GC$ 平移到 $FC'$（虛線）</figcaption></figure>
+<p><b>證</b>　$\angle ADF+\angle ABD=90^\circ=\angle EFB+\angle EBF$，而 $\angle ABD=\angle EBF$，所以 $\angle ADF=\angle EFB=\angle AFD$，$AD=AF$。下面證 $AF=GC$。</p>
+<p>把 $GC$ 平移到 $FC'$（$FG\parallel BC$，所以 $C'$ 在 $BC$ 上）。易知 $\angle FC'B=\angle ACB=\angle FAB$⟦為什麼｜$FC'\parallel GC$ 給第一個等號；第二個：$\angle ACB$ 與 $\angle BAE$ 都是 $\angle ABC$ 的餘角。⟧，又 $\angle ABF=\angle C'BF$，$BF=BF$，所以 $\triangle ABF\cong\triangle C'BF$（AAS），$AF=C'F=GC$。</p>
+=== 例 3
+zh: 在四邊形 $ABCD$ 中，$AD=BC$，$E$、$F$ 分別是 $DC$、$AB$ 的中點，$EF$ 的延長線與 $AD$、$BC$ 的延長線分別交於 $H$、$G$。證明：$\angle AHF=\angle BGF$。
+sol: <figure class="bkfig"><svg viewBox="0 0 165 260" width="165" role="img" aria-label="對邊相等的四邊形與中點連線">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,158.7 143.4,158.7 93.9,79.5 50.3,69.7"/><line x1="82.7" y1="158.7" x2="65.5" y2="22"/><line x1="50.3" y1="69.7" x2="65.5" y2="22"/><line x1="93.9" y1="79.5" x2="67.4" y2="37"/><line x1="22" y1="158.7" x2="71.5" y2="238" stroke-dasharray="5 4"/><line x1="143.4" y1="158.7" x2="71.5" y2="238" stroke-dasharray="5 4"/><line x1="93.9" y1="79.5" x2="71.5" y2="238" stroke-dasharray="5 4"/><line x1="50.3" y1="69.7" x2="71.5" y2="238" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="11" y="163.6" text-anchor="middle">A</text><text x="154.4" y="163.6" text-anchor="middle">B</text><text x="104.9" y="84.4" text-anchor="middle">C</text><text x="39.3" y="74.6" text-anchor="middle">D</text><text x="64.4" y="87.3" text-anchor="middle">E</text><text x="82.7" y="174.6" text-anchor="middle">F</text><text x="65.5" y="15.9" text-anchor="middle">H</text><text x="75.2" y="34.2" text-anchor="middle">G</text><text x="71.5" y="253.9" text-anchor="middle">P</text></g>
+</svg><figcaption>$AD=BC$；把 $BC$ 平移到 $PA$，$APBC$ 是平行四邊形（虛線）</figcaption></figure>
+<p><b>證</b>　把 $BC$ 平移到 $PA$ 的位置，$APBC$ 是平行四邊形。$F$ 是 $AB$ 中點，也是對角線 $PC$ 的中點，所以 $C,F,P$ 共線。$EF$ 是 $\triangle CDP$ 的中位線，$EF\parallel DP$，所以 $\angle AHF=\angle ADP$。又 $AP=BC=AD$，$\angle ADP=\angle APD$，所以 $\angle AHF=\angle APD$。另一方面 $BG\parallel AP$、$GF\parallel DP$，所以 $\angle BGF=\angle APD$。於是 $\angle AHF=\angle BGF$。</p>
+<p>本題也可以用不同的平移來證。連 $AC$，取中點 $I$（相當於沿 $BA$ 方向平移 $BC$，使 $B$ 到 $F$ 的位置），連 $IE$、$IF$。</p>
+<figure class="bkfig"><svg viewBox="0 0 200 220" width="200" role="img" aria-label="中位線">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,197.6 178,197.6 114.4,95.8 58.4,83.2"/><line x1="100" y1="197.6" x2="77.9" y2="22"/><line x1="58.4" y1="83.2" x2="77.9" y2="22"/><line x1="114.4" y1="95.8" x2="80.3" y2="41.3"/><line x1="22" y1="197.6" x2="114.4" y2="95.8" stroke-dasharray="5 4"/><line x1="68.2" y1="146.7" x2="86.4" y2="89.5" stroke-dasharray="5 4"/><line x1="68.2" y1="146.7" x2="100" y2="197.6" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="11" y="202.5" text-anchor="middle">A</text><text x="189" y="202.5" text-anchor="middle">B</text><text x="125.4" y="100.7" text-anchor="middle">C</text><text x="47.4" y="88.1" text-anchor="middle">D</text><text x="78.6" y="86.7" text-anchor="middle">E</text><text x="100" y="213.5" text-anchor="middle">F</text><text x="77.9" y="15.9" text-anchor="middle">H</text><text x="88.1" y="38.5" text-anchor="middle">G</text><text x="68.2" y="162.6" text-anchor="middle">I</text></g>
+</svg><figcaption>另解：取 $AC$ 中點 $I$，$IE$、$IF$ 是中位線（虛線）</figcaption></figure>
+<p>$IE$ 是 $\triangle ACD$ 的中位線，$IE\parallel AD$ 且 $IE=\frac12AD$；同樣 $IF\parallel BC$ 且 $IF=\frac12BC$。結合 $AD=BC$ 得 $IE=IF$，$\angle IEF=\angle IFE$。又 $IE\parallel AH$、$IF\parallel BC$，所以 $\angle IEF=\angle AHF$，$\angle IFE=\angle BGF$，於是 $\angle AHF=\angle BGF$。</p>
+<p>兩種解法都用到三角形中位線定理。涉及線段中點時，用平移造出中位線、產生彼此平行的線段，也是常用手法。</p>
+=== 例 4
+zh: 設 $P$ 是平行四邊形 $ABCD$ 內一點，$\angle PAB=\angle PCB$。證明：$\angle PBA=\angle PDA$。
+sol: <figure class="bkfig"><svg viewBox="0 0 260 155" width="260" role="img" aria-label="平行四邊形內一點">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="63.7,22 22,133.1 188.7,133.1 230.4,22"/><line x1="71.3" y1="59.8" x2="63.7" y2="22"/><line x1="71.3" y1="59.8" x2="22" y2="133.1"/><line x1="71.3" y1="59.8" x2="188.7" y2="133.1"/><line x1="71.3" y1="59.8" x2="230.4" y2="22"/><line x1="71.3" y1="59.8" x2="238" y2="59.8" stroke-dasharray="5 4"/><line x1="188.7" y1="133.1" x2="238" y2="59.8" stroke-dasharray="5 4"/><line x1="230.4" y1="22" x2="238" y2="59.8" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="55.9" y="19.1" text-anchor="middle">A</text><text x="14.2" y="145.8" text-anchor="middle">B</text><text x="188.7" y="149" text-anchor="middle">C</text><text x="238.1" y="19.1" text-anchor="middle">D</text><text x="71.3" y="53.7" text-anchor="middle">P</text><text x="252.5" y="64.7" text-anchor="middle">P′</text></g>
+</svg><figcaption>$\angle PAB=\angle PCB$；把 $PB$ 平移到 $P'C$（虛線）</figcaption></figure>
+<p><b>證</b>　把線段 $PB$ 平移到 $P'C$，連 $P'C$、$P'D$、$P'P$。則 $BCP'P$ 是平行四邊形，從而 $APP'D$ 也是平行四邊形⟦為什麼｜$PP'$ 與 $BC$ 平行且相等，$BC$ 又與 $AD$ 平行且相等。⟧。由 $AB\parallel DC$ 及 $AP\parallel DP'$，$\angle PAB=\angle P'DC$。另一方面 $\angle P'PC=\angle PCB=\angle PAB$（$PP'\parallel BC$ 的內錯角）。所以 $\angle P'DC=\angle P'PC$，$C,P',D,P$ 四點共圓，進而 $\angle DPP'=\angle DCP'$。而 $\angle DPP'=\angle PDA$（$PP'\parallel AD$），$\angle DCP'=\angle PBA$（$\triangle DCP'$ 是 $\triangle ABP$ 平移的像），所以 $\angle PDA=\angle PBA$。</p>
+=== 例 5
+zh: 由平行四邊形 $ABCD$ 的頂點 $B$ 作邊 $AD$ 和 $CD$ 的垂線 $BK$、$BH$。已知 $KH=a$，$BD=b$，求 $B$ 到 $\triangle BKH$ 的垂心的距離。
+sol: <figure class="bkfig"><svg viewBox="0 0 260 172" width="260" role="img" aria-label="平行四邊形與兩條高">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,150.4 51.2,22 238,22 208.8,150.4"/><line x1="51.2" y1="22" x2="51.2" y2="150.4"/><line x1="51.2" y1="22" x2="228.8" y2="62.4"/><line x1="51.2" y1="150.4" x2="228.8" y2="62.4"/><line x1="51.2" y1="22" x2="208.8" y2="150.4"/><line x1="208.8" y1="22" x2="208.8" y2="150.4" stroke-dasharray="5 4"/><line x1="208.8" y1="22" x2="51.2" y2="150.4" stroke-dasharray="5 4"/><line x1="208.8" y1="22" x2="228.8" y2="62.4" stroke-dasharray="5 4"/><line x1="51.2" y1="22" x2="71.2" y2="62.4" stroke-dasharray="5 4"/><line x1="51.2" y1="150.4" x2="71.2" y2="62.4" stroke-dasharray="5 4"/><line x1="228.8" y1="62.4" x2="71.2" y2="62.4" stroke-dasharray="5 4"/><polyline points="51.2,145.4 56.2,145.4 56.2,150.4" stroke-width="1"/><polyline points="223.9,61.3 222.8,66.1 227.7,67.2" stroke-width="1"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="163.1" text-anchor="middle">A</text><text x="43.4" y="19.1" text-anchor="middle">B</text><text x="245.8" y="19.1" text-anchor="middle">C</text><text x="216.6" y="163.1" text-anchor="middle">D</text><text x="51.2" y="166.3" text-anchor="middle">K</text><text x="239.8" y="67.3" text-anchor="middle">H</text><text x="208.8" y="15.9" text-anchor="middle">B′</text><text x="56.7" y="67.3" text-anchor="middle">H<tspan font-size="10">1</tspan></text></g>
+</svg><figcaption>$BK\perp AD$、$BH\perp CD$；$H_1$ 是 $\triangle BKH$ 的垂心；把 $BK$ 平移到 $B'D$（虛線）</figcaption></figure>
+<p><b>解</b>　設 $\triangle BKH$ 的垂心為 $H_1$。把線段 $BK$ 沿 $AD$ 方向平移到 $B'D$。$BB'DK$ 是矩形，$B'K=BD=b$。又 $\angle HBC+\angle C=\angle B'DC+\angle C=90^\circ$⟦為什麼｜$BH\perp CD$，直角 $\triangle BHC$ 中 $\angle HBC=90^\circ-\angle C$；$B'D\perp AD\parallel BC$，所以 $\angle B'DC$ 與 $\angle C$ 互餘。⟧，所以 $\angle HBB'=\angle B'DH$，$B,D,H,B'$ 四點共圓。⟦為什麼 B′H⊥KH｜$K$ 也在這個圓上：$\angle BKD=\angle BB'D=\angle BHD=90^\circ$，所以 $B,K,D,H,B'$ 都在以 $BD$ 為直徑的圓上；矩形的另一條對角線 $B'K$ 也是直徑，所以 $\angle B'HK=90^\circ$。⟧因此 $B'H\perp KH$。結合 $BH_1\perp KH$ 得 $BH_1\parallel B'H$；又 $HH_1\perp BK$、$BB'\perp BK$，$BB'\parallel HH_1$，所以 $BB'HH_1$ 是平行四邊形，$BH_1=B'H$。在直角 $\triangle B'KH$ 中，$B'K=b$、$KH=a$，所以</p>
+$$BH_1=B'H=\sqrt{b^2-a^2}.$$
+<p>本題體現平移的另一種功效：讓條件集中。下面的例 6 也是如此。</p>
+ans: $\sqrt{b^2-a^2}$
+
+=== 例 6
+zh: 六邊形 $ABCDEF$ 中，$AB\parallel DE$，$BC\parallel EF$，$CD\parallel AF$，且各組對邊之差相等：$BC-EF=ED-AB=AF-CD>0$。證明：這個六邊形的各角都相等。
+sol: <figure class="bkfig"><svg viewBox="0 0 250 206" width="250" role="img" aria-label="對邊平行、差相等的六邊形">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="81.9,184.2 171.8,184.2 228,86.9 190.5,22 55.7,22 22,80.4"/><line x1="55.7" y1="22" x2="115.6" y2="125.8" stroke-dasharray="5 4"/><line x1="81.9" y1="184.2" x2="138.1" y2="86.9" stroke-dasharray="5 4"/><line x1="228" y1="86.9" x2="93.2" y2="86.9" stroke-dasharray="5 4"/><polygon points="115.6,125.8 138.1,86.9 93.2,86.9" stroke="#c2562b" stroke-width="2"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="74.1" y="196.9" text-anchor="middle">A</text><text x="179.6" y="196.9" text-anchor="middle">B</text><text x="239" y="91.8" text-anchor="middle">C</text><text x="198.3" y="19.1" text-anchor="middle">D</text><text x="47.9" y="19.1" text-anchor="middle">E</text><text x="11" y="85.3" text-anchor="middle">F</text><text x="107.9" y="138.5" text-anchor="middle">P</text><text x="145.9" y="84" text-anchor="middle">Q</text><text x="82.2" y="91.8" text-anchor="middle">R</text></g>
+</svg><figcaption>把 $AF$、$BC$、$DE$ 分別平移到 $PE$、$AQ$、$CR$（虛線）；紅色 $\triangle PQR$ 是正三角形</figcaption></figure>
+<p><b>證</b>　把 $AF$、$BC$、$DE$ 分別平移到 $PE$、$AQ$、$CR$，得到 $\triangle PQR$。設 $BC-EF=ED-AB=AF-CD=a>0$。在平行四邊形 $APEF$ 中 $AP=EF$，在平行四邊形 $ABCQ$ 中 $AQ=BC$，所以 $PQ=AQ-AP=BC-EF=a$。同理 $QR=a$，$RP=a$。平移把相等的線段差集中成正三角形 $PQR$。</p>
+<p>於是 $\angle ERQ=\angle AQC=120^\circ$⟦為什麼｜它們都是正三角形 $PQR$ 的外角。⟧，因平移不改變角的大小，$\angle FAB=\angle ERQ=120^\circ$⟦對應｜$RE\parallel CD\parallel AF$，$RQ\parallel DE\parallel AB$，兩個角的兩邊分別平行而且方向相同。⟧，$\angle B=\angle AQC=120^\circ$。同理 $\angle BCD=\angle D=120^\circ$，$\angle DEF=\angle F=120^\circ$，各內角都相等。</p>
+=== 例 7
+zh: 設凸六邊形 $ABCDEF$ 的三組對邊 $AB$ 與 $DE$、$BC$ 與 $EF$、$CD$ 與 $FA$ 分別平行。證明：$\triangle ACE$ 與 $\triangle BDF$ 的面積相等。
+sol: <p><b>證</b>　畫兩個全等的六邊形。第一個中，過 $A$、$C$、$E$ 分別作 $BC$、$DE$、$FA$ 的平行線，構成 $\triangle PQR$；第二個中，過 $B$、$D$、$F$ 分別作 $CD$、$EF$、$AB$ 的平行線，構成 $\triangle UST$（$P,Q,R$ 或 $U,S,T$ 可能重合於一點）。</p>
+<figure class="bkfig"><svg viewBox="0 0 217 200" width="217" role="img" aria-label="對邊平行的六邊形（一）">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="51.6,178 165.5,178 194.7,97.8 141.6,22 63.4,22 22,135.7"/><polygon points="51.6,178 194.7,97.8 63.4,22" stroke-dasharray="5 4"/><polyline points="51.6,178 80.8,97.8 194.7,97.8"/><polyline points="194.7,97.8 116.4,97.8 63.4,22"/><polyline points="63.4,22 93,64.3 51.6,178"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="43.9" y="190.7" text-anchor="middle">A</text><text x="173.3" y="190.7" text-anchor="middle">B</text><text x="205.7" y="102.7" text-anchor="middle">C</text><text x="149.4" y="19.1" text-anchor="middle">D</text><text x="55.6" y="19.1" text-anchor="middle">E</text><text x="11" y="140.6" text-anchor="middle">F</text><text x="116.4" y="91.7" text-anchor="middle">P</text><text x="82" y="69.2" text-anchor="middle">Q</text><text x="80.8" y="113.7" text-anchor="middle">R</text></g>
+</svg><figcaption>過 $A,C,E$ 作 $BC,DE,FA$ 的平行線，圍出 $\triangle PQR$；虛線是 $\triangle ACE$</figcaption></figure>
+<figure class="bkfig"><svg viewBox="0 0 217 200" width="217" role="img" aria-label="對邊平行的六邊形（二）">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="51.6,178 165.5,178 194.7,97.8 141.6,22 63.4,22 22,135.7"/><polygon points="165.5,178 141.6,22 22,135.7" stroke-dasharray="5 4"/><polyline points="165.5,178 112.4,102.2 141.6,22"/><polyline points="141.6,22 100.3,135.7 22,135.7"/><polyline points="22,135.7 135.8,135.7 165.5,178"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="43.9" y="190.7" text-anchor="middle">A</text><text x="173.3" y="190.7" text-anchor="middle">B</text><text x="205.7" y="102.7" text-anchor="middle">C</text><text x="149.4" y="19.1" text-anchor="middle">D</text><text x="55.6" y="19.1" text-anchor="middle">E</text><text x="11" y="140.6" text-anchor="middle">F</text><text x="112.4" y="96.1" text-anchor="middle">U</text><text x="89.3" y="140.6" text-anchor="middle">S</text><text x="135.8" y="151.6" text-anchor="middle">T</text></g>
+</svg><figcaption>過 $B,D,F$ 作 $CD,EF,AB$ 的平行線，圍出 $\triangle UST$；虛線是 $\triangle BDF$</figcaption></figure>
+<p>三組對邊兩兩平行，所以 $\triangle PQR\sim\triangle TUS$，而且這兩個三角形的邊長都等於六邊形兩平行對邊長度之差（參考例 6），所以 $\triangle PQR$ 與 $\triangle TUS$ 面積相等。⟦面積怎麼比｜六邊形恰好被三個平行四邊形 $ABCR,CDEP,EFAQ$ 和 $\triangle PQR$ 拼滿（$P,Q,R$ 重合時三角形退化），所以 $S_{\text{六}}=\Sigma+S_{\triangle PQR}$；同理 $S_{\text{六}}=\Sigma'+S_{\triangle UST}$。又 $\triangle ABC$ 是平行四邊形 $ABCR$ 的一半，所以 $S_{\triangle ACE}=S_{\text{六}}-\frac12\Sigma$，$S_{\triangle BDF}=S_{\text{六}}-\frac12\Sigma'$。⟧因此平行四邊形 $ABCR$、$CDEP$、$EFAQ$ 的面積和等於平行四邊形 $FABT$、$BCDU$、$DEFS$ 的面積和，從而推出 $\triangle ACE$ 與 $\triangle BDF$ 的面積相等。</p>
+<p>這個論證很有意思：比較兩種平移的結果得出結論，平移起了「橋樑」作用。</p>
+=== text
+<p>下面的例 8 中，平移起另一種「橋樑」作用：從特殊情形過渡到一般情形。</p>
+
+=== 例 8
+zh: 梯形 $ABCD$ 的邊 $BC\parallel AD$，$M$ 是 $\angle A$ 與 $\angle B$ 平分線的交點，$N$ 是 $\angle C$ 與 $\angle D$ 平分線的交點。證明：$2MN=|AB+CD-BC-AD|$。
+sol: <figure class="bkfig"><svg viewBox="0 0 280 145" width="280" role="img" aria-label="梯形中兩對角平分線的交點">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,123.1 55.7,22 224.3,22 258,123.1"/><circle cx="92.2" cy="72.6" r="50.6"/><line x1="22" y1="123.1" x2="92.2" y2="72.6"/><line x1="55.7" y1="22" x2="92.2" y2="72.6"/><line x1="224.3" y1="22" x2="187.8" y2="72.6"/><line x1="258" y1="123.1" x2="187.8" y2="72.6"/><line x1="128.6" y1="22" x2="162.3" y2="123.1" stroke-dasharray="5 4"/><line x1="92.2" y1="72.6" x2="128.6" y2="22" stroke-dasharray="5 4"/><line x1="92.2" y1="72.6" x2="162.3" y2="123.1" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="135.8" text-anchor="middle">A</text><text x="47.9" y="19.1" text-anchor="middle">B</text><text x="232.1" y="19.1" text-anchor="middle">C</text><text x="265.8" y="135.8" text-anchor="middle">D</text><text x="103.2" y="77.5" text-anchor="middle">M</text><text x="198.8" y="77.5" text-anchor="middle">N</text><text x="128.6" y="15.9" text-anchor="middle">C′</text><text x="162.3" y="139" text-anchor="middle">D′</text></g>
+</svg><figcaption>把 $\triangle CDN$ 沿底邊方向平移成 $\triangle C'D'N'$，使 $N'$ 與 $M$ 重合（虛線）</figcaption></figure>
+<p><b>證</b>　以 $M$ 為圓心、$M$ 到 $AB$ 的距離為半徑作圓，此圓與 $AB$、$BC$、$AD$ 都相切⟦為什麼｜$M$ 在 $\angle A$ 的平分線上，到 $AB$、$AD$ 等距；在 $\angle B$ 的平分線上，到 $AB$、$BC$ 等距。⟧。把 $\triangle CDN$ 沿底邊方向平移到 $\triangle C'D'N'$，使 $N'$ 與 $M$ 重合，則 $C'D'$ 也與這個圓相切。對梯形 $ABC'D'$，</p>
+$$2MN'=|AB+C'D'-BC'-AD'|\quad\text{①}$$
+<p>顯然成立：$M=N'$ 使左邊為 $0$，梯形外切於圓使右邊也為 $0$。從「特殊」的梯形 $ABC'D'$ 過渡到梯形 $ABCD$，① 的左邊增加 $2N'N$，右邊則增加 $CC'+DD'=2NN'$（$C'D'=CD$ 不變，$BC$ 與 $AD$ 各變化 $NN'$），所以等式仍然成立。</p>
+=== text
+<p>最後看兩個用平移處理幾何極值的例子。</p>
+
+=== 例 9
+zh: 射線 $AC$、$BD$ 相交於 $O$，在 $AC$ 和 $BD$ 上分別取點 $M$ 和 $N$，使 $AM=BN$。求使線段 $MN$ 最短的點 $M$、$N$ 的位置。
+sol: <figure class="bkfig"><svg viewBox="0 0 260 192" width="260" role="img" aria-label="兩射線上等距的點">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><line x1="26.3" y1="92.8" x2="163.7" y2="104.9"/><line x1="111.4" y1="136" x2="238" y2="22"/><line x1="111.2" y1="100.3" x2="174.7" y2="79" stroke="#c2562b" stroke-width="2"/><line x1="111.4" y1="136" x2="47.9" y2="157.3" stroke-dasharray="5 4"/><line x1="111.2" y1="100.3" x2="47.9" y2="157.3" stroke-dasharray="5 4"/><line x1="22" y1="79.9" x2="52.2" y2="170.1"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="15.3" y="97.7" text-anchor="middle">A</text><text x="100.4" y="140.9" text-anchor="middle">B</text><text x="174.7" y="109.8" text-anchor="middle">C</text><text x="245.8" y="19.1" text-anchor="middle">D</text><text x="147.6" y="97.3" text-anchor="middle">O</text><text x="111.2" y="94.2" text-anchor="middle">M</text><text x="166.9" y="76.1" text-anchor="middle">N</text><text x="47.9" y="173.2" text-anchor="middle">M′</text></g>
+</svg><figcaption>$AM=BN$；把 $NM$ 平移到 $BM'$（虛線），$M'$ 總在過 $A$ 的定直線 $l$ 上；圖中是 $MN$ 最短（$BM'\perp l$）的位置</figcaption></figure>
+<p><b>解</b>　把 $NM$ 平移到 $BM'$，連 $AM'$、$MM'$。$BNMM'$ 是平行四邊形，所以 $MM'=BN=AM$，$\triangle MAM'$ 是等腰三角形。記 $AC$ 與 $BD$ 的夾角為 $\alpha$，則 $\angle MAM'=90^\circ-\frac\alpha2$⟦為什麼｜$MM'\parallel NB$，所以 $\angle AMM'$ 等於直線 $AC$ 與 $BD$ 的夾角 $\alpha$（或其補角）；等腰三角形的底角 $=\frac12(180^\circ-\alpha)$。⟧。所以無論 $M$、$N$ 在哪裡，$M'$ 總在一條定直線 $l$ 上（過定點 $A$、與 $AC$ 夾角 $90^\circ-\frac\alpha2$）。</p>
+<p>當 $BM'\perp l$ 時 $BM'$ 最短，也就是 $MN$ 最短。所以先確定直線 $l$，在 $l$ 上取 $M'$ 使 $BM'\perp l$，再過 $M'$ 作 $BD$ 的平行線交 $AC$ 於 $M$，在 $BD$ 上取 $BN=AM$，這樣的 $M$、$N$ 使 $MN$ 最短。</p>
+=== 例 10
+zh: 在兩條對角線的長度及其夾角都給定的所有四邊形中，求周長最小的四邊形。
+sol: <figure class="bkfig"><svg viewBox="0 0 270 159" width="270" role="img" aria-label="對角線長與夾角固定的四邊形">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="112.4,124.7 248,137.1 227.5,91.9 157.6,67.2" stroke-width="2"/><line x1="112.4" y1="124.7" x2="227.5" y2="91.9"/><line x1="248" y1="137.1" x2="157.6" y2="67.2"/><polygon points="22,54.9 157.6,67.2 137.1,22" stroke-dasharray="5 4"/><polygon points="112.4,124.7 227.5,91.9 137.1,22 22,54.9" stroke-dasharray="5 4"/><line x1="112.4" y1="124.7" x2="137.1" y2="22" stroke-dasharray="5 4"/><line x1="22" y1="54.9" x2="227.5" y2="91.9" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="112.4" y="140.6" text-anchor="middle">A</text><text x="255.8" y="149.7" text-anchor="middle">B</text><text x="238.5" y="96.8" text-anchor="middle">C</text><text x="157.6" y="61.1" text-anchor="middle">D</text><text x="7.5" y="59.8" text-anchor="middle">A′</text><text x="137.1" y="15.9" text-anchor="middle">C′</text><text x="116.9" y="70.5" text-anchor="middle">E</text></g>
+</svg><figcaption>把 $\triangle ABC$ 沿 $BD$ 方向平移成 $\triangle A'B'C'$，$B'$ 與 $D$ 重合；$ACC'A'$ 是固定的平行四邊形（虛線）</figcaption></figure>
+<p><b>解</b>　設四邊形 $ABCD$ 中 $AC=d_1$，$BD=d_2$，$AC$ 與 $BD$ 的夾角為 $\alpha$。把 $\triangle ABC$ 沿 $BD$ 方向平移成 $\triangle A'B'C'$，使 $B'$ 與 $D$ 重合。則 $ABDA'$、$BCC'D$、$ACC'A'$ 都是平行四邊形，所以 $A'D=AB$，$C'D=BC$，$AA'=BD=d_2$，$A'C'=AC=d_1$，$\angle AA'C'=\alpha$（或其補角）。平行四邊形 $ACC'A'$ 完全確定，它的對角線 $AC'$、$A'C$ 也是定值。而周長</p>
+$$AB+BC+CD+DA=(A'D+DC)+(DA+DC')\ge A'C+AC',$$
+<p>等號在 $A',D,C$ 共線且 $A,D,C'$ 共線時成立。</p>
+<p>設 $AC'$ 與 $A'C$ 的交點為 $E$，過 $A$、$C$ 分別作 $A'E$、$C'E$ 的平行線，交於 $E'$（$E'$ 必在 $BD$ 上），則四邊形 $AE'CE$ 就是周長最小的四邊形。⟦這是什麼形狀｜$AE'CE$ 的兩組對邊分別平行，是平行四邊形：周長最小的就是對角線長與夾角都給定的平行四邊形。⟧</p>
+ans: 對角線長與夾角都相同的平行四邊形
+
+=== 習題 1
+zh: 從等腰 $\triangle ABC$ 的底邊 $BC$ 上任一點 $P$ 作兩腰的垂線 $PM$、$PN$（$M$、$N$ 為垂足）。證明：$PM+PN$ 為定長。
+sol: <figure class="bkfig"><svg viewBox="0 0 172 230" width="172" role="img" aria-label="等腰三角形底邊上一點到兩腰的距離">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="86.1,22 22,158.7 150.2,158.7"/><line x1="111.7" y1="158.7" x2="38.2" y2="124.3"/><line x1="111.7" y1="158.7" x2="143.3" y2="144"/><line x1="111.7" y1="158.7" x2="143.3" y2="173.5" stroke-dasharray="5 4"/><line x1="38.2" y1="124.3" x2="143.3" y2="173.5" stroke-dasharray="5 4"/><line x1="22" y1="158.7" x2="127.1" y2="208" stroke-dasharray="5 4"/><line x1="143.3" y1="173.5" x2="127.1" y2="208" stroke-dasharray="5 4"/><line x1="150.2" y1="158.7" x2="127.1" y2="208" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="86.1" y="15.9" text-anchor="middle">A</text><text x="11" y="163.6" text-anchor="middle">B</text><text x="161.2" y="163.6" text-anchor="middle">C</text><text x="111.7" y="174.6" text-anchor="middle">P</text><text x="27.2" y="129.2" text-anchor="middle">M</text><text x="154.3" y="148.9" text-anchor="middle">N</text><text x="157.8" y="178.4" text-anchor="middle">N′</text><text x="127.1" y="223.9" text-anchor="middle">N″</text></g>
+</svg><figcaption>$N'$ 是 $N$ 關於 $BC$ 的對稱點；把 $MN'$ 平移到 $BN''$（虛線）</figcaption></figure>
+<p>設 $N'$ 是 $N$ 關於 $BC$ 的對稱點，易知 $M,P,N'$ 共線且 $MN'=PM+PN$（反射把折線化為直線段）。再把 $MN'$ 平移到 $BN''$。由於 $\angle BN''C=90^\circ$、$\angle BCN''=\angle ACB$ 是定角，$BN''$ 是定長（它就是 $B$ 到 $AC$ 的距離）。</p>
+=== 習題 2
+zh: 在梯形 $ABCD$ 中，$AB\parallel CD$，$AC\perp BD$。證明：$AC^2+BD^2=(AB+CD)^2$。
+sol: <figure class="bkfig"><svg viewBox="0 0 184 150" width="184" role="img" aria-label="對角線垂直的梯形">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="66.7,80.5 156,128 162.1,45.8 117.4,22"/><line x1="66.7" y1="80.5" x2="162.1" y2="45.8"/><line x1="156" y1="128" x2="117.4" y2="22"/><line x1="22" y1="56.7" x2="117.4" y2="22" stroke-dasharray="5 4"/><line x1="22" y1="56.7" x2="66.7" y2="80.5" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="66.7" y="96.4" text-anchor="middle">A</text><text x="163.8" y="140.7" text-anchor="middle">B</text><text x="169.8" y="42.9" text-anchor="middle">C</text><text x="109.6" y="19.1" text-anchor="middle">D</text><text x="11.7" y="69.4" text-anchor="middle">A′</text></g>
+</svg><figcaption>把 $AC$ 平移到 $A'D$（虛線）</figcaption></figure>
+<p>把 $AC$ 平移到 $A'D$，則 $A'D\perp BD$，$A'$ 在直線 $AB$ 上且 $A'A=DC$。於是 $A'D^2+BD^2=A'B^2$，即 $AC^2+BD^2=(AB+DC)^2$。</p>
+=== 習題 3
+zh: 證明：如果凸四邊形一組對邊中點的連線長等於另兩邊和的一半，那麼這個四邊形是梯形或平行四邊形。
+sol: <figure class="bkfig"><svg viewBox="0 0 230 158" width="230" role="img" aria-label="對邊中點連線">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,135.7 68.5,22 135.7,22 140.8,120.2"/><line x1="45.2" y1="78.8" x2="138.2" y2="71.1"/><line x1="68.5" y1="22" x2="208" y2="120.2" stroke-dasharray="5 4"/><line x1="140.8" y1="120.2" x2="208" y2="120.2" stroke-dasharray="5 4"/><line x1="22" y1="135.7" x2="208" y2="120.2" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="148.3" text-anchor="middle">A</text><text x="68.5" y="15.9" text-anchor="middle">B</text><text x="143.4" y="19.1" text-anchor="middle">C</text><text x="140.8" y="136.1" text-anchor="middle">D</text><text x="34.2" y="83.7" text-anchor="middle">E</text><text x="138.2" y="65" text-anchor="middle">F</text><text x="222.5" y="125.1" text-anchor="middle">C′</text></g>
+</svg><figcaption>把 $BC$ 平移到 $DC'$；$EF$ 是 $\triangle ABC'$ 的中位線（虛線）</figcaption></figure>
+<p>設 $E$、$F$ 是 $AB$、$CD$ 的中點，且 $EF=\frac12(AD+BC)$。把 $BC$ 平移到 $DC'$，則 $F$ 也是 $BC'$ 的中點，$B,F,C'$ 共線，$EF$ 是 $\triangle ABC'$ 的中位線，$AC'=2EF=AD+BC$。若 $D$ 不在 $AC'$ 上（即 $AD$ 與 $BC$ 不平行），則 $AC'<AD+DC'=AD+BC$，矛盾。所以 $AD\parallel BC$。</p>
+=== 習題 4
+zh: 平面上任意給定 7 條直線，它們互不平行。證明：這 7 條直線中總可以找到兩條，它們之間的夾角小於 $26^\circ$。
+sol: <p>把 7 條直線平移，使它們都經過一個固定點 $O$，它們把以 $O$ 為中心的周角分成 14 個彼此相鄰的角 $\alpha_1,\dots,\alpha_{14}$，每一個都等於平移前某兩條直線的一個交角。因為 $\alpha_1+\cdots+\alpha_{14}=360^\circ$，其中必有一個 $\le\frac{360^\circ}{14}<26^\circ$。</p>
+=== 習題 5
+zh: 在矩形 $ABCD$ 內取一點 $M$。證明：存在一個對角線互相垂直、長度分別等於 $AB$ 和 $BC$ 的凸四邊形，它的邊分別等於 $AM$、$BM$、$CM$、$DM$。
+sol: <figure class="bkfig"><svg viewBox="0 0 211 200" width="211" role="img" aria-label="矩形內一點造四邊形">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,22 22,133.4 189.1,133.4 189.1,22"/><line x1="116.7" y1="66.6" x2="22" y2="22"/><line x1="116.7" y1="66.6" x2="22" y2="133.4"/><line x1="116.7" y1="66.6" x2="189.1" y2="133.4"/><line x1="116.7" y1="66.6" x2="189.1" y2="22"/><polygon points="22,133.4 116.7,66.6 189.1,133.4 116.7,178" stroke-dasharray="5 4"/><line x1="116.7" y1="66.6" x2="116.7" y2="178" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="19.1" text-anchor="middle">A</text><text x="11" y="138.3" text-anchor="middle">B</text><text x="200.1" y="138.3" text-anchor="middle">C</text><text x="196.9" y="19.1" text-anchor="middle">D</text><text x="116.7" y="60.5" text-anchor="middle">M</text><text x="116.7" y="193.9" text-anchor="middle">M′</text></g>
+</svg><figcaption>把 $AM$ 平移到 $BM'$；四邊形 $BMCM'$（虛線）就是所求</figcaption></figure>
+<p>構造：把 $AM$ 平移到 $BM'$，則 $BM'=AM$，$CM'=DM$，$MM'=AB$ 且 $MM'\perp BC$。四邊形 $BMCM'$ 就滿足要求（參考例 10 的解法）。</p>
