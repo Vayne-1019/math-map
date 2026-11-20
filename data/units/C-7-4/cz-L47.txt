@@ -1,0 +1,20 @@
+=== meta
+title: 離散最值 = 估界 + 構造
+from: cz-L47
+order: 20
+
+=== body
+<div class="hero">求「最多／最少」要做<b>兩件事</b>：<br>① <b>估界</b>：證明不能超過（低於）某數　② <b>構造</b>：舉例說明真的取得到</div>
+<div class="cards">
+<div class="card"><h4>① 下界 + 例子</h4><div class="rule">放不下 L 形 ⟹ 每個 2×2 至少蓋 2 格</div>
+<div class="eg">16 個 2×2 ⟹ 蓋 ≥ 32 格 ⟹ $n\ge11$<br>再畫出 11 個的放法 ⟹ 最小值 11</div></div>
+<div class="card"><h4>② 上界 + 反例</h4><div class="rule">抽屜原則推上界</div>
+<div class="eg">$1\sim98$ 任取 50 個必有差 7<br>$n=99$：取 $1\sim7,15\sim21,\dots,85\sim91,99$ 沒有差 7 ⟹ 最大值 98</div></div>
+<div class="card"><h4>③ 像費氏數列的極端例子</h4><div class="rule">不能成三角形 ⟹ $a_{i+2}\ge a_{i+1}+a_i$</div>
+<div class="eg">奇數 $1\sim47$：$1,3,5,9,15,25,41$ 七個都不成三角形<br>第 8 個要 $\ge67$ ⟹ 最小 $k=8$</div></div>
+</div>
+<p>存在性也一樣靠構造：⟦一個漂亮的例子｜要 $a+b$ 有理、$a^2+b^2,a^3+b^3,a^4+b^4$ 都無理：$a,b$ 不能有理，也不能一有理一無理，所以試兩個無理數，例如 $2+\sqrt2$ 和 $-\sqrt2$。⟧ 先排除不可能的類型，再在剩下的範圍裡找例子。</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>只給例子、沒證明界：例子只說明「做得到」，不說明「不能更好」</li>
+<li>只證了界、沒給例子：界可能取不到，答案就錯了</li></ul></div>
+<div class="bottomline">最值題的答案 = 一個不等式的證明 + 一個等號成立的例子。</div>
