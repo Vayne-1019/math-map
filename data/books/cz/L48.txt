@@ -45,7 +45,7 @@ sol: <figure class="bkfig"><svg viewBox="0 0 200 200" width="180" role="img" ari
   <g fill="currentColor" font-size="14" font-style="italic"><text x="38" y="44">A</text><text x="88" y="24">C</text><text x="144" y="38">B</text><text x="104" y="124">O</text></g>
 </svg><figcaption>紅色虛線：以 AB 為直徑的圓，也蓋住 △ABC，卻比外接圓小得多</figcaption></figure>
 這個命題對直角三角形和銳角三角形成立（證明從略），但對鈍角三角形不成立。用逆向思維構造反例：先作一個圓 $O$，在圓上取很接近的三點 $A,C,B$。圓 $O$ 就是 $\triangle ABC$ 的外接圓，但覆蓋 $\triangle ABC$ 的圓（例如以線段 $AB$ 為直徑的圓）可以比外接圓小得多。
-<br><b>註</b>：一般可以證明，覆蓋鈍角 $\triangle ABC$ 的最小圓是以最大邊 $AB$ 為直徑的圓，它比 $\triangle ABC$ 的外接圓小；當 $\triangle ABC$ 是直角或銳角三角形時，命題是真的。⟦為什麼以 AB 為直徑的圓蓋得住｜$\angle ACB$ 是鈍角，$C$ 看 $AB$ 的角大於 $90^\circ$，所以 $C$ 在以 $AB$ 為直徑的圓內。⟧
+<br><b>註</b>：一般可以證明，覆蓋鈍角 $\triangle ABC$ 的最小圓是以最大邊 $AB$ 為直徑的圓，它比 $\triangle ABC$ 的外接圓小；當 $\triangle ABC$ 是直角或銳角三角形時，命題是真的。⟦為什麼蓋得住｜$\angle ACB$ 是鈍角，$C$ 看 $AB$ 的角大於 $90^\circ$，所以 $C$ 在以 $AB$ 為直徑的圓內。⟧
 
 === 例 5
 zh: 命題「對任何自然數 $n$，$n^2+n+17$ 都是質數」是否正確？

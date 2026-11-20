@@ -1,0 +1,20 @@
+=== meta
+title: n! 裡有幾個質因數 p
+from: cz-L49
+order: 20
+
+=== body
+<div class="hero">$n!$ 中質數 $p$ 的個數 $=\left[\frac np\right]+\left[\frac n{p^2}\right]+\left[\frac n{p^3}\right]+\cdots$<br>先每個 $p$ 的倍數拿一個，再每個 $p^2$ 的倍數<b>再拿一個</b>……</div>
+<div class="cards">
+<div class="card"><h4>① 數 2</h4><div class="rule">$100!$</div>
+<div class="eg">$50+25+12+6+3+1=97$</div></div>
+<div class="card"><h4>② 數 3</h4><div class="rule">$100!$</div>
+<div class="eg">$33+11+3+1=48$<br>⟹ $100!=12^{48}\cdot M$，$M$ 偶數、不被 3 整除</div></div>
+<div class="card"><h4>③ 末尾零</h4><div class="rule">數 5（2 一定比 5 多）</div>
+<div class="eg">$100!$：$20+4=24$ 個零</div></div>
+</div>
+<p>⟦為什麼 p 要是質數｜$p=4$ 時公式給 $10!$ 只有 $\left[\frac{10}4\right]=2$ 個 $4$，但 $10!$ 含 $2^8$，可以分出 $4$ 個 $4$：合數的因數可以由不同的數拼出來（$2\times6$ 就含一個 $4$）。合數要先分解成質因數，各自數，再取最小的比例。⟧ 合數不能直接套，要先拆成質因數。</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>只算 $\left[\frac np\right]$，漏了 $p^2,p^3$ 的倍數多貢獻的部分</li>
+<li>求 $12^n$ 的次數時只看 $3$ 或只看 $2^2$：兩者取較小的</li></ul></div>
+<div class="bottomline">一層一層數：$p$ 的倍數、$p^2$ 的倍數、$p^3$ 的倍數……</div>
