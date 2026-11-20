@@ -116,8 +116,8 @@ $$\angle OAG=\angle OAE=\angle ODH=\angle OBF=45^\circ,$$
 zh: $AB$ 是圓的直徑，延長兩弦 $AC$、$AD$，與過 $B$ 的切線交於 $E$、$F$。證明 $C$、$D$、$F$、$E$ 四點共圓。
 sol: <figure class="bkfig"><pre class="geo">A = (22, 161.6)
 B = (114.9, 161.6)
-O = mid(A, B)
-k = circle(O, A)
+o = mid(A, B)
+k = circle(o, A)
 u = rotate(A, B, 90)
 t = line(B, u)
 E = on(t, 114.9, 29)
@@ -127,7 +127,7 @@ D = second(k, A, F)
 draw seg A B
 draw seg A C E
 draw seg A D F
-draw line B u
+draw seg E F B
 draw circle k
 draw seg B C dash
 draw seg C D dash
@@ -224,9 +224,9 @@ C = second(k, D, P)
 G = inter(A, C, P, F)
 H = inter(A, D, P, F)
 mC = mid(C, F)
-Y = reflectp(P, mC)
-L = inter(C, Y, A, B)
-K = inter(C, Y, A, D)
+y = reflectp(P, mC)
+L = inter(C, y, A, B)
+K = inter(C, y, A, D)
 M = mid(C, D)
 draw seg A B
 draw seg B P
