@@ -1,0 +1,20 @@
+=== meta
+title: 平方數的餘數表
+from: cz-L12
+order: 20
+
+=== body
+<div class="hero">平方數被小數字除，餘數<b>只有少數幾種</b><br>證明「不是平方數」「不能寫成平方和」→ 先查餘數表</div>
+<div class="cards">
+<div class="card"><h4>① 模 4</h4><div class="rule">$n^2\equiv0$ 或 $1$</div>
+<div class="eg">$10\cdots03\equiv3\pmod4$<br>⇒ 不是兩個平方數之和</div></div>
+<div class="card"><h4>② 模 8</h4><div class="rule">奇數平方 $\equiv1$</div>
+<div class="eg">五個奇數平方和 $\equiv5$<br>奇數平方 $\equiv1$ ⇒ 不相等</div></div>
+<div class="card"><h4>③ 模 9</h4><div class="rule">$n^2\equiv0,1,4,7$</div>
+<div class="eg">數碼和反覆加到一位數是 $2,3,5,6,8$<br>⇒ 不是平方數</div></div>
+</div>
+<p>為什麼模 8 只剩 1？⟦證明｜$(2k+1)^2=4k(k+1)+1$，$k(k+1)$ 一奇一偶必為偶數，所以 $4k(k+1)$ 是 $8$ 的倍數。⟧ 模數選太小會失效：例如五個奇數平方和，模 2、模 4 都看不出矛盾。</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>模數選錯就放棄：模 4 不行換模 8、模 9、模 3 再試</li>
+<li>按餘數分類時漏掉一類（例如 $5k+3$）</li></ul></div>
+<div class="bottomline">平方數的餘數很挑：模 4 只有 0、1，模 8 的奇平方只有 1。</div>

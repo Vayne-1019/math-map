@@ -1,0 +1,22 @@
+=== meta
+title: 奇偶性：最簡單的不變量
+from: cz-L11
+order: 10
+
+=== body
+<div class="hero">問「能不能變成…」？找一個<b>每次操作都不改變奇偶</b>的量<br>開始是偶、目標是奇 ⇒ <b>永遠到不了</b></div>
+<div class="cards">
+<div class="card"><h4>① 數個數</h4><div class="rule">每次改變偶數個 → 個數奇偶不變</div>
+<div class="eg">8×8 方格翻一整行：黑格數變 $8-2k$<br>32 個黑格永遠到不了 1 個</div></div>
+<div class="card"><h4>② 算乘積</h4><div class="rule">狀態記 ±1，看乘積</div>
+<div class="eg">7 杯每次翻 4 杯：乘積乘 $(-1)^4=1$<br>永遠是 $+1$，全朝下要 $-1$</div></div>
+<div class="card"><h4>③ 兩種算法</h4><div class="rule">同一個總數算兩次</div>
+<div class="eg">翻動總次數 $=4k$（偶）<br>$=$ 七個奇數之和（奇） <span class="pill">矛盾</span></div></div>
+<div class="card"><h4>④ 只看一部分</h4><div class="rule">挑每條操作線都碰偶數次的格子</div>
+<div class="eg">4×4 表格只看 8 個邊格<br>每條線碰 0 或 2 格</div></div>
+</div>
+<p>和不變也常用：⟦例子｜九個數重排後 $\sum(a_i-b_i)=0$ 是偶數；若每個 $a_i-b_i$ 都是奇數，九個奇數之和是奇數，矛盾。所以乘積 $\prod(a_i-b_i)$ 必為偶數。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>只舉幾次操作說「試不出來」：要證明「不可能」必須找到不變量</li>
+<li>選錯的量：要檢查<b>每一種</b>操作都保持它</li></ul></div>
+<div class="bottomline">找一個操作改變不了的奇偶性，起點和終點不同就證完了。</div>

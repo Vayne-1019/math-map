@@ -1,0 +1,22 @@
+=== meta
+title: 不定方程兩招：分解、估計
+from: cz-L14
+order: 20
+
+=== body
+<div class="hero">整數解問題：<b>分解</b>成「乘積 = 常數」，或用不等式<b>夾</b>出有限範圍<br>範圍有限之後，逐一檢驗</div>
+<div class="cards">
+<div class="card"><h4>① 分解成乘積</h4><div class="rule">左邊乘積、右邊質因數分解</div>
+<div class="eg">$x^2-y^2=35$<br>$(x-y)(x+y)=1\times35=5\times7$<br>⇒ $(18,17),(6,1)$</div></div>
+<div class="card"><h4>② 一次的未知數先解出</h4><div class="rule">分式化成「整數 + 真分式」</div>
+<div class="eg">$x=2+\frac4{y-2}$<br>⇒ $(y-2)\mid4$</div></div>
+<div class="card"><h4>③ 排序再估計</h4><div class="rule">設 $x\ge y$，把小的夾住</div>
+<div class="eg">$\frac1x+\frac1y=\frac12\le\frac2y$<br>⇒ $y\le4$</div></div>
+<div class="card"><h4>④ 判別式估計</h4><div class="rule">當成 $x$ 的二次方程，要 $\Delta\ge0$</div>
+<div class="eg">$x+y=x^2-xy+y^2$<br>$\Delta\ge0$ ⇒ $y\in\{0,1,2\}$</div></div>
+</div>
+<p>兩個常用的小估計：⟦夾在相鄰平方之間｜$x^2\lt x(x+1)\lt(x+1)^2$，所以 $x(x+1)$ 不是平方數。⟧ 與 ⟦整數至少差 1｜$u^2=x^2+y>x^2$ 推出 $u\ge x+1$，所以 $y\ge2x+1$。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>分解時漏掉負因數，或沒先用奇偶性刪去不可能的情形</li>
+<li>題目問「整數解」卻只寫正的（例如漏掉 $x=-2$）</li></ul></div>
+<div class="bottomline">先把方程變成「乘積 = 常數」或「被夾在小範圍」，剩下就是逐一驗算。</div>
