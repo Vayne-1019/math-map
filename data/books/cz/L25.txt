@@ -1,0 +1,168 @@
+=== meta
+title: 圓冪定理
+author: 余紅兵
+pages: 194-202
+units: G-4-3
+status: 完成
+
+=== text
+<p>下面兩個定理是大家熟悉的結果。</p>
+
+=== 定理 1 | 相交弦定理與割線定理
+zh: <p>過點 $P$ 作兩條直線分別交一圓於 $A$、$B$ 及 $A'$、$B'$，則 $PA\cdot PB=PA'\cdot PB'$（$P$ 可以在圓內，也可以在圓外）。</p>
+<figure class="bkfig"><svg viewBox="0 0 180 180" width="180" role="img" aria-label="圓內一點的兩條弦">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="90" cy="90" r="68"/><line x1="24.2" y1="107.3" x2="145.5" y2="50.7"/><line x1="117" y1="152.4" x2="59.6" y2="29.2"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="94.2" y="84.7" text-anchor="middle">P</text><text x="16.5" y="120" text-anchor="middle">A</text><text x="153.3" y="47.9" text-anchor="middle">B</text><text x="127.3" y="165.1" text-anchor="middle">A′</text><text x="59.6" y="23.1" text-anchor="middle">B′</text></g>
+</svg><figcaption>相交弦：$PA\cdot PB=PA'\cdot PB'$</figcaption></figure>
+sol: <p>連 $AA'$、$BB'$。$\angle PAA'=\angle PB'B$（同對弧 $A'B$；$P$ 在圓外時改用圓內接四邊形的外角等於內對角），又 $\angle APA'=\angle B'PB$，所以 $\triangle PAA'\sim\triangle PB'B$，$\frac{PA}{PB'}=\frac{PA'}{PB}$。</p>
+=== 定理 2 | 切割線定理
+zh: <p>過圓外一點 $P$ 作圓的切線 $PT$（$T$ 為切點）及一割線交圓於 $A$、$B$，則 $PT^2=PA\cdot PB$。</p>
+<figure class="bkfig"><svg viewBox="0 0 250 169" width="250" role="img" aria-label="圓外一點的切線與割線">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="84.4" cy="84.4" r="62.4"/><line x1="228" y1="62.6" x2="143.8" y2="65.1"/><line x1="228" y1="62.6" x2="119.4" y2="136.1"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="239" y="67.5" text-anchor="middle">P</text><text x="31.8" y="65.9" text-anchor="middle">A</text><text x="132.8" y="70" text-anchor="middle">B</text><text x="119.4" y="152" text-anchor="middle">T</text></g>
+</svg><figcaption>切割線：$PT^2=PA\cdot PB$</figcaption></figure>
+sol: <p>由弦切角 $\angle PTA=\angle PBT$，加上公共角 $\angle P$，$\triangle PTA\sim\triangle PBT$，$\frac{PT}{PB}=\frac{PA}{PT}$。</p>
+=== 定理 | 圓冪定理
+zh: 過 $P$ 作直線 $l$ 交 $\odot O$ 於 $A$、$B$（$A$、$B$ 可能重合，即 $l$ 是切線），則 $PA\cdot PB$ 是一個定值，與 $l$ 的位置無關，稱為 $P$ 對 $\odot O$ 的<b>冪</b>。
+sol: <p>這就是把定理 1、2 合在一起說。⟦冪等於多少｜取 $l$ 過圓心：$P$ 在圓外時 $PA\cdot PB=(d-r)(d+r)=d^2-r^2$，$P$ 在圓內時 $=(r-d)(r+d)=r^2-d^2$，其中 $d=OP$。所以冪的大小是 $|d^2-r^2|$。⟧圓冪定理給出與圓有關的線段比例關係，應用很廣。</p>
+=== 定理 1′ | 定理 1 的逆定理
+zh: 在過點 $P$ 的兩條直線 $APB$ 及 $A'PB'$ 上取 $A$、$B$、$A'$、$B'$ 四點，使 $PA\cdot PB=PA'\cdot PB'$（並且 $P$ 同在兩線段 $AB$、$A'B'$ 之內，或同在兩線段的延長線上），則這四點共圓。
+sol: <p>不共線的三點 $A$、$B$、$A'$ 決定一個圓，設它與直線 $A'PB'$ 再交於 $B_1'$，則 $PA\cdot PB=PA'\cdot PB_1'$。與已知 $PA\cdot PB=PA'\cdot PB'$ 比較，$PB'=PB_1'$，而且 $B'$、$B_1'$ 在 $P$ 的同一側，所以 $B_1'$ 就是 $B'$。</p>
+<p>這給出證明四點共圓的另一種方法。</p>
+=== 定理 2′ | 定理 2 的逆定理
+zh: 在直線 $PAB$ 上從 $P$ 起截取兩條同向線段 $PA$、$PB$，並在從 $P$ 引出的另一直線上取線段 $PT$，使 $PT^2=PA\cdot PB$，則過 $A$、$B$、$T$ 的圓與直線 $PT$ 相切於 $T$。
+sol: <p>圓 $ABT$ 與直線 $PT$ 有公共點 $T$。若還有另一個公共點 $T'$，則 $PA\cdot PB=PT\cdot PT'$；與 $PT^2=PA\cdot PB$ 比較得 $PT'=PT$，所以 $T'$ 就是 $T$，直線只碰到圓一次，是切線。</p>
+<p>這給出證明直線是圓的切線的一種方法。</p>
+=== 例 1
+zh: $\odot O_1$ 與 $\odot O_2$ 相交於 $A$、$B$，$P$ 是線段 $AB$ 上任一點，過 $P$ 引 $\odot O_1$ 的弦 $CD$ 及 $\odot O_2$ 的弦 $EF$。證明 $C$、$E$、$D$、$F$ 四點共圓。
+sol: <figure class="bkfig"><svg viewBox="0 0 280 193" width="280" role="img" aria-label="兩圓相交與過公共弦上一點的弦">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="96.5" cy="96.5" r="74.5"/><circle cx="199" cy="96.5" r="59"/><line x1="157.9" y1="54.2" x2="157.9" y2="138.8"/><line x1="45.9" y1="151.2" x2="165.2" y2="67.7"/><line x1="149.1" y1="65" x2="235.6" y2="142.8"/></g>
+<g fill="currentColor"><circle cx="96.5" cy="96.5" r="2.4"/><circle cx="199" cy="96.5" r="2.4"/></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="157.9" y="48.1" text-anchor="middle">A</text><text x="157.9" y="154.7" text-anchor="middle">B</text><text x="168.9" y="77.7" text-anchor="middle">P</text><text x="38.1" y="163.9" text-anchor="middle">C</text><text x="173" y="64.8" text-anchor="middle">D</text><text x="141.4" y="62.1" text-anchor="middle">E</text><text x="243.4" y="155.5" text-anchor="middle">F</text><text x="82" y="101.4" text-anchor="middle">O<tspan font-size="10">1</tspan></text><text x="213.5" y="101.4" text-anchor="middle">O<tspan font-size="10">2</tspan></text></g>
+</svg><figcaption>$P$ 在公共弦 $AB$ 上</figcaption></figure>
+<p><b>證</b>　先由定理 1 導出線段關係。$CD$ 與 $AB$ 是 $\odot O_1$ 中交於 $P$ 的兩條弦，所以 $PA\cdot PB=PC\cdot PD$。① 同理在 $\odot O_2$ 中 $PA\cdot PB=PE\cdot PF$。② 所以 $PC\cdot PD=PE\cdot PF$，由定理 1′ 知 $C$、$E$、$D$、$F$ 四點共圓。</p>
+<p>先由圓冪定理推出線段的比例關係，再用它的逆定理（1′、2′）得出結論，是常用的手法，本講許多例子都是這樣做的。</p>
+=== 例 2
+zh: 平行四邊形 $ABCD$ 中，對角線 $AC>BD$，$M$ 是 $AC$ 上一點，且四邊形 $BCDM$ 內接於圓。證明：直線 $BD$ 是 $\triangle ABM$ 及 $\triangle ADM$ 的外接圓的公切線。
+sol: <figure class="bkfig"><svg viewBox="0 0 159 180" width="159" role="img" aria-label="平行四邊形與圓">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="28.2,95.8 97.1,95.8 134.8,45.6 65.8,45.6"/><line x1="28.2" y1="95.8" x2="134.8" y2="45.6"/><line x1="97.1" y1="95.8" x2="65.8" y2="45.6"/><circle cx="100.3" cy="59" r="37"/><line x1="68" y1="77" x2="97.1" y2="95.8"/><line x1="68" y1="77" x2="65.8" y2="45.6"/><circle cx="62.7" cy="117.3" r="40.7" stroke-dasharray="5 4" stroke-width="1"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="20.4" y="108.5" text-anchor="middle">A</text><text x="97.1" y="111.7" text-anchor="middle">B</text><text x="142.5" y="42.8" text-anchor="middle">C</text><text x="58" y="42.8" text-anchor="middle">D</text><text x="68" y="70.9" text-anchor="middle">M</text><text x="89.2" y="83.4" text-anchor="middle">O</text></g>
+</svg><figcaption>$BCDM$ 內接於圓；細虛線是 $\triangle ABM$ 的外接圓，它在 $B$ 與 $BD$ 相切</figcaption></figure>
+<p><b>證</b>　記 $O$ 為對角線的交點。$BCDM$ 內接於圓，弦 $BD$、$CM$ 交於 $O$，所以 $OB\cdot OD=OC\cdot OM$。① 平行四邊形中 $OB=OD$、$OA=OC$，由 ① 得</p>
+$$OB^2=OM\cdot OA,\qquad OD^2=OM\cdot OA.$$
+<p>由定理 2′，$OB$ 是圓 $ABM$ 的切線，$OD$ 是圓 $ADM$ 的切線，所以 $BD$ 是這兩個圓的公切線。</p>
+=== 例 3
+zh: 過 $\odot O$ 外一點 $A$ 作圓的兩條切線 $AB$、$AC$，切點為 $B$、$C$。再過 $A$ 作一割線交圓於 $D$、$E$。連 $D$ 與 $BC$ 的中點 $F$，延長交圓於 $G$。證明：$\angle OAE=\angle OAG$。
+sol: <figure class="bkfig"><svg viewBox="0 0 187 280" width="187" role="img" aria-label="切線、割線與弦的中點">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="93.5" cy="93.5" r="71.5"/><line x1="93.5" y1="258" x2="157.9" y2="124.6"/><line x1="93.5" y1="258" x2="29.1" y2="124.6"/><line x1="157.9" y1="124.6" x2="29.1" y2="124.6"/><line x1="93.5" y1="258" x2="133" y2="33.9"/><line x1="110.3" y1="163" x2="54" y2="33.9"/><line x1="93.5" y1="258" x2="54" y2="33.9"/><line x1="93.5" y1="93.5" x2="93.5" y2="258" stroke-dasharray="5 4"/><line x1="93.5" y1="93.5" x2="157.9" y2="124.6" stroke-dasharray="5 4"/><line x1="93.5" y1="93.5" x2="110.3" y2="163" stroke-dasharray="5 4"/><line x1="93.5" y1="93.5" x2="54" y2="33.9" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"><circle cx="93.5" cy="93.5" r="2.4"/></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="93.5" y="273.9" text-anchor="middle">A</text><text x="168.9" y="129.5" text-anchor="middle">B</text><text x="18.1" y="129.5" text-anchor="middle">C</text><text x="118" y="175.7" text-anchor="middle">D</text><text x="140.8" y="31" text-anchor="middle">E</text><text x="85.7" y="137.3" text-anchor="middle">F</text><text x="46.2" y="31" text-anchor="middle">G</text><text x="93.5" y="87.4" text-anchor="middle">O</text></g>
+</svg><figcaption>$F$ 是 $BC$ 中點；連 $OA$、$OB$、$OD$、$OG$（虛線）</figcaption></figure>
+<p><b>證</b>　由圓冪定理（相交弦）$BF\cdot FC=DF\cdot FG$。① 另一方面，連 $OB$，$F$ 在 $OA$ 上且 $BF\perp OA$，在直角 $\triangle ABO$ 中由射影定理 $BF^2=AF\cdot FO$。② 因為 $BF=FC$，② 就是 $BF\cdot FC=AF\cdot FO$。③ 由 ①③，$AF\cdot FO=DF\cdot FG$，由定理 1′ 知 $A$、$D$、$O$、$G$ 四點共圓。$OD$、$OG$ 是 $\odot O$ 的半徑，在圓 $ADOG$ 中是相等的弦，所對的圓周角相等：$\angle OAD=\angle OAG$，即 $\angle OAE=\angle OAG$。</p>
+<p>上面由射影定理得到的 ② 也很重要。用圓冪定理解題，要旨是透過線段比例推出結論，所以常要搭配射影定理、平行線截比例線段等其他比例結果。</p>
+=== 例 4
+zh: 給定銳角 $\triangle ABC$，以 $AB$ 為直徑的圓交高 $CC'$ 及其延長線於 $M$、$N$；以 $AC$ 為直徑的圓交高 $BB'$ 及其延長線於 $P$、$Q$。證明 $M$、$P$、$N$、$Q$ 四點共圓。
+sol: <figure class="bkfig"><svg viewBox="0 0 270 197" width="270" role="img" aria-label="兩個直徑圓與高">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="130.9,33.6 60.6,163.4 212,163.4" stroke-width="2"/><circle cx="95.8" cy="98.5" r="73.8"/><circle cx="171.5" cy="98.5" r="76.5"/><line x1="212" y1="163.4" x2="30.1" y2="64.9"/><line x1="60.6" y1="163.4" x2="234.3" y2="54.9"/><line x1="130.9" y1="33.6" x2="159.9" y2="135.1" stroke-dasharray="5 4"/><line x1="130.9" y1="33.6" x2="104.7" y2="135.9" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="130.9" y="27.5" text-anchor="middle">A</text><text x="52.9" y="176.1" text-anchor="middle">B</text><text x="219.8" y="176.1" text-anchor="middle">C</text><text x="84.7" y="97.1" text-anchor="middle">C′</text><text x="179.8" y="92.5" text-anchor="middle">B′</text><text x="159.9" y="151" text-anchor="middle">M</text><text x="22.3" y="62" text-anchor="middle">N</text><text x="96.9" y="133" text-anchor="middle">P</text><text x="242.1" y="52" text-anchor="middle">Q</text></g>
+</svg><figcaption>以 $AB$、$AC$ 為直徑的兩個圓與兩條高；要證 $AM=AP$（虛線）</figcaption></figure>
+<p><b>證</b>　$M$、$N$ 關於直徑 $AB$ 對稱，所以 $AM=AN$；同理 $AP=AQ$。如果能證 $AM=AP$，四點就在以 $A$ 為圓心、$AM$ 為半徑的圓上。</p>
+<p>在直角 $\triangle AMB$ 中（$\angle AMB=90^\circ$，$MC'\perp AB$），由射影定理 $AM^2=AC'\cdot AB$。① 同理 $AP^2=AB'\cdot AC$。② 又 $\angle BC'C=\angle BB'C=90^\circ$，$B$、$C'$、$B'$、$C$ 四點共圓，由割線定理 $AC'\cdot AB=AB'\cdot AC$。③ 由 ①②③，$AM^2=AP^2$，$AM=AP$。</p>
+<p>這裡圓冪定理用在關鍵處，但方法和例 1 很不同：我們用的是共圓的定義，不但證了共圓，還找出了圓心 $A$。這體現一個常見現象：<b>較強的命題可能更容易證明</b>。命題者常故意隱去結論的一部分，看出（猜出）被隱藏的結論是解題關鍵。</p>
+=== 例 5
+zh: $\odot O_1$ 與 $\odot O_2$ 外切，一條外公切線切 $\odot O_1$ 於 $A$，$AB$ 是 $\odot O_1$ 的直徑。證明：自 $B$ 到 $\odot O_2$ 的切線長等於 $AB$。
+sol: <figure class="bkfig"><svg viewBox="0 0 300 209" width="300" role="img" aria-label="兩圓外切與公切線">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="101.6" cy="107.4" r="79.6"/><circle cx="228.2" cy="134.4" r="49.8"/><line x1="107.3" y1="22" x2="278" y2="102.8"/><line x1="135.7" y1="35.5" x2="67.6" y2="179.4"/><line x1="67.6" y1="179.4" x2="226.8" y2="184.1"/><line x1="179.5" y1="124" x2="192.6" y2="62.4" stroke-dasharray="5 4"/><line x1="135.7" y1="35.5" x2="179.5" y2="124" stroke-dasharray="5 4"/><line x1="67.6" y1="179.4" x2="249.5" y2="89.4" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"><circle cx="101.6" cy="107.4" r="2.4"/><circle cx="228.2" cy="134.4" r="2.4"/></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="135.7" y="29.4" text-anchor="middle">A</text><text x="59.8" y="192.1" text-anchor="middle">B</text><text x="249.5" y="83.3" text-anchor="middle">C</text><text x="192.6" y="56.3" text-anchor="middle">D</text><text x="187.3" y="136.7" text-anchor="middle">P</text><text x="226.8" y="200" text-anchor="middle">Q</text><text x="87.1" y="112.3" text-anchor="middle">O<tspan font-size="10">1</tspan></text><text x="242.7" y="139.3" text-anchor="middle">O<tspan font-size="10">2</tspan></text></g>
+</svg><figcaption>$AC$ 是外公切線，$AB$ 是直徑；內公切線交 $AC$ 於 $D$，連 $AP$、$BPC$（虛線）</figcaption></figure>
+<p><b>證</b>　設外公切線切 $\odot O_2$ 於 $C$，兩圓切於 $P$，$BQ$ 切 $\odot O_2$ 於 $Q$。連 $AP$、$BP$、$CP$。先證 $B$、$P$、$C$ 三點共線。過 $P$ 作兩圓的內公切線交 $AC$ 於 $D$，則 $DA=DP=DC$（切線長相等），所以 $\angle APC=90^\circ$⟦為什麼｜$D$ 到 $A$、$P$、$C$ 等距，$P$ 在以 $AC$ 為直徑的圓上。⟧。又 $AB$ 是直徑，$\angle APB=90^\circ$，所以 $\angle APC+\angle APB=180^\circ$，$B$、$P$、$C$ 共線，$BPC$ 是 $\odot O_2$ 的割線。</p>
+<p>現在由切割線定理 $BQ^2=BP\cdot BC$。① 而在直角 $\triangle ABC$ 中（$AB\perp AC$），$AP$ 是斜邊上的高，由射影定理 $AB^2=BP\cdot BC$。② 所以 $BQ=AB$。（一開始先證 $B$、$P$、$C$ 共線的用意，到這一步就清楚了。）</p>
+=== 例 6
+zh: $\odot O_1$ 與 $\odot O_2$ 相交於 $A$、$B$，且 $O_2$ 在 $\odot O_1$ 上。自 $\odot O_1$ 上一點 $P$ 引 $\odot O_2$ 的切線，切點為 $C$、$D$。證明 $AB$ 平分 $CD$。
+sol: <figure class="bkfig"><svg viewBox="0 0 270 220" width="270" role="img" aria-label="圓心在另一圓上的兩圓">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="110" cy="110" r="88"/><circle cx="195" cy="87.2" r="52.8"/><line x1="30.2" y1="147.2" x2="162.8" y2="45.3"/><line x1="30.2" y1="147.2" x2="197.3" y2="140"/><line x1="162.8" y1="45.3" x2="197.3" y2="140"/><line x1="166.7" y1="42.7" x2="192.7" y2="140"/><line x1="30.2" y1="147.2" x2="195" y2="87.2" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"><circle cx="110" cy="110" r="2.4"/><circle cx="195" cy="87.2" r="2.4"/></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="177.7" y="47.6" text-anchor="middle">A</text><text x="192.7" y="155.9" text-anchor="middle">B</text><text x="155.1" y="42.5" text-anchor="middle">C</text><text x="197.3" y="155.9" text-anchor="middle">D</text><text x="172.3" y="105.3" text-anchor="middle">E</text><text x="19.2" y="152.1" text-anchor="middle">P</text><text x="99.7" y="107.1" text-anchor="middle">O<tspan font-size="10">1</tspan></text><text x="209.5" y="92.1" text-anchor="middle">O<tspan font-size="10">2</tspan></text></g>
+</svg><figcaption>$O_2$ 在 $\odot O_1$ 上；$PC$、$PD$ 切 $\odot O_2$；$PO_2$ 交 $CD$ 於 $E$（虛線）</figcaption></figure>
+<p><b>證</b>　設 $PO_2$ 交 $CD$ 於 $E$，⟦顯然｜$PC=PD$、$O_2C=O_2D$，所以 $PO_2$ 是 $CD$ 的中垂線。⟧$CE=ED$。下面證 $A$、$E$、$B$ 共線（同一法）。連 $AE$ 並延長交 $\odot O_1$ 於 $B'$。一方面，$AB'$ 與 $PO_2$ 是 $\odot O_1$ 中交於 $E$ 的兩條弦，$AE\cdot EB'=PE\cdot EO_2$。① 另一方面，直角 $\triangle PCO_2$ 中由射影定理 $CE^2=PE\cdot EO_2$，而 $CE=ED$，所以 $CE\cdot ED=PE\cdot EO_2$。② 由 ①② 得 $AE\cdot EB'=CE\cdot ED$，由定理 1′，$A$、$C$、$B'$、$D$ 四點共圓，即 $B'$ 在 $\odot O_2$ 上。所以 $B'$ 是兩圓除 $A$ 外的交點，$B'$ 就是 $B$，$AB$ 過 $CD$ 的中點 $E$。</p>
+=== text
+<p>下面的例 7 用到了三角形角平分線的性質。</p>
+
+=== 例 7
+zh: $\triangle ABC$ 中，$M$ 是 $BC$ 的中點，$\angle A$ 的平分線交 $BC$ 於 $D$，過 $A$、$D$、$M$ 三點的圓交直線 $AB$、$AC$ 於 $E$、$F$。證明 $BE=CF$。
+sol: <figure class="bkfig"><svg viewBox="0 0 260 200" width="260" role="img" aria-label="過中點與角平分線足的圓">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="182.8,35.2 22,177.5 238.5,177.5"/><line x1="182.8" y1="35.2" x2="148.5" y2="177.5"/><circle cx="139.4" cy="100" r="78"/></g>
+<g fill="currentColor"><circle cx="130.2" cy="177.5" r="2.4"/></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="182.8" y="29.1" text-anchor="middle">A</text><text x="11" y="182.4" text-anchor="middle">B</text><text x="249.5" y="182.4" text-anchor="middle">C</text><text x="148.5" y="193.4" text-anchor="middle">D</text><text x="130.2" y="193.4" text-anchor="middle">M</text><text x="62" y="132.3" text-anchor="middle">E</text><text x="226.2" y="123" text-anchor="middle">F</text></g>
+</svg><figcaption>$M$ 是 $BC$ 中點，$AD$ 平分 $\angle A$；圓過 $A$、$D$、$M$</figcaption></figure>
+<p><b>證</b>　由割線定理 $BA\cdot BE=BD\cdot BM$①，$CF\cdot CA=CM\cdot CD$②。兩式相除，注意 $BM=CM$：</p>
+$$\frac{BE}{CF}=\frac{BD\cdot CA}{CD\cdot BA}.\quad\text{③}$$
+<p>又 $AD$ 平分 $\angle A$，$\frac{BA}{CA}=\frac{BD}{CD}$，即 $BD\cdot CA=CD\cdot BA$，代入 ③ 得 $BE=CF$。</p>
+=== text
+<p>下面幾個例子本身並不涉及圓，但都可以用圓的知識解答。這種用「<b>輔助圓</b>」的方法特別值得玩味。</p>
+
+=== 例 8
+zh: $\triangle ABC$ 中，$E$ 在 $CA$ 的延長線上、$F$ 在 $BA$ 的延長線上（都在 $A$ 外側），且 $\angle CBE=\angle BCF=\frac12\angle BAC$。證明 $CE=BF$。
+sol: <figure class="bkfig"><svg viewBox="0 0 290 165" width="290" role="img" aria-label="兩條等角的線">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="163.4,69.6 22,143.4 268,143.4" stroke-width="2"/><line x1="163.4" y1="69.6" x2="96" y2="22"/><line x1="163.4" y1="69.6" x2="208.6" y2="46"/><line x1="22" y1="143.4" x2="96" y2="22"/><line x1="268" y1="143.4" x2="208.6" y2="46"/><line x1="163.4" y1="69.6" x2="158.5" y2="143.4" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="163.4" y="85.5" text-anchor="middle">A</text><text x="11" y="148.3" text-anchor="middle">B</text><text x="279" y="148.3" text-anchor="middle">C</text><text x="158.5" y="159.3" text-anchor="middle">D</text><text x="96" y="15.9" text-anchor="middle">E</text><text x="208.6" y="39.9" text-anchor="middle">F</text></g>
+</svg><figcaption>$E$ 在 $CA$ 的延長線上、$F$ 在 $BA$ 的延長線上；作角平分線 $AD$（虛線）</figcaption></figure>
+<p><b>證</b>　作 $\angle BAC$ 的平分線交 $BC$ 於 $D$，則 $\frac{AC}{AB}=\frac{DC}{DB}$。① 另一方面 $\angle CAD=\frac12\angle BAC=\angle CBE$，即四邊形 $ADBE$ 在 $A$ 的外角等於內對角 $\angle DBE$，所以 $A$、$D$、$B$、$E$ 四點共圓，由割線定理 $CA\cdot CE=CD\cdot CB$。② 同理 $A$、$D$、$C$、$F$ 四點共圓，$BA\cdot BF=BD\cdot BC$。③ ②③ 相除得 $\dfrac{CA\cdot CE}{BA\cdot BF}=\dfrac{CD}{BD}$，再由 ① 即得 $CE=BF$。</p>
+<p><b>注</b>　原書文字寫「$E$、$F$ 各是 $BA$ 及 $CA$ 延長線上的點」，但附圖與證明用的是 $E$ 在 $CA$ 上、$F$ 在 $BA$ 上，這裡依證明改寫。</p>
+=== 例 9
+zh: 設 $AC$ 是平行四邊形 $ABCD$ 較長的對角線，自 $C$ 分別作 $AB$ 和 $AD$ 的延長線的垂線 $CE$、$CF$。證明：$AB\cdot AE+AD\cdot AF=AC^2$。
+sol: <figure class="bkfig"><svg viewBox="0 0 230 202" width="230" role="img" aria-label="平行四邊形的長對角線">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,180.5 164.2,180.5 208,71 65.8,71"/><line x1="22" y1="180.5" x2="208" y2="71"/><line x1="164.2" y1="180.5" x2="208" y2="180.5"/><line x1="208" y1="71" x2="208" y2="180.5"/><line x1="65.8" y1="71" x2="85.4" y2="22"/><line x1="208" y1="71" x2="85.4" y2="22"/><polyline points="208,175.5 203,175.5 203,180.5" stroke-width="1"/><polyline points="90,23.9 88.2,28.5 83.5,26.6" stroke-width="1"/><line x1="164.2" y1="180.5" x2="127.7" y2="118.3" stroke-dasharray="5 4"/><line x1="65.8" y1="71" x2="102.3" y2="133.2" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="193.1" text-anchor="middle">A</text><text x="164.2" y="196.4" text-anchor="middle">B</text><text x="219" y="75.9" text-anchor="middle">C</text><text x="54.8" y="75.9" text-anchor="middle">D</text><text x="215.8" y="193.1" text-anchor="middle">E</text><text x="85.4" y="15.9" text-anchor="middle">F</text><text x="135.4" y="131" text-anchor="middle">G</text><text x="94.6" y="130.3" text-anchor="middle">H</text></g>
+</svg><figcaption>$CE\perp AB$、$CF\perp AD$；作 $BG\perp AC$、$DH\perp AC$（虛線）</figcaption></figure>
+<p><b>證</b>　作 $BG\perp AC$、$DH\perp AC$。⟦顯然｜$\angle CGB=\angle CEB=90^\circ$，$G$、$E$ 都在以 $BC$ 為直徑的圓上。⟧$C$、$G$、$B$、$E$ 四點共圓，由割線定理 $AB\cdot AE=AG\cdot AC$。① 同理 $AD\cdot AF=AC\cdot AH$。② 又 $\triangle ADH\cong\triangle CBG$（$AD=CB$，內錯角相等），$AH=GC$。所以</p>
+$$AB\cdot AE+AD\cdot AF=AG\cdot AC+AC\cdot AH=AC(AG+GC)=AC^2.$$
+=== 例 10
+zh: 從 $\triangle ABC$ 的頂點 $A$ 在形內作兩條射線，與 $AB$、$AC$ 成等角（$\angle BAD=\angle CAE$），交 $BC$ 於 $D$、$E$。證明：$\dfrac{AB^2}{AC^2}=\dfrac{BD\cdot BE}{CD\cdot CE}$。
+sol: <figure class="bkfig"><svg viewBox="0 0 300 183" width="300" role="img" aria-label="兩條等角線與輔助圓">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="198.4,27.1 22,135.2 278,135.2"/><line x1="198.4" y1="27.1" x2="118.4" y2="135.2"/><line x1="198.4" y1="27.1" x2="226.1" y2="135.2"/><circle cx="172.2" cy="91.4" r="69.4" stroke-dasharray="5 4"/><line x1="103.1" y1="85.5" x2="241.4" y2="85.5" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="198.4" y="21" text-anchor="middle">A</text><text x="11" y="140.1" text-anchor="middle">B</text><text x="289" y="140.1" text-anchor="middle">C</text><text x="118.4" y="151.1" text-anchor="middle">D</text><text x="226.1" y="151.1" text-anchor="middle">E</text><text x="95.3" y="82.6" text-anchor="middle">P</text><text x="249.2" y="82.6" text-anchor="middle">Q</text></g>
+</svg><figcaption>$\angle BAD=\angle CAE$；作 $\triangle ADE$ 的外接圓（虛線）交 $AB$、$AC$ 於 $P$、$Q$</figcaption></figure>
+<p><b>證</b>　作 $\triangle ADE$ 的外接圓，交 $AB$、$AC$ 於 $P$、$Q$，連 $PQ$。$\angle PAD=\angle QAE$，所以弦 $PD=QE$，從而 $PQ\parallel BC$⟦為什麼｜等弦 $PD$、$QE$ 所對的弧相等，$PDEQ$ 是等腰梯形，$PQ\parallel DE$。⟧。由平行線截比例線段 $\frac{AB}{BP}=\frac{AC}{CQ}$，所以</p>
+$$\frac{AB^2}{AC^2}=\frac{AB\cdot BP}{AC\cdot CQ}.\quad\text{①}$$
+<p>另一方面由 $A$、$P$、$D$、$E$ 共圓，$AB\cdot BP=BD\cdot BE$②；同理 $AC\cdot CQ=CD\cdot CE$③。由 ①②③ 即得。</p>
+=== 習題 1
+zh: 兩圓外切於 $P$，$Q$ 是過 $P$ 的兩圓公切線上任意一點。自 $Q$ 作第一個圓的割線 $QAB$ 和第二個圓的割線 $QCD$。證明 $A$、$B$、$C$、$D$ 四點共圓。
+hint: 仿例 1。
+sol: <p>$QA\cdot QB=QP^2=QC\cdot QD$，由定理 1′ 即得。</p>
+=== 習題 2
+zh: 已知一圓及平面上兩個定點 $A$、$B$。過 $A$ 作一割線 $AMN$ 交圓於 $M$、$N$。證明：過 $M$、$N$ 及 $B$ 的圓，還通過另一個定點，與割線 $AMN$ 的選取無關。
+sol: <p>設直線 $AB$ 與圓 $BMN$ 的另一個交點為 $C$，則 $AB\cdot AC=AM\cdot AN$，而 $AM\cdot AN$ 是 $A$ 對已知圓的冪，是定值，所以 $AC$ 是定長，$C$ 是定點。</p>
+=== 習題 3
+zh: 設 $A$ 是 $\odot O$ 外一點，$AD$ 是圓的切線（$D$ 為切點），$ABC$ 是圓的割線，交圓於 $B$、$C$，$DE\perp AO$ 於 $E$。證明 $\angle AEB=\angle ACO$。
+sol: <figure class="bkfig"><svg viewBox="0 0 258 170" width="258" role="img" aria-label="切線與割線">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="173.2" cy="85" r="63"/><line x1="22" y1="85" x2="173.2" y2="85"/><line x1="22" y1="85" x2="146.9" y2="27.7"/><line x1="146.9" y1="27.7" x2="146.9" y2="85"/><line x1="22" y1="85" x2="214.1" y2="132.9"/><line x1="146.9" y1="85" x2="114.6" y2="108.1" stroke-dasharray="5 4"/><line x1="173.2" y1="85" x2="214.1" y2="132.9" stroke-dasharray="5 4"/><polyline points="146.9,80 151.9,80 151.9,85" stroke-width="1"/></g>
+<g fill="currentColor"><circle cx="173.2" cy="85" r="2.4"/></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="11" y="89.9" text-anchor="middle">A</text><text x="181" y="82.1" text-anchor="middle">O</text><text x="146.9" y="21.6" text-anchor="middle">D</text><text x="146.9" y="78.9" text-anchor="middle">E</text><text x="106.8" y="120.8" text-anchor="middle">B</text><text x="221.9" y="145.6" text-anchor="middle">C</text></g>
+</svg><figcaption>$B$、$C$、$O$、$E$ 四點共圓</figcaption></figure>
+<p>連 $OD$。直角 $\triangle ADO$ 中由射影定理 $AD^2=AE\cdot AO$，又由切割線定理 $AD^2=AB\cdot AC$，所以 $AE\cdot AO=AB\cdot AC$，由定理 1′ 知 $B$、$C$、$O$、$E$ 共圓，$\angle AEB=\angle ACO$（外角等於內對角）。</p>
+=== 習題 4
+zh: $M$ 是 $\odot O$ 的切線段 $AB$（$B$ 為切點）的中點，過 $M$ 作圓的一條割線交圓於 $C$、$D$，$AC$ 和 $AD$ 與 $\odot O$ 的另一交點分別為 $E$、$F$。證明 $AB\parallel EF$。
+hint: 證 $MA$ 是 $\triangle ACD$ 外接圓的切線，參考例 2。
+sol: <figure class="bkfig"><svg viewBox="0 0 250 169" width="250" role="img" aria-label="切線中點引出的割線">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="165.6" cy="84.4" r="62.4"/><line x1="22" y1="65.7" x2="146.2" y2="25.1"/><line x1="84.1" y1="45.4" x2="195.7" y2="139.1"/><line x1="22" y1="65.7" x2="223.9" y2="62.2"/><line x1="22" y1="65.7" x2="195.7" y2="139.1"/><line x1="223.9" y1="62.2" x2="105.4" y2="100.9" stroke="#c2562b" stroke-width="2"/></g>
+<g fill="currentColor"><circle cx="165.6" cy="84.4" r="2.4"/></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="11" y="70.6" text-anchor="middle">A</text><text x="146.2" y="19" text-anchor="middle">B</text><text x="84.1" y="39.3" text-anchor="middle">M</text><text x="106.5" y="58.1" text-anchor="middle">C</text><text x="195.7" y="155" text-anchor="middle">D</text><text x="234.9" y="67.1" text-anchor="middle">E</text><text x="97.6" y="113.6" text-anchor="middle">F</text><text x="165.6" y="100.3" text-anchor="middle">O</text></g>
+</svg><figcaption>$M$ 是切線段 $AB$ 的中點；要證紅線 $EF\parallel AB$</figcaption></figure>
+<p>$MA^2=MB^2=MC\cdot MD$，由定理 2′，$MA$ 切 $\triangle ACD$ 的外接圓於 $A$，所以 $\angle MAC=\angle ADC$（弦切角）。而在 $\odot O$ 中 $\angle CEF=\angle CDF$，所以 $\angle AEF=\angle CDF=\angle ADC=\angle MAC=\angle BAE$，$AB\parallel EF$（內錯角相等）。</p>
+=== 習題 5
+zh: $AB$ 是一圓的弦，在這弦的兩方延長線上各取一點 $C$、$D$，使 $AC=BD$。再自 $C$、$D$ 各引圓的一條切線，切點分居 $AB$ 的兩側。證明：兩切點的連線平分弦 $AB$。
+sol: <figure class="bkfig"><svg viewBox="0 0 280 189" width="280" role="img" aria-label="弦的兩端延長與兩條切線">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="141.2" cy="94.7" r="72.7"/><line x1="22" y1="117.4" x2="258" y2="127.7"/><line x1="22" y1="117.4" x2="87.5" y2="45.7"/><line x1="258" y1="127.7" x2="167.4" y2="162.6"/><line x1="87.5" y1="45.7" x2="167.4" y2="162.6"/><line x1="258" y1="127.7" x2="112.6" y2="82.4" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="72.9" y="113.5" text-anchor="middle">A</text><text x="207.1" y="119.4" text-anchor="middle">B</text><text x="11" y="122.3" text-anchor="middle">C</text><text x="269" y="132.6" text-anchor="middle">D</text><text x="87.5" y="61.6" text-anchor="middle">E</text><text x="167.4" y="156.5" text-anchor="middle">F</text><text x="140" y="138.4" text-anchor="middle">I</text><text x="101.6" y="87.3" text-anchor="middle">G</text></g>
+</svg><figcaption>在 $EF$ 上取 $G$ 使 $DG=DF$（虛線），則 $DG\parallel CE$</figcaption></figure>
+<p>設切點為 $E$（自 $C$）、$F$（自 $D$），$EF$ 交 $CD$ 於 $I$。由圓冪定理 $CE^2=CA\cdot CB=DB\cdot DA=DF^2$，所以 $CE=DF$。在 $EF$ 上取 $G$ 使 $DG=DF$，則 $\angle DGF=\angle DFG=\angle CEF$⟦為什麼｜兩條切線與弦 $EF$ 的夾角（弦切角）都等於弧 $EF$ 所對的圓周角，$\angle DFE$ 與 $\angle CEF$ 相等。⟧，所以 $DG\parallel CE$，$\triangle CEI\sim\triangle DGI$，$\frac{CI}{DI}=\frac{CE}{DG}=1$。$I$ 是 $CD$ 的中點，又 $AC=BD$，所以 $I$ 也是 $AB$ 的中點。</p>
