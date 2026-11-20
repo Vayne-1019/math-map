@@ -1,0 +1,247 @@
+=== meta
+title: 最值問題的解法（二）
+author: 嚴鎮軍
+pages: 152-162
+units: A-4-2
+status: 完成
+
+=== text
+<h3>一、換元法</h3>
+<p>換元的目的是把複雜的目標函數化成簡單的目標函數，比較容易求得最值。前面的例題已經用過，下面再舉一些例子。</p>
+
+=== 例 1 | 三角代換去根號
+zh: 求函數 $y=x-2+\sqrt{4-x^2}$ 的最值。
+sol: 由 $4-x^2\ge0$，定義域是 $[-2,2]$。令 $x=2\sin\theta$，$\theta\in\big[-\frac\pi2,\frac\pi2\big]$，則 $\sqrt{4-4\sin^2\theta}=2\cos\theta$⟦為什麼不用加絕對值｜$\theta\in\big[-\frac\pi2,\frac\pi2\big]$ 時 $\cos\theta\ge0$，所以 $\sqrt{4\cos^2\theta}=2\cos\theta$。這正是 $\theta$ 取這個範圍的原因。⟧，
+$$y=2\sin\theta+2\cos\theta-2=2\sqrt2\sin\Big(\theta+\frac\pi4\Big)-2.$$
+因 $-\frac\pi4\le\theta+\frac\pi4\le\frac34\pi$，所以當 $\theta=\frac\pi4$（即 $x=\sqrt2$）時 $y_{\max}=2\sqrt2-2$；當 $\theta=-\frac\pi2$（即 $x=-2$）時 $y_{\min}=-4$。⟦最小值為什麼在端點｜在 $\big[-\frac\pi4,\frac34\pi\big]$ 上 $\sin$ 的最小值是 $\sin\big(-\frac\pi4\big)=-\frac{\sqrt2}2$，所以 $y_{\min}=2\sqrt2\cdot\big(-\frac{\sqrt2}2\big)-2=-4$。⟧
+<b>注.</b> 本題也可用判別式法，但不如代換簡單。三角代換可以消去某些特殊根式：消去 $\sqrt{a^2-x^2}$（$a>0$）令 $x=a\sin\theta$（或 $a\cos\theta$）；消去 $\sqrt{x^2-a^2}$ 令 $x=a\sec\theta$（或 $a\csc\theta$）；消去 $\sqrt{x^2+a^2}$ 令 $x=a\tan\theta$（或 $a\cot\theta$）。
+ans: $y_{\max}=2\sqrt2-2$，$y_{\min}=-4$。
+
+=== 例 2 | 極坐標代換
+zh: 設 $x^2+xy+y^2=19$，求 $x^2+y^2$ 的最值。
+sol: 設 $x=r\cos\theta,\ y=r\sin\theta$，則
+$$x^2+xy+y^2=r^2(\cos^2\theta+\cos\theta\sin\theta+\sin^2\theta)=r^2\Big(1+\frac12\sin2\theta\Big)=19,$$
+從而
+$$x^2+y^2=r^2=\frac{19}{1+\frac12\sin2\theta}.$$
+因 $-1\le\sin2\theta\le1$，當 $\sin2\theta=1$（即 $x=y=\pm\sqrt{\frac{19}3}$）時，$(x^2+y^2)_{\min}=\frac{38}3$；當 $\sin2\theta=-1$（即 $x=\sqrt{19},y=-\sqrt{19}$ 或 $x=-\sqrt{19},y=\sqrt{19}$）時，$(x^2+y^2)_{\max}=38$。
+<b>注.</b> 本題其實是在極坐標下求原點到橢圓 $x^2+xy+y^2=19$ 上各點的最大、最小距離。一般來說，條件式和目標函數都是二元二次的條件最值問題，用極坐標比較簡單。若條件是 $|x|\le1,|y|\le1$，可用代換 $x=\cos\alpha,\ y=\sin\beta$。
+
+=== 例 3 | 正切代換
+zh: 求 $y=\dfrac{x-x^3}{1+2x^2+x^4}$ 的最值。
+sol: 令 $x=\tan\theta$（$-\frac\pi2\lt \theta\lt \frac\pi2$），則
+$$y=\frac{x(1-x^2)}{(1+x^2)^2}=\frac{2\tan\theta}{2(1+\tan^2\theta)}\cdot\frac{1-\tan^2\theta}{1+\tan^2\theta}=\frac12\sin2\theta\cos2\theta=\frac14\sin4\theta.$$
+⟦萬能公式｜$\frac{2\tan\theta}{1+\tan^2\theta}=\sin2\theta$，$\frac{1-\tan^2\theta}{1+\tan^2\theta}=\cos2\theta$。⟧
+因 $-2\pi\lt 4\theta\lt 2\pi$，所以當 $\sin4\theta=1$（如 $x=\tan\frac\pi8$）時 $y_{\max}=\frac14$；當 $\sin4\theta=-1$（如 $x=-\tan\frac\pi8$）時 $y_{\min}=-\frac14$。（原書印作 $-1$，依 $y=\frac14\sin4\theta$ 應為 $-\frac14$。）
+ans: $y_{\max}=\frac14$，$y_{\min}=-\frac14$。
+
+=== text
+<h3>二、不等式方法</h3>
+<p>不等式與最值問題密切相關。由一個最值問題的解，可以得到一個不等式：若 $f(x)$ 在 $[a,b]$ 上的最大值、最小值是 $A,B$，則 $B\le f(x)\le A$。反過來，不等式是求最值的重要工具，許多不等式可以解釋為最值問題的解。例如算幾不等式 $\frac{a_1+\dots+a_n}n\ge\sqrt[n]{a_1\cdots a_n}$（等號當且僅當 $a_1=\dots=a_n$）可以解釋為兩個對偶的最值問題，也稱<b>最值定理</b>：</p>
+<p><b>1.</b> $n$ 個正數的和是常數 $A$，則當且僅當它們全相等時，乘積取最大值 $\big(\frac An\big)^n$。<br><b>2.</b> $n$ 個正數的乘積是常數 $B$，則當且僅當它們都等於 $\sqrt[n]B$ 時，和取最小值 $n\sqrt[n]B$。</p>
+<p>當 $n=3$ 時，又可以解釋成兩個對偶的幾何問題：長方體三條稜長的和 $a+b+c$ 與體積 $abc$ 的最大值、最小值問題。又如魏琴伯克不等式 $a^2+b^2+c^2\ge4\sqrt3\triangle$（等號當且僅當 $a=b=c$）可以解釋為：三邊平方和為定值 $l^2$ 的三角形中，正三角形面積最大，最大值是 $\frac{\sqrt3}{12}l^2$；面積為定值 $A$ 的三角形中，正三角形三邊平方和最小，最小值是 $4\sqrt3A$。</p>
+
+=== 例 4 | 湊出定和
+zh: 求函數 $y=x^2(1-3x)$ 在 $\big[0,\frac13\big]$ 上的最大值。
+sol: 把原式變形：
+$$y=x^2(1-3x)=\frac32\Big[x\cdot x\cdot\Big(\frac23-2x\Big)\Big].\qquad(1)$$
+⟦為什麼這樣拆｜要讓三個因子的和是定值：$x+x+\big(\frac23-2x\big)=\frac23$。$1-3x=\frac32\big(\frac23-2x\big)$。⟧
+因 $x\in\big[0,\frac13\big]$，$x\ge0$，$\frac23-2x\ge0$。由 $A_3\ge G_3$：
+$$y\le\frac32\Big[\frac{x+x+(\frac23-2x)}3\Big]^3=\frac32\cdot\Big(\frac29\Big)^3=\frac4{243}.$$
+等號當且僅當 $x=\frac23-2x$，即 $x=\frac29\in\big[0,\frac13\big]$ 時成立，$y_{\max}=\frac4{243}$。
+<b>注.</b> 把原式變形成 (1) 是為了讓三個因子的和是定值。<b>使各因子的和（或積）為定值</b>，是用平均不等式求最值的首要之點；其次，<b>各因子相等必須能實現</b>，否則會出錯。
+
+=== 例 5 | 等號取不到的陷阱
+zh: 求 $y=\dfrac2{\cos^2\alpha}+\cos^2\alpha$（$\alpha\ne n\pi+\frac\pi2$）的最小值。
+sol: <b>錯誤解法.</b> 因 $\frac2{\cos^2\alpha}>0$，$\cos^2\alpha>0$，由 $A_2\ge G_2$，
+$$y\ge2\sqrt{\frac2{\cos^2\alpha}\cdot\cos^2\alpha}=2\sqrt2,\qquad(2)$$
+所以 $y_{\min}=2\sqrt2$。——(2) 本身沒錯，但等號要 $\frac2{\cos^2\alpha}=\cos^2\alpha$，即 $\cos^4\alpha=2$；因 $0\lt \cos^2\alpha\le1$，這對任何 $\alpha$ 都不成立，所以不能斷定 $y_{\min}=2\sqrt2$。
+<b>正確解法.</b> $0\lt \cos^2\alpha\le1$，$\frac1{\cos^2\alpha}\ge1$。把 $\frac2{\cos^2\alpha}$ 拆成兩份：
+$$y=\frac1{\cos^2\alpha}+\Big(\frac1{\cos^2\alpha}+\cos^2\alpha\Big)\ge1+2\sqrt{\frac1{\cos^2\alpha}\cdot\cos^2\alpha}=3.$$
+第一個不等號取等號要 $\cos^2\alpha=1$；第二個要 $\frac1{\cos^2\alpha}=\cos^2\alpha$，也是 $\cos^2\alpha=1$。兩者可以同時成立，所以當 $\alpha=n\pi$ 時 $y_{\min}=3$。
+ans: $3$
+
+=== 例 6 | 最省料的圓柱
+zh: 製造一個容積為 $V$（定值）的圓柱形容器，就容器有蓋、無蓋兩種情形，求底半徑與高之比怎樣選取時用料最省。
+sol: 設底半徑與高分別為 $r,h$，則 $V=\pi r^2h$，$h=\frac V{\pi r^2}$。
+(1) 有蓋：用料面積 $S(r)=2\pi r^2+2\pi rh=2\pi r^2+\frac{2V}r$（$r>0$）。把 $\frac{2V}r$ 拆成兩個 $\frac Vr$，乘積就是定值，由 $A_3\ge G_3$：
+$$S(r)=2\pi r^2+\frac Vr+\frac Vr\ge3\sqrt[3]{2\pi r^2\cdot\frac Vr\cdot\frac Vr}=3\sqrt[3]{2\pi V^2},$$
+等號當且僅當 $2\pi r^2=\frac Vr$（即 $r=\sqrt[3]{\frac V{2\pi}}$）時成立，這時 $h=\frac V{\pi r^2}=\frac{2\pi r^3}{\pi r^2}=2r$。所以 $\frac rh=\frac12$ 時用料最少。
+(2) 無蓋：$S(r)=\pi r^2+2\pi rh=\pi r^2+\frac Vr+\frac Vr\ge3\sqrt[3]{\pi V^2}$，等號當且僅當 $\pi r^2=\frac Vr$（即 $r=\sqrt[3]{\frac V\pi}$），這時 $h=\frac V{\pi r^2}=r$。所以 $r=h$ 時用料最少。
+ans: 有蓋時 $r:h=1:2$；無蓋時 $r:h=1:1$。
+
+=== 例 7 | 平方和的最小值
+zh: 設 $x_1+x_2+\dots+x_n=1$，求 $x_1^2+x_2^2+\dots+x_n^2$ 的最小值。
+sol: 由 $Q_n\ge A_n$，
+$$x_1^2+x_2^2+\dots+x_n^2\ge\frac{(x_1+x_2+\dots+x_n)^2}n=\frac1n,$$
+等號當且僅當 $x_1=\dots=x_n=\frac1n$。所以最小值是 $\frac1n$。
+
+=== 例 8 | 一個變數的範圍
+zh: 已知實數 $a,b,c,d,e$ 滿足 $a+b+c+d+e=8$，$a^2+b^2+c^2+d^2+e^2=16$，確定 $e$ 的最大值。
+sol: 由題設 $a+b+c+d=8-e$，$a^2+b^2+c^2+d^2=16-e^2$。由 $Q_4\ge A_4$（即 $\frac{a^2+b^2+c^2+d^2}4\ge\big(\frac{a+b+c+d}4\big)^2$）：
+$$4(a^2+b^2+c^2+d^2)\ge(a+b+c+d)^2,$$
+即 $4(16-e^2)\ge(8-e)^2$，或 $e(5e-16)\le0$。（3）⟦展開｜$64-4e^2\ge64-16e+e^2\iff0\ge5e^2-16e$。⟧
+所以 $0\le e\le\frac{16}5$。等號當且僅當 $a=b=c=d$，所以 $e_{\max}=\frac{16}5$，此時 $a=b=c=d=\frac65$。
+<b>注.</b> (3) 也可由柯西不等式得到。
+ans: $\frac{16}5$
+
+=== 例 9 | 到三邊距離的倒數加權
+src: 第 22 屆 IMO 第 1 題（1981）
+zh: $P$ 為 $\triangle ABC$ 內一點，$D,E,F$ 分別為 $P$ 到 $BC,CA,AB$ 所引垂線的垂足。求所有使 $\dfrac{BC}{PD}+\dfrac{CA}{PE}+\dfrac{AB}{PF}$ 最小的點 $P$。
+sol: <figure class="bkfig"><svg viewBox="0 0 260 220" width="260" role="img" aria-label="三角形 ABC 內一點 P 到三邊的距離 x、y、z">
+  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="110.1,24.0 24.0,196.2 236.0,196.2"/><line x1="120.1" y1="136.6" x2="120.1" y2="196.2"/><line x1="120.1" y1="136.6" x2="167.2" y2="102.2"/><line x1="120.1" y1="136.6" x2="67.1" y2="110.1"/></g>
+  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="120.1" y1="136.6" x2="110.1" y2="24.0"/><line x1="120.1" y1="136.6" x2="24.0" y2="196.2"/><line x1="120.1" y1="136.6" x2="236.0" y2="196.2"/></g>
+  <g fill="currentColor"><circle cx="120.1" cy="136.6" r="2.6"/></g>
+  <g fill="currentColor" font-size="14" font-style="italic"><text x="106.1" y="16.0">A</text><text x="10.0" y="202.2">B</text><text x="242.0" y="202.2">C</text><text x="104.1" y="140.6">P</text><text x="116.1" y="212.2">D</text><text x="173.2" y="102.2">E</text><text x="51.1" y="110.1">F</text><text x="124.1" y="170.4">x</text><text x="145.6" y="115.4">y</text><text x="89.6" y="117.4">z</text></g>
+</svg><figcaption>$PD=x$，$PE=y$，$PF=z$</figcaption></figure>
+設三邊 $BC=a,\ CA=b,\ AB=c$，面積為 $\triangle$，記 $PD=x,\ PE=y,\ PF=z$，則 $ax+by+cz=2\triangle$（定值）。由柯西不等式，
+$$\Big(\frac ax+\frac by+\frac cz\Big)(ax+by+cz)\ge\Big(\sqrt{\tfrac ax}\sqrt{ax}+\sqrt{\tfrac by}\sqrt{by}+\sqrt{\tfrac cz}\sqrt{cz}\Big)^2=(a+b+c)^2.$$
+所以
+$$\frac{BC}{PD}+\frac{CA}{PE}+\frac{AB}{PF}\ge\frac{(a+b+c)^2}{2\triangle}.$$
+等號當且僅當 $\dfrac{\sqrt{ax}}{\sqrt{a/x}}=\dfrac{\sqrt{by}}{\sqrt{b/y}}=\dfrac{\sqrt{cz}}{\sqrt{c/z}}$，即 $x=y=z$，也就是 $PD=PE=PF$。所以使原式最小的 $P$ 是 $\triangle ABC$ 的內心。
+ans: 內心
+
+=== text
+<h3>三、解析幾何的應用</h3>
+<p>靈活運用解析幾何知識，可以方便地解決一些特殊的最值問題。首先是這一類：點 $(x,y)$ 在二次曲線 $f(x,y)=0$ 上變動時，求 $g(x,y)$ 的最值，常可用曲線的參數方程求解。</p>
+
+=== 例 10 | 橢圓的參數方程
+zh: 設 $x,y$ 為實數，$3x^2+2y^2=6x$，求 $x^2+y^2$ 的最值。
+sol: 把方程改寫成 $(x-1)^2+\dfrac{y^2}{3/2}=1$，這是橢圓，參數方程為
+$$x=1+\cos t,\qquad y=\frac{\sqrt6}2\sin t\qquad(0\le t\lt 2\pi).$$
+於是
+$$S(t)=x^2+y^2=(1+\cos t)^2+\frac32\sin^2t=-\frac12(\cos t-2)^2+\frac92.$$
+⟦化簡｜$1+2\cos t+\cos^2t+\frac32-\frac32\cos^2t=\frac52+2\cos t-\frac12\cos^2t$，配方即得。⟧
+因 $|\cos t|\le1$，$S(t)$ 隨 $\cos t$ 增加而增加，所以 $\cos t=-1$（$x=y=0$）時 $(x^2+y^2)_{\min}=0$；$\cos t=1$（$x=2,y=0$）時 $(x^2+y^2)_{\max}=4$。（與第 18 講例 7 是同一題，換了一種方法。）
+
+=== text
+<p>利用兩點距離公式及點到直線的距離公式，有時也能順利解決某些最值問題。</p>
+
+=== 例 11 | 看成兩段距離之和
+zh: 求函數 $y=\sqrt{x^2-2x+5}+\sqrt{x^2-4x+13}$ 的最小值。
+sol: 配方改寫為
+$$y=\sqrt{(x-1)^2+(0-2)^2}+\sqrt{(x-2)^2+(0-3)^2}.$$
+從幾何上看，就是在 $x$ 軸上求一點 $P(x,0)$，使 $P$ 到 $A(1,2)$ 與 $B(2,3)$ 的距離和最小。取 $A$ 關於 $x$ 軸的對稱點 $A'(1,-2)$，則線段 $A'B$ 的長就是所求的最小值⟦為什麼｜$PA=PA'$，所以 $PA+PB=PA'+PB\ge A'B$，當 $P$ 在線段 $A'B$ 上時取等號；$A'$ 與 $B$ 在 $x$ 軸兩側，線段一定穿過 $x$ 軸。⟧：
+<figure class="bkfig"><svg viewBox="0 0 240 361" width="240" role="img" aria-label="x 軸上一點 P 到 A(1,2) 與 B(2,3) 的距離和，A′ 是 A 關於 x 軸的對稱點">
+  <g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="24.0" y1="205.9" x2="216.0" y2="205.9"/><line x1="54.3" y1="337.3" x2="54.3" y2="24.0"/><line x1="104.8" y1="104.8" x2="125.1" y2="205.9"/><line x1="125.1" y1="205.9" x2="155.4" y2="54.3"/></g>
+  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="104.8" y1="104.8" x2="104.8" y2="306.9"/><line x1="104.8" y1="306.9" x2="125.1" y2="205.9"/></g>
+  <g fill="currentColor"><circle cx="104.8" cy="104.8" r="2.6"/><circle cx="155.4" cy="54.3" r="2.6"/><circle cx="104.8" cy="306.9" r="2.6"/><circle cx="125.1" cy="205.9" r="2.6"/></g>
+  <g fill="currentColor" font-size="14" font-style="italic"><text x="40.3" y="219.9">O</text><text x="56.8" y="104.8">A(1,2)</text><text x="161.4" y="58.3">B(2,3)</text><text x="110.8" y="312.9">A′(1,−2)</text><text x="121.1" y="221.9">P</text><text x="212.0" y="221.9">x</text><text x="60.3" y="32.0">y</text></g>
+</svg><figcaption>$A'$ 是 $A$ 關於 $x$ 軸的對稱點</figcaption></figure>
+$$y_{\min}=A'B=\sqrt{(1-2)^2+(-2-3)^2}=\sqrt{26}.$$
+直線 $A'B$ 的方程是 $y+2=5(x-1)$，令 $y=0$ 得 $x=\frac75$，這就是使 $y$ 取最小值的 $x$。
+ans: $\sqrt{26}$（$x=\frac75$）
+
+=== text
+<p>利用直線的斜率，也能解一些最值問題。</p>
+
+=== 例 12 | 看成斜率
+zh: 求函數 $y=\dfrac{1+\sin x}{2+\cos x}$ 的最值。
+sol: 令 $k=\dfrac{1+\sin x}{2+\cos x}=\dfrac{\sin x-(-1)}{\cos x-(-2)}$，$k$ 可以看成坐標平面 $uv$ 上過點 $A(\cos x,\sin x)$ 與點 $B(-2,-1)$ 的直線的斜率。
+<figure class="bkfig"><svg viewBox="0 0 240 196" width="240" role="img" aria-label="單位圓上一點 A 與 B(−2,−1) 連線的斜率；紅線是兩條切線，斜率 0 與 4/3">
+  <g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="24.0" y1="100.8" x2="216.0" y2="100.8"/><line x1="139.2" y1="172.8" x2="139.2" y2="24.0"/></g>
+  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="43.2" y1="148.8" x2="165.1" y2="60.4"/></g>
+  <g fill="none" stroke="#c2562b" stroke-width="2"><line x1="43.2" y1="148.8" x2="206.4" y2="148.8"/><line x1="43.2" y1="148.8" x2="104.4" y2="67.2"/></g>
+  <g fill="currentColor"><circle cx="43.2" cy="148.8" r="2.6"/><circle cx="165.1" cy="60.4" r="2.6"/></g>
+  <circle cx="139.2" cy="100.8" r="48.0" fill="none" stroke="currentColor" stroke-width="1.3"/>
+  <g fill="currentColor" font-size="14" font-style="italic"><text x="125.2" y="114.8">O</text><text x="33.2" y="164.8">B(−2,−1)</text><text x="171.1" y="58.4">A</text><text x="212.0" y="116.8">u</text><text x="145.2" y="32.0">v</text></g>
+</svg><figcaption>$A$ 在單位圓上跑；紅線是過 $B$ 的兩條切線</figcaption></figure>
+$A$ 在圓 $u^2+v^2=1$ 上運動，所以當直線 $BA$ 是圓的切線時斜率 $k$ 取最值。設過 $B$ 的切線為 $v+1=k(u+2)$，圓心到它的距離等於半徑：
+$$\frac{|2k-1|}{\sqrt{1+k^2}}=1,\quad\text{即}\ (2k-1)^2=1+k^2,$$
+解得 $k_1=0,\ k_2=\frac43$。所以 $y_{\min}=0,\ y_{\max}=\frac43$。取得最值的 $x$ 讀者不難自己算出。⟦算一下｜$k=0$ 的切點是 $(0,-1)$，即 $x=-\frac\pi2+2n\pi$；$k=\frac43$ 的切點是 $\big(-\frac45,\frac35\big)$，即 $\cos x=-\frac45,\ \sin x=\frac35$。代回：$\frac{1+3/5}{2-4/5}=\frac{8/5}{6/5}=\frac43$。⟧
+ans: $y_{\min}=0$，$y_{\max}=\frac43$。
+
+=== text
+<p>下面講一種在實際應用中非常重要的最值問題——<b>線性最值問題</b>（線性規劃）：在一些約束條件（通常是一組等式或不等式）下，求多元一次函數的最值。</p>
+
+=== 例 13 | 菱形的對角線
+src: 1987 年全國高中數學聯賽
+zh: （選擇題）邊長為 $5$ 的菱形，一條對角線長不大於 $6$，另一條不小於 $6$，則這個菱形兩條對角線長之和的最大值是（A）$10\sqrt2$；（B）$14$；（C）$5\sqrt6$；（D）$12$。
+sol: 設兩條對角線長分別為 $x,y$。平行四邊形兩條對角線的平方和等於四邊的平方和⟦菱形可以直接看｜菱形對角線互相垂直平分，$\big(\frac x2\big)^2+\big(\frac y2\big)^2=5^2$，即 $x^2+y^2=100$。⟧，問題歸結為：在約束條件
+$$x^2+y^2=100,\qquad x\ge6,\quad0\lt y\le6$$
+下，求 $z=x+y$ 的最大值。滿足約束的點 $P(x,y)$ 是一段圓弧 $\overset{\frown}{AB}$（不含端點 $A(10,0)$，含端點 $B(8,6)$）。
+<figure class="bkfig"><svg viewBox="0 0 240 240" width="240" role="img" aria-label="圓 x²+y²=100 在第一象限從 A(10,0) 到 B(8,6) 的一段弧，虛線 x+y=14 過 B">
+  <g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="24.0" y1="193.4" x2="216.0" y2="193.4"/><line x1="46.6" y1="216.0" x2="46.6" y2="24.0"/></g>
+  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="46.6" y1="35.3" x2="204.7" y2="193.4"/></g>
+  <g fill="currentColor"><circle cx="136.9" cy="125.6" r="2.6"/></g>
+  <path d="M159.5,193.4 A112.9,112.9 0 0 0 136.9,125.6" fill="none" stroke="#c2562b" stroke-width="2.5"/>
+  <g fill="currentColor" font-size="14" font-style="italic"><text x="32.6" y="207.4">O</text><text x="139.5" y="209.4">A(10,0)</text><text x="142.9" y="121.6">B(8,6)</text><text x="24.6" y="39.3">14</text><text x="198.7" y="209.4">14</text><text x="212.0" y="187.4">x</text><text x="52.6" y="32.0">y</text></g>
+</svg><figcaption>紅色弧是可行的點；虛線是過 $B$ 的等值線 $x+y=14$</figcaption></figure>
+考慮與弧相交的一族平行直線 $x+y=c$（$c$ 是參數，也是直線在 $y$ 軸上的截距）。同一條直線上的點，目標函數值相同，所以叫目標函數的<b>等值線</b>。當交點 $P$ 沿弧從 $A$ 走到 $B$ 時，直線 $x+y=c$ 向上平移，截距 $c$ 增大。所以直線過 $B(8,6)$ 時 $c$ 最大，$(x+y)_{\max}=8+6=14$，選 (B)。
+
+=== 例 14 | 三元一次函數
+zh: 設 $x,y,z$ 滿足約束條件 $x+y+z=1$，$0\le x\le1$，$0\le y\le2$，$3y+z\ge2$。（4）求 $F=2x+6y+4z$ 的最值。
+sol: 由 $x+y+z=1$，$z=1-x-y$，從而
+$$F=2y-2x+4,$$
+不等式組 (4) 成為 $0\le x\le1$，$0\le y\le2$，$2y-x\ge1$⟦最後一個｜$3y+(1-x-y)\ge2\iff2y-x\ge1$。⟧。這三個不等式確定的平面區域 $K$，是由直線 $x=0$、$x=1$、$2y-x=1$、$y=2$ 圍成的梯形（含邊界），頂點為 $A\big(0,\frac12\big)$、$B(1,1)$、$C(1,2)$、$D(0,2)$。
+<figure class="bkfig"><svg viewBox="0 0 240 330" width="240" role="img" aria-label="梯形區域 K，頂點 A(0,1/2)、B(1,1)、C(1,2)、D(0,2)">
+  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="54.3,226.1 155.4,175.6 155.4,74.5 54.3,74.5"/><line x1="24.0" y1="276.6" x2="216.0" y2="276.6"/><line x1="54.3" y1="306.9" x2="54.3" y2="24.0"/></g>
+  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="24.0" y1="241.3" x2="216.0" y2="145.3"/></g>
+  <g fill="currentColor"><circle cx="54.3" cy="226.1" r="2.6"/><circle cx="155.4" cy="175.6" r="2.6"/><circle cx="155.4" cy="74.5" r="2.6"/><circle cx="54.3" cy="74.5" r="2.6"/></g>
+  <polygon points="54.3,226.1 155.4,175.6 155.4,74.5 54.3,74.5" fill="currentColor" fill-opacity="0.18" stroke="none"/>
+  <g fill="currentColor" font-size="14" font-style="italic"><text x="40.3" y="290.6">O</text><text x="4.3" y="230.1">A(0,½)</text><text x="161.4" y="187.6">B(1,1)</text><text x="161.4" y="70.5">C(1,2)</text><text x="4.3" y="70.5">D(0,2)</text><text x="212.0" y="292.6">x</text><text x="60.3" y="32.0">y</text><text x="176.0" y="165.3">2y−x=1</text></g>
+</svg><figcaption>陰影是區域 $K$</figcaption></figure>
+考慮與 $K$ 相交的平行直線族 $2y-2x+4=c$，即 $y=x+\frac c2-2$。直線向上平移時截距增加，$c$ 也增加。所以直線過 $D(0,2)$ 時 $c$ 最大，$F_{\max}=2\times2-2\times0+4=8$；過 $B(1,1)$ 時 $c$ 最小，$F_{\min}=2-2+4=4$。
+<b>注.</b> 這兩例的方法叫<b>等值線法</b>。線性最值問題消元後，若歸結為在 $x,y$ 的不等式組下求 $F=ax+by+d$ 的最值，而可行點全體是平面區域 $K$，則 $F$ 的最值一定在 $K$ 的邊界上取到。特別當 $K$ 是多邊形（含邊界）時，最值必在某個頂點取到：可以用平行直線族 $ax+by+d=c$ 去找，也可以算出 $F$ 在各頂點的值再比較。
+ans: $F_{\max}=8$，$F_{\min}=4$。
+
+=== 習題 1
+zh: 求 $y=4\sqrt{5x+6}+\dfrac1{(5x+6)^2}$ 的最小值。
+ans: $y_{\min}=5$（$x=-1$）
+sol: 由 $A_5\ge G_5$：
+$$y=\sqrt{5x+6}+\sqrt{5x+6}+\sqrt{5x+6}+\sqrt{5x+6}+\frac1{(5x+6)^2}\ge5\sqrt[5]{\frac{(5x+6)^2}{(5x+6)^2}}=5.$$
+等號當且僅當 $\sqrt{5x+6}=\frac1{(5x+6)^2}$，即 $5x+6=1$，$x=-1$。
+
+=== 習題 2
+zh: 求函數 $y=\sin^2\theta\cos\theta$（$0\le\theta\lt \frac\pi2$）的最大值。
+ans: $\dfrac{2\sqrt3}9$（$\tan\theta=\sqrt2$）
+sol: $y\ge0$，看 $y^2$：
+$$y^2=\frac12\big(\sin^2\theta\big)\big(\sin^2\theta\big)\big(2\cos^2\theta\big)\le\frac12\Big(\frac{\sin^2\theta+\sin^2\theta+2\cos^2\theta}3\Big)^3=\frac12\Big(\frac23\Big)^3=\frac4{27}.$$
+等號當且僅當 $\sin^2\theta=2\cos^2\theta$，即 $\theta=\arctan\sqrt2$，這時 $y_{\max}=\frac2{3\sqrt3}=\frac{2\sqrt3}9$。（原書解答誤寫為 $y_{\min}$。）
+
+=== 習題 3
+zh: 設 $x,y,z\ge0$，$x+y+z=a$。(1) 求 $(xy+yz+zx)_{\max}$；(2) 求 $(x^my^nz^p)_{\max}$（$m,n,p$ 為正整數）。
+ans: (1) $\frac{a^2}3$；(2) $m^mn^np^p\Big(\dfrac a{m+n+p}\Big)^{m+n+p}$。
+sol: (1) $a^2-(x^2+y^2+z^2)=2(xy+yz+zx)$，又 $x^2+y^2+z^2\ge xy+yz+zx$，兩式相加得 $xy+yz+zx\le\frac{a^2}3$，等號當且僅當 $x=y=z=\frac a3$。
+(2) 把 $\frac xm$ 寫 $m$ 次、$\frac yn$ 寫 $n$ 次、$\frac zp$ 寫 $p$ 次，用 $G\le A$：
+$$\frac{x^m}{m^m}\cdot\frac{y^n}{n^n}\cdot\frac{z^p}{p^p}\le\Big(\frac{m\cdot\frac xm+n\cdot\frac yn+p\cdot\frac zp}{m+n+p}\Big)^{m+n+p}=\Big(\frac a{m+n+p}\Big)^{m+n+p},$$
+即 $x^my^nz^p\le m^mn^np^p\big(\frac a{m+n+p}\big)^{m+n+p}$。等號當且僅當 $\frac xm=\frac yn=\frac zp$，即 $x=\frac{ma}{m+n+p},\ y=\frac{na}{m+n+p},\ z=\frac{pa}{m+n+p}$。
+
+=== 習題 4
+zh: 設正 $\triangle ABC$ 的邊長為 $a$，邊 $BC,CA,AB$ 上的點 $P,Q,R$ 在滿足 $BP+CQ+AR=a$ 的條件下移動。求 $P,Q,R$ 在何處時，$\triangle PQR$ 的面積最大。
+ans: $BP=CQ=AR=\frac a3$ 時，最大面積 $\frac{\sqrt3}{12}a^2$。
+sol: 設 $BP=x,\ CQ=y,\ AR=z$，$x+y+z=a$。從正三角形扣掉三個角上的小三角形：
+$$S_{\triangle PQR}=\frac{\sqrt3}4\big[a^2-x(a-z)-y(a-x)-z(a-y)\big]=\frac{\sqrt3}4(xy+yz+zx).$$
+⟦三個小三角形｜$\triangle BPR$ 的兩邊 $BP=x$、$BR=a-z$，夾角 $60^\circ$，面積 $\frac{\sqrt3}4x(a-z)$；另兩個同理。中括號展開後 $a^2-a(x+y+z)=0$，剩 $xz+xy+yz$。⟧
+由第 3 題 (1)，$x=y=z=\frac a3$ 時最大。
+
+=== 習題 5
+zh: 證明：周長為定值的四邊形中，以正方形面積最大。
+sol: 先證：三角形的一邊 $a$ 及周長 $a+b+c$ 都是定值時，等腰三角形（$b=c$）面積最大。事實上，由海龍公式
+$$S=\sqrt{p(p-a)}\cdot\sqrt{(p-b)(p-c)}\le\sqrt{p(p-a)}\cdot\frac{(p-b)+(p-c)}2=\frac a2\sqrt{p(p-a)},$$
+等號當且僅當 $b=c$。
+設 $ABCD$ 是周長一定、面積最大的四邊形（可假定是凸的⟦為什麼可以｜凹四邊形把凹進去的頂點翻到外側，周長不變、面積變大。⟧）。固定 $A,B,C$，讓 $D$ 變動並保持 $AD+DC$ 不變，由上述命題，面積最大時必有 $AD=DC$。同理 $AB=BC$、$BA=AD$⋯⋯所以 $ABCD$ 四邊相等，是菱形。邊長 $s$ 的菱形面積 $s^2\sin\theta\le s^2$，$\theta=90^\circ$ 時最大，所以是正方形。
+
+=== 習題 6
+zh: 若 $x,y$ 為實數，$x^2+y^2\le1$，求 $|2x^2-3xy-2y^2|_{\max}$。
+ans: $\frac52$
+sol: 令 $x=r\cos\theta,\ y=r\sin\theta$（$0\le r\le1$），則
+$$|2x^2-3xy-2y^2|=r^2\Big|2\cos2\theta-\frac32\sin2\theta\Big|=\frac52r^2|\sin(2\theta-\varphi)|\le\frac52,$$
+⟦係數｜$2(\cos^2\theta-\sin^2\theta)=2\cos2\theta$，$3\sin\theta\cos\theta=\frac32\sin2\theta$；$\sqrt{4+\frac94}=\frac52$。⟧ 在 $r=1$ 且正弦為 $\pm1$ 時取到。
+
+=== 習題 7
+zh: 若 $|p|\le1,\ |q|\le1$，求 $\big(pq+\sqrt{(1-p^2)(1-q^2)}\big)_{\max}$。
+ans: $1$
+sol: 令 $p=\sin\alpha,\ q=\sin\beta$（$\alpha,\beta\in\big[-\frac\pi2,\frac\pi2\big]$），則 $\sqrt{1-p^2}=\cos\alpha$，$\sqrt{1-q^2}=\cos\beta$，
+$$pq+\sqrt{(1-p^2)(1-q^2)}=\sin\alpha\sin\beta+\cos\alpha\cos\beta=\cos(\alpha-\beta)\le1,$$
+$p=q$ 時取等號。
+
+=== 習題 8
+zh: 設 $x,y$ 為實數，$x^2-6x+y^2-6y=18$，求 $\Big(\dfrac yx\Big)_{\max}$。
+sol: $\frac yx$ 是原點與圓上點 $(x,y)$ 連線的斜率。（存疑）照題目所印，方程是 $(x-3)^2+(y-3)^2=36$，圓心 $(3,3)$ 到原點的距離 $3\sqrt2\lt 6$，<b>原點在圓內</b>，過原點的直線都和圓相交，$\frac yx$ 可以任意大（$x\to0$），沒有最大值。原書答案為 $3+\sqrt2$，與題目所印的條件不符，可能題目數字有誤植。⟦怎麼檢查｜過原點的直線 $y=kx$ 與圓相切時，圓心到直線距離 $\frac{|3k-3|}{\sqrt{k^2+1}}=6$，化成 $27k^2+18k+27=0$，判別式為負，沒有切線，證實原點在圓內。⟧
+
+=== 習題 9
+zh: 某工廠每天要生產甲、乙兩種產品。每件甲產品需分別在 $A,B,C,D$ 四台設備上加工 $2,1,4,0$ 小時；每件乙產品需分別加工 $2,2,0,4$ 小時。已知 $A,B,C,D$ 每天最多能運轉 $12,8,16,12$ 小時。生產一件甲產品可得利潤 200 元，一件乙產品 300 元。問每天如何安排生產才能得到最多利潤？
+ans: 每天生產甲 4 件、乙 2 件，利潤 1400 元。
+sol: 設每天生產甲、乙 $x,y$ 件。約束條件組：
+$$2x+2y\le12,\quad x+2y\le8,\quad4x\le16,\quad4y\le12,\quad x,y\ge0.$$
+求 $2x+3y$（百元）的最大值。可行區域是五邊形，頂點 $(0,0),(4,0),(4,2),(2,3),(0,3)$⟦頂點怎麼求｜$x=4$ 與 $x+y=6$ 交於 $(4,2)$；$x+y=6$ 與 $x+2y=8$ 交於 $(4,2)$——三線共點；$x+2y=8$ 與 $y=3$ 交於 $(2,3)$。⟧，目標函數值分別為 $0,8,14,13,9$，所以在 $(4,2)$ 取最大值 $14$（百元）。
