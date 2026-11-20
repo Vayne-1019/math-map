@@ -1,0 +1,18 @@
+=== P1
+zh: 設 $ABC$ 為銳角三角形，且 $AB\ne AC$。以 $BC$ 為直徑的圓與邊 $AB$、$AC$ 分別相交於 $M,N$。令 $O$ 為邊 $BC$ 的中點。$\angle BAC$ 與 $\angle MON$ 的角平分線相交於 $R$。證明：三角形 $BMR$ 與 $CNR$ 的外接圓有一個公共點，且該點位於邊 $BC$ 上。
+src: imo2004-1
+=== P2
+zh: 求所有實係數多項式 $f$，使得對所有滿足 $ab+bc+ca=0$ 的實數 $a,b,c$，都有 $f(a-b)+f(b-c)+f(c-a)=2f(a+b+c)$。
+src: imo2004-2
+=== P3
+zh: 定義一個「鉤」為由六個單位方格組成的圖形（如題目附圖所示），或由此圖形經旋轉、反射所得的任一圖形。求所有可以被鉤無縫隙、無重疊地完整覆蓋的 $m\times n$ 矩形，條件為：矩形被鉤無縫隙、無重疊地完整覆蓋，且每個鉤的任何部分都不超出矩形的範圍。
+src: imo2004-3
+=== P4
+zh: 設 $n\ge3$ 為整數，$t_1,t_2,\dots,t_n$ 為正實數，且滿足 $n^2+1>(t_1+t_2+\cdots+t_n)\left(\dfrac1{t_1}+\dfrac1{t_2}+\cdots+\dfrac1{t_n}\right)$。證明：對所有滿足 $1\le i<j<k\le n$ 的 $i,j,k$，$t_i,t_j,t_k$ 都是某一三角形的三邊長。
+src: imo2004-4
+=== P5
+zh: 在凸四邊形 $ABCD$ 中，對角線 $BD$ 並不平分 $\angle ABC$ 與 $\angle CDA$。點 $P$ 位於 $ABCD$ 內部，且滿足 $\angle PBC=\angle DBA$，$\angle PDC=\angle BDA$。證明：$ABCD$ 為圓內接四邊形，若且唯若 $AP=CP$。
+src: imo2004-5
+=== P6
+zh: 稱一個正整數為「交錯數」，若其十進位表示中每兩個相鄰數字的奇偶性都不相同。求所有正整數 $n$，使得 $n$ 有某個倍數是交錯數。
+src: imo2004-6

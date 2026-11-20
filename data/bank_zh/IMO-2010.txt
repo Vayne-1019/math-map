@@ -1,0 +1,20 @@
+=== P1
+zh: 求所有函數 $f:\mathbb{R}\to\mathbb{R}$，使得對所有實數 $x,y$，等式 $f(\lfloor x\rfloor y)=f(x)\lfloor f(y)\rfloor$ 成立。（此處 $\lfloor z\rfloor$ 表示不超過 $z$ 的最大整數。）
+src: imo2010-1
+note: 待核對：原式右端的 ⌊f(y)⌋ 在抽取時括號位置不清，此處依標準題目（ISL 2010 A3）翻譯為 $f(x)\lfloor f(y)\rfloor$，請對照 PDF。
+=== P2
+zh: 設 $I$ 為三角形 $ABC$ 的內心，$\Gamma$ 為其外接圓。直線 $AI$ 再次與 $\Gamma$ 相交於 $D$。設 $E$ 為劣弧 $BDC$ 上的一點，$F$ 為邊 $BC$ 上的一點，使得 $\angle BAF=\angle CAE<\dfrac12\angle BAC$。最後，設 $G$ 為線段 $IF$ 的中點。證明：直線 $DG$ 與直線 $EI$ 的交點位於 $\Gamma$ 上。
+src: imo2010-2
+=== P3
+zh: 設 $\mathbb{N}$ 為正整數集合。求所有函數 $g:\mathbb{N}\to\mathbb{N}$，使得對所有 $m,n\in\mathbb{N}$，$\big(g(m)+n\big)\big(m+g(n)\big)$ 都是完全平方數。
+src: imo2010-3
+=== P4
+zh: 設 $P$ 為三角形 $ABC$ 內部的一點。直線 $AP$、$BP$、$CP$ 分別再與三角形 $ABC$ 的外接圓 $\Gamma$ 相交於 $K,L,M$。圓 $\Gamma$ 在 $C$ 處的切線與直線 $AB$ 相交於 $S$。假設 $SC=SP$。證明：$MK=ML$。
+src: imo2010-4
+=== P5
+zh: 六個箱子 $B_1,B_2,B_3,B_4,B_5,B_6$ 中，開始時每個箱子裡各有一枚硬幣。允許的操作有兩種：第一種：選取一個非空的箱子 $B_j$（$1\le j\le5$），從 $B_j$ 中取出一枚硬幣，並在 $B_{j+1}$ 中加入兩枚硬幣。第二種：選取一個非空的箱子 $B_k$（$1\le k\le4$），從 $B_k$ 中取出一枚硬幣，並交換（可能為空的）箱子 $B_{k+1}$ 與 $B_{k+2}$ 的內容。問：是否存在一個有限的操作序列，使得最後箱子 $B_1,\dots,B_5$ 都是空的，而箱子 $B_6$ 中恰有 $2010^{2010^{2010}}$ 枚硬幣？（注意：$a^{bc}=a^{(bc)}$。）
+src: imo2010-5
+note: 待核對：原式的 2010 次方塔在抽取時遺失上標結構，此處依標準題目（ISL 2010 C1）重建為 $2010^{2010^{2010}}$，請對照 PDF。
+=== P6
+zh: 設 $a_1,a_2,a_3,\dots$ 為正實數數列。假設存在正整數 $s$，使得對所有 $n>s$，都有 $a_n=\max\{a_k+a_{n-k}\mid 1\le k\le n-1\}$。證明：存在正整數 $\ell$ 與 $N$，其中 $\ell\le s$，使得對所有 $n\ge N$，都有 $a_n=a_\ell+a_{n-\ell}$。
+src: imo2010-6

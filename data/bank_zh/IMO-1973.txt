@@ -1,0 +1,18 @@
+=== P1
+zh: 點 $O$ 位於直線 $g$ 上；$\overrightarrow{OP_1},\overrightarrow{OP_2},\dots,\overrightarrow{OP_n}$ 為單位向量，且點 $P_1,\dots,P_n$ 都位於包含 $g$ 的某一平面上，並且都在 $g$ 的同一側。證明：若 $n$ 為奇數，則 $\left|\overrightarrow{OP_1}+\overrightarrow{OP_2}+\cdots+\overrightarrow{OP_n}\right|\ge1$。（$\left|\overrightarrow{OM}\right|$ 表示向量 $\overrightarrow{OM}$ 的長度。）
+src: imo1973-1
+=== P2
+zh: 判斷空間中是否存在一個有限點集 $M$，其中的點不全在同一平面上，並且對 $M$ 中任意兩點 $A,B$，都能在 $M$ 中另選兩點 $C,D$，使得直線 $AB$ 與直線 $CD$ 平行且不重合。
+src: imo1973-2
+=== P3
+zh: 設 $a,b$ 為實數，使得方程式 $x^4+ax^3+bx^2+ax+1=0$ 至少有一個實根。對所有這樣的數對 $(a,b)$，求 $a^2+b^2$ 的最小值。
+src: imo1973-3
+=== P4
+zh: 一名士兵需要檢查一個正三角形區域內是否有地雷。他的探測器的作用半徑等於此三角形高的一半。士兵從三角形的一個頂點出發。他應沿著怎樣的路徑前進，才能在完成任務的前提下，使所走的路程最短？
+src: imo1973-4
+=== P5
+zh: 設 $G$ 為一個函數集合，其中每個函數都是實變數 $x$ 的非常數函數，形式為 $f(x)=ax+b$（$a,b$ 為實數）。$G$ 具有下列性質：(a) 若 $f,g\in G$，則 $g\circ f\in G$，其中 $(g\circ f)(x)=g[f(x)]$。(b) 若 $f\in G$，則其反函數 $f^{-1}\in G$；對 $f(x)=ax+b$，其反函數為 $f^{-1}(x)=(x-b)/a$。(c) 對每個 $f\in G$，存在實數 $x_f$，使得 $f(x_f)=x_f$。證明：存在一個實數 $k$，使得對所有 $f\in G$ 都有 $f(k)=k$。
+src: imo1973-5
+=== P6
+zh: 設 $a_1,a_2,\dots,a_n$ 為 $n$ 個正數，且 $q$ 為給定的實數，$0<q<1$。求 $n$ 個數 $b_1,b_2,\dots,b_n$，使得 (a) 對 $k=1,\dots,n$，$a_k<b_k$；(b) 對 $k=1,\dots,n-1$，$q<\dfrac{b_{k+1}}{b_k}<\dfrac1q$；(c) $b_1+b_2+\cdots+b_n<\dfrac{1+q}{1-q}(a_1+a_2+\cdots+a_n)$。
+src: imo1973-6

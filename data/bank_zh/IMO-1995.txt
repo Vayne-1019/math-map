@@ -1,0 +1,18 @@
+=== P1
+zh: 設 $A,B,C,D$ 為直線上依此順序排列的四個相異點。以 $AC$ 與 $BD$ 為直徑的兩圓相交於 $X,Y$。直線 $XY$ 與 $BC$ 交於 $Z$。設 $P$ 為直線 $XY$ 上異於 $Z$ 的一點。直線 $CP$ 與以 $AC$ 為直徑的圓除 $C$ 外再交於 $M$，直線 $BP$ 與以 $BD$ 為直徑的圓除 $B$ 外再交於 $N$。證明：直線 $AM$、$DN$、$XY$ 共點。
+src: imo1995-1
+=== P2
+zh: 設 $a,b,c$ 為正實數，且 $abc=1$。證明：$\dfrac{1}{a^3(b+c)}+\dfrac{1}{b^3(c+a)}+\dfrac{1}{c^3(a+b)}\ge\dfrac32$。
+src: imo1995-2
+=== P3
+zh: 求所有整數 $n>3$，使得平面上存在 $n$ 個點 $A_1,\dots,A_n$（任意三點不共線），以及實數 $r_1,\dots,r_n$，滿足：對所有 $1\le i<j<k\le n$，三角形 $A_iA_jA_k$ 的面積等於 $r_i+r_j+r_k$。
+src: imo1995-3
+=== P4
+zh: 求 $x_0$ 的最大值，使得存在正實數所成的數列 $x_0,x_1,\dots,x_{1995}$，滿足 $x_0=x_{1995}$，且對 $i=1,\dots,1995$，都有 $x_{i-1}+\dfrac{2}{x_{i-1}}=2x_i+\dfrac{1}{x_i}$。
+src: imo1995-4
+=== P5
+zh: 設凸六邊形 $ABCDEF$ 滿足 $AB=BC=CD$，$DE=EF=FA$，且 $\angle BCD=\angle EFA=\dfrac{\pi}{3}$。設 $G,H$ 為六邊形內部的點，使得 $\angle AGB=\angle DHE=\dfrac{2\pi}{3}$。證明：$AG+GB+GH+DH+HE\ge CF$。
+src: imo1995-5
+=== P6
+zh: 設 $p$ 為奇質數。集合 $\{1,2,\dots,2p\}$ 中有多少個元素個數為 $p$ 的子集 $A$，使得 $A$ 中各元素之和可被 $p$ 整除？
+src: imo1995-6

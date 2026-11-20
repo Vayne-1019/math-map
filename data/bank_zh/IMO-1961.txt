@@ -1,0 +1,18 @@
+=== P1
+zh: 解聯立方程式：$x+y+z=a$，$x^2+y^2+z^2=b^2$，$xy=z^2$，其中 $a,b$ 為常數。求 $a,b$ 必須滿足的條件，使得解 $x,y,z$ 為三個相異的正數。
+src: imo1961-1
+=== P2
+zh: 設 $a,b,c$ 為三角形的三邊長，$T$ 為其面積。證明：$a^2+b^2+c^2\ge 4\sqrt3\,T$。等號何時成立？
+src: imo1961-2
+=== P3
+zh: 解方程式 $\cos^n x-\sin^n x=1$，其中 $n$ 為自然數。
+src: imo1961-3
+=== P4
+zh: 考慮三角形 $P_1P_2P_3$，點 $P$ 位於三角形內部。直線 $P_1P$、$P_2P$、$P_3P$ 分別與對邊交於 $Q_1$、$Q_2$、$Q_3$。證明：在數 $\dfrac{P_1P}{PQ_1}$、$\dfrac{P_2P}{PQ_2}$、$\dfrac{P_3P}{PQ_3}$ 中，至少有一個 $\le 2$，且至少有一個 $\ge 2$。
+src: imo1961-4
+=== P5
+zh: 作三角形 $ABC$，已知 $AC=b$，$AB=c$，且 $\angle AMB=\omega$，其中 $M$ 為 $BC$ 的中點，$\omega<90^\circ$。證明：解存在若且唯若 $b\tan\dfrac{\omega}{2}\le c<b$。等號何時成立？
+src: imo1961-5
+=== P6
+zh: 設平面 $\varepsilon$ 與不共線的三點 $A,B,C$，三點位於 $\varepsilon$ 的同一側，且由此三點決定的平面與 $\varepsilon$ 不平行。在平面 $\varepsilon$ 上任取三點 $A',B',C'$。設 $L,M,N$ 分別為線段 $AA'$、$BB'$、$CC'$ 的中點，$G$ 為三角形 $LMN$ 的重心。（我們不考慮使得 $L,M,N$ 不構成三角形的 $A',B',C'$ 位置。）當 $A',B',C'$ 各自獨立地在平面 $\varepsilon$ 上變動時，求點 $G$ 的軌跡。
+src: imo1961-6

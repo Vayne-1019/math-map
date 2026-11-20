@@ -1,0 +1,18 @@
+=== P1
+zh: 設 $ABC$ 為銳角三角形，外心為 $O$。設 $BC$ 上的點 $P$ 為自 $A$ 所作高的垂足。假設 $\angle BCA\ge\angle ABC+30^\circ$。證明：$\angle CAB+\angle COP<90^\circ$。
+src: imo2001-1
+=== P2
+zh: 證明：對所有正實數 $a,b,c$，$\dfrac{a}{\sqrt{a^2+8bc}}+\dfrac{b}{\sqrt{b^2+8ca}}+\dfrac{c}{\sqrt{c^2+8ab}}\ge1$。
+src: imo2001-2
+=== P3
+zh: 有二十一位女生與二十一位男生參加一場數學競賽。每位參賽者至多解出六題。對每位女生與每位男生，他們兩人至少共同解出一題。證明：存在一道題，它被至少三位女生與至少三位男生解出。
+src: imo2001-3
+=== P4
+zh: 設 $n>1$ 為奇數，$k_1,k_2,\dots,k_n$ 為給定的整數。對 $1,2,\dots,n$ 的每一個排列 $a=(a_1,a_2,\dots,a_n)$，令 $S(a)=\sum_{i=1}^{n}k_i a_i$。證明：存在兩個排列 $b,c$，$b\ne c$，使得 $n!$ 整除 $S(b)-S(c)$。
+src: imo2001-4
+=== P5
+zh: 在三角形 $ABC$ 中，$AP$ 平分 $\angle BAC$，$P$ 在 $BC$ 上；$BQ$ 平分 $\angle ABC$，$Q$ 在 $CA$ 上。已知 $\angle BAC=60^\circ$，且 $AB+BP=AQ+QB$。求三角形 $ABC$ 各角的所有可能值。
+src: imo2001-5
+=== P6
+zh: 設 $a,b,c,d$ 為整數，且 $a>b>c>d>0$。假設 $ac+bd=(b+d+a-c)(b+d-a+c)$。證明：$ab+cd$ 不是質數。
+src: imo2001-6

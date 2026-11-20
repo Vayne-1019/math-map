@@ -1,0 +1,19 @@
+=== P1
+zh: 設 $M$ 為 $\triangle ABC$ 邊 $AB$ 上的一點。設 $r_1,r_2,r$ 分別為三角形 $AMC$、$BMC$、$ABC$ 的內切圓半徑；設 $q_1,q_2,q$ 分別為這三個三角形位於角 $ACB$ 內的旁切圓半徑。證明：$\dfrac{r_1}{q_1}\cdot\dfrac{r_2}{q_2}=\dfrac{r}{q}$。
+src: imo1970-1
+=== P2
+zh: 設 $a,b,n$ 為大於 $1$ 的整數，且 $a,b$ 分別為兩種記數系統的底。在底為 $a$ 的系統中，$A_{n-1}$ 與 $A_n$ 為數；在底為 $b$ 的系統中，$B_{n-1}$ 與 $B_n$ 為數；它們的關係如下：$A_n=x_nx_{n-1}\cdots x_0$，$A_{n-1}=x_{n-1}x_{n-2}\cdots x_0$，$B_n=x_nx_{n-1}\cdots x_0$，$B_{n-1}=x_{n-1}x_{n-2}\cdots x_0$，其中 $x_n\ne0$，$x_{n-1}\ne0$。證明：$\dfrac{A_{n-1}}{A_n}<\dfrac{B_{n-1}}{B_n}$ 若且唯若 $a>b$。
+src: imo1970-2
+=== P3
+zh: 實數 $a_0,a_1,\dots,a_n,\dots$ 滿足條件：$1=a_0\le a_1\le a_2\le\cdots\le a_n\le\cdots$。數列 $b_1,b_2,\dots,b_n,\dots$ 定義為 $b_n=\displaystyle\sum_{k=1}^{n}\left(1-\frac{a_{k-1}}{a_k}\right)\frac{1}{\sqrt{a_k}}$。(a) 證明：對所有 $n$，$0\le b_n<2$。(b) 給定 $c$，$0\le c<2$，證明存在具有上述性質的數列 $a_0,a_1,\dots$，使得當 $n$ 充分大時 $b_n>c$。
+src: imo1970-3
+note: 待核對：$b_n$ 的定義式在抽取時括號與分數結構不清，此處依標準寫法重建，請對照 PDF。
+=== P4
+zh: 求所有正整數 $n$，使得集合 $\{n,n+1,n+2,n+3,n+4,n+5\}$ 可以分成兩個子集，且其中一個子集內各數的乘積等於另一個子集內各數的乘積。
+src: imo1970-4
+=== P5
+zh: 在四面體 $ABCD$ 中，$\angle BDC$ 為直角。設由 $D$ 向平面 $ABC$ 所作垂線的垂足 $H$，恰為 $\triangle ABC$ 的高的交點。證明：$(AB+BC+CA)^2\le 6(AD^2+BD^2+CD^2)$。求等號成立的四面體。
+src: imo1970-5
+=== P6
+zh: 平面上有 $100$ 個點，其中任意三點不共線。考慮所有以這些點為頂點的三角形。證明：這些三角形中，銳角三角形所佔的比例不超過 $70\%$。
+src: imo1970-6
