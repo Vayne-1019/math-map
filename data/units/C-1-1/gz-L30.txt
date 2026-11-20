@@ -1,0 +1,22 @@
+=== meta
+title: 加法與乘法原理：分類相加、分步相乘
+from: gz-L30
+order: 40
+
+=== body
+<div class="hero"><b>分類</b>（互不重疊）→ 相加；<b>分步</b>（每步獨立選）→ 相乘<br>正面太亂就算<b>反面</b>；兩邊一樣多就<b>建對應</b><br>最大的坑：<b>小組有沒有編號</b></div>
+<div class="cards">
+<div class="card"><h4>① 分步相乘</h4><div class="rule">每個指數各選一次</div>
+<div class="eg">$n=p_1^{r_1}\cdots p_m^{r_m}$ 的因數個數<br>$(r_1+1)\cdots(r_m+1)$ <span class="pill">奇數 ⇔ 平方數</span></div></div>
+<div class="card"><h4>② 算反面</h4><div class="rule">全部 − 不符合的</div>
+<div class="eg">3 的倍數五位數 30000 個<br>不含 6 的 $8\cdot9^3\cdot3=17496$ 個<br>含 6 的 $=12504$</div></div>
+<div class="card"><h4>③ 建對應</h4><div class="rule">一一對應 ⇒ 一樣多</div>
+<div class="eg">十位是 6 的 3 倍數五位數<br>↔ 劃掉 6 的 3 倍數四位數：3000 個</div></div>
+<div class="card"><h4>④ 去掉編號</h4><div class="rule">組合模式天然編了號</div>
+<div class="eg">$2n$ 人兩兩結對：<br>$\frac{\mathrm C_{2n}^2\mathrm C_{2n-2}^2\cdots\mathrm C_2^2}{n!}=\frac{(2n)!}{2^nn!}$ <span class="pill">除以 n!</span></div></div>
+</div>
+<p>同一題換角度算，答案要一樣。⟦例｜$n+1$ 個球放進 $n$ 個盒子不空：從盒子看 $\mathrm C_n^1\mathrm C_{n+1}^2(n-1)!$，從球看 $\mathrm C_{n+1}^2\cdot n!$，都等於 $\frac n2(n+1)!$。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>「先選第一對、再選第二對……」不知不覺給小組編了號，多算 $n!$ 倍</li>
+<li>分類時有重疊（同一種情況算兩次），或分步時後一步的選法數其實依賴前一步</li></ul></div>
+<div class="bottomline">先想清楚：是分類還是分步？有沒有偷偷排了順序？</div>
