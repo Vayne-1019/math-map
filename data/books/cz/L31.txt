@@ -1,0 +1,158 @@
+=== meta
+title: 旋轉
+author: 余紅兵
+pages: 248-255
+units: G-5-1, G-10-2
+status: 完成
+
+=== text
+<p>旋轉也是常用的幾何變換。如果一個變換使定點 $P$ 不動，其他點 $X$ 變成 $X'$，滿足 $PX=PX'$、$\angle XPX'=\theta$（$0^\circ<\theta\le180^\circ$），且從射線 $PX$ 轉到 $PX'$ 的方向是指定的方向，就稱為繞中心 $P$ 按給定方向旋轉角度 $\theta$。</p>
+<p>解題中最常用的是 $90^\circ$、$60^\circ$ 和 $180^\circ$ 的旋轉。涉及垂直（直角）的問題，適當地作 $90^\circ$ 旋轉往往能奏效。</p>
+
+=== 例 1
+zh: $E$、$F$ 分別在正方形 $ABCD$ 的邊 $BC$ 及 $CD$ 上，且 $\angle EAF=45^\circ$，過 $A$ 作 $AP\perp EF$。證明：$AB=AP$。
+sol: <figure class="bkfig"><svg viewBox="0 0 183 260" width="183" role="img" aria-label="正方形中的 45° 角">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,161.4 161.4,161.4 161.4,22 22,22"/><line x1="22" y1="161.4" x2="161.4" y2="120.9"/><line x1="22" y1="161.4" x2="98.6" y2="22"/><line x1="161.4" y1="120.9" x2="98.6" y2="22"/><line x1="22" y1="161.4" x2="139.7" y2="86.7"/><polyline points="135.5,89.4 138.1,93.6 142.4,91" stroke-width="1"/><line x1="22" y1="161.4" x2="161.4" y2="238" stroke-dasharray="5 4"/><line x1="161.4" y1="161.4" x2="161.4" y2="238" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="11" y="166.3" text-anchor="middle">A</text><text x="172.4" y="166.3" text-anchor="middle">B</text><text x="169.1" y="19.1" text-anchor="middle">C</text><text x="14.2" y="19.1" text-anchor="middle">D</text><text x="172.4" y="125.8" text-anchor="middle">E</text><text x="98.6" y="15.9" text-anchor="middle">F</text><text x="147.5" y="83.9" text-anchor="middle">P</text><text x="175.9" y="242.9" text-anchor="middle">F′</text></g>
+</svg><figcaption>$\angle EAF=45^\circ$；把 $\triangle ADF$ 繞 $A$ 轉 $90^\circ$ 到 $\triangle ABF'$（虛線）</figcaption></figure>
+<p><b>證</b>　把 $\triangle ADF$ 繞 $A$ 按順時針方向轉 $90^\circ$ 到 $\triangle ABF'$（$F'$ 在 $CB$ 的延長線上）。則 $AF=AF'$，$\angle DAF=\angle BAF'$，所以</p>
+$$\angle EAF'=\angle EAB+\angle BAF'=\angle EAB+\angle DAF=90^\circ-45^\circ=45^\circ=\angle FAE.$$
+<p>又 $AE$ 公用，$\triangle AFE\cong\triangle AF'E$（SAS），兩個三角形在 $FE$、$F'E$ 上的對應高 $AP$ 與 $AB$ 相等。</p>
+<p>用旋轉造出兩個全等三角形，是非常基本的手法。</p>
+=== text
+<p>下面的例 2 涉及線段中點：用旋轉產生梯形的中位線，再用中位線定理，也是基本方法。</p>
+
+=== 例 2
+zh: 在等腰直角三角形 $ABC$ 的直角邊 $AC$ 與 $BC$ 上取點 $D$、$E$，使 $CD=CE$，從 $D$ 和 $C$ 向直線 $AE$ 作垂線並延長，分別交 $AB$ 於 $K$、$L$。證明：$BL=LK$。
+sol: <figure class="bkfig"><svg viewBox="0 0 232 190" width="232" role="img" aria-label="等腰直角三角形與兩條垂線">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,168 210.4,168 116.2,73.8"/><line x1="22" y1="168" x2="168" y2="125.6"/><line x1="64.4" y1="125.6" x2="76.7" y2="168"/><line x1="116.2" y1="73.8" x2="143.5" y2="168"/><line x1="116.2" y1="73.8" x2="168" y2="22" stroke-dasharray="5 4"/><line x1="168" y1="22" x2="210.4" y2="168" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="11" y="172.9" text-anchor="middle">A</text><text x="221.4" y="172.9" text-anchor="middle">B</text><text x="116.2" y="67.7" text-anchor="middle">C</text><text x="56.6" y="122.7" text-anchor="middle">D</text><text x="175.8" y="122.7" text-anchor="middle">E</text><text x="76.7" y="183.9" text-anchor="middle">K</text><text x="143.5" y="183.9" text-anchor="middle">L</text><text x="178.3" y="19.1" text-anchor="middle">E′</text></g>
+</svg><figcaption>$CD=CE$；把 $\triangle ACE$ 繞 $C$ 轉 $90^\circ$ 到 $\triangle BCE'$（虛線）</figcaption></figure>
+<p><b>證</b>　把 $\triangle ACE$ 繞 $C$ 轉 $90^\circ$ 到 $\triangle BCE'$（$A$ 落到 $B$）。旋轉 $90^\circ$ 使對應線段互相垂直，所以 $BE'\perp AE$，從而 $DK\parallel CL\parallel E'B$。另一方面 $CE'=CE=CD$，$C$ 是 $DE'$ 的中點⟦為什麼 D、C、E′ 共線｜$CE$ 沿 $CB$，轉 $90^\circ$ 後沿 $CA$ 的反方向，所以 $E'$ 在 $AC$ 的延長線上。⟧，所以 $CL$ 是梯形 $DKBE'$ 的中位線，平分腰 $BK$，即 $BL=LK$。</p>
+=== 例 3
+zh: $\triangle ABC$ 和 $\triangle ADE$ 都是等腰直角三角形，$\angle BAC=\angle DAE=90^\circ$，$M$、$N$、$O$ 分別是 $BC$、$DE$、$BD$ 的中點。證明：$\triangle MNO$ 也是等腰直角三角形。
+sol: <figure class="bkfig"><svg viewBox="0 0 243 220" width="243" role="img" aria-label="兩個共頂點的等腰直角三角形">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="125.5,94.5 53,198 22,22"/><polygon points="125.5,94.5 180.8,190.2 221.3,39.2"/><polygon points="37.5,110 201,114.7 116.9,194.1" stroke="#c2562b" stroke-width="2"/><line x1="53" y1="198" x2="221.3" y2="39.2" stroke-dasharray="5 4"/><line x1="22" y1="22" x2="180.8" y2="190.2" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="125.5" y="88.4" text-anchor="middle">A</text><text x="45.3" y="210.7" text-anchor="middle">B</text><text x="14.2" y="19.1" text-anchor="middle">C</text><text x="188.6" y="202.9" text-anchor="middle">D</text><text x="229.1" y="36.3" text-anchor="middle">E</text><text x="26.5" y="114.9" text-anchor="middle">M</text><text x="212" y="119.6" text-anchor="middle">N</text><text x="116.9" y="210" text-anchor="middle">O</text></g>
+</svg><figcaption>$\triangle ABE$ 繞 $A$ 轉 $90^\circ$ 成 $\triangle ACD$，所以 $BE=CD$ 且 $BE\perp CD$（虛線）</figcaption></figure>
+<p><b>證</b>　以 $A$ 為中心把 $\triangle ABE$ 轉 $90^\circ$，$AB$ 轉到 $AC$、$AE$ 轉到 $AD$，$\triangle ABE$ 恰好與 $\triangle ACD$ 重合，所以 $BE=CD$，且 $BE$ 與 $CD$ 的夾角等於旋轉角，$BE\perp CD$。</p>
+<p>另一方面，$OM$、$ON$ 分別是 $\triangle BDC$ 與 $\triangle DBE$ 的中位線，$OM\parallel CD$ 且 $OM=\frac12CD$，$ON\parallel BE$ 且 $ON=\frac12BE$。所以 $OM=ON$、$OM\perp ON$，$\triangle OMN$ 是等腰直角三角形。</p>
+<p>本題也可以用全等三角形與四點共圓解決，但旋轉的論證不僅簡捷，也讓我們看清問題的本質。</p>
+=== 例 4
+zh: 正方形 $ABCD$ 與 $A_1B_1C_1D_1$ 同向，$A$ 與 $A_1$ 重合，但 $B$ 與 $B_1$ 不重合。證明：直線 $BB_1$、$CC_1$、$DD_1$ 共點。
+sol: <figure class="bkfig"><svg viewBox="0 0 230 192" width="230" role="img" aria-label="共頂點的兩個正方形">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="171,26 26.6,26 26.6,170.4 171,170.4"/><polygon points="171,26 69.2,63 106.3,164.8 208,127.7"/><line x1="22" y1="22" x2="185" y2="163.6"/><line x1="171" y1="170.4" x2="180.3" y2="159.6"/><line x1="208" y1="127.7" x2="180.3" y2="159.6"/><line x1="26.6" y1="170.4" x2="180.3" y2="159.6"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="178.7" y="23.1" text-anchor="middle">A</text><text x="18.8" y="23.1" text-anchor="middle">B</text><text x="18.8" y="183" text-anchor="middle">C</text><text x="171" y="186.3" text-anchor="middle">D</text><text x="69.2" y="56.9" text-anchor="middle">B<tspan font-size="10">1</tspan></text><text x="96" y="161.9" text-anchor="middle">C<tspan font-size="10">1</tspan></text><text x="222.5" y="132.6" text-anchor="middle">D<tspan font-size="10">1</tspan></text><text x="188.1" y="172.3" text-anchor="middle">X</text></g>
+</svg><figcaption>兩個同向正方形共頂點 $A$；$BB_1,CC_1,DD_1$ 交於 $X$</figcaption></figure>
+<p><b>證</b>　把兩個正方形都繞 $A$ 轉 $90^\circ$，則 $B$ 轉到 $D$，$B_1$ 轉到 $D_1$，所以 $BB_1$ 轉到 $DD_1$，旋轉前 $BB_1\perp DD_1$。設 $BB_1$（的延長線）與 $DD_1$ 交於 $X$，則 $\angle BXD=90^\circ=\angle BAD$⟦於是｜$X$ 看 $BD$ 成直角，在以 $BD$ 為直徑的圓上，也就是正方形 $ABCD$ 的外接圓上。⟧，$X$ 在正方形 $ABCD$ 的外接圓上；同理 $X$ 也在正方形 $A_1B_1C_1D_1$ 的外接圓上。所以</p>
+$$\angle C_1XB_1=\angle C_1AB_1=45^\circ,\qquad\angle CXB=\angle CAB=45^\circ,$$
+<p>所以 $C,C_1,X$ 三點共線，即 $BB_1,CC_1,DD_1$ 交於 $X$。</p>
+=== text
+<p>涉及 $60^\circ$ 角，尤其是正三角形的問題，常作 $60^\circ$ 的旋轉。</p>
+
+=== 例 5
+zh: 平面上三個正三角形 $ABC$、$CDE$、$EHK$ 的頂點 $A$、$D$、$K$ 在一條直線上，且 $AD=DK$。證明：$\triangle HBD$ 也是正三角形。
+sol: <figure class="bkfig"><svg viewBox="0 0 290 209" width="290" role="img" aria-label="三個正三角形">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,167.1 92.1,140.8 34.3,93.3"/><polygon points="34.3,93.3 145,142.5 132.3,22"/><polygon points="132.3,22 117.1,187.5 268,117.9"/><line x1="22" y1="167.1" x2="268" y2="117.9"/><polygon points="117.1,187.5 92.1,140.8 145,142.5" stroke="#c2562b" stroke-width="2"/><line x1="92.1" y1="140.8" x2="87.6" y2="153.9" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="11" y="172" text-anchor="middle">A</text><text x="92.1" y="134.7" text-anchor="middle">B</text><text x="26.5" y="90.4" text-anchor="middle">C</text><text x="152.8" y="139.6" text-anchor="middle">D</text><text x="132.3" y="15.9" text-anchor="middle">E</text><text x="117.1" y="203.4" text-anchor="middle">H</text><text x="279" y="122.8" text-anchor="middle">K</text><text x="87.6" y="169.8" text-anchor="middle">M</text></g>
+</svg><figcaption>三個正三角形，$A,D,K$ 共線且 $AD=DK$；紅色的 $\triangle HBD$ 也是正三角形</figcaption></figure>
+<p><b>證</b>　以 $C$ 為中心，把 $\triangle ACD$ 轉 $60^\circ$，它變成 $\triangle BCE$，特別地 $AD$ 變成 $BE$，$AD=BE$，並且 $AD$ 與 $BE$ 的夾角 $\angle EMD=60^\circ$（$M$ 是 $EB$ 延長線與 $AD$ 的交點）。而 $\angle EHK=60^\circ$，所以 $E,M,H,K$ 四點共圓⟦為什麼｜$M$、$H$ 看 $EK$ 的角都是 $60^\circ$，且在 $EK$ 同側。⟧，故 $\angle MEH=\angle MKH$，即 $\angle BEH=\angle DKH$。再由 $EH=HK$ 及 $EB=AD=DK$，$\triangle BEH\cong\triangle DKH$，所以 $BH=DH$，且 $\angle EHB=\angle KHD$。於是</p>
+$$\angle BHD=\angle EHB+\angle EHD=\angle KHD+\angle EHD=\angle EHK=60^\circ.$$
+<p>所以 $\triangle BHD$ 是正三角形。</p>
+=== 例 6
+zh: 設 $P$ 是正 $\triangle ABC$ 內一點，$PC=3$，$PA=4$，$PB=5$，求這個正三角形的邊長。
+sol: <figure class="bkfig"><svg viewBox="0 0 212 240" width="212" role="img" aria-label="正三角形內一點到三頂點的距離">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,167.4 106,22 189.9,167.4"/><line x1="118.8" y1="145.4" x2="22" y2="167.4"/><line x1="118.8" y1="145.4" x2="106" y2="22"/><line x1="118.8" y1="145.4" x2="189.9" y2="167.4"/><line x1="22" y1="167.4" x2="135.3" y2="218" stroke-dasharray="5 4"/><line x1="189.9" y1="167.4" x2="135.3" y2="218" stroke-dasharray="5 4"/><line x1="118.8" y1="145.4" x2="135.3" y2="218" stroke-dasharray="5 4"/><line x1="22" y1="167.4" x2="36.7" y2="120" stroke-dasharray="5 4"/><line x1="118.8" y1="145.4" x2="36.7" y2="120" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="11" y="172.3" text-anchor="middle">A</text><text x="106" y="15.9" text-anchor="middle">B</text><text x="200.9" y="172.3" text-anchor="middle">C</text><text x="126.6" y="142.5" text-anchor="middle">P</text><text x="135.3" y="233.9" text-anchor="middle">P′</text><text x="28.9" y="117.1" text-anchor="middle">D</text></g>
+</svg><figcaption>$PA=4$、$PB=5$、$PC=3$；把 $\triangle BCP$ 繞 $C$ 轉 $60^\circ$ 到 $\triangle ACP'$（虛線）</figcaption></figure>
+<p><b>解</b>　把 $\triangle BCP$ 繞 $C$ 轉 $60^\circ$ 得 $\triangle ACP'$，則 $AP'=PB=5$。$\triangle PCP'$ 是正三角形，$PP'=PC=3$。所以 $\triangle APP'$ 三邊 $3,4,5$，是直角三角形（$\angle APP'=90^\circ$）。於是在 $\triangle APC$ 中，$\angle APC=90^\circ+60^\circ=150^\circ$，$PA=4$，$PC=3$，由餘弦定理就能求出 $AC$。</p>
+<p>若不想用餘弦定理：過 $A$ 作 $CP$ 延長線的垂線 $AD$，則 $\angle APD=180^\circ-150^\circ=30^\circ$，所以 $AD=\frac12AP=2$，$PD=AP\cos30^\circ=2\sqrt3$。這樣</p>
+$$AC=\sqrt{AD^2+DC^2}=\sqrt{2^2+(3+2\sqrt3)^2}=\sqrt{25+12\sqrt3}.$$
+<p>透過旋轉把「分散」的線段 $PA,PB,PC$「集中」到 $\triangle APP'$ 中，是解本題的關鍵。下面與幾何極值有關的例 7 也這樣處理。</p>
+ans: $\sqrt{25+12\sqrt3}$
+
+=== 例 7
+zh: 一個直角三角形的斜邊長為 $2$，一個動點到三角形三個頂點距離之和的最小值為 $\sqrt7$。求這個三角形的兩條直角邊長。
+sol: <figure class="bkfig"><svg viewBox="0 0 280 135" width="280" role="img" aria-label="直角三角形的費馬點">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="100.7,22 258,112.8 100.7,112.8" stroke-width="2"/><line x1="123.1" y1="86.9" x2="100.7" y2="22"/><line x1="123.1" y1="86.9" x2="258" y2="112.8"/><line x1="123.1" y1="86.9" x2="100.7" y2="112.8"/><line x1="22" y1="67.4" x2="258" y2="112.8" stroke-dasharray="5 4"/><line x1="100.7" y1="112.8" x2="22" y2="67.4" stroke-dasharray="5 4"/><line x1="22" y1="67.4" x2="89.4" y2="80.4" stroke-dasharray="5 4"/><line x1="100.7" y1="112.8" x2="89.4" y2="80.4" stroke-dasharray="5 4"/><line x1="22" y1="67.4" x2="22" y2="112.8" stroke-dasharray="5 4"/><line x1="22" y1="112.8" x2="100.7" y2="112.8" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="100.7" y="15.9" text-anchor="middle">A</text><text x="269" y="117.7" text-anchor="middle">B</text><text x="100.7" y="128.7" text-anchor="middle">C</text><text x="130.9" y="84" text-anchor="middle">D</text><text x="7.5" y="72.3" text-anchor="middle">A′</text><text x="89.4" y="74.3" text-anchor="middle">D′</text><text x="22" y="128.7" text-anchor="middle">E</text></g>
+</svg><figcaption>把 $\triangle CDA$ 繞 $C$ 轉 $60^\circ$ 到 $\triangle CD'A'$；$DA+DB+DC=A'D'+D'D+DB\ge A'B$（虛線）</figcaption></figure>
+<p><b>解</b>　設 $\triangle ABC$ 中 $\angle C=90^\circ$，$AB=2$，$D$ 是平面上的動點，連 $DA,DB,DC$。以 $C$ 為中心把 $\triangle CDA$ 轉 $60^\circ$ 到 $\triangle CD'A'$，$\triangle CDD'$ 是正三角形，$CD=DD'$。這樣「分散」的線段 $DA,DB,DC$ 就「集中」成折線 $A'D'DB$，$D$ 到三頂點距離和的最小值就是線段 $A'B$ 的長，即 $A'B=\sqrt7$（此時 $D$ 恰為圓 $AA'C$ 與直線 $A'B$ 的交點，參見習題 3）。</p>
+<p>過 $A'$ 作 $BC$ 延長線的垂線 $A'E$。設 $AC=A'C=x$，則 $\angle A'CE=180^\circ-90^\circ-60^\circ=30^\circ$，所以 $A'E=\frac12x$，$EC=\frac{\sqrt3}2x$。又 $BC=\sqrt{4-x^2}$，在直角 $\triangle A'EB$ 中</p>
+$$A'B^2=A'E^2+(EC+BC)^2,\quad\text{即}\quad\tfrac14x^2+\Big(\tfrac{\sqrt3}2x+\sqrt{4-x^2}\Big)^2=7.$$
+<p>⟦解這個方程｜展開得 $x^2+\sqrt3x\sqrt{4-x^2}+4-x^2=7$，即 $x\sqrt{4-x^2}=\sqrt3$，平方得 $x^4-4x^2+3=0$，$x^2=1$ 或 $3$。⟧解得 $x=1$ 或 $\sqrt3$，即 $AC=1$、$BC=\sqrt3$，或 $AC=\sqrt3$、$BC=1$。</p>
+ans: $1$ 和 $\sqrt3$
+
+=== text
+<p>最後談談 $180^\circ$ 的旋轉。繞定點 $P$ 轉 $180^\circ$ 把 $X$ 變成 $X'$，使 $P$ 是 $XX'$ 的中點，所以這種變換也叫<b>中心對稱</b>。請注意它和第 29 講的軸對稱不同：那是關於一條直線對稱，這裡是關於一點對稱。中心對稱也是有用的解題方法。</p>
+
+=== 例 8
+zh: 證明：如果三角形的一條中線和角平分線重合，那麼這個三角形是等腰三角形。
+sol: <figure class="bkfig"><svg viewBox="0 0 126 240" width="126" role="img" aria-label="中線與角平分線重合">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,120 62.8,22 103.7,120"/><line x1="62.8" y1="22" x2="62.8" y2="120" stroke-dasharray="5 4"/><line x1="62.8" y1="120" x2="62.8" y2="218" stroke-dasharray="5 4"/><line x1="22" y1="120" x2="62.8" y2="218" stroke-dasharray="5 4"/><line x1="103.7" y1="120" x2="62.8" y2="218" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="11" y="124.9" text-anchor="middle">A</text><text x="62.8" y="15.9" text-anchor="middle">B</text><text x="114.7" y="124.9" text-anchor="middle">C</text><text x="70.6" y="117.1" text-anchor="middle">D</text><text x="62.8" y="233.9" text-anchor="middle">B′</text></g>
+</svg><figcaption>$B'$ 是 $B$ 關於 $D$ 的對稱點，$ABCB'$ 是平行四邊形（虛線）；結論是三角形等腰，圖按結論畫</figcaption></figure>
+<p><b>證</b>　設 $\triangle ABC$ 中，$BD$ 既是 $AC$ 邊上的中線又是 $\angle B$ 的平分線，證 $AB=BC$。作 $B$ 關於 $D$ 的對稱點 $B'$。$D$ 是 $AC$ 的中點，所以 $ABCB'$ 是平行四邊形，$\angle AB'B=\angle B'BC$。而 $\angle ABB'=\angle ABD=\angle DBC=\angle B'BC$，所以 $\angle ABB'=\angle AB'B$，$AB=AB'=BC$。</p>
+<p>涉及中點的問題，以中點為中心作對稱變換，是一種基本手法。</p>
+=== 例 9
+zh: 在 $\triangle ABC$ 中，$D$ 是 $AB$ 的中點，點 $E$、$F$ 分別在 $AC$、$BC$ 上。證明：$\triangle DEF$ 的面積不超過 $\triangle ADE$ 與 $\triangle BDF$ 的面積之和。
+sol: <figure class="bkfig"><svg viewBox="0 0 260 200" width="260" role="img" aria-label="中點與中心對稱">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="185.8,22 42.8,178 237.8,178"/><polygon points="114.3,100 206.6,84.4 146.8,178"/><line x1="114.3" y1="100" x2="22" y2="115.6" stroke-dasharray="5 4"/><line x1="42.8" y1="178" x2="22" y2="115.6" stroke-dasharray="5 4"/><line x1="146.8" y1="178" x2="22" y2="115.6" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="185.8" y="15.9" text-anchor="middle">A</text><text x="35" y="190.7" text-anchor="middle">B</text><text x="245.6" y="190.7" text-anchor="middle">C</text><text x="106.5" y="97.1" text-anchor="middle">D</text><text x="214.4" y="81.5" text-anchor="middle">E</text><text x="146.8" y="193.9" text-anchor="middle">F</text><text x="7.5" y="120.5" text-anchor="middle">E′</text></g>
+</svg><figcaption>$\triangle ADE$ 關於 $D$ 作中心對稱，得 $\triangle BDE'$（虛線）</figcaption></figure>
+<p><b>證</b>　作 $\triangle ADE$ 關於 $D$ 的中心對稱，得 $\triangle BDE'$（$B$、$E'$ 分別是 $A$、$E$ 關於 $D$ 的對稱點）。$\triangle ADE\cong\triangle BDE'$，所以 $S_{\triangle ADE}+S_{\triangle BDF}=S_{\triangle BDE'}+S_{\triangle BDF}=S_{BFDE'}$。四邊形 $BFDE'$ 是凸四邊形，$D$ 是 $EE'$ 的中點，所以</p>
+$$S_{\triangle DEF}=S_{\triangle DE'F}\le S_{BFDE'}=S_{\triangle BDF}+S_{\triangle BDE'}=S_{\triangle BDF}+S_{\triangle ADE}.$$
+<p>⟦第一個等號｜$FD$ 是 $\triangle EFE'$ 的中線，把它分成兩個面積相等的三角形。⟧</p>
+=== 例 10
+zh: 在 $\triangle ABC$ 中引中線 $AF$ 和 $CE$，如果 $\angle BAF=\angle BCE=30^\circ$，證明 $\triangle ABC$ 是正三角形。
+sol: <figure class="bkfig"><svg viewBox="0 0 230 213" width="230" role="img" aria-label="兩條中線與 30° 角">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="115,30.3 53,137.7 177,137.7"/><line x1="115" y1="30.3" x2="115" y2="137.7"/><line x1="177" y1="137.7" x2="84" y2="84"/><circle cx="146" cy="84" r="62"/><polygon points="146,84 22,84 84,191.4" stroke-dasharray="5 4"/><line x1="22" y1="84" x2="53" y2="137.7" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"><circle cx="146" cy="84" r="2.4"/></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="115" y="24.2" text-anchor="middle">A</text><text x="42" y="142.6" text-anchor="middle">B</text><text x="188" y="142.6" text-anchor="middle">C</text><text x="76.2" y="81.1" text-anchor="middle">E</text><text x="115" y="153.6" text-anchor="middle">F</text><text x="157" y="88.9" text-anchor="middle">O</text><text x="7.5" y="88.9" text-anchor="middle">O<tspan font-size="10">1</tspan></text><text x="84" y="207.3" text-anchor="middle">O<tspan font-size="10">2</tspan></text></g>
+</svg><figcaption>$A,E,F,C$ 共圓，圓心 $O$；$O_1$、$O_2$ 是 $O$ 關於 $E$、$F$ 的對稱點（虛線）。結論是正三角形，圖按結論畫</figcaption></figure>
+<p><b>證</b>　$\angle EAF=\angle ECF=30^\circ$，所以 $A,E,F,C$ 四點共圓。設圓心為 $O$，則 $\angle EOF=2\angle EAF=60^\circ$。只要證 $O$ 在 $AC$ 上：那時 $\triangle EOF$ 是正三角形，進而易知 $\triangle ABC$ 是正三角形⟦為什麼｜$O$ 在 $AC$ 上，$AC$ 是直徑，$\angle AFC=\angle AEC=90^\circ$，中線又是高，所以 $AB=AC=BC$。⟧。</p>
+<p>作 $O$ 關於 $E$ 的對稱點 $O_1$，則 $AO=O_1B$（中心對稱把 $A$ 變到 $B$、$O$ 變到 $O_1$），且 $OO_1=2OE$ 等於圓的直徑。作 $O$ 關於 $F$ 的對稱點 $O_2$，同理 $CO=O_2B$，$OO_2$ 也等於直徑。在 $\triangle O_1OO_2$ 中 $O_1O=OO_2$、$\angle O_1OO_2=\angle EOF=60^\circ$，所以它是正三角形，$O_1O_2$ 等於直徑。但 $O_1B+O_2B=AO+CO$ 也等於直徑，所以 $B$ 在線段 $O_1O_2$ 上，$O_1,B,O_2$ 三點共線。注意 $A$ 關於 $E$ 的對稱點是 $B$，所以 $AO\parallel O_1B$，即 $AO\parallel O_1O_2$；同理 $CO\parallel O_1O_2$，所以 $O$ 在 $AC$ 上。</p>
+=== 習題 1
+zh: 從等腰 $\triangle ABC$ 的底邊 $AC$ 的中點 $M$ 作 $BC$ 邊上的垂線 $MH$（$H$ 為垂足），點 $P$ 是 $MH$ 的中點。證明：$AH\perp BP$。
+sol: <figure class="bkfig"><svg viewBox="0 0 180 221" width="180" role="img" aria-label="等腰三角形底邊中點的垂線">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,198.8 90,22 158,198.8"/><line x1="90" y1="198.8" x2="149.2" y2="176"/><line x1="22" y1="198.8" x2="149.2" y2="176"/><line x1="90" y1="22" x2="119.6" y2="187.4"/><line x1="90" y1="22" x2="90" y2="198.8" stroke-dasharray="5 4"/><line x1="22" y1="198.8" x2="140.5" y2="153.2" stroke-dasharray="5 4"/><polyline points="145.5,177.5 146.9,181.2 150.7,179.7" stroke-width="1"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="11" y="203.7" text-anchor="middle">A</text><text x="90" y="15.9" text-anchor="middle">B</text><text x="169" y="203.7" text-anchor="middle">C</text><text x="90" y="214.7" text-anchor="middle">M</text><text x="160.2" y="180.9" text-anchor="middle">H</text><text x="119.6" y="203.3" text-anchor="middle">P</text><text x="151.5" y="158.1" text-anchor="middle">D</text></g>
+</svg><figcaption>$MH\perp BC$，$P$ 是 $MH$ 中點；作高 $AD$（虛線）</figcaption></figure>
+<p>作 $BC$ 邊上的高 $AD$，則 $MH$ 是 $\triangle ADC$ 的中位線，$CH=DH$。$\triangle BHM\sim\triangle ADC$，而且把 $\triangle BHM$ 繞 $M$ 轉 $90^\circ$ 後，它的各邊與 $\triangle ADC$ 的對應邊平行⟦為什麼｜對應邊 $BH$ 與 $AD$、$HM$ 與 $DC$、$MB$ 與 $CA$ 兩兩垂直（$BH$ 在 $BC$ 上而 $AD\perp BC$；$MH\perp BC$；$BM\perp AC$），所以轉 $90^\circ$ 後兩兩平行。⟧。所以 $\triangle BHM$ 中 $MH$ 邊上的中線 $BP$，轉過去後與 $\triangle ADC$ 中 $CD$ 邊上的中線 $AH$ 平行，因而旋轉前 $AH\perp BP$。</p>
+=== 習題 2
+zh: 兩個正方形 $BCDA$ 和 $BKMN$ 有公共頂點 $B$（如圖）。證明：$\triangle ABK$ 的中線和 $\triangle CBN$ 的高位於同一條直線上。
+sol: <figure class="bkfig"><svg viewBox="0 0 260 178" width="260" role="img" aria-label="共頂點的兩個正方形">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="138,70.8 107.4,156.3 22,125.7 52.5,40.3"/><polygon points="138,70.8 201.4,34.2 238,97.6 174.6,134.2"/><line x1="52.5" y1="40.3" x2="201.4" y2="34.2"/><line x1="107.4" y1="156.3" x2="174.6" y2="134.2"/><line x1="121.9" y1="22" x2="165.3" y2="154.2" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="52.5" y="34.2" text-anchor="middle">A</text><text x="127" y="75.7" text-anchor="middle">B</text><text x="99.7" y="168.9" text-anchor="middle">C</text><text x="11" y="130.6" text-anchor="middle">D</text><text x="209.2" y="31.3" text-anchor="middle">K</text><text x="249" y="102.5" text-anchor="middle">M</text><text x="174.6" y="150.1" text-anchor="middle">N</text><text x="126.9" y="31.2" text-anchor="middle">E</text></g>
+</svg><figcaption>$E$ 是 $AK$ 中點；中線 $BE$ 的延長線就是 $\triangle CBN$ 的高（虛線）</figcaption></figure>
+<p>作以 $B$ 為中心的 $90^\circ$ 旋轉，把 $K$ 變到 $N$，把 $C$ 變到 $A$ 的位置；設 $A$ 變到 $A'$，$AK$ 的中點 $E$ 變到 $E'$。則 $\angle EBE'=90^\circ$，$E'$ 是 $A'N$ 的中點，又 $B$ 是 $A'C$ 的中點⟦為什麼｜$A$ 轉 $90^\circ$ 到 $A'$，而 $C$ 轉 $90^\circ$ 到 $A$，所以 $A'$ 與 $C$ 關於 $B$ 對稱。⟧，所以在 $\triangle A'NC$ 中 $BE'\parallel CN$。由 $\angle EBE'=90^\circ$，$EB\perp CN$。</p>
+=== 習題 3
+zh: 畫出正 $\triangle ABC$ 的外接圓，在弧 $AB$（不含 $C$）上取一點 $M$。證明：$MC=MA+MB$。
+sol: <figure class="bkfig"><svg viewBox="0 0 200 200" width="200" role="img" aria-label="正三角形外接圓上一點">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="100" cy="100" r="78"/><polygon points="32.5,139 167.5,139 100,22"/><line x1="73.3" y1="173.3" x2="32.5" y2="139"/><line x1="73.3" y1="173.3" x2="167.5" y2="139"/><line x1="73.3" y1="173.3" x2="100" y2="22"/><line x1="167.5" y1="139" x2="90.7" y2="74.5" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="21.5" y="143.9" text-anchor="middle">A</text><text x="178.5" y="143.9" text-anchor="middle">B</text><text x="100" y="15.9" text-anchor="middle">C</text><text x="73.3" y="189.2" text-anchor="middle">M</text><text x="105.2" y="79.4" text-anchor="middle">M′</text></g>
+</svg><figcaption>把 $\triangle BMA$ 繞 $B$ 轉 $60^\circ$，$M$ 轉到 $MC$ 上的 $M'$</figcaption></figure>
+<p>把 $\triangle BMA$ 繞 $B$ 轉 $60^\circ$，使 $A$ 變到 $C$，設 $M$ 變到 $M'$。$\triangle BMM'$ 是正三角形，所以 $\angle BM'M+\angle BM'C=60^\circ+\angle AMB=60^\circ+120^\circ=180^\circ$，$M'$ 在線段 $MC$ 上。因而 $MC=MM'+M'C=MB+MA$。</p>
+=== 習題 4
+zh: 在 $\triangle ABC$ 中，$AB=AC$，$D$ 是三角形內一點，若 $\angle ADC>\angle ADB$，證明：$DB>DC$。
+sol: <figure class="bkfig"><svg viewBox="0 0 180 224" width="180" role="img" aria-label="等腰三角形內一點">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="63.6,22 22,202.2 132.9,188.4"/><line x1="87.9" y1="150.2" x2="63.6" y2="22"/><line x1="87.9" y1="150.2" x2="22" y2="202.2"/><line x1="87.9" y1="150.2" x2="132.9" y2="188.4"/><line x1="63.6" y1="22" x2="158" y2="112.1" stroke-dasharray="5 4"/><line x1="132.9" y1="188.4" x2="158" y2="112.1" stroke-dasharray="5 4"/><line x1="87.9" y1="150.2" x2="158" y2="112.1" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="63.6" y="15.9" text-anchor="middle">A</text><text x="14.2" y="214.9" text-anchor="middle">B</text><text x="140.7" y="201.1" text-anchor="middle">C</text><text x="76.9" y="155.1" text-anchor="middle">D</text><text x="172.5" y="117" text-anchor="middle">D′</text></g>
+</svg><figcaption>把 $\triangle ABD$ 繞 $A$ 轉 $\angle BAC$ 到 $\triangle ACD'$（虛線）</figcaption></figure>
+<p>以 $A$ 為中心把 $\triangle ABD$ 轉 $\angle BAC$ 成 $\triangle ACD'$，連 $DD'$。$AD=AD'$，所以 $\angle ADD'=\angle AD'D$；又 $\angle AD'C=\angle ADB<\angle ADC$，所以 $\angle CD'D<\angle CDD'$，從而 $CD<CD'=BD$。</p>
+=== 習題 5
+zh: 證明：任意三角形的三條中線可以構成一個三角形。
+sol: 設 $A_1,B_1,C_1$ 分別是 $BC,CA,AB$ 的中點。作 $B$ 關於 $B_1$ 的對稱點 $D$，則 $ABCD$ 是平行四邊形。再取 $CD$ 的中點 $F$，容易證明 $\triangle AA_1F$ 的三條邊分別等於 $\triangle ABC$ 的三條中線⟦怎麼證｜$AA_1$ 本身是中線；$A_1F$ 是 $\triangle BCD$ 的中位線，$A_1F=\frac12BD=BB_1$；$AF$ 與 $CC_1$ 平行且相等（$AC_1CF$ 是平行四邊形，因 $AC_1\parallel FC$ 且都等於 $\frac12AB$）。⟧。
