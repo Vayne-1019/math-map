@@ -8,7 +8,7 @@ src: imo1971-2
 zh: 證明：形如 $2^k-3$（$k=2,3,\dots$）的整數所成的集合中，含有一個無窮子集，使得其中任意兩數互質。
 src: imo1971-3
 === P4
-zh: 四面體 $ABCD$ 的每個面都是銳角三角形。考慮所有形如 $XYZTX$ 的封閉折線路徑，其定義如下：$X$ 為棱 $AB$ 上異於 $A,B$ 的點；類似地，$Y,Z,T$ 分別為棱 $BC$、$CD$、$DA$ 的內部點。證明：(a) 若 $\angle DAB+\angle BCD\ne\angle CDA+\angle ABC$，則這些折線路徑中不存在長度最小者。(b) 若 $\angle DAB+\angle BCD=\angle CDA+\angle ABC$，則最短折線路徑有無窮多條，且其共同長度為 $2AC\sin(\alpha/2)$，其中 $\alpha=\angle BAC+\angle CAD+\angle DAB$。
+zh: 四面體 $ABCD$ 的每個面都是銳角三角形。考慮所有形如 $XYZTX$ 的封閉折線路徑，其定義如下：$X$ 為棱 $AB$ 上異於 $A,B$ 的點；類似地，$Y,Z,T$ 分別為棱 $BC$、$CD$、$DA$ 的內部點。證明：(a) 若 $\angle DAB+\angle BCD e\angle CDA+\angle ABC$，則這些折線路徑中不存在長度最小者。(b) 若 $\angle DAB+\angle BCD=\angle CDA+\angle ABC$，則最短折線路徑有無窮多條，且其共同長度為 $2AC\sin(\alpha/2)$，其中 $\alpha=\angle BAC+\angle CAD+\angle DAB$。
 src: imo1971-4
 === P5
 zh: 證明：對每個自然數 $m$，存在平面上的有限點集 $S$，具有下列性質：對 $S$ 中每一點 $A$，在 $S$ 中恰有 $m$ 個點與 $A$ 的距離為 $1$。

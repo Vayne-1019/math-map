@@ -1,5 +1,5 @@
 === P1
-zh: 設 $ABC$ 為銳角三角形，且 $AB\ne AC$。以 $BC$ 為直徑的圓與邊 $AB$、$AC$ 分別相交於 $M,N$。令 $O$ 為邊 $BC$ 的中點。$\angle BAC$ 與 $\angle MON$ 的角平分線相交於 $R$。證明：三角形 $BMR$ 與 $CNR$ 的外接圓有一個公共點，且該點位於邊 $BC$ 上。
+zh: 設 $ABC$ 為銳角三角形，且 $AB e AC$。以 $BC$ 為直徑的圓與邊 $AB$、$AC$ 分別相交於 $M,N$。令 $O$ 為邊 $BC$ 的中點。$\angle BAC$ 與 $\angle MON$ 的角平分線相交於 $R$。證明：三角形 $BMR$ 與 $CNR$ 的外接圓有一個公共點，且該點位於邊 $BC$ 上。
 src: imo2004-1
 === P2
 zh: 求所有實係數多項式 $f$，使得對所有滿足 $ab+bc+ca=0$ 的實數 $a,b,c$，都有 $f(a-b)+f(b-c)+f(c-a)=2f(a+b+c)$。
