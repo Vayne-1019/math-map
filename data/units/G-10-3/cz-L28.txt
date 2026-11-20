@@ -1,0 +1,22 @@
+=== meta
+title: 托勒密不等式
+from: cz-L28
+order: 20
+
+=== body
+<div class="hero">凸四邊形：$AC\cdot BD\le AB\cdot CD+BC\cdot AD$<br>等號 ⇔ <b>四點共圓</b>（托勒密定理）</div>
+<figure class="bkfig"><svg viewBox="0 0 250 181" width="250" role="img" aria-label="凸四邊形與托勒密不等式">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,159.3 228,159.3 200.5,22 63.2,28.9"/><line x1="22" y1="159.3" x2="200.5" y2="22"/><line x1="228" y1="159.3" x2="63.2" y2="28.9"/><line x1="22" y1="159.3" x2="124.6" y2="87.7" stroke-dasharray="5 4"/><line x1="228" y1="159.3" x2="124.6" y2="87.7" stroke-dasharray="5 4"/><line x1="124.6" y1="87.7" x2="63.2" y2="28.9" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="172" text-anchor="middle">A</text><text x="235.8" y="172" text-anchor="middle">B</text><text x="208.3" y="19.1" text-anchor="middle">C</text><text x="55.4" y="26" text-anchor="middle">D</text><text x="124.6" y="103.6" text-anchor="middle">E</text></g>
+</svg><figcaption>作 $\angle BAE=\angle CAD$、$\angle ABE=\angle ACD$，交於 $E$；連 $ED$（虛線）</figcaption></figure>
+<div class="cards">
+<div class="card"><h4>① 造相似</h4><div class="rule">作 $\angle BAE=\angle CAD$、$\angle ABE=\angle ACD$</div>
+<div class="eg">$\triangle ABE\sim\triangle ACD$ ⇒ $BE=\frac{AB\cdot CD}{AC}$ <span class="pill">一對</span></div></div>
+<div class="card"><h4>② 再一對</h4><div class="rule">$\triangle BAC\sim\triangle EAD$</div>
+<div class="eg">$ED=\frac{BC\cdot AD}{AC}$ <span class="pill">第二對</span></div></div>
+<div class="card"><h4>③ 三角不等式</h4><div class="rule">$BD\le BE+ED$</div>
+<div class="eg">正方形邊長 1：$\sqrt2\cdot\sqrt2=2=1\cdot1+1\cdot1$，等號成立（共圓） <span class="pill">乘 $AC$</span></div></div>
+</div>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul><li>對角線乘積 ≤ <b>對邊</b>乘積之和，不是鄰邊</li></ul></div>
+<div class="bottomline">兩次相似把 $BD$ 拆成兩段，三角不等式收尾。</div>

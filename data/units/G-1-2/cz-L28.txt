@@ -1,0 +1,20 @@
+=== meta
+title: 從「平分」推出平行四邊形
+from: cz-L28
+order: 40
+
+=== body
+<div class="hero">過一點 $O$ 的<b>每一條</b>直線都平分面積（或周長）⇒ 四邊形是<b>平行四邊形</b></div>
+<figure class="bkfig"><svg viewBox="0 0 230 193" width="230" role="img" aria-label="過定點的直線平分面積">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="37.9,37.9 22,170.8 192.1,154.9 208,22"/><line x1="30" y1="104.4" x2="200" y2="88.4"/><line x1="32.7" y1="81.8" x2="197.3" y2="111"/><line x1="27.3" y1="127" x2="202.7" y2="65.8"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="30.2" y="35.1" text-anchor="middle">A</text><text x="14.2" y="183.5" text-anchor="middle">B</text><text x="199.8" y="167.5" text-anchor="middle">C</text><text x="215.8" y="19.1" text-anchor="middle">D</text><text x="115" y="112.3" text-anchor="middle">O</text><text x="19" y="109.3" text-anchor="middle">E</text><text x="211" y="93.3" text-anchor="middle">F</text><text x="21.7" y="86.7" text-anchor="middle">P</text><text x="16.3" y="131.9" text-anchor="middle">M</text><text x="208.3" y="115.9" text-anchor="middle">Q</text><text x="213.7" y="70.7" text-anchor="middle">N</text></g>
+</svg><figcaption>過 $O$ 的三條直線 $EF$、$PQ$、$MN$（結論是 $ABCD$ 為平行四邊形，圖按結論畫）</figcaption></figure>
+<div class="cards">
+<div class="card"><h4>① 面積：兩個小三角形相等</h4><div class="rule">$S_{\triangle OEP}=S_{\triangle OFQ}$ ⇒ $PO\cdot EO=QO\cdot FO$</div>
+<div class="eg">兩條線各一式，相除得 $\frac{PO}{MO}=\frac{QO}{NO}$ ⇒ $AB\parallel CD$ <span class="pill">比例 ⇒ 平行</span></div></div>
+<div class="card"><h4>② 周長：反證</h4><div class="rule">假設 $CD\not\parallel AB$，造全等推矛盾</div>
+<div class="eg">得到兩條交於 $O$ 的直線上的線段平行，不可能 <span class="pill">反證</span></div></div>
+</div>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul><li>只用一條直線不夠，要用<b>兩條</b>過 $O$ 的直線才能比較</li></ul></div>
+<div class="bottomline">「任一直線都平分」→ 取兩條很靠近的直線，比較多出來的那一小塊。</div>

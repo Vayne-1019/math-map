@@ -1,0 +1,142 @@
+=== meta
+title: 多邊形
+author: 嚴鎮軍
+pages: 224-231
+units: G-10-3, G-1-2
+status: 完成
+
+=== text
+<p>這一講透過一些例題，說明解決多邊形（特別是四邊形）幾何問題的方法。其中有些例題難度較大，綜合性較強。</p>
+
+=== 例 1 | 托勒密不等式
+zh: 求證：凸四邊形兩條對角線長的乘積不超過兩組對邊乘積的和。又問兩者何時相等。
+sol: <figure class="bkfig"><svg viewBox="0 0 250 181" width="250" role="img" aria-label="凸四邊形與托勒密不等式">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,159.3 228,159.3 200.5,22 63.2,28.9"/><line x1="22" y1="159.3" x2="200.5" y2="22"/><line x1="228" y1="159.3" x2="63.2" y2="28.9"/><line x1="22" y1="159.3" x2="124.6" y2="87.7" stroke-dasharray="5 4"/><line x1="228" y1="159.3" x2="124.6" y2="87.7" stroke-dasharray="5 4"/><line x1="124.6" y1="87.7" x2="63.2" y2="28.9" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="172" text-anchor="middle">A</text><text x="235.8" y="172" text-anchor="middle">B</text><text x="208.3" y="19.1" text-anchor="middle">C</text><text x="55.4" y="26" text-anchor="middle">D</text><text x="124.6" y="103.6" text-anchor="middle">E</text></g>
+</svg><figcaption>作 $\angle BAE=\angle CAD$、$\angle ABE=\angle ACD$，交於 $E$；連 $ED$（虛線）</figcaption></figure>
+<p><b>證</b>　設 $ABCD$ 是凸四邊形。作 $AE$ 使 $\angle BAE=\angle CAD$，作 $BE$ 使 $\angle ABE=\angle ACD$，交於 $E$，連 $ED$。於是 $\triangle ABE\sim\triangle ACD$，</p>
+$$\frac{AB}{AC}=\frac{AE}{AD},\quad\text{①}\qquad\frac{AB}{AC}=\frac{BE}{CD}.\quad\text{②}$$
+<p>由 ① 及 $\angle BAC=\angle EAD$⟦為什麼｜兩者都等於 $\angle BAE$ 加上（或減去）同一個角 $\angle EAC$；因為 $\angle BAE=\angle CAD$。⟧，得 $\triangle BAC\sim\triangle EAD$，$\frac{BC}{ED}=\frac{AC}{AD}$，即 $ED=\dfrac{BC\cdot AD}{AC}$。又由 ②，$BE=\dfrac{AB\cdot CD}{AC}$。由三角不等式 $BD\le BE+ED$，③ 即</p>
+$$BD\le\frac{AB\cdot CD}{AC}+\frac{BC\cdot AD}{AC},\qquad AC\cdot BD\le AB\cdot CD+BC\cdot AD.\quad\text{④}$$
+<p>當且僅當 ③ 取等號時 ④ 取等號；③ 取等號的充要條件是 $E$ 在線段 $BD$ 上，這時 $\angle ABD=\angle ABE=\angle ACD$，即 $ABCD$ 內接於圓。所以：<b>圓內接四邊形兩對角線的乘積等於兩組對邊乘積的和</b>（托勒密定理）。</p>
+ans: 當且僅當四邊形內接於圓時相等
+
+=== 例 2
+zh: $ABCD$ 是凸四邊形。求證：$\triangle ABC$ 與 $\triangle ADC$ 的內切圓與 $AC$ 切於同一點的充要條件是四邊形 $ABCD$ 有內切圓。
+sol: <figure class="bkfig"><svg viewBox="0 0 280 162" width="280" role="img" aria-label="對角線兩側的兩個內切圓">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,50.1 246.8,22 258,140 55.7,140"/><line x1="22" y1="50.1" x2="258" y2="140"/><circle cx="206.4" cy="72.3" r="44.9"/><circle cx="78.6" cy="107" r="33"/></g>
+<g fill="currentColor"><circle cx="90.3" cy="76.1" r="2.4"/><circle cx="190.5" cy="114.3" r="2.4"/><circle cx="200.9" cy="27.7" r="2.4"/><circle cx="251.1" cy="68" r="2.4"/><circle cx="78.6" cy="140" r="2.4"/><circle cx="47.7" cy="118.6" r="2.4"/></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="47.2" text-anchor="middle">A</text><text x="254.5" y="19.1" text-anchor="middle">B</text><text x="265.8" y="152.7" text-anchor="middle">C</text><text x="47.9" y="152.7" text-anchor="middle">D</text><text x="90.3" y="70" text-anchor="middle">M</text><text x="190.5" y="130.2" text-anchor="middle">N</text><text x="200.9" y="21.6" text-anchor="middle">E</text><text x="262.1" y="72.9" text-anchor="middle">F</text><text x="78.6" y="155.9" text-anchor="middle">P</text><text x="36.7" y="123.5" text-anchor="middle">Q</text></g>
+</svg><figcaption>$\triangle ABC$、$\triangle ACD$ 的內切圓切 $AC$ 於 $N$、$M$；圖中 $AB+CD\neq BC+AD$，所以 $M\ne N$</figcaption></figure>
+<p><b>證</b>　我們知道，$ABCD$ 有內切圓當且僅當 $AB+CD=BC+AD$（第 24 講例 11）。下面證明這個條件也是兩個內切圓切 $AC$ 於同一點的充要條件。</p>
+<p>設 $\triangle ABC$ 的內切圓切 $AB,BC,CA$ 於 $E,F,N$；$\triangle ACD$ 的內切圓切 $AC,CD,DA$ 於 $M,P,Q$。為方便計算，不妨設 $M$ 在 $A$ 與 $N$ 之間。由切線長相等，</p>
+$$\begin{aligned}AB+CD&=AE+EB+CP+PD\\&=(AM+MN)+BF+(CN+MN)+DQ\\&=AQ+DQ+BF+FC+2MN\\&=AD+BC+2MN.\quad\text{①}\end{aligned}$$
+<p>⟦第二行｜$AE=AN=AM+MN$，$EB=BF$；$CP=CM=CN+NM$，$PD=DQ$。第三行再用 $AM=AQ$、$CN=CF$。⟧兩圓切 $AC$ 於同一點的充要條件是 $MN=0$，由 ① 這等價於 $AB+CD=AD+BC$。</p>
+=== 例 3
+zh: $O$ 是凸四邊形 $ABCD$ 內一定點，設過 $O$ 的任一直線都把四邊形分成面積相等的兩部分。求證：$ABCD$ 是平行四邊形。
+sol: <figure class="bkfig"><svg viewBox="0 0 230 193" width="230" role="img" aria-label="過定點的直線平分面積">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="37.9,37.9 22,170.8 192.1,154.9 208,22"/><line x1="30" y1="104.4" x2="200" y2="88.4"/><line x1="32.7" y1="81.8" x2="197.3" y2="111"/><line x1="27.3" y1="127" x2="202.7" y2="65.8"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="30.2" y="35.1" text-anchor="middle">A</text><text x="14.2" y="183.5" text-anchor="middle">B</text><text x="199.8" y="167.5" text-anchor="middle">C</text><text x="215.8" y="19.1" text-anchor="middle">D</text><text x="115" y="112.3" text-anchor="middle">O</text><text x="19" y="109.3" text-anchor="middle">E</text><text x="211" y="93.3" text-anchor="middle">F</text><text x="21.7" y="86.7" text-anchor="middle">P</text><text x="16.3" y="131.9" text-anchor="middle">M</text><text x="208.3" y="115.9" text-anchor="middle">Q</text><text x="213.7" y="70.7" text-anchor="middle">N</text></g>
+</svg><figcaption>過 $O$ 的三條直線 $EF$、$PQ$、$MN$（結論是 $ABCD$ 為平行四邊形，圖按結論畫）</figcaption></figure>
+<p><b>證</b>　過 $O$ 作一條不過頂點的直線，與對邊 $AB$、$CD$ 交於 $E$、$F$。在 $AB$ 上 $E$ 的兩側取 $P$、$M$，連 $PO$ 並延長交 $CF$ 於 $Q$，連 $MO$ 並延長交 $FD$ 於 $N$（$P$、$M$ 取得夠接近 $E$ 就可以）。記四邊形面積為 $S$，由題設</p>
+$$S_{APQD}=S_{\triangle OFQ}+S_{POFDA}=\tfrac12S,\qquad S_{AEFD}=S_{\triangle OEP}+S_{POFDA}=\tfrac12S,$$
+<p>所以 $S_{\triangle OEP}=S_{\triangle OFQ}$，即 $\frac12PO\cdot EO\sin\angle POE=\frac12OF\cdot OQ\sin\angle FOQ$。對頂角 $\angle POE=\angle FOQ$，所以 $PO\cdot EO=QO\cdot FO$。① 同理 $MO\cdot EO=NO\cdot FO$。② ①÷② 得 $\frac{PO}{MO}=\frac{QO}{NO}$，即 $\frac{MO}{NO}=\frac{PO}{QO}$，所以 $PM\parallel NQ$，即 $AB\parallel CD$。仿上可證 $AD\parallel BC$，$ABCD$ 是平行四邊形。</p>
+=== 例 4
+zh: 在等邊凸六邊形 $ABCDEF$ 中，$\angle A+\angle C+\angle E=\angle B+\angle D+\angle F$。求證：$\angle A=\angle D$，$\angle B=\angle E$，$\angle C=\angle F$。
+sol: <p><b>分析</b>　六邊形內角和 $(6-2)\times180^\circ=720^\circ$，所以 $\angle A+\angle C+\angle E=360^\circ$，正好一個周角。這提示用輔助線把這三個角搬到同一點拼成周角：若在點 $P$ 處有 $\angle MPN=\angle A$、$\angle NPQ=\angle C$、$\angle QPM=\angle E$，而且 $MP=NP=QP=AB$，就造出了三對全等三角形 $\triangle MPN\cong\triangle FAB$、$\triangle NPQ\cong\triangle BCD$、$\triangle QPM\cong\triangle DEF$。最容易想到的是拿一個頂點（例如 $A$）當 $P$。</p>
+<p><b>證法一</b>　作 $AM$ 使 $\angle FAM=\angle C$、$AM=AF$。因為 $\angle BAF+\angle FAM+\angle MAB=360^\circ$，又 $\angle BAF+\angle C+\angle E=360^\circ$，所以 $\angle MAB=\angle E$。連 $BF$、$FD$、$DB$。</p>
+<figure class="bkfig"><svg viewBox="0 0 260 174" width="260" role="img" aria-label="等邊六邊形">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="87,121.6 154.4,146.1 219.4,115.8 238,46.5 170.6,22 105.6,52.3"/><line x1="105.6" y1="52.3" x2="22" y2="151.9" stroke-dasharray="5 4"/><line x1="87" y1="121.6" x2="22" y2="151.9" stroke-dasharray="5 4"/><line x1="22" y1="151.9" x2="154.4" y2="146.1" stroke-dasharray="5 4"/><line x1="154.4" y1="146.1" x2="105.6" y2="52.3" stroke-dasharray="5 4"/><line x1="105.6" y1="52.3" x2="238" y2="46.5" stroke-dasharray="5 4"/><line x1="238" y1="46.5" x2="154.4" y2="146.1" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="98" y="126.5" text-anchor="middle">A</text><text x="154.4" y="162" text-anchor="middle">B</text><text x="230.4" y="120.7" text-anchor="middle">C</text><text x="245.8" y="43.7" text-anchor="middle">D</text><text x="170.6" y="15.9" text-anchor="middle">E</text><text x="97.8" y="49.4" text-anchor="middle">F</text><text x="11" y="156.8" text-anchor="middle">M</text></g>
+</svg><figcaption>證法一：作 $\angle FAM=\angle C$、$AM=AF$；$MBDF$ 是平行四邊形（虛線）</figcaption></figure>
+<p>則 $\triangle FAM\cong\triangle DCB$（SAS）①，$\triangle MAB\cong\triangle FED$（SAS）②，所以 $FM=DB$、$MB=FD$，$MBDF$ 是平行四邊形，$\angle BDF=\angle BMF$。又由 ①② 有 $\angle CDB=\angle AFM$、$\angle EDF=\angle ABM$，所以</p>
+$$\begin{aligned}\angle CDE&=\angle CDB+\angle BDF+\angle EDF=\angle AFM+\angle BMF+\angle ABM\\&=(\angle AFM+\angle AMF)+(\angle AMB+\angle ABM)\\&=(180^\circ-\angle MAF)+(180^\circ-\angle MAB)=\angle BAF.\end{aligned}$$
+<p>同理可證 $\angle ABC=\angle E$，$\angle C=\angle EFA$。</p>
+<p><b>證法二（簡證）</b>　取分析中的 $P$ 為 $A$ 關於 $BF$ 的對稱點，即作 $AO\perp BF$ 並延長到 $P$ 使 $AO=OP$。</p>
+<figure class="bkfig"><svg viewBox="0 0 230 197" width="230" role="img" aria-label="等邊六邊形中的三個菱形">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,144.7 105,174.9 185.1,137.6 208,52.2 125,22 44.9,59.3"/><line x1="127.9" y1="89.6" x2="44.9" y2="59.3" stroke-dasharray="5 4"/><line x1="127.9" y1="89.6" x2="105" y2="174.9" stroke-dasharray="5 4"/><line x1="127.9" y1="89.6" x2="208" y2="52.2" stroke-dasharray="5 4"/><line x1="105" y1="174.9" x2="44.9" y2="59.3" stroke-dasharray="5 4"/><line x1="22" y1="144.7" x2="127.9" y2="89.6" stroke-dasharray="5 4"/><line x1="44.9" y1="59.3" x2="208" y2="52.2" stroke-dasharray="5 4"/><line x1="208" y1="52.2" x2="105" y2="174.9" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="11" y="149.6" text-anchor="middle">A</text><text x="105" y="190.8" text-anchor="middle">B</text><text x="196.1" y="142.5" text-anchor="middle">C</text><text x="215.8" y="49.3" text-anchor="middle">D</text><text x="125" y="15.9" text-anchor="middle">E</text><text x="37.1" y="56.5" text-anchor="middle">F</text><text x="138.9" y="94.5" text-anchor="middle">P</text></g>
+</svg><figcaption>證法二：$P$ 是 $A$ 關於 $BF$ 的對稱點；$ABPF$、$CDPB$、$EFPD$ 都是菱形</figcaption></figure>
+<p>不難證明 $\triangle BAF\cong\triangle BPF$、$\triangle FED\cong\triangle FPD$、$\triangle DCB\cong\triangle DPB$⟦怎麼證｜設邊長為 $1$。等腰 $\triangle ABF$ 頂角 $\angle A$，所以 $BF=2\sin\frac A2$；同理 $BD=2\sin\frac C2$、$DF=2\sin\frac E2$。因為 $\frac A2+\frac C2+\frac E2=180^\circ$，半徑 $1$ 的圓中，圓周角為 $\frac A2,\frac C2,\frac E2$ 的三條弦正好是這三個長度，所以 $\triangle BDF$ 的外接圓半徑是 $1$，且 $\angle BDF=\frac A2$。它的外心到 $B,F$ 的距離都是 $1$、看 $BF$ 的圓心角是 $A$，正是 $P$。於是 $PB=PD=PF=1$，三組三角形都是 SSS 全等。⟧，從而四邊形 $ABPF$、$CDPB$、$DEFP$ 都是菱形，$FA\parallel PB\parallel DC$、$AB\parallel FP\parallel ED$，所以 $\angle FAB=\angle CDE$。</p>
+=== 例 5
+zh: $ABCDE$ 是凸五邊形，已知 $S_{\triangle ABC}=S_{\triangle BCD}=S_{\triangle CDE}=S_{\triangle DEA}=S_{\triangle EAB}=1$。求五邊形 $ABCDE$ 的面積。
+sol: <figure class="bkfig"><svg viewBox="0 0 219 210" width="219" role="img" aria-label="五個三角形面積相等的五邊形">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="109.3,22 22,85.4 55.3,188 163.2,188 196.5,85.4"/><line x1="109.3" y1="22" x2="55.3" y2="188"/><line x1="109.3" y1="22" x2="163.2" y2="188"/><line x1="22" y1="85.4" x2="163.2" y2="188"/><line x1="22" y1="85.4" x2="196.5" y2="85.4"/><line x1="55.3" y1="188" x2="196.5" y2="85.4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="109.3" y="15.9" text-anchor="middle">A</text><text x="11" y="90.3" text-anchor="middle">B</text><text x="47.6" y="200.7" text-anchor="middle">C</text><text x="171" y="200.7" text-anchor="middle">D</text><text x="207.5" y="90.3" text-anchor="middle">E</text><text x="80.9" y="82.5" text-anchor="middle">F</text></g>
+</svg><figcaption>$F$ 是 $AC$ 與 $BE$ 的交點；$CDEF$ 是平行四邊形</figcaption></figure>
+<p><b>解</b>　$S_{\triangle AED}=S_{\triangle CDE}$，兩個三角形同底 $ED$，所以它們在 $ED$ 上的高相等，$AC\parallel DE$。同理 $BE\parallel CD$。所以 $CDEF$ 是平行四邊形（$F$ 是 $AC$ 與 $BE$ 的交點）。</p>
+<p>$S_{\triangle AEF}=S_{\triangle ABE}-S_{\triangle ABF}=S_{\triangle ABC}-S_{\triangle ABF}=S_{\triangle BCF}$。又 $S_{\triangle CEF}=S_{\triangle CDE}=S_{\triangle ABC}$。所以</p>
+$$\frac{S_{\triangle ABF}}{S_{\triangle BCF}}=\frac{AF}{CF}=\frac{S_{\triangle AEF}}{S_{\triangle CEF}}=\frac{S_{\triangle BCF}}{S_{\triangle ABC}}=\frac{CF}{AC},$$
+<p>⟦這串等號｜第一、三個：同高三角形面積比等於底的比；第二個：$\triangle AEF$、$\triangle CEF$ 同高，底是 $AF$、$CF$；第四個：$\triangle BCF$、$\triangle ABC$ 同高，底是 $CF$、$CA$。⟧所以 $CF^2=AF\cdot AC=(AC-CF)AC$。① 記 $\frac{CF}{AC}=x>0$，① 兩邊除以 $AC^2$ 得 $x^2+x-1=0$，$x=\frac{\sqrt5-1}2$（捨去負根）。由此 $S_{\triangle AEF}=\frac{\sqrt5-1}2S_{\triangle CEF}=\frac{\sqrt5-1}2$⟦為什麼｜$\frac{S_{\triangle AEF}}{S_{\triangle CEF}}=\frac{AF}{CF}=\frac{CF}{AC}=x$。⟧，所以</p>
+$$S_{ABCDE}=S_{CDEF}+S_{\triangle ABC}+S_{\triangle AEF}=2+1+\frac{\sqrt5-1}2=\frac{5+\sqrt5}2.$$
+ans: $\dfrac{5+\sqrt5}2$
+
+=== text
+<p>下面兩個例題是用反證法證明的。</p>
+
+=== 例 6
+zh: 在凸六邊形 $ABCDEF$ 中，對角線 $AD$、$BE$、$CF$ 都把六邊形分成面積相等的兩部分。求證：$AD$、$BE$、$CF$ 交於一點。
+sol: <figure class="bkfig"><svg viewBox="0 0 220 223" width="220" role="img" aria-label="六邊形的三條對角線">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="41.3,48 105,22 185.4,95.8 198,153.6 75.6,201.4 22,164.5"/><line x1="41.3" y1="48" x2="198" y2="153.6"/><line x1="105" y1="22" x2="75.6" y2="201.4"/><line x1="185.4" y1="95.8" x2="22" y2="164.5"/><polygon points="94.8,84.1 140.3,114.7 86.1,137.5" stroke="#c2562b" stroke-width="2"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="33.5" y="45.1" text-anchor="middle">A</text><text x="105" y="15.9" text-anchor="middle">B</text><text x="196.4" y="100.7" text-anchor="middle">C</text><text x="205.8" y="166.3" text-anchor="middle">D</text><text x="75.6" y="217.3" text-anchor="middle">E</text><text x="11" y="169.4" text-anchor="middle">F</text><text x="83.8" y="89" text-anchor="middle">P</text><text x="151.3" y="119.6" text-anchor="middle">Q</text><text x="75.1" y="142.4" text-anchor="middle">R</text></g>
+</svg><figcaption>反證法假設的情形：三條對角線圍出 $\triangle PQR$（紅）</figcaption></figure>
+<p><b>證</b>　設 $AD,BE$ 交於 $P$；$AD,CF$ 交於 $Q$；$BE,CF$ 交於 $R$。若 $P,Q,R$ 不重合，它們構成 $\triangle PQR$。因為 $AD$、$BE$ 都把面積等分，</p>
+$$S_{APEF}+S_{\triangle PED}=S_{PDCB}+S_{\triangle ABP},\qquad S_{PDCB}+S_{\triangle PED}=S_{APEF}+S_{\triangle APB},$$
+<p>兩式相加得 $S_{\triangle APB}=S_{\triangle PED}$，即 $\frac12AP\cdot BP\sin\angle APB=\frac12EP\cdot DP\sin\angle DPE$。對頂角相等，所以</p>
+$$AP\cdot BP=EP\cdot DP=(ER+RP)(DQ+QP)>ER\cdot DQ.$$
+<p>同理 $CQ\cdot DQ>AP\cdot FR$，$FR\cdot ER>BP\cdot CQ$。三個不等式相乘，兩邊都是 $AP\cdot BP\cdot CQ\cdot DQ\cdot ER\cdot FR$，得到「$X>X$」，矛盾。所以 $AD$、$BE$、$CF$ 交於一點。</p>
+=== 例 7
+zh: 設 $O$ 是凸四邊形 $ABCD$ 內一定點，如果過 $O$ 的所有直線都把四邊形的周長等分。求證：$ABCD$ 是平行四邊形。
+sol: <figure class="bkfig"><svg viewBox="0 0 249 220" width="249" role="img" aria-label="過定點的直線平分周長">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,198 227.3,198 209.7,45.5 51.3,22"/><line x1="124.7" y1="198" x2="124.7" y2="32.9"/><line x1="80.7" y1="198" x2="165.9" y2="39"/><line x1="168.7" y1="198" x2="76.4" y2="25.7"/><line x1="169.1" y1="32.9" x2="80.2" y2="32.9" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="210.7" text-anchor="middle">A</text><text x="235.1" y="210.7" text-anchor="middle">B</text><text x="220.7" y="50.4" text-anchor="middle">C</text><text x="43.6" y="19.1" text-anchor="middle">D</text><text x="135.7" y="120.8" text-anchor="middle">O</text><text x="124.7" y="213.9" text-anchor="middle">O<tspan font-size="10">1</tspan></text><text x="124.7" y="26.8" text-anchor="middle">O<tspan font-size="10">2</tspan></text><text x="80.7" y="213.9" text-anchor="middle">A<tspan font-size="10">1</tspan></text><text x="168.7" y="213.9" text-anchor="middle">B<tspan font-size="10">1</tspan></text><text x="176.1" y="36.1" text-anchor="middle">C<tspan font-size="10">1</tspan></text><text x="76.4" y="19.6" text-anchor="middle">D<tspan font-size="10">1</tspan></text><text x="183.6" y="37.8" text-anchor="middle">C<tspan font-size="10">2</tspan></text><text x="65.7" y="37.8" text-anchor="middle">D<tspan font-size="10">2</tspan></text></g>
+</svg><figcaption>反證時假設 $CD\not\parallel AB$；過 $O_2$ 作 $C_2D_2\parallel AB$（虛線）</figcaption></figure>
+<p><b>證</b>　過 $O$ 作一條不過頂點的直線，與 $AB$、$CD$ 交於 $O_1$、$O_2$。在 $AO_1$ 上取 $A_1$、在 $BO_1$ 上取 $B_1$，使 $A_1O_1=B_1O_1$；$A_1,B_1$ 取得夠靠近 $O_1$，總可使直線 $A_1O$、$B_1O$ 與線段 $CD$ 相交，交點分別為 $C_1$、$D_1$。</p>
+<p>由 $B_1D_1$、$O_1O_2$、$A_1C_1$ 都把周長等分，易得 $D_1O_2=B_1O_1$、$A_1O_1=C_1O_2$⟦為什麼｜比較 $O_1O_2$ 與 $B_1D_1$ 兩條線分出的「同一半」周長：一邊多了 $O_1B_1$，另一邊多了 $O_2D_1$，兩者必須相等。⟧，而 $A_1O_1=B_1O_1$，所以 $D_1O_2=C_1O_2$。</p>
+<p>若 $CD$ 不平行於 $AB$，過 $O_2$ 作 $C_2D_2\parallel AB$，與直線 $B_1D_1$、$A_1C_1$ 交於 $D_2$、$C_2$。由 $C_2D_2\parallel A_1B_1$ 及 $A_1O_1=O_1B_1$，$D_2O_2=O_2C_2$；又 $\angle D_1O_2D_2=\angle C_1O_2C_2$（對頂角），所以 $\triangle D_1O_2D_2\cong\triangle C_1O_2C_2$，得 $C_1C_2\parallel D_1D_2$。但 $C_1C_2$ 與 $D_1D_2$ 分別在兩條相交於 $O$ 的直線上，不可能平行，矛盾。所以 $AB\parallel CD$。同理 $AD\parallel BC$，$ABCD$ 是平行四邊形。</p>
+=== 習題 1
+zh: 在矩形 $ABCD$ 內取一點 $M$，使 $\angle BMC+\angle AMD=180^\circ$。求 $\angle BCM+\angle DAM$ 的值。
+hint: 作 $AN\parallel BM$、$DN\parallel CM$，連 $MN$；比較本講例 4 的輔助線。
+sol: <figure class="bkfig"><svg viewBox="0 0 192 180" width="192" role="img" aria-label="矩形內一點">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,59.1 22,158 170.4,158 170.4,59.1"/><line x1="152.8" y1="120.9" x2="22" y2="59.1"/><line x1="152.8" y1="120.9" x2="22" y2="158"/><line x1="152.8" y1="120.9" x2="170.4" y2="158"/><line x1="152.8" y1="120.9" x2="170.4" y2="59.1"/><line x1="22" y1="59.1" x2="152.8" y2="22" stroke-dasharray="5 4"/><line x1="170.4" y1="59.1" x2="152.8" y2="22" stroke-dasharray="5 4"/><line x1="152.8" y1="120.9" x2="152.8" y2="22" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="11" y="64" text-anchor="middle">A</text><text x="14.2" y="170.7" text-anchor="middle">B</text><text x="178.1" y="170.7" text-anchor="middle">C</text><text x="181.4" y="64" text-anchor="middle">D</text><text x="152.8" y="136.8" text-anchor="middle">M</text><text x="152.8" y="15.9" text-anchor="middle">N</text></g>
+</svg><figcaption>作 $AN\parallel BM$、$DN\parallel CM$（虛線）</figcaption></figure>
+<p>$\triangle BMC\cong\triangle AND$，所以 $\angle BMC=\angle AND$，$AN=BM$。於是 $\angle AND+\angle AMD=\angle BMC+\angle AMD=180^\circ$，且 $ABMN$ 是平行四邊形，所以 $A,N,D,M$ 四點共圓，且 $MN\perp AD$。於是 $\angle DAM=\angle DNM$，又 $\angle BCM=\angle ADN$，所以 $\angle BCM+\angle DAM=\angle ADN+\angle DNM=90^\circ$。</p>
+ans: $90^\circ$
+
+=== 習題 2
+zh: 在等邊五邊形 $ABCDE$ 中，$\angle ABC=2\angle DBE$。求證：$\triangle ABC$ 是正三角形。
+sol: <p>$\triangle ABE$、$\triangle BCD$ 都是等腰三角形，設 $x=\angle ABE=\angle AEB$，$y=\angle CBD=\angle BDC$。則</p>
+$$\angle AED+\angle CDE=x+\angle BED+y+\angle BDE=x+y+180^\circ-\angle DBE.\quad\text{①}$$
+<p>而 $2\angle DBE=\angle ABC=x+y+\angle DBE$，所以 $x+y=\angle DBE$，由 ① 得 $\angle AED+\angle CDE=180^\circ$，$AE\parallel CD$。又 $AE=ED=DC$，四邊形 $ACDE$ 是菱形，$AC=AE=AB=BC$。</p>
+=== 習題 3
+zh: 在等腰梯形 $ABCD$ 中，$AB\parallel CD$，對角線 $AC$、$BD$ 的交角 $\angle AOB=60^\circ$，$P$、$Q$、$R$ 分別是 $OA$、$BC$、$OD$ 的中點。求證：$\triangle PQR$ 是正三角形。
+sol: <figure class="bkfig"><svg viewBox="0 0 179 220" width="179" role="img" aria-label="等腰梯形與 60° 的對角線夾角">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,198 157.5,198 123.6,22 55.9,22"/><line x1="22" y1="198" x2="123.6" y2="22"/><line x1="157.5" y1="198" x2="55.9" y2="22"/><polygon points="55.9,139.3 140.5,110 72.8,51.3" stroke="#c2562b" stroke-width="2"/><line x1="157.5" y1="198" x2="55.9" y2="139.3" stroke-dasharray="5 4"/><line x1="123.6" y1="22" x2="72.8" y2="51.3" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="210.7" text-anchor="middle">A</text><text x="165.3" y="210.7" text-anchor="middle">B</text><text x="131.4" y="19.1" text-anchor="middle">C</text><text x="48.1" y="19.1" text-anchor="middle">D</text><text x="78.7" y="85.6" text-anchor="middle">O</text><text x="44.9" y="144.2" text-anchor="middle">P</text><text x="151.5" y="114.9" text-anchor="middle">Q</text><text x="61.8" y="56.2" text-anchor="middle">R</text></g>
+</svg><figcaption>$\angle AOB=60^\circ$；連 $BP$、$CR$（虛線）</figcaption></figure>
+<p>連 $BP$、$CR$。由 $AC=BD$ 得 $OA=OB$、$OC=OD$，又 $\angle AOB=60^\circ$，所以 $\triangle AOB$、$\triangle COD$ 都是正三角形。$P$ 是 $OA$ 中點，$BP\perp OA$，$PQ$ 是直角 $\triangle BPC$ 斜邊上的中線，$PQ=\frac12BC$。同理 $RQ=\frac12BC$。又 $PR$ 是 $\triangle AOD$ 的中位線，$PR=\frac12AD=\frac12BC$。</p>
+=== 習題 4
+zh: 證明：圓的外切四邊形的對角線交點，和以切點為頂點的四邊形的對角線交點重合。
+sol: <figure class="bkfig"><svg viewBox="0 0 230 213" width="230" role="img" aria-label="外切四邊形">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="35.7,34.5 178.2,22 208,191.1 22,191.1"/><circle cx="110.9" cy="109.7" r="81.5"/><line x1="35.7" y1="34.5" x2="208" y2="191.1"/><line x1="178.2" y1="22" x2="22" y2="191.1"/><line x1="103.8" y1="28.5" x2="110.9" y2="191.1" stroke-dasharray="5 4"/><line x1="29.7" y1="102.6" x2="191.1" y2="95.5" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="27.9" y="31.6" text-anchor="middle">A</text><text x="186" y="19.1" text-anchor="middle">B</text><text x="215.8" y="203.8" text-anchor="middle">C</text><text x="14.2" y="203.8" text-anchor="middle">D</text><text x="103.8" y="22.4" text-anchor="middle">E</text><text x="202.1" y="100.4" text-anchor="middle">F</text><text x="110.9" y="207" text-anchor="middle">G</text><text x="18.7" y="107.5" text-anchor="middle">H</text><text x="114.7" y="96.3" text-anchor="middle">M</text></g>
+</svg><figcaption>$E,F,G,H$ 是切點；四條線 $AC,BD,EG,HF$（虛線）交於一點 $M$</figcaption></figure>
+<p>設 $ABCD$ 外切於圓，$E,F,G,H$ 是切點（如圖），$AC$ 與 $FH$ 交於 $M$。$\angle AHM=\angle BFM$（弦切角），而 $\angle CFM=180^\circ-\angle BFM$，所以 $\sin\angle AHM=\sin\angle CFM$；又 $\angle AMH=\angle CMF$。所以</p>
+$$\frac{AM\cdot MH}{FM\cdot MC}=\frac{S_{\triangle AMH}}{S_{\triangle CMF}}=\frac{AH\cdot MH}{FC\cdot FM},\quad\text{即}\quad\frac{AM}{MC}=\frac{AH}{FC}.$$
+<p>同理若 $AC$ 與 $EG$ 交於 $M_1$，$\frac{AM_1}{M_1C}=\frac{AE}{CG}$。而 $AE=AH$、$FC=CG$，所以 $\frac{AM}{MC}=\frac{AM_1}{M_1C}$，$M$ 與 $M_1$ 重合，$AC,HF,EG$ 交於一點。同理 $BD,HF,EG$ 交於一點，所以兩個交點重合。</p>
+=== 習題 5
+zh: $n$ 邊形 $A_1A_2\cdots A_n$ 的各邊長相等，$O$ 是形內一點，$OH_1\perp A_1A_2$，$OH_2\perp A_2A_3$，…，$OH_n\perp A_nA_1$，$H_1,\dots,H_n$ 都是垂足。求證：$A_1H_1+A_2H_2+\cdots+A_nH_n=H_1A_2+H_2A_3+\cdots+H_nA_1$。
+sol: <p>連 $OA_i$，設邊長為 $a$。由勾股定理</p>
+$$OA_1^2-OA_2^2=H_1A_1^2-H_1A_2^2=(H_1A_1+H_1A_2)(H_1A_1-H_1A_2)=a(H_1A_1-H_1A_2).$$
+<p>同理 $OA_2^2-OA_3^2=a(H_2A_2-H_2A_3)$，…，$OA_n^2-OA_1^2=a(H_nA_n-H_nA_1)$。各式相加，左邊為 $0$，整理即得。</p>
