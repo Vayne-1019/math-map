@@ -79,7 +79,7 @@ sol: 設這 5 點為 $A_1,\dots,A_5$，考慮它們的凸包，有三種情況�
 === 例 3 | 銳角三角形至多 7 個
 zh: 平面上任意給定 5 點，其中任三點不共線。證明：以它們為頂點的三角形中，至多有 7 個銳角三角形。
 sol: 5 點共可組成 $\mathrm C_5^3=10$ 個三角形，所以只要證等價命題：<b>至少有 3 個非銳角三角形</b>。設 5 點為 $A_1,\dots,A_5$，考慮其凸包。
-(1) 凸包是五邊形 $A_1A_2A_3A_4A_5$。內角和 $540^\circ$，至少有兩個內角是非銳角⟦為什麼｜若至多一個非銳角，其餘四個都 $<90^\circ$，總和 $<4\times90^\circ+180^\circ=540^\circ$，矛盾。⟧，而內角 $\angle A_i$ 非銳角，就表示 $\triangle A_{i-1}A_iA_{i+1}$ 是非銳角三角形。
+(1) 凸包是五邊形 $A_1A_2A_3A_4A_5$。內角和 $540^\circ$，至少有兩個內角是非銳角⟦為什麼｜若至多一個非銳角，其餘四個都 $\lt 90^\circ$，總和 $\lt 4\times90^\circ+180^\circ=540^\circ$，矛盾。⟧，而內角 $\angle A_i$ 非銳角，就表示 $\triangle A_{i-1}A_iA_{i+1}$ 是非銳角三角形。
 ① 兩個非銳角內角不相鄰，例如 $A_1,A_4$：得到 $\triangle A_5A_1A_2$ 與 $\triangle A_3A_4A_5$。再連 $A_1A_4$，四邊形 $A_1A_2A_3A_4$ 內角和 $360^\circ$，至少有一個非銳角，又得一個非銳角三角形（它的三個頂點都在 $A_1,\dots,A_4$ 中，與前兩個不同）。共至少 3 個。
 ② 兩個非銳角內角相鄰，例如 $A_1,A_2$：得到 $\triangle A_5A_1A_2$ 與 $\triangle A_1A_2A_3$。連 $A_2A_5$，四邊形 $A_2A_3A_4A_5$ 至少有一個非銳角內角，又得一個。共至少 3 個。
 <span style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center"><figure class="bkfig"><svg viewBox="0 0 150 150" width="150" role="img" aria-label="凸五邊形，A₁、A₄ 不相鄰，虛線連 A₁A₄">
@@ -97,7 +97,7 @@ sol: 5 點共可組成 $\mathrm C_5^3=10$ 個三角形，所以只要證等價�
   <g fill="currentColor"><circle cx="70.4" cy="104.2" r="2.6"/></g>
   <g fill="currentColor" font-size="14" font-style="italic"><text x="4.0" y="36.7">A₁</text><text x="14.4" y="177.3">A₂</text><text x="180.0" y="173.1">A₃</text><text x="167.3" y="20.0">A₄</text><text x="66.4" y="96.2">A₅</text></g>
 </svg><figcaption>$A_5$ 在 $\triangle A_1A_2A_3$ 內</figcaption></figure>
-四邊形 $A_1A_2A_3A_4$ 至少有一個非銳角內角，得一個非銳角三角形；而 $\triangle A_1A_2A_5,\ \triangle A_2A_3A_5,\ \triangle A_3A_1A_5$ 中至少有兩個是非銳角三角形⟦為什麼｜這三個三角形在 $A_5$ 的角加起來是 $360^\circ$，每個 $<180^\circ$。若至多一個 $\ge90^\circ$，總和 $<180^\circ+90^\circ+90^\circ=360^\circ$，矛盾。⟧。共至少 3 個。
+四邊形 $A_1A_2A_3A_4$ 至少有一個非銳角內角，得一個非銳角三角形；而 $\triangle A_1A_2A_5,\ \triangle A_2A_3A_5,\ \triangle A_3A_1A_5$ 中至少有兩個是非銳角三角形⟦為什麼｜這三個三角形在 $A_5$ 的角加起來是 $360^\circ$，每個 $\lt 180^\circ$。若至多一個 $\ge90^\circ$，總和 $\lt 180^\circ+90^\circ+90^\circ=360^\circ$，矛盾。⟧。共至少 3 個。
 (3) 凸包是三角形，設 $A_4,A_5$ 在 $\triangle A_1A_2A_3$ 內。同上理由，$\triangle A_1A_2A_4,\triangle A_2A_3A_4,\triangle A_3A_1A_4$ 中至少兩個非銳角，$\triangle A_1A_2A_5,\triangle A_2A_3A_5,\triangle A_3A_1A_5$ 中也至少兩個，這種情況至少有 4 個非銳角三角形。
 綜合三種情況，命題得證。
 
@@ -114,13 +114,13 @@ sol: 對這個問題的研究還不深入。已知的下界有 $\lambda_4\ge\sqr
 (1) 有三點共線，設 $B$ 在 $A,C$ 之間：$\lambda_5\ge\dfrac{|AC|}{\min(|AB|,|BC|)}\ge2>2\sin54^\circ$。
 (2) 凸包是三角形，設 $D,E$ 在 $\triangle ABC$ 內部。$\angle ADB,\angle BDC,\angle CDA$ 的和是 $360^\circ$，至少一個不小於 $120^\circ$，設 $\angle ADB\ge120^\circ$。由餘弦定理，
 $$AB^2=AD^2+BD^2-2AD\cdot BD\cos\angle ADB\ge AD^2+BD^2+AD\cdot BD.$$
-設 $AD\le BD$，得 $AB^2\ge3AD^2>4AD^2\sin^254^\circ$⟦數值｜$4\sin^254^\circ=\big(\frac{1+\sqrt5}2\big)^2=\frac{3+\sqrt5}2\approx2.618<3$。⟧，所以 $\lambda_5\ge\frac{AB}{AD}>2\sin54^\circ$。
+設 $AD\le BD$，得 $AB^2\ge3AD^2>4AD^2\sin^254^\circ$⟦數值｜$4\sin^254^\circ=\big(\frac{1+\sqrt5}2\big)^2=\frac{3+\sqrt5}2\approx2.618\lt 3$。⟧，所以 $\lambda_5\ge\frac{AB}{AD}>2\sin54^\circ$。
 (3) 凸包是四邊形，設 $E$ 在凸四邊形 $ABCD$ 內部，則 $E$ 必在 $\triangle ABC$ 或 $\triangle ACD$ 中，照 (2) 的證明得 $\lambda_5>2\sin54^\circ$。
 (4) 凸包是五邊形 $ABCDE$。內角和 $540^\circ$，至少一個內角不小於 $108^\circ$，設為 $B$，則
 $$AC^2=AB^2+BC^2-2AB\cdot BC\cos B\ge AB^2+BC^2-2AB\cdot BC\cos108^\circ.\qquad(\mathrm I)$$
 設 $AB\le BC$，則
 $$AC^2\ge2AB^2(1-\cos108^\circ)=4AB^2\sin^254^\circ,\qquad(\mathrm{II})$$
-⟦兩步｜$\cos108^\circ<0$，所以 $-2AB\cdot BC\cos108^\circ\ge-2AB^2\cos108^\circ$，又 $BC^2\ge AB^2$。再用 $1-\cos108^\circ=2\sin^254^\circ$（半角公式）。⟧
+⟦兩步｜$\cos108^\circ\lt 0$，所以 $-2AB\cdot BC\cos108^\circ\ge-2AB^2\cos108^\circ$，又 $BC^2\ge AB^2$。再用 $1-\cos108^\circ=2\sin^254^\circ$（半角公式）。⟧
 於是 $\lambda_5\ge\dfrac{AC}{AB}\ge2\sin54^\circ$。
 <b>等號條件.</b> 情況 (1)(2)(3) 中等號不可能成立，只需討論 (4)。(I) 取等號當且僅當 $B=108^\circ$，所以任一內角都不能大於 $108^\circ$，必須 $A=B=C=D=E=108^\circ$；(II) 取等號當且僅當 $AB=BC$，所以五條邊都相等。因此 $\lambda_5=2\sin54^\circ$ 的充要條件是：所給的點構成一個正五邊形。
 
