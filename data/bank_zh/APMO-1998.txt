@@ -1,0 +1,17 @@
+=== P1
+zh: 設 $\mathcal{F}$ 為所有 $n$ 元組 $(A_1, A_2, \ldots, A_n)$ 所成的集合，其中每個 $A_i$（$i = 1, 2, \ldots, n$）都是 $\{1, 2, \ldots, 1998\}$ 的子集。對集合 $A$，以 $|A|$ 表示 $A$ 的元素個數。求和
+$$\sum_{(A_1, A_2, \ldots, A_n) \in \mathcal{F}} |A_1 \cup A_2 \cup \cdots \cup A_n|.$$
+src: apmo1998-1
+=== P2
+zh: 證明對任意正整數 $a$、$b$，$(36a+b)(a+36b)$ 不可能是 2 的冪次方。
+src: apmo1998-2
+=== P3
+zh: 設 $a, b, c$ 為正實數。證明
+$$\left(1 + \frac{a}{b}\right)\left(1 + \frac{b}{c}\right)\left(1 + \frac{c}{a}\right) \ge 2\left(1 + \frac{a+b+c}{\sqrt[3]{abc}}\right).$$
+src: apmo1998-3
+=== P4
+zh: 設 $ABC$ 為三角形，$D$ 為自 $A$ 所作高的垂足。設 $E$、$F$ 位於過 $D$ 的同一直線上，使得 $AE \perp BE$、$AF \perp CF$，且 $E$、$F$ 皆不等於 $D$。設 $M$、$N$ 分別為線段 $BC$ 與 $EF$ 的中點。證明 $AN \perp NM$。
+src: apmo1998-4
+=== P5
+zh: 求所有整數 $n$ 中具有下列性質者的最大值：$n$ 可被所有小於 $\sqrt[3]{n}$ 的正整數整除。
+src: apmo1998-5
