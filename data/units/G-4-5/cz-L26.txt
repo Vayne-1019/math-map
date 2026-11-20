@@ -1,0 +1,20 @@
+=== meta
+title: 西摩松線
+from: cz-L26
+order: 20
+
+=== body
+<div class="hero">$P$ 在 $\triangle ABC$ 的<b>外接圓上</b> ⇔ $P$ 到三邊的垂足 $X,Y,Z$ <b>共線</b></div>
+<figure class="bkfig"><svg viewBox="0 0 250 242" width="250" role="img" aria-label="西摩松線">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="129.2" cy="120.8" r="98.8"/><polygon points="34.3,148 224.2,148 112.1,23.5"/><line x1="34.3" y1="148" x2="22" y2="167.7" stroke-dasharray="5 4"/><line x1="95.5" y1="213.6" x2="199.2" y2="120.2"/><line x1="95.5" y1="213.6" x2="22" y2="167.7"/><line x1="95.5" y1="213.6" x2="95.5" y2="148"/><line x1="95.5" y1="213.6" x2="34.3" y2="148"/><line x1="95.5" y1="213.6" x2="224.2" y2="148"/><line x1="22" y1="167.7" x2="199.2" y2="120.2" stroke="#c2562b" stroke-width="2"/><polyline points="195.4,123.5 192.1,119.8 195.8,116.5" stroke-width="1"/><polyline points="26.2,170.3 28.9,166.1 24.6,163.4" stroke-width="1"/><polyline points="95.5,153 100.5,153 100.5,148" stroke-width="1"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="23.3" y="152.9" text-anchor="middle">A</text><text x="235.2" y="152.9" text-anchor="middle">B</text><text x="112.1" y="17.4" text-anchor="middle">C</text><text x="95.5" y="229.5" text-anchor="middle">P</text><text x="210.2" y="125.1" text-anchor="middle">X</text><text x="11" y="172.6" text-anchor="middle">Y</text><text x="95.5" y="141.9" text-anchor="middle">Z</text></g>
+</svg><figcaption>$P$ 在外接圓上，$X,Y,Z$ 是垂足（$Y$ 在 $CA$ 的延長線上）；紅線是西摩松線</figcaption></figure>
+<div class="cards">
+<div class="card"><h4>① 角度證法</h4><div class="rule">$P,X,B,Z$ 共圓；$P,Y,A,Z$ 共圓</div>
+<div class="eg">$\angle XZB=90^\circ-\angle PBX=90^\circ-\angle PAY=\angle AZY$ <span class="pill">對頂角</span></div></div>
+<div class="card"><h4>② 長度證法</h4><div class="rule">$XZ=\frac{PB\cdot AC}{2R}$ 等三式</div>
+<div class="eg">托勒密 $PC\cdot AB=PA\cdot BC+PB\cdot AC$ ⇒ $XY=XZ+ZY$ <span class="pill">長度相加</span></div></div>
+</div>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul><li>垂足常在<b>邊的延長線</b>上，畫圖要畫到延長線</li></ul></div>
+<div class="bottomline">外接圓上的點 → 三個垂足一條線。</div>

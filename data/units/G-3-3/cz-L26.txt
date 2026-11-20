@@ -1,0 +1,26 @@
+=== meta
+title: 證三點共線的四條路
+from: cz-L26
+order: 20
+
+=== body
+<div class="hero">共線本身是結論，也常是<b>解題的關鍵一步</b>：先看出「這三點其實共線」，條件才用得上</div>
+<figure class="bkfig"><svg viewBox="0 0 320 212" width="320" role="img" aria-label="四個垂足共線">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="135.3,72.7 87.4,189.7 268.3,157.8" stroke-width="2"/><line x1="87.4" y1="189.7" x2="295.5" y2="22"/><line x1="268.3" y1="157.8" x2="295.5" y2="22"/><line x1="268.3" y1="157.8" x2="22" y2="108.6"/><line x1="87.4" y1="189.7" x2="22" y2="108.6"/><line x1="295.5" y1="22" x2="22" y2="108.6" stroke-dasharray="5 4"/><line x1="135.3" y1="72.7" x2="173.6" y2="120.2"/><line x1="135.3" y1="72.7" x2="49.1" y2="142.2"/><line x1="135.3" y1="72.7" x2="124.1" y2="129"/><line x1="135.3" y1="72.7" x2="279.6" y2="101.5"/><line x1="30.7" y1="145.5" x2="298" y2="98.3" stroke="#c2562b" stroke-width="2"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="135.3" y="66.6" text-anchor="middle">A</text><text x="87.4" y="205.6" text-anchor="middle">B</text><text x="276.1" y="170.5" text-anchor="middle">C</text><text x="173.6" y="136.1" text-anchor="middle">M</text><text x="38.1" y="147.1" text-anchor="middle">N</text><text x="124.1" y="144.9" text-anchor="middle">P</text><text x="290.6" y="106.4" text-anchor="middle">Q</text><text x="303.2" y="19.1" text-anchor="middle">X</text><text x="11" y="113.5" text-anchor="middle">Y</text></g>
+</svg><figcaption>$BM,BN$ 是 $\angle B$ 的內、外角平分線，$CP,CQ$ 是 $\angle C$ 的；四個垂足在紅線上，紅線平行於 $BC$；$X$、$A$、$Y$ 在 $\angle A$ 的外角平分線上（虛線）</figcaption></figure>
+<div class="cards">
+<div class="card"><h4>① 角度湊平角</h4><div class="rule">$\angle ABQ_1+\angle ABQ_2=180^\circ$<br>或對頂角相等</div>
+<div class="eg">西摩松線：$\angle XZB=\angle AZY$ <span class="pill">角</span></div></div>
+<div class="card"><h4>② 指定一條線</h4><div class="rule">證每個點都在它上面</div>
+<div class="eg">四個垂足都在「過 $Q$ 平行 $BC$」的線上 <span class="pill">直截了當</span></div></div>
+<div class="card"><h4>③ 孟氏逆定理</h4><div class="rule">$\frac{BD}{DC}\cdot\frac{CE}{EA}\cdot\frac{AF}{FB}=1$</div>
+<div class="eg">高斯線、戴沙格定理 <span class="pill">比例</span></div></div>
+<div class="card"><h4>④ 長度相加</h4><div class="rule">$XY=XZ+ZY$ ⇒ $Z$ 在 $XY$ 上</div>
+<div class="eg">托勒密 ⇒ 西摩松線 <span class="pill">長度</span></div></div>
+</div>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>看圖「好像共線」就直接用，沒有證</li>
+<li>同一法時忘了確認兩點在<b>同一側</b>（例如都在線段內）</li></ul></div>
+<div class="bottomline">三點共線 = 兩個角湊成平角，或一串比例乘起來等於 1。</div>
