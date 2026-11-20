@@ -1,0 +1,18 @@
+=== P1
+zh: 設 $I$ 為三角形 $ABC$ 的內心。三角形內部的一點 $P$ 滿足 $\angle PBA+\angle PCA=\angle PBC+\angle PCB$。證明：$AP\ge AI$，且等號成立，若且唯若 $P=I$。
+src: imo2006-1
+=== P2
+zh: 設 $\mathcal P$ 為正 $2006$ 邊形。$\mathcal P$ 的一條對角線稱為「好的」，若其兩端點將 $\mathcal P$ 的邊界分成兩部分，每部分都由奇數條 $\mathcal P$ 的邊組成。$\mathcal P$ 的邊也稱為「好的」。設 $\mathcal P$ 被 $2003$ 條對角線剖分成若干三角形，且任兩條對角線在 $\mathcal P$ 的內部沒有公共點。求在此種剖分中，兩邊都是好邊的等腰三角形個數的最大可能值。
+src: imo2006-2
+=== P3
+zh: 求最小的實數 $M$，使得對所有實數 $a,b,c$，不等式 $\left|ab(a^2-b^2)+bc(b^2-c^2)+ca(c^2-a^2)\right|\le M(a^2+b^2+c^2)^2$ 成立。
+src: imo2006-3
+=== P4
+zh: 求所有整數對 $(x,y)$，使得 $1+2^x+2^{2x+1}=y^2$。
+src: imo2006-4
+=== P5
+zh: 設 $P(x)$ 為次數 $n>1$、係數為整數的多項式，$k$ 為正整數。考慮多項式 $Q(x)=P(P(\cdots P(P(x))\cdots))$，其中 $P$ 共出現 $k$ 次。證明：至多存在 $n$ 個整數 $t$，使得 $Q(t)=t$。
+src: imo2006-5
+=== P6
+zh: 對凸多邊形 $\mathcal P$ 的每一條邊 $b$，指定一個面積：為以 $b$ 為一邊、且包含於 $\mathcal P$ 內的三角形的最大面積。證明：指定給 $\mathcal P$ 各邊的面積總和，至少為 $\mathcal P$ 面積的兩倍。
+src: imo2006-6
