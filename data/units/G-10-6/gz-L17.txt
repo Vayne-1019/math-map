@@ -1,0 +1,20 @@
+=== meta
+title: 切線長代換（Ravi 代換）
+from: gz-L17
+order: 40
+
+=== body
+<div class="hero">三角形三邊 $a,b,c$ ⟺ 三個<b>任意正數</b> $x,y,z$：<br><b>$a=y+z,\ b=z+x,\ c=x+y$</b>（$x,y,z$ 是切線長）<br>三角形條件自動滿足，剩下純代數</div>
+<div class="cards">
+<div class="card"><h4>① 翻譯表</h4><div class="rule">$p=x+y+z$，$p-a=x$</div>
+<div class="eg">$\triangle=\sqrt{xyz(x+y+z)}$<br>$r=\sqrt{\frac{xyz}{x+y+z}}$，$\tan\frac A2=\frac rx$</div></div>
+<div class="card"><h4>② $R\ge2r$</h4><div class="rule">⟺ $(x+y)(y+z)(z+x)\ge8xyz$</div>
+<div class="eg">三個 $x+y\ge2\sqrt{xy}$ 相乘 <span class="pill">AM-GM</span></div></div>
+<div class="card"><h4>③ Hadwiger–Finsler</h4><div class="rule">$\sum a^2-\sum(b-c)^2\ge4\sqrt3\triangle$</div>
+<div class="eg">$a^2-(b-c)^2=4yz$<br>⟺ $(xy+yz+zx)^2\ge3xyz(x+y+z)$</div></div>
+</div>
+<p>數字例子：$3,4,5$ 三角形。⟦算一下｜$x=\frac{4+5-3}2=3$，$y=\frac{5+3-4}2=2$，$z=\frac{3+4-5}2=1$。$r=\sqrt{\frac{6}{6}}=1$，$R=\frac{5\cdot4\cdot3}{4\cdot6}=2.5\ge2r=2$ ✓。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>代換後忘了 $x,y,z$ 要<b>正</b>，等號條件 $x=y=z$ 對應正三角形</li>
+<li>把 $x$ 寫成 $b+c-a$ 卻沒除以 2，係數全錯</li></ul></div>
+<div class="bottomline">三角形邊長不等式卡住時，換成切線長，三角形不等式就消失了。</div>
