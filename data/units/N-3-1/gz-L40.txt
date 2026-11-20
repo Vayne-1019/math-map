@@ -1,0 +1,23 @@
+=== meta
+title: 一次不定方程 ax+by=c
+from: gz-L40
+order: 20
+
+=== body
+<div class="hero">有解 ⇔ <b>$(a,b)\mid c$</b><br>找到一組解 $(x_0,y_0)$，其餘的是<b>沿著直線等距跳</b>：<br>$x=x_0+\frac b{d}t,\ y=y_0-\frac a{d}t$（$d=(a,b)$）</div>
+<div class="cards">
+<div class="card"><h4>① 先約掉公因數</h4><div class="rule">$24x+15y=111\Rightarrow8x+5y=37$</div>
+<div class="eg">$(24,15)=3$，$3\mid111$ ✓<br>若 $3\nmid c$ 就直接無解 <span class="pill">先判斷</span></div></div>
+<div class="card"><h4>② 輾轉相除找特解</h4><div class="rule">$8x+5y=1$ 倒推</div>
+<div class="eg">$1=2\times8-3\times5$<br>乘 37：$x_0=74,\ y_0=-111$</div></div>
+<div class="card"><h4>③ 通解與限制</h4><div class="rule">$x=74-5t,\ y=-111+8t$</div>
+<div class="eg">要正整數：$13.875<t<14.8$<br>$t=14$：$(x,y)=(4,1)$</div></div>
+<div class="card"><h4>④ 最大湊不出的數</h4><div class="rule">$(a,b)=1$：$ab-a-b$ 湊不出，更大的都湊得出</div>
+<div class="eg">3 元、5 元郵票：$15-3-5=7$ 元湊不出<br>8、9、10、… 都可以</div></div>
+</div>
+<p>為什麼一步是 $\frac bd$？⟦約分後互質｜$a(x_1-x_0)=-b(y_1-y_0)$，兩邊除以 $d$ 後 $\frac ad$ 與 $\frac bd$ 互質，所以 $\frac bd$ 整除 $x_1-x_0$。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>通解寫成 $x_0+bt$：沒除以 $(a,b)$ 會漏掉一半以上的解</li>
+<li>求正整數解時，$t$ 的範圍不等號方向弄反</li>
+<li>$x,y$ 前的符號：$x$ 加 $\frac bd t$，$y$ 就要減 $\frac ad t$</li></ul></div>
+<div class="bottomline">一次不定方程三步：判斷 $(a,b)\mid c$ → 輾轉相除找一組 → 寫通解再加限制。</div>
