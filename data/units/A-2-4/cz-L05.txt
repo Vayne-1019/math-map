@@ -1,0 +1,20 @@
+=== meta
+title: 兩根的正負：Δ、積、和三個條件
+from: cz-L05
+order: 20
+
+=== body
+<div class="hero">兩根的正負只要看三個數：<br><b>Δ</b>（有沒有根）、<b>兩根之積</b>（同號或異號）、<b>兩根之和</b>（同號時是正或負）</div>
+<div class="cards">
+<div class="card"><h4>① 兩正根</h4><div class="rule">$\Delta\ge0,\ x_1x_2>0,\ x_1+x_2>0$</div>
+<div class="eg">$x^2-kx+k^2-4=0$<br>$16-3k^2\ge0,\ k^2>4,\ k>0$<br>⇒ $2\lt k\le\frac43\sqrt3$</div></div>
+<div class="card"><h4>② 一正一負</h4><div class="rule">只要 $x_1x_2\lt 0$</div>
+<div class="eg">$k^2-4\lt 0$ ⇒ $-2\lt k\lt 2$<br><span class="pill">Δ 自動 &gt; 0</span></div></div>
+<div class="card"><h4>③ 別漏掉零根</h4><div class="rule">$x_1x_2=0$ 時另一根的正負</div>
+<div class="eg">$k=2$：$x^2-2x=0$，根 $0,2$<br>⇒ 只有一個正根</div></div>
+</div>
+<p>為什麼積 &lt; 0 就不用檢查 Δ？⟦理由｜$x_1x_2=\frac ca\lt 0$ 表示 $a,c$ 異號，$-4ac>0$，所以 $\Delta=b^2-4ac>0$。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>「只有一個正根」漏掉「一正一零」的情形</li>
+<li>兩正根忘了加 $\Delta\ge0$：積和都正不代表有實根</li></ul></div>
+<div class="bottomline">先判有無根，再用積判同號異號，最後用和判正負。</div>

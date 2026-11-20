@@ -1,0 +1,22 @@
+=== meta
+title: 怪方程的四把鑰匙
+from: cz-L07
+order: 20
+
+=== body
+<div class="hero">硬去分母、硬平方 → 次數爆炸<br>先找<b>重複出現的結構</b>：換元、配對、構造輔助方程、反客為主</div>
+<div class="cards">
+<div class="card"><h4>① 換元</h4><div class="rule">對稱式用 $u=x+y,\ v=xy$</div>
+<div class="eg">$x^2+y^2=34$ → $u^2-2v=34$<br>$2xy-5\sqrt{xy+1}=10$ → 只剩 $v$</div></div>
+<div class="card"><h4>② 首尾配對</h4><div class="rule">與兩端等距的項先合併</div>
+<div class="eg">$\frac3x+\frac3{x-5}=\frac{3(2x-5)}{x^2-5x}$<br>每對都提出 $2x-5$ <span class="pill">令 y=x²−5x</span></div></div>
+<div class="card"><h4>③ 輔助方程</h4><div class="rule">$\sqrt A\pm\sqrt B$ 互為「共軛」</div>
+<div class="eg">$u-v=x-3$，$u^2-v^2=(x-3)(x+9)$<br>⇒ $u+v=x+9$，相加減就解出</div></div>
+<div class="card"><h4>④ 反客為主</h4><div class="rule">對 $x$ 是四次，對 $a$ 只是二次</div>
+<div class="eg">$\sqrt{a-\sqrt{a+x}}=x$<br>解出 $a=x^2+x+1$ 再反解 $x$</div></div>
+</div>
+<p>每一種變形（平方、去分母）都可能多出增根，最後一定要<b>代回原方程驗根</b>。⟦例子｜$\sqrt{2x}+\sqrt{x+7}=5$ 平方兩次得 $x=2$ 或 $162$；代回 $162$：$18+13\neq5$，是增根。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>忘了驗根，把增根寫進答案</li>
+<li>含文字的方程沒分類：$\sqrt{a-x}+\sqrt{b-x}=\sqrt{a+b-2x}$ 的解是 $\min(a,b)$，不是「$a$ 或 $b$」</li></ul></div>
+<div class="bottomline">先看結構再動手：找到重複的那一塊，方程就降次了。</div>

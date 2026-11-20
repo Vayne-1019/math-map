@@ -1,0 +1,20 @@
+=== meta
+title: 整數根、有理根：判別式要是完全平方
+from: cz-L05
+order: 30
+
+=== body
+<div class="hero">整係數 $ax^2+bx+c=0$ 有<b>有理根</b> $\iff$ $\Delta=b^2-4ac$ 是<b>完全平方數</b><br>要整數根？先讓 $\Delta$ 是平方，再加上整除條件</div>
+<div class="cards">
+<div class="card"><h4>① 直接看 Δ</h4><div class="rule">$\Delta=$ 某數的平方</div>
+<div class="eg">$x^2-2(2m-3)x+4m^2-14m+8=0$<br>$\frac\Delta4=2m+1$ 要是奇平方 → $25,49$</div></div>
+<div class="card"><h4>② 看尾數、看奇偶</h4><div class="rule">平方數尾數只有 $0,1,4,5,6,9$</div>
+<div class="eg">$b^2-4ac=1986$？<br>$b$ 偶 ⇒ 左邊是 4 的倍數，$1986\equiv2\pmod 4$ <span class="pill">不可能</span></div></div>
+<div class="card"><h4>③ 平方差拆因數</h4><div class="rule">$l^2-p^2=N$ ⇒ $(l+p)(l-p)=N$</div>
+<div class="eg">$920+p^2=l^2$<br>⇒ $(l+p)(l-p)=920$，兩因數同為偶數</div></div>
+</div>
+<p>也可以從韋達定理下手：⟦兩根之積是整數｜$(k-1)x^2-px+k=0$ 有兩個正整數根 ⇒ $\frac k{k-1}$ 是整數 ⇒ $k-1\mid k$ ⇒ $k=2$。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>$\Delta$ 是平方只保證<b>有理</b>根；整數根還要 $2a$ 整除 $-b\pm\sqrt\Delta$</li>
+<li>二次方程要求 $a\neq0$：題目寫 $(k-1)x^2$ 就先排除 $k=1$</li></ul></div>
+<div class="bottomline">整數根問題 = 判別式是平方數 + 數論（奇偶、整除、因數分解）。</div>
