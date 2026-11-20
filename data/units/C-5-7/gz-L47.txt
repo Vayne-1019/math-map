@@ -1,0 +1,20 @@
+=== meta
+title: 染色完全圖與拉姆齊數
+from: gz-L47
+order: 20
+
+=== body
+<div class="hero">把「認識／不認識」「哪個題目」染成<b>邊的顏色</b><br>夠大的完全圖<b>一定</b>有單色三角形：用一個頂點 + <b>抽屜原理</b></div>
+<div class="cards">
+<div class="card"><h4>① 六人定理</h4><div class="rule">2 色 $K_6$ 必有單色三角形</div>
+<div class="eg">$x$ 的 5 條邊有 3 條同色 → 看那 3 個端點<br>2 色 $K_5$ 可以沒有（外圈紅、對角線藍）<span class="pill">$r_2=6$</span></div></div>
+<div class="card"><h4>② 多色</h4><div class="rule">$r_k\le k(r_{k-1}-1)+2$</div>
+<div class="eg">$r_3\le3\cdot5+2=17$<br>17 位科學家、3 個題目 ⇒ 必有 3 人同題</div></div>
+<div class="card"><h4>③ 一般拉姆齊數</h4><div class="rule">$r(p,q)\le r(p-1,q)+r(p,q-1)$</div>
+<div class="eg">$r(4,3)\le r(3,3)+r(4,2)=6+4=10$<br>再用奇偶性改進到 $9$</div></div>
+</div>
+<p>$K_9$ 為什麼就夠？⟦三種情形｜某點有 4 條藍邊 → 端點間全紅 = 紅 $K_4$；某點有 6 條紅邊 → $K_6$ 的單色三角形必紅，加上該點成紅 $K_4$；否則每點恰 5 紅，紅邊數 $\frac{9\times5}2$ 不是整數。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>證「至少 $n$ 個」要 Ramsey 上界；說「$n-1$ 不夠」要<b>構造反例</b>（如 2 色 $K_5$、$K_8$）</li>
+<li>抽屜數要算對：$n-1$ 條邊、$k$ 種顏色，至少 $\lceil\frac{n-1}k\rceil$ 條同色</li></ul></div>
+<div class="bottomline">染色題：挑一個頂點，數它同色的邊，遞迴到更小的完全圖。</div>
