@@ -1,0 +1,135 @@
+=== meta
+title: 平移和旋轉
+author: 杜錫錄
+pages: 56-62
+units: G-5-1
+status: 完成
+
+=== text
+<p>平移和旋轉是兩種特殊的平面變換，處理某些幾何問題時，它們是很基本的輔助工具。</p>
+<h3>一、平移</h3>
+<p><b>平移</b>：把平面上任一點 $X$ 變到 $X'$，使 $\overrightarrow{XX'}$ 有確定的方向和給定的長度。平移的基本用法是<b>把某個圖形搬到另一個位置</b>，讓分散的線段、角湊在一起；證線段相等、平行、兩角相等時常常有幫助。</p>
+
+=== 例 1 | 平行四邊形內的點
+zh: 設 $P$ 是平行四邊形 $ABCD$ 內一點，使 $\angle PAB=\angle PCB$。證明 $\angle PBA=\angle PDA$。
+sol: <figure class="bkfig"><svg viewBox="0 0 280 160" width="280" role="img" aria-label="平行四邊形 ABCD 內一點 P 與平移後的 P′"><g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="64.3,22.0 22.0,138.4 212.5,138.4 254.8,22.0"/><line x1="64.3" y1="22.0" x2="67.5" y2="74.9"/><line x1="22.0" y1="138.4" x2="67.5" y2="74.9"/><line x1="212.5" y1="138.4" x2="67.5" y2="74.9"/><line x1="254.8" y1="22.0" x2="67.5" y2="74.9"/><line x1="67.5" y1="74.9" x2="258.0" y2="74.9" stroke-dasharray="5 4"/><line x1="254.8" y1="22.0" x2="258.0" y2="74.9" stroke-dasharray="5 4"/><line x1="212.5" y1="138.4" x2="258.0" y2="74.9" stroke-dasharray="5 4"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="58.3" y="16.0">A</text><text x="10.0" y="152.4">B</text><text x="214.5" y="152.4">C</text><text x="256.8" y="16.0">D</text><text x="53.5" y="78.9">P</text><text x="264.0" y="78.9">P′</text></g></svg><figcaption>把 AP 平移到 DP′（虛線）；P、D、P′、C 四點共圓</figcaption></figure>
+把 $AP$ 平移到 $DP'$（平移向量 $\overrightarrow{AD}$）。平移把 $A,B,P$ 變到 $D,C,P'$，所以 $\triangle ABP\cong\triangle DCP'$：
+$$\angle BAP=\angle CDP',\qquad\angle PBA=\angle P'CD.$$
+又 $PP'\parallel AD\parallel BC$，所以 $\angle P'PC=\angle BCP$（內錯角）。由已知 $\angle PAB=\angle PCB$，得 $\angle P'PC=\angle CDP'$，於是 $P,D,P',C$ 四點共圓⟦為什麼共圓｜$P$ 和 $D$ 在直線 $P'C$ 的同側，對線段 $P'C$ 張相等的角。⟧。
+<p>在這個圓中，$\angle P'CD=\angle P'PD$（同弧 $P'D$ 上的圓周角）；又 $PP'\parallel AD$，$\angle P'PD=\angle PDA$（內錯角）。所以</p>
+$$\angle PBA=\angle P'CD=\angle P'PD=\angle PDA.$$
+
+=== text
+<p>例 1 是常規的幾何題。競賽中還常出現一些不常規的幾何題（幾何雜題），解法上仍依賴「正常」的論證原則，只是技巧較高，不見得人人想得到。這時平移也用得上。</p>
+
+=== 例 2 | 構造對角線互相垂直的四邊形
+zh: 在矩形 $ABCD$ 中有任意一點 $M$。證明：存在一個凸四邊形，它的對角線互相垂直，長度分別等於 $AB$ 和 $BC$，而它的邊長分別等於 $AM,BM,CM,DM$。
+sol: 這是「存在性」命題，我們用構造性的論證：直接作出符合要求的四邊形。利用平移，在原圖上作圖就行。
+<figure class="bkfig"><svg viewBox="0 0 240 191" width="240" role="img" aria-label="矩形 ABCD 內一點 M 與平移後的 M′"><g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="22.0,22.0 22.0,130.9 218.0,130.9 218.0,22.0"/><line x1="81.9" y1="60.1" x2="22.0" y2="22.0"/><line x1="81.9" y1="60.1" x2="22.0" y2="130.9"/><line x1="81.9" y1="60.1" x2="218.0" y2="130.9"/><line x1="81.9" y1="60.1" x2="218.0" y2="22.0"/><line x1="81.9" y1="60.1" x2="81.9" y2="169.0" stroke-dasharray="5 4"/><line x1="22.0" y1="130.9" x2="81.9" y2="169.0" stroke-dasharray="5 4"/><line x1="218.0" y1="130.9" x2="81.9" y2="169.0" stroke-dasharray="5 4"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="10.0" y="18.0">A</text><text x="8.0" y="140.9">B</text><text x="222.0" y="140.9">C</text><text x="222.0" y="18.0">D</text><text x="77.9" y="52.1">M</text><text x="75.9" y="185.0">M′</text></g></svg><figcaption>把 AM 平移到 BM′；四邊形 BMCM′ 的對角線 MM′⊥BC</figcaption></figure>
+把 $AM$ 平移到 $BM'$（平移向量 $\overrightarrow{AB}$），則 $AMM'B$ 是平行四邊形：$MM'=AB$，$BM'=AM$，$MM'\parallel AB$，所以 $MM'\perp BC$。又 $MM'$ 平行且等於 $DC$，$DMM'C$ 也是平行四邊形，所以 $M'C=DM$。
+<p>於是四邊形 $BMCM'$ 的四邊是 $BM,MC,CM'=DM,M'B=AM$，對角線 $MM'=AB$、$BC$ 互相垂直。$M$ 在矩形內，線段 $MM'$ 和 $BC$ 交於兩者的內部，所以 $BMCM'$ 是凸四邊形。</p>
+
+=== 例 3 | 1988 條直線
+zh: 1988 條直線兩兩相交。證明：所得的交角中，至少有一個角不大於 $\dfrac\pi{1987}$。
+sol: 用平移把問題集中到一點。在平面上任取一點 $P$，把 1988 條直線都平移到經過 $P$，交角和平移前相同。這時 1988 條直線把以 $P$ 為中心的周角分成 $2\times1988=3976$ 個相鄰的角 $\alpha_1,\dots,\alpha_{3976}$（直線兩兩相交，方向各不相同）。只要證明其中有一個 $\le\frac\pi{1987}$。否則
+$$2\pi=\alpha_1+\dots+\alpha_{3976}&gt;3976\cdot\frac\pi{1987}=2\cdot1988\cdot\frac\pi{1987}&gt;2\pi,$$
+矛盾。
+
+=== 例 4 | 沒有兩點相距 0.1
+zh: 在邊長為 1 的正方形內放置一個圖形，它的任何兩點的距離都不等於 0.1。證明這個圖形的面積小於 0.4。
+sol: <figure class="bkfig"><svg viewBox="0 0 200 197" width="200" role="img" aria-label="正方形與兩個長度 0.1、夾角 60° 的平移向量"><g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="22.0,174.9 154.2,174.9 154.2,42.7 22.0,42.7"/><line x1="45.8" y1="174.9" x2="33.9" y2="154.3"/><line x1="154.2" y1="174.9" x2="178.0" y2="174.9" stroke-dasharray="5 4"/><line x1="178.0" y1="174.9" x2="178.0" y2="22.0" stroke-dasharray="5 4"/><line x1="178.0" y1="22.0" x2="22.0" y2="22.0" stroke-dasharray="5 4"/><line x1="22.0" y1="22.0" x2="22.0" y2="42.7" stroke-dasharray="5 4"/><line x1="22.0" y1="174.9" x2="45.8" y2="174.9" stroke="#c2562b" stroke-width="2"/><line x1="22.0" y1="174.9" x2="33.9" y2="154.3" stroke="#c2562b" stroke-width="2"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="8.0" y="188.9">A</text><text x="150.2" y="190.9">D</text><text x="8.0" y="46.7">B</text><text x="142.2" y="38.7">C</text><text x="41.8" y="190.9">A<tspan font-size="11" dy="4">1</tspan></text><text x="17.9" y="152.3">A<tspan font-size="11" dy="4">2</tspan></text></g></svg><figcaption>三個圖形都落在虛線所示的 1.1×(1+0.05√3) 長方形內（向量長度放大示意）</figcaption></figure>
+取兩個向量 $\overrightarrow{AA_1}$、$\overrightarrow{AA_2}$，$A_1$ 在 $AD$ 邊上，$A_2$ 在 $\angle BAD$ 內，$\angle A_1AA_2=60^\circ$，$AA_1=AA_2=0.1$，所以 $A_1A_2=0.1$。把圖形 $\Phi$ 分別沿 $\overrightarrow{AA_1}$、$\overrightarrow{AA_2}$ 平移，得到兩個新圖形 $\Phi_1,\Phi_2$。
+<p>三個圖形兩兩不相交⟦為什麼不相交｜若點 $X$ 同在 $\Phi$ 與 $\Phi_1$ 中，則 $X$ 與 $X-\overrightarrow{AA_1}$ 都在 $\Phi$ 中，距離 0.1，矛盾。若 $X$ 同在 $\Phi_1$ 與 $\Phi_2$ 中，則 $X-\overrightarrow{AA_1}$ 與 $X-\overrightarrow{AA_2}$ 都在 $\Phi$ 中，距離 $A_1A_2=0.1$，也矛盾。⟧。兩個平移向量的水平分量是 $0.1$ 與 $0.05$、鉛直分量是 $0$ 與 $0.05\sqrt3$，所以三個圖形都在一個 $1.1\times(1+0.05\sqrt3)$ 的長方形內。因此圖形面積 $S$ 滿足</p>
+$$3S\le1.1\times(1+0.05\sqrt3)\approx1.195,\qquad S\le0.399\ldots&lt;0.4.$$
+<p class="note">原書用「都在邊長 1.1 的正方形內」估計，得 $3S&lt;1.21$；但 $\frac{1.21}3\approx0.403$ 並不小於 0.4，所以這裡改用較精確的長方形。</p>
+
+=== text
+<h3>二、旋轉</h3>
+<p>旋轉也是一種幾何變換，這裡只介紹概念：一個變換使定點 $P$ 不動，任何其他點 $X$ 變到 $X'$，滿足 $PX=PX'$、$\angle XPX'=\theta$（$0^\circ\le\theta\le180^\circ$），而且從射線 $PX$ 到 $PX'$ 的方向和給定的旋轉方向相同。這稱為繞中心 $P$、按給定方向旋轉角度 $\theta$ 的<b>旋轉</b>。旋轉常能把「分散」的量「集中」起來，是解題的有效手法。</p>
+
+=== 例 5 | 3、4、5
+zh: 設 $P$ 是正三角形 $ABC$ 內一點，$PC=3$，$PA=4$，$PB=5$。求這個正三角形的邊長。
+sol: <figure class="bkfig"><svg viewBox="0 0 230 261" width="230" role="img" aria-label="正三角形 ABC 內一點 P，PA=4、PB=5、PC=3"><g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="22.0,183.1 115.0,22.0 208.0,183.1"/><line x1="129.2" y1="158.7" x2="22.0" y2="183.1"/><line x1="129.2" y1="158.7" x2="115.0" y2="22.0"/><line x1="129.2" y1="158.7" x2="208.0" y2="183.1"/><line x1="22.0" y1="183.1" x2="147.5" y2="239.1" stroke-dasharray="5 4"/><line x1="208.0" y1="183.1" x2="147.5" y2="239.1" stroke-dasharray="5 4"/><line x1="129.2" y1="158.7" x2="147.5" y2="239.1" stroke-dasharray="5 4"/></g><g font-size="13" fill="currentColor"><text x="73.6" y="164.9">4</text><text x="128.1" y="90.3">5</text><text x="170.6" y="164.9">3</text></g><g fill="currentColor" font-size="15" font-style="italic"><text x="8.0" y="189.1">A</text><text x="111.0" y="14.0">B</text><text x="212.0" y="189.1">C</text><text x="123.2" y="150.7">P</text><text x="143.5" y="257.1">P′</text></g></svg><figcaption>繞 C 旋轉 60°：B→A，P→P′；△APP′ 是 3-4-5 直角三角形</figcaption></figure>
+繞 $C$ 把 $\triangle CBP$ 旋轉 $60^\circ$，使 $B$ 到達 $A$，$P$ 到達 $P'$。則 $\angle PCP'=60^\circ$，$P'C=PC=3$，所以 $\triangle PCP'$ 是正三角形，$PP'=3$；又 $AP'=BP=5$。
+<p>在 $\triangle APP'$ 中，$AP^2+PP'^2=4^2+3^2=5^2=AP'^2$，所以 $\angle APP'$ 是直角。故</p>
+$$\angle APC=\angle APP'+\angle P'PC=90^\circ+60^\circ=150^\circ.$$
+對 $\triangle APC$ 用餘弦定理：
+$$AC^2=4^2+3^2-2\cdot4\cdot3\cos150^\circ=25+12\sqrt3.$$
+ans: 邊長 $\sqrt{25+12\sqrt3}$。
+
+=== text
+<p>讀者應該看出旋轉的功效了。實際解題時繞哪個點、轉多少度、朝哪個方向，都要依題目而定，沒有固定的程序；本題的旋轉方式也不只一種。這裡挑的例題當然都和旋轉有關，但並不是每個問題都能這樣處理。</p>
+
+=== 例 6 | 兩個正方形
+zh: 兩個正方形 $BCDA$ 和 $BKMN$ 有公共頂點 $B$（頂點按順時針排列）。證明：$\triangle ABK$ 的中線和 $\triangle CBN$ 的高位於同一直線上。
+sol: 這題有多種解法，用旋轉可以看清問題的實質。
+<figure class="bkfig"><svg viewBox="0 0 280 243" width="280" role="img" aria-label="兩個有公共頂點 B 的正方形"><g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="146.2,146.2 84.1,208.3 22.0,146.2 84.1,84.1"/><polygon points="146.2,146.2 220.7,108.9 258.0,183.5 183.5,220.7"/><line x1="84.1" y1="84.1" x2="220.7" y2="108.9"/><line x1="84.1" y1="208.3" x2="183.5" y2="220.7"/><line x1="146.2" y1="146.2" x2="152.4" y2="96.5"/><line x1="146.2" y1="146.2" x2="208.3" y2="84.1" stroke-dasharray="5 4"/><line x1="208.3" y1="84.1" x2="183.5" y2="220.7" stroke-dasharray="5 4"/><line x1="146.2" y1="146.2" x2="195.9" y2="152.4" stroke-dasharray="5 4"/><line x1="208.3" y1="84.1" x2="146.2" y2="22.0" stroke-dasharray="5 4"/><line x1="146.2" y1="22.0" x2="84.1" y2="84.1" stroke-dasharray="5 4"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="76.1" y="78.1">A</text><text x="132.2" y="142.2">B</text><text x="78.1" y="224.3">C</text><text x="6.0" y="150.2">D</text><text x="224.7" y="106.9">K</text><text x="262.0" y="189.5">M</text><text x="179.5" y="236.7">N</text><text x="212.3" y="80.1">A′</text><text x="148.4" y="90.5">E</text><text x="199.9" y="162.4">E′</text><text x="142.2" y="16.0">D′</text></g></svg><figcaption>繞 B 順時針轉 90°：C→A、K→N、A→A′、E→E′</figcaption></figure>
+設 $E$ 是 $AK$ 的中點，要證 $BE\perp CN$。作以 $B$ 為中心的順時針 $90^\circ$ 旋轉，它把正方形的頂點 $K$ 變到 $N$，把 $C$ 變到 $A$，把 $A$ 變到 $A'$，$E$ 變成 $E'$，且 $\angle EBE'=90^\circ$。
+<p>$E'$ 是 $A'N$（即 $AK$ 的像）的中點；又 $BA'=BA=BC$ 且 $A'$、$B$、$C$ 共線⟦為什麼共線｜$\angle ABC=90^\circ$，$A$ 再轉 $90^\circ$ 到 $A'$，所以 $\angle A'BC=180^\circ$。⟧，$B$ 是 $A'C$ 的中點。在 $\triangle A'NC$ 中，$BE'$ 是中位線，所以 $BE'\parallel CN$。而 $\angle EBE'=90^\circ$，因此 $EB\perp CN$：中線 $BE$ 所在直線就是 $\triangle CBN$ 的高所在直線。</p>
+
+=== text
+<p>下例提供了用旋轉來實現構造的範例，請和例 2 比較。</p>
+
+=== 例 7 | 三條線段構成三角形
+zh: 正三角形 $ABC$ 內接於半徑為 $r_1$ 的圓，圓心為 $O$；圓外一點 $P$，$PO=r_2$（$r_2&gt;r_1$）。證明線段 $PA,PB,PC$ 能構成三角形，並計算它的面積。
+sol: <figure class="bkfig"><svg viewBox="0 0 240 212" width="240" role="img" aria-label="正三角形 ABC 內接於圓 O，圓外一點 P"><g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="156.9,22.0 103.9,113.7 209.8,113.7"/><line x1="178.3" y1="190.1" x2="156.9" y2="22.0"/><line x1="178.3" y1="190.1" x2="103.9" y2="113.7"/><line x1="178.3" y1="190.1" x2="209.8" y2="113.7"/><line x1="156.9" y1="22.0" x2="22.0" y2="124.6"/><line x1="103.9" y1="113.7" x2="22.0" y2="124.6"/><line x1="178.3" y1="190.1" x2="22.0" y2="124.6" stroke-dasharray="5 4"/><circle cx="156.9" cy="83.1" r="61.1" stroke-dasharray="3 3"/></g><g fill="currentColor"><circle cx="156.9" cy="83.1" r="2.5"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="152.9" y="14.0">A</text><text x="89.9" y="111.7">B</text><text x="215.8" y="117.7">C</text><text x="182.3" y="204.1">P</text><text x="4.0" y="128.6">P′</text><text x="160.9" y="79.1">O</text></g></svg><figcaption>把 △ACP 繞 A 轉 60° 得 △ABP′；△PBP′ 的三邊就是 PA、PB、PC</figcaption></figure>
+直接構造出所要的三角形。把 $\triangle ACP$ 繞 $A$ 旋轉 $60^\circ$，使 $C$ 到 $B$，得 $\triangle ABP'$，則 $AP'=AP$，$BP'=PC$，$\angle ACP=\angle ABP'$，而且 $\triangle APP'$ 是正三角形，$PP'=PA$。
+<p>因為 $P$ 在圓外，$P,C,A,B$ 四點不共圓，所以 $\angle ABP+\angle ABP'=\angle ABP+\angle ACP\ne180^\circ$⟦為什麼｜四邊形 $ABPC$（或 $ACBP$）的一組對角互補若且唯若四點共圓。⟧，即 $P',B,P$ 不共線。所以 $BP'=PC$、$BP$、$PP'=PA$ 能構成三角形（不會退化成線段），即 $PA,PB,PC$ 能構成三角形。</p>
+<p><b>面積</b>（以圖中 $P$ 在 $BC$ 外側為例）：設 $\angle POC=\alpha$，則 $\angle BOP=120^\circ-\alpha$，$\angle AOP=120^\circ+\alpha$。</p>
+$$\begin{aligned}\triangle PBP'&=\triangle APP'-\triangle ABP'-\triangle ABP\\&=\triangle APP'-\triangle ACP-\triangle ABP\\&=\triangle APP'-\triangle ABC-\triangle BPC\\&=\tfrac{\sqrt3}4PA^2-\triangle ABC-\triangle OBP-\triangle OCP+\triangle BOC.\end{aligned}$$
+代入
+$$\begin{aligned}PA^2&=r_1^2+r_2^2-2r_1r_2\cos(120^\circ+\alpha),\\\triangle ABC&=\tfrac{3\sqrt3}4r_1^2,\quad\triangle BOC=\tfrac{\sqrt3}4r_1^2,\\\triangle OBP&=\tfrac12r_1r_2\sin(120^\circ-\alpha),\quad\triangle OCP=\tfrac12r_1r_2\sin\alpha.\end{aligned}$$
+含 $r_1r_2$ 的項互相抵消⟦抵消｜$\sin(120^\circ-\alpha)+\sin\alpha=2\sin60^\circ\cos(60^\circ-\alpha)=\sqrt3\cos(60^\circ-\alpha)$，而 $\cos(120^\circ+\alpha)=-\cos(60^\circ-\alpha)$。所以 $-\frac{\sqrt3}2r_1r_2\cos(120^\circ+\alpha)-\frac12r_1r_2\cdot\sqrt3\cos(60^\circ-\alpha)=0$。⟧，得
+$$\triangle PBP'=\frac{\sqrt3}4(r_1^2+r_2^2)-\frac{3\sqrt3}4r_1^2+\frac{\sqrt3}4r_1^2=\frac{\sqrt3}4(r_2^2-r_1^2).$$
+ans: 面積為 $\dfrac{\sqrt3}4(r_2^2-r_1^2)$。
+
+=== text
+<p>有一種非常特殊的旋轉值得強調：繞定點 $P$ 轉 $180^\circ$，也稱為關於點 $P$ 的<b>中心對稱</b>。如果一個圖形在關於 $P$ 的中心對稱下變成自己，就說這個圖形以 $P$ 為對稱中心。例如圓、平行四邊形都是中心對稱圖形，對稱中心分別是圓心和對角線交點。</p>
+
+=== 例 8 | 兩條中線各成 30°
+zh: 在 $\triangle ABC$ 中，引中線 $AF$ 和 $CE$。若 $\angle BAF=\angle BCE=30^\circ$，證明 $\triangle ABC$ 是正三角形。
+sol: <figure class="bkfig"><svg viewBox="0 0 240 222" width="240" role="img" aria-label="三角形 ABC、過 A、E、F、C 的圓與對稱點 O1、O2"><g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="120.0,30.8 54.7,143.9 185.3,143.9"/><line x1="120.0" y1="30.8" x2="120.0" y2="143.9"/><line x1="185.3" y1="143.9" x2="87.3" y2="87.3"/><line x1="152.7" y1="87.3" x2="22.0" y2="87.3" stroke-dasharray="5 4"/><line x1="152.7" y1="87.3" x2="87.3" y2="200.5" stroke-dasharray="5 4"/><line x1="22.0" y1="87.3" x2="87.3" y2="200.5" stroke-dasharray="5 4"/><circle cx="152.7" cy="87.3" r="65.3"/></g><g fill="currentColor"><circle cx="152.7" cy="87.3" r="2.5"/><circle cx="22.0" cy="87.3" r="2.5"/><circle cx="87.3" cy="200.5" r="2.5"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="116.0" y="22.8">A</text><text x="40.7" y="149.9">B</text><text x="191.3" y="149.9">C</text><text x="73.3" y="83.3">E</text><text x="116.0" y="159.9">F</text><text x="158.7" y="85.3">O</text><text x="2.0" y="83.3">O<tspan font-size="11" dy="4">1</tspan></text><text x="81.3" y="218.5">O<tspan font-size="11" dy="4">2</tspan></text></g></svg><figcaption>O₁、O₂ 是 O 關於 E、F 的對稱點；最後證得 O 在 AC 上</figcaption></figure>
+因為 $\angle EAF=\angle ECF=30^\circ$，$A,E,F,C$ 四點共圓。設圓心為 $O$、半徑為 $R$，則 $\angle EOF=2\cdot30^\circ=60^\circ$。我們證明 $O$ 在 $AC$ 上。
+<p>作 $O$ 關於 $E$ 的對稱點 $O_1$。$E$ 同時是 $AB$ 和 $OO_1$ 的中點，所以 $AOBO_1$ 是平行四邊形，$O_1B=AO=R$，$O_1B\parallel AO$；而 $E$ 在圓上，$OO_1=2OE=2R$。同樣作 $O$ 關於 $F$ 的對稱點 $O_2$，有 $O_2B=CO=R$，$O_2B\parallel CO$，$OO_2=2R$。</p>
+<p>在 $\triangle O_1OO_2$ 中，$O_1O=OO_2=2R$，$\angle O_1OO_2=\angle EOF=60^\circ$，所以它是正三角形，$O_1O_2=2R$。但 $O_1B+BO_2=2R=O_1O_2$，所以 $B$ 在線段 $O_1O_2$ 上。</p>
+<p>於是 $AO\parallel O_1B$ 即 $AO\parallel O_1O_2$，同理 $CO\parallel O_1O_2$，所以 $A,O,C$ 共線，$AC$ 是直徑。因此 $\angle AFC=\angle AEC=90^\circ$：中線 $AF$ 也是高，$AB=AC$；中線 $CE$ 也是高，$CB=CA$。所以 $\triangle ABC$ 是正三角形。</p>
+
+=== text
+<p>順便介紹<b>軸對稱</b>：給定直線 $l$，把點 $X$ 變到 $X'$，使 $l$ 是線段 $XX'$ 的中垂線，這叫關於 $l$ 的對稱，$X'$ 是 $X$ 的對稱點；$X$ 在 $l$ 上時對稱點就是自己。若兩個圖形 $F$、$F'$ 的所有點都互為關於 $l$ 的對稱點，就說它們關於 $l$ 軸對稱，$l$ 是對稱軸。例如兩個外切的等圓關於它們的內公切線對稱。一個圖形本身關於某直線對稱尤其值得注意，例如圓（任一直徑所在直線）、正三角形（高所在直線）。解題時，軸對稱往往比中心對稱更有用。</p>
+
+=== 例 9 | 四邊形面積的上界
+zh: 證明：任意凸四邊形的面積不大於兩組對邊乘積之和的一半。
+sol: <figure class="bkfig"><svg viewBox="0 0 220 273" width="220" role="img" aria-label="凸四邊形 ABCD 與 D 關於 AC 中垂線的對稱點 D′"><g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="22.0,180.4 133.5,39.6 198.0,180.4 74.8,233.2"/><line x1="22.0" y1="180.4" x2="198.0" y2="180.4"/><line x1="22.0" y1="180.4" x2="145.2" y2="233.2" stroke-dasharray="5 4"/><line x1="198.0" y1="180.4" x2="145.2" y2="233.2" stroke-dasharray="5 4"/><line x1="110.0" y1="22.0" x2="110.0" y2="250.8" stroke-dasharray="5 4"/><line x1="133.5" y1="39.6" x2="145.2" y2="233.2" stroke-dasharray="5 4"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="8.0" y="184.4">A</text><text x="137.5" y="35.6">B</text><text x="202.0" y="184.4">C</text><text x="68.8" y="249.2">D</text><text x="147.2" y="249.2">D′</text></g></svg><figcaption>直立虛線是 AC 的中垂線；△ADC≅△CD′A</figcaption></figure>
+設凸四邊形 $ABCD$，要證它的面積不超過 $\frac12(AB\cdot CD+BC\cdot AD)$。作 $D$ 關於線段 $AC$ 中垂線的對稱點 $D'$，則 $\triangle ADC\cong\triangle CD'A$，$AD'=CD$，$CD'=AD$。所以
+$$\begin{aligned}\text{四邊形 }ABCD\text{ 的面積}&=\text{四邊形 }ABCD'\text{ 的面積}\\&=\triangle BAD'+\triangle BD'C\\&\le\tfrac12AB\cdot AD'+\tfrac12BC\cdot CD'\\&=\tfrac12(AB\cdot CD+BC\cdot AD).\end{aligned}$$
+⟦不等號｜$\triangle BAD'=\frac12AB\cdot AD'\sin\angle BAD'\le\frac12AB\cdot AD'$，另一個同理。⟧
+
+=== 例 10 | 高的上界
+zh: 證明：在邊長為 $a,b,c$ 的任意三角形中，高 $h_a\le\sqrt{p(p-a)}$，其中 $p=\dfrac{a+b+c}2$。
+sol: <figure class="bkfig"><svg viewBox="0 0 200 200" width="200" role="img" aria-label="三角形 ABC 與 B、C 關於直線 l 的對稱點"><g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="33.1,178.0 166.9,178.0 166.9,22.0 33.1,22.0"/><line x1="83.3" y1="100.0" x2="33.1" y2="178.0"/><line x1="83.3" y1="100.0" x2="166.9" y2="178.0"/><line x1="22.0" y1="100.0" x2="178.0" y2="100.0" stroke-dasharray="5 4"/><line x1="83.3" y1="100.0" x2="33.1" y2="22.0" stroke-dasharray="5 4"/><line x1="166.9" y1="178.0" x2="33.1" y2="22.0" stroke-dasharray="5 4"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="79.3" y="92.0">A</text><text x="19.1" y="192.0">B</text><text x="170.9" y="192.0">C</text><text x="17.1" y="22.0">B′</text><text x="170.9" y="22.0">C′</text></g></svg><figcaption>l 過 A 且平行 BC；AB＝AB′，所以 b＋c ≥ CB′</figcaption></figure>
+過 $A$ 作 $BC$ 的平行線 $l$，作 $B,C$ 關於 $l$ 的對稱點 $B',C'$，則 $BB'=2h_a$，$AB'=AB$。所以
+$$b+c=CA+AB'\ge CB'=\sqrt{BC^2+BB'^2},$$
+即 $b+c\ge\sqrt{a^2+(2h_a)^2}$，從而
+$$h_a^2\le\tfrac14\big[(b+c)^2-a^2\big]=p(p-a).$$
+<p>這個解法值得注意，它完全基於幾何的想法。也可以用代數不等式證：用兩種方法算三角形面積（$\frac12ah_a$ 與海龍公式），要證的不等式等價於</p>
+$$\sqrt{(p-b)(p-c)}\le\frac a2,$$
+<p>而 $(p-b)+(p-c)=a$，由算幾不等式這是顯然的，且當且僅當 $b=c$ 時取等號；從上面的幾何證法也看得出這一點（$A$ 在 $CB'$ 上）。</p>
+
+=== 習題 1
+zh: 設 $ABCDEF$ 是正六邊形，$K$ 是對角線 $BD$ 的中點，$M$ 是邊 $EF$ 的中點。證明 $\triangle AMK$ 是正三角形。
+sol: 用 $O$ 表示正六邊形的中心，考慮繞點 $A$ 把 $B$ 變成 $O$ 的 $60^\circ$ 旋轉。在這個旋轉下，$O$ 變成 $F$、$C$ 變成 $E$，所以線段 $OC$ 變成線段 $FE$。$BCDO$ 是平行四邊形（菱形），$K$ 是對角線 $BD$ 的中點，因此也是另一條對角線 $CO$ 的中點。所以 $K$ 變成 $FE$ 的中點 $M$，$AK=AM$ 且 $\angle KAM=60^\circ$，$\triangle AMK$ 是正三角形。
+
+=== 習題 2
+zh: 在正方形 $ABCD$ 的邊 $BC$ 和 $CD$ 上分別取點 $M$ 和 $K$，使 $\angle BAM=\angle MAK$。證明 $BM+KD=AK$。
+sol: 把正方形 $ABCD$ 繞 $A$ 旋轉 $90^\circ$，使 $B$ 變成 $D$，設 $M$ 變成 $M'$（在 $CD$ 的延長線上），則 $DM'=BM$，$\angle DAM'=\angle BAM$，$\angle AM'D=\angle AMB$。
+<p>因為 $\angle MAK=\angle MAB=\angle M'AD$，所以 $\angle M'AK=\angle M'AD+\angle DAK=\angle MAK+\angle DAK=\angle MAD$。又 $AD\parallel BC$，$\angle MAD=\angle AMB=\angle AM'K$。所以 $\angle M'AK=\angle AM'K$，$\triangle AKM'$ 是等腰三角形：</p>
+$$AK=KM'=KD+DM'=KD+BM.$$
+
+=== 習題 3
+zh: 證明：如果三角形的一條中線和角平分線重合，則這個三角形是等腰三角形。
+sol: 設 $\triangle ABC$ 中，中線 $BD$ 又是角平分線。作 $B$ 關於點 $D$ 的對稱點 $B_1$。$D$ 是 $AC$ 的中點，所以 $ABCB_1$ 是平行四邊形，$AB_1=BC$，$AB_1\parallel BC$。由於 $\angle ABB_1=\angle B_1BC=\angle AB_1B$（後一個等號是內錯角），$\triangle B_1AB$ 是等腰三角形，所以 $AB=AB_1=BC$。
+
+=== 習題 4
+zh: 已知直線 $l$ 同側的兩點 $A,B$，在 $l$ 上求一點 $P$，使 $AP+PB$ 最小。
+sol: 作 $A$ 關於直線 $l$ 的對稱點 $A'$。設 $P$ 是 $l$ 上的點，則 $PA+PB=PA'+PB\ge A'B$，當且僅當 $P$ 是 $l$ 和 $A'B$ 的交點時等號成立。所以這個交點就是所求的點。
+ans: $A$ 關於 $l$ 的對稱點 $A'$ 與 $B$ 的連線和 $l$ 的交點。
