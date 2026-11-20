@@ -1,0 +1,118 @@
+=== meta
+title: 立體幾何解題中的作圖
+author: 杜錫錄
+pages: 63-69
+units: G-9-6, G-9-3
+status: 完成
+
+=== text
+<p>中學數學培養的能力主要有三方面：運算能力、邏輯思維能力、空間想像能力。後兩者在高中階段主要落在立體幾何上，這一點值得重視；很多大學生學高等數學時遇到的困難也在這裡。這一講談立體幾何中的圖。</p>
+<p>對解題時的圖，有兩種極端看法：一種認為一般問題不需要作圖；另一種認為圖本身就是充足的論據，甚至用「由圖看出」代替必要的說明。兩者都不對。</p>
+<p>幾何中最主要的是邏輯論證。任何圖，即使是最準確的圖（立體幾何中沒有最準確的圖），都不能代替邏輯證明，它只是推理的解釋；圖中呈現的任何幾何事實都必須嚴格論證。但是，為了讓證明思路更清楚，我們常借助作圖；有時只有圖才能幫助解題，正確反映條件中構形的實質特點。</p>
+<p>有人說：「幾何學是由不正確的圖形作出正確結論的藝術。」立體幾何中很難作出絕對正確的圖，正確的結論又是透過這些不完全正確的圖得到的，所以要重視這些「不那麼正確」的圖。</p>
+<p>作圖時首先要確實滿足題目條件，但這樣畫出的圖可能並不反映構形的實質，甚至導出矛盾。這時就要適當修改圖，把基本特點畫出來；這往往要在推理過程中才發現。一旦圖把基本特點都反映出來，問題也就接近解決了。</p>
+
+=== 例 1 | 先畫錯，再改對
+zh: 在三稜錐 $S\text{-}ABC$ 中，側稜 $SC$ 等於底邊 $AB$，且與底面 $ABC$ 成 $60^\circ$ 角；頂點 $A,B,C$ 以及各側稜的中點都在半徑為 1 的球面上。證明這個球的球心在稜 $AB$ 上，並求稜錐的高。
+sol: <figure class="bkfig"><svg viewBox="0 0 220 152" width="220" role="img" aria-label="三稜錐 S-ABC 的第一次草圖"><g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="119.9" y1="22.0" x2="22.0" y2="130.2"/><line x1="119.9" y1="22.0" x2="134.7" y2="130.2"/><line x1="119.9" y1="22.0" x2="198.0" y2="97.6"/><line x1="22.0" y1="130.2" x2="134.7" y2="130.2"/><line x1="134.7" y1="130.2" x2="198.0" y2="97.6"/><line x1="71.0" y1="76.1" x2="127.3" y2="76.1"/><line x1="127.3" y1="76.1" x2="159.0" y2="59.8"/><line x1="22.0" y1="130.2" x2="198.0" y2="97.6" stroke-dasharray="5 4"/><line x1="119.9" y1="22.0" x2="119.9" y2="119.3" stroke-dasharray="5 4"/><line x1="119.9" y1="119.3" x2="198.0" y2="97.6" stroke-dasharray="5 4"/><line x1="119.9" y1="22.0" x2="78.3" y2="130.2" stroke-dasharray="5 4"/><line x1="71.0" y1="76.1" x2="159.0" y2="59.8" stroke-dasharray="5 4"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="115.9" y="14.0">S</text><text x="8.0" y="142.2">A</text><text x="136.7" y="144.2">B</text><text x="202.0" y="101.6">C</text><text x="123.9" y="131.3">H</text><text x="74.3" y="146.2">M</text><text x="51.0" y="76.1">A<tspan font-size="11" dy="4">1</tspan></text><text x="129.3" y="88.1">B<tspan font-size="11" dy="4">1</tspan></text><text x="163.0" y="57.8">C<tspan font-size="11" dy="4">1</tspan></text></g></svg><figcaption>初次草圖：H 畫在底面內部（後來證明這張圖不對）</figcaption></figure>
+先按一般情形作圖：高 $SH$，連 $HC$。由 $\angle SCH=60^\circ$，在 $\triangle CHS$ 中
+$$SH=\frac{\sqrt3}2a,\qquad HC=\frac a2,$$
+這裡 $a$ 表示稜 $SC$ 的長。
+<p>頂點 $A,B$ 與側稜中點 $A_1,B_1$ 都在球面上，又都在側面 $SAB$ 上，所以 $A,A_1,B,B_1$ 四點共圓（側面 $SAB$ 截球得一個圓）。因為 $A_1B_1\parallel AB$，四邊形 $AA_1B_1B$ 是內接於圓的梯形，必為等腰梯形⟦為什麼｜圓內接梯形的兩腰所對的弧被兩條平行弦夾住，弧相等，所以腰相等。⟧，所以 $AA_1=BB_1$，即 $\frac12SA=\frac12SB$。</p>
+<p>對四邊形 $BB_1C_1C$ 用同樣的推理，得 $SB=SC$。所以稜錐的側稜都相等：</p>
+$$SA=SB=SC=AB=a.$$
+<p>因此 $\triangle ASB$ 是正三角形，它的高 $SM=\frac{\sqrt3}2a$（$M$ 是 $AB$ 中點），即 $SM=SH$。但 $SH$ 是 $S$ 到底面的垂線段，$SM$ 是斜線段，兩者相等只能 $M$ 與 $H$ 重合：稜錐的高就是側面 $ASB$ 的高，平面 $ASB$ 與平面 $ABC$ 互相垂直。所以第一張圖是不對的，不符合已知條件，應該換成下圖。</p>
+<figure class="bkfig"><svg viewBox="0 0 220 195" width="220" role="img" aria-label="修正後的三稜錐 S-ABC，高的垂足 H 是 AB 中點"><g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="109.0" y1="22.0" x2="22.0" y2="172.7"/><line x1="109.0" y1="22.0" x2="196.0" y2="172.7"/><line x1="109.0" y1="22.0" x2="198.0" y2="145.0"/><line x1="22.0" y1="172.7" x2="196.0" y2="172.7"/><line x1="196.0" y1="172.7" x2="198.0" y2="145.0"/><line x1="65.5" y1="97.3" x2="152.5" y2="97.3"/><line x1="152.5" y1="97.3" x2="153.5" y2="83.5"/><line x1="22.0" y1="172.7" x2="198.0" y2="145.0" stroke-dasharray="5 4"/><line x1="109.0" y1="22.0" x2="109.0" y2="172.7" stroke-dasharray="5 4"/><line x1="109.0" y1="172.7" x2="198.0" y2="145.0" stroke-dasharray="5 4"/><line x1="109.0" y1="172.7" x2="65.5" y2="97.3" stroke-dasharray="5 4"/><line x1="109.0" y1="172.7" x2="152.5" y2="97.3" stroke-dasharray="5 4"/><line x1="109.0" y1="172.7" x2="153.5" y2="83.5" stroke-dasharray="5 4"/><line x1="65.5" y1="97.3" x2="153.5" y2="83.5" stroke-dasharray="5 4"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="105.0" y="14.0">S</text><text x="8.0" y="184.7">A</text><text x="200.0" y="184.7">B</text><text x="204.0" y="149.0">C</text><text x="105.0" y="188.7">H</text><text x="45.5" y="97.3">A<tspan font-size="11" dy="4">1</tspan></text><text x="150.5" y="91.3">B<tspan font-size="11" dy="4">1</tspan></text><text x="157.5" y="79.5">C<tspan font-size="11" dy="4">1</tspan></text></g></svg><figcaption>修正後的圖：H 就是 AB 的中點，也是球心</figcaption></figure>
+<p>接著解決問題。由於 $SA=SB=SC$，三條側稜與底面所成的角相等：$\angle SAH=\angle SBH=\angle SCH=60^\circ$，所以</p>
+$$HA=HB=HC=\frac a2.$$
+<p>又 $HA_1,HB_1,HC_1$ 是直角三角形 $SHA,SHB,SHC$ 斜邊上的中線，都等於 $\frac a2$。所以 $H$ 到六個點的距離都是 $\frac a2$，$H$ 就是球心，而且在 $AB$ 上。由半徑 $\frac a2=1$ 得 $a=2$，高 $SH=\sqrt3$。</p>
+ans: 球心是 $AB$ 的中點；稜錐的高為 $\sqrt3$。
+
+=== text
+<p>立體幾何問題常常歸結為一個或幾個平面幾何問題，每個平面問題最好都畫出分圖。球有時不好畫，但一定要標出球心、球與直線、平面或另一個球的切點。兩球相切意味著：外切時球心距等於半徑和，內切時等於半徑差。</p>
+
+=== 例 2 | 球裡放四個球
+zh: 球 $O$ 內放有四個半徑為 $r$ 的球，每一個都與其他三個球以及球 $O$ 相切。求球 $O$ 的半徑。
+sol: <figure class="bkfig"><svg viewBox="0 0 200 187" width="200" role="img" aria-label="四個小球球心構成的正四面體 ABCD 與大球球心 O"><g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="22.0" y1="165.3" x2="178.0" y2="165.3"/><line x1="178.0" y1="165.3" x2="147.8" y2="117.5"/><line x1="115.9" y1="22.0" x2="22.0" y2="165.3"/><line x1="115.9" y1="22.0" x2="178.0" y2="165.3"/><line x1="115.9" y1="22.0" x2="147.8" y2="117.5"/><line x1="22.0" y1="165.3" x2="147.8" y2="117.5" stroke-dasharray="5 4"/><line x1="115.9" y1="117.5" x2="22.0" y2="165.3" stroke-dasharray="5 4"/><line x1="115.9" y1="117.5" x2="178.0" y2="165.3" stroke-dasharray="5 4"/><line x1="115.9" y1="117.5" x2="147.8" y2="117.5" stroke-dasharray="5 4"/><line x1="115.9" y1="117.5" x2="115.9" y2="22.0" stroke-dasharray="5 4"/></g><g fill="currentColor"><circle cx="115.9" cy="117.5" r="2.5"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="8.0" y="177.3">A</text><text x="182.0" y="177.3">B</text><text x="151.8" y="115.5">C</text><text x="111.9" y="14.0">D</text><text x="101.9" y="121.5">O</text></g></svg><figcaption>ABCD 是稜長 2r 的正四面體，O 是它的中心</figcaption></figure>
+設四個小球的球心是 $A,B,C,D$，大球球心是 $O$、半徑是 $R$。四個小球兩兩外切，所以 $ABCD$ 是稜長為 $2r$ 的正四面體。它們都與大球內切，所以
+$$AO=BO=CO=DO=R-r.$$
+另一方面，$R-r$ 是稜長 $2r$ 的正四面體的外接球半徑⟦正四面體外接球半徑｜稜長 $a$ 的正四面體高 $\sqrt{\frac23}a$，中心在高的 $\frac34$ 處（離頂點），所以外接球半徑 $\frac34\sqrt{\frac23}a=\frac{\sqrt6}4a$。取 $a=2r$ 得 $\frac{\sqrt6}2r=\sqrt{\frac32}r$。⟧，即 $R-r=\sqrt{\frac32}\,r$，所以
+$$R=r\Big(1+\sqrt{\frac32}\Big).$$
+ans: $R=\Big(1+\dfrac{\sqrt6}2\Big)r$
+
+=== text
+<p>有時把題目的條件全部畫在圖上十分困難，而且一個很複雜的圖對解題毫無幫助，這時要想辦法把圖化簡。上圖就沒有把球畫出來，只畫出球心之間的關係，簡明地解決了問題。有些情形用熟悉的幾何體來表示題中幾何元素的關係，更能顯出問題的幾何特徵。</p>
+
+=== 例 3 | 三個圓柱之間的小球
+zh: 三個相等的圓柱面兩兩相切，並且它們的軸互相垂直。如果每個圓柱面的半徑都是 $r$，求與這三個圓柱面都相切的最小球的半徑。
+sol: <b>分析</b>：把三個圓柱都畫出來很困難。但由條件，三條軸兩兩互相垂直，而且都是異面直線，彼此距離都是 $2r$。這種結構在立方體中就能體現，所以改看稜長 $2r$ 的立方體，簡單多了。
+<figure class="bkfig"><svg viewBox="0 0 220 220" width="220" role="img" aria-label="稜長 2r 的立方體，三條紅色稜是三個圓柱的軸"><g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="22.0" y1="198.0" x2="152.0" y2="198.0"/><line x1="152.0" y1="198.0" x2="198.0" y2="152.0"/><line x1="22.0" y1="198.0" x2="22.0" y2="68.0"/><line x1="22.0" y1="68.0" x2="152.0" y2="68.0"/><line x1="152.0" y1="68.0" x2="198.0" y2="22.0"/><line x1="198.0" y1="22.0" x2="68.0" y2="22.0"/><line x1="68.0" y1="22.0" x2="22.0" y2="68.0"/><line x1="152.0" y1="198.0" x2="152.0" y2="68.0"/><line x1="198.0" y1="152.0" x2="198.0" y2="22.0"/><line x1="22.0" y1="198.0" x2="68.0" y2="152.0" stroke-dasharray="5 4"/><line x1="68.0" y1="152.0" x2="198.0" y2="152.0" stroke-dasharray="5 4"/><line x1="68.0" y1="152.0" x2="68.0" y2="22.0" stroke-dasharray="5 4"/><line x1="110.0" y1="110.0" x2="22.0" y2="68.0" stroke-dasharray="5 4"/><line x1="110.0" y1="110.0" x2="152.0" y2="198.0" stroke-dasharray="5 4"/><line x1="110.0" y1="110.0" x2="198.0" y2="22.0" stroke-dasharray="5 4"/><line x1="22.0" y1="198.0" x2="22.0" y2="68.0" stroke="#c2562b" stroke-width="2"/><line x1="68.0" y1="22.0" x2="198.0" y2="22.0" stroke="#c2562b" stroke-width="2"/><line x1="152.0" y1="198.0" x2="198.0" y2="152.0" stroke="#c2562b" stroke-width="2"/></g><g fill="currentColor"><circle cx="110.0" cy="110.0" r="2.5"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="8.0" y="210.0">A</text><text x="156.0" y="210.0">D</text><text x="202.0" y="158.0">C</text><text x="54.0" y="150.0">B</text><text x="2.0" y="72.0">A<tspan font-size="11" dy="4">1</tspan></text><text x="156.0" y="82.0">D<tspan font-size="11" dy="4">1</tspan></text><text x="202.0" y="18.0">C<tspan font-size="11" dy="4">1</tspan></text><text x="54.0" y="18.0">B<tspan font-size="11" dy="4">1</tspan></text><text x="114.0" y="106.0">O</text></g></svg><figcaption>紅色的 AA₁、DC、B₁C₁ 兩兩垂直、異面，彼此相距 2r</figcaption></figure>
+<p>作稜長 $2r$ 的立方體 $ABCD\text{-}A_1B_1C_1D_1$，讓 $AA_1$ 在一個圓柱的軸上、$DC$ 在另一個圓柱的軸上、$B_1C_1$ 在第三個圓柱的軸上。</p>
+<p>先證所求球的球心與立方體的中心 $O$ 重合。考慮過 $O$、與已知圓柱共軸的三個圓柱（半徑為 $O$ 到軸的距離），$O$ 是位於這三個圓柱面上或內部的唯一一點⟦為什麼唯一｜這三個圓柱各自是「到某條軸的距離 $\le\sqrt2r$」的點集。立方體中心是唯一同時到三條軸距離都 $\le\sqrt2r$ 的點；任何別的點到三條軸中某一條的距離都比 $\sqrt2r$ 大。⟧。也就是說，異於 $O$ 的任一點到三條直線 $AA_1$、$DC$、$B_1C_1$ 中某一條的距離比 $O$ 到這些直線的距離大，它就不可能是與三個圓柱都相切的最小球的球心。</p>
+<p>$O$ 到直線 $AA_1$ 的距離是面對角線的一半，即 $\sqrt2r$，所以所求的球半徑為 $\sqrt2r-r$。</p>
+ans: $(\sqrt2-1)r$
+
+=== text
+<p>有的題目條件允許出現好幾種幾何結構，這時要畫的圖就不只一個，只能分別討論。</p>
+
+=== 例 4 | 側稜相等的三稜錐
+zh: 三稜錐的側稜長都是 $l$，頂點處的兩個面角為 $\alpha$，第三個面角為 $\beta$。求稜錐的體積。
+sol: 設稜錐為 $S\text{-}ABC$，$SA=SB=SC=l$，$\angle ASB=\beta$，$\angle ASC=\angle BSC=\alpha$。由 $\triangle ASC\cong\triangle BSC$ 得 $AC=BC$。側稜相等，所以高 $SO$ 的垂足 $O$ 是 $\triangle ABC$ 外接圓的圓心。可能有三種情形：
+<div style="display:flex;flex-wrap:wrap;gap:6px"><figure class="bkfig"><svg viewBox="0 0 150 120" width="150" role="img" aria-label="(1) ∠ACB＜90°，O 在 △ABC 內"><g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="74.6" y1="22.0" x2="22.0" y2="97.6"/><line x1="74.6" y1="22.0" x2="92.7" y2="97.6"/><line x1="74.6" y1="22.0" x2="128.0" y2="83.3"/><line x1="22.0" y1="97.6" x2="92.7" y2="97.6"/><line x1="92.7" y1="97.6" x2="128.0" y2="83.3"/><line x1="22.0" y1="97.6" x2="128.0" y2="83.3" stroke-dasharray="5 4"/><line x1="74.6" y1="22.0" x2="74.6" y2="91.3" stroke-dasharray="5 4"/><line x1="74.6" y1="91.3" x2="57.3" y2="97.6" stroke-dasharray="5 4"/><line x1="128.0" y1="83.3" x2="57.3" y2="97.6" stroke-dasharray="5 4"/><line x1="74.6" y1="22.0" x2="57.3" y2="97.6" stroke-dasharray="5 4"/></g><g fill="currentColor"><circle cx="74.6" cy="91.3" r="2.5"/></g><g fill="currentColor" font-size="13" font-style="italic"><text x="70.6" y="14.0">S</text><text x="8.0" y="101.6">A</text><text x="94.7" y="111.6">B</text><text x="132.0" y="87.3">C</text><text x="60.6" y="97.3">O</text><text x="51.3" y="113.6">D</text></g></svg><figcaption>(1) ∠ACB＜90°，O 在 △ABC 內</figcaption></figure><figure class="bkfig"><svg viewBox="0 0 150 122" width="150" role="img" aria-label="(2) ∠ACB＝90°，O 是 AB 中點"><g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="67.9" y1="22.0" x2="22.0" y2="100.0"/><line x1="67.9" y1="22.0" x2="113.8" y2="100.0"/><line x1="67.9" y1="22.0" x2="128.0" y2="90.9"/><line x1="22.0" y1="100.0" x2="113.8" y2="100.0"/><line x1="113.8" y1="100.0" x2="128.0" y2="90.9"/><line x1="22.0" y1="100.0" x2="128.0" y2="90.9" stroke-dasharray="5 4"/><line x1="67.9" y1="22.0" x2="67.9" y2="100.0" stroke-dasharray="5 4"/><line x1="67.9" y1="100.0" x2="67.9" y2="100.0" stroke-dasharray="5 4"/><line x1="128.0" y1="90.9" x2="67.9" y2="100.0" stroke-dasharray="5 4"/><line x1="67.9" y1="22.0" x2="67.9" y2="100.0" stroke-dasharray="5 4"/></g><g fill="currentColor"><circle cx="67.9" cy="100.0" r="2.5"/></g><g fill="currentColor" font-size="13" font-style="italic"><text x="63.9" y="14.0">S</text><text x="8.0" y="104.0">A</text><text x="115.8" y="114.0">B</text><text x="132.0" y="94.9">C</text><text x="53.9" y="106.0">O</text><text x="61.9" y="116.0">D</text></g></svg><figcaption>(2) ∠ACB＝90°，O 是 AB 中點</figcaption></figure><figure class="bkfig"><svg viewBox="0 0 150 154" width="150" role="img" aria-label="(3) ∠ACB＞90°，O 在 △ABC 外"><g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="43.6" y1="22.0" x2="22.0" y2="120.6"/><line x1="43.6" y1="22.0" x2="128.0" y2="120.6"/><line x1="43.6" y1="22.0" x2="98.3" y2="112.1"/><line x1="22.0" y1="120.6" x2="128.0" y2="120.6"/><line x1="128.0" y1="120.6" x2="98.3" y2="112.1"/><line x1="22.0" y1="120.6" x2="98.3" y2="112.1" stroke-dasharray="5 4"/><line x1="43.6" y1="22.0" x2="43.6" y2="132.0" stroke-dasharray="5 4"/><line x1="43.6" y1="132.0" x2="75.0" y2="120.6" stroke-dasharray="5 4"/><line x1="98.3" y1="112.1" x2="75.0" y2="120.6" stroke-dasharray="5 4"/><line x1="43.6" y1="22.0" x2="75.0" y2="120.6" stroke-dasharray="5 4"/></g><g fill="currentColor"><circle cx="43.6" cy="132.0" r="2.5"/></g><g fill="currentColor" font-size="13" font-style="italic"><text x="39.6" y="14.0">S</text><text x="8.0" y="124.6">A</text><text x="130.0" y="134.6">B</text><text x="102.3" y="116.1">C</text><text x="29.6" y="138.0">O</text><text x="69.0" y="136.6">D</text></g></svg><figcaption>(3) ∠ACB＞90°，O 在 △ABC 外</figcaption></figure></div>
+<p>令 $D$ 為 $AB$ 的中點，$O$ 在直線 $CD$ 上。</p>
+<p><b>情形 (1)</b> $\angle ACB&lt;90^\circ$，$O$ 在 $\triangle ABC$ 內。由已知</p>
+$$\begin{aligned}AB&=2l\sin\tfrac\beta2,\quad SD=l\cos\tfrac\beta2,\quad AC=BC=2l\sin\tfrac\alpha2,\\CD&=\sqrt{4l^2\sin^2\tfrac\alpha2-l^2\sin^2\tfrac\beta2}=l\sqrt{1-2\cos\alpha+\cos^2\tfrac\beta2}.\end{aligned}$$
+⟦CD 的化簡｜$4\sin^2\frac\alpha2=2-2\cos\alpha$，$\sin^2\frac\beta2=1-\cos^2\frac\beta2$，相減得 $1-2\cos\alpha+\cos^2\frac\beta2$。⟧
+令 $OD=x$。在 $\triangle SOD$ 中 $SO^2=l^2\cos^2\frac\beta2-x^2$；在 $\triangle CSO$ 中 $SO^2=l^2-(CD-x)^2$。兩式相等，解得
+$$x=l\,\frac{\cos^2\frac\beta2-\cos\alpha}{\sqrt{1-2\cos\alpha+\cos^2\frac\beta2}}.$$
+⟦解 x｜$l^2\cos^2\frac\beta2-x^2=l^2-CD^2+2x\cdot CD-x^2$，所以 $2x\cdot CD=l^2\cos^2\frac\beta2-l^2+CD^2=2l^2(\cos^2\frac\beta2-\cos\alpha)$。⟧
+於是
+$$h=SO=\sqrt{l^2\cos^2\tfrac\beta2-x^2}=l\,\frac{\sqrt{\cos^2\frac\beta2-\cos^2\alpha}}{\sqrt{1-2\cos\alpha+\cos^2\frac\beta2}},$$
+⟦化簡｜記 $c=\cos^2\frac\beta2$、$k=\cos\alpha$：$c(1-2k+c)-(c-k)^2=c-k^2$。⟧
+底面積 $\frac12AB\cdot CD=l^2\sin\frac\beta2\sqrt{1-2\cos\alpha+\cos^2\frac\beta2}$，所以
+$$V=\frac13Sh=\frac13l^3\sin\frac\beta2\sqrt{\cos^2\frac\beta2-\cos^2\alpha}.$$
+（由 $\angle ASB&lt;\angle ASC+\angle BSC$ 有 $\beta&lt;2\alpha$，根號內的式子是正的。）
+<p><b>情形 (2)</b> $\angle ACB=90^\circ$，$O$ 是 $AB$ 中點。這種情況存在若且唯若 $\sin\frac\beta2=\sqrt2\sin\frac\alpha2$。事實上，若 $\angle C=90^\circ$，$CD=AD=l\sin\frac\beta2$，而 $CD=AC\cdot\frac{\sqrt2}2=\sqrt2l\sin\frac\alpha2$。反之，若 $\sin\frac\beta2=\sqrt2\sin\frac\alpha2$，則</p>
+$$CD=l\sqrt{1-2\cos\alpha+\cos^2\tfrac\beta2}=l\sqrt{2-2\cos\alpha-\sin^2\tfrac\beta2}=\sqrt2\,l\sin\tfrac\alpha2,$$
+⟦中間一步｜$2-2\cos\alpha=4\sin^2\frac\alpha2$，$\sin^2\frac\beta2=2\sin^2\frac\alpha2$，相減得 $2\sin^2\frac\alpha2$。⟧
+所以 $\cos\angle ACD=\frac{CD}{AC}=\frac{\sqrt2}2$，$\angle ACD=45^\circ$，$\angle C=90^\circ$。這時 $h=SD=l\cos\frac\beta2$，
+$$V=\frac16l^3\sin\beta\sin\frac\beta2.$$
+<p><b>情形 (3)</b> $\angle ACB&gt;90^\circ$，$O$ 在 $\triangle ABC$ 外（在 $D$ 的另一側）。令 $x=OD$，和情形 (1) 一樣計算，只是 $SO^2=l^2-(CD+x)^2$，得</p>
+$$x=l\,\frac{\cos\alpha-\cos^2\frac\beta2}{\sqrt{1-2\cos\alpha+\cos^2\frac\beta2}},$$
+高 $h$ 和體積 $V$ 的式子都與情形 (1) 相同。情形 (2) 的答案也能化成同一式⟦怎麼化｜$\sin^2\frac\beta2=2\sin^2\frac\alpha2=1-\cos\alpha$ 時 $\cos^2\frac\beta2=\cos\alpha$，所以 $\cos^2\frac\beta2-\cos^2\alpha=\cos\alpha(1-\cos\alpha)=\cos^2\frac\beta2\sin^2\frac\beta2$，開方得 $\frac12\sin\beta$。⟧。
+<p>（但只討論情形 (1)，解答就不完整。）</p>
+ans: $V=\dfrac13l^3\sin\dfrac\beta2\sqrt{\cos^2\dfrac\beta2-\cos^2\alpha}$
+
+=== 習題 1
+zh: 直稜柱高為 1，底面是邊長為 2、銳角為 $30^\circ$ 的菱形。過底面一邊作與底面成 $60^\circ$ 的截面，求截面的面積。
+sol: 菱形中對邊的距離是 $2\sin30^\circ=1$。截面過底邊 $AB$、與底面成 $60^\circ$，升高 1（稜柱的高）所需的水平距離是 $\frac1{\tan60^\circ}=\frac1{\sqrt3}&lt;1$，所以截面在到達對邊之前就碰到上底面，截面是平行四邊形。它在底面上的正射影是底 2、寬 $\frac1{\sqrt3}$ 的平行四邊形，面積 $\frac2{\sqrt3}$。由射影面積公式，截面面積
+$$S=\frac{2/\sqrt3}{\cos60^\circ}=\frac4{\sqrt3}.$$
+ans: $\dfrac4{\sqrt3}=\dfrac{4\sqrt3}3$
+
+=== 習題 2
+zh: 在半徑為 2 的球面上有三個半徑為 1 的圓，圓心分別為 $O_1,O_2,O_3$，每一個都與另外兩個相切。另有一個圓 $O_4$，半徑小於已知圓，並與三個已知圓在球面上相切，求這個圓的半徑。
+hint: 球面上的圓可以用「從球心看的張角」描述：半徑 1 的圓，張角半角 $\theta$ 滿足 $\sin\theta=\frac12$。
+sol: 設球心為 $Q$。半徑 1 的圓在半徑 2 的球面上，從 $Q$ 看它的「角半徑」是 $30^\circ$。三圓兩兩相切，所以從 $Q$ 指向三圓中心的單位向量 $u_1,u_2,u_3$ 兩兩夾角 $60^\circ$。所求的圓與三圓都相切，它的中心方向 $w$ 和三者等角，$w$ 平行於 $u_1+u_2+u_3$。由
+$$|u_1+u_2+u_3|^2=3+6\cdot\tfrac12=6,\qquad w\cdot u_1=\frac{1+\frac12+\frac12}{\sqrt6}=\frac2{\sqrt6}.$$
+設所求圓的角半徑為 $\varphi$，則 $\cos(30^\circ+\varphi)=\frac2{\sqrt6}$，$\sin(30^\circ+\varphi)=\frac1{\sqrt3}$，所以
+$$\sin\varphi=\frac1{\sqrt3}\cdot\frac{\sqrt3}2-\frac2{\sqrt6}\cdot\frac12=\frac12-\frac1{\sqrt6}.$$
+所求半徑 $2\sin\varphi=1-\frac{\sqrt6}3$。（另一側還有一個相切的圓，半徑大於 1，不合題意。）
+ans: $1-\dfrac{\sqrt6}3$
+
+=== 習題 3
+zh: 三個相等且兩兩相切的圓柱面，它們的軸互相垂直，已知圓柱面的半徑都是 $r$。求這三個圓柱面之間的最大圓柱面的半徑。
+hint: 仍用例 3 的立方體。
+sol: 沿用例 3 的立方體（稜長 $2r$）。取新圓柱的軸為過中心 $O$、沿立方體某條體對角線方向（且與三條軸都不相交）的直線，可算得它和三條軸的距離都是 $\sqrt2r$⟦一個算例｜把立方體放在 $[-r,r]^3$，三條軸取 $x=y=-r$（沿 $z$ 方向）、$y=r,z=-r$（沿 $x$ 方向）、$x=r,z=r$（沿 $y$ 方向）；新軸過原點、方向 $(-1,1,1)$。用異面直線距離公式 $\frac{|(\vec q-\vec p)\cdot(\vec d\times\vec e)|}{|\vec d\times\vec e|}$ 算出三個距離都是 $\sqrt2r$。⟧，所以半徑可以取到 $\sqrt2r-r$。書末給出的答案即為此值。
+ans: $R=(\sqrt2-1)r$
+
+=== 習題 4
+zh: 稜錐 $S\text{-}ABC$ 的底面是三角形，$AB=BC=20$，$AC=32$，每個側面與底面的夾角都是 $45^\circ$。求稜錐的體積。
+hint: 高的垂足到三邊所在直線的距離相等，可能是內心，也可能是旁心。
+sol: 側面與底面夾角都是 $45^\circ$，所以高的垂足到三邊所在直線的距離都等於高 $h$，垂足是 $\triangle ABC$ 的內心或某個旁心，$h$ 等於內切圓或旁切圓的半徑。
+<p>底面：等腰三角形底 32、腰 20，底邊上的高 $\sqrt{20^2-16^2}=12$，面積 $\Delta=192$，半周長 $s=36$。</p>
+<ul>
+<li>內心：$h=\frac\Delta s=\frac{16}3$，$V=\frac13\cdot192\cdot\frac{16}3=\frac{1024}3=341\frac13$。</li>
+<li>與邊 $BC$（或 $AB$）相切的旁心：$h=\frac\Delta{s-20}=12$，$V=\frac13\cdot192\cdot12=768$。</li>
+<li>與邊 $AC$ 相切的旁心：$h=\frac\Delta{s-32}=48$，$V=\frac13\cdot192\cdot48=3072$。</li>
+</ul>
+ans: 三種情況：$341\frac13$、$768$、$3072$。
