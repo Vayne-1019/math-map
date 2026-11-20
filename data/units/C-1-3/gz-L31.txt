@@ -1,0 +1,23 @@
+=== meta
+title: 隔板法：球、板、空隙
+from: gz-L31
+order: 20
+
+=== body
+<div class="hero">相同的東西分給不同的對象 = <b>球</b>放進<b>盒子</b><br>$k$ 個盒子 = 一列球中插 <b>$k-1$ 塊板</b><br>先問：<b>能不能有空盒？</b></div>
+<div class="cards">
+<div class="card"><h4>① 不許空盒</h4><div class="rule">$n$ 球入 $k$ 盒：$\mathrm C_{n-1}^{k-1}$</div>
+<div class="eg">$x+y+z=16$ 正整數解<br>15 個空隙選 2 個：$\mathrm C_{15}^2=105$ <span class="pill">板插空隙</span></div></div>
+<div class="card"><h4>② 允許空盒</h4><div class="rule">$n$ 球入 $k$ 盒：$\mathrm C_{n+k-1}^{k-1}$</div>
+<div class="eg">$x+y+z=16$ 非負整數解<br>16 球 2 板排一列：$\mathrm C_{18}^2=153$ <span class="pill">球板一起排</span></div></div>
+<div class="card"><h4>③ 每人先發一個</h4><div class="rule">非負解 $\leftrightarrow$ 每個變數 $+1$ 的正整數解</div>
+<div class="eg">$x+y+z=16$ 非負 ⇔ $x'+y'+z'=19$ 正<br>$\mathrm C_{18}^2=153$ <span class="pill">平移下界</span></div></div>
+<div class="card"><h4>④ 不相鄰、隔至少 $d$</h4><div class="rule">先拿走保證要有的球，再插板</div>
+<div class="eg">6 演唱 4 舞蹈，舞蹈不相鄰：<br>7 個位置選 4：$\mathrm C_7^4\cdot6!\cdot4!$</div></div>
+</div>
+<p>為什麼不許空盒是 $\mathrm C_{n-1}^{k-1}$？⟦看圖想｜$n$ 個球排成一列，中間有 $n-1$ 個空隙。每個空隙最多插一塊板、兩端不插，才不會產生空段。選 $k-1$ 個空隙插板，就切成 $k$ 段非空的球。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>球其實<b>不同</b>（例如不同的人）時不能用隔板法，那是 $k^n$ 型的分配</li>
+<li>有上界（例如每位數字 $\le9$）要再扣掉超出的情形：六位數字和為 10 是 $\mathrm C_{15}^5-6=2997$</li>
+<li>允許空盒卻用了 $\mathrm C_{n-1}^{k-1}$</li></ul></div>
+<div class="bottomline">先把題目翻譯成「幾個相同的球、幾個不同的盒子、能否空盒」，答案就出來了。</div>

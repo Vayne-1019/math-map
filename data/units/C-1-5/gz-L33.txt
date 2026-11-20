@@ -1,0 +1,21 @@
+=== meta
+title: 容斥原理：多算的扣回來
+from: gz-L33
+order: 20
+
+=== body
+<div class="hero">「一個條件都不滿足」= 全部 − <b>單</b> + <b>雙</b> − <b>三</b> + ⋯<br>「至少滿足一個」= 單 − 雙 + 三 − ⋯<br>每個交集要能<b>直接數</b>，這才是容斥好用的時候</div>
+<div class="cards">
+<div class="card"><h4>① 兩個集合</h4><div class="rule">$|A\cup B|=|A|+|B|-|A\cap B|$</div>
+<div class="eg">小於 1000、不被 5 也不被 7 整除：<br>$999-199-142+28=686$ <span class="pill">補集</span></div></div>
+<div class="card"><h4>② 三個集合</h4><div class="rule">$|\overline A\cap\overline B\cap\overline C|=|S|-\Sigma_1+\Sigma_2-\Sigma_3$</div>
+<div class="eg">1、2、3 都出現的 $n$ 位數：<br>$3^n-3\cdot2^n+3\cdot1-0$ <span class="pill">缺誰</span></div></div>
+<div class="card"><h4>③ 錯排 $D_n$</h4><div class="rule">$D_n=n!\left(1-\frac1{1!}+\frac1{2!}-\cdots+\frac{(-1)^n}{n!}\right)$</div>
+<div class="eg">6 封信全裝錯：<br>$720-720+360-120+30-6+1=265$</div></div>
+</div>
+<p>為什麼每個元素剛好被算對？⟦貢獻法｜若 $x$ 恰屬於 $m\ge1$ 個集合，右邊算了它 $1-\mathrm C_m^1+\mathrm C_m^2-\cdots=(1-1)^m=0$ 次；若一個都不屬於，只在 $|S|$ 被算 1 次。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>符號弄錯：第 $j$ 層的符號是 $(-1)^j$，「全部」是第 0 層</li>
+<li>以為 $\Sigma_2$ 只有一項：$k$ 個集合的兩兩交集有 $\mathrm C_k^2$ 個</li>
+<li>$[999/35]=28$ 不是 $[999/5]\cdot[999/7]$ 之類的乘積</li></ul></div>
+<div class="bottomline">把「都不」的條件換成「缺了誰」的集合 $A_i$，交集好數，就用容斥。</div>
