@@ -1,0 +1,18 @@
+=== P1
+zh: 設 $x_i,y_i$（$i=1,2,\dots,n$）為實數，且 $x_1\ge x_2\ge\cdots\ge x_n$，$y_1\ge y_2\ge\cdots\ge y_n$。證明：若 $z_1,z_2,\dots,z_n$ 是 $y_1,y_2,\dots,y_n$ 的任一排列，則 $\displaystyle\sum_{i=1}^n(x_i-y_i)^2\le\sum_{i=1}^n(x_i-z_i)^2$。
+src: imo1975-1
+=== P2
+zh: 設 $a_1,a_2,a_3,\dots$ 為一個無窮遞增的正整數數列。證明：對每個 $p\ge1$，都有無窮多個 $a_m$ 可以寫成 $a_m=xa_p+ya_q$ 的形式，其中 $x,y$ 為正整數，且 $q>p$。
+src: imo1975-2
+=== P3
+zh: 在任意三角形 $ABC$ 的各邊外側，分別作三角形 $ABR$、$BCP$、$CAQ$，使得 $\angle CBP=\angle CAQ=45^\circ$，$\angle BCP=\angle ACQ=30^\circ$，$\angle ABR=\angle BAR=15^\circ$。證明：$\angle QRP=90^\circ$ 且 $QR=RP$。
+src: imo1975-3
+=== P4
+zh: 將 $44444444$ 以十進位表示，其各位數字之和為 $A$。設 $B$ 為 $A$ 的各位數字之和。求 $B$ 的各位數字之和。（$A,B$ 皆以十進位表示。）
+src: imo1975-4
+=== P5
+zh: 對於單位半徑圓的圓周上，能否找到 $1975$ 個點，使得其中任意兩點之間的距離都是有理數？請給出證明，說明可以或不可以。
+src: imo1975-5
+=== P6
+zh: 求所有二元多項式 $P$，使其具有下列性質：(i) 對某個正整數 $n$ 與所有實數 $t,x,y$，$P(tx,ty)=t^nP(x,y)$（即 $P$ 為 $n$ 次齊次多項式）。(ii) 對所有實數 $a,b,c$，$P(b+c,a)+P(c+a,b)+P(a+b,c)=0$。(iii) $P(1,0)=1$。
+src: imo1975-6
