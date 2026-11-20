@@ -1,0 +1,18 @@
+=== meta
+title: 報數遊戲：湊滿每輪 3 個
+from: cz-L50
+order: 20
+
+=== body
+<div class="hero">每次報 1 或 2 個數 → 對手報 $k$ 個，我就報 $3-k$ 個<br><b>每輪合計 3 個</b>，我永遠停在 3 的倍數上</div>
+<div class="cards">
+<div class="card"><h4>① 倒推找必勝點</h4><div class="rule">誰報 13 誰輸</div>
+<div class="eg">要搶到 $12$ ⟸ 搶到 $9$ ⟸ $6$ ⟸ $3$<br>後報的乙每次報到 $3$ 的倍數 <span class="pill">乙必勝</span></div></div>
+<div class="card"><h4>② 一般的 n</h4><div class="rule">看 $n$ 除以 3 的餘數</div>
+<div class="eg">$n=3k+1$：後手勝<br>$n=3k$：先手報 $1,2$；$n=3k+2$：先手報 $1$<br>之後換他當「後手」</div></div>
+</div>
+<p>⟦為什麼一定湊得到 3｜對手報 1 個，我報 2 個；對手報 2 個，我報 1 個。不論對手怎麼報，一輪後總數都加 3，我掌握了節奏。⟧ 不論對手怎麼報，我都能把一輪湊成 3。</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>從頭往後推，越推越亂：這類題要從終點倒推</li>
+<li>以為先手一定佔便宜：$n=3k+1$ 時先手必輸</li></ul></div>
+<div class="bottomline">找到「每輪固定總量」的配對，就找到了必勝策略。</div>
