@@ -1,0 +1,180 @@
+=== meta
+title: 面積法
+author: 劉亞強
+pages: 256-266
+units: G-1-5
+status: 完成
+
+=== text
+<p>面積是基本的幾何量，也是重要的解題方法。有些問題表面上與面積無關，卻可以透過計算面積來解決，這就是<b>面積法</b>。</p>
+<p>面積公式很多，最基本的是三角形的面積公式。設 $a,b,c$ 是 $\triangle ABC$ 的三邊，$h_a$ 是 $a$ 邊上的高，$R$、$r$ 是外接圓與內切圓半徑，$p=\frac12(a+b+c)$，則</p>
+<ol><li>$S_{\triangle ABC}=\frac12ah_a$；</li><li>$S_{\triangle ABC}=\frac12ab\sin C$；</li><li>$S_{\triangle ABC}=\dfrac{abc}{4R}$；</li><li>$S_{\triangle ABC}=rp$；</li><li>$S_{\triangle ABC}=\sqrt{p(p-a)(p-b)(p-c)}$（海龍公式）；</li><li>$S_{\triangle ABC}=2R^2\sin A\sin B\sin C$。</li></ol>
+<p>同一塊面積有好幾種表示法，它們提供了用不同方法計算同一面積的途徑。</p>
+
+=== 例 1
+zh: 在 $\triangle ABC$ 中，$BC=a$，$CA=b$，$AB=c$，且 $b-a=a-c$。證明：它的內切圓半徑 $r$ 等於其中一條高的三分之一。
+sol: <p><b>證</b>　由 $b+c=2a$，一方面 $S_{\triangle ABC}=\frac12r(a+b+c)=\frac32ra$；另一方面 $S_{\triangle ABC}=\frac12ah_a$。所以 $\frac32ra=\frac12ah_a$，$r=\frac13h_a$。</p>
+=== text
+<p>把一個多邊形分割成若干小塊，多邊形的面積等於這些小塊面積的和。精確地說：用簡單曲線把一個封閉圖形剖分成有限個區域，若這些區域除了公共邊界外沒有公共點，原圖形的面積就等於各區域面積之和。</p>
+
+=== 例 2
+zh: 在 $\triangle ABC$ 內部有一點 $P$，$P$ 到 $BC$、$CA$、$AB$ 的距離分別為 $x_1$、$x_2$、$x_3$，$BC$、$CA$、$AB$ 邊上的高分別為 $h_1$、$h_2$、$h_3$。求證：$\dfrac{x_1}{h_1}+\dfrac{x_2}{h_2}+\dfrac{x_3}{h_3}=1$。①
+sol: <figure class="bkfig"><svg viewBox="0 0 260 179" width="260" role="img" aria-label="三角形內一點到三邊的距離">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="189.4,22 22,157 238,157"/><line x1="151.6" y1="108.4" x2="151.6" y2="157"/><line x1="151.6" y1="108.4" x2="212.6" y2="86.4"/><line x1="151.6" y1="108.4" x2="124.3" y2="74.5"/><polyline points="151.6,153 155.6,153 155.6,157" stroke-width="1"/><polyline points="208.8,87.8 210.2,91.6 214,90.2" stroke-width="1"/><polyline points="126.8,77.6 129.9,75.1 127.4,72" stroke-width="1"/><line x1="151.6" y1="108.4" x2="189.4" y2="22" stroke-dasharray="5 4"/><line x1="151.6" y1="108.4" x2="22" y2="157" stroke-dasharray="5 4"/><line x1="151.6" y1="108.4" x2="238" y2="157" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="189.4" y="15.9" text-anchor="middle">A</text><text x="11" y="161.9" text-anchor="middle">B</text><text x="249" y="161.9" text-anchor="middle">C</text><text x="162.6" y="113.3" text-anchor="middle">P</text><text x="159.7" y="132.7" font-style="normal" font-size="11" text-anchor="middle">x₁</text><text x="182.1" y="90.9" font-style="normal" font-size="11" text-anchor="middle">x₂</text><text x="137.9" y="83.4" font-style="normal" font-size="11" text-anchor="middle">x₃</text></g>
+</svg><figcaption>$P$ 到三邊的距離 $x_1,x_2,x_3$；連 $PA,PB,PC$ 把三角形分成三塊（虛線）</figcaption></figure>
+<p><b>證</b>　$S_{\triangle ABC}=S_{\triangle BPC}+S_{\triangle CPA}+S_{\triangle APB}$，即</p>
+$$\frac{S_{\triangle BPC}}{S_{\triangle ABC}}+\frac{S_{\triangle CPA}}{S_{\triangle ABC}}+\frac{S_{\triangle APB}}{S_{\triangle ABC}}=1.$$
+<p>$\triangle BPC$ 與 $\triangle ABC$ 都以 $BC$ 為底，所以 $\frac{S_{\triangle BPC}}{S_{\triangle ABC}}=\frac{x_1}{h_1}$；同理另兩項是 $\frac{x_2}{h_2}$、$\frac{x_3}{h_3}$，得證。</p>
+<p><b>註</b>　(1) 設 $D,E,F$ 是 $AP,BP,CP$ 與 $BC,CA,AB$ 的交點，則與 ① 等價地有 $\frac{PD}{AD}+\frac{PE}{BE}+\frac{PF}{CF}=1$⟦為什麼等價｜$\frac{x_1}{h_1}=\frac{PD}{AD}$：$P$、$A$ 到 $BC$ 的距離之比，等於它們沿直線 $AD$ 到 $BC$ 的距離之比。⟧。</p>
+<p>(2) 建立面積等式後，要把它「翻譯」成長度與角度的等式，常用兩個結論：等底（等高）的兩個三角形面積比等於對應高（底）的比；相似三角形面積比等於相似比的平方。</p>
+=== 例 3
+zh: 在 $\triangle ABC$ 中，$G$ 是重心，$P$ 是內部一點，直線 $PG$ 分別交直線 $BC$、$CA$、$AB$ 於 $A'$、$B'$、$C'$。求證：$\dfrac{A'P}{A'G}+\dfrac{B'P}{B'G}+\dfrac{C'P}{C'G}=3$。
+sol: <figure class="bkfig"><svg viewBox="0 0 226 190" width="226" role="img" aria-label="過重心的直線">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="143.7,22 22,168 204.5,168" stroke-width="2"/><line x1="204.5" y1="168" x2="183.6" y2="168"/><line x1="87" y1="90" x2="183.6" y2="168"/><line x1="143.7" y1="22" x2="123.4" y2="119.3"/><line x1="22" y1="168" x2="123.4" y2="119.3"/><line x1="204.5" y1="168" x2="123.4" y2="119.3"/><line x1="143.7" y1="22" x2="149.8" y2="140.6" stroke-dasharray="5 4"/><line x1="22" y1="168" x2="149.8" y2="140.6" stroke-dasharray="5 4"/><line x1="204.5" y1="168" x2="149.8" y2="140.6" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="143.7" y="15.9" text-anchor="middle">A</text><text x="14.2" y="180.7" text-anchor="middle">B</text><text x="204.5" y="183.9" text-anchor="middle">C</text><text x="115.6" y="116.5" text-anchor="middle">G</text><text x="149.8" y="134.5" text-anchor="middle">P</text><text x="198.1" y="172.9" text-anchor="middle">A′</text><text x="225.3" y="190.5" text-anchor="middle">B′</text><text x="76.8" y="87.1" text-anchor="middle">C′</text></g>
+</svg><figcaption>$G$ 是重心，直線 $PG$ 交三邊所在直線於 $A',B',C'$</figcaption></figure>
+<p><b>證</b>　先證一個簡單事實：$AG$、$BG$、$CG$ 把 $\triangle ABC$ 分成面積相等的三部分。$\triangle BGC$ 與 $\triangle ABC$ 同底 $BC$，高之比為 $1:3$⟦為什麼｜$G$ 在中線上且 $GA_1=\frac13AA_1$（$A_1$ 是 $BC$ 中點），所以 $G$ 到 $BC$ 的距離是 $A$ 的 $\frac13$。⟧，所以 $S_{\triangle BGC}=\frac13S_{\triangle ABC}$，同樣 $S_{\triangle CGA}=S_{\triangle AGB}=\frac13S_{\triangle ABC}$。</p>
+<p>設 $h_1,h_2$ 分別是 $P,G$ 到 $BC$ 的距離，則</p>
+$$\frac{A'P}{A'G}=\frac{h_1}{h_2}=\frac{S_{\triangle BPC}}{S_{\triangle BGC}}=\frac{3S_{\triangle BPC}}{S_{\triangle ABC}}.$$
+<p>同理 $\frac{B'P}{B'G}=\frac{3S_{\triangle CPA}}{S_{\triangle ABC}}$，$\frac{C'P}{C'G}=\frac{3S_{\triangle APB}}{S_{\triangle ABC}}$。三式相加，因為 $S_{\triangle BPC}+S_{\triangle CPA}+S_{\triangle APB}=S_{\triangle ABC}$，和等於 $3$。</p>
+=== text
+<p>下面用面積方法證明西瓦定理（第 27 講）。</p>
+
+=== 例 4
+zh: $\triangle ABC$ 的邊 $BC$、$CA$、$AB$（或其延長線）上各有一點 $D$、$E$、$F$，如果 $AD$、$BE$、$CF$ 交於一點 $P$，則 $\dfrac{BD}{DC}\cdot\dfrac{CE}{EA}\cdot\dfrac{AF}{FB}=1$。
+sol: <figure class="bkfig"><svg viewBox="0 0 248 190" width="248" role="img" aria-label="用面積證西瓦定理">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="114.5,22 22,168 226.4,168"/><line x1="114.5" y1="22" x2="136.4" y2="168"/><line x1="22" y1="168" x2="173.6" y2="99.1"/><line x1="226.4" y1="168" x2="71.2" y2="90.4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="114.5" y="15.9" text-anchor="middle">A</text><text x="14.2" y="180.7" text-anchor="middle">B</text><text x="234.2" y="180.7" text-anchor="middle">C</text><text x="136.4" y="183.9" text-anchor="middle">D</text><text x="181.4" y="96.2" text-anchor="middle">E</text><text x="63.4" y="87.5" text-anchor="middle">F</text><text x="121.3" y="116.5" text-anchor="middle">P</text></g>
+</svg><figcaption>$AD,BE,CF$ 交於 $P$</figcaption></figure>
+<p><b>證</b>　$\triangle ABD$ 與 $\triangle ACD$ 從 $A$ 引出的高相等，所以 $\frac{BD}{DC}=\frac{S_{\triangle ABD}}{S_{\triangle ACD}}$；同樣 $\frac{BD}{DC}=\frac{S_{\triangle PBD}}{S_{\triangle PCD}}$。由等比性質⟦等比性質｜若 $\frac ab=\frac cd=k$，則 $\frac{a-c}{b-d}=k$。⟧</p>
+$$\frac{BD}{DC}=\frac{S_{\triangle ABD}-S_{\triangle PBD}}{S_{\triangle ACD}-S_{\triangle PCD}}=\frac{S_{\triangle ABP}}{S_{\triangle ACP}}.$$
+<p>同理 $\frac{CE}{EA}=\frac{S_{\triangle BCP}}{S_{\triangle ABP}}$，$\frac{AF}{FB}=\frac{S_{\triangle ACP}}{S_{\triangle BCP}}$。三式相乘得 $1$。</p>
+=== 例 5
+zh: 兩圓同心，圓心為 $O$。$A$ 是大圓上任一點，自 $A$ 作小圓的兩條切線 $AD$、$AE$（$D$、$E$ 為切點），$ED$ 的延長線交大圓於 $C$，$AD$ 的延長線交大圓於 $B$。證明：$\dfrac{AC^2}{BC^2}=\dfrac{CE}{CD}$。
+sol: <figure class="bkfig"><svg viewBox="0 0 230 230" width="230" role="img" aria-label="同心圓與切線">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="115" cy="115" r="93"/><circle cx="115" cy="115" r="51.2"/><line x1="115" y1="22" x2="200.4" y2="151.7"/><line x1="115" y1="22" x2="72.3" y2="86.9"/><line x1="26.4" y1="86.9" x2="203.6" y2="86.9"/><line x1="115" y1="22" x2="203.6" y2="86.9"/><line x1="200.4" y1="151.7" x2="203.6" y2="86.9"/><line x1="115" y1="22" x2="115" y2="115" stroke-dasharray="5 4"/><line x1="115" y1="22" x2="26.4" y2="86.9" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"><circle cx="115" cy="115" r="2.4"/></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="115" y="15.9" text-anchor="middle">A</text><text x="211.4" y="156.6" text-anchor="middle">B</text><text x="214.6" y="91.8" text-anchor="middle">C</text><text x="165.5" y="84" text-anchor="middle">D</text><text x="64.5" y="84" text-anchor="middle">E</text><text x="15.4" y="91.8" text-anchor="middle">F</text><text x="115" y="130.9" text-anchor="middle">O</text></g>
+</svg><figcaption>$AD,AE$ 切小圓；延長 $DE$ 交大圓於 $C$、$F$；連 $AF$（虛線）</figcaption></figure>
+<p><b>證</b>　延長 $DE$ 交大圓於 $F$，連 $AC$、$AF$。⟦為什麼全等｜$CE=CA$；$\angle ECP=\angle ACB$；等腰 $\triangle CEF$ 的底角 $\angle CEP=\frac12(180^\circ-\angle BCD)=\frac12\angle BAD$，而 $BC=CD$ 使 $AC$ 平分 $\angle BAD$，所以 $\angle CEP=\angle CAB$。ASA。⟧$C,D$ 與 $F,E$ 關於直線 $AO$ 對稱，所以 $\angle ADE=\angle AED$，$\angle AFC=\angle ACF$。由</p>
+$$\angle ABC=\angle AFC=\angle ACF,\qquad\angle BDC=\angle ADE=\angle AED,$$
+<p>得 $\triangle AEC\sim\triangle CDB$⟦對應｜$\angle ACE=\angle ACF=\angle AFC=\angle ABC=\angle CBD$；$\angle AEC=\angle AED=\angle ADE=\angle CDB$（最後一步是對頂角）。⟧，所以</p>
+$$\frac{S_{\triangle AEC}}{S_{\triangle CDB}}=\Big(\frac{AC}{BC}\Big)^2.\quad\text{①}$$
+<p>另一方面，$OD\perp AB$，$D$ 是弦 $AB$ 的中點，$AD=BD$，所以 $S_{\triangle ADC}=S_{\triangle BDC}$。於是</p>
+$$\frac{S_{\triangle AEC}}{S_{\triangle CDB}}=\frac{S_{\triangle AEC}}{S_{\triangle ADC}}=\frac{CE}{CD}.\quad\text{②}$$
+<p>由 ①② 得 $\frac{AC^2}{BC^2}=\frac{CE}{CD}$。</p>
+=== 例 6
+zh: 在正六邊形 $ABCDEF$ 的對角線 $AC$、$CE$ 上各有一點 $M$、$N$，使 $\dfrac{AM}{AC}=\dfrac{CN}{CE}=r$。若 $B$、$M$、$N$ 三點共線，求 $r$ 的值。
+sol: <p>先用面積法證一個引理，有了它，三點共線的條件就能直接用來求 $r$。</p>
+<p><b>引理</b>　若 $D$ 是線段 $BC$ 上一點，$A$ 在直線 $BC$ 外，則</p>
+$$\frac{\sin\angle BAC}{AD}=\frac{\sin\angle BAD}{AC}+\frac{\sin\angle CAD}{AB}.\quad\text{①}$$
+<figure class="bkfig"><svg viewBox="0 0 225 140" width="225" role="img" aria-label="三角形的分角線">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="160.7,22 22,118 203.3,118"/><line x1="160.7" y1="22" x2="139.3" y2="118"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="160.7" y="15.9" text-anchor="middle">A</text><text x="11" y="122.9" text-anchor="middle">B</text><text x="214.3" y="122.9" text-anchor="middle">C</text><text x="139.3" y="133.9" text-anchor="middle">D</text></g>
+</svg><figcaption>$D$ 在線段 $BC$ 上</figcaption></figure>
+<p><b>證</b>　$S_{\triangle ABC}=S_{\triangle ABD}+S_{\triangle ACD}$，即</p>
+$$\tfrac12AB\cdot AC\sin\angle BAC=\tfrac12AB\cdot AD\sin\angle BAD+\tfrac12AC\cdot AD\sin\angle CAD,$$
+<p>兩邊同除以 $\frac12AB\cdot AC\cdot AD$ 即得 ①。</p>
+<figure class="bkfig"><svg viewBox="0 0 205 230" width="205" role="img" aria-label="正六邊形中的三點共線">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="102.5,22 22,68.5 22,161.5 102.5,208 183.1,161.5 183.1,68.5"/><line x1="102.5" y1="22" x2="22" y2="161.5"/><line x1="22" y1="161.5" x2="183.1" y2="161.5"/><line x1="22" y1="68.5" x2="115" y2="161.5"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="102.5" y="15.9" text-anchor="middle">A</text><text x="14.2" y="65.6" text-anchor="middle">B</text><text x="14.2" y="174.2" text-anchor="middle">C</text><text x="102.5" y="223.9" text-anchor="middle">D</text><text x="190.9" y="174.2" text-anchor="middle">E</text><text x="190.9" y="65.6" text-anchor="middle">F</text><text x="67" y="107.4" text-anchor="middle">M</text><text x="115" y="177.4" text-anchor="middle">N</text></g>
+</svg><figcaption>$\frac{AM}{AC}=\frac{CN}{CE}=r$；圖中畫的是答案 $r=\frac{\sqrt3}3$ 時三點共線的情形</figcaption></figure>
+<p><b>解</b>　易知正六邊形中 $\angle BCE=90^\circ$，$\angle ACE=60^\circ$，$\angle ACB=30^\circ$。設邊長為 $1$，則 $AC=CE=\sqrt3$，$CM=(1-r)AC=\sqrt3(1-r)$，$CN=\sqrt3r$。$B,M,N$ 共線，對 $\triangle CBN$ 與線段 $BN$ 上的點 $M$ 用引理 ①（頂點 $C$）：</p>
+$$\frac{\sin\angle BCE}{CM}=\frac{\sin\angle ACE}{BC}+\frac{\sin\angle ACB}{CN},\quad\text{即}\quad\frac1{\sqrt3(1-r)}=\frac{\sqrt3}2+\frac1{2\sqrt3r}.$$
+<p>⟦解這個方程｜兩邊乘以 $2\sqrt3r(1-r)$：$2r=3r(1-r)+(1-r)$，整理得 $3r^2=1$，$r=\frac{\sqrt3}3$（取正）。⟧解得 $r=\frac{\sqrt3}3$。</p>
+ans: $r=\dfrac{\sqrt3}3$
+
+=== text
+<p>上面的引理在面積法解題時很有用，再用它證明著名的「蝴蝶定理」（第 29 講例 4）。</p>
+
+=== 例 7
+zh: 圓的弦 $AB$ 的中點是 $M$，過 $M$ 任作兩條弦 $CD$、$EF$，連 $ED$、$CF$ 交 $AB$ 於 $P$、$Q$。求證：$PM=QM$。
+sol: <figure class="bkfig"><svg viewBox="0 0 230 230" width="230" role="img" aria-label="蝴蝶定理（面積法）">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="115" cy="115" r="93"/><line x1="34.5" y1="161.5" x2="195.5" y2="161.5"/><line x1="203.7" y1="87.1" x2="72.1" y2="197.5"/><line x1="58.8" y1="40.9" x2="135.6" y2="205.7"/><line x1="58.8" y1="40.9" x2="72.1" y2="197.5"/><line x1="203.7" y1="87.1" x2="135.6" y2="205.7"/><line x1="115" y1="115" x2="115" y2="161.5" stroke-dasharray="5 4"/><line x1="115" y1="115" x2="137.9" y2="142.3" stroke-dasharray="5 4"/><line x1="115" y1="115" x2="97.2" y2="123.3" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"><circle cx="115" cy="115" r="2.4"/></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="23.5" y="166.4" text-anchor="middle">A</text><text x="206.5" y="166.4" text-anchor="middle">B</text><text x="211.5" y="84.2" text-anchor="middle">C</text><text x="64.3" y="210.2" text-anchor="middle">D</text><text x="51" y="38" text-anchor="middle">E</text><text x="143.4" y="218.4" text-anchor="middle">F</text><text x="115" y="177.4" text-anchor="middle">M</text><text x="69" y="155.4" text-anchor="middle">P</text><text x="161" y="155.4" text-anchor="middle">Q</text><text x="115" y="108.9" text-anchor="middle">O</text><text x="148.9" y="147.2" text-anchor="middle">S</text><text x="86.2" y="128.2" text-anchor="middle">T</text></g>
+</svg><figcaption>$M$ 是弦 $AB$ 的中點；$S$、$T$ 是弦 $CD$、$EF$ 的中點（虛線 $OS,OT,OM$）</figcaption></figure>
+<p><b>證</b>　記 $\angle PME=\angle QMF=\alpha$，$\angle PMD=\angle QMC=\beta$。因 $P$ 在線段 $DE$ 上，由引理</p>
+$$\frac{\sin(\alpha+\beta)}{MP}=\frac{\sin\alpha}{MD}+\frac{\sin\beta}{ME}.$$
+<p>同理 $\frac{\sin(\alpha+\beta)}{MQ}=\frac{\sin\alpha}{MC}+\frac{\sin\beta}{MF}$。只需證兩式右端相等。</p>
+<p>設 $S$、$T$ 分別是弦 $CD$、$EF$ 的中點，則 $MC-MD=2MS$⟦為什麼｜$S$ 是 $CD$ 中點，$MC=MS+SC$、$MD=SD-MS$，而 $SC=SD$。⟧，且 $\angle MOS=90^\circ-\angle OMS=\beta$⟦為什麼｜$OM\perp AB$，所以 $\angle OMS=90^\circ-\angle QMC=90^\circ-\beta$；$\triangle OSM$ 在 $S$ 是直角。⟧，所以 $MC-MD=2MO\sin\beta$；同理 $ME-MF=2MO\sin\alpha$。從而 $(MC-MD)\sin\alpha=(ME-MF)\sin\beta$。又由相交弦定理 $MD\cdot MC=ME\cdot MF$，所以</p>
+$$\frac{MC-MD}{MD\cdot MC}\sin\alpha=\frac{ME-MF}{ME\cdot MF}\sin\beta,$$
+<p>即 $\big(\frac1{MD}-\frac1{MC}\big)\sin\alpha=\big(\frac1{MF}-\frac1{ME}\big)\sin\beta$，移項得</p>
+$$\frac{\sin\alpha}{MD}+\frac{\sin\beta}{ME}=\frac{\sin\alpha}{MC}+\frac{\sin\beta}{MF}.$$
+=== text
+<p>面積法除了證明恆等式，還可以證明某些位置關係。</p>
+
+=== 例 8
+zh: 證明：若一個凸五邊形的四條邊各平行於所對的對角線，則第五條邊也平行於它所對的對角線。
+sol: <figure class="bkfig"><svg viewBox="0 0 219 210" width="219" role="img" aria-label="邊與對角線平行的五邊形">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="109.3,22 22,85.4 55.3,188 163.2,188 196.5,85.4"/><line x1="109.3" y1="22" x2="55.3" y2="188"/><line x1="109.3" y1="22" x2="163.2" y2="188"/><line x1="22" y1="85.4" x2="163.2" y2="188"/><line x1="22" y1="85.4" x2="196.5" y2="85.4"/><line x1="55.3" y1="188" x2="196.5" y2="85.4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="109.3" y="15.9" text-anchor="middle">A</text><text x="11" y="90.3" text-anchor="middle">B</text><text x="47.6" y="200.7" text-anchor="middle">C</text><text x="171" y="200.7" text-anchor="middle">D</text><text x="207.5" y="90.3" text-anchor="middle">E</text></g>
+</svg><figcaption>每條邊都平行於它對面的對角線（例如 $AB\parallel CE$）</figcaption></figure>
+<p><b>證</b>　設五邊形 $ABCDE$ 中 $AB\parallel CE$，$BC\parallel AD$，$CD\parallel BE$，$DE\parallel AC$，要證 $AE\parallel BD$。因為 $AB\parallel CE$，$S_{\triangle ABC}=S_{\triangle ABE}$（同底 $AB$、等高）。同理 $S_{\triangle ABC}=S_{\triangle BCD}$，$S_{\triangle BCD}=S_{\triangle CDE}$，$S_{\triangle CDE}=S_{\triangle ADE}$。因此 $S_{\triangle ABE}=S_{\triangle ADE}$，即 $B$、$D$ 到 $AE$ 的距離相等。$ABCDE$ 是凸五邊形，$B$、$D$ 在直線 $AE$ 同側，所以 $BD\parallel AE$。</p>
+=== text
+<p>有些三點共線的問題，也可以用面積法解決。</p>
+
+=== 例 9
+zh: 直線 $l$ 同時平分 $\triangle ABC$ 的面積與周長，且與邊 $AB$、$AC$ 交於 $E$、$F$。證明：$l$ 經過 $\triangle ABC$ 的內心 $I$。
+sol: <figure class="bkfig"><svg viewBox="0 0 240 171" width="240" role="img" aria-label="同時平分面積與周長的直線">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="97.4,22 47.2,130.8 172.7,130.8"/><line x1="22" y1="56.1" x2="218" y2="148.6"/><line x1="97.4" y1="22" x2="103.7" y2="94.6" stroke-dasharray="5 4"/><line x1="71" y1="79.2" x2="103.7" y2="94.6" stroke-dasharray="5 4"/><line x1="169" y1="125.4" x2="103.7" y2="94.6" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"><circle cx="103.7" cy="94.6" r="2.4"/></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="97.4" y="15.9" text-anchor="middle">A</text><text x="39.4" y="143.4" text-anchor="middle">B</text><text x="180.5" y="143.4" text-anchor="middle">C</text><text x="63.2" y="76.3" text-anchor="middle">E</text><text x="176.8" y="122.6" text-anchor="middle">F</text><text x="103.7" y="110.5" text-anchor="middle">I</text><text x="11" y="61" text-anchor="middle">l</text></g>
+</svg><figcaption>$l$ 同時平分面積與周長；它過內心 $I$（圖按真實比例算出）</figcaption></figure>
+<p><b>證</b>　目標是證明「三角形」$IEF$ 的面積為 $0$，那麼 $I$ 在線段 $EF$ 上，也就在 $l$ 上。記內切圓半徑為 $r$，半周長為 $p$，則 $AE+AF=p$⟦為什麼｜$l$ 平分周長，從 $E$ 經 $A$ 到 $F$ 的那半條周長是 $AE+AF$。⟧，所以</p>
+$$S_{\triangle AIE}+S_{\triangle AIF}=\tfrac12r\cdot AE+\tfrac12r\cdot AF=\tfrac12rp=\tfrac12S_{\triangle ABC}.$$
+<p>但已知 $S_{\triangle AEF}=\frac12S_{\triangle ABC}$。兩者比較得 $S_{\triangle IEF}=0$，所以 $E,I,F$ 共線。</p>
+=== text
+<p>最後再用面積法證明第 26 講例 4 的結論（西摩松線），還順便得到更多。</p>
+
+=== 例 10
+zh: 過 $\triangle ABC$ 外接圓上任意一點 $P$ 向三邊 $BC$、$CA$、$AB$ 所在的直線作垂線，垂足分別是 $X$、$Y$、$Z$。證明 $X$、$Y$、$Z$ 三點共線。
+sol: <p>先證一個有趣、應用很多的引理。</p>
+<p><b>引理</b>　平面上任意一點 $P$ 在 $\triangle ABC$ 三邊 $BC,CA,AB$ 所在直線上的射影分別為 $X,Y,Z$，則 $\triangle XYZ$ 的面積</p>
+$$S=\frac{S_{\triangle ABC}}4\Big|1-\frac{d^2}{R^2}\Big|,$$
+<p>其中 $R$ 是外接圓半徑，$d=PO$ 是 $P$ 到外心的距離。</p>
+<figure class="bkfig"><svg viewBox="0 0 249 260" width="249" role="img" aria-label="垂足三角形的面積">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="126" cy="158" r="80"/><polygon points="201.1,185.4 53.5,191.8 98.6,233.2"/><polygon points="23.5,164.4 225,174.3 161.2,187.1" stroke="#c2562b" stroke-width="2"/><line x1="154" y1="22" x2="23.5" y2="164.4" stroke-dasharray="5 4"/><line x1="154" y1="22" x2="225" y2="174.3" stroke-dasharray="5 4"/><line x1="154" y1="22" x2="161.2" y2="187.1" stroke-dasharray="5 4"/><line x1="154" y1="22" x2="201.1" y2="185.4"/><line x1="154" y1="22" x2="53.5" y2="191.8"/><line x1="154" y1="22" x2="109.8" y2="236.4" stroke-width="1"/><line x1="100.1" y1="234.6" x2="22" y2="163" stroke-dasharray="5 4"/><line x1="96.1" y1="234.4" x2="227.5" y2="173.1" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"><circle cx="126" cy="158" r="2.4"/></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="212.1" y="190.3" text-anchor="middle">A</text><text x="42.5" y="196.7" text-anchor="middle">B</text><text x="98.6" y="249.1" text-anchor="middle">C</text><text x="154" y="15.9" text-anchor="middle">P</text><text x="12.5" y="169.3" text-anchor="middle">X</text><text x="236" y="179.2" text-anchor="middle">Y</text><text x="161.2" y="203" text-anchor="middle">Z</text><text x="182.7" y="91.9" text-anchor="middle">D</text><text x="112.9" y="75.3" text-anchor="middle">E</text><text x="137" y="162.9" text-anchor="middle">O</text><text x="109.8" y="252.3" text-anchor="middle">M</text><text x="149.9" y="76.8" text-anchor="middle">N</text></g>
+</svg><figcaption>$X,Y,Z$ 是 $P$ 在三邊所在直線上的射影；紅色 $\triangle XYZ$ 的面積由 $P$ 到圓心的距離決定</figcaption></figure>
+<p><b>證</b>　連 $PA,PB,PC$，設 $PA$、$PB$ 與外接圓再交於 $D$、$E$。不妨設 $P$ 在 $\angle ACB$ 的內部（如圖）。$A,Z,P,Y$ 四點共圓（$PA$ 為直徑），所以 $\angle PZY=\angle PAY=\angle1$；同理 $\angle PZX=\angle PBX=\angle2$。由 $A,C,B,D$ 共圓，$\angle DAY=\angle CBD=\angle1$，所以 $\angle XZY=\angle1+\angle2=180^\circ-\angle DBE$，$\sin\angle XZY=\sin\angle DBE$。於是</p>
+$$S=\tfrac12XZ\cdot YZ\sin\angle XZY=\tfrac12XZ\cdot YZ\sin\angle DBE.\quad\text{①}$$
+<p>$PB$ 是四邊形 $BZPX$ 外接圓的直徑，所以 $XZ=PB\sin B$；② 同理 $YZ=PA\sin A$。③ 在 $\triangle DBP$ 中 $\angle PDB=\angle C$，由正弦定理 $\frac{PB}{PD}=\frac{\sin C}{\sin\angle DBE}$，即 $PB\sin\angle DBE=PD\sin C$。④ 把 ②③④ 代入 ①：</p>
+$$S=\tfrac12PA\cdot PD\cdot\sin A\sin B\sin C.$$
+<p>設直線 $PO$ 交外接圓於 $M,N$，由圓冪定理 $PA\cdot PD=PM\cdot PN=(d+R)|d-R|=|R^2-d^2|$；而 $S_{\triangle ABC}=2R^2\sin A\sin B\sin C$，所以</p>
+$$S=\frac{|R^2-d^2|}{4R^2}S_{\triangle ABC}=\frac{S_{\triangle ABC}}4\Big|1-\frac{d^2}{R^2}\Big|.$$
+<p>有了這個公式，例 10 就很簡單：$P$ 在外接圓上即 $d=R$，代入得 $S=0$，所以 $X,Y,Z$ 共線。反過來，若 $P$ 不在外接圓上則 $S\ne0$，$X,Y,Z$ 不共線。所以「$P$ 在外接圓上」是 $X,Y,Z$ 共線的充分必要條件。</p>
+=== 習題 1
+zh: 已知平行四邊形 $ABCD$，在 $AB$ 邊、$AD$ 邊上分別取點 $E$、$F$，使 $BF=DE$，$BF$ 與 $DE$ 交於 $P$。求證：$\angle DPC=\angle BPC$。
+sol: <figure class="bkfig"><svg viewBox="0 0 250 166" width="250" role="img" aria-label="平行四邊形中兩條等長線段">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="54.2,144.3 228,144.3 195.8,22 22,22"/><line x1="228" y1="144.3" x2="39.3" y2="87.6"/><line x1="22" y1="22" x2="176.5" y2="144.3"/><line x1="145" y1="119.4" x2="195.8" y2="22"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="46.4" y="157" text-anchor="middle">A</text><text x="235.8" y="157" text-anchor="middle">B</text><text x="203.6" y="19.1" text-anchor="middle">C</text><text x="14.2" y="19.1" text-anchor="middle">D</text><text x="176.5" y="160.2" text-anchor="middle">E</text><text x="28.3" y="92.5" text-anchor="middle">F</text><text x="145" y="135.3" text-anchor="middle">P</text></g>
+</svg><figcaption>$BF=DE$，交於 $P$</figcaption></figure>
+<p>$S_{\triangle BFC}=\frac12BF\cdot PC\sin\angle BPC$，$S_{\triangle DEC}=\frac12DE\cdot PC\sin\angle DPC$⟦為什麼｜以 $BF$ 為底，$C$ 到直線 $BF$ 的距離是 $PC\sin\angle BPC$；另一個同理。⟧。易證 $S_{\triangle BFC}=S_{\triangle DEC}=\frac12S_{ABCD}$，且 $BF=DE$，所以 $\sin\angle BPC=\sin\angle DPC$；兩角都小於 $90^\circ$，所以 $\angle BPC=\angle DPC$。</p>
+=== 習題 2
+zh: 銳角 $\triangle ABC$ 的垂心為 $H$，$AH=x$，$BH=y$，$CH=z$，$BC=a$，$CA=b$，$AB=c$。證明：$\dfrac ax+\dfrac by+\dfrac cz=\dfrac{abc}{xyz}$。
+sol: <p>設 $AD,BE,CF$ 是三條高。由 $A,F,H,E$ 共圓，$\angle BHC=\angle FHE=180^\circ-A$，$\sin\angle BHC=\sin A$。所以 $S_{\triangle BHC}=\frac12yz\sin A=\frac{ayz}{4R}$⟦為什麼｜正弦定理 $\sin A=\frac a{2R}$。⟧，即 $ayz=4R\cdot S_{\triangle BHC}$。同理 $bzx=4R\cdot S_{\triangle CHA}$，$cxy=4R\cdot S_{\triangle AHB}$。相加得 $ayz+bzx+cxy=4R\cdot S_{\triangle ABC}=abc$，兩邊除以 $xyz$ 即得。</p>
+=== 習題 3
+zh: 在圓內接四邊形 $ABCD$ 中，已知 $BC=CD$。求證：$AC^2=AB\cdot AD+BC^2$。
+sol: <figure class="bkfig"><svg viewBox="0 0 280 175" width="280" role="img" aria-label="圓內接四邊形中兩鄰邊相等">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="140.9" cy="87.3" r="65.3"/><polygon points="146.6,22.2 87.4,124.8 135.2,152.4 187.1,133.6"/><line x1="146.6" y1="22.2" x2="135.2" y2="152.4"/><line x1="87.4" y1="124.8" x2="187.1" y2="133.6"/><line x1="87.4" y1="124.8" x2="22" y2="87.1" stroke-dasharray="5 4"/><line x1="187.1" y1="133.6" x2="258" y2="107.7" stroke-dasharray="5 4"/><line x1="22" y1="87.1" x2="258" y2="107.7" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="146.6" y="16.1" text-anchor="middle">A</text><text x="79.6" y="137.5" text-anchor="middle">B</text><text x="135.2" y="168.3" text-anchor="middle">C</text><text x="194.9" y="146.2" text-anchor="middle">D</text><text x="11" y="92" text-anchor="middle">E</text><text x="269" y="112.6" text-anchor="middle">F</text><text x="147.8" y="94.5" text-anchor="middle">P</text></g>
+</svg><figcaption>$BC=CD$；延長 $CB$、$CD$ 到 $E$、$F$ 使 $CE=CF=AC$（虛線）</figcaption></figure>
+<p>延長 $CB$ 到 $E$，延長 $CD$ 到 $F$，使 $CE=CF=AC$，連 $EF$ 交 $AC$ 於 $P$。⟦易證｜$CE=CA$、$CB=CD$，$\angle ECP=\angle ACB$… 把 $\triangle ABC$ 沿 $\angle ACB$ 的平分方向翻折：$\triangle ACB$ 與 $\triangle ECP'$… 原書說易證 $\triangle EPC\cong\triangle ABC$，關鍵是 $\angle CEP=\angle CAB$（等腰 $\triangle CEF$ 的底角 $=90^\circ-\frac12\angle BCD=\angle CAB$，因 $BC=CD$ 使 $AC$ 平分 $\angle BAD$）。⟧$\triangle EPC\cong\triangle ABC$，$S_{\triangle EPC}=S_{\triangle ABC}$；同理 $S_{\triangle FPC}=S_{\triangle ADC}$。所以</p>
+$$S_{ABCD}=S_{\triangle ECF}=\tfrac12AC^2\sin\angle BCD.$$
+<p>另一方面 $S_{ABCD}=S_{\triangle ABD}+S_{\triangle BCD}=\frac12AB\cdot AD\sin\angle BAD+\frac12BC\cdot CD\sin\angle BCD$，而 $\sin\angle BAD=\sin\angle BCD$（對角互補）。比較兩式得 $AC^2=AB\cdot AD+BC\cdot CD=AB\cdot AD+BC^2$。</p>
+=== 習題 4
+zh: $\triangle ABC$ 的邊 $BC=a$，$CA=b$，$AB=c$，$G$、$I$ 分別是重心與內心。已知 $GI$ 與 $\angle C$ 的平分線垂直，求證：$\dfrac{a+b+c}3=\dfrac{2ab}{a+b}$。
+sol: <p>設 $h_a,h_b$ 是 $BC,CA$ 邊上的高，直線 $GI$ 與 $BC$、$CA$ 交於 $P$、$Q$。$GI$ 垂直於 $\angle C$ 的平分線，所以 $CP=CQ$。因為</p>
+$$S_{\triangle GPC}+S_{\triangle GQC}=S_{\triangle IPC}+S_{\triangle IQC}\ (=S_{\triangle CPQ}),$$
+<p>⟦展開｜$G$ 到 $BC$、$CA$ 的距離是 $\frac13h_a$、$\frac13h_b$；$I$ 到兩邊的距離都是 $r$。兩邊同除以 $\frac12CP=\frac12CQ$。⟧得 $\frac13h_a+\frac13h_b=2r$。代入 $h_a=\frac{2S}a$、$h_b=\frac{2S}b$、$r=\frac{2S}{a+b+c}$，得 $\frac13\big(\frac1a+\frac1b\big)=\frac2{a+b+c}$，即 $\frac{a+b+c}3=\frac{2ab}{a+b}$。</p>
