@@ -16,7 +16,7 @@ $$\begin{aligned}
 &\text{(v)}\quad \mathrm C_n^0+\mathrm C_n^1+\cdots+\mathrm C_n^n=2^n;\\
 &\text{(vi)}\quad \mathrm C_n^0-\mathrm C_n^1+\mathrm C_n^2-\cdots+(-1)^n\mathrm C_n^n=0.
 \end{aligned}$$
-<p>前兩個大家都熟悉。(v)、(vi) 在二項式定理中分別取 $a=b=1$ 與 $a=1,b=-1$ 就得到。(iii) 是 (iv) 取 $m=1$ 的特例。⟦(iv) 取 m=1 為什麼是 (iii)｜$\mathrm C_n^k\cdot k=n\,\mathrm C_{n-1}^{k-1}$，兩邊除以 $k$ 即得 (iii)。⟧下面證 (iv)：
+<p>前兩個大家都熟悉。(v)、(vi) 在二項式定理中分別取 $a=b=1$ 與 $a=1,b=-1$ 就得到。(iii) 是 (iv) 取 $m=1$ 的特例。⟦為什麼是特例｜$\mathrm C_n^k\cdot k=n\,\mathrm C_{n-1}^{k-1}$，兩邊除以 $k$ 即得 (iii)。⟧下面證 (iv)：
 $$\mathrm C_n^k\mathrm C_k^m=\frac{n!}{k!\,(n-k)!}\cdot\frac{k!}{m!\,(k-m)!}=\frac{n!}{m!\,(n-k)!\,(k-m)!},$$
 $$\mathrm C_n^m\mathrm C_{n-m}^{k-m}=\frac{n!}{m!\,(n-m)!}\cdot\frac{(n-m)!}{(k-m)!\,(n-k)!}=\frac{n!}{m!\,(n-k)!\,(k-m)!}.$$
 兩者相等。⟦用組合意義看 (iv)｜從 $n$ 人中選 $k$ 人當委員，再從委員中選 $m$ 人當幹部；也可以先從 $n$ 人選 $m$ 個幹部，再從其餘 $n-m$ 人補 $k-m$ 個普通委員。兩種數法數的是同一件事。⟧</p>
@@ -161,7 +161,7 @@ hint: 由基本恆等式 (iii) 與例 8 即得。
 sol: 由 (iii)，$\frac1{k+1}\mathrm C_n^k=\frac1{n+1}\mathrm C_{n+1}^{k+1}$。記 $G(m)=\sum_{k=m}^n(-1)^k\mathrm C_{n+1}^{k+1}\mathrm C_k^m$，要證 $G(m)=(-1)^m$。<br>
 用 (ii)：$\mathrm C_k^m=\mathrm C_{k+1}^{m+1}-\mathrm C_k^{m+1}$，於是
 $$G(m)=\sum_{k=m}^n(-1)^k\mathrm C_{n+1}^{k+1}\mathrm C_{k+1}^{m+1}-G(m+1).$$
-⟦第二部分為什麼是 G(m+1)｜$\sum_{k=m}^n(-1)^k\mathrm C_{n+1}^{k+1}\mathrm C_k^{m+1}$ 中，$k=m$ 那項的 $\mathrm C_m^{m+1}=0$，所以從 $k=m+1$ 起算，就是 $G(m+1)$。⟧第一個和令 $K=k+1$，是 $-\sum_{K=m+1}^{n+1}(-1)^K\mathrm C_{n+1}^K\mathrm C_K^{m+1}=-A_{m+1,\,n+1}$，由例 8，$m\lt n$ 時它是 0。所以 $m\lt n$ 時 $G(m)=-G(m+1)$。又 $G(n)=(-1)^n\mathrm C_{n+1}^{n+1}\mathrm C_n^n=(-1)^n$，所以
+⟦為什麼是 G(m+1)｜$\sum_{k=m}^n(-1)^k\mathrm C_{n+1}^{k+1}\mathrm C_k^{m+1}$ 中，$k=m$ 那項的 $\mathrm C_m^{m+1}=0$，所以從 $k=m+1$ 起算，就是 $G(m+1)$。⟧第一個和令 $K=k+1$，是 $-\sum_{K=m+1}^{n+1}(-1)^K\mathrm C_{n+1}^K\mathrm C_K^{m+1}=-A_{m+1,\,n+1}$，由例 8，$m\lt n$ 時它是 0。所以 $m\lt n$ 時 $G(m)=-G(m+1)$。又 $G(n)=(-1)^n\mathrm C_{n+1}^{n+1}\mathrm C_n^n=(-1)^n$，所以
 $$G(m)=(-1)^{n-m}G(n)=(-1)^m,$$
 原式 $=\dfrac{G(m)}{n+1}=\dfrac{(-1)^m}{n+1}$。
 
@@ -172,7 +172,7 @@ sol: 記左邊為 $f_n$。用 $\frac1k\mathrm C_n^k=\frac1k\mathrm C_{n-1}^k+\fr
 $$f_n=\sum_{k=1}^{n-1}(-1)^{k+1}\frac1k\mathrm C_{n-1}^k\left[1-(1-x)^k\right]+\frac1n\sum_{k=1}^n(-1)^{k+1}\mathrm C_n^k\left[1-(1-x)^k\right]=f_{n-1}+g_n.$$
 ⟦k=n 那項去哪了｜$\mathrm C_{n-1}^n=0$，所以把第一個和寫到 $k=n-1$ 為止就好；第二個和本來就到 $k=n$。⟧其中
 $$\begin{aligned}g_n&=-\frac1n\left[\sum_{k=1}^n(-1)^k\mathrm C_n^k-\sum_{k=1}^n(-1)^k\mathrm C_n^k(1-x)^k\right]\\&=-\frac1n\left[\sum_{k=0}^n(-1)^k\mathrm C_n^k-\sum_{k=0}^n(-1)^k\mathrm C_n^k(1-x)^k\right]\\&=-\frac1n\left[0-\big(1-(1-x)\big)^n\right]=\frac1nx^n.\end{aligned}$$
-⟦第二行為什麼可以從 k=0 起算｜兩個和的 $k=0$ 項都是 1，一加一減抵消。⟧由 $f_n=f_{n-1}+\frac1nx^n$ 與 $f_1=x$ 即得。
+⟦為什麼從 0 起算｜兩個和的 $k=0$ 項都是 1，一加一減抵消。⟧由 $f_n=f_{n-1}+\frac1nx^n$ 與 $f_1=x$ 即得。
 
 === 習題 8
 zh: 證明 $\displaystyle\sum_{k=0}^n\frac{(-1)^k}{2k+1}\mathrm C_n^k=\frac{2^{2n}}{2n+1}\left(\mathrm C_{2n}^n\right)^{-1}$。

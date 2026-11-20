@@ -12,7 +12,7 @@ status: 完成
 === 定理 1 | 帶餘除法
 zh: 設 $a,b$ 是給定的整數，$b>0$，則有唯一的一對整數 $q,r$ 滿足
 $$a=bq+r,\qquad0\le r\lt b.\tag{1}$$
-sol: 取 $q=\left[\frac ab\right]$，$r=a-bq$，⟦這樣 r 為什麼在 0 到 b 之間｜$q\le\frac ab\lt q+1$，乘以 $b$ 得 $bq\le a\lt bq+b$，即 $0\le a-bq\lt b$。⟧即得 (1)。若另有 $q',r'$ 也滿足 (1)，則 $b(q-q')=r'-r$，即 $b|q-q'|=|r'-r|$。但 $|r'-r|\lt b$，所以只能 $q-q'=0$、$r'=r$。唯一性成立。
+sol: 取 $q=\left[\frac ab\right]$，$r=a-bq$，⟦r 的範圍｜$q\le\frac ab\lt q+1$，乘以 $b$ 得 $bq\le a\lt bq+b$，即 $0\le a-bq\lt b$。⟧即得 (1)。若另有 $q',r'$ 也滿足 (1)，則 $b(q-q')=r'-r$，即 $b|q-q'|=|r'-r|$。但 $|r'-r|\lt b$，所以只能 $q-q'=0$、$r'=r$。唯一性成立。
 
 === text
 <p>(1) 中 $q$ 叫做 $a$ 除以 $b$ 的（不完全）商，$r$ 叫做<b>餘數</b>。$r=0$ 時 $a=bq$，稱 $b$ <b>整除</b> $a$，記作 $b\mid a$；也說 $a$ 是 $b$ 的倍數，$b$ 是 $a$ 的因數（約數）。</p>

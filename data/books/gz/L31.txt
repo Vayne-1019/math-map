@@ -17,7 +17,7 @@ sol: <b>分析。</b>勝方可能只派出 1 號就連勝 7 場，也可能用�
 $$S_k=\mathrm C_{k+5}^{k-1},\quad k=1,2,\dots,7.$$
 全部比賽過程數為
 $$2\left(\mathrm C_6^0+\mathrm C_7^1+\mathrm C_8^2+\cdots+\mathrm C_{12}^6\right)=2\,\mathrm C_{13}^6=3432.$$
-⟦這個和為什麼等於 C₁₃⁶｜反覆用 $\mathrm C_{n}^{r-1}+\mathrm C_{n}^{r}=\mathrm C_{n+1}^{r}$：<br>$\mathrm C_6^0=\mathrm C_7^0$，$\mathrm C_7^0+\mathrm C_7^1=\mathrm C_8^1$，$\mathrm C_8^1+\mathrm C_8^2=\mathrm C_9^2$，……，$\mathrm C_{12}^5+\mathrm C_{12}^6=\mathrm C_{13}^6=1716$。⟧<br>
+⟦為什麼等於 C₁₃⁶｜反覆用 $\mathrm C_{n}^{r-1}+\mathrm C_{n}^{r}=\mathrm C_{n+1}^{r}$：<br>$\mathrm C_6^0=\mathrm C_7^0$，$\mathrm C_7^0+\mathrm C_7^1=\mathrm C_8^1$，$\mathrm C_8^1+\mathrm C_8^2=\mathrm C_9^2$，……，$\mathrm C_{12}^5+\mathrm C_{12}^6=\mathrm C_{13}^6=1716$。⟧<br>
 <b>解法二（隔板）。</b>把負方 7 名已排好順序的隊員想成排成一列的 7 個小球，用 $k-1$ 塊隔板把它們隔成 $k$ 段（有些段可以是空的），段從左到右編號。規定第 $j$ 段的球，就是被勝方第 $j$ 號隊員淘汰的負方隊員。只要第 $k$ 段（最右段）不空，一種分段方式就恰好對應一種比賽過程。
 <figure class="bkfig"><svg viewBox="0 0 300 60" width="300" role="img" aria-label="7 個球用隔板分段">
 <g fill="currentColor"><circle cx="20" cy="30" r="10"/><circle cx="90" cy="30" r="10"/><circle cx="114" cy="30" r="10"/><circle cx="160" cy="30" r="10"/><circle cx="206" cy="30" r="10"/><circle cx="230" cy="30" r="10"/><circle cx="276" cy="30" r="10"/></g>

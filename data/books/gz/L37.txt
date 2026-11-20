@@ -69,7 +69,7 @@ src: 第 24 屆美國普特南數學競賽，1963 年
 zh: 設 $f(n)$ 是定義在自然數集上、取自然數值的嚴格遞增函數。若 $f(2)=2$，且當 $m,n$ 互質時 $f(mn)=f(m)f(n)$，證明對一切正整數 $n$，$f(n)=n$。
 sol: <b>先證 $f(3)=3$。</b>因為 $f$ 嚴格遞增，$f(3)>f(2)=2$；只要證 $f(3)\lt 4$。利用互質相乘的條件：
 $$f(3)f(7)=f(21)\lt f(22)=f(2)f(11)=2f(11)\lt 2f(14)=2f(2)f(7)=4f(7),$$
-所以 $f(3)\lt 4$，$f(3)=3$。⟦為什麼挑 21、22、14｜要把 $f(3)$ 夾住：$21=3\times7$、$22=2\times11$、$14=2\times7$ 都是互質相乘，而且 $21\lt 22$、$11\lt 14$ 讓我們能用遞增性，最後兩邊都出現 $f(7)$ 可以約掉。⟧<br>
+所以 $f(3)\lt 4$，$f(3)=3$。⟦為什麼挑這幾個｜要把 $f(3)$ 夾住：$21=3\times7$、$22=2\times11$、$14=2\times7$ 都是互質相乘，而且 $21\lt 22$、$11\lt 14$ 讓我們能用遞增性，最後兩邊都出現 $f(7)$ 可以約掉。⟧<br>
 又由 $f(2)=f(1\cdot2)=f(1)f(2)$ 得 $f(1)=1$。<br>
 <b>再用最小反例。</b>若結論不成立，設 $n_0$ 是使 $f(n)\ne n$ 的最小正整數，則 $n_0\ge4$，且 $f(k)=k$（$k\lt n_0$）。因為 $f(n_0)>f(n_0-1)=n_0-1$ 且 $f(n_0)\ne n_0$，所以 $f(n_0)>n_0$。由嚴格遞增，$f(n_0+1)>f(n_0)>n_0$，即 $f(n_0+1)>n_0+1$⟦為什麼多 1｜$f(n_0+1)>f(n_0)\ge n_0+1$，所以 $f(n_0+1)\ge n_0+2>n_0+1$。⟧；依此類推，
 $$f(n)>n\quad(n\ge n_0).\tag{6}$$
@@ -100,7 +100,7 @@ $$[n\beta]=\big[[n\alpha]\alpha\big]+1.\tag{9}$$
 一方面，$[n\alpha]\alpha\lt n\alpha\cdot\alpha=n\beta$，所以 $\big[[n\alpha]\alpha\big]\le[n\beta]$；由命題，兩列沒有公共數，等號不成立，所以 $[n\beta]\ge\big[[n\alpha]\alpha\big]+1$。<br>
 另一方面，$[n\beta]=[n\alpha+n]=[n\alpha]+n$，又 $\alpha=1+\frac1\alpha$，所以
 $$[n\alpha]\alpha=[n\alpha]+\frac{[n\alpha]}\alpha>[n\alpha]+\frac{n\alpha-1}\alpha=[n\alpha]+n-\frac1\alpha=[n\beta]-\frac1\alpha>[n\beta]-1,$$
-所以 $[n\beta]\le\big[[n\alpha]\alpha\big]+1$。兩方面合起來就是 (9)。⟦還要說明 f、g 是唯一的｜(i)(ii)(iii) 決定了 $f$、$g$：由 (i)(ii) 與遞增，$f(1)$ 必須是 1，之後每一步 $f(n+1)$ 都是還沒出現的最小正整數，$g(n)$ 由 (iii) 決定。所以滿足條件的 $f$ 只有一個，就是 $[n\alpha]$。⟧<br>
+所以 $[n\beta]\le\big[[n\alpha]\alpha\big]+1$。兩方面合起來就是 (9)。⟦f、g 是唯一的｜(i)(ii)(iii) 決定了 $f$、$g$：由 (i)(ii) 與遞增，$f(1)$ 必須是 1，之後每一步 $f(n+1)$ 都是還沒出現的最小正整數，$g(n)$ 由 (iii) 決定。所以滿足條件的 $f$ 只有一個，就是 $[n\alpha]$。⟧<br>
 所以 $f(n)=\left[\frac{1+\sqrt5}2n\right]$，$g(n)=\left[\frac{3+\sqrt5}2n\right]$，算得
 $$f(240)=\left[240\times1.6180339\ldots\right]=[388.328\ldots]=388.$$
 ans: $388$

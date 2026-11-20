@@ -130,7 +130,7 @@ sol: $p\mid n$ 時兩邊都同餘於 0。$p\nmid n$ 時，由定理 5，$n^{p-1}
 
 === 例 8 | 威爾遜定理
 zh: 設 $p$ 為質數，則 $(p-1)!\equiv-1\pmod p$。
-sol: $p=2,3$ 時直接驗證。設 $p>3$。對每個 $2\le a\le p-2$，由定理 2 有唯一的 $\bar a$（$2\le\bar a\le p-2$）使 $a\bar a\equiv1\pmod p$，⟦為什麼 ā 也在 2 到 p−2 之間｜$\bar a$ 可取在 $1,\dots,p-1$ 中；若 $\bar a=1$ 則 $a\equiv1$；若 $\bar a=p-1\equiv-1$ 則 $a\equiv-1$，都不在 $2,\dots,p-2$ 內。⟧而且 $a\ne\bar a$：否則 $a^2\equiv1$，$p\mid(a+1)(a-1)$，得 $a\equiv\pm1$，不可能。又 $a\not\equiv a'$ 時 $\bar a\not\equiv\bar a'$。所以 $2,3,\dots,p-2$ 可以按 $a$ 與 $\bar a$ 配成 $\frac{p-3}2$ 對，每對乘積 $\equiv1$，於是
+sol: $p=2,3$ 時直接驗證。設 $p>3$。對每個 $2\le a\le p-2$，由定理 2 有唯一的 $\bar a$（$2\le\bar a\le p-2$）使 $a\bar a\equiv1\pmod p$，⟦ā 的範圍｜$\bar a$ 可取在 $1,\dots,p-1$ 中；若 $\bar a=1$ 則 $a\equiv1$；若 $\bar a=p-1\equiv-1$ 則 $a\equiv-1$，都不在 $2,\dots,p-2$ 內。⟧而且 $a\ne\bar a$：否則 $a^2\equiv1$，$p\mid(a+1)(a-1)$，得 $a\equiv\pm1$，不可能。又 $a\not\equiv a'$ 時 $\bar a\not\equiv\bar a'$。所以 $2,3,\dots,p-2$ 可以按 $a$ 與 $\bar a$ 配成 $\frac{p-3}2$ 對，每對乘積 $\equiv1$，於是
 $$2\cdot3\cdots(p-2)\equiv1\pmod p,$$
 即 $(p-1)!\equiv1\cdot(p-1)\equiv-1\pmod p$。<br>
 例如 $p=7$：$2\cdot4\equiv1$，$3\cdot5\equiv1$，$6!=720=7\cdot103-1$。
@@ -140,7 +140,7 @@ $$2\cdot3\cdots(p-2)\equiv1\pmod p,$$
 
 === 例 9
 zh: 若 $n>5$ 是合數，則 $(n-1)!\equiv0\pmod n$。
-sol: 設 $n=n_1n_2$，$2\le n_1\le n_2$，且 $n_2\ge3$。因為 $n-1\ge3n_1-1>2n_1$，⟦為什麼 n−1 ≥ 3n₁−1｜$n=n_1n_2\ge3n_1$。⟧所以 $1,\dots,n-1$ 中有兩個 $n_1$ 的倍數 $n_1$ 和 $2n_1$，其中必有一個不等於 $n_2$。⟦還要確認 n₂ 本身在範圍內｜$n_2\le\frac n2\lt n$，所以 $n_2$ 在 $1,\dots,n-1$ 中。⟧所以 $1,\dots,n-1$ 中有兩個不同的數分別是 $n_1$ 和 $n_2$ 的倍數，$n=n_1n_2\mid(n-1)!$。<br>
+sol: 設 $n=n_1n_2$，$2\le n_1\le n_2$，且 $n_2\ge3$。因為 $n-1\ge3n_1-1>2n_1$，⟦為什麼｜$n=n_1n_2\ge3n_1$。⟧所以 $1,\dots,n-1$ 中有兩個 $n_1$ 的倍數 $n_1$ 和 $2n_1$，其中必有一個不等於 $n_2$。⟦n₂ 也在範圍內｜$n_2\le\frac n2\lt n$，所以 $n_2$ 在 $1,\dots,n-1$ 中。⟧所以 $1,\dots,n-1$ 中有兩個不同的數分別是 $n_1$ 和 $n_2$ 的倍數，$n=n_1n_2\mid(n-1)!$。<br>
 （$n=4$ 時 $3!=6\not\equiv0\pmod4$，所以要 $n>5$。）
 
 === text
