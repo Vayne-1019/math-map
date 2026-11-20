@@ -1,0 +1,20 @@
+=== meta
+title: 證明無理數：反設成 q/p 再找矛盾
+from: cz-L41
+order: 40
+
+=== body
+<div class="hero">「無理數」很難直接寫出來，它的反面「<b>有理數 = 最簡分數 $\frac qp$</b>」很具體<br>→ 反設成分數，比較<b>分母、質因數、奇偶</b>找矛盾</div>
+<div class="cards">
+<div class="card"><h4>① 整係數方程的根</h4><div class="rule">首項係數 1 → 有理根必是整數</div>
+<div class="eg">$x^2+p^2x+q^3=0$（$p,q$ 質數，$q\ne2$）<br>整數根只能是 $-q,-q^2$ 或 $-1,-q^3$，都推出 $p$ 是偶數 <span class="pill">奇偶矛盾</span></div></div>
+<div class="card"><h4>② 循環小數</h4><div class="rule">有理數 ⟺ 循環小數</div>
+<div class="eg">$0.123456789101112\cdots$ 裡會出現 $2n$ 個連續的 $0$<br>⟹ 循環節全是 $0$，矛盾</div></div>
+<div class="card"><h4>③ 和與差</h4><div class="rule">$\sqrt m-\sqrt n=\dfrac{m-n}{\sqrt m+\sqrt n}$</div>
+<div class="eg">若 $\sqrt2+\sqrt3$ 是有理數，$\sqrt3-\sqrt2=\frac1{\sqrt3+\sqrt2}$ 也是，相加得 $\sqrt3$ 是有理數 ✗</div></div>
+</div>
+<p>$\lg a$ 也一樣：⟦lg 2 為什麼是無理數｜若 $\lg2=\frac mn$，則 $2^n=10^m=2^m5^m$。$m\ge1$ 時右邊有質因數 $5$、左邊沒有，矛盾（$m\le0$ 時右邊 $\le1&lt;2^n$）。⟧ 反設 $\lg2=\frac mn$，化成 $2^n=10^m$，比較質因數 $5$。</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>反設時忘了說「最簡分數」，後面就推不出互質的矛盾</li>
+<li>兩個無理數的和可以是有理數：$\sqrt2+(-\sqrt2)=0$，題目要加條件</li></ul></div>
+<div class="bottomline">證「是無理數」＝證「不能寫成最簡分數」，反證法是標準做法。</div>

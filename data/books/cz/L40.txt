@@ -1,0 +1,232 @@
+=== meta
+title: 反證法（一）
+author: 嚴鎮軍
+pages: 330-337
+units: N-1-2, N-2-1
+status: 完成
+
+=== text
+<p>反證法是數學裡非常重要的證明方法。直接證明走不通時，改用反證法常常豁然開朗。</p>
+<p>反證法是<b>間接證明</b>：先假設結論不成立，再推出矛盾，從而斷定結論成立。步驟有三：</p>
+<ol><li><b>反設</b>：假設要證的結論不成立，也就是承認結論的反面。</li>
+<li><b>歸謬</b>：把反設當成新的條件加進題目，經過正確推理，得出矛盾。</li>
+<li><b>結論</b>：既然出現矛盾，反設錯了，原結論成立。</li></ol>
+<p>反證法也叫<b>歸謬法</b>。如果結論的反面有好幾種情況，就要把它們全部列出，一一推翻，這叫<b>窮舉歸謬法</b>。</p>
+<p>用反證法，第一關是<b>寫對反設</b>，也就是把結論正確地否定。反設錯了，後面推得再漂亮也沒用。結論的反面只有一種時很容易；反面有多種情況或不好敘述時，要仔細分析。常用詞語的否定如下：</p>
+<table style="border-collapse:collapse;margin:8px auto" cellpadding="5" border="1"><tr><th>原結論</th><th>反設</th></tr>
+<tr><td>是</td><td>不是</td></tr>
+<tr><td>都是</td><td>不都是（至少有一個不是）</td></tr>
+<tr><td>大於（小於）</td><td>不大於（不小於）</td></tr>
+<tr><td>至少有一個</td><td>一個也沒有</td></tr>
+<tr><td>至少有 $n$ 個</td><td>至多有 $n-1$ 個</td></tr>
+<tr><td>至多有一個</td><td>至少有兩個</td></tr></table>
+<p>第二點要注意：歸謬時推出的矛盾形式很多。下面依矛盾的種類分成四類來看。</p>
+<h3>一、與已知條件矛盾</h3>
+
+=== 例 1
+zh: 若對任何正數 $p$，方程 $ax^2+bx+c+p=0$（$a,b,c$ 是實數）都有而且只有正實根，求證 $a=0$。
+sol: 反設 $a\ne0$，分 $a>0$ 和 $a&lt;0$ 兩種情況。
+(1) 若 $a>0$：$y=ax^2+bx+c+p$ 的圖形是開口向上的拋物線，最小值
+$$y_{\min}=\frac{4a(c+p)-b^2}{4a}.$$
+$p$ 增加時，拋物線往上平移。只要 $p>\dfrac{b^2}{4a}-c$，就有 $y_{\min}>0$⟦為什麼｜$y_{\min}>0\iff4a(c+p)>b^2\iff c+p>\dfrac{b^2}{4a}$（$a>0$，同乘 $4a$ 不變號）。⟧，拋物線和 $x$ 軸沒有交點，方程沒有實根，與「有正實根」矛盾。
+(2) 若 $a&lt;0$：方程有一根
+$$x_0=\frac{-b+\sqrt{b^2-4a(c+p)}}{2a}.$$
+只要 $p$ 夠大使 $c+p>0$，就有 $-4a(c+p)>0$，所以 $\sqrt{b^2-4a(c+p)}>\sqrt{b^2}=|b|\ge b$，分子 $>0$；分母 $2a&lt;0$，所以 $x_0&lt;0$，與「只有正實根」矛盾。⟦根存在嗎｜$a&lt;0$ 且 $c+p>0$ 時，判別式 $b^2-4a(c+p)>b^2\ge0$，所以有兩個實根，$x_0$ 是其中之一。⟧
+兩種情況都矛盾，所以 $a=0$。
+<br><b>說明</b>：要證「$A\Rightarrow B$」，加上反設「非 $B$」後推出「非 $A$」，和已知條件矛盾。這是最常見的反證法，實質上是證明了原命題的逆否命題「非 $B\Rightarrow$ 非 $A$」。
+
+=== 例 2
+zh: 在凸四邊形 $ABCD$ 中，$AB+BD\le AC+CD$。求證 $AB&lt;AC$。
+sol: <figure class="bkfig"><svg viewBox="0 0 320 175" width="300" role="img" aria-label="凸四邊形ABCD與對角線">
+  <g fill="none" stroke="currentColor" stroke-width="1.5">
+    <polygon points="110,150 40,60 300,20 270,150"/>
+    <line x1="110" y1="150" x2="300" y2="20"/><line x1="40" y1="60" x2="270" y2="150"/>
+  </g>
+  <g fill="currentColor" font-size="15" font-style="italic">
+    <text x="104" y="168">A</text><text x="22" y="62">B</text><text x="304" y="20">C</text><text x="274" y="166">D</text>
+  </g>
+  <g fill="#c2562b" font-size="12"><text x="274" y="40">1</text><text x="52" y="78">2</text></g>
+</svg><figcaption>∠1 = ∠ACB，∠2 = ∠ABC</figcaption></figure>
+反設 $AB\ge AC$。在 $\triangle ABC$ 中大邊對大角，所以 $\angle1\ge\angle2$。
+四邊形是凸的，$CA$ 在 $\angle BCD$ 內部、$BD$ 在 $\angle ABC$ 內部，所以 $\angle BCD>\angle1$，$\angle2>\angle CBD$。連起來：
+$$\angle BCD>\angle1\ge\angle2>\angle CBD.$$
+在 $\triangle BCD$ 中大角對大邊，所以 $BD>CD$。再加上 $AB\ge AC$，得 $AB+BD>AC+CD$，與已知 $AB+BD\le AC+CD$ 矛盾。所以 $AB&lt;AC$。
+
+=== text
+<h3>二、與公理、定義、性質、公式等已知事實矛盾</h3>
+
+=== 例 3
+zh: 設 $a,b,c,m,n,p$ 都是實數，滿足 $ap-2bn+cm=0$ 與 $b^2-ac&lt;0$。求證 $mp-n^2\le0$。
+sol: 反設 $mp-n^2>0$，即 $mp>n^2\ge0$。又由 $b^2-ac&lt;0$ 得 $ac>b^2\ge0$。兩個不等式兩邊都非負，相乘得
+$$acmp>b^2n^2.\qquad①$$
+由 $ap-2bn+cm=0$ 得
+$$bn=\frac{ap+cm}2.\qquad②$$
+把②代入①：$acmp>\dfrac{(ap+cm)^2}4$，即 $(ap+cm)^2-4apcm&lt;0$，也就是
+$$(ap-cm)^2&lt;0,$$
+⟦整理過程｜$(ap+cm)^2-4ap\cdot cm=a^2p^2+2apcm+c^2m^2-4apcm=a^2p^2-2apcm+c^2m^2=(ap-cm)^2$。⟧
+這和「實數的平方非負」矛盾。所以 $mp-n^2\le0$。
+
+=== 例 4
+zh: 平面上有 $A,B,C,D$ 四點，任三點不共線。求證：總能從中選出三點，使它們構成的三角形至少有一個內角不大於 $45^\circ$。
+sol: 「能選出」的反面是「選不出」，「至少有一個」的反面是「一個也沒有」，「不大於 $45^\circ$」的反面是「大於 $45^\circ$」。所以反設是：<b>任選三點構成的三角形，所有內角都大於 $45^\circ$。</b>分兩種情形：
+<figure class="bkfig"><svg viewBox="0 0 340 210" width="330" role="img" aria-label="左：凸四邊形與兩條對角線；右：B在三角形ACD內部">
+  <g fill="none" stroke="currentColor" stroke-width="1.5">
+    <polygon points="45,35 25,175 165,180 150,20"/>
+    <line x1="45" y1="35" x2="165" y2="180"/><line x1="25" y1="175" x2="150" y2="20"/>
+    <polygon points="320,20 205,110 320,190"/>
+    <line x1="285" y1="110" x2="320" y2="20"/><line x1="285" y1="110" x2="205" y2="110"/><line x1="285" y1="110" x2="320" y2="190"/>
+  </g>
+  <g fill="currentColor" font-size="15" font-style="italic">
+    <text x="30" y="32">A</text><text x="10" y="190">B</text><text x="168" y="196">C</text><text x="152" y="16">D</text>
+    <text x="324" y="20">A</text><text x="188" y="115">C</text><text x="324" y="200">D</text><text x="282" y="102">B</text>
+  </g>
+  <g fill="#c2562b" font-size="11">
+    <text x="62" y="44">1</text><text x="44" y="58">2</text><text x="32" y="150">3</text><text x="46" y="170">4</text>
+    <text x="142" y="172">5</text><text x="150" y="158">6</text><text x="140" y="42">7</text><text x="124" y="30">8</text>
+    <text x="226" y="106">2</text><text x="226" y="122">1</text><text x="304" y="48">3</text><text x="314" y="56">4</text>
+    <text x="314" y="166">5</text><text x="302" y="172">6</text>
+  </g>
+</svg><figcaption>左：凸四邊形，兩條對角線把四個頂角分成 8 個角。右：凹的情形，B 在 △ACD 內部，6 個角都是 △ACD 頂角的一部分。</figcaption></figure>
+(1) $A,B,C,D$ 構成凸四邊形。對角線把四個頂角分成 $\angle1,\dots,\angle8$，每一個都是某個「三點三角形」的內角⟦為什麼｜例如 $\angle1=\angle CAD$ 是 $\triangle ACD$ 的內角，$\angle2=\angle BAC$ 是 $\triangle ABC$ 的內角，其餘類推。⟧，依反設都大於 $45^\circ$，所以
+$$\angle ABC+\angle BCD+\angle CDA+\angle DAB=\angle1+\dots+\angle8>8\times45^\circ=360^\circ,$$
+與四邊形內角和 $360^\circ$ 矛盾。
+(2) 四點不構成凸四邊形，則有一點（設為 $B$）在另三點組成的 $\triangle ACD$ 內部。連 $BA,BC,BD$，$\triangle ACD$ 的三個頂角被分成 $\angle1,\dots,\angle6$，每個都是某個三點三角形的內角，依反設都大於 $45^\circ$，所以
+$$\angle ACD+\angle CDA+\angle DAC>6\times45^\circ=270^\circ,$$
+與三角形內角和 $180^\circ$ 矛盾。
+兩種情形都矛盾，命題得證。
+
+=== text
+<h3>三、與反設本身矛盾</h3>
+
+=== 例 5
+zh: 求證：圓內接 $n$ 邊形中，周長最大的一定是正 $n$ 邊形。
+sol: <b>分析</b>：直接證明的話，要拿任意一個內接 $n$ 邊形和正 $n$ 邊形比周長，任意的多邊形沒有特殊性質可用，很難比。改用反證法就不一樣了：反設「周長最大的那個不是正的」，我們只要<b>造出一個周長更大的</b>，就和「最大」矛盾。要造一個特殊的多邊形比較容易。
+<figure class="bkfig"><svg viewBox="0 0 280 330" width="270" role="img" aria-label="圓內接多邊形，用弧中點M取代頂點An">
+  <g fill="none" stroke="currentColor" stroke-width="1.5">
+    <circle cx="140" cy="235" r="85"/>
+    <polyline points="223.7,249.8 175.9,312 104.1,312 56.3,249.8 188.8,165.4 223.7,249.8"/>
+    <line x1="56.3" y1="249.8" x2="140" y2="150" stroke="#c2562b"/><line x1="140" y1="150" x2="223.7" y2="249.8" stroke="#c2562b"/>
+  </g>
+  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4">
+    <line x1="56.3" y1="249.8" x2="128.6" y2="20.3"/><line x1="188.8" y1="165.4" x2="92.5" y2="135"/>
+    <line x1="188.8" y1="165.4" x2="128.6" y2="20.3"/><line x1="140" y1="150" x2="128.6" y2="20.3"/>
+  </g>
+  <g fill="currentColor" font-size="14" font-style="italic">
+    <text x="36" y="254">A₁</text><text x="88" y="327">A₂</text><text x="172" y="327">Aₙ₋₂</text><text x="228" y="254">Aₙ₋₁</text>
+    <text x="194" y="162">Aₙ</text><text x="136" y="168">M</text><text x="76" y="132">C</text><text x="134" y="18">A₁′</text>
+  </g>
+</svg><figcaption>紅線：用 M 取代 Aₙ。虛線：把 A₁ 對直線 AₙM 作鏡射得 A₁′，A₁′、Aₙ、Aₙ₋₁ 共線</figcaption></figure>
+<b>證明</b>：反設 $A_1A_2\cdots A_n$ 是所有圓內接 $n$ 邊形中周長最大的，但它不是正 $n$ 邊形。⟦最大的一定存在嗎｜原書直接假定周長最大的內接 $n$ 邊形存在。這是對的（頂點在圓上連續移動，周長是連續函數，在這種「封閉有界」的範圍內一定取得到最大值），但嚴格證明要用到高中以後的分析工具。⟧ 內接多邊形若各邊都相等就是正多邊形，所以至少有一對鄰邊不相等，不妨設 $A_{n-1}A_n\ne A_nA_1$。
+取 $\overset{\frown}{A_1A_nA_{n-1}}$（經過 $A_n$ 的那段弧）的中點 $M$，則 $M\ne A_n$。我們證明：用 $M$ 取代 $A_n$，周長會變大，也就是
+$$A_{n-1}M+MA_1>A_{n-1}A_n+A_nA_1.$$
+作 $A_1$ 關於直線 $A_nM$ 的對稱點 $A_1'$（過 $A_1$ 作 $A_nM$ 的垂線，垂足 $C$，延長 $A_1C$ 到 $A_1'$ 使 $A_1'C=A_1C$）。由對稱，
+$$A_1'M=A_1M=A_{n-1}M,\qquad A_1'A_n=A_1A_n,$$
+⟦為什麼 A₁M = Aₙ₋₁M｜$M$ 是弧 $A_1A_nA_{n-1}$ 的中點，等弧對等弦。⟧
+$$\angle A_1'A_nM=\angle A_1A_nM=\angle A_1A_{n-1}M=\angle MA_1A_{n-1}.$$
+⟦三個等號各自的理由｜第一個：鏡射保持角度。第二個：$\angle A_1A_nM$ 和 $\angle A_1A_{n-1}M$ 都是弧 $A_1M$ 所對的圓周角。第三個：$MA_1=MA_{n-1}$，$\triangle MA_1A_{n-1}$ 是等腰三角形，兩底角相等。⟧
+又 $\angle A_1MA_{n-1}=\angle A_1A_nA_{n-1}$（同弧 $A_1A_{n-1}$ 所對的圓周角）。因此在 $A_n$ 處三個角相加：
+$$\begin{aligned}&\angle A_1'A_nM+\angle MA_nA_1+\angle A_1A_nA_{n-1}\\=\;&\angle A_1A_{n-1}M+\angle MA_1A_{n-1}+\angle A_1MA_{n-1}=180^\circ,\end{aligned}$$
+⟦逐項對照｜左邊第一項：用上面那串等號的第二個「$=$」換成 $\angle A_1A_{n-1}M$。<br>第二項 $\angle MA_nA_1$ 就是 $\angle A_1A_nM$，用整串等號換成 $\angle MA_1A_{n-1}$。<br>第三項換成 $\angle A_1MA_{n-1}$。<br>右邊三個角正好是 $\triangle A_1MA_{n-1}$ 的三個內角，和為 $180^\circ$。⟧
+所以 $A_{n-1},A_n,A_1'$ 三點共線，$A_{n-1}A_1'=A_{n-1}A_n+A_nA_1'=A_{n-1}A_n+A_nA_1$。在 $\triangle MA_{n-1}A_1'$ 中，兩邊之和大於第三邊：
+$$A_{n-1}M+MA_1'>A_{n-1}A_1',$$
+即 $A_{n-1}M+MA_1>A_{n-1}A_n+A_nA_1$。於是 $n$ 邊形 $A_1A_2\cdots A_{n-1}M$ 的周長大於 $A_1A_2\cdots A_n$ 的周長，與「周長最大」的反設矛盾。所以原命題成立。
+<br><b>說明</b>：這個證法實際上把問題化成一個簡單的命題：<b>點 $C$ 在以 $AB$ 為弦的一段弧上移動，$C$ 是弧的中點時 $\triangle ABC$ 的周長最大。</b>
+
+=== 例 6
+zh: 求證：質數有無窮多個。
+sol: 反設質數只有有限多個，共 $n$ 個：$p_1,p_2,\dots,p_n$。令
+$$N=p_1p_2\cdots p_n+1.$$
+(1) 若 $N$ 是質數：$N$ 比每個 $p_i$ 都大，所以 $N$ 不在這 $n$ 個裡，與「只有 $n$ 個質數」矛盾。
+(2) 若 $N$ 是合數：$N$ 有一個質因數 $p$。但 $N$ 除以每個 $p_i$ 都餘 $1$，所以每個 $p_i$ 都不是 $N$ 的因數，$p$ 不在這 $n$ 個裡，又與反設矛盾。
+所以質數有無窮多個。
+
+=== text
+<h3>四、自相矛盾</h3>
+<p>推理的過程中同時推出了一個命題和它的否定，例如同時得到 $x&lt;1000$ 和 $x\ge1000$。</p>
+
+=== 例 7
+zh: 已知 $m,n$ 是自然數，$n\le100$。某人把分數 $\dfrac mn$ 化成小數，得到
+$$\frac mn=A.a_1a_2\cdots a_k167a_{k+1}\cdots$$
+（小數點後某處連續出現 $1,6,7$ 三個數字）。求證：他算錯了。
+sol: 反設計算正確。兩邊乘以 $10^k$，把小數點移到 $167$ 之前：
+$$10^k\cdot\frac mn=\overline{Aa_1a_2\cdots a_k}+0.167a_{k+1}\cdots$$
+左邊乘以 $n$ 是整數 $10^km$，右邊整數部分乘以 $n$ 也是整數，所以 $0.167a_{k+1}\cdots$ 乘以 $n$ 是整數，設它是 $B$（$B$ 是正整數），即 $0.167a_{k+1}\cdots=\dfrac Bn$。於是
+$$0.167\le\frac Bn&lt;0.168,$$
+即 $167n\le1000B&lt;168n$。兩邊乘以 $6$：$1002n\le6000B&lt;1008n$。因為 $n\le100$，
+$$0&lt;2n\le6000B-1000n&lt;8n\le800.\qquad①$$
+另一方面 $6000B-1000n$ 是 $1000$ 的倍數，又大於 $0$，所以
+$$6000B-1000n\ge1000.\qquad②$$
+①②自相矛盾，所以他算錯了。⟦為什麼乘 6｜$\frac16=0.1666\cdots$，非常接近 $0.167$。乘 $6$ 後 $1000B$ 變成 $6000B$，而 $167\times6=1002$ 恰好比 $1000$ 多一點，於是 $6000B$ 被夾在 $1000n$ 的上方「一點點」之內，擠不下一個 $1000$ 的倍數。⟧
+
+=== 例 8
+zh: 設 $a,b,c$ 是整數。求證：$ax^2+bx+c=0$ 的判別式不可能是 $1990$ 或 $1991$。
+sol: (1) 反設 $\Delta=b^2-4ac=1990=4\times497+2$。若 $b$ 是奇數，則 $b^2$ 是奇數，$b^2-4ac$ 也是奇數，但 $1990$ 是偶數，矛盾，所以 $b$ 是偶數。令 $b=2m$，則
+$$4m^2-4ac=4\times497+2.$$
+左邊是 $4$ 的倍數，右邊不是，矛盾。
+(2) 反設 $\Delta=1991=4\times497+3$。這時 $b$ 必是奇數（理由同上）。令 $b=2m+1$，則
+$$\Delta=4(m^2+m-ac)+1=4\times497+3,$$
+左邊除以 $4$ 餘 $1$，右邊餘 $3$，矛盾。
+所以 $\Delta$ 不能是 $1990$ 或 $1991$。⟦一句話看懂｜$b^2-4ac\equiv b^2\pmod 4$，而平方數除以 $4$ 只能餘 $0$ 或 $1$。$1990$ 餘 $2$、$1991$ 餘 $3$，都不可能。⟧
+
+=== 習題 1
+zh: 設 $n$ 是自然數。求證：$n^2+n+2$ 不能被 $15$ 整除。
+hint: 反設 $n^2+n+2=15k$，用求根公式解出 $n$，看根號內的數的個位數字。
+sol: 反設 $n^2+n+2=15k$（$k$ 是自然數），解得
+$$n=\frac{-1\pm\sqrt{60k-7}}2.$$
+$n$ 是自然數，所以 $60k-7$ 必須是完全平方數。但 $60k-7$ 的個位數字是 $3$，而完全平方數的個位只能是 $0,1,4,5,6,9$，矛盾。
+<br>另解：只看除以 $5$ 的餘數。$n\equiv0,1,2,3,4$ 時，$n^2+n+2\equiv2,4,3,4,2\pmod5$，從不為 $0$，連 $5$ 都除不盡。
+
+=== 習題 2
+zh: 已知 $a,b,c,d$ 是同一平面內的四條直線，$a$ 與 $b$ 相交，$c\perp a$，$d\perp b$。求證：$c$ 與 $d$ 相交。
+sol: 反設 $c$ 與 $d$ 不相交，即 $c\parallel d$。因為 $a\perp c$，所以 $a\perp d$。又 $b\perp d$，同一平面內垂直於同一直線的兩直線互相平行，所以 $a\parallel b$，與「$a,b$ 相交」矛盾。
+
+=== 習題 3
+zh: 從半圓直徑 $AB$ 的兩端點作弦 $AC$ 與 $BD$，兩弦交於 $E$；過 $C,D$ 作切線 $CP$、$DP$，交於 $P$。求證：$PE\perp AB$。
+hint: 原書用反證法：設直線 $PE$ 交 $AB$ 於 $H$，若 $\angle PHB$ 不是直角，比較角度得出 $PD\ne PC$，與切線長相等矛盾。下面給一個直接證法。
+sol: <figure class="bkfig"><svg viewBox="0 0 320 265" width="300" role="img" aria-label="半圓、弦AC與BD交於E、兩切線交於P，AD與BC延長交於F">
+  <g fill="none" stroke="currentColor" stroke-width="1.5">
+    <path d="M70,248 A90,90 0 0 1 250,248"/><line x1="70" y1="248" x2="250" y2="248"/>
+    <line x1="70" y1="248" x2="211.6" y2="174.3"/><line x1="250" y1="248" x2="91.1" y2="190.1"/>
+    <line x1="211.6" y1="174.3" x2="144.1" y2="127"/><line x1="91.1" y1="190.1" x2="144.1" y2="127"/>
+  </g>
+  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4">
+    <line x1="91.1" y1="190.1" x2="144.1" y2="44.5"/><line x1="211.6" y1="174.3" x2="144.1" y2="44.5"/>
+    <line x1="144.1" y1="44.5" x2="144.1" y2="248" stroke="#c2562b"/>
+  </g>
+  <g fill="currentColor" font-size="15" font-style="italic">
+    <text x="54" y="262">A</text><text x="252" y="262">B</text><text x="216" y="172">C</text><text x="74" y="188">D</text>
+    <text x="150" y="214">E</text><text x="150" y="44">F</text><text x="150" y="124">P</text><text x="148" y="262">H</text>
+  </g>
+</svg><figcaption>虛線：延長 AD、BC 交於 F；紅色虛線 FH ⊥ AB，P 是 FE 的中點</figcaption></figure>
+延長 $AD$、$BC$ 交於 $F$。$AB$ 是直徑，所以 $\angle ACB=\angle ADB=90^\circ$，即 $AC\perp BF$，$BD\perp AF$，$E$ 是 $\triangle ABF$ 兩條高的交點（垂心），所以 $FE\perp AB$，設垂足為 $H$。
+取 $FE$ 的中點 $P'$。$\triangle FCE$、$\triangle FDE$ 都以 $FE$ 為斜邊，所以 $P'C=P'E=P'D$。⟦為什麼｜直角三角形斜邊上的中線等於斜邊的一半。⟧
+在等腰 $\triangle P'CE$ 中 $\angle P'CE=\angle CEF$，而
+$$\angle CEF=90^\circ-\angle CFE=90^\circ-\angle HFB=\angle FBH=\angle CBA.$$
+所以直線 $P'C$ 與弦 $CA$ 的夾角等於弧 $CA$ 所對的圓周角 $\angle CBA$，$P'C$ 是圓在 $C$ 的切線（弦切角定理的逆定理）。同理 $P'D$ 是圓在 $D$ 的切線。兩條切線的交點只有一個，所以 $P'=P$，$P$ 在直線 $FE$ 上，$PE\perp AB$。
+
+=== 習題 4
+zh: 求證：形如 $4n+3$（$n$ 是整數）的整數不能表示為兩個整數的平方和。
+sol: 反設 $4n+3=a^2+b^2$。右邊是奇數，所以 $a,b$ 一奇一偶，不妨設 $a=2s+1$，$b=2t$，則
+$$4n+3=4(s^2+s+t^2)+1=4m+1\quad(m=s^2+s+t^2),$$
+即 $2=4(m-n)$，不可能。⟦一句話看懂｜平方數除以 $4$ 餘 $0$ 或 $1$，兩個相加只能餘 $0,1,2$，不會餘 $3$。⟧
+
+=== 習題 5
+zh: 設 $a$ 是大於 $1$ 的整數，而所有小於或等於 $\sqrt a$ 的質數都不能整除 $a$。求證：$a$ 是質數。
+sol: 反設 $a$ 是合數，取 $a$ 最小的大於 $1$ 的因數 $b$，則 $b$ 是質數⟦為什麼｜若 $b$ 不是質數，它的因數也是 $a$ 的因數且比 $b$ 小，與「最小」矛盾。⟧，且 $a=bc$，$c\ge b$。於是 $b^2\le bc=a$，$b\le\sqrt a$，這個質數 $b$ 整除 $a$，與已知矛盾。所以 $a$ 是質數。
+
+=== 習題 6
+zh: 設 $a,b,c,d$ 都是自然數，且 $n^2&lt;a&lt;b&lt;c&lt;d&lt;(n+1)^2$，其中 $n$ 是大於 $1$ 的自然數。求證：$ad\ne bc$。
+sol: 反設 $ad=bc$，則 $d=\dfrac{bc}a$。令 $a=n^2+p$，$b=n^2+q$，$c=n^2+r$，其中 $1\le p&lt;q&lt;r&lt;2n$（因為 $c&lt;d\le n^2+2n$）。計算
+$$d=\frac{bc}a=n^2+(q+r-p)+\frac{(q-p)(r-p)}{n^2+p}.\qquad①$$
+⟦驗證｜$(n^2+p)\big(n^2+q+r-p\big)=n^4+n^2(q+r)+pq+pr-p^2$，而 $bc=n^4+n^2(q+r)+qr$，兩者相差 $qr-pq-pr+p^2=(q-p)(r-p)$。⟧
+$d$ 是自然數，所以①的最後一項 $\dfrac{(q-p)(r-p)}{n^2+p}$ 是正整數，因此 $(q-p)(r-p)\ge n^2+p>n^2$。由算幾不等式
+$$\frac{(q-p)+(r-p)}2\ge\sqrt{(q-p)(r-p)}>n,$$
+即 $q+r-2p>2n$，$q+r-p\ge2n+1+p\ge2n+2$。代回①：$d\ge n^2+(2n+2)+1>(n+1)^2$，與 $d&lt;(n+1)^2$ 矛盾。
+
+=== 習題 7
+zh: 求證：相交兩圓的兩個交點，一定在連心線的兩側。
+sol: 設兩圓 $\odot O_1$、$\odot O_2$ 交於 $A,B$。反設 $A,B$ 不在連心線 $O_1O_2$ 的兩側。
+因為 $O_1A=O_1B$，$O_2A=O_2B$，$O_1O_2$ 公用，所以 $\triangle O_1AO_2\cong\triangle O_1BO_2$（SSS），$\angle AO_1O_2=\angle BO_1O_2$。
+(1) 若 $A,B$ 在 $O_1O_2$ 的同一側：射線 $O_1A$、$O_1B$ 與 $O_1O_2$ 夾角相等又在同側，所以是同一條射線；再由 $O_1A=O_1B$，$A,B$ 重合，矛盾。
+(2) 若其中一點（設 $B$）在直線 $O_1O_2$ 上：則 $\angle BO_1O_2=0^\circ$ 或 $180^\circ$，由上面的角相等，$A$ 也在這條直線上，而且在 $O_1$ 的同一方向、距離相同，$A,B$ 又重合，矛盾。
+所以兩交點在連心線的兩側。

@@ -1,0 +1,20 @@
+=== meta
+title: 反證法：先否定結論，再找矛盾
+from: cz-L40
+order: 40
+
+=== body
+<div class="hero">直接證不出來 → <b>假設結論錯</b>，推到矛盾<br>三步：<b>反設</b> → <b>歸謬</b> → 結論</div>
+<div class="cards">
+<div class="card"><h4>① 反設要寫對</h4><div class="rule">至少一個 ↔ 一個也沒有<br>至多一個 ↔ 至少兩個<br>都是 ↔ 不都是</div>
+<div class="eg">「至少有 $n$ 個」的反面是「至多 $n-1$ 個」</div></div>
+<div class="card"><h4>② 質數無窮多</h4><div class="rule">反設只有 $p_1,\dots,p_n$</div>
+<div class="eg">$N=p_1p_2\cdots p_n+1$ 除以每個 $p_i$ 都餘 $1$<br>⟹ $N$ 的質因數不在名單裡 <span class="pill">與反設矛盾</span></div></div>
+<div class="card"><h4>③ 只需試到 √a</h4><div class="rule">$a$ 是合數 ⟹ 有質因數 $\le\sqrt a$</div>
+<div class="eg">$221$：試 $2,3,5,7,11,13$（$\sqrt{221}&lt;15$）<br>$221=13\times17$</div></div>
+</div>
+<p>矛盾從哪來？⟦四種矛盾｜① 與已知條件矛盾（最常見，等於證了逆否命題）；② 與公理、定理等事實矛盾，例如推出「平方 $&lt;0$」；③ 與反設本身矛盾，例如反設「它最大」卻造出更大的；④ 自相矛盾，同時推出 $x\ge1000$ 和 $x&lt;1000$。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>反設漏掉情況：$a=0$ 的反面要分 $a>0$、$a&lt;0$ 兩種都推翻</li>
+<li>以為 $p_1p_2\cdots p_n+1$ 一定是質數：$2\cdot3\cdot5\cdot7\cdot11\cdot13+1=30031=59\times509$</li></ul></div>
+<div class="bottomline">反證法的關鍵在第一步：把結論的反面完整、正確地寫出來。</div>

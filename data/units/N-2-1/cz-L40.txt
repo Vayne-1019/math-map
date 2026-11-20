@@ -1,0 +1,17 @@
+=== meta
+title: 平方數除以 4：只會餘 0 或 1
+from: cz-L40
+order: 30
+
+=== body
+<div class="hero">偶數$^2$ = 4 的倍數，奇數$^2$ = 4 的倍數 + 1<br>所以<b>平方數 mod 4 只有 0、1</b>，用來反證「不可能」</div>
+<div class="cards">
+<div class="card"><h4>① 兩平方和</h4><div class="rule">$a^2+b^2\equiv0,1,2\pmod4$</div>
+<div class="eg">$4n+3$ 不能寫成兩平方和<br>例：$7,11,15,19,23$ 都不行 <span class="pill">餘 3 不可能</span></div></div>
+<div class="card"><h4>② 判別式</h4><div class="rule">$b^2-4ac\equiv b^2\pmod4$</div>
+<div class="eg">整係數二次方程的判別式不會是 $1990$（餘 2）、$1991$（餘 3）</div></div>
+</div>
+<p>⟦為什麼奇數平方餘 1｜$(2k+1)^2=4k^2+4k+1=4(k^2+k)+1$。其實還更強：$k^2+k=k(k+1)$ 是偶數，所以奇數平方除以 $8$ 也餘 $1$。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>餘 $0,1,2$ 不代表「一定能寫成兩平方和」：$6=4+2$ 餘 $2$，但 $6$ 不是兩平方和</li></ul></div>
+<div class="bottomline">看到「證明不可能等於某數」，先試試除以 4（或 3、8）的餘數。</div>

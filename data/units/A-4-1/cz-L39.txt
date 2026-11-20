@@ -1,0 +1,21 @@
+=== meta
+title: 分析法：從結論倒著找條件
+from: cz-L39
+order: 40
+
+=== body
+<div class="hero">條件推不下去 → <b>從結論出發</b><br>「要證 P，<b>只須證</b> Q」，一直退到已知的事實</div>
+<div class="cards">
+<div class="card"><h4>① 綜合法</h4><div class="rule">條件 ⟹ … ⟹ 結論</div>
+<div class="eg">$a,b,c$ 是邊長 ⟹ $(b+c)^2>a^2$、$(b-c)^2&lt;a^2$ ⟹ 判別式 $&lt;0$</div></div>
+<div class="card"><h4>② 分析法</h4><div class="rule">結論 ⟸ … ⟸ 已知</div>
+<div class="eg">證 $\sqrt a+\sqrt b>\sqrt c$<br>⟸ $a+b+2\sqrt{ab}>c$<br>⟸ $a+b>c$ ✓ <span class="pill">只須證</span></div></div>
+<div class="card"><h4>③ 等價鏈 ⇔</h4><div class="rule">每一步都可逆才能用</div>
+<div class="eg">$a^2+b^2+c^2=(a-b-c)^2$<br>⇔ $a(b+c)=bc$ ⇔ $\frac1b+\frac1c=\frac1a$</div></div>
+</div>
+<p>兩種寫法常常混用：先用分析法找出「只須證 $B=60^\circ$」，再用綜合法由 $A+C=2B$ 證出來。⟦為什麼混用｜分析法負責找方向（要什麼），綜合法負責把手上的條件推到那裡（有什麼）。兩頭往中間走，比單向硬推容易接上。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>把因果寫反：「只須證」是<b>後面推出前面</b>，寫成 ⟹ 方向就錯了</li>
+<li>平方時沒先確認兩邊都是正數</li>
+<li>亂用 ⇔：$a+b+2\sqrt{ab}>c$ 推不出 $a+b>c$（例 $a=b=1,c=3$）</li></ul></div>
+<div class="bottomline">不知從哪下手時，先問：要證這個，只須證什麼？</div>
