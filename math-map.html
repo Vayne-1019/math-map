@@ -1,4 +1,5 @@
 <meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>競賽數學地圖</title>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -183,6 +184,11 @@ table.rate th { color: var(--muted); font-weight: 500; white-space: nowrap; }
 .ob .obx { display: block; margin: 6px 0 8px; padding: 8px 12px; border-left: 3px solid var(--accent); background: var(--accent-weak); border-radius: 0 6px 6px 0; font-size: .95em; }
 .ob .obx[hidden] { display: none; }
 /* 兩個入口 */
+.resume { display: flex; flex-direction: column; gap: 4px; padding: 14px 16px; border-radius: 10px; border: 1px solid var(--accent); background: var(--accent-weak); color: var(--fg); }
+.resume:hover { text-decoration: none; }
+.resume .k { font-size: .76rem; letter-spacing: .1em; color: var(--muted); }
+.resume span:last-child { color: var(--accent); font-size: .92rem; }
+.seen { font-size: .78rem; color: var(--muted); white-space: nowrap; }
 .entries { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
 .entry { display: flex; flex-direction: column; gap: 4px; padding: 14px 16px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); color: var(--fg); }
 .entry:hover { text-decoration: none; border-color: var(--accent); }
@@ -773,7 +779,10 @@ function viewHome() {
   return `
   <div><h1>競賽數學地圖</h1>
   <p class="lead">把散落在書籍與講義裡的競賽數學，整理成可以自己找路的地圖：每個單元補上思路，每道題標出處、分難度，一題多解互相連結。</p></div>
+  ${resumeBox()}
   <div class="doors">
+    <a class="door" href="#books"><span class="k">競賽站 · 書本</span><h2>競賽教程</h2>
+      <span>《初中數學競賽教程》《高中數學競賽教程》逐講解壓縮：補步驟、補圖，解答預設收起。</span><span>進入書本 →</span></a>
     <a class="door" href="#map"><span class="k">競賽站</span><h2>競賽數學</h2>
       <span>代數、數論、組合、幾何四大領域，難度從 AMC 到 IMO。</span><span>進入單元地圖 →</span></a>
     <a class="door off" href="#basic"><span class="k">基礎站 · 規劃中</span><h2>數學入門</h2>
@@ -1213,6 +1222,27 @@ function need(src, ok) {  // lazy <script>; true when ready
 }
 const waitMsg = src => loaded[src] === 'fail' ? `<p class="lead warn">資料載入失敗，請重新整理頁面。</p>` : `<p class="lead">載入中…</p>`;
 const BOOKS = { cz: '初中數學競賽教程', gz: '高中數學競賽教程' };
+/* 閱讀紀錄：只存在這台裝置的瀏覽器（localStorage），讀不到時網站照常運作 */
+const RK = 'mathmap.reading.v1';
+function readLog() { try { return JSON.parse(localStorage.getItem(RK)) || { last: null, pos: {}, seen: {} }; } catch (_) { return { last: null, pos: {}, seen: {} }; } }
+function saveLog(r) { try { localStorage.setItem(RK, JSON.stringify(r)); } catch (_) {} }
+let resumeNext = false, curLecture = null, posTimer = 0;
+function markLecture(id, no, title) {
+  const r = readLog(), k = `${id}-${no}`;
+  r.last = { id, no, title, t: Date.now() }; r.seen[k] = Date.now(); saveLog(r); curLecture = k;
+}
+window.addEventListener('scroll', () => {
+  if (!curLecture) return; clearTimeout(posTimer);
+  posTimer = setTimeout(() => { const r = readLog(), h = document.documentElement.scrollHeight - innerHeight;
+    r.pos[curLecture] = { y: Math.round(scrollY), f: h > 0 ? +(scrollY / h).toFixed(3) : 0 }; saveLog(r); }, 400);
+}, { passive: true });
+function resumeBox() {
+  const r = readLog(), l = r.last; if (!l || !BOOKS[l.id]) return '';
+  const p = r.pos[`${l.id}-${l.no}`], pct = p ? Math.round(p.f * 100) : 0;
+  const d = new Date(l.t), when = `${d.getMonth() + 1}/${d.getDate()} ${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;
+  return `<a class="resume" href="#book-${l.id}-${l.no}" onclick="resumeNext=true"><span class="k">上次看到 · ${when}</span>
+    <b>${BOOKS[l.id]}　第 ${l.no} 講 ${esc(l.title || '')}</b><span>${pct ? `讀到約 ${pct}%，` : ''}從上次的位置繼續 →</span></a>`;
+}
 function entries(on) {
   return `<div class="entries">
     <a class="entry${on === 'books' ? ' on' : ''}" href="#books"><span class="k">入口一</span><b>書本順序</b><span>照原書一講一講讀，步驟展開、附圖補齊。</span></a>
@@ -1222,7 +1252,7 @@ function bookReady(id) { return need(`books/${id}.js`, () => window.BOOK_DATA &&
 
 function viewBooks() {
   const ids = Object.keys(BOOKS), ready = ids.map(bookReady).every(Boolean);
-  const head = `<div><h1>書本</h1><p class="lead">把競賽教程「解壓縮」：保留原書的講次順序，補上省略的步驟與附圖，數學式全部重新排版。講解與詳解由本站重寫，題目標明原書出處。</p></div>${entries('books')}`;
+  const head = `<div><h1>書本</h1><p class="lead">把競賽教程「解壓縮」：保留原書的講次順序，補上省略的步驟與附圖，數學式全部重新排版。講解與詳解由本站重寫，題目標明原書出處。</p></div>${entries('books')}${resumeBox()}`;
   if (!ready) return head + waitMsg(`books/${ids.find(i => !(window.BOOK_DATA && window.BOOK_DATA[i]))}.js`);
   return head + ids.map(id => { const B = window.BOOK_DATA[id], n = B.lectures.filter(l => l.blocks.length).length;
     return `<section class="panel"><div class="bankhead"><h2><a href="#book-${id}">${esc(B.title)}</a></h2><span class="note">${n}／${B.lectures.length} 講已編譯</span></div>
@@ -1236,8 +1266,8 @@ function viewBook(id) {
   const B = window.BOOK_DATA[id];
   return `${crumb}<div><h1>${esc(B.title)}</h1><p class="lead">${esc(B.editors || '')}${B.publisher ? '・' + esc(B.publisher) : ''}</p></div>
   ${B.parts.map(p => `<section class="panel"><h2>${esc(p.name)}</h2><ol class="lec">${B.lectures.filter(l => l.no >= p.from && l.no <= p.to).map(l => {
-    const has = l.blocks.length;
-    return `<li><span class="no">第 ${l.no} 講</span><span><a href="#book-${id}-${l.no}"${has ? ' style="font-weight:700"' : ' class="todo"'}>${esc(l.title)}</a>${l.author ? ` <span class="note">${esc(l.author)}</span>` : ''}</span>
+    const has = l.blocks.length, seen = readLog().seen[`${id}-${l.no}`];
+    return `<li><span class="no">第 ${l.no} 講</span><span><a href="#book-${id}-${l.no}"${has ? ' style="font-weight:700"' : ' class="todo"'}>${esc(l.title)}</a>${l.author ? ` <span class="note">${esc(l.author)}</span>` : ''}${seen ? ' <span class="seen" title="讀過">✓ 讀過</span>' : ''}</span>
       <span class="st${has && l.status === '完成' ? ' ok' : ''}">${has ? esc(l.status) : '待編譯'}</span></li>`; }).join('')}</ol></section>`).join('')}`;
 }
 const THM_KINDS = ['定理', '定義', '引理', '性質', '公式', '推論'];
@@ -1250,7 +1280,7 @@ function bookBlock(b) {
   return `<div class="item"><div class="ih"><b>${esc(lab)}</b>${b.title ? `<span>${esc(b.title)}</span>` : ''}${b.src ? `<span class="srcchip">${esc(b.src)}</span>` : ''}</div>
     <div class="body">${b.zh || ''}</div>
     ${b.hint ? `<details><summary>提示</summary><div>${b.hint}</div></details>` : ''}
-    ${b.sol ? `<details${isEx ? ' open' : ''}><summary>${isEx ? '解' : '解答'}</summary><div>${b.sol}</div></details>` : ''}
+    ${b.sol ? `<details><summary>${isEx ? '解' : '解答'}</summary><div>${b.sol}</div></details>` : ''}
     ${b.ans ? `<details><summary>答案</summary><div>${b.ans}</div></details>` : ''}</div>`;
 }
 function viewLecture(id, no) {
@@ -1258,6 +1288,7 @@ function viewLecture(id, no) {
   const crumb = `<div class="crumb"><a href="#books">書本</a><span>›</span><a href="#book-${id}">${BOOKS[id]}</a></div>`;
   if (!bookReady(id)) return crumb + waitMsg(`books/${id}.js`);
   const B = window.BOOK_DATA[id], L = B.lectures.find(l => l.no === no); if (!L) return viewNotFound();
+  if (L.blocks.length) markLecture(id, no, L.title);
   const prev = B.lectures.find(l => l.no === no - 1), next = B.lectures.find(l => l.no === no + 1);
   const lk = l => `<a href="#book-${id}-${l.no}">第 ${l.no} 講 ${esc(l.title)}</a>`;
   return `${crumb}<div><h1><span class="mono">第 ${no} 講</span> ${esc(L.title)}</h1>
@@ -1283,7 +1314,7 @@ app.addEventListener('click', e => {
 function route(keep) {
   boards.forEach(b => { try { if (b._ro) b._ro.disconnect(); JXG.JSXGraph.freeBoard(b); } catch (_) {} }); boards = [];
   const h = (location.hash || '#home').slice(1);
-  let html, key = h;
+  let html, key = h; curLecture = null;
   if (h === 'home' || h === '') html = viewHome();
   else if (h === 'map') html = viewMap();
   else if (h === 'exams') html = viewExams();
@@ -1305,7 +1336,11 @@ function route(keep) {
   if (keep !== true) window.scrollTo(0, 0);
   if (window.JXG) app.querySelectorAll('.demo').forEach(el => { const f = DEMOS[el.dataset.demo]; if (f) try { f(el); } catch (err) { el.textContent = '互動圖載入失敗：' + err.message; } });
   else app.querySelectorAll('.demo').forEach(el => { el.textContent = '互動圖需要網路載入繪圖元件。'; });
-  if (window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([app]).then(() => fitMath(app)).catch(() => {});
+  const resume = resumeNext && curLecture; resumeNext = false;
+  const restore = () => { if (!resume) return; const p = readLog().pos[curLecture]; if (!p) return;
+    const h2 = document.documentElement.scrollHeight - innerHeight; window.scrollTo(0, p.f && h2 > 0 ? p.f * h2 : p.y); };
+  if (window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([app]).then(() => { fitMath(app); restore(); }).catch(restore);
+  else restore();
 }
 /* 太寬的數學式（MathJax 不會自動換行）改成獨立一行、框內左右捲動，避免整頁被撐寬 */
 function fitMath(root) {

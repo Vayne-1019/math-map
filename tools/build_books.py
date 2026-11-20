@@ -20,6 +20,25 @@ RAW = {"text", "body"}
 OB = re.compile(r"⟦([^｜⟦⟧]{1,12})｜(.*?)⟧", re.S)
 
 
+FIG = re.compile(r'<figure class="bkfig">.*?</figure>', re.S)
+
+
+def lift_figure(b):
+    """Figures belong with the problem: readers re-check the picture while reading the solution.
+    If the statement has no figure, move the first figure of the solution (or hint) up to it.
+    At most one figure is added; later solution figures (step-by-step drawings) stay in place."""
+    if FIG.search(b.get("zh", "") or ""):
+        return b
+    for k in ("sol", "hint"):
+        m = FIG.search(b.get(k, "") or "")
+        if m:
+            rest = (b[k][:m.start()] + b[k][m.end():])
+            b[k] = re.sub(r"<p>\s*</p>", "", rest).strip()
+            b["zh"] = (b.get("zh", "") + "\n" + m.group(0)).strip()
+            break
+    return b
+
+
 def markup(s):
     if not s:
         return s
@@ -88,6 +107,8 @@ def build_book(book):
         for b in blocks:
             if b["kind"] == "meta":
                 continue
+            if "zh" in b:
+                b = lift_figure(b)
             it = {k: (markup(v) if k in ("html", "zh", "sol", "hint", "ans") else v) for k, v in b.items()}
             items.append(it)
         out.append({"no": no, "title": m.get("title", plan["title"]), "author": m.get("author", plan["author"]),
