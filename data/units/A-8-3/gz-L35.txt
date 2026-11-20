@@ -1,0 +1,20 @@
+=== meta
+title: 單位根濾波：隔項取組合數
+from: gz-L35
+order: 30
+
+=== body
+<div class="hero">要 $\mathrm C_n^0+\mathrm C_n^3+\mathrm C_n^6+\cdots$？<br>把 $x=1,\omega,\omega^2$ 代進 $(1+x)^n$ 再<b>平均</b><br>因為 $1+\omega^s+\omega^{2s}$ 只在 <b>$3\mid s$</b> 時不為 0</div>
+<div class="cards">
+<div class="card"><h4>① 濾波性質</h4><div class="rule">$\displaystyle\sum_{k=0}^{m-1}\omega_k^s=\begin{cases}m,&m\mid s\\0,&m\nmid s\end{cases}$</div>
+<div class="eg">$m=2$：$1^s+(-1)^s$ 是 2 或 0<br>⇒ $\mathrm C_n^0+\mathrm C_n^2+\cdots=\frac{2^n+0^n}{2}$ <span class="pill">偶數項</span></div></div>
+<div class="card"><h4>② 一般公式</h4><div class="rule">$\displaystyle\sum_k\mathrm C_n^{r+km}=\frac1m\sum_{k=0}^{m-1}\omega_k^{-r}(1+\omega_k)^n$</div>
+<div class="eg">要餘數 $r$ 的項，就先乘 $\omega_k^{-r}$ 把它「轉正」</div></div>
+<div class="card"><h4>③ 實數形式</h4><div class="rule">$1+e^{i\theta}=2\cos\frac\theta2\,e^{i\theta/2}$</div>
+<div class="eg">$\sum\mathrm C_n^{3k}=\frac13\left(2^n+2\cos\frac{n\pi}3\right)$<br>$n=6$：$1+20+1=22=\frac{64+2}{3}$ ✓</div></div>
+</div>
+<p>為什麼不是 3 的倍數就抵消？⟦等比級數｜$s$ 不是 3 的倍數時 $\omega^s\ne1$，$1+\omega^s+\omega^{2s}=\dfrac{1-\omega^{3s}}{1-\omega^s}=0$。幾何上：三個向量平均分布在圓上，和為 0。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>忘了 $\omega_k^{-r}$：直接平均 $(1+\omega_k)^n$ 只會得到 $r=0$ 的那一類</li>
+<li>公式要 $0\le r\lt m$</li></ul></div>
+<div class="bottomline">「每隔 $m$ 項取一項」= 用 $m$ 次單位根平均一次。</div>

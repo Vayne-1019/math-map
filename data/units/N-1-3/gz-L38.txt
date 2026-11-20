@@ -1,0 +1,23 @@
+=== meta
+title: 輾轉相除與貝祖定理
+from: gz-L38
+order: 30
+
+=== body
+<div class="hero">$(a,b)=(a,\ b-ax)$：減掉倍數，<b>公因數不變</b><br>一路減到其中一個是 0，剩下的就是 $(a,b)$<br>倒推回去，得到 <b>$ax+by=(a,b)$</b></div>
+<div class="cards">
+<div class="card"><h4>① 輾轉相除</h4><div class="rule">$(a,b)=(b,\ a\bmod b)$</div>
+<div class="eg">$(327,180)=(147,180)=(147,33)$<br>$=(15,33)=(15,3)=3$ <span class="pill">大減小</span></div></div>
+<div class="card"><h4>② 貝祖定理</h4><div class="rule">存在 $x,y$：$ax+by=(a,b)$</div>
+<div class="eg">倒推：$3=20\times180-11\times327$<br>另一組：$x+327t,\ y-180t$</div></div>
+<div class="card"><h4>③ 互質可約</h4><div class="rule">$(a,b)=1,\ a\mid bc\Rightarrow a\mid c$</div>
+<div class="eg">$7\mid 4c$ 且 $(7,4)=1$ ⇒ $7\mid c$<br>理由：$ax+by=1$ 乘 $c$</div></div>
+<div class="card"><h4>④ 用分解式看</h4><div class="rule">$(a,b)$ 取 min，$[a,b]$ 取 max</div>
+<div class="eg">$72=2^33^2,\ 60=2^23\cdot5$<br>$(72,60)=12$，$[72,60]=360$，$12\times360=72\times60$</div></div>
+</div>
+<p>為什麼減掉倍數公因數不變？⟦兩個方向｜$d\mid a,\ d\mid b\Rightarrow d\mid b-ax$；反過來 $d\mid a,\ d\mid b-ax\Rightarrow d\mid(b-ax)+ax=b$。公因數集合一模一樣，最大的當然一樣。⟧</p>
+<p>經典應用：$(2^m-1,2^n-1)=2^{(m,n)}-1$。⟦怎麼看｜$2^m-1$ 與 $2^n-1$ 的「輾轉相除」和 $m,n$ 的輾轉相除同步：$2^m-1-2^{m-n}(2^n-1)=2^{m-n}-1$。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>$a\mid bc$ 推 $a\mid b$ 或 $a\mid c$：只有 $a$ 是<b>質數</b>才對（$6\mid 4\cdot3$）</li>
+<li>以為 $ax+by=c$ 有解就 $c=(a,b)$：只能說 $(a,b)\mid c$</li></ul></div>
+<div class="bottomline">求最大公因數別急著分解：反覆「大的減小的倍數」最快。</div>

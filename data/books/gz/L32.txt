@@ -1,0 +1,107 @@
+=== meta
+title: 用配對法解計數問題
+author: 李炯生
+pages: 255-260
+units: C-2-1, C-2-5, C-1-2
+status: 完成
+
+=== text
+<p>計數問題到處都有。例如：六位好朋友和要轉學的小王排成一排照相，小王坐中間，有幾種坐法？學生會拿到一批運動會入場券，分給高一三個班，每班分到的張數不超過另兩班之和，有幾種分法？用集合的語言說，計數就是：<b>給定一個有限集合 $S$，求它的元素個數</b>，叫做 $S$ 的<b>基數</b>，記作 $|S|$。</p>
+<p>也許有人覺得：集合給定了，元素個數也就定了，有什麼難的？難在 $S$ 通常是用條件描述的，連判斷一個東西屬不屬於 $S$ 都不容易，更別說數出 $|S|$。</p>
+<p>一個著名的例子：$m\times n$ 個數，每個是 0 或 1，排成 $m$ 行 $n$ 列的數表
+$$A=\begin{pmatrix}a_{11}&a_{12}&\cdots&a_{1n}\\a_{21}&a_{22}&\cdots&a_{2n}\\\vdots&&&\vdots\\a_{m1}&a_{m2}&\cdots&a_{mn}\end{pmatrix},$$
+叫做 $m\times n$ 的 $(0,1)$ 矩陣。第 $i$ 行元素的和記為 $r_i$，$R=(r_1,\dots,r_m)$ 叫做<b>行和向量</b>；第 $j$ 列元素的和記為 $s_j$，$S=(s_1,\dots,s_n)$ 叫做<b>列和向量</b>。行和為 $R$、列和為 $S$ 的 $(0,1)$ 矩陣全體記作 $A(R,S)$。求 $|A(R,S)|$ 是一個著名的難題：給定 $R,S$，這樣的矩陣不一定存在。直到 1963 年，賴瑟（Ryser）才給出存在的充要條件，也就是何時 $|A(R,S)|\neq0$；又過了將近 20 年，1980 年魏萬迪才給出 $|A(R,S)|\ne0$ 時的一個非平凡下界。</p>
+<p>計數問題普遍又困難，所以人們發展出計數的理論與方法。這兩講介紹其中最基本的部分。</p>
+<h3>配對法</h3>
+<p>最簡單的計數方法恐怕就是配對法。若有限集合 $A$ 到 $B$ 有一個<b>雙射</b>（一一對應）$\varphi$，把 $a$ 和它的像 $\varphi(a)$ 配成一對，那麼 $A$ 的每個元素恰好出現在一對之中，$B$ 的元素也是。所以
+$$|A|=|B|.$$
+這給了一種基本的計數方法：要數的 $A$ 很複雜時，就找一個好數的集合 $B$，建立 $A$ 到 $B$ 的雙射，把求 $|A|$ 轉成求 $|B|$。要做到這一點，需要兩樣本事：<b>熟悉一些好數的典型集合</b>，以及<b>掌握建立映射的典型技巧</b>。下面用例子說明。</p>
+
+=== 例 1 | 子集的個數
+zh: 求 $n$ 元集合 $S$ 的所有子集的個數。
+sol: 設 $S=\{a_1,a_2,\dots,a_n\}$，它的所有子集組成的集合記作 $P(S)$。分量都是 0 或 1 的有序數組 $x=(x_1,\dots,x_n)$ 叫做 $n$ 維 $(0,1)$ 向量，全體記作 $C_n$。<br>
+對子集 $A$，令 $\varphi(A)=(x_1,\dots,x_n)$，其中 $a_i\in A$ 時 $x_i=1$，否則 $x_i=0$。例如 $\varphi(\varnothing)=(0,0,\dots,0)$，$\varphi(S)=(1,1,\dots,1)$。<br>
+<b>單射：</b>若 $A\ne B$，必有某個 $a_i$ 恰屬於其中之一，於是 $\varphi(A)$ 與 $\varphi(B)$ 的第 $i$ 個分量不同。<br>
+<b>滿射：</b>任給 $x\in C_n$，令 $A=\{a_i: x_i=1\}$，則 $\varphi(A)=x$。<br>
+所以 $\varphi$ 是雙射，$|P(S)|=|C_n|$。每個分量各有 2 種取法且互不影響，所以
+$$|P(S)|=|C_n|=2^n.$$
+<b>換個說法看本質。</b>把 $a_1,\dots,a_n$ 看成 $n$ 個編號的球，$n$ 維向量的 $n$ 個坐標看成 $n$ 個編號的空盒。子集 $\{a_{i_1},\dots,a_{i_k}\}$ 就是把這幾個球放進同號的盒子、其他盒子空著；有球的盒子寫 1、空盒寫 0，就得到對應的 $(0,1)$ 向量。「把球放進盒子」是理解計數問題的好工具。
+<figure class="bkfig"><svg viewBox="0 0 300 90" width="300" role="img" aria-label="子集對應 0-1 向量">
+<g fill="none" stroke="currentColor" stroke-width="1.5"><rect x="20" y="20" width="40" height="40"/><rect x="75" y="20" width="40" height="40"/><rect x="130" y="20" width="40" height="40"/><rect x="185" y="20" width="40" height="40"/><rect x="240" y="20" width="40" height="40"/></g>
+<g fill="#c2562b"><circle cx="40" cy="40" r="10"/><circle cx="150" cy="40" r="10"/><circle cx="205" cy="40" r="10"/></g>
+<g fill="currentColor" font-size="14" text-anchor="middle"><text x="40" y="14">1</text><text x="95" y="14">2</text><text x="150" y="14">3</text><text x="205" y="14">4</text><text x="260" y="14">5</text>
+<text x="40" y="80">1</text><text x="95" y="80">0</text><text x="150" y="80">1</text><text x="205" y="80">1</text><text x="260" y="80">0</text></g>
+</svg><figcaption>子集 $\{a_1,a_3,a_4\}$ ↔ 向量 $(1,0,1,1,0)$</figcaption></figure>
+ans: $2^n$
+
+=== 例 2 | 有序分拆
+zh: 把正整數 $m$ 寫成 $n$ 個正整數之和，項的次序不同算不同寫法。求所有寫法的種數 $P(m,n)$。例如 5 寫成 3 個正整數之和有 $3+1+1$、$1+3+1$、$1+1+3$、$2+2+1$、$2+1+2$、$1+2+2$ 共 6 種。
+sol: 所有寫法的集合記作 $A$。對寫法 $\alpha:\ m=a_1+a_2+\cdots+a_n$，取部分和
+$$S_1=a_1,\ S_2=a_1+a_2,\ \dots,\ S_{n-1}=a_1+\cdots+a_{n-1},$$
+則 $1\le S_1\lt S_2\lt \cdots\lt S_{n-1}\lt m$。⟦顯然｜每個 $a_i\ge1$，所以部分和每次至少增加 1，嚴格遞增；$S_1=a_1\ge1$；$S_{n-1}=m-a_n\le m-1$。⟧令 $\varphi(\alpha)=(S_1,\dots,S_{n-1})$，它是從 $1,2,\dots,m-1$ 中取 $n-1$ 個數排成的遞增數列。這種數列全體記作 $B$，$|B|=\mathrm C_{m-1}^{n-1}$。<br>
+<b>單射：</b>若 $\alpha\ne\alpha'$，設第一個不同的項是第 $i$ 項（$i\le n-1$，因為前 $n-1$ 項相同時最後一項也相同），則 $S_1=S_1',\dots,S_{i-1}=S_{i-1}'$，但 $S_i\ne S_i'$。<br>
+<b>滿射：</b>任給遞增數列 $1\le S_1\lt \cdots\lt S_{n-1}\lt m$，令
+$$m=S_1+(S_2-S_1)+\cdots+(S_{n-1}-S_{n-2})+(m-S_{n-1}),$$
+每一項都是正整數，這是一種寫法，且它的像就是給定的數列。<br>
+所以
+$$P(m,n)=|A|=|B|=\mathrm C_{m-1}^{n-1}.$$
+<figure class="bkfig"><svg viewBox="0 0 300 70" width="300" role="img" aria-label="5=1+3+1 對應切點 1 與 4">
+<g stroke="currentColor" stroke-width="1.5"><line x1="20" y1="35" x2="280" y2="35"/></g>
+<g fill="currentColor" font-size="13" text-anchor="middle"><text x="20" y="60">0</text><text x="72" y="60">1</text><text x="124" y="60">2</text><text x="176" y="60">3</text><text x="228" y="60">4</text><text x="280" y="60">5</text></g>
+<g fill="currentColor"><circle cx="20" cy="35" r="3"/><circle cx="124" cy="35" r="3"/><circle cx="176" cy="35" r="3"/><circle cx="280" cy="35" r="3"/></g>
+<g fill="#c2562b"><circle cx="72" cy="35" r="6"/><circle cx="228" cy="35" r="6"/></g>
+<g fill="currentColor" font-size="13" text-anchor="middle"><text x="46" y="22">1</text><text x="150" y="22">3</text><text x="254" y="22">1</text></g>
+</svg><figcaption>$5=1+3+1$ ↔ 在 $1,2,3,4$ 中選切點 $\{1,4\}$</figcaption></figure>
+ans: $P(m,n)=\mathrm C_{m-1}^{n-1}$
+
+=== text
+<p>把 $m$ 寫成 $n$ 個正整數之和，叫做 $m$ 的一個<b>分拆</b>。這裡項的次序不同算不同，所以叫<b>有序分拆</b>。$m$ 的所有有序分拆的種數記作 $r(m)$。由例 2，
+$$r(m)=P(m,1)+P(m,2)+\cdots+P(m,m)=\mathrm C_{m-1}^0+\mathrm C_{m-1}^1+\cdots+\mathrm C_{m-1}^{m-1}=2^{m-1}.$$
+$r(m)$ 也可以用例 1 的方法求，⟦留給讀者｜部分和集合 $\{S_1,\dots,S_{n-1}\}$ 可以是 $\{1,2,\dots,m-1\}$ 的任意子集（$n$ 不固定），所以有序分拆和 $\{1,\dots,m-1\}$ 的子集一一對應，共 $2^{m-1}$ 個。⟧留給讀者練習。</p>
+<h3>格點折線</h3>
+<p>在坐標平面上，直線 $x=0,\pm1,\pm2,\dots$ 與 $y=0,\pm1,\pm2,\dots$ 構成正方形網，網上的交點叫<b>格點</b>（整點）。從格點 $P_0=(a_0,b_0)$ 出發，向右畫一條斜率為 $1$ 或 $-1$ 的線段到 $P_1=(a_0+1,\,b_0\pm1)$；再從 $P_1$ 向右畫一條斜率 $\pm1$ 的線段到 $P_2$……經過 $n$ 步到 $P_n=(a_0+n,\,b_n)$，得到一條折線 $L$。每一步那一小段叫做 $L$ 的一<b>節</b>。</p>
+<figure class="bkfig"><svg viewBox="0 0 320 170" width="320" role="img" aria-label="格點上的斜率正負 1 折線">
+<g stroke="currentColor" stroke-width=".5" opacity=".45"><path d="M20 10V160M45 10V160M70 10V160M95 10V160M120 10V160M145 10V160M170 10V160M195 10V160M220 10V160M245 10V160M270 10V160M295 10V160M20 10H300M20 35H300M20 60H300M20 85H300M20 110H300M20 135H300M20 160H300"/></g>
+<g stroke="currentColor" stroke-width="1.3"><line x1="20" y1="85" x2="310" y2="85"/><line x1="45" y1="160" x2="45" y2="5"/></g>
+<polyline points="20,135 45,110 70,135 95,160 120,135 145,160 170,135 195,110 220,85 245,60 270,35" fill="none" stroke="#c2562b" stroke-width="2.5"/>
+<g fill="currentColor" font-size="13" font-style="italic"><text x="4" y="140">P₀</text><text x="274" y="32">Pₙ</text><text x="304" y="80">x</text><text x="50" y="12">y</text><text x="32" y="80">O</text></g>
+</svg><figcaption>從 $P_0$ 出發，每步向右一格、向上或向下一格</figcaption></figure>
+
+=== 例 3 | 折線條數
+zh: 給定格點 $P=(a_0,b_0)$ 與 $Q=(a,b)$，$a>a_0$。求連接 $P$ 與 $Q$ 的折線條數。
+sol: 所有連接 $P,Q$ 的折線集合記作 $S$。設 $L\in S$，記 $n=a-a_0$，則 $L$ 恰有 $n$ 節。設其中向上的有 $x$ 節、向下的有 $y$ 節，則
+$$x+y=n,\qquad x-y=b-b_0,$$
+所以 $x=\dfrac{n+(b-b_0)}{2}$，記作 $n_1$。<br>
+取編號 $1,\dots,n$ 的 $n$ 個空格：若 $L$ 從左算起第 $i$ 節向上，第 $i$ 格填 1，否則填 0。這得到「$n_1$ 個 1 與 $n-n_1$ 個 0 填入 $n$ 格」的一種填法 $\varphi(L)$。所有這種填法的集合記作 $T$，⟦容易驗證｜不同的折線一定在某一節方向不同，填法就不同（單射）；任給一種填法，照著 1 向上、0 向下畫，就得到一條從 $P$ 出發、共 $n_1$ 節向上的折線，它的終點橫坐標 $a_0+n=a$、縱坐標 $b_0+n_1-(n-n_1)=b$，正是 $Q$（滿射）。⟧$\varphi$ 是 $S$ 到 $T$ 的雙射。一種填法相當於從 $1,\dots,n$ 中選出 $n_1$ 個位置填 1，所以
+$$|S|=|T|=\mathrm C_n^{n_1},\qquad n=a-a_0,\ n_1=\frac{n+b-b_0}{2}.$$
+<b>注意：</b>折線不一定存在。由推導可見，若存在則 $a>a_0$ 且 $a-a_0+b-b_0$ 是偶數（$n_1$ 要是整數，⟦還有範圍限制｜$0\le n_1\le n$，即 $|b-b_0|\le a-a_0$：每節最多升降 1。⟧）。反過來，滿足這些條件時折線一定存在，請讀者自己證明。
+ans: $\mathrm C_{a-a_0}^{n_1}$，$n_1=\dfrac{a-a_0+b-b_0}{2}$
+
+=== 習題 1
+src: 加拿大數學競賽
+zh: 矩形城市的道路很規則，恰有 $m$ 段長與 $n$ 段寬（$m\times n$ 的方格）。一位婦女住在城市的西南角，每天步行到東北角上班，每個交叉路口不得經過兩次。證明她可選的路線數 $f(m,n)$ 滿足 $f(m,n)\le2^{mn}$。
+<figure class="bkfig"><svg viewBox="0 0 260 150" width="260" role="img" aria-label="路線與其右下方的陰影方格">
+<g fill="currentColor" opacity=".22"><rect x="20" y="105" width="40" height="30"/><rect x="60" y="105" width="40" height="30"/><rect x="100" y="45" width="40" height="30"/><rect x="100" y="75" width="40" height="30"/><rect x="100" y="105" width="40" height="30"/><rect x="140" y="75" width="40" height="30"/><rect x="140" y="105" width="40" height="30"/><rect x="180" y="15" width="40" height="30"/><rect x="180" y="45" width="40" height="30"/><rect x="180" y="75" width="40" height="30"/><rect x="180" y="105" width="40" height="30"/></g>
+<g fill="none" stroke="currentColor" stroke-width=".8"><path d="M20 15H220M20 45H220M20 75H220M20 105H220M20 135H220M20 15V135M60 15V135M100 15V135M140 15V135M180 15V135M220 15V135"/></g>
+<polyline points="20,135 20,105 100,105 100,45 140,45 140,75 180,75 180,15 220,15" fill="none" stroke="#c2562b" stroke-width="3"/>
+<g fill="currentColor" font-size="12"><text x="0" y="150">(0,0)</text><text x="196" y="10">(m,n)</text></g>
+</svg><figcaption>路線（粗線）把它右下方的方格（陰影）圈出來</figcaption></figure>
+hint: 把每條路線對應到它與南邊、東邊邊界所圍出的方格集合，證明不同路線對應不同的集合。
+sol: 所有方格組成的集合記作 $S$，$|S|=mn$。對每條路線 $l$，令 $A$ 為 $l$ 和城市的南邊界、東邊界所圍成區域內的方格集合（圖中陰影）。⟦路線不同，集合就不同｜路線不重複經過路口，它和南、東邊界合起來是一條不自交的封閉折線，圍出的區域就是 $A$ 的方格拼成的。反過來，$A$ 的邊界扣掉南、東兩條邊界上的部分，就是 $l$。所以由 $A$ 可以還原 $l$。⟧路線不同，對應的 $A$ 也不同，所以這是路線集合到 $S$ 的子集族的一個單射。由例 1，$S$ 的子集共 $2^{mn}$ 個，所以 $f(m,n)\le2^{mn}$。
+ans: 見解答（單射到方格集的子集族）
+
+=== 習題 2
+src: 美國數學競賽試題
+zh: 設 $S=\{1,2,\dots,n\}$，$A\subseteq S$。把 $A$ 的元素由大到小排列，然後從最大的數開始交替地減、加後繼的數，得到的結果叫做 $A$ 的交替和。例如 $A=\{1,4,9,6,2\}$ 重新排列為 $9,6,4,2,1$，交替和為 $9-6+4-2+1=6$。求所有這種交替和的總和。
+hint: 把 $P(S)$ 分成含 $n$ 的子集 $M$ 與不含 $n$ 的子集 $N$，令 $\varphi(\{n,a_1,\dots,a_k\})=\{a_1,\dots,a_k\}$。
+sol: 不含 $n$ 的子集 $B=\{a_1,\dots,a_k\}$ 與含 $n$ 的子集 $A=\{n,a_1,\dots,a_k\}$ 一一配對（$\varphi(A)=B$ 是雙射）。$n$ 是 $A$ 中最大的數，排在最前面，其餘各數的正負號正好和在 $B$ 中相反，⟦兩者相加是 n｜設 $B$ 的交替和為 $t$，則 $A$ 的交替和是 $n-t$。例如 $B=\{4,2\}$：$4-2=2$；$A=\{5,4,2\}$：$5-4+2=3=5-2$。空集的交替和算 0，和 $\{n\}$ 配對也成立。⟧共有 $2^{n-1}$ 對，所以總和為 $n\cdot2^{n-1}$。
+ans: $n\cdot2^{n-1}$
+
+=== 習題 3
+zh: 甲、乙兩人比賽乒乓球，結果甲得 $m$ 分、乙得 $n$ 分，$m>n$。在這 $m+n$ 分的過程中，甲的得分一直領先（嚴格多於乙），這樣的得分紀錄有多少種？
+hint: 用 $a_i=1$（第 $i$ 分甲得）或 $-1$（乙得）表示，令 $b_i=a_1+\cdots+a_i$，連接格點 $(i,b_i)$ 成折線，化為「從 $(1,1)$ 到 $(m+n,m-n)$ 且不碰 $x$ 軸的折線」。
+sol: 第 $i$ 分若甲得記 $a_i=1$，乙得記 $a_i=-1$，令 $b_i=a_1+\cdots+a_i$（甲領先的分數）。依次連接格點 $(1,b_1),(2,b_2),\dots,(m+n,b_{m+n})$ 得到折線 $l$。甲一直領先，即每個 $b_i>0$；特別地 $b_1=1$，又 $b_{m+n}=m-n$。所以得分紀錄與「連接 $(1,1)$ 和 $(m+n,m-n)$、且與 $x$ 軸沒有交點的折線」一一對應。<br>
+由例 3，連接 $(1,1)$ 和 $(m+n,m-n)$ 的折線共 $\mathrm C_{m+n-1}^{m-1}$ 條。其中碰到 $x$ 軸的，把第一次碰到 $x$ 軸之前的部分對 $x$ 軸作鏡射，就得到一條從 $(1,-1)$ 到 $(m+n,m-n)$ 的折線；⟦這是一一對應｜任何從 $(1,-1)$ 出發到 $x$ 軸上方的折線一定會穿過 $x$ 軸，把它第一次碰到 $x$ 軸之前的部分鏡射回來，就是一條從 $(1,1)$ 出發且碰到 $x$ 軸的折線。兩個操作互逆。⟧這種折線共 $\mathrm C_{m+n-1}^{m}$ 條（$m+n-1$ 節中有 $m$ 節向上）。所以
+$$\mathrm C_{m+n-1}^{m-1}-\mathrm C_{m+n-1}^{m}=\frac{m-n}{m+n}\,\mathrm C_{m+n}^{m}.$$
+⟦最後一步的化簡｜$\mathrm C_{m+n-1}^{m-1}=\dfrac{m}{m+n}\mathrm C_{m+n}^{m}$，$\mathrm C_{m+n-1}^{m}=\dfrac{n}{m+n}\mathrm C_{m+n}^{m}$，相減即得。⟧
+ans: $\dfrac{m-n}{m+n}\mathrm C_{m+n}^{m}$

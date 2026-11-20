@@ -1,0 +1,144 @@
+=== meta
+title: 容斥原理及其應用
+author: 李炯生
+pages: 261-268
+units: C-1-5, C-1-6
+status: 完成
+
+=== text
+<p>先看一個簡單的計數問題。</p>
+
+=== 例 1 | 不被 6 整除
+zh: 求 $1,2,\dots,600$ 中不能被 6 整除的數的個數。
+sol: 能被 6 整除的是 $6,12,18,\dots,600$，每隔 6 個有一個，共 $600/6=100$ 個。所以不能被 6 整除的有 $600-100=500$ 個。
+ans: $500$
+
+=== text
+<p>把 $1,\dots,600$ 組成的集合記作 $S$，其中被 6 整除的數組成 $A$。$S$ 中不屬於 $A$ 的元素組成 $A$ 對 $S$ 的<b>補集</b>，記作 $\overline A$。例 1 要的是 $|\overline A|$，我們用了間接的辦法：先數 $|A|$，再用
+$$|\overline A|=|S|-|A|\tag{1}$$
+求出 $|\overline A|$。</p>
+<p>式 (1) 可以用文氏圖理解：$S$ 畫成一塊區域、元素個數想成面積，子集 $A$ 是其中一小塊，陰影部分就是 $\overline A$。$A$ 與 $\overline A$ 沒有公共元素、合起來是 $S$，所以 $|S|=|A|+|\overline A|$。</p>
+<figure class="bkfig"><svg viewBox="0 0 200 150" width="200" role="img" aria-label="S 中的 A 與補集">
+<defs><pattern id="h33a" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="currentColor" stroke-width="1.2" opacity=".55"/></pattern></defs>
+<path fill-rule="evenodd" fill="url(#h33a)" stroke="currentColor" stroke-width="1.5" d="M29 10H171A14 14 0 0 1 185 24V126A14 14 0 0 1 171 140H29A14 14 0 0 1 15 126V24A14 14 0 0 1 29 10ZM65 75A35 35 0 1 0 135 75A35 35 0 1 0 65 75Z"/>
+<g fill="currentColor" font-size="15" font-style="italic"><text x="94" y="80">A</text><text x="165" y="30">S</text></g>
+</svg><figcaption>斜線部分是 $\overline A$</figcaption></figure>
+<p>式 (1) 是容斥原理最簡單的形式，下面推廣它。</p>
+
+=== 定理 1 | 兩個集合的容斥
+zh: 設 $A_1,A_2$ 是 $S$ 的子集，則
+$$\begin{aligned}&|\overline{A_1}\cap\overline{A_2}|\\&=|S|-|A_1|-|A_2|\\&\quad+|A_1\cap A_2|.\end{aligned}\tag{2}$$
+sol: 用<b>貢獻法</b>證明。數 $|S|$ 時，$S$ 的每個元素貢獻 1，不在 $S$ 中的貢獻 0，總貢獻就是 $|S|$。要證 (2)，只要檢查 $S$ 的每個元素 $x$ 對左右兩邊的貢獻是否相同。按 $x$ 屬於哪些 $A_i$ 分四種情形：
+<table class="rate"><tr><th>$x$ 在</th><th>左邊</th><th>右邊</th></tr>
+<tr><td>都不在</td><td>1</td><td>$1-0-0+0=1$</td></tr>
+<tr><td>只在 $A_1$</td><td>0</td><td>$1-1-0+0=0$</td></tr>
+<tr><td>只在 $A_2$</td><td>0</td><td>$1-0-1+0=0$</td></tr>
+<tr><td>兩個都在</td><td>0</td><td>$1-1-1+1=0$</td></tr></table>
+每個元素對兩邊的貢獻都相同，所以 (2) 成立。
+
+=== text
+<p>再推廣到 $k$ 個集合。$A_1,\dots,A_k$ 的所有元素組成的集合叫做<b>並集</b>，記作 $A_1\cup A_2\cup\cdots\cup A_k$；它們的公共元素組成的集合叫做<b>交集</b>，記作 $A_1\cap A_2\cap\cdots\cap A_k$。</p>
+
+=== 定理 2 | 容斥原理
+zh: 設 $A_1,A_2,\dots,A_k$ 是 $S$ 的子集，則
+$$\begin{aligned}&|\overline{A_1}\cap\cdots\cap\overline{A_k}|\qquad(3)\\=\;&|S|-\sum_{i}|A_i|\\&+\sum_{i\lt j}|A_i\cap A_j|\\&-\sum_{i\lt j\lt l}|A_i\cap A_j\cap A_l|+\cdots\\&+(-1)^k|A_1\cap A_2\cap\cdots\cap A_k|.\end{aligned}$$
+其中 $\sum_i|A_i|=|A_1|+\cdots+|A_k|$，$\sum_{i\lt j}|A_i\cap A_j|$ 是所有兩兩交集元素個數的和（共 $\mathrm C_k^2$ 項），依此類推。<br>
+$k=2$ 時 (3) 就是 (2)；$k=3$ 時 (3) 成為
+$$\begin{aligned}&|\overline{A_1}\cap\overline{A_2}\cap\overline{A_3}|\\=\;&|S|-|A_1|-|A_2|-|A_3|\\&+|A_1\cap A_2|+|A_1\cap A_3|\\&+|A_2\cap A_3|\\&-|A_1\cap A_2\cap A_3|.\end{aligned}\tag{4}$$
+sol: 以 (4) 為例用貢獻法證明，一般的 $k$ 證法相同。設 $x\in S$：
+<ul><li>$x$ 不屬於任何 $A_i$：對左邊貢獻 1；對右邊只有 $|S|$ 貢獻 1，其餘都是 0，共 1。</li>
+<li>$x$ 恰屬於一個，例如只在 $A_1$：左邊 0；右邊 $1-1=0$。</li>
+<li>$x$ 恰屬於兩個，例如在 $A_2,A_3$、不在 $A_1$：左邊 0；右邊 $1-2+1-0=0$。</li>
+<li>$x$ 屬於全部三個：左邊 0；右邊 $1-3+3-1=0$。</li></ul>
+兩邊貢獻都相同，(4) 成立。⟦一般的 k 為什麼也對｜若 $x$ 恰屬於其中 $m$ 個集合（$m\ge1$），它在右邊被算了 $$1-\mathrm C_m^1+\mathrm C_m^2-\cdots+(-1)^m\mathrm C_m^m=0$$ 次，在左邊也是 0；$m=0$ 時兩邊都是 1。⟧
+
+=== text
+<p>定理 2 通常叫做<b>容斥原理</b>，是計數中極重要、用途極廣的原理。下面舉例說明。</p>
+<figure class="bkfig"><svg viewBox="0 0 240 200" width="240" role="img" aria-label="三個集合的文氏圖">
+<rect x="5" y="5" width="230" height="190" rx="12" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<g fill="currentColor" fill-opacity=".10" stroke="currentColor" stroke-width="1.5"><circle cx="90" cy="80" r="55"/><circle cx="150" cy="80" r="55"/><circle cx="120" cy="130" r="55"/></g>
+<g fill="currentColor" font-size="14" font-style="italic"><text x="45" y="55">A₁</text><text x="178" y="55">A₂</text><text x="112" y="182">A₃</text><text x="214" y="24">S</text></g>
+<g fill="#c2562b" font-size="13" text-anchor="middle"><text x="120" y="102">3 次</text><text x="120" y="56">2</text><text x="80" y="122">2</text><text x="160" y="122">2</text></g>
+</svg><figcaption>直接把 $|A_1|+|A_2|+|A_3|$ 加起來，重疊部分會被重複計算（數字是被算的次數），容斥就是把多算的扣回來</figcaption></figure>
+
+=== 例 2 | 裝錯信封
+src: 波蘭數學競賽題
+zh: 某人給 6 個不同的人各寫了一封信，並準備了 6 個寫有收信人地址的信封。有多少種裝法，使得每封信都裝錯（信與信封上的收信人都不相符）？
+sol: 把 6 個人記為 $1,\dots,6$，每個信封裝一封信的所有裝法組成 $S$，$|S|=6!$。令 $A_i$ 為「第 $i$ 封信裝進第 $i$ 個信封」的裝法集合，則 $|A_i|=5!$。⟦顯然｜第 $i$ 封信已經固定，剩下 5 封信任意裝進 5 個信封。⟧所求為 $|\overline{A_1}\cap\cdots\cap\overline{A_6}|$。<br>
+同理，任兩個的交集有 $4!$ 種（兩封固定、其餘 4 封任意），這樣的交集共 $\mathrm C_6^2$ 個；任三個的交集有 $3!$ 種，共 $\mathrm C_6^3$ 個；依此類推，六個的交集只有 1 種。由容斥原理：
+$$\begin{aligned}|\overline{A_1}\cap\cdots\cap\overline{A_6}|&=6!-6\cdot5!+\mathrm C_6^2\cdot4!-\mathrm C_6^3\cdot3!\\&\quad+\mathrm C_6^4\cdot2!-\mathrm C_6^5\cdot1!+1\\&=720-720+360-120+30-6+1\\&=265.\end{aligned}$$
+ans: $265$
+
+=== text
+<p>例 2 和<b>錯位排列</b>有關。設 $i_1i_2\cdots i_n$ 是 $1,2,\dots,n$ 的一個排列，若 $i_1\ne1,\ i_2\ne2,\ \dots,\ i_n\ne n$，即每個數 $k$ 都不在第 $k$ 個位置上，就叫做錯位排列（錯排）。錯排的個數記作 $D_n$，叫做<b>錯位數</b>。例 2 求的就是 $D_6$。</p>
+
+=== 定理 3 | 錯位數公式
+zh: 對正整數 $n$，
+$$\begin{aligned}D_n=n!\,\Big(&1-\frac1{1!}+\frac1{2!}-\frac1{3!}\\&+\cdots+(-1)^n\frac1{n!}\Big).\end{aligned}\tag{5}$$
+sol: 原書把證明留作習題。仿照例 2：令 $A_i$ 為「$i$ 在第 $i$ 位」的排列集合。任 $j$ 個 $A_i$ 的交集有 $(n-j)!$ 個排列，這樣的交集有 $\mathrm C_n^j$ 個。由容斥原理
+$$D_n=\sum_{j=0}^{n}(-1)^j\mathrm C_n^j(n-j)!=\sum_{j=0}^{n}(-1)^j\frac{n!}{j!},$$
+⟦最後一步｜$$\mathrm C_n^j(n-j)!=\frac{n!}{j!\,(n-j)!}\cdot(n-j)!=\frac{n!}{j!}.$$⟧這就是 (5)。例如 $$D_6=720\left(\tfrac12-\tfrac16+\tfrac1{24}-\tfrac1{120}+\tfrac1{720}\right)=265.$$
+
+=== 例 3 | 三個數字都出現
+src: 匈牙利數學競賽題
+zh: 用數字 1、2、3 組成 $n$ 位數，要求 1、2、3 每個都至少出現一次。求這種 $n$ 位數的個數。
+sol: 由 1、2、3 組成的 $n$ 位數全體記作 $S$，$|S|=3^n$。$S$ 中不含數字 $i$ 的 $n$ 位數組成 $A_i$（$i=1,2,3$），則 $\overline{A_i}$ 是含有 $i$ 的數，所求即 $|\overline{A_1}\cap\overline{A_2}\cap\overline{A_3}|$。<br>
+$|A_i|=2^n$（每位只能用另外兩個數字），$|A_i\cap A_j|=1$（每位都只能用剩下的那一個數字），$A_1\cap A_2\cap A_3=\varnothing$（沒有數字可用）。由 (4)：
+$$|\overline{A_1}\cap\overline{A_2}\cap\overline{A_3}|=3^n-3\cdot2^n+3.$$
+ans: $3^n-3\cdot2^n+3$
+
+=== text
+<p>容斥原理也可以寫成「並集」的形式。</p>
+
+=== 定理 4 | 並集形式的容斥原理
+zh: 設 $A_1,\dots,A_k$ 是 $S$ 的子集，則
+$$\begin{aligned}&|A_1\cup\cdots\cup A_k|\qquad(6)\\=\;&\sum_i|A_i|\\&-\sum_{i\lt j}|A_i\cap A_j|\\&+\sum_{i\lt j\lt l}|A_i\cap A_j\cap A_l|-\cdots\\&+(-1)^{k-1}|A_1\cap\cdots\cap A_k|.\end{aligned}$$
+sol: 由 (3)，只要證
+$$|\overline{A_1}\cap\cdots\cap\overline{A_k}|=|S|-|A_1\cup\cdots\cup A_k|.$$
+仍用貢獻法。若 $x$ 不在任何 $A_i$ 中，它在左邊的交集裡，貢獻 1；它不在並集裡，對右邊貢獻 $1-0=1$。若 $x$ 在某些 $A_i$ 中，它不在左邊的交集裡，貢獻 0；它在並集裡，右邊貢獻 $1-1=0$。兩邊相同。⟦其實就是｜「一個都不屬於」與「至少屬於一個」互為補集，這正是式 (1)。⟧
+
+=== 推論 1
+zh: $|A\cup B|=|A|+|B|-|A\cap B|$。
+
+=== 推論 2
+zh: $$\begin{aligned}|A\cup B\cup C|=\;&|A|+|B|+|C|\\&-|A\cap B|-|A\cap C|-|B\cap C|\\&+|A\cap B\cap C|.\end{aligned}$$
+
+=== 例 4 | 1978 個集合
+zh: 給定 1978 個集合，每個集合恰含 40 個元素，任兩個集合恰有一個公共元素。求這 1978 個集合的並集所含元素的個數。
+sol: 設集合為 $A_1,\dots,A_{1978}$，$|A_i|=40$，$|A_i\cap A_j|=1$（$i\ne j$）。要用 (6)，就得知道若干個集合的交集有幾個元素。<br>
+<b>第一步：找出一個公共元素。</b>看 $A_1$，它和其他 1977 個集合都相交。若 $A_1$ 的每個元素至多屬於另外 49 個集合，那麼和 $A_1$ 相交的集合至多 $40\times49=1960$ 個，⟦為什麼可以這樣數｜每個和 $A_1$ 相交的集合都恰好透過 $A_1$ 的某一個元素和它相交（交集恰一個元素），所以按「透過哪個元素」分類，每類至多 49 個。⟧與「和其他 1977 個都相交」矛盾。所以 $A_1$ 中有元素 $a$ 至少屬於另外 50 個集合，設為 $A_2,\dots,A_{51}$。<br>
+<b>第二步：$a$ 屬於每一個集合。</b>設 $B$ 是 $A_{52},\dots,A_{1978}$ 中的任一個，假設 $a\notin B$。$B$ 和 $A_1,\dots,A_{51}$ 各有一個公共元素，這些元素都不是 $a$；又 $A_1,\dots,A_{51}$ 兩兩只共有 $a$，所以這 51 個公共元素兩兩不同，⟦為什麼兩兩不同｜若 $B$ 與 $A_i$、$A_j$ 的公共元素是同一個 $b$，則 $b\in A_i\cap A_j=\{a\}$，$b=a$，但 $a\notin B$，矛盾。⟧於是 $|B|\ge51$，與 $|B|=40$ 矛盾。所以 $a$ 是全部 1978 個集合的公共元素。<br>
+<b>第三步：計算。</b>任兩個集合的公共元素恰好一個，就是 $a$，所以任意 $m$ 個（$m\ge2$）集合的交集都恰是 $\{a\}$。由 (6)：
+$$\begin{aligned}|A_1\cup\cdots\cup A_{1978}|&=40\,\mathrm C_{1978}^1-\mathrm C_{1978}^2+\mathrm C_{1978}^3-\cdots-\mathrm C_{1978}^{1978}\\&=39\times1978+\left[\mathrm C_{1978}^1-\mathrm C_{1978}^2+\cdots-\mathrm C_{1978}^{1978}\right]\\&=39\times1978+1=77143.\end{aligned}$$
+⟦方括號為什麼是 1｜$(1-1)^{1978}=0$，展開即 $1-\mathrm C_{1978}^1+\cdots+\mathrm C_{1978}^{1978}=0$，所以 $\mathrm C_{1978}^1-\mathrm C_{1978}^2+\cdots-\mathrm C_{1978}^{1978}=1$。⟧<br>
+也可以直接數：每個集合除了 $a$ 以外的 39 個元素互不重複，再加上 $a$，共 $39\times1978+1$ 個。
+ans: $77143$
+
+=== 習題 1
+src: 莫斯科數學競賽題
+zh: 小於 1000 的正整數中，既不能被 5 整除也不能被 7 整除的有多少個？
+hint: $S$ 為小於 1000 的正整數，$A_k$ 為其中被 $k$ 整除的數，求 $|\overline{A_5}\cap\overline{A_7}|$。
+sol: $|S|=999$，$|A_5|=\left[\frac{999}{5}\right]=199$，$|A_7|=\left[\frac{999}{7}\right]=142$，$|A_5\cap A_7|=\left[\frac{999}{35}\right]=28$。由 (2)，
+$$|\overline{A_5}\cap\overline{A_7}|=999-199-142+28=686.$$
+（原書解答印成 666，應為 686。）
+ans: $686$
+
+=== 習題 2
+src: 奧地利 1973 年數學競賽題
+zh: 平面上給定 $2n$ 個點 $A_1,\dots,A_{2n}$（$n>1$），任三點不共線。$M$ 是一些以這些點為端點的線段構成的集合，$|M|\ge n^2+1$。證明：存在以 $A_r,A_s,A_t$ 為頂點、三邊都在 $M$ 中的三角形。並證明：若 $M$ 中的線段數不超過 $n^2$，結論就不一定成立。
+hint: 對 $n$ 用歸納法。取 $M$ 中一條線段 $A_rA_s$，令 $R$、$T$ 分別為與 $A_r$、$A_s$ 相連的其他點，用容斥原理證 $|R\cap T|\ge1$。
+sol: <b>存在性（歸納法）。</b>$n=2$ 時 4 個點至少 5 條線段，即 6 條中至多缺 1 條，⟦顯然有三角形｜4 點共有 4 個三角形，缺的那條線段只破壞其中 2 個，還剩 2 個完整的。⟧結論成立。<br>
+設對 $n$ 成立，看 $2n+2$ 個點、$|M|\ge(n+1)^2+1$ 的情形。取 $M$ 中一條線段 $A_rA_s$，記其餘點的集合為 $S$（$|S|=2n$），
+$$R=\{Z\in S: ZA_r\in M\},\qquad T=\{Z\in S: ZA_s\in M\}.$$
+從 $M$ 中去掉和 $A_r$ 或 $A_s$ 相連的線段，剩下的集合記作 $M_1$，它只涉及 $S$ 的 $2n$ 個點。若 $|M_1|\ge n^2+1$，由歸納假設已有三角形。否則 $|M_1|\le n^2$，於是
+$$|R|+|T|=|M|-|M_1|-1\ge(n+1)^2+1-n^2-1=2n+1.$$
+但 $|R\cup T|\le|S|=2n$，由容斥原理 $|R\cap T|=|R|+|T|-|R\cup T|\ge1$，即有點 $A_t$ 同時和 $A_r$、$A_s$ 相連，$\triangle A_rA_sA_t$ 就是所求。<br>
+<b>$n^2$ 條不夠。</b>取所有 $A_iA_j$，其中 $i-j$ 為奇數。對每個 $A_i$，這樣的線段有 $n$ 條，所以共 $\frac12\cdot2n\cdot n=n^2$ 條。若 $\triangle A_iA_jA_k$ 三邊都在其中，則 $i-j$、$j-k$、$k-i$ 都是奇數，但三者之和為 0 是偶數，⟦矛盾｜三個奇數相加一定是奇數，不可能等於 0。⟧所以沒有三角形。
+ans: 見解答
+
+=== 習題 3
+zh: 給定 1987 個集合，每個集合恰有 45 個元素，任兩個集合的並集恰有 89 個元素。求這 1987 個集合的並集所含元素的個數。
+hint: 先證任兩個集合恰有一個公共元素；再仿例 4 證明有一個元素是全部集合的公共元素。
+sol: 由推論 1，$|A_i\cap A_j|=45+45-89=1$，任兩個集合恰有一個公共元素。仿例 4：取集合 $A$，它和其餘 1986 個集合都相交；若 $A$ 的每個元素至多屬於另外 44 個集合，則至多 $45\times44=1980\lt 1986$ 個集合和 $A$ 相交，矛盾。所以 $A$ 中有元素 $a$ 至少屬於另外 45 個集合。若某集合 $B$ 不含 $a$，它和 $A$ 及那 45 個集合（共 46 個）的公共元素兩兩不同，$|B|\ge46$，矛盾。所以 $a$ 是全體的公共元素，並集元素個數為
+$$44\times1987+1=87429.$$
+ans: $87429$

@@ -1,0 +1,22 @@
+=== meta
+title: 組合和式的三把鑰匙
+from: gz-L34
+order: 40
+
+=== body
+<div class="hero">和式裡的 $k$、$\frac1{k+1}$ 很礙事 → 用 <b>$k\,\mathrm C_n^k=n\,\mathrm C_{n-1}^{k-1}$</b> 把它吸收掉<br>兩個組合數相乘 → 用 <b>$\mathrm C_n^k\mathrm C_k^m=\mathrm C_n^m\mathrm C_{n-m}^{k-m}$</b> 讓一個變常數<br>最後收進 <b>$\sum\mathrm C_n^k=2^n$</b> 或 <b>$\sum(-1)^k\mathrm C_n^k=0$</b></div>
+<div class="cards">
+<div class="card"><h4>① 吸收係數</h4><div class="rule">$k\,\mathrm C_n^k=n\,\mathrm C_{n-1}^{k-1}$</div>
+<div class="eg">$\sum k\,\mathrm C_n^k=n\sum\mathrm C_{n-1}^{k-1}=n\,2^{n-1}$<br>$n=3$：$3+6+3=12=3\cdot4$ <span class="pill">$k$ 換 $n$</span></div></div>
+<div class="card"><h4>② 吸收分母</h4><div class="rule">$\dfrac1{k+1}\mathrm C_n^k=\dfrac1{n+1}\mathrm C_{n+1}^{k+1}$</div>
+<div class="eg">$\sum\frac1{k+1}\mathrm C_n^k=\frac{2^{n+1}-1}{n+1}$<br>$n=2$：$1+1+\frac13=\frac73$ ✓</div></div>
+<div class="card"><h4>③ 對稱配對</h4><div class="rule">$\mathrm C_{2n}^k=\mathrm C_{2n}^{2n-k}$</div>
+<div class="eg">左半 $=$ 右半，中間項多算一次：<br>$\sum_{k\le n}\mathrm C_{2n}^k=2^{2n-1}+\frac12\mathrm C_{2n}^n$</div></div>
+<div class="card"><h4>④ 造遞推</h4><div class="rule">用 $\mathrm C_n^k=\mathrm C_{n-1}^k+\mathrm C_{n-1}^{k-1}$ 拆，找 $f_n$ 與 $f_{n-1}$ 的關係</div>
+<div class="eg">$\sum(-1)^{k+1}\frac1k\mathrm C_n^k=f_{n-1}+\frac1n$<br>$\Rightarrow 1+\frac12+\cdots+\frac1n$</div></div>
+</div>
+<p>$k^2$ 怎麼辦？⟦拆成 k(k−1)+k｜$$\begin{aligned}k^2\mathrm C_n^k&=k(k-1)\mathrm C_n^k+k\,\mathrm C_n^k\\&=n(n-1)\mathrm C_{n-2}^{k-2}+n\,\mathrm C_{n-1}^{k-1},\end{aligned}$$所以 $$\sum k^2\mathrm C_n^k=n(n+1)2^{n-2}.$$⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>換指標忘了改上下限：$k$ 從 1 開始的和換成 $\mathrm C_{n-1}^{k-1}$ 後，變成從 0 到 $n-1$</li>
+<li>$\frac1k\mathrm C_n^k$ 不能直接吸收（會吸收的是 $\frac1k\mathrm C_{n-1}^{k-1}$），要先用 (ii) 拆</li></ul></div>
+<div class="bottomline">每一步都在問：怎樣讓和式只剩一個會動的組合數？</div>

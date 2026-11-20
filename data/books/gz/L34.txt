@@ -1,0 +1,196 @@
+=== meta
+title: 組合恆等式（一）
+author: 史濟懷
+pages: 269-277
+units: C-1-4, A-7-4
+status: 完成
+
+=== text
+<p>第 34、35 兩講介紹計算含組合數的和式、證明組合恆等式的常用方法。想在競賽中取得好成績，熟練掌握組合數的性質並靈活運用，是必要的基本功。</p>
+<p>基本工具是下面六個<b>基本組合恆等式</b>：</p>
+$$\begin{aligned}
+&\text{(i)}\quad \mathrm C_n^k=\mathrm C_n^{n-k};\\
+&\text{(ii)}\quad \mathrm C_n^k=\mathrm C_{n-1}^k+\mathrm C_{n-1}^{k-1};\\
+&\text{(iii)}\quad \mathrm C_n^k=\frac nk\,\mathrm C_{n-1}^{k-1};\\
+&\text{(iv)}\quad \mathrm C_n^k\mathrm C_k^m=\mathrm C_n^m\mathrm C_{n-m}^{k-m};\\
+&\text{(v)}\quad \mathrm C_n^0+\mathrm C_n^1+\cdots+\mathrm C_n^n=2^n;\\
+&\text{(vi)}\quad \mathrm C_n^0-\mathrm C_n^1+\mathrm C_n^2-\cdots+(-1)^n\mathrm C_n^n=0.
+\end{aligned}$$
+<p>前兩個大家都熟悉。(v)、(vi) 在二項式定理中分別取 $a=b=1$ 與 $a=1,b=-1$ 就得到。(iii) 是 (iv) 取 $m=1$ 的特例。⟦為什麼是特例｜$\mathrm C_n^k\cdot k=n\,\mathrm C_{n-1}^{k-1}$，兩邊除以 $k$ 即得 (iii)。⟧下面證 (iv)：
+$$\mathrm C_n^k\mathrm C_k^m=\frac{n!}{k!\,(n-k)!}\cdot\frac{k!}{m!\,(k-m)!}=\frac{n!}{m!\,(n-k)!\,(k-m)!},$$
+$$\mathrm C_n^m\mathrm C_{n-m}^{k-m}=\frac{n!}{m!\,(n-m)!}\cdot\frac{(n-m)!}{(k-m)!\,(n-k)!}=\frac{n!}{m!\,(n-k)!\,(k-m)!}.$$
+兩者相等。⟦用組合意義看 (iv)｜從 $n$ 人中選 $k$ 人當委員，再從委員中選 $m$ 人當幹部；也可以先從 $n$ 人選 $m$ 個幹部，再從其餘 $n-m$ 人補 $k-m$ 個普通委員。兩種數法數的是同一件事。⟧</p>
+<p>熟練這六個恆等式，再配合歸納、遞推、迭代等方法，就能算出一批組合和式，或證明較複雜的恆等式。</p>
+<h3>求和記號 $\Sigma$</h3>
+<p>把 $C_1+C_2+\cdots+C_n$ 簡記為 $\displaystyle\sum_{i=1}^nC_i$，$C_i$ 表示一般項，$i$ 是求和指標，只起輔助作用，換成別的字母也可以，例如
+$$1+2+\cdots+n=\sum_{i=1}^n i=\sum_{k=1}^n k,\qquad \frac1{1\cdot2}+\cdots+\frac1{99\cdot100}=\sum_{n=1}^{99}\frac1{n(n+1)}.$$
+用這個記號，二項式定理寫成 $(a+b)^n=\sum_{k=0}^n\mathrm C_n^ka^{n-k}b^k$，(v)、(vi) 寫成
+$$\sum_{k=0}^n\mathrm C_n^k=2^n,\qquad\sum_{k=0}^n(-1)^k\mathrm C_n^k=0.$$
+更換求和指標時，上下限也要跟著換，例如
+$$\sum_{n=0}^{s}a_nx^n=\sum_{n=2}^{s+2}a_{n-2}x^{n-2}=\sum_{k=1}^{s+1}a_{k-1}x^{k-1}.$$</p>
+
+=== 例 1 | 交錯和的部分和
+zh: 計算 $S_{n,m}=\displaystyle\sum_{k=0}^m(-1)^k\mathrm C_n^k$，$m\le n$。
+sol: $m=n$ 時由 (vi)，$S_{n,n}=0$。設 $m\lt n$，用 (ii) 把每一項拆開：
+$$\begin{aligned}S_{n,m}&=1+\sum_{k=1}^m(-1)^k\left(\mathrm C_{n-1}^k+\mathrm C_{n-1}^{k-1}\right)\\&=1-(\mathrm C_{n-1}^1+\mathrm C_{n-1}^0)+(\mathrm C_{n-1}^2+\mathrm C_{n-1}^1)-\cdots\\&\quad+(-1)^m(\mathrm C_{n-1}^m+\mathrm C_{n-1}^{m-1})\\&=(-1)^m\mathrm C_{n-1}^m.\end{aligned}$$
+⟦中間為什麼會整片消掉｜$1=\mathrm C_{n-1}^0$ 和 $-\mathrm C_{n-1}^0$ 抵消；$-\mathrm C_{n-1}^1$ 和下一組的 $+\mathrm C_{n-1}^1$ 抵消……每一組的第一項都和下一組的第二項抵消，只剩最後一組的 $(-1)^m\mathrm C_{n-1}^m$。⟧所以
+$$\sum_{k=0}^m(-1)^k\mathrm C_n^k=\begin{cases}0,&m=n,\\(-1)^m\mathrm C_{n-1}^m,&m\lt n.\end{cases}$$
+ans: $m=n$ 時為 $0$；$m\lt n$ 時為 $(-1)^m\mathrm C_{n-1}^m$
+
+=== 例 2
+zh: 計算 $\displaystyle\sum_{k=0}^n\frac1{2^k}\mathrm C_n^k$。
+sol: 在 $(1+x)^n=\sum_{k=0}^n\mathrm C_n^kx^k$ 中取 $x=\frac12$，得
+$$\sum_{k=0}^n\frac1{2^k}\mathrm C_n^k=\left(\frac32\right)^n.$$
+ans: $\left(\frac32\right)^n$
+
+=== 例 3
+zh: 計算 $\displaystyle\sum_{k=0}^nk\,\mathrm C_n^k$。
+sol: 困難在於流動指標 $k$ 和 $\mathrm C_n^k$ 相乘。由 (iii)，$k\,\mathrm C_n^k=n\,\mathrm C_{n-1}^{k-1}$，而 $n$ 是常數，可以提到求和號外：
+$$\sum_{k=1}^nk\,\mathrm C_n^k=n\sum_{k=1}^n\mathrm C_{n-1}^{k-1}=n\left(\mathrm C_{n-1}^0+\cdots+\mathrm C_{n-1}^{n-1}\right)=n\,2^{n-1}.$$
+最後用了 (v)。
+ans: $n\,2^{n-1}$
+
+=== 例 4
+src: 美國第 23 屆普特南數學競賽，1962 年
+zh: 求 $\displaystyle\sum_{k=1}^nk^2\mathrm C_n^k=\mathrm C_n^1+2^2\mathrm C_n^2+\cdots+n^2\mathrm C_n^n$。
+sol: 先用一次 (iii)：$k\,\mathrm C_n^k=n\,\mathrm C_{n-1}^{k-1}$，再把剩下的 $k$ 寫成 $(k-1)+1$：
+$$\begin{aligned}\sum_{k=1}^nk^2\mathrm C_n^k&=n\sum_{k=1}^nk\,\mathrm C_{n-1}^{k-1}\\&=n\sum_{k=1}^n(k-1)\mathrm C_{n-1}^{k-1}\\&\quad+n\sum_{k=1}^n\mathrm C_{n-1}^{k-1}\\&=n\sum_{k=2}^n(k-1)\mathrm C_{n-1}^{k-1}\\&\quad+n\,2^{n-1}.\qquad(1)\end{aligned}$$
+右邊的和再用一次 (iii)：$(k-1)\mathrm C_{n-1}^{k-1}=(n-1)\mathrm C_{n-2}^{k-2}$，所以
+$$\sum_{k=2}^n(k-1)\mathrm C_{n-1}^{k-1}=(n-1)\sum_{k=2}^n\mathrm C_{n-2}^{k-2}=(n-1)2^{n-2}.$$
+代回 (1)：
+$$\sum_{k=1}^nk^2\mathrm C_n^k=n(n-1)2^{n-2}+n\,2^{n-1}=n(n+1)2^{n-2}.$$
+⟦最後一步｜$n\,2^{n-1}=2n\cdot2^{n-2}$，所以和為 $n\,2^{n-2}\big[(n-1)+2\big]=n(n+1)2^{n-2}$。⟧
+ans: $n(n+1)2^{n-2}$
+
+=== 例 5
+zh: 計算 $p_n=\displaystyle\sum_{k=0}^n\frac1{k+1}\mathrm C_n^k$，$q_n=\displaystyle\sum_{k=0}^n(-1)^k\frac1{k+1}\mathrm C_n^k$。
+sol: 困難在於組合數前面有因子 $\frac1{k+1}$，但用 (iii) 可以去掉它：由 (iii)，$\mathrm C_{n+1}^{k+1}=\dfrac{n+1}{k+1}\mathrm C_n^k$，所以
+$$\frac1{k+1}\mathrm C_n^k=\frac1{n+1}\mathrm C_{n+1}^{k+1}.$$
+於是
+$$p_n=\frac1{n+1}\sum_{k=0}^n\mathrm C_{n+1}^{k+1}=\frac{2^{n+1}-1}{n+1},$$
+⟦為什麼是 2ⁿ⁺¹−1｜$\sum_{k=0}^n\mathrm C_{n+1}^{k+1}=\mathrm C_{n+1}^1+\cdots+\mathrm C_{n+1}^{n+1}$，比 (v) 的全和 $2^{n+1}$ 少了 $\mathrm C_{n+1}^0=1$。⟧
+$$q_n=\frac1{n+1}\sum_{k=0}^n(-1)^k\mathrm C_{n+1}^{k+1}=\frac1{n+1}.$$
+⟦為什麼是 1｜$\sum_{k=0}^n(-1)^k\mathrm C_{n+1}^{k+1}=\mathrm C_{n+1}^1-\mathrm C_{n+1}^2+\cdots$，由 (vi)，$\mathrm C_{n+1}^0-\mathrm C_{n+1}^1+\mathrm C_{n+1}^2-\cdots=0$，所以它等於 $\mathrm C_{n+1}^0=1$。⟧
+ans: $p_n=\dfrac{2^{n+1}-1}{n+1}$，$q_n=\dfrac1{n+1}$
+
+=== 例 6
+zh: 證明 $$\begin{aligned}&\sum_{k=1}^n(-1)^{k+1}\frac1k\mathrm C_n^k\\&=1+\frac12+\cdots+\frac1n.\end{aligned}\tag{2}$$
+sol: 左邊和例 5 的 $q_n$ 很像，但這裡不能直接用 (iii)。⟦為什麼不能直接用｜例 5 用的是 $\mathrm C_{n+1}^{k+1}=\frac{n+1}{k+1}\mathrm C_n^k$，分母的 $k+1$ 被吸收了。這裡分母是 $k$，(iii) 寫成 $\frac1k\mathrm C_{n-1}^{k-1}=\frac1n\mathrm C_n^k$，只能吸收 $\mathrm C_{n-1}^{k-1}$ 前面的 $\frac1k$。所以要先用 (ii) 從 $\mathrm C_n^k$ 拆出一個 $\mathrm C_{n-1}^{k-1}$。⟧先用 (ii)、再對第二項用 (iii)：
+$$\frac1k\mathrm C_n^k=\frac1k\left(\mathrm C_{n-1}^k+\mathrm C_{n-1}^{k-1}\right)=\frac1k\mathrm C_{n-1}^k+\frac1n\mathrm C_n^k.$$
+⟦第二項｜由 (iii)，$\mathrm C_n^k=\frac nk\mathrm C_{n-1}^{k-1}$，所以 $\frac1k\mathrm C_{n-1}^{k-1}=\frac1n\mathrm C_n^k$。⟧記 $f_n=\sum_{k=1}^n(-1)^{k+1}\frac1k\mathrm C_n^k$。把 $k=n$ 那項單獨寫出，前 $n-1$ 項用上式拆開：
+$$\begin{aligned}f_n&=\sum_{k=1}^{n-1}(-1)^{k+1}\frac1k\mathrm C_n^k+(-1)^{n+1}\frac1n\\&=\sum_{k=1}^{n-1}(-1)^{k+1}\frac1k\mathrm C_{n-1}^k+\frac1n\sum_{k=1}^{n-1}(-1)^{k+1}\mathrm C_n^k+(-1)^{n+1}\frac1n\\&=f_{n-1}+\frac1n\sum_{k=1}^n(-1)^{k+1}\mathrm C_n^k=f_{n-1}+\frac1n.\end{aligned}$$
+最後一步用了 (vi)：$\sum_{k=1}^n(-1)^{k+1}\mathrm C_n^k=1$。由這個遞推關係，及 $f_1=1$，
+$$f_n=f_{n-1}+\frac1n=f_{n-2}+\frac1{n-1}+\frac1n=\cdots=1+\frac12+\cdots+\frac1n.$$
+這就是 (2)。
+
+=== 例 7
+zh: 證明 $$\sum_{k=0}^n\mathrm C_{2n}^k=2^{2n-1}+\frac12\mathrm C_{2n}^n.$$
+sol: 記 $a_n=\sum_{k=0}^n\mathrm C_{2n}^k$，$b_n=\sum_{k=n+1}^{2n}\mathrm C_{2n}^k$。由 (v)，
+$$a_n+b_n=\sum_{k=0}^{2n}\mathrm C_{2n}^k=2^{2n}.\tag{3}$$
+另一方面，對 $b_n$ 作指標變換 $k=2n-r$，並用 (i)：
+$$b_n=\sum_{r=0}^{n-1}\mathrm C_{2n}^{2n-r}=\sum_{r=0}^{n-1}\mathrm C_{2n}^r=a_n-\mathrm C_{2n}^n.$$
+代入 (3)，$2a_n-\mathrm C_{2n}^n=2^{2n}$，即
+$$a_n=2^{2n-1}+\frac12\mathrm C_{2n}^n.$$
+這裡的方法和前幾例不同：為了算 $a_n$，引進輔助數列 $b_n$，透過兩者的關係求出 $a_n$。引進什麼樣的 $b_n$，正是技巧所在。⟦直觀看法｜楊輝三角形第 $2n$ 列左右對稱，中間項是 $\mathrm C_{2n}^n$。左半（含中間）加右半（含中間）等於全和再多一個中間項：$2a_n=2^{2n}+\mathrm C_{2n}^n$。⟧
+
+=== 例 8
+zh: 證明 $A_{mn}=\displaystyle\sum_{k=m}^n(-1)^k\mathrm C_n^k\mathrm C_k^m=(-1)^m\delta_{mn}$，$m\le n$。這裡 $\delta_{mn}=1$（$m=n$），$\delta_{mn}=0$（$m\ne n$）。
+sol: $m=n$ 時和式只有一項 $(-1)^m\mathrm C_m^m\mathrm C_m^m=(-1)^m$，成立。設 $m\lt n$，用 (iv)：
+$$A_{mn}=\sum_{k=m}^n(-1)^k\mathrm C_n^m\mathrm C_{n-m}^{k-m}=\mathrm C_n^m\sum_{k=m}^n(-1)^k\mathrm C_{n-m}^{k-m}.$$
+令 $j=k-m$，$k$ 從 $m$ 到 $n$ 時 $j$ 從 $0$ 到 $n-m$：
+$$A_{mn}=(-1)^m\mathrm C_n^m\sum_{j=0}^{n-m}(-1)^j\mathrm C_{n-m}^j=0,$$
+最後一步用了 (vi)（$n-m\ge1$）。<br>
+關鍵是 (iv)：它把兩個因子都和 $k$ 有關的乘積 $\mathrm C_n^k\mathrm C_k^m$，變成只有一個因子和 $k$ 有關的 $\mathrm C_n^m\mathrm C_{n-m}^{k-m}$，於是 $\mathrm C_n^m$ 可以提出來。這和例 5 用 (iii) 的目的一樣，都是為了化簡和式。
+
+=== 例 9
+zh: 證明恆等式 $$\begin{aligned}&\sum_{k=0}^n(-1)^k2^{2n-2k}\mathrm C_{2n-k+1}^k\\&=n+1.\end{aligned}\tag{4}$$
+sol: 記左邊為 $a_n$。用 (ii) 拆開（$k=0$ 那項是 $2^{2n}$）：
+$$\begin{aligned}a_n&=2^{2n}+\sum_{k=1}^n(-1)^k2^{2n-2k}\\&\qquad\cdot\big(\mathrm C_{2n-k}^k+\mathrm C_{2n-k}^{k-1}\big)\\&=\sum_{k=0}^n(-1)^k2^{2n-2k}\mathrm C_{2n-k}^k\\&\quad+\sum_{k=1}^n(-1)^k2^{2n-2k}\mathrm C_{2n-k}^{k-1}.\quad(5)\end{aligned}$$
+第二個和令 $k=r+1$：
+$$\sum_{r=0}^{n-1}(-1)^{r+1}2^{2(n-1)-2r}\mathrm C_{2(n-1)-r+1}^{r}=-a_{n-1}.$$
+⟦指標怎麼對上的｜$2n-2k=2n-2r-2=2(n-1)-2r$，$2n-k=2n-r-1=2(n-1)-r+1$，上限 $n$ 變成 $n-1$，正是 $a_{n-1}$ 的形式，前面多一個負號。⟧令 $b_n=\sum_{k=0}^n(-1)^k2^{2n-2k}\mathrm C_{2n-k}^k$，則 (5) 成為
+$$b_n=a_n+a_{n-1}.\tag{6}$$
+對 $b_n$ 再用 (ii)（$k=n$ 那項 $(-1)^n\mathrm C_n^n$ 拆成 $\mathrm C_{n-1}^n+\mathrm C_{n-1}^{n-1}=0+1$）：
+$$\begin{aligned}b_n&=\sum_{k=0}^{n-1}(-1)^k2^{2n-2k}\mathrm C_{2n-k-1}^k\\&\quad+\sum_{k=1}^n(-1)^k2^{2n-2k}\mathrm C_{2n-k-1}^{k-1}\\&=4\sum_{k=0}^{n-1}(-1)^k2^{2(n-1)-2k}\mathrm C_{2(n-1)-k+1}^k\\&\quad+\sum_{r=0}^{n-1}(-1)^{r+1}2^{2(n-1)-2r}\mathrm C_{2(n-1)-r}^r\\&=4a_{n-1}-b_{n-1}.\qquad(7)\end{aligned}$$
+由 (6)、(7)：
+$$a_n+a_{n-1}=4a_{n-1}-b_{n-1}=4a_{n-1}-a_{n-1}-a_{n-2},$$
+得遞推關係
+$$a_n=2a_{n-1}-a_{n-2}.$$
+顯然 $a_0=1$，$a_1=4-\mathrm C_2^1=2$。由遞推式 $$a_n-a_{n-1}=a_{n-1}-a_{n-2}=\cdots=a_1-a_0=1,$$所以
+$$a_n=a_{n-1}+1=a_{n-2}+2=\cdots=a_0+n=n+1.$$
+這就是 (4)。由 (4)、(6) 又得一個新恆等式
+$$\sum_{k=0}^n(-1)^k2^{2n-2k}\mathrm C_{2n-k}^k=2n+1;$$
+把指標換成 $n-r$，又得
+$$\sum_{r=0}^n(-1)^{n-r}2^{2r}\mathrm C_{n+r}^{2r}=2n+1.$$
+這個恆等式較難，和例 7 一樣引進了輔助的 $b_n$，但這裡 $b_n$ 的構造比例 7 難些。
+
+=== text
+<h3>思考題</h3>
+<ol><li>$\mathrm C_n^k$ 有哪些計算公式？</li><li>基本組合恆等式是指哪些等式？</li><li>六個基本恆等式在計算組合和式、證明組合恆等式時各起什麼作用？</li></ol>
+
+=== 習題 1
+zh: 計算 $\displaystyle\sum_{k=0}^n2^k\mathrm C_n^k$。
+hint: 在二項式定理 $(1+x)^n=\sum\mathrm C_n^kx^k$ 中令 $x=2$。
+ans: $3^n$
+
+=== 習題 2
+zh: 計算 $\displaystyle\sum_{k=0}^n(k+1)\mathrm C_n^k$。
+sol: $$\sum_{k=0}^n(k+1)\mathrm C_n^k=\sum_{k=0}^nk\,\mathrm C_n^k+\sum_{k=0}^n\mathrm C_n^k=n\,2^{n-1}+2^n=(n+2)2^{n-1}.$$
+ans: $(n+2)2^{n-1}$
+
+=== 習題 3
+zh: 計算 $\displaystyle\sum_{k=0}^{n-1}\mathrm C_{2n-1}^k$。
+sol: 記 $a_n=\sum_{k=0}^{n-1}\mathrm C_{2n-1}^k$，$b_n=\sum_{k=n}^{2n-1}\mathrm C_{2n-1}^k$，則 $a_n+b_n=2^{2n-1}$。由 (i)，$\mathrm C_{2n-1}^k=\mathrm C_{2n-1}^{2n-1-k}$，⟦容易知道 bₙ=aₙ｜$k$ 從 $n$ 到 $2n-1$ 時，$2n-1-k$ 從 $n-1$ 到 $0$，正好是 $a_n$ 的各項。⟧所以 $a_n=2^{2n-2}$。
+ans: $2^{2n-2}$
+
+=== 習題 4
+zh: 計算 $\displaystyle\sum_{k=0}^nk\,\mathrm C_{2n}^k$。
+sol: 由 (iii) 與例 7 的同一想法：
+$$\sum_{k=0}^nk\,\mathrm C_{2n}^k=2n\sum_{k=1}^n\mathrm C_{2n-1}^{k-1}=2n\sum_{l=0}^{n-1}\mathrm C_{2n-1}^l=2n\cdot2^{2n-2}=n\,2^{2n-1}.$$
+最後用了第 3 題。
+ans: $n\,2^{2n-1}$
+
+=== 習題 5
+zh: 證明 $\displaystyle\sum_{k=0}^n\frac1{k+1}\mathrm C_n^kx^k=\frac{(1+x)^{n+1}-1}{(n+1)x}$（$x\ne0$）。
+sol: 由 $\frac1{k+1}\mathrm C_n^k=\frac1{n+1}\mathrm C_{n+1}^{k+1}$（例 5），
+$$\begin{aligned}\sum_{k=0}^n\frac1{k+1}\mathrm C_n^kx^k&=\frac1{(n+1)x}\sum_{k=0}^n\mathrm C_{n+1}^{k+1}x^{k+1}\\&=\frac1{(n+1)x}\sum_{l=1}^{n+1}\mathrm C_{n+1}^lx^l=\frac{(1+x)^{n+1}-1}{(n+1)x}.\end{aligned}$$
+
+=== 習題 6
+zh: 證明 $\displaystyle\sum_{k=m}^n(-1)^k\frac1{k+1}\mathrm C_n^k\mathrm C_k^m=\frac{(-1)^m}{n+1}$。
+hint: 由基本恆等式 (iii) 與例 8 即得。
+sol: 由 (iii)，$\frac1{k+1}\mathrm C_n^k=\frac1{n+1}\mathrm C_{n+1}^{k+1}$。記 $G(m)=\sum_{k=m}^n(-1)^k\mathrm C_{n+1}^{k+1}\mathrm C_k^m$，要證 $G(m)=(-1)^m$。<br>
+用 (ii)：$\mathrm C_k^m=\mathrm C_{k+1}^{m+1}-\mathrm C_k^{m+1}$，於是
+$$G(m)=\sum_{k=m}^n(-1)^k\mathrm C_{n+1}^{k+1}\mathrm C_{k+1}^{m+1}-G(m+1).$$
+⟦為什麼是 G(m+1)｜$\sum_{k=m}^n(-1)^k\mathrm C_{n+1}^{k+1}\mathrm C_k^{m+1}$ 中，$k=m$ 那項的 $\mathrm C_m^{m+1}=0$，所以從 $k=m+1$ 起算，就是 $G(m+1)$。⟧第一個和令 $K=k+1$，就是例 8 的和式加負號：$-A_{m+1,\,n+1}$，由例 8，$m\lt n$ 時它是 0。所以 $m\lt n$ 時 $G(m)=-G(m+1)$。又 $G(n)=(-1)^n\mathrm C_{n+1}^{n+1}\mathrm C_n^n=(-1)^n$，所以
+$$G(m)=(-1)^{n-m}G(n)=(-1)^m,$$
+原式 $=\dfrac{G(m)}{n+1}=\dfrac{(-1)^m}{n+1}$。
+
+=== 習題 7
+zh: 證明 $$\begin{aligned}&\sum_{k=1}^n(-1)^{k+1}\frac1k\mathrm C_n^k\left[1-(1-x)^k\right]\\&=x+\frac{x^2}2+\cdots+\frac{x^n}n.\end{aligned}$$
+hint: 仿例 6：$\frac1k\mathrm C_n^k=\frac1k\mathrm C_{n-1}^k+\frac1n\mathrm C_n^k$，導出遞推式 $f_n=f_{n-1}+\frac1nx^n$。
+sol: 記左邊為 $f_n$。用 $\frac1k\mathrm C_n^k=\frac1k\mathrm C_{n-1}^k+\frac1n\mathrm C_n^k$（例 6）：
+$$f_n=\sum_{k=1}^{n-1}(-1)^{k+1}\frac1k\mathrm C_{n-1}^k\left[1-(1-x)^k\right]+\frac1n\sum_{k=1}^n(-1)^{k+1}\mathrm C_n^k\left[1-(1-x)^k\right]=f_{n-1}+g_n.$$
+⟦k=n 那項去哪了｜$\mathrm C_{n-1}^n=0$，所以把第一個和寫到 $k=n-1$ 為止就好；第二個和本來就到 $k=n$。⟧其中
+$$\begin{aligned}g_n&=-\frac1n\left[\sum_{k=1}^n(-1)^k\mathrm C_n^k-\sum_{k=1}^n(-1)^k\mathrm C_n^k(1-x)^k\right]\\&=-\frac1n\left[\sum_{k=0}^n(-1)^k\mathrm C_n^k-\sum_{k=0}^n(-1)^k\mathrm C_n^k(1-x)^k\right]\\&=-\frac1n\left[0-\big(1-(1-x)\big)^n\right]=\frac1nx^n.\end{aligned}$$
+⟦為什麼從 0 起算｜兩個和的 $k=0$ 項都是 1，一加一減抵消。⟧由 $f_n=f_{n-1}+\frac1nx^n$ 與 $f_1=x$ 即得。
+
+=== 習題 8
+zh: 證明 $\displaystyle\sum_{k=0}^n\frac{(-1)^k}{2k+1}\mathrm C_n^k=\frac{2^{2n}}{2n+1}\left(\mathrm C_{2n}^n\right)^{-1}$。
+hint: 記 $b_n=\sum_{k=0}^n(-1)^k\mathrm C_n^k\frac m{m+k}$，先證 $b_n=\frac n{m+n}b_{n-1}$，再取 $m=\frac12$。
+sol: 對任意正數 $m$，令 $b_n=\sum_{k=0}^n(-1)^k\mathrm C_n^k\dfrac m{m+k}$。因為
+$$\frac{m+n}{m+k}=1+\frac{n-k}{m+k},\qquad (n-k)\mathrm C_n^k=n\,\mathrm C_{n-1}^k,$$
+⟦第二式｜$(n-k)\dfrac{n!}{k!(n-k)!}=n\cdot\dfrac{(n-1)!}{k!(n-1-k)!}$，這也是 (i)、(iii) 合用的結果。⟧所以（$n\ge1$）
+$$(m+n)b_n=m\sum_{k=0}^n(-1)^k\mathrm C_n^k+n\sum_{k=0}^{n-1}(-1)^k\mathrm C_{n-1}^k\frac m{m+k}=0+n\,b_{n-1},$$
+即 $b_n=\dfrac n{m+n}b_{n-1}$，$b_0=1$。取 $m=\frac12$，$b_n=\sum_{k=0}^n(-1)^k\mathrm C_n^k\dfrac1{2k+1}$，且
+$$\begin{aligned}b_n&=\frac{n}{\frac12+n}\cdot\frac{n-1}{\frac12+n-1}\cdots\frac{1}{\frac12+1}\,b_0=\frac{2^nn!}{(2n+1)(2n-1)\cdots3}\\&=\frac{2^{2n}(n!)^2}{(2n+1)\,(2n)!}=\frac{2^{2n}}{2n+1}\left(\mathrm C_{2n}^n\right)^{-1}.\end{aligned}$$
+⟦倒數第二步｜$(2n+1)(2n-1)\cdots3\cdot1$ 等於 $\dfrac{(2n+1)!}{2\cdot4\cdots2n}=\dfrac{(2n+1)!}{2^nn!}$，代入後分母是 $(2n+1)!=(2n+1)\cdot(2n)!$。⟧
+
+=== 習題 9
+zh: 證明 $$\begin{aligned}&\sum_{k=0}^nk\,\mathrm C_{2n+1}^k\\&=(2n+1)2^{2n-1}-\frac{2n+1}2\mathrm C_{2n}^n.\end{aligned}$$
+sol: 由 (iii) 與例 7：
+$$\begin{aligned}\sum_{k=0}^nk\,\mathrm C_{2n+1}^k&=(2n+1)\sum_{k=1}^n\mathrm C_{2n}^{k-1}=(2n+1)\sum_{k=0}^{n-1}\mathrm C_{2n}^k\\&=(2n+1)\left(\sum_{k=0}^n\mathrm C_{2n}^k-\mathrm C_{2n}^n\right)\\&=(2n+1)\left(2^{2n-1}-\frac12\mathrm C_{2n}^n\right).\end{aligned}$$
+
+=== 習題 10
+zh: 證明 $\displaystyle\sum_{k=m}^n\mathrm C_n^k\mathrm C_k^mx^k(1-x)^{n-k}=\mathrm C_n^mx^m$。
+sol: 由 (iv)，令 $j=k-m$：
+$$\begin{aligned}\sum_{k=m}^n\mathrm C_n^k\mathrm C_k^mx^k(1-x)^{n-k}&=\mathrm C_n^m\sum_{k=m}^n\mathrm C_{n-m}^{k-m}x^k(1-x)^{n-k}\\&=\mathrm C_n^mx^m\sum_{j=0}^{n-m}\mathrm C_{n-m}^jx^j(1-x)^{n-m-j}\\&=\mathrm C_n^mx^m\big[x+(1-x)\big]^{n-m}=\mathrm C_n^mx^m.\end{aligned}$$
