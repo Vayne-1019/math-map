@@ -11,6 +11,7 @@ status: 完成
 <p><b>平移</b>：把平面上任一點 $X$ 變到 $X'$，使 $\overrightarrow{XX'}$ 有確定的方向和給定的長度。平移的基本用法是<b>把某個圖形搬到另一個位置</b>，讓分散的線段、角湊在一起；證線段相等、平行、兩角相等時常常有幫助。</p>
 
 === 例 1 | 平行四邊形內的點
+same: cz-L30 例 4
 zh: 設 $P$ 是平行四邊形 $ABCD$ 內一點，使 $\angle PAB=\angle PCB$。證明 $\angle PBA=\angle PDA$。
 sol: <figure class="bkfig"><svg viewBox="0 0 280 160" width="280" role="img" aria-label="平行四邊形 ABCD 內一點 P 與平移後的 P′"><g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="64.3,22.0 22.0,138.4 212.5,138.4 254.8,22.0"/><line x1="64.3" y1="22.0" x2="67.5" y2="74.9"/><line x1="22.0" y1="138.4" x2="67.5" y2="74.9"/><line x1="212.5" y1="138.4" x2="67.5" y2="74.9"/><line x1="254.8" y1="22.0" x2="67.5" y2="74.9"/><line x1="67.5" y1="74.9" x2="258.0" y2="74.9" stroke-dasharray="5 4"/><line x1="254.8" y1="22.0" x2="258.0" y2="74.9" stroke-dasharray="5 4"/><line x1="212.5" y1="138.4" x2="258.0" y2="74.9" stroke-dasharray="5 4"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="58.3" y="16.0">A</text><text x="10.0" y="152.4">B</text><text x="214.5" y="152.4">C</text><text x="256.8" y="16.0">D</text><text x="53.5" y="78.9">P</text><text x="264.0" y="78.9">P′</text></g></svg><figcaption>把 AP 平移到 DP′（虛線）；P、D、P′、C 四點共圓</figcaption></figure>
 把 $AP$ 平移到 $DP'$（平移向量 $\overrightarrow{AD}$）。平移把 $A,B,P$ 變到 $D,C,P'$，所以 $\triangle ABP\cong\triangle DCP'$：
@@ -87,6 +88,7 @@ ans: 面積為 $\dfrac{\sqrt3}4(r_2^2-r_1^2)$。
 <p>有一種非常特殊的旋轉值得強調：繞定點 $P$ 轉 $180^\circ$，也稱為關於點 $P$ 的<b>中心對稱</b>。如果一個圖形在關於 $P$ 的中心對稱下變成自己，就說這個圖形以 $P$ 為對稱中心。例如圓、平行四邊形都是中心對稱圖形，對稱中心分別是圓心和對角線交點。</p>
 
 === 例 8 | 兩條中線各成 30°
+same: cz-L31 例 10
 zh: 在 $\triangle ABC$ 中，引中線 $AF$ 和 $CE$。若 $\angle BAF=\angle BCE=30^\circ$，證明 $\triangle ABC$ 是正三角形。
 sol: <figure class="bkfig"><svg viewBox="0 0 240 222" width="240" role="img" aria-label="三角形 ABC、過 A、E、F、C 的圓與對稱點 O1、O2"><g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="120.0,30.8 54.7,143.9 185.3,143.9"/><line x1="120.0" y1="30.8" x2="120.0" y2="143.9"/><line x1="185.3" y1="143.9" x2="87.3" y2="87.3"/><line x1="152.7" y1="87.3" x2="22.0" y2="87.3" stroke-dasharray="5 4"/><line x1="152.7" y1="87.3" x2="87.3" y2="200.5" stroke-dasharray="5 4"/><line x1="22.0" y1="87.3" x2="87.3" y2="200.5" stroke-dasharray="5 4"/><circle cx="152.7" cy="87.3" r="65.3"/></g><g fill="currentColor"><circle cx="152.7" cy="87.3" r="2.5"/><circle cx="22.0" cy="87.3" r="2.5"/><circle cx="87.3" cy="200.5" r="2.5"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="116.0" y="22.8">A</text><text x="40.7" y="149.9">B</text><text x="191.3" y="149.9">C</text><text x="73.3" y="83.3">E</text><text x="116.0" y="159.9">F</text><text x="158.7" y="85.3">O</text><text x="2.0" y="83.3">O<tspan font-size="11" dy="4">1</tspan></text><text x="81.3" y="218.5">O<tspan font-size="11" dy="4">2</tspan></text></g></svg><figcaption>O₁、O₂ 是 O 關於 E、F 的對稱點；最後證得 O 在 AC 上</figcaption></figure>
 因為 $\angle EAF=\angle ECF=30^\circ$，$A,E,F,C$ 四點共圓。設圓心為 $O$、半徑為 $R$，則 $\angle EOF=2\cdot30^\circ=60^\circ$。我們證明 $O$ 在 $AC$ 上。
@@ -126,6 +128,7 @@ sol: 把正方形 $ABCD$ 繞 $A$ 旋轉 $90^\circ$，使 $B$ 變成 $D$，設 $M
 $$AK=KM'=KD+DM'=KD+BM.$$
 
 === 習題 3
+same: cz-L31 例 8
 zh: 證明：如果三角形的一條中線和角平分線重合，則這個三角形是等腰三角形。
 sol: 設 $\triangle ABC$ 中，中線 $BD$ 又是角平分線。作 $B$ 關於點 $D$ 的對稱點 $B_1$。$D$ 是 $AC$ 的中點，所以 $ABCB_1$ 是平行四邊形，$AB_1=BC$，$AB_1\parallel BC$。由於 $\angle ABB_1=\angle B_1BC=\angle AB_1B$（後一個等號是內錯角），$\triangle B_1AB$ 是等腰三角形，所以 $AB=AB_1=BC$。
 

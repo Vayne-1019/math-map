@@ -130,6 +130,7 @@ sol: <figure class="bkfig"><svg viewBox="0 0 180 221" width="180" role="img" ari
 </svg><figcaption>$MH\perp BC$，$P$ 是 $MH$ 中點；作高 $AD$（虛線）</figcaption></figure>
 <p>作 $BC$ 邊上的高 $AD$，則 $MH$ 是 $\triangle ADC$ 的中位線，$CH=DH$。$\triangle BHM\sim\triangle ADC$，而且把 $\triangle BHM$ 繞 $M$ 轉 $90^\circ$ 後，它的各邊與 $\triangle ADC$ 的對應邊平行⟦為什麼｜對應邊 $BH$ 與 $AD$、$HM$ 與 $DC$、$MB$ 與 $CA$ 兩兩垂直（$BH$ 在 $BC$ 上而 $AD\perp BC$；$MH\perp BC$；$BM\perp AC$），所以轉 $90^\circ$ 後兩兩平行。⟧。所以 $\triangle BHM$ 中 $MH$ 邊上的中線 $BP$，轉過去後與 $\triangle ADC$ 中 $CD$ 邊上的中線 $AH$ 平行，因而旋轉前 $AH\perp BP$。</p>
 === 習題 2
+same: gz-L08 例 6
 zh: 兩個正方形 $BCDA$ 和 $BKMN$ 有公共頂點 $B$（如圖）。證明：$\triangle ABK$ 的中線和 $\triangle CBN$ 的高位於同一條直線上。
 sol: <figure class="bkfig"><svg viewBox="0 0 260 178" width="260" role="img" aria-label="共頂點的兩個正方形">
 <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="138,70.8 107.4,156.3 22,125.7 52.5,40.3"/><polygon points="138,70.8 201.4,34.2 238,97.6 174.6,134.2"/><line x1="52.5" y1="40.3" x2="201.4" y2="34.2"/><line x1="107.4" y1="156.3" x2="174.6" y2="134.2"/><line x1="121.9" y1="22" x2="165.3" y2="154.2" stroke-dasharray="5 4"/></g>

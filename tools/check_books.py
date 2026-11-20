@@ -77,6 +77,11 @@ def main(books):
                 if u not in UNITS:
                     warn(f, f"單元 {u} 不在大綱")
             for b in bl:
+                if b.get("same"):
+                    sm = re.match(r"(cz|gz)-L(\d+)\s+(\S+)\s*(\S+)$", b["same"])
+                    tf = sm and f"data/books/{sm.group(1)}/L{int(sm.group(2)):02d}.txt"
+                    if not sm or not os.path.exists(tf) or not any(x["kind"] == sm.group(3) and x.get("label") == sm.group(4) for x in parse(tf)):
+                        warn(f, f"same: {b['same']} 找不到對應的題目")
                 for k in ("html", "zh", "sol", "hint", "ans"):
                     check_text(f, f"{b['kind']} {b.get('label','')}/{k}", b.get(k), book)
     for f in sorted(glob.glob("data/units/*/*.txt")):

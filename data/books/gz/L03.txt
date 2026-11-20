@@ -155,6 +155,7 @@ $$\frac{|a-z|}{\sqrt2}\le\sqrt{\frac{a^2}2-z^2}.$$
 平方整理得 $3z^2-2az\le0$，即 $0\le z\le\frac23a$。同理 $0\le x,y\le\frac23a$。
 
 === 習題 3
+same: cz-L46 例 3
 zh: 正數 $x,y,z$ 滿足方程組
 $$\begin{cases}x^2+xy+\dfrac{y^2}3=25,\\[2pt]\dfrac{y^2}3+z^2=9,\\[2pt]z^2+xz+x^2=16.\end{cases}$$
 求 $xy+2yz+3xz$ 的值。

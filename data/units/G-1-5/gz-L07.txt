@@ -1,5 +1,5 @@
 === meta
-title: 面積法：同一塊面積算兩次
+title: 面積法進階：塞瓦線比例與分割求和
 from: gz-L07
 order: 50
 

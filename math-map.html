@@ -200,7 +200,17 @@ table.rate th { color: var(--muted); font-weight: 500; white-space: nowrap; }
 .resume:hover { text-decoration: none; }
 .resume .k { font-size: .76rem; letter-spacing: .1em; color: var(--muted); }
 .resume span:last-child { color: var(--accent); font-size: .92rem; }
-.seen { font-size: .78rem; color: var(--muted); white-space: nowrap; }
+.same { margin: 6px 0 0; }
+.item.flash { box-shadow: 0 0 0 2px var(--accent); }
+.rmarks { display: inline-flex; gap: 4px; flex-shrink: 0; }
+.rm { font: inherit; font-size: .85rem; line-height: 1; min-width: 30px; height: 28px; padding: 0 7px; border-radius: 6px; border: 1px solid var(--line); background: var(--surface); color: var(--muted); cursor: pointer; }
+.rm[aria-pressed="true"] { border-color: currentColor; background: var(--accent-weak); }
+.rm-done[aria-pressed="true"] { color: #2f8a4c; }
+.rm-star[aria-pressed="true"] { color: #c98a00; }
+.rm-mark[aria-pressed="true"] { color: var(--accent); }
+.rmarks.big .rm { height: 32px; padding: 0 12px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.endmark { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 16px; border: 1px dashed var(--line); border-radius: 10px; color: var(--muted); }
 .entries { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
 .entry { display: flex; flex-direction: column; gap: 4px; padding: 14px 16px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); color: var(--fg); }
 .entry:hover { text-decoration: none; border-color: var(--accent); }
@@ -1255,9 +1265,31 @@ const waitMsg = src => loaded[src] === 'fail' ? `<p class="lead warn">資料載�
 const BOOKS = { cz: '初中數學競賽教程', gz: '高中數學競賽教程' };
 /* 閱讀紀錄：只存在這台裝置的瀏覽器（localStorage），讀不到時網站照常運作 */
 const RK = 'mathmap.reading.v1';
-function readLog() { try { return JSON.parse(localStorage.getItem(RK)) || { last: null, pos: {}, seen: {} }; } catch (_) { return { last: null, pos: {}, seen: {} }; } }
+function readLog() {
+  let r = null; try { r = JSON.parse(localStorage.getItem(RK)); } catch (_) {}
+  r = r || {}; for (const k of ['pos', 'seen', 'done', 'star', 'mark']) r[k] = r[k] || {}; r.last = r.last || null; return r;
+}
+/* 讀者自己的標記：看完、重要、書籤（每講一組，存在這台裝置） */
+const RMARKS = [['done', '✓', '看完'], ['star', '★', '重要'], ['mark', '⚑', '書籤']];
+function markBtns(k, big) {
+  const r = readLog();
+  return `<span class="rmarks${big ? ' big' : ''}">${RMARKS.map(([f, ic, name]) => `<button type="button" class="rm rm-${f}" data-rm="${f}" data-k="${k}" aria-pressed="${!!r[f][k]}" title="${name}"><span aria-hidden="true">${ic}</span>${big ? ` ${name}` : `<span class="sr">${name}</span>`}</button>`).join('')}</span>`;
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-rm]'); if (!b) return;
+  e.preventDefault(); const r = readLog(), f = b.dataset.rm, k = b.dataset.k;
+  if (r[f][k]) delete r[f][k]; else r[f][k] = Date.now(); saveLog(r);
+  document.querySelectorAll(`[data-rm="${f}"][data-k="${k}"]`).forEach(x => x.setAttribute('aria-pressed', !!r[f][k]));
+});
+function myMarks() {
+  const r = readLog(), keys = [...new Set([...Object.keys(r.star), ...Object.keys(r.mark)])];
+  const rows = keys.map(k => { const m = /^(cz|gz)-(\d+)$/.exec(k); if (!m || !window.BOOK_DATA || !window.BOOK_DATA[m[1]]) return '';
+    const L = window.BOOK_DATA[m[1]].lectures.find(l => l.no === +m[2]); if (!L) return '';
+    return `<li><span class="no">${m[1] === 'cz' ? '初中' : '高中'} 第 ${L.no} 講</span><span><a href="#book-${k.replace('-', '-')}">${esc(L.title)}</a></span>${markBtns(k)}</li>`; }).join('');
+  return rows ? `<section class="panel"><h2>我的標記</h2><p class="note">標成「重要」或加了「書籤」的講次。標記只存在這台裝置的瀏覽器。</p><ol class="lec">${rows}</ol></section>` : '';
+}
 function saveLog(r) { try { localStorage.setItem(RK, JSON.stringify(r)); } catch (_) {} }
-let resumeNext = false, curLecture = null, posTimer = 0;
+let resumeNext = false, curLecture = null, posTimer = 0, jumpTo = '';
 function markLecture(id, no, title) {
   const r = readLog(), k = `${id}-${no}`;
   r.last = { id, no, title, t: Date.now() }; r.seen[k] = Date.now(); saveLog(r); curLecture = k;
@@ -1285,8 +1317,8 @@ function viewBooks() {
   const ids = Object.keys(BOOKS), ready = ids.map(bookReady).every(Boolean);
   const head = `<div><h1>書本</h1><p class="lead">把競賽教程「解壓縮」：保留原書的講次順序，補上省略的步驟與附圖，數學式全部重新排版。講解與詳解由本站重寫，題目標明原書出處。</p></div>${entries('books')}${resumeBox()}`;
   if (!ready) return head + waitMsg(`books/${ids.find(i => !(window.BOOK_DATA && window.BOOK_DATA[i]))}.js`);
-  return head + ids.map(id => { const B = window.BOOK_DATA[id], n = B.lectures.filter(l => l.blocks.length).length;
-    return `<section class="panel"><div class="bankhead"><h2><a href="#book-${id}">${esc(B.title)}</a></h2><span class="note">${n}／${B.lectures.length} 講已編譯</span></div>
+  return head + myMarks() + ids.map(id => { const B = window.BOOK_DATA[id], r = readLog(), n = B.lectures.filter(l => r.done[`${id}-${l.no}`]).length;
+    return `<section class="panel"><div class="bankhead"><h2><a href="#book-${id}">${esc(B.title)}</a></h2><span class="note">${n ? `你已看完 ${n}／${B.lectures.length} 講` : `共 ${B.lectures.length} 講`}</span></div>
       <p class="note">${esc(B.editors || '')}${B.publisher ? '・' + esc(B.publisher) : ''}</p>
       <div class="chips">${B.parts.map(p => `<a class="chip" href="#book-${id}">${esc(p.name)}（第 ${p.from}–${p.to} 講）</a>`).join('')}</div></section>`; }).join('');
 }
@@ -1297,9 +1329,9 @@ function viewBook(id) {
   const B = window.BOOK_DATA[id];
   return `${crumb}<div><h1>${esc(B.title)}</h1><p class="lead">${esc(B.editors || '')}${B.publisher ? '・' + esc(B.publisher) : ''}</p></div>
   ${B.parts.map(p => `<section class="panel"><h2>${esc(p.name)}</h2><ol class="lec">${B.lectures.filter(l => l.no >= p.from && l.no <= p.to).map(l => {
-    const has = l.blocks.length, seen = readLog().seen[`${id}-${l.no}`];
-    return `<li><span class="no">第 ${l.no} 講</span><span><a href="#book-${id}-${l.no}"${has ? ' style="font-weight:700"' : ' class="todo"'}>${esc(l.title)}</a>${l.author ? ` <span class="note">${esc(l.author)}</span>` : ''}${seen ? ' <span class="seen" title="讀過">✓ 讀過</span>' : ''}</span>
-      <span class="st${has && l.status === '完成' ? ' ok' : ''}">${has ? esc(l.status) : '待編譯'}</span></li>`; }).join('')}</ol></section>`).join('')}`;
+    const has = l.blocks.length;
+    return `<li><span class="no">第 ${l.no} 講</span><span><a href="#book-${id}-${l.no}"${has ? ' style="font-weight:700"' : ' class="todo"'}>${esc(l.title)}</a>${l.author ? ` <span class="note">${esc(l.author)}</span>` : ''}</span>
+      ${has ? markBtns(`${id}-${l.no}`) : ''}</li>`; }).join('')}</ol></section>`).join('')}`;
 }
 const THM_KINDS = ['定理', '定義', '引理', '性質', '公式', '推論'];
 function bookBlock(b) {
@@ -1307,9 +1339,13 @@ function bookBlock(b) {
   if (b.kind === 'text') return `<section class="panel prose bk-text">${b.html}</section>`;
   if (THM_KINDS.includes(b.kind))
     return `<div class="item thm"><div class="ih"><b>${esc(lab)}${b.title ? '：' + esc(b.title) : ''}</b></div><div class="body">${b.zh || ''}</div>${b.sol ? `<details><summary>證明</summary><div>${b.sol}</div></details>` : ''}</div>`;
-  const isEx = b.kind === '例';
-  return `<div class="item"><div class="ih"><b>${esc(lab)}</b>${b.title ? `<span>${esc(b.title)}</span>` : ''}${b.src ? `<span class="srcchip">${esc(b.src)}</span>` : ''}</div>
-    <div class="body">${b.zh || ''}</div>
+  const isEx = b.kind === '例', labKey = `${b.kind} ${b.label}`;
+  const head = `<div class="item" data-lab="${esc(labKey)}"><div class="ih"><b>${esc(lab)}</b>${b.title ? `<span>${esc(b.title)}</span>` : ''}${b.src ? `<span class="srcchip">${esc(b.src)}</span>` : ''}</div>
+    <div class="body">${b.zh || ''}</div>`;
+  /* 原書重複收錄的題目：只留題目，詳解連到收錄較完整的那一處 */
+  const sm = b.same && /^(cz|gz)-L(\d+)\s+(.+)$/.exec(b.same);
+  if (sm) return `${head}<p class="note same">這題原書在《${BOOKS[sm[1]]}》第 ${+sm[2]} 講${esc(sm[3].replace(/\s+/g, ' '))} 也收錄過，詳解寫在那裡：<a href="#book-${sm[1]}-${+sm[2]}" onclick="jumpTo='${esc(sm[3].replace(/\s+/g, ' '))}'">前往 →</a></p></div>`;
+  return `${head}
     ${b.hint ? `<details><summary>提示</summary><div>${b.hint}</div></details>` : ''}
     ${b.sol ? `<details><summary>${isEx ? '解' : '解答'}</summary><div>${b.sol}</div></details>` : ''}
     ${b.ans ? `<details><summary>答案</summary><div>${b.ans}</div></details>` : ''}</div>`;
@@ -1323,9 +1359,10 @@ function viewLecture(id, no) {
   const prev = B.lectures.find(l => l.no === no - 1), next = B.lectures.find(l => l.no === no + 1);
   const lk = l => `<a href="#book-${id}-${l.no}">第 ${l.no} 講 ${esc(l.title)}</a>`;
   return `${crumb}<div><h1><span class="mono">第 ${no} 講</span> ${esc(L.title)}</h1>
-    <p class="lead">${L.author ? esc(L.author) + '・' : ''}原書 PDF 第 ${esc(L.pages || L.page)} 頁${L.blocks.length ? '・' + esc(L.status) : ''}</p>
+    <p class="lead">${L.author ? esc(L.author) + '・' : ''}原書 PDF 第 ${esc(L.pages || L.page)} 頁</p>
+    ${L.blocks.length ? markBtns(`${id}-${no}`, true) : ''}
     ${L.units && L.units.length ? `<div class="chips">對應單元：${L.units.map(u => `<a class="chip" href="#u-${u}">${u} ${esc(UNITS[u] ? UNITS[u].name : '')}</a>`).join('')}</div>` : ''}</div>
-  ${L.blocks.length ? L.blocks.map(bookBlock).join('') : `<section class="panel"><p class="lead">這一講還在編譯。</p></section>`}
+  ${L.blocks.length ? L.blocks.map(bookBlock).join('') + `<div class="endmark"><span>讀到這裡了</span>${markBtns(`${id}-${no}`, true)}</div>` : `<section class="panel"><p class="lead">這一講還在編譯。</p></section>`}
   <nav class="pager"><span>${prev ? '← ' + lk(prev) : ''}</span><span>${next ? lk(next) + ' →' : ''}</span></nav>`;
 }
 function digestForUnit(code) {
@@ -1367,8 +1404,10 @@ function route(keep) {
   if (keep !== true) window.scrollTo(0, 0);
   if (window.JXG) app.querySelectorAll('.demo').forEach(el => { const f = DEMOS[el.dataset.demo]; if (f) try { f(el); } catch (err) { el.textContent = '互動圖載入失敗：' + err.message; } });
   else app.querySelectorAll('.demo').forEach(el => { el.textContent = '互動圖需要網路載入繪圖元件。'; });
-  const resume = resumeNext && curLecture; resumeNext = false;
-  const restore = () => { if (!resume) return; const p = readLog().pos[curLecture]; if (!p) return;
+  const resume = resumeNext && curLecture, jump = jumpTo; resumeNext = false; jumpTo = '';
+  const restore = () => {
+    if (jump) { const el = [...app.querySelectorAll('.item[data-lab]')].find(x => x.dataset.lab === jump); if (el) { el.scrollIntoView(); el.classList.add('flash'); } else jumpTo = jump; return; }
+    if (!resume) return; const p = readLog().pos[curLecture]; if (!p) return;
     const h2 = document.documentElement.scrollHeight - innerHeight; window.scrollTo(0, p.f && h2 > 0 ? p.f * h2 : p.y); };
   if (window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([app]).then(() => { fitMath(app); restore(); }).catch(restore);
   else restore();
