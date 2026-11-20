@@ -18,7 +18,7 @@ order: 20
 <div class="card"><h4>③ 面積比 = 底比</h4><div class="rule">同高 ⇒ $\frac{S_1}{S_2}=\frac{\text{底}_1}{\text{底}_2}$</div>
 <div class="eg">$\frac{BD}{DC}=\frac{S_{ABP}}{S_{ACP}}$，三式相乘就是西瓦定理 <span class="pill">同高</span></div></div>
 </div>
-<p>分角線公式：$D$ 在 $BC$ 上，⟦$\frac{\sin\angle BAC}{AD}=\frac{\sin\angle BAD}{AC}+\frac{\sin\angle CAD}{AB}$｜來自 $S_{ABC}=S_{ABD}+S_{ACD}$，三個面積都用 $\frac12xy\sin\theta$ 寫，再同除 $\frac12AB\cdot AC\cdot AD$。三點共線就能直接用它列方程。⟧</p>
+<p>分角線公式（$D$ 在 $BC$ 上）：$\frac{\sin\angle BAC}{AD}=\frac{\sin\angle BAD}{AC}+\frac{\sin\angle CAD}{AB}$。⟦怎麼來的｜來自 $S_{ABC}=S_{ABD}+S_{ACD}$，三個面積都用 $\frac12xy\sin\theta$ 寫，再同除 $\frac12AB\cdot AC\cdot AD$。三點共線就能直接用它列方程。⟧</p>
 <div class="pitfall"><h4>⚠ 最常錯</h4><ul>
 <li>用「同底等高」時，高要從<b>同一條直線</b>量</li>
 <li>面積可以是 0：證共線時正是要算出某個三角形面積為 $0$</li></ul></div>

@@ -30,7 +30,7 @@ sol: <figure class="bkfig"><svg viewBox="0 0 232 190" width="232" role="img" ari
 <g fill="currentColor"></g>
 <g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="11" y="172.9" text-anchor="middle">A</text><text x="221.4" y="172.9" text-anchor="middle">B</text><text x="116.2" y="67.7" text-anchor="middle">C</text><text x="56.6" y="122.7" text-anchor="middle">D</text><text x="175.8" y="122.7" text-anchor="middle">E</text><text x="76.7" y="183.9" text-anchor="middle">K</text><text x="143.5" y="183.9" text-anchor="middle">L</text><text x="178.3" y="19.1" text-anchor="middle">E′</text></g>
 </svg><figcaption>$CD=CE$；把 $\triangle ACE$ 繞 $C$ 轉 $90^\circ$ 到 $\triangle BCE'$（虛線）</figcaption></figure>
-<p><b>證</b>　把 $\triangle ACE$ 繞 $C$ 轉 $90^\circ$ 到 $\triangle BCE'$（$A$ 落到 $B$）。旋轉 $90^\circ$ 使對應線段互相垂直，所以 $BE'\perp AE$，從而 $DK\parallel CL\parallel E'B$。另一方面 $CE'=CE=CD$，$C$ 是 $DE'$ 的中點⟦為什麼 D、C、E′ 共線｜$CE$ 沿 $CB$，轉 $90^\circ$ 後沿 $CA$ 的反方向，所以 $E'$ 在 $AC$ 的延長線上。⟧，所以 $CL$ 是梯形 $DKBE'$ 的中位線，平分腰 $BK$，即 $BL=LK$。</p>
+<p><b>證</b>　把 $\triangle ACE$ 繞 $C$ 轉 $90^\circ$ 到 $\triangle BCE'$（$A$ 落到 $B$）。旋轉 $90^\circ$ 使對應線段互相垂直，所以 $BE'\perp AE$，從而 $DK\parallel CL\parallel E'B$。另一方面 $CE'=CE=CD$，$C$ 是 $DE'$ 的中點⟦為什麼共線｜$CE$ 沿 $CB$，轉 $90^\circ$ 後沿 $CA$ 的反方向，所以 $E'$ 在 $AC$ 的延長線上。⟧，所以 $CL$ 是梯形 $DKBE'$ 的中位線，平分腰 $BK$，即 $BL=LK$。</p>
 === 例 3
 zh: $\triangle ABC$ 和 $\triangle ADE$ 都是等腰直角三角形，$\angle BAC=\angle DAE=90^\circ$，$M$、$N$、$O$ 分別是 $BC$、$DE$、$BD$ 的中點。證明：$\triangle MNO$ 也是等腰直角三角形。
 sol: <figure class="bkfig"><svg viewBox="0 0 243 220" width="243" role="img" aria-label="兩個共頂點的等腰直角三角形">
