@@ -1,0 +1,23 @@
+=== meta
+title: 最值問題：不等式＋等號條件
+from: cz-L35
+order: 20
+
+=== body
+<div class="hero">求最值 = 證一個不等式 $l\ge m$ ＋ 指出<b>何時取等號</b><br>兩者缺一不可</div>
+<figure class="bkfig"><svg viewBox="0 0 210 210" width="210" role="img" aria-label="正方形的內接正三角形">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,22 22,188 188,188 188,22"/><polygon points="134.9,22 22,148.5 188,183" stroke="#c2562b" stroke-width="2"/><line x1="134.9" y1="22" x2="105" y2="165.8"/><line x1="22" y1="188" x2="188" y2="143.5" stroke-dasharray="5 4"/><line x1="105" y1="22" x2="105" y2="188" stroke-dasharray="5 4"/><line x1="22" y1="22" x2="105" y2="165.8" stroke-dasharray="5 4"/><line x1="188" y1="22" x2="105" y2="165.8" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="19.1" text-anchor="middle">A</text><text x="14.2" y="200.7" text-anchor="middle">B</text><text x="195.8" y="200.7" text-anchor="middle">C</text><text x="195.8" y="19.1" text-anchor="middle">D</text><text x="134.9" y="15.9" text-anchor="middle">E</text><text x="11" y="153.4" text-anchor="middle">F</text><text x="199" y="187.9" text-anchor="middle">G</text><text x="105" y="181.7" text-anchor="middle">K</text><text x="199" y="148.4" text-anchor="middle">M</text><text x="105" y="15.9" text-anchor="middle">E<tspan font-size="10">1</tspan></text><text x="105" y="203.9" text-anchor="middle">N</text></g>
+</svg><figcaption>內接正 $\triangle EFG$（紅）；$EK\perp FG$，$K$ 是定點（$\triangle KAD$ 是正三角形）</figcaption></figure>
+<div class="cards">
+<div class="card"><h4>① 找定點、定長</h4><div class="rule">正方形內接正三角形：$FG$ 的中點 $K$ 固定</div>
+<div class="eg">$S=\frac{\sqrt3}4FG^2$：$FG$ 最短 $1$ 得 $\frac{\sqrt3}4$，最長 $BM$ 得 $2\sqrt3-3$ <span class="pill">化成一條線段</span></div></div>
+<div class="card"><h4>② 選參數＋算幾</h4><div class="rule">周長 $2p$，$MN\parallel BC$ 切內切圓</div>
+<div class="eg">$MN=\frac{a(p-a)}p\le\frac p4$，$a=\frac p2$ 時等號 <span class="pill">二次函數</span></div></div>
+<div class="card"><h4>③ 反射拉直</h4><div class="rule">$\angle MON=20^\circ$ 的折線</div>
+<div class="eg">兩次反射後 $\ge A_1D_1=12$ <span class="pill">直化</span></div></div>
+</div>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul><li>只證了不等式沒說等號何時成立（或等號根本取不到）</li>
+<li>反射後要檢查直線<b>真的與射線相交</b></li></ul></div>
+<div class="bottomline">最值 = 不等式 + 等號條件。</div>
