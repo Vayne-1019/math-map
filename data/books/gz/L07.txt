@@ -1,0 +1,163 @@
+=== meta
+title: 面積題和面積法
+author: 杜錫錄
+pages: 48-55
+units: G-1-5
+status: 完成
+
+=== text
+<p>面積是重要又有趣的內容。這裡不談面積的深刻理論，只介紹中學範圍內和面積有關的問題，以及<b>用面積來論證</b>這個重要的想法。</p>
+<h3>一、和面積有關的問題</h3>
+<p>三角形面積公式有很多種形式，不同場合要選最方便的一種。以下用 $\triangle ABC$ 同時表示三角形和它的面積（由上下文分辨），$a,b,c$ 是 $\angle A,\angle B,\angle C$ 的對邊，$h_a$ 是 $a$ 邊上的高，$R$、$r$ 是外接圓、內切圓半徑，$p=\frac12(a+b+c)$ 是半周長。</p>
+
+=== 公式 | 三角形面積
+zh: (1) $\triangle ABC=\frac12ah_a$；<br>(2) $\triangle ABC=\frac12ab\sin C$；<br>(3) $\triangle ABC=rp$；<br>(4) $\triangle ABC=\dfrac{abc}{4R}$；<br>(5) $\triangle ABC=\sqrt{p(p-a)(p-b)(p-c)}$（海龍公式）。<br>公式 (5) 有一個有時非常好用的變形：
+$$16(\triangle ABC)^2=2a^2b^2+2b^2c^2+2c^2a^2-a^4-b^4-c^4.$$
+sol: 變形只要把 (5) 平方，代入 $p=\frac12(a+b+c)$：
+$$\begin{aligned}16p(p-a)(p-b)(p-c)&=(a+b+c)(-a+b+c)(a-b+c)(a+b-c)\\&=\big[(b+c)^2-a^2\big]\big[a^2-(b-c)^2\big],\end{aligned}$$
+展開即得。
+
+=== text
+<p>下面的例子都和面積有關，一些基本原則在解答中註明。</p>
+
+=== 例 1 | 三塊等面積
+zh: 設 $G$ 是 $\triangle ABC$ 內部一點，且 $\triangle ABG$、$\triangle BCG$、$\triangle CAG$ 的面積相等。證明 $G$ 是 $\triangle ABC$ 的重心。
+sol: <figure class="bkfig"><svg viewBox="0 0 260 197" width="260" role="img" aria-label="三角形 ABC 內一點 G 與平行 AB 的直線 l"><g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="40.0,175.0 220.0,175.0 157.0,22.0"/><line x1="40.0" y1="175.0" x2="139.0" y2="124.0"/><line x1="220.0" y1="175.0" x2="139.0" y2="124.0"/><line x1="157.0" y1="22.0" x2="139.0" y2="124.0"/><line x1="22.0" y1="124.0" x2="238.0" y2="124.0" stroke-dasharray="5 4"/><line x1="157.0" y1="22.0" x2="157.0" y2="175.0" stroke-dasharray="5 4"/><line x1="139.0" y1="124.0" x2="139.0" y2="175.0" stroke-dasharray="5 4"/></g><path d="M157.0,168.0 L164.0,168.0 L164.0,175.0" fill="none" stroke="currentColor"/><path d="M139.0,168.0 L146.0,168.0 L146.0,175.0" fill="none" stroke="currentColor"/><text x="242.0" y="138.0" font-size="14" font-style="italic" fill="currentColor">l</text><g fill="currentColor" font-size="15" font-style="italic"><text x="26.0" y="189.0">A</text><text x="224.0" y="189.0">B</text><text x="153.0" y="14.0">C</text><text x="123.0" y="120.0">G</text></g></svg><figcaption>G 到 AB 的距離是 C 到 AB 距離的三分之一</figcaption></figure>
+過 $G$ 作直線 $l\parallel AB$。$\triangle ABG=\frac13\triangle ABC$，兩者同底 $AB$，由公式 (1)，$G$ 到 $AB$ 的距離是 $C$ 到 $AB$ 距離的三分之一，所以 $l$ 通過 $\triangle ABC$ 的重心⟦為什麼｜重心在中線上，把中線分成 $2:1$，所以重心到 $AB$ 的距離也是 $C$ 到 $AB$ 距離的 $\frac13$；到 $AB$ 距離等於這個值的點，全在 $l$ 上。⟧。
+<p>同理，過 $G$ 作 $AC$ 的平行線也通過重心。兩條直線的交點 $G$ 就是重心。</p>
+<p><b>注</b>：這裡用面積公式把兩個同底三角形的面積比，轉化成對應高的比。這種「由面積導出線段比」的方法經常用到。</p>
+
+=== 例 2 | 五個三角形面積都是 1
+zh: 凸五邊形 $ABCDE$ 中，三角形 $ABC,BCD,CDE,DEA,EAB$ 的面積都等於 1。證明：所有具有這個性質的五邊形面積都相同，並證明這樣的五邊形有無窮多個。
+sol: <figure class="bkfig"><svg viewBox="0 0 220 211" width="220" role="img" aria-label="凸五邊形 ABCDE 與對角線 BD、CE 交於 F"><g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="110.0,22.0 22.0,85.9 55.6,189.4 164.4,189.4 198.0,85.9"/><line x1="22.0" y1="85.9" x2="198.0" y2="85.9"/><line x1="22.0" y1="85.9" x2="164.4" y2="189.4"/><line x1="55.6" y1="189.4" x2="198.0" y2="85.9"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="105.0" y="14.0">A</text><text x="6.0" y="89.9">B</text><text x="41.6" y="203.4">C</text><text x="168.4" y="203.4">D</text><text x="204.0" y="89.9">E</text><text x="105.0" y="167.9">F</text></g></svg><figcaption>BE∥CD、BD∥AE、CE∥AB，ABFE 是平行四邊形</figcaption></figure>
+$\triangle BCD=\triangle CDE=1$，兩者同底 $CD$，所以 $B,E$ 到 $CD$ 的距離相等，$BE\parallel CD$。同理 $BD\parallel AE$，$CE\parallel AB$。設 $F$ 是 $BD$ 與 $CE$ 的交點，則 $ABFE$ 的兩組對邊分別平行，是平行四邊形，$\triangle BFE=\triangle ABE=1$。
+<p>設 $\triangle FCD=x$，則 $\triangle BCF=1-x$，$\triangle FED=1-x$。$\triangle BCF$ 與 $\triangle CDF$ 等高、$\triangle BFE$ 與 $\triangle FED$ 等高，所以</p>
+$$\frac{\triangle BCF}{\triangle CDF}=\frac{BF}{FD}=\frac{\triangle BFE}{\triangle FED},\quad\text{即}\quad\frac{1-x}x=\frac1{1-x}.$$
+<p>整理得 $x^2-3x+1=0$，$x=\frac{3\pm\sqrt5}2$；因為 $x&lt;1$，$x=\frac{3-\sqrt5}2$。於是五邊形面積</p>
+$$\triangle ABE+\triangle BFE+\triangle BCF+\triangle CDF+\triangle DEF=4-x=\frac{5+\sqrt5}2,$$
+<p>與五邊形的形狀無關。</p>
+<p><b>無窮多個</b>：任意作一個面積為 1 的 $\triangle ABE$，補成平行四邊形 $ABFE$，再在 $BF$、$EF$ 的延長線上依上面算出的比例取 $D$、$C$（$FD:BF=FC:EF=x:(1-x)$），就得到符合條件的五邊形。$\triangle ABE$ 的形狀可以任意選，所以有無窮多個。⟦檢查比例｜由 $\frac{BF}{FD}=\frac{1-x}x$ 決定 $D$；同理 $\frac{EF}{FC}=\frac{\triangle BFE}{\triangle BFC}=\frac1{1-x}=\frac{1-x}x$，也決定 $C$。正五邊形就是一例。⟧</p>
+ans: 面積都是 $\dfrac{5+\sqrt5}2$。
+
+=== 例 3 | 四個內切圓的面積和
+zh: 邊長為 $a,b,c$ 的 $\triangle ABC$ 有內切圓。作三條分別平行於三邊的切線，從 $\triangle ABC$ 截下三個小三角形。求這四個三角形的內切圓面積之和。
+sol: <figure class="bkfig"><svg viewBox="0 0 280 214" width="280" role="img" aria-label="三角形 ABC 的內切圓與三條平行於三邊的切線"><g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="258.0,191.9 97.5,22.0 22.0,191.9"/><line x1="155.9" y1="191.9" x2="188.5" y2="118.4"/><line x1="76.4" y1="69.6" x2="142.5" y2="69.6"/><line x1="43.7" y1="143.1" x2="89.7" y2="191.9"/><circle cx="116.1" cy="130.8" r="61.2"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="262.0" y="205.9">A</text><text x="93.5" y="14.0">B</text><text x="8.0" y="205.9">C</text><text x="149.9" y="207.9">Q</text><text x="192.5" y="118.4">F</text></g></svg><figcaption>每條切線從 △ABC 截下一個小三角形，例如 △AQF ∼ △ACB</figcaption></figure>
+用兩種方法算 $\triangle ABC$（公式 (3) 與 (1)）：
+$$r=\frac{\triangle ABC}p=\frac{ah_a}{2p}.$$
+平行於 $BC$ 的切線 $QF$ 截下 $\triangle AQF$，它和 $\triangle ABC$ 相似，對應高分別是 $h_a-2r$ 與 $h_a$（兩條平行切線相距一個直徑），所以它的內切圓半徑
+$$\frac{r_A}r=\frac{h_a-2r}{h_a}=1-\frac ap.$$
+⟦最後一步｜由 $r=\frac{ah_a}{2p}$ 得 $\frac{2r}{h_a}=\frac ap$。⟧
+由對稱性 $\frac{r_B}r=1-\frac bp$，$\frac{r_C}r=1-\frac cp$。所求四圓面積和為
+$$\begin{aligned}&\pi(r^2+r_A^2+r_B^2+r_C^2)\\&=\pi\Big[1+\Big(1-\tfrac ap\Big)^2+\Big(1-\tfrac bp\Big)^2+\Big(1-\tfrac cp\Big)^2\Big]r^2\\&=\frac\pi{p^2}(a^2+b^2+c^2)\,r^2\\&=\frac\pi{p^3}(p-a)(p-b)(p-c)(a^2+b^2+c^2).\end{aligned}$$
+⟦中間兩步｜方括號展開為 $4-\frac{2(a+b+c)}p+\frac{a^2+b^2+c^2}{p^2}=\frac{a^2+b^2+c^2}{p^2}$（因 $a+b+c=2p$）。<br>最後用 $r^2=\frac{(\triangle ABC)^2}{p^2}=\frac{(p-a)(p-b)(p-c)}p$（公式 (5)）。⟧
+<p><b>注</b>：一個重要的手法是<b>用兩種以上的方法計算同一個量</b>，這在許多場合都能導出證明。例 4 也基於這個原則，讀者還可以參看例 7、例 9。</p>
+ans: $\dfrac\pi{p^3}(p-a)(p-b)(p-c)(a^2+b^2+c^2)$，其中 $p=\frac12(a+b+c)$。
+
+=== 例 4 | 平行四邊形中的四邊形
+zh: 在平行四邊形的每一邊上各取一點，若以這四點為頂點的四邊形面積等於平行四邊形面積的一半，證明：這個四邊形至少有一條對角線平行於平行四邊形的邊。
+sol: <figure class="bkfig"><svg viewBox="0 0 260 138" width="260" role="img" aria-label="平行四邊形 ABCD 各邊上取 K、L、M、N"><g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="50.2,22.0 238.0,22.0 209.8,115.9 22.0,115.9"/><line x1="97.1" y1="22.0" x2="69.0" y2="115.9" stroke-dasharray="5 4"/><line x1="97.1" y1="22.0" x2="225.3" y2="64.3" stroke="#c2562b" stroke-width="2"/><line x1="225.3" y1="64.3" x2="69.0" y2="115.9" stroke="#c2562b" stroke-width="2"/><line x1="69.0" y1="115.9" x2="33.3" y2="78.3" stroke="#c2562b" stroke-width="2"/><line x1="33.3" y1="78.3" x2="97.1" y2="22.0" stroke="#c2562b" stroke-width="2"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="42.2" y="16.0">A</text><text x="240.0" y="16.0">B</text><text x="213.8" y="129.9">C</text><text x="8.0" y="129.9">D</text><text x="93.1" y="16.0">K</text><text x="231.3" y="68.3">L</text><text x="65.0" y="133.9">M</text><text x="17.3" y="82.3">N</text></g></svg><figcaption>此圖取 AK＝DM，所以對角線 KM∥AD</figcaption></figure>
+設 $\angle DAB=\alpha$，$AD=a$，$AB=b$，$K,L,M,N$ 依次在 $AB,BC,CD,DA$ 上。四邊形 $KLMN$ 的面積等於 $ABCD$ 減去四個角上的三角形，由公式 (2)（平行四邊形四個角的正弦都是 $\sin\alpha$）：
+$$\begin{aligned}\triangle AKN&=\tfrac12AN\cdot AK\sin\alpha,\\\triangle BKL&=\tfrac12BL\cdot(b-AK)\sin\alpha,\\\triangle CLM&=\tfrac12(a-BL)(b-MD)\sin\alpha,\\\triangle DMN&=\tfrac12(a-AN)\cdot MD\sin\alpha,\end{aligned}$$
+而 $ABCD$ 的面積是 $ab\sin\alpha$。四個三角形加起來，整理後⟦展開整理｜方括號內為 $AN\cdot AK+b\,BL-BL\cdot AK+ab-a\,MD-b\,BL+BL\cdot MD+a\,MD-AN\cdot MD$，消去後剩 $ab+AN\cdot AK-BL\cdot AK+BL\cdot MD-AN\cdot MD=ab+(AN-BL)(AK-MD)$。⟧得 $\frac12\sin\alpha\,[ab+(AN-BL)(AK-MD)]$，所以
+$$KLMN=\tfrac12\sin\alpha\,\big[ab-(AN-BL)(AK-MD)\big].$$
+另一方面，$KLMN$ 又等於 $\frac12ab\sin\alpha$。比較兩個結果：
+$$(AN-BL)(AK-MD)=0.$$
+於是或者 $AN=BL$，此時 $LN\parallel AB$；或者 $AK=MD$，此時 $KM\parallel AD$。
+
+=== text
+<h3>二、面積方法</h3>
+<p>所謂<b>面積方法</b>，是處理幾何問題時把面積當作論證（或計算）的出發點。基本要點是：<b>用不同的方法計算同一塊面積，列出等式</b>，得到所要的量之間的關係。</p>
+
+=== 例 5 | 三條塞瓦線
+zh: 如圖，$P$ 是 $\triangle ABC$ 內部一點，$AP,BP,CP$ 的延長線分別交 $BC,CA,AB$ 於 $A',B',C'$，$AP=a$，$BP=b$，$CP=c$，$PA'=PB'=PC'=d$。若 $a+b+c=43$，$d=3$，求 $abc$。
+sol: <figure class="bkfig"><svg viewBox="0 0 260 221" width="260" role="img" aria-label="三角形 ABC 內一點 P 的三條塞瓦線"><g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="22.0,198.7 238.0,198.7 179.1,22.0"/><line x1="22.0" y1="198.7" x2="209.2" y2="112.3"/><line x1="238.0" y1="198.7" x2="102.4" y2="108.3"/><line x1="179.1" y1="22.0" x2="134.9" y2="198.7"/></g><g font-size="13" font-style="italic" fill="currentColor"><text x="83.8" y="163.2">a</text><text x="197.8" y="165.2">b</text><text x="170.3" y="80.9">c</text><text x="183.4" y="136.1">d</text><text x="122.0" y="118.1">d</text><text x="148.2" y="173.2">d</text></g><g fill="currentColor" font-size="15" font-style="italic"><text x="8.0" y="212.7">A</text><text x="242.0" y="212.7">B</text><text x="175.1" y="14.0">C</text><text x="135.6" y="141.8">P</text><text x="215.2" y="112.3">A′</text><text x="80.4" y="108.3">B′</text><text x="130.9" y="216.7">C′</text></g></svg><figcaption>示意圖：a、b、c、d 為各段長（未按題中數值比例）</figcaption></figure>
+不論 $P$ 在內部哪個位置，都有 $\triangle ABC=\triangle PAB+\triangle PBC+\triangle PCA$，即
+$$\frac{\triangle PAB}{\triangle ABC}+\frac{\triangle PBC}{\triangle ABC}+\frac{\triangle PCA}{\triangle ABC}=1.\tag{1}$$
+$\triangle PAB$ 和 $\triangle ABC$ 同底 $AB$，高的比等於 $PC':CC'$，所以
+$$\frac{\triangle PAB}{\triangle ABC}=\frac{PC'}{CC'}=\frac d{c+d},$$
+同理 $\frac{\triangle PBC}{\triangle ABC}=\frac d{a+d}$，$\frac{\triangle PCA}{\triangle ABC}=\frac d{b+d}$。代入 (1)，去分母整理得⟦整理｜兩邊乘 $(a+d)(b+d)(c+d)$：左邊 $d\sum(b+d)(c+d)=d(ab+bc+ca)+2d^2(a+b+c)+3d^3$，右邊 $abc+d(ab+bc+ca)+d^2(a+b+c)+d^3$。⟧
+$$2d^3+(a+b+c)d^2-abc=0.$$
+所以 $abc=2\cdot27+43\cdot9=441$。
+ans: $abc=441$
+
+=== 例 6 | 正六邊形對角線上的分點
+zh: 正六邊形 $ABCDEF$ 的對角線 $AC$、$CE$ 分別被內點 $M$、$N$ 分成 $\dfrac{AM}{AC}=\dfrac{CN}{CE}=r$。若 $B,M,N$ 三點共線，求 $r$。
+sol: <figure class="bkfig"><svg viewBox="0 0 230 205" width="230" role="img" aria-label="正六邊形 ABCDEF，B、M、N 三點共線"><g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="208.0,102.5 161.5,22.0 68.5,22.0 22.0,102.5 68.5,183.1 161.5,183.1"/><line x1="208.0" y1="102.5" x2="68.5" y2="22.0"/><line x1="68.5" y1="22.0" x2="68.5" y2="183.1"/><line x1="161.5" y1="22.0" x2="45.2" y2="138.2"/><line x1="208.0" y1="102.5" x2="68.5" y2="183.1" stroke-dasharray="5 4"/><line x1="161.5" y1="22.0" x2="68.5" y2="183.1" stroke-dasharray="5 4"/></g><g fill="currentColor"><circle cx="127.5" cy="56.0" r="2.5"/><circle cx="68.5" cy="115.0" r="2.5"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="214.0" y="106.5">A</text><text x="163.5" y="16.0">B</text><text x="56.5" y="16.0">C</text><text x="6.0" y="106.5">D</text><text x="56.5" y="199.1">E</text><text x="163.5" y="199.1">F</text><text x="125.5" y="48.0">M</text><text x="52.5" y="113.0">N</text></g></svg><figcaption>AM∶AC＝CN∶CE＝r，B、M、N 共線</figcaption></figure>
+有面積等式
+$$\triangle BCN=\triangle BCM+\triangle MCN.\tag{1}$$
+下面用 $r$ 表示這三個面積。記 $\triangle ABC=s$，則⟦這兩個面積｜設邊長為 1：$s=\frac12\sin120^\circ=\frac{\sqrt3}4$。$\triangle ACE$ 是邊長 $\sqrt3$ 的正三角形，面積 $\frac{3\sqrt3}4=3s$。$\triangle BCE$ 中 $\angle BCE=90^\circ$，$BC=1$，$CE=\sqrt3$，面積 $\frac{\sqrt3}2=2s$。⟧$\triangle ACE=3s$，$\triangle BCE=2s$。
+<p>$\triangle BCM$ 和 $\triangle ABC$ 有公共邊 $BC$，所以</p>
+$$\frac{\triangle BCM}{\triangle ABC}=\frac{CM}{AC}=1-r,\quad\triangle BCM=(1-r)s.$$
+同理
+$$\triangle MCN=\frac{CM}{CA}\cdot\frac{CN}{CE}\cdot\triangle ACE=3r(1-r)s,\qquad\triangle BCN=r\cdot\triangle BCE=2rs.$$
+代入 (1)：$2r=(1-r)+3r(1-r)$，即 $3r^2=1$。$r&gt;0$，所以 $r=\frac{\sqrt3}3$。
+<p>（這題是 1982 年國際數學奧林匹克第 5 題。）</p>
+ans: $r=\dfrac{\sqrt3}3$
+
+=== text
+<p>讀者請注意下面的例子和例 3、例 4 在論證想法上的相似之處。</p>
+
+=== 例 7 | 邊長成等差
+zh: 若三角形的三邊長成等差數列，證明它的內切圓半徑等於某一條高的三分之一。
+sol: 設三邊為 $a,b,c$，不妨設 $a\le b\le c$，則 $b=\frac{a+c}2$。一方面，由公式 (3)
+$$\triangle ABC=\tfrac12r(a+b+c)=\tfrac32rb;$$
+另一方面，由公式 (1)，$\triangle ABC=\frac12h_bb$。用兩種方法算了同一個量，比較得 $r=\frac13h_b$。
+
+=== 例 8 | 過重心的直線
+zh: 如圖，$G$ 是 $\triangle ABC$ 的重心，過 $G$ 作直線分別交邊 $AB$、$AC$ 於 $E$、$F$。證明 $EG\le2GF$。
+sol: <figure class="bkfig"><svg viewBox="0 0 260 217" width="260" role="img" aria-label="過重心 G 的直線交 AB、AC 於 E、F"><g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="108.4,22.0 22.0,194.8 238.0,194.8"/><line x1="46.2" y1="146.4" x2="188.9" y2="129.3"/><line x1="22.0" y1="194.8" x2="173.2" y2="108.4" stroke-dasharray="5 4"/><line x1="238.0" y1="194.8" x2="65.2" y2="108.4" stroke-dasharray="5 4"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="104.4" y="14.0">A</text><text x="8.0" y="208.8">B</text><text x="242.0" y="208.8">C</text><text x="118.8" y="155.2">G</text><text x="179.2" y="108.4">M</text><text x="49.2" y="108.4">N</text><text x="30.2" y="154.4">E</text><text x="194.9" y="135.3">F</text></g></svg><figcaption>BM、CN 是中線，BG＝2GM、CG＝2GN</figcaption></figure>
+連 $BG$、$CG$ 並延長，分別交 $AC$、$AB$ 於 $M$、$N$（中點）。設 $\angle NGE=\alpha$，$\angle EGB=\beta$（如圖 $E$ 在 $NB$ 上），則由對頂角，$\angle FGC=\alpha$，$\angle MGF=\beta$。
+<p>由面積等式 $\triangle BGN=\triangle EGN+\triangle BGE$ 和公式 (2)：</p>
+$$NG\cdot BG\sin(\alpha+\beta)=NG\cdot EG\sin\alpha+EG\cdot BG\sin\beta,$$
+兩邊除以 $NG\cdot BG\cdot EG$：
+$$\frac{\sin(\alpha+\beta)}{EG}=\frac{\sin\alpha}{BG}+\frac{\sin\beta}{NG}.\tag{1}$$
+同理由 $\triangle CGM=\triangle FGM+\triangle CGF$ 得
+$$\frac{\sin(\alpha+\beta)}{FG}=\frac{\sin\alpha}{MG}+\frac{\sin\beta}{CG}.\tag{2}$$
+兩式相比：
+$$\frac{EG}{FG}=\frac{\frac{\sin\alpha}{MG}+\frac{\sin\beta}{CG}}{\frac{\sin\alpha}{BG}+\frac{\sin\beta}{NG}}.$$
+把 $BG=2GM$、$CG=2GN$ 代入，記 $u=\frac{\sin\alpha}{MG}$，$v=\frac{\sin\beta}{NG}$，得
+$$\frac{EG}{FG}=\frac{u+\frac v2}{\frac u2+v}\le2,$$
+因為 $u+\frac v2\le u+2v$。⟦若 E 在 AN 上｜這時 $F$ 在 $MC$ 上，用另一種算法：設 $AE=x\cdot AB$，$AF=y\cdot AC$。$G$ 在 $EF$ 上可推得 $\frac1x+\frac1y=3$，而 $x,y\le1$，所以 $x,y\ge\frac12$；又 $\frac{EG}{GF}=\frac xy\le\frac1{1/2}=2$。這個算法對任何位置都成立。⟧
+
+=== text
+<p>下面這題也是一道美國數學競賽題，看起來並不容易，我們的解法再一次顯示面積方法的威力。</p>
+
+=== 例 9 | 過定點的直線
+zh: $\angle A$ 內有一定點 $P$，過 $P$ 作直線交 $\angle A$ 的兩邊於 $B$、$C$。問 $\dfrac1{PB}+\dfrac1{PC}$ 何時取得最大值？
+sol: <figure class="bkfig"><svg viewBox="0 0 240 157" width="240" role="img" aria-label="角 A 內一點 P，過 P 的直線交兩邊於 B、C"><g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="22.0" y1="135.1" x2="218.0" y2="135.1"/><line x1="22.0" y1="135.1" x2="147.6" y2="22.0"/><line x1="204.0" y1="135.1" x2="94.1" y2="70.2"/><line x1="22.0" y1="135.1" x2="127.0" y2="89.6" stroke-dasharray="5 4"/><line x1="22.0" y1="135.1" x2="69.1" y2="55.4" stroke-dasharray="5 4"/></g><path d="M65.5,61.4 L71.6,65.0 L75.1,59.0" fill="none" stroke="currentColor"/><g fill="currentColor" font-size="15" font-style="italic"><text x="8.0" y="145.1">A</text><text x="200.0" y="151.1">B</text><text x="80.1" y="68.2">C</text><text x="133.0" y="93.6">P</text><text x="75.1" y="55.4">H</text></g></svg><figcaption>AH＝h 是 BC 邊上的高；∠PAB＝α、∠PAC＝β</figcaption></figure>
+設 $\angle PAB=\alpha$，$\angle PAC=\beta$，都是定值。無論直線怎麼轉，總有面積等式 $\triangle APC+\triangle APB=\triangle ABC$。設 $h$ 是 $BC$ 邊上的高，則
+$$h\cdot PC+h\cdot PB=AB\cdot AC\sin(\alpha+\beta),$$
+即
+$$\frac1{PB}+\frac1{PC}=\frac1h\cdot\frac{AB\cdot AC}{PB\cdot PC}\sin(\alpha+\beta).\tag{1}$$
+為了消去右邊的 $PB$、$PC$，用兩種方法算 $\triangle APB$ 和 $\triangle APC$：
+$$PB\cdot h=AP\cdot AB\sin\alpha,\qquad PC\cdot h=AP\cdot AC\sin\beta.$$
+代入 (1)：
+$$\frac1{PB}+\frac1{PC}=\frac{h\sin(\alpha+\beta)}{AP^2\sin\alpha\sin\beta}\le\frac1{AP}\cdot\frac{\sin(\alpha+\beta)}{\sin\alpha\sin\beta},$$
+因為 $h\le AP$（$A$ 到直線 $BC$ 的距離不超過 $AP$）。當 $BC\perp AP$ 時 $h=AP$，等號成立，這時 $\frac1{PB}+\frac1{PC}$ 有最大值。
+ans: 當 $BC\perp AP$ 時取得最大值 $\dfrac{\sin(\alpha+\beta)}{AP\sin\alpha\sin\beta}$。
+
+=== 習題 1
+zh: 凸四邊形的對角線交於 $P$，且 $\triangle ABP$ 與 $\triangle CDP$ 面積之和等於 $\triangle BCP$ 與 $\triangle ADP$ 面積之和。證明：$P$ 是某一條對角線的中點。
+sol: 設 $AP=a$，$BP=b$，$CP=c$，$DP=d$，$\angle APB=\alpha$。四個三角形在 $P$ 處的角都是 $\alpha$ 或 $180^\circ-\alpha$，正弦相同：
+$$\triangle ABP=\tfrac12ab\sin\alpha,\ \triangle BCP=\tfrac12bc\sin\alpha,\ \triangle CDP=\tfrac12cd\sin\alpha,\ \triangle APD=\tfrac12ad\sin\alpha.$$
+由條件 $ab+cd=bc+ad$，即 $(a-c)(b-d)=0$，所以 $a=c$ 或 $b=d$。
+
+=== 習題 2
+zh: 證明：同時平分三角形面積和周長的直線，通過三角形內切圓的圓心。
+sol: 設直線交 $AC$、$BC$ 於 $P$、$Q$，內心為 $O$，內切圓半徑為 $r$。我們證明 $\triangle POQ$ 面積為 0，從而 $O,P,Q$ 共線。
+<p>連 $OA,OB,OC$。$O$ 到三邊距離都是 $r$，所以五邊形 $ABQOP$ 的面積是 $\frac12r(AP+AB+BQ)$，四邊形 $OQCP$ 的面積是 $\frac12r(QC+CP)$。直線平分周長，$AP+AB+BQ=QC+CP$，所以這兩塊面積相等。又直線平分面積，$ABQP$ 與 $\triangle QCP$ 面積相等。前兩塊分別是後兩塊加上、減去 $\triangle OPQ$（或反之），所以 $\triangle OPQ=0$。</p>
+
+=== 習題 3
+zh: 設 $P$ 是正三角形內任意一點，證明 $P$ 到三邊的距離之和是定值。
+sol: 連 $PA,PB,PC$，設正三角形邊長為 $a$、高為 $h$，$P$ 到三邊距離為 $x,y,z$。由 $\triangle PAB+\triangle PBC+\triangle PCA=\triangle ABC$：
+$$\tfrac12a(x+y+z)=\tfrac12ah,$$
+所以 $x+y+z=h$，與 $P$ 的位置無關。
+
+=== 習題 4
+zh: 設 $P$ 是 $\triangle P_1P_2P_3$ 內任意一點，直線 $P_1P,P_2P,P_3P$ 交對邊依次於 $Q_1,Q_2,Q_3$。證明：在比值 $\dfrac{P_1P}{PQ_1}$、$\dfrac{P_2P}{PQ_2}$、$\dfrac{P_3P}{PQ_3}$ 中，至少有一個不大於 2，也至少有一個不小於 2。
+hint: 參考例 5 的解法。
+sol: 和例 5 一樣，
+$$\frac{PQ_1}{P_1Q_1}+\frac{PQ_2}{P_2Q_2}+\frac{PQ_3}{P_3Q_3}=\frac{\triangle PP_2P_3}{\triangle P_1P_2P_3}+\frac{\triangle PP_3P_1}{\triangle P_1P_2P_3}+\frac{\triangle PP_1P_2}{\triangle P_1P_2P_3}=1.$$
+三個正數和為 1，所以 $\frac{PQ_i}{P_iQ_i}$ 中一定有一個不大於 $\frac13$，也一定有一個不小於 $\frac13$。相應地
+$$\frac{P_iP}{PQ_i}=\frac{P_iQ_i}{PQ_i}-1$$
+中一定有一個不小於 2，也一定有一個不大於 2。
