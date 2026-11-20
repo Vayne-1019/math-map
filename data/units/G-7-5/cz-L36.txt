@@ -1,0 +1,22 @@
+=== meta
+title: 三角法：用正弦、餘弦定理算出來
+from: cz-L36
+order: 20
+
+=== body
+<div class="hero">把角和邊都變成<b>數</b>：選一個參數（某個角或某段長），<br>用正弦、餘弦定理把要證的量寫出來，再化簡</div>
+<figure class="bkfig"><svg viewBox="0 0 300 160" width="300" role="img" aria-label="圓內接矩形與切線（三角法）">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="95.9" cy="80" r="58"/><polygon points="22,138 278,138 95.9,22"/><polygon points="95.9,22 43.3,104.5 95.9,138 148.5,55.5"/><line x1="95.9" y1="22" x2="95.9" y2="138" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="150.7" text-anchor="middle">A</text><text x="285.8" y="150.7" text-anchor="middle">B</text><text x="95.9" y="15.9" text-anchor="middle">C</text><text x="95.9" y="153.9" text-anchor="middle">D</text><text x="35.6" y="101.6" text-anchor="middle">E</text><text x="156.3" y="52.6" text-anchor="middle">F</text></g>
+</svg><figcaption>同第 22 講例 5；以 $\angle A=\alpha$ 為參數，$CD\perp AB$（虛線）</figcaption></figure>
+<div class="cards">
+<div class="card"><h4>① 選一個角當參數</h4><div class="rule">$AB=1$，$\angle A=\alpha$</div>
+<div class="eg">$AE=\cos^3\alpha$、$BF=\sin^3\alpha$，直接驗證 $AE\cdot BC^3=BF\cdot AC^3$ <span class="pill">一路乘 cos</span></div></div>
+<div class="card"><h4>② 正弦定理接力</h4><div class="rule">$\frac{OA}{\sin\angle10}=\frac{OB}{\sin\angle1}=\cdots$</div>
+<div class="eg">繞一圈回到 $OA$ ⇒ $\sin\angle9=\sin\angle10$ <span class="pill">相等或互補</span></div></div>
+<div class="card"><h4>③ 設未知數解方程</h4><div class="rule">$AP=2a$、$PQ=2b$</div>
+<div class="eg">餘弦＋正弦定理 ⇒ $a^2+2ab-15b^2=0$ ⇒ $a=3b$ <span class="pill">列方程</span></div></div>
+</div>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul><li>$\sin x=\sin y$ 只能推出 $x=y$ 或 $x+y=180^\circ$，別漏掉互補</li></ul></div>
+<div class="bottomline">輔助線想不出來？選參數、套正弦餘弦，硬算也能到。</div>

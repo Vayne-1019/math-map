@@ -1,0 +1,21 @@
+=== meta
+title: 斯特瓦爾特定理：一條線段一個公式
+from: cz-L36
+order: 20
+
+=== body
+<div class="hero">$D$ 在 $BC$ 上，$BD=q_1$、$DC=q_2$：<br>$AD^2=\dfrac{b^2q_1+c^2q_2}{q_1+q_2}-q_1q_2$</div>
+<figure class="bkfig"><svg viewBox="0 0 250 168" width="250" role="img" aria-label="斯特瓦爾特定理">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="155.9,22 22,145.6 228,145.6"/><line x1="155.9" y1="22" x2="99.2" y2="145.6"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="155.9" y="15.9" text-anchor="middle">A</text><text x="11" y="150.5" text-anchor="middle">B</text><text x="239" y="150.5" text-anchor="middle">C</text><text x="99.2" y="161.5" text-anchor="middle">D</text><text x="81.2" y="80.9" text-anchor="middle">c</text><text x="199.7" y="80.9" text-anchor="middle">b</text><text x="60.6" y="160.8" font-size="12" text-anchor="middle">q₁</text><text x="163.6" y="160.8" font-size="12" text-anchor="middle">q₂</text></g>
+</svg><figcaption>$D$ 把 $BC$ 分成 $q_1,q_2$</figcaption></figure>
+<div class="cards">
+<div class="card"><h4>① 中線</h4><div class="rule">$m_a=\frac12\sqrt{2b^2+2c^2-a^2}$</div>
+<div class="eg">$3,4,5$ 的斜邊中線：$\frac12\sqrt{18+32-25}=\frac52$ <span class="pill">$q_1=q_2$</span></div></div>
+<div class="card"><h4>② 角平分線</h4><div class="rule">$t_a=\frac2{b+c}\sqrt{bcp(p-a)}$</div>
+<div class="eg">等邊 $a=b=c=2$：$t_a=\frac24\sqrt{4\cdot3\cdot1}=\sqrt3$ <span class="pill">$q_1:q_2=c:b$</span></div></div>
+</div>
+<p>怎麼證？⟦兩次餘弦定理｜在 $\triangle ABD$ 用餘弦定理寫 $AD^2$，其中 $\cos B$ 再用 $\triangle ABC$ 的餘弦定理換掉，整理即得。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul><li>$b^2$ 配 $q_1$（離 $C$ 遠的那段），$c^2$ 配 $q_2$，交叉相乘別配錯</li></ul></div>
+<div class="bottomline">要算三角形裡任何一條從頂點出發的線段 → 斯特瓦爾特。</div>
