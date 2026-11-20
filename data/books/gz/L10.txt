@@ -1,0 +1,155 @@
+=== meta
+title: 三面角、四面體與三角形的類比
+author: 杜錫錄
+pages: 70-76
+units: G-9-7, G-9-1
+status: 完成
+
+=== text
+<p>平面幾何中最簡單又最重要的圖形是三角形；立體幾何中和它對應的是<b>三面角</b>與<b>四面體</b>。下面用類比的方法，討論三面角與四面體的性質。</p>
+<p>記號：三面角 $S\text{-}ABC$ 的三個<b>面角</b>是 $\angle BSC$、$\angle CSA$、$\angle ASB$；稜 $SA$ 上的<b>二面角</b>記為 $\angle B\text{-}SA\text{-}C$，其餘類推。類比時，<b>面角對應三角形的邊，二面角對應三角形的角</b>。</p>
+<h3>一、三面角</h3>
+<h3>1. 互補三面角</h3>
+
+=== 定義 | 補三面角
+zh: 給定三面角 $S\text{-}ABC$，從頂點 $S$ 作三條射線 $SA_0,SB_0,SC_0$，分別垂直於平面 $SBC$、$SCA$、$SAB$，而且射線 $SA_0$ 與 $SA$、$SB_0$ 與 $SB$、$SC_0$ 與 $SC$ 分別在平面 $SBC$、$SCA$、$SAB$ 的同側。三面角 $S\text{-}A_0B_0C_0$ 稱為 $S\text{-}ABC$ 的<b>補三面角</b>。
+<figure class="bkfig"><svg viewBox="0 0 230 175" width="230" role="img" aria-label="三面角 S-ABC 與它的補三面角 S-A0B0C0"><g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="102.0" y1="22.0" x2="22.0" y2="95.1"/><line x1="102.0" y1="22.0" x2="89.5" y2="153.0"/><line x1="102.0" y1="22.0" x2="208.0" y2="77.1"/><line x1="22.0" y1="95.1" x2="89.5" y2="153.0"/><line x1="89.5" y1="153.0" x2="208.0" y2="77.1"/><line x1="102.0" y1="22.0" x2="61.3" y2="36.7"/><line x1="102.0" y1="22.0" x2="174.4" y2="30.3"/><line x1="102.0" y1="22.0" x2="87.1" y2="88.7"/><line x1="22.0" y1="95.1" x2="208.0" y2="77.1" stroke-dasharray="5 4"/><line x1="61.3" y1="36.7" x2="87.1" y2="88.7" stroke-dasharray="5 4"/><line x1="87.1" y1="88.7" x2="174.4" y2="30.3" stroke-dasharray="5 4"/><line x1="174.4" y1="30.3" x2="61.3" y2="36.7" stroke-dasharray="5 4"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="98.0" y="14.0">S</text><text x="8.0" y="99.1">A</text><text x="85.5" y="169.0">B</text><text x="214.0" y="81.1">C</text><text x="41.3" y="40.7">A<tspan font-size="11" dy="4">0</tspan></text><text x="91.1" y="100.7">B<tspan font-size="11" dy="4">0</tspan></text><text x="180.4" y="30.3">C<tspan font-size="11" dy="4">0</tspan></text></g></svg><figcaption>SA₀⊥平面 SBC、SB₀⊥平面 SCA、SC₀⊥平面 SAB</figcaption></figure>
+
+=== 性質 | 補三面角的兩個性質
+zh: (1) 若 $S\text{-}A_0B_0C_0$ 是 $S\text{-}ABC$ 的補三面角，則 $S\text{-}ABC$ 也是 $S\text{-}A_0B_0C_0$ 的補三面角，即兩者互補。<br>(2) 兩個互補三面角中，一個的面角與另一個對應的二面角互補：
+$$\begin{aligned}\angle BSC+\angle B_0\text{-}SA_0\text{-}C_0&=\pi,\\\angle ASC+\angle A_0\text{-}SB_0\text{-}C_0&=\pi,\\\angle ASB+\angle A_0\text{-}SC_0\text{-}B_0&=\pi.\end{aligned}$$
+sol: 證明是本講習題 1，見下面。
+
+=== text
+<h3>2. 三面角中的「三角形不等式」</h3>
+<p>三面角和三角形之間有一些對應的結果，但不完全一致。</p>
+
+=== 定理 1 | 面角的三角形不等式
+zh: 三面角的任一個面角小於其他兩個面角之和，而大於其他兩個面角之差。
+sol: <figure class="bkfig"><svg viewBox="0 0 200 170" width="200" role="img" aria-label="三面角中在面 ASC 上取 ∠ASB′＝∠ASB"><g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="88.4" y1="22.0" x2="22.0" y2="128.4"/><line x1="88.4" y1="22.0" x2="87.5" y2="147.9"/><line x1="88.4" y1="22.0" x2="178.0" y2="115.1"/><line x1="22.0" y1="128.4" x2="87.5" y2="147.9"/><line x1="87.5" y1="147.9" x2="178.0" y2="115.1"/><line x1="22.0" y1="128.4" x2="178.0" y2="115.1" stroke-dasharray="5 4"/><line x1="88.4" y1="22.0" x2="129.1" y2="119.3" stroke-dasharray="5 4"/><line x1="129.1" y1="119.3" x2="87.5" y2="147.9" stroke-dasharray="5 4"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="84.4" y="14.0">S</text><text x="8.0" y="132.4">A</text><text x="89.5" y="161.9">B</text><text x="184.0" y="119.1">C</text><text x="119.1" y="113.3">B′</text></g></svg><figcaption>在 ∠ASC 內取 ∠ASB′＝∠ASB、SB′＝SB</figcaption></figure>
+只要證最大的面角小於另兩個之和（「大於差」是它的移項）。設 $\angle ASC$ 最大（若 $\angle ASC\le\angle ASB$，不等式 $\angle ASC&lt;\angle ASB+\angle BSC$ 顯然成立）。
+<p>在平面 $ASC$ 上、$\angle ASC$ 的內部取 $\angle ASB'=\angle ASB$，並取 $SB'=SB$。過 $B,B'$ 作平面，交三面角另兩稜於 $A,C$。顯然 $\triangle ASB\cong\triangle ASB'$（SAS），所以 $AB'=AB$，</p>
+$$B'C=AC-AB'=AC-AB&lt;BC.$$
+⟦最後的不等號｜在 $\triangle ABC$ 中由三角形不等式 $AC&lt;AB+BC$。⟧
+<p>$\triangle BSC$ 和 $\triangle B'SC$ 有兩組對應邊相等（$SB=SB'$，$SC$ 共用），第三邊 $BC&gt;B'C$，所以夾角 $\angle BSC&gt;\angle B'SC=\angle ASC-\angle ASB$，即 $\angle ASC&lt;\angle BSC+\angle ASB$。</p>
+
+=== 定理 2 | 面角和
+zh: 三面角的三個面角之和小於 $2\pi$。
+sol: 延長稜 $SA$ 得射線 $SA'$。在三面角 $S\text{-}A'BC$ 中，由定理 1
+$$\angle BSC&lt;\angle CSA'+\angle A'SB=(\pi-\angle CSA)+(\pi-\angle ASB),$$
+所以 $\angle BSC+\angle CSA+\angle ASB&lt;2\pi$。
+
+=== 定理 3 | 二面角和
+zh: 三面角的三個二面角之和大於 $\pi$。
+sol: 以 $S\text{-}A_0B_0C_0$ 表示 $S\text{-}ABC$ 的補三面角。由定理 2 和互補三面角的性質 (2)：
+$$\begin{aligned}&\angle B_0SC_0+\angle C_0SA_0+\angle A_0SB_0\\&=(\pi-\angle B\text{-}SA\text{-}C)+(\pi-\angle C\text{-}SB\text{-}A)+(\pi-\angle A\text{-}SC\text{-}B)&lt;2\pi,\end{aligned}$$
+移項得 $\angle B\text{-}SA\text{-}C+\angle C\text{-}SB\text{-}A+\angle A\text{-}SC\text{-}B&gt;\pi$。
+<p>（和三角形內角和等於 $\pi$ 對比：這裡是「大於」。）</p>
+
+=== text
+<h3>3. 面角與二面角的關係</h3>
+
+=== 定理 4 | 等腰三面角
+zh: 三面角中，若兩個面角相等，則它們所對的二面角也相等。（有兩個面角相等的三面角稱為<b>等腰三面角</b>。）
+sol: 設 $\angle ASC=\angle BSC$。在 $SA,SB,SC$ 上取 $SA=SB=SC$，則 $AC=BC$。設 $M$ 是 $AB$ 中點，平面 $SCM$ 垂直於 $AB$，三面角關於平面 $SCM$ 對稱，所以稜 $SA$ 上的二面角等於稜 $SB$ 上的二面角。
+
+=== 定理 5 | 逆定理
+zh: 三面角中，若兩個二面角相等，則它們所對的面角也相等。
+sol: 對補三面角用定理 4：原三面角的二面角相等，即補三面角對應的面角相等，於是補三面角對應的二面角相等，也就是原三面角對應的面角相等（性質 (2)）。
+
+=== 推論
+zh: 三面角中，若三個二面角相等，則三個面角也相等；若三個面角相等，則三個二面角也相等。
+sol: 由定理 4、5 直接得到。
+
+=== 定理 6
+zh: 三面角中，若兩個二面角不相等，則所對的面角也不等，大二面角所對的面角較大。
+
+=== 定理 7
+zh: 三面角中，若兩個面角不相等，則所對的二面角也不等，大面角所對的二面角較大。
+
+=== 定理 8
+zh: 兩個三面角中，若兩個面角對應相等，而所夾的二面角不等，則第三個面角也不等，大二面角所對的面角較大。
+
+=== 定理 9
+zh: 兩個三面角中，若兩個面角對應相等，但第三個面角不等，則不等面角所對的二面角也不等，大面角所對的二面角較大。
+
+=== text
+<p>定理 6 和定理 7、定理 8 和定理 9 互為逆命題。它們的結論和三角形中邊角的不等關係相似，證明也相似。定理 8、9 的證明要用到三面角全等的概念，這裡從略，記住結論即可；定理 6、7 的證明請讀者補出⟦定理 7 的提示｜設 $\angle ASC&gt;\angle BSC$。仿照定理 1 的作法，在平面 $ASC$ 內取射線 $SD$ 使 $\angle DSC=\angle BSC$，三面角 $S\text{-}DBC$ 是等腰的，由定理 4 得兩個二面角相等，再比較即得。定理 6 可由定理 7 用反證法（或對補三面角）得到。⟧。</p>
+<h3>4. 正弦定理與餘弦定理</h3>
+<p>在三面角 $S\text{-}ABC$ 中，記二面角的平面角 $\angle C\text{-}SA\text{-}B=A$，$\angle A\text{-}SB\text{-}C=B$，$\angle A\text{-}SC\text{-}B=C$，面角 $\angle BSC=\alpha$，$\angle CSA=\beta$，$\angle ASB=\gamma$。</p>
+
+=== 定理 | 三面角的正弦定理與餘弦定理
+zh: 正弦定理：
+$$\frac{\sin\alpha}{\sin A}=\frac{\sin\beta}{\sin B}=\frac{\sin\gamma}{\sin C}.$$
+第一餘弦定理：
+$$\begin{aligned}\cos\alpha&=\cos\beta\cos\gamma+\sin\beta\sin\gamma\cos A,\\\cos\beta&=\cos\alpha\cos\gamma+\sin\alpha\sin\gamma\cos B,\\\cos\gamma&=\cos\alpha\cos\beta+\sin\alpha\sin\beta\cos C.\end{aligned}$$
+第二餘弦定理：
+$$\begin{aligned}\cos A&=-\cos B\cos C+\sin B\sin C\cos\alpha,\\\cos B&=-\cos A\cos C+\sin A\sin C\cos\beta,\\\cos C&=-\cos A\cos B+\sin A\sin B\cos\gamma.\end{aligned}$$
+sol: <b>正弦定理</b>：
+<figure class="bkfig"><svg viewBox="0 0 230 199" width="230" role="img" aria-label="三面角 S-ABC：P 在 SA 上，H、Q、R 是它在平面 SBC、直線 SB、SC 上的投影"><g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="22.0" y1="160.0" x2="152.3" y2="22.0"/><line x1="22.0" y1="160.0" x2="184.9" y2="177.2"/><line x1="108.8" y1="68.0" x2="81.7" y2="166.3"/><line x1="108.8" y1="68.0" x2="98.4" y2="142.9"/><line x1="22.0" y1="160.0" x2="208.0" y2="118.3" stroke-dasharray="5 4"/><line x1="108.8" y1="68.0" x2="108.8" y2="150.9" stroke-dasharray="5 4"/><line x1="108.8" y1="150.9" x2="98.4" y2="142.9" stroke-dasharray="5 4"/><line x1="108.8" y1="150.9" x2="81.7" y2="166.3" stroke-dasharray="5 4"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="8.0" y="164.0">S</text><text x="156.3" y="20.0">A</text><text x="212.0" y="122.3">B</text><text x="188.9" y="185.2">C</text><text x="96.8" y="64.0">P</text><text x="112.8" y="162.9">H</text><text x="102.4" y="138.9">Q</text><text x="75.7" y="182.3">R</text></g></svg><figcaption>SP＝1；∠PQH 是稜 SB 上二面角的平面角（或其補角）</figcaption></figure>
+在稜 $SA$ 上取點 $P$，使 $SP=1$。設 $Q,R,H$ 是 $P$ 在直線 $SB$、$SC$ 和平面 $SBC$ 上的投影。由三垂線定理 $HQ\perp SB$，所以直角三角形 $PQH$ 中，頂點 $Q$ 處的角等於 $B$（$B\le\frac\pi2$ 時）或 $\pi-B$（$B&gt;\frac\pi2$ 時）。無論哪種，總有
+$$PH=PQ\sin B=SP\sin\gamma\sin B=\sin\gamma\sin B.$$
+在直角三角形 $PRH$ 和 $SPR$ 中同樣得 $PH=\sin\beta\sin C$。於是 $\frac{\sin\beta}{\sin B}=\frac{\sin\gamma}{\sin C}$。同理可證 $\frac{\sin\gamma}{\sin C}=\frac{\sin\alpha}{\sin A}$。
+<p><b>第一餘弦定理</b>（證第三式）：</p>
+<figure class="bkfig"><svg viewBox="0 0 230 151" width="230" role="img" aria-label="證明第一餘弦定理的輔助圖"><g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="22.0" y1="114.0" x2="108.8" y2="22.0"/><line x1="22.0" y1="114.0" x2="164.5" y2="129.0"/><line x1="108.8" y1="22.0" x2="81.7" y2="120.3"/><line x1="22.0" y1="114.0" x2="208.0" y2="72.3" stroke-dasharray="5 4"/><line x1="108.8" y1="22.0" x2="108.8" y2="104.9" stroke-dasharray="5 4"/><line x1="108.8" y1="104.9" x2="98.4" y2="96.9" stroke-dasharray="5 4"/><line x1="108.8" y1="104.9" x2="81.7" y2="120.3" stroke-dasharray="5 4"/><line x1="81.7" y1="120.3" x2="61.7" y2="105.1" stroke-dasharray="5 4"/><line x1="108.8" y1="22.0" x2="98.4" y2="96.9" stroke-dasharray="5 4"/></g><g font-size="13" font-style="italic" fill="currentColor"><text x="212.0" y="76.3">B</text><text x="168.5" y="137.0">C</text></g><g fill="currentColor" font-size="15" font-style="italic"><text x="8.0" y="118.0">S</text><text x="112.8" y="18.0">A</text><text x="114.8" y="110.9">D</text><text x="96.4" y="90.9">E</text><text x="75.7" y="136.3">F</text><text x="55.7" y="99.1">G</text></g></svg><figcaption>SA＝1，AD⊥平面 SBC；在平面 SBC 內 DE⊥SB、DF⊥SC、FG⊥SB</figcaption></figure>
+取 $SA=1$（$A$ 在稜上），作 $AD$ 垂直於平面 $SBC$，垂足為 $D$；在平面 $SBC$ 內作 $DE\perp SB$、$DF\perp SC$、$FG\perp SB$，$E,F,G$ 是垂足。則 $AE\perp SB$、$AF\perp SC$（三垂線定理），$\angle AFD=C$，而
+$$\begin{aligned}SE&=\cos\gamma,\qquad SE=SG+GE,\\SG&=SF\cos\alpha=SA\cos\beta\cos\alpha=\cos\alpha\cos\beta,\\GE&=FD\cos\big(\tfrac\pi2-\alpha\big)=FD\sin\alpha\\&=AF\cos C\sin\alpha=\sin\beta\cos C\sin\alpha.\end{aligned}$$
+⟦GE 那一步｜$GE$ 是折線 $F\to D\to E$ 在 $SB$ 方向上的投影，其中 $FG$ 垂直於 $SB$ 不算。$FD\perp SC$，而 $SC$ 與 $SB$ 夾角 $\alpha$，所以 $FD$ 與 $SB$ 的夾角是 $\frac\pi2-\alpha$；$DE\perp SB$ 投影為 0。⟧
+所以 $\cos\gamma=\cos\alpha\cos\beta+\sin\alpha\sin\beta\cos C$。同樣可證另外兩式。
+<p><b>第二餘弦定理</b>：作 $S\text{-}ABC$ 的補三面角 $S\text{-}A_0B_0C_0$，對它用第一餘弦定理，再用互補三面角面角與二面角的關係（面角 $\leftrightarrow\pi-$ 二面角）：</p>
+$$\cos(\pi-A)=\cos(\pi-B)\cos(\pi-C)+\sin(\pi-B)\sin(\pi-C)\cos(\pi-\alpha),$$
+即 $\cos A=-\cos B\cos C+\sin B\sin C\cos\alpha$。
+
+=== text
+<h3>5. 三面角中的共線面</h3>
+<p>類似於三角形的三條高交於一點，有下面的結論。</p>
+
+=== 定理 10 | 三面角的「垂心」
+zh: 過三面角的稜、且垂直於所對界面的三個平面，有公共的直線。（為了確定起見，設兩個面角 $\angle ASB$ 和 $\angle ASC$ 不是直角。）
+sol: <figure class="bkfig"><svg viewBox="0 0 220 188" width="220" role="img" aria-label="過 A 作垂直於 SA 的平面，截出三角形 ABC"><g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="146.2" y1="22.0" x2="22.0" y2="166.4"/><line x1="146.2" y1="22.0" x2="198.0" y2="162.9"/><line x1="22.0" y1="166.4" x2="198.0" y2="162.9"/><line x1="146.2" y1="22.0" x2="146.2" y2="123.4" stroke-dasharray="5 4"/><line x1="146.2" y1="123.4" x2="22.0" y2="166.4" stroke-dasharray="5 4"/><line x1="146.2" y1="123.4" x2="198.0" y2="162.9" stroke-dasharray="5 4"/><line x1="146.2" y1="123.4" x2="111.8" y2="164.6" stroke-dasharray="5 4"/><line x1="22.0" y1="166.4" x2="161.6" y2="135.1" stroke-dasharray="5 4"/><line x1="198.0" y1="162.9" x2="110.3" y2="135.8" stroke-dasharray="5 4"/><line x1="146.2" y1="22.0" x2="130.6" y2="142.1" stroke-dasharray="5 4"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="142.2" y="14.0">S</text><text x="150.2" y="121.4">A</text><text x="8.0" y="176.4">B</text><text x="204.0" y="170.9">C</text><text x="107.8" y="180.6">A<tspan font-size="11" dy="4">1</tspan></text><text x="167.6" y="135.1">B<tspan font-size="11" dy="4">1</tspan></text><text x="90.3" y="135.8">C<tspan font-size="11" dy="4">1</tspan></text><text x="134.6" y="154.1">H</text></g></svg><figcaption>SA⊥平面 ABC；AA₁、BB₁、CC₁ 是 △ABC 的高，交於垂心 H</figcaption></figure>
+過稜 $SA$ 上一定點 $A$ 作垂直於這條稜的平面，設它與直線 $SB$、$SC$ 交於 $B$、$C$（面角不是直角保證交點存在）。設 $AA_1,BB_1,CC_1$ 是題中三個平面與平面 $ABC$ 的交線。
+<p>平面 $SAA_1$ 垂直於平面 $SBC$，也垂直於平面 $ABC$（因為它含有垂直於平面 $ABC$ 的直線 $SA$），所以平面 $SAA_1$ 垂直於這兩個平面的交線 $BC$，因此 $AA_1\perp BC$，即 $AA_1$ 是 $\triangle ABC$ 的高。</p>
+<p>平面 $ASC$ 垂直於平面 $ABC$（含 $SA$）和平面 $SBB_1$，所以平面 $ASC$ 垂直於這兩個平面的交線 $BB_1$，因此 $BB_1\perp AC$。類似可證 $CC_1\perp AB$。所以 $BB_1$、$CC_1$ 也是 $\triangle ABC$ 的高。</p>
+<p>$\triangle ABC$ 的三條高交於一點 $H$，所以題中三個平面都經過 $S$ 和 $H$，相交於直線 $SH$。</p>
+
+=== text
+<p>這個證明用到了平面幾何中關於垂心的定理。類似三角形的「內心」「重心」「外心」，三面角也有相應的定理，放在習題中，請讀者證明。</p>
+<h3>二、四面體</h3>
+<p>四面體是最簡單的多面體，也叫三稜錐。它有很多類似於三角形的性質，限於篇幅不能一一敘述，下面只舉一例。</p>
+
+=== 定理 11 | 二面角平分面
+zh: 四面體的二面角的平分面，分對稜所成的比，等於構成這個二面角的兩個界面的面積之比。
+sol: <figure class="bkfig"><svg viewBox="0 0 220 167" width="220" role="img" aria-label="四面體 ABCD，平面 ADM 平分稜 AD 上的二面角"><g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="22.0" y1="133.7" x2="95.6" y2="145.0"/><line x1="95.6" y1="145.0" x2="198.0" y2="116.8"/><line x1="101.9" y1="22.0" x2="22.0" y2="133.7"/><line x1="101.9" y1="22.0" x2="95.6" y2="145.0"/><line x1="101.9" y1="22.0" x2="198.0" y2="116.8"/><line x1="101.9" y1="22.0" x2="151.9" y2="129.5"/><line x1="22.0" y1="133.7" x2="198.0" y2="116.8" stroke-dasharray="5 4"/><line x1="22.0" y1="133.7" x2="151.9" y2="129.5" stroke-dasharray="5 4"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="8.0" y="137.7">A</text><text x="91.6" y="161.0">B</text><text x="204.0" y="120.8">C</text><text x="97.9" y="14.0">D</text><text x="153.9" y="145.5">M</text></g></svg><figcaption>平面 ADM 平分稜 AD 上的二面角，交 BC 於 M</figcaption></figure>
+設截面 $ADM$ 是以 $AD$ 為稜的二面角的平分面，$M$ 在對稜 $BC$ 上。四面體 $ACMD$ 與 $ABMD$ 的體積分別記為 $V_1,V_2$。$M$ 在平分面上，到兩個界面 $ADC$、$ADB$ 的距離相等，所以
+$$\frac{V_1}{V_2}=\frac{S_{\triangle ADC}}{S_{\triangle ADB}}.$$
+另一方面，兩個四面體可以都看成以 $D$ 為頂點、底面在平面 $ABC$ 上，等高，所以
+$$\frac{V_1}{V_2}=\frac{S_{\triangle AMC}}{S_{\triangle AMB}}=\frac{MC}{MB}.$$
+因此 $\dfrac{S_{\triangle ADC}}{S_{\triangle ADB}}=\dfrac{MC}{MB}$，這正是要證的結論（和三角形的角平分線定理對照）。
+
+=== text
+<p>上面餘弦定理、定理 10、定理 11 的證明，體現了立體幾何中三種重要的方法，值得特別提出；不要只看到證明簡單，要善於總結方法。</p>
+<ul>
+<li>餘弦定理的證明用的是<b>投影法</b>：把要討論的幾何元素投影到某個面或某條線上，集中討論。</li>
+<li>定理 10 的證明是<b>化立體為平面</b>：把討論的元素集中到一個平面上，有意識地利用平面幾何的定理。</li>
+<li>定理 11 的證明是<b>面積法（體積法）</b>：分割多面體或旋轉體，多角度、多層次地討論它的體積或面積公式。</li>
+</ul>
+
+=== 習題 1
+zh: 證明補三面角的兩個性質。
+sol: (1) 因為 $SA_0$ 垂直於平面 $SBC$，所以 $SA_0\perp SB$；因為 $SC_0$ 垂直於平面 $SAB$，所以 $SC_0\perp SB$。於是 $SB$ 垂直於平面 $SA_0C_0$。同理 $SC$ 垂直於平面 $SA_0B_0$，$SA$ 垂直於平面 $SB_0C_0$。再檢查「同側」條件（例如 $SB$ 與 $SB_0$ 在平面 $SA_0C_0$ 同側，因為 $SB\cdot SB_0&gt;0$⟦為什麼內積為正｜$SB_0$ 與 $SB$ 在平面 $SCA$ 的同側，正是說 $SB_0$ 與 $SB$ 在平面 $SCA$ 法向上的分量同號；又 $SB_0$ 就沿著這個法向，所以 $\overrightarrow{SB}\cdot\overrightarrow{SB_0}&gt;0$。⟧），由定義知 $S\text{-}ABC$ 是 $S\text{-}A_0B_0C_0$ 的補三面角，兩者互補。
+<p>(2) 由 $SB_0\perp$ 平面 $SCA$ 得 $SB_0\perp SC$，由 $SC_0\perp$ 平面 $SAB$ 得 $SC_0\perp SB$。稜 $SA_0$ 垂直於平面 $SBC$，所以平面 $SBC$ 就是稜 $SA_0$ 上二面角的「垂直截面」，二面角 $B_0\text{-}SA_0\text{-}C_0$ 的平面角就是平面 $SA_0B_0$、$SA_0C_0$ 與平面 $SBC$ 的兩條交線的夾角。這兩條交線分別垂直於 $SC$、$SB$（在平面 $SBC$ 內），由方向關係，它們的夾角等於 $\pi-\angle BSC$，即 $\angle BSC+\angle B_0\text{-}SA_0\text{-}C_0=\pi$。其餘兩式同理。</p>
+
+=== 習題 2
+zh: 證明下面三個平面具有公共的直線：<br>(1) 三面角的三個二面角的平分面；<br>(2) 通過三面角的稜與所對面角的平分線所作的平面；<br>(3) 垂直於三面角的界面、並且通過這個面角平分線的平面。
+sol: (1) 先證：二面角的平分面是到二面角兩個面等距離的點的軌跡。然後仿照三角形內心的證法：兩個平分面的交線（過 $S$）上的點到三個界面都等距，所以也在第三個平分面上。
+<p>(2) 在三面角 $S\text{-}ABC$ 中取 $SA=SB=SC$，則每個面角的平分線都垂直平分對邊 $AB,BC,CA$，設分點為 $L,M,N$（三邊中點）。在 $\triangle ABC$ 中，$AM,BN,CL$ 是三條中線，交於重心 $G$，所以三個平面 $SAM,SBN,SCL$ 都經過直線 $SG$。</p>
+<p>(3) 同樣取 $SA=SB=SC$。面角 $\angle BSC$ 的平分線是 $BC$ 的中垂線（在平面 $SBC$ 內），過它垂直於平面 $SBC$ 的平面，就是線段 $BC$ 的中垂面。三條邊的三個中垂面都經過 $\triangle ABC$ 的外心、並垂直於平面 $ABC$ 的那條直線（$S$ 到 $A,B,C$ 等距，也在這條直線上）。這要用到三角形外心的定理。</p>
+
+=== 習題 3
+zh: 證明：如果一個四面體的四個面的面積相等，則這四個面全等。
+sol: 設四面體為 $A_1A_2A_3A_4$，四個面的面積都是 $S$，稜 $A_iA_j$ 上的二面角為 $\theta_{ij}$。由第 2 講的空間射影定理（二面角為鈍角時對應的投影面積取負號，公式仍成立），從 $A_1$ 向對面投影：
+$$S=S\cos\theta_{23}+S\cos\theta_{34}+S\cos\theta_{24},$$
+即 $\cos\theta_{23}+\cos\theta_{34}+\cos\theta_{24}=1$ (1)。同樣有
+$$\begin{aligned}\cos\theta_{13}+\cos\theta_{34}+\cos\theta_{14}&=1,\ (2)\\\cos\theta_{12}+\cos\theta_{24}+\cos\theta_{14}&=1,\ (3)\\\cos\theta_{12}+\cos\theta_{23}+\cos\theta_{13}&=1.\ (4)\end{aligned}$$
+由 (1)+(2)−(3)−(4) 得 $\cos\theta_{12}=\cos\theta_{34}$，所以 $\theta_{12}=\theta_{34}$；同理 $\theta_{23}=\theta_{14}$，$\theta_{13}=\theta_{24}$。
+<p>四個面面積相等、體積相同，所以從各頂點引的高都相等，設為 $h$。$A_1$ 到稜 $A_3A_4$ 的距離是 $\frac h{\sin\theta_{34}}$，$A_3$ 到稜 $A_1A_2$ 的距離是 $\frac h{\sin\theta_{12}}$，兩者相等。$\triangle A_1A_3A_4$ 與 $\triangle A_1A_2A_3$ 面積相等、對應的高相等，所以 $A_3A_4=A_1A_2$。同理 $A_2A_3=A_1A_4$，$A_1A_3=A_2A_4$。三組對稜分別相等，四個面的三邊都是同樣三個長度，所以四個面全等。</p>
