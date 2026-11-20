@@ -1,0 +1,22 @@
+=== meta
+title: 歸納過渡：為歸納假設創造條件
+from: gz-L27
+order: 40
+
+=== body
+<div class="hero">起步容易，難在<b>從 $k$ 走到 $k+1$</b><br>關鍵：把 $k+1$ 的式子<b>拆出 $k$ 的樣子</b>，再用題目條件收尾</div>
+<div class="cards">
+<div class="card"><h4>① 拆出舊式子</h4><div class="rule">$(a+b)^{k+1}-a^{k+1}-b^{k+1}$<br>$=(a+b)[\,(a+b)^k-a^k-b^k\,]+a^kb+ab^k$</div>
+<div class="eg">中括號用假設，剩下的 $a^kb+ab^k\ge2^{k+2}$ <span class="pill">湊出 $P(k)$</span></div></div>
+<div class="card"><h4>② 分情況過渡</h4><div class="rule">只知上界不夠，再補下界</div>
+<div class="eg">$a_{k+1}\le a_k(1-a_k)$：<br>$a_k\ge\frac1{k+2}$ 與 $a_k&lt;\frac1{k+2}$ 分開估</div></div>
+<div class="card"><h4>③ 縮小規模</h4><div class="rule">把問題變回 $n=k$</div>
+<div class="eg">$2^{k+1}$ 個球：先讓各堆都成偶數，<br>兩球綁成一個 → $2^k$ 個 <span class="pill">生活常識</span></div></div>
+<div class="card"><h4>④ 待定係數</h4><div class="rule">由舊解造新解</div>
+<div class="eg">$2^k=7x^2+y^2$ ⇒<br>$2^{k+1}=7\big(\frac{x\pm y}2\big)^2+\big(\frac{7x\mp y}2\big)^2$</div></div>
+</div>
+<p>起點不一定是 1：$n=1$ 沒有意義時從 $n=2$ 起步，過渡也要寫「$k\ge2$」。⟦為什麼要注意｜過渡的推理若在 $k=1$ 時不成立（例如用到 $a_k\ne a_1$），起點就必須跟著調整，否則整條鏈從第一環就斷了。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>只驗證起步、過渡時其實沒用到歸納假設（那就不是歸納法）</li>
+<li>過渡只處理了一種情況，另一種情況漏掉</li></ul></div>
+<div class="bottomline">先問：$k+1$ 的式子裡，$k$ 的式子藏在哪？</div>

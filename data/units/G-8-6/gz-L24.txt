@@ -1,0 +1,20 @@
+=== meta
+title: 複數判別法：正三角形、相似、垂足
+from: gz-L24
+order: 40
+
+=== body
+<div class="hero">把「長得一樣」翻成<b>一條複數等式</b><br>正三角形、相似都是<b>線性條件</b> → 可以相加<br>單位圓上 $\bar z=\frac1z$，共軛變倒數</div>
+<div class="cards">
+<div class="card"><h4>① 正向正三角形</h4><div class="rule">$u^2z_1-uz_2+z_3=0$<br>$u=e^{i\pi/3}$</div>
+<div class="eg">兩個正向正三角形的對應點取中點<br>→ 式子相加 → 仍是正三角形 <span class="pill">線性可加</span></div></div>
+<div class="card"><h4>② 直接相似</h4><div class="rule">$\dfrac{z_3-z_1}{z_2-z_1}=\dfrac{w_3-w_1}{w_2-w_1}$</div>
+<div class="eg">中點 $a'=\frac{b+c}2$…：<br>$\frac{c'-b}{a'-b}=\frac{a-b}{c-b}$ <span class="pill">邊比＋轉角</span></div></div>
+<div class="card"><h4>③ 垂足公式</h4><div class="rule">$m=\frac12\big[z+z_1+\frac{z_2-z_1}{\bar z_2-\bar z_1}(\bar z-\bar z_1)\big]$</div>
+<div class="eg">單位圓上：<br>$m=\frac12\big(z_1+z_2+z-\frac{z_1z_2}z\big)$</div></div>
+</div>
+<p>拿破崙定理：三邊外側作頂角 $120^\circ$ 的等腰三角形，三個頂點構成正三角形。⟦怎麼證｜每個頂點滿足 $(1-u^2)w_3=z_1-u^2z_2$ 這類式子；用 $u^2,-u,1$ 乘再相加，右邊因 $1+u^3=0$ 全消，得 $u^2w_1-uw_2+w_3=0$。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>(2) 只判定<b>逆時針</b>的正三角形；順時針要用 $u^2z_1-uz_3+z_2=0$</li>
+<li>直接相似要求定向相同；鏡射後的三角形對應的是<b>共軛</b>：$\frac{z'-z_1}{z_2-z_1}=\overline{\big(\frac{z-z_1}{z_2-z_1}\big)}$</li></ul></div>
+<div class="bottomline">先寫成「某式 = 0」的線性條件，再看能不能相加、相消。</div>

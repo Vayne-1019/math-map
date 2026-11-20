@@ -1,0 +1,177 @@
+=== meta
+title: 解析幾何中的平面幾何
+author: 杜錫錄
+pages: 170-177
+units: G-8-8, G-8-3, G-8-4, G-8-2
+status: 完成
+
+=== text
+<p>解析幾何的長處是「數形結合」：可以把幾何問題翻成代數式子來算，反過來也可以用幾何的眼光處理代數式子。這一講就談這兩個方向。</p>
+<h3>一、用解析法證平面幾何題</h3>
+<p>不少平面幾何題，純幾何證法很難想，甚至無從下手；改用坐標，往往只要按部就班地算。有人覺得解析法等於「繁瑣」，其實不然：用得好的解析法有它自己的技巧，也有章法可循。下面透過例題說明使用時要注意的觀念。</p>
+
+=== 例 1 | 四邊形的平方和
+zh: 證明：任意四邊形四條邊的平方和，等於兩條對角線的平方和，再加上兩條對角線中點連線平方的 4 倍。
+sol: <figure class="bkfig"><svg viewBox="0 0 300 218" width="300" role="img" aria-label="四邊形 A1A2A3A4，兩條對角線的中點 M、N">
+<g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="27,182.4 242.8,182.4 199.7,52.9 48.5,87.4"/><line x1="27" y1="182.4" x2="199.7" y2="52.9" stroke-dasharray="5 4"/><line x1="242.8" y1="182.4" x2="48.5" y2="87.4" stroke-dasharray="5 4"/><line x1="113.3" y1="117.6" x2="145.7" y2="134.9" stroke="#c2562b" stroke-width="2"/></g>
+<g fill="currentColor"><circle cx="113.3" cy="117.6" r="2.6"/><circle cx="145.7" cy="134.9" r="2.6"/></g>
+<g fill="currentColor" font-size="15" font-style="italic"><text x="6" y="197.4">A<tspan font-size="11" dy="3">1</tspan></text><text x="246.8" y="197.4">A<tspan font-size="11" dy="3">2</tspan></text><text x="202.7" y="48.9">A<tspan font-size="11" dy="3">3</tspan></text><text x="27.5" y="83.4">A<tspan font-size="11" dy="3">4</tspan></text><text x="109.3" y="110.6">M</text><text x="148.7" y="148.9">N</text></g>
+</svg><figcaption>虛線是對角線，紅線連接兩對角線的中點</figcaption></figure>
+設四個頂點為 $A_i(x_i,y_i)$，$i=1,2,3,4$，對角線 $A_1A_3$、$A_2A_4$ 的中點分別是
+$$M\Big(\tfrac{x_1+x_3}{2},\tfrac{y_1+y_3}{2}\Big),\quad N\Big(\tfrac{x_2+x_4}{2},\tfrac{y_2+y_4}{2}\Big).$$
+先只看橫坐標。要證的式子拆成橫、縱兩部分，橫坐標部分是
+$$\begin{aligned}&4\Big(\tfrac{x_1+x_3}{2}-\tfrac{x_2+x_4}{2}\Big)^2+(x_1-x_3)^2+(x_2-x_4)^2\\&=(x_1+x_3-x_2-x_4)^2+(x_1-x_3)^2+(x_2-x_4)^2\\&=2\big(x_1^2+x_2^2+x_3^2+x_4^2-x_1x_2-x_2x_3-x_3x_4-x_4x_1\big)\\&=(x_1-x_2)^2+(x_2-x_3)^2+(x_3-x_4)^2+(x_4-x_1)^2.\end{aligned}$$
+⟦第二行到第三行｜展開第一項：$(x_1+x_3-x_2-x_4)^2=\sum x_i^2+2x_1x_3+2x_2x_4-2x_1x_2-2x_1x_4-2x_2x_3-2x_3x_4$。<br>後兩項：$(x_1-x_3)^2+(x_2-x_4)^2=\sum x_i^2-2x_1x_3-2x_2x_4$。<br>相加時 $x_1x_3$、$x_2x_4$ 剛好消掉。⟧
+縱坐標的式子⟦完全同理｜把上面每個 $x$ 換成 $y$，推導一字不改。⟧。把兩部分相加，用距離公式就得到
+$$|A_1A_2|^2+|A_2A_3|^2+|A_3A_4|^2+|A_4A_1|^2=|A_1A_3|^2+|A_2A_4|^2+4|MN|^2.$$
+<b>注 1</b>　這題的純幾何證法並不容易，解析法只要簡單計算。<br>
+<b>注 2　坐標系怎麼取？</b>常聽到的原則是「讓坐標裡盡量多出現 0」，計算題這樣做確實划算。但證明題只顧這條原則，可能貪小失大：<b>對稱性</b>常常因此被破壞。解析法證題的一大特色是結果已知，我們要設法「湊」出它，這時對稱性非常重要；破壞了對稱，式子反而變亂，面對一堆沒有規律的式子會無從下手。本例刻意用最一般的坐標，保持式子的對稱，所以變形幾乎是自然而然的；又因為橫、縱坐標地位相同，只要算橫坐標，縱坐標「同理」即可。
+
+=== 例 2 | 高上任一點
+zh: 給定銳角 $\triangle ABC$ 及高 $AH$。在 $AH$ 上任取一點 $D$，連 $BD$ 並延長交 $AC$ 於 $E$，連 $CD$ 並延長交 $AB$ 於 $F$。證明 $\angle AHE=\angle AHF$。
+sol: <figure class="bkfig"><svg viewBox="0 0 300 272" width="300" role="img" aria-label="銳角三角形 ABC，高 AH 在 y 軸上，H 為原點"><defs><marker id="arL21_2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="currentColor" stroke-width="1.5"/></marker></defs>
+<g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18.6" y1="226.1" x2="286" y2="226.1" stroke-width="1" marker-end="url(#arL21_2)"/><line x1="180" y1="253.7" x2="180" y2="14" stroke-width="1" marker-end="url(#arL21_2)"/><polygon points="180,41.7 41.7,226.1 249.1,226.1"/><line x1="41.7" y1="226.1" x2="222.1" y2="153.9"/><line x1="249.1" y1="226.1" x2="119.5" y2="122.3"/><line x1="180" y1="226.1" x2="222.1" y2="153.9" stroke="#c2562b" stroke-width="1.8"/><line x1="180" y1="226.1" x2="119.5" y2="122.3" stroke="#c2562b" stroke-width="1.8"/></g>
+<g fill="currentColor"><circle cx="180" cy="41.7" r="2.6"/><circle cx="41.7" cy="226.1" r="2.6"/><circle cx="249.1" cy="226.1" r="2.6"/><circle cx="180" cy="170.7" r="2.6"/><circle cx="222.1" cy="153.9" r="2.6"/><circle cx="119.5" cy="122.3" r="2.6"/></g>
+<g fill="currentColor" font-size="15" font-style="italic"><text x="277" y="241.1">x</text><text x="186" y="23">y</text><text x="185" y="46.7">A</text><text x="37.7" y="242.1">B</text><text x="245.1" y="242.1">C</text><text x="165" y="242.1">H</text><text x="168" y="167.7">D</text><text x="227.1" y="158.9">E</text><text x="105.5" y="127.3">F</text></g>
+</svg><figcaption>以 BC 為 x 軸、高 AH 為 y 軸；紅線 HE、HF 對稱於 y 軸</figcaption></figure>
+以 $BC$ 為 $x$ 軸、$AH$ 為 $y$ 軸（$H$ 為原點），設 $A(0,a)$、$B(b,0)$、$C(c,0)$、$D(0,d)$，其中 $b&lt;0&lt;c$，$0&lt;d&lt;a$。用截距式，$BD$ 與 $AC$ 的方程是
+$$\frac xb+\frac yd=1,\qquad \frac xc+\frac ya=1.$$
+解這兩式得交點⟦E 的坐標｜用克拉瑪公式：係數行列式 $\frac1{ab}-\frac1{cd}=\frac{cd-ab}{abcd}$，<br>$x=\dfrac{\frac1a-\frac1d}{\frac{cd-ab}{abcd}}=\dfrac{bc(d-a)}{cd-ab}$，$y=\dfrac{\frac1b-\frac1c}{\frac{cd-ab}{abcd}}=\dfrac{ad(c-b)}{cd-ab}$。⟧
+$$E\Big(\frac{bc(d-a)}{cd-ab},\ \frac{ad(c-b)}{cd-ab}\Big),$$
+所以直線 $HE$（過原點）的斜率是
+$$k_{HE}=\frac{ad(c-b)}{bc(d-a)}=\frac{ad(b-c)}{bc(a-d)}.$$
+注意 $B$、$C$ 在這套設法裡地位對等：把 $F$ 的推導中的 $b$、$c$ 互換，就是 $E$ 的推導。⟦所以｜$F$ 是 $CD$ 與 $AB$ 的交點，和 $E$ 的定義只差在 $B$、$C$ 對調，因此 $k_{HF}=\dfrac{ad(c-b)}{cb(a-d)}=-k_{HE}$。⟧ $HF$ 的斜率與 $HE$ 的斜率互為相反數，即 $HE$、$HF$ 對 $y$ 軸（也就是 $AH$）對稱，故 $\angle AHE=\angle AHF$。<br>
+<b>注</b>　如果設 $B(b,0)$、$C(-c,0)$ 讓 $b,c$ 都取正數，看似比較「好看」，卻破壞了 $B$、$C$ 的對稱，就不能用一句「互換 $b$、$c$」帶過。
+
+=== text
+<p>有些涉及三角形面積的問題，也可以用解析法。先介紹面積公式（用行列式寫最簡潔）：若 $\triangle ABC$ 的頂點為 $A(x_A,y_A)$、$B(x_B,y_B)$、$C(x_C,y_C)$，則</p>
+$$S_{\triangle ABC}=\frac12\begin{vmatrix}1&amp;x_A&amp;y_A\\1&amp;x_B&amp;y_B\\1&amp;x_C&amp;y_C\end{vmatrix}.$$
+<p>$A,B,C$ 依逆時針順序排列時行列式為正，順時針時為負。這樣定義的面積帶有正負號，稱為<b>有向面積</b>。⟦為什麼會有正負｜行列式等於 $\frac12$ 倍的向量叉積 $\overrightarrow{AB}\times\overrightarrow{AC}=(x_B-x_A)(y_C-y_A)-(x_C-x_A)(y_B-y_A)$；把第 2、3 列減去第 1 列再展開就看得出來。叉積的正負號正好表示從 $\overrightarrow{AB}$ 轉到 $\overrightarrow{AC}$ 是逆時針還是順時針。⟧ 頂點循環輪換（$ABC\to BCA$）不改變有向面積，對調兩點則變號。</p>
+
+=== 例 3 | 有向面積
+zh: 設 $\triangle ABC$ 與 $\triangle A'B'C'$ 在同一平面上，且 $AA'\parallel BB'\parallel CC'$。證明
+$$\begin{aligned}&3\big(S_{\triangle ABC}+S_{\triangle A'B'C'}\big)\\&=S_{\triangle AB'C'}+S_{\triangle BC'A'}+S_{\triangle CA'B'}\\&\quad+S_{\triangle A'BC}+S_{\triangle B'CA}+S_{\triangle C'AB}.\end{aligned}$$
+這裡的面積都是有向面積。
+sol: <figure class="bkfig"><svg viewBox="0 0 300 188" width="300" role="img" aria-label="兩個三角形 ABC、A′B′C′，AA′、BB′、CC′ 互相平行">
+<g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="74.4,35.6 31.3,87.4 91.7,152.2"/><polygon points="229.9,35.6 264.4,87.4 173.7,152.2" stroke="#c2562b"/><line x1="74.4" y1="35.6" x2="229.9" y2="35.6" stroke-dasharray="5 4"/><line x1="31.3" y1="87.4" x2="264.4" y2="87.4" stroke-dasharray="5 4"/><line x1="91.7" y1="152.2" x2="173.7" y2="152.2" stroke-dasharray="5 4"/></g>
+<g fill="currentColor" font-size="15" font-style="italic"><text x="70.4" y="30.6">A</text><text x="225.9" y="30.6">A′</text><text x="17.3" y="92.4">B</text><text x="269.4" y="92.4">B′</text><text x="87.7" y="168.2">C</text><text x="169.7" y="168.2">C′</text></g>
+</svg><figcaption>虛線 AA′、BB′、CC′ 互相平行，取它們的方向為 x 軸</figcaption></figure>
+取與 $AA'$ 平行的直線為 $x$ 軸，則 $A$ 與 $A'$、$B$ 與 $B'$、$C$ 與 $C'$ 的縱坐標分別相同：$y_{A'}=y_A$，$y_{B'}=y_B$，$y_{C'}=y_C$。
+<br>右邊六項中，每個三角形都恰有一個頂點來自 $\{A,A'\}$、一個來自 $\{B,B'\}$、一個來自 $\{C,C'\}$。先用輪換把它們都排成「$A$ 類、$B$ 類、$C$ 類」的順序⟦例如｜$S_{\triangle BC'A'}=S_{\triangle A'BC'}$，$S_{\triangle CA'B'}=S_{\triangle A'B'C}$，$S_{\triangle B'CA}=S_{\triangle AB'C}$，$S_{\triangle C'AB}=S_{\triangle ABC'}$。循環輪換不改變有向面積。⟧，那麼六個行列式的第 1 行都是 $1$，第 3 行都是 $(y_A,y_B,y_C)$，只有第 2 行不同。所以右邊的兩倍為
+$$\begin{aligned}&\begin{vmatrix}1&amp;x_A&amp;y_A\\1&amp;x_{B'}&amp;y_B\\1&amp;x_{C'}&amp;y_C\end{vmatrix}+\begin{vmatrix}1&amp;x_{A'}&amp;y_A\\1&amp;x_B&amp;y_B\\1&amp;x_{C'}&amp;y_C\end{vmatrix}+\begin{vmatrix}1&amp;x_{A'}&amp;y_A\\1&amp;x_{B'}&amp;y_B\\1&amp;x_C&amp;y_C\end{vmatrix}\\&+\begin{vmatrix}1&amp;x_{A'}&amp;y_A\\1&amp;x_B&amp;y_B\\1&amp;x_C&amp;y_C\end{vmatrix}+\begin{vmatrix}1&amp;x_A&amp;y_A\\1&amp;x_{B'}&amp;y_B\\1&amp;x_C&amp;y_C\end{vmatrix}+\begin{vmatrix}1&amp;x_A&amp;y_A\\1&amp;x_B&amp;y_B\\1&amp;x_{C'}&amp;y_C\end{vmatrix}.\end{aligned}$$
+行列式對單一行是線性的，六個行列式只有第 2 行不同，可以把第 2 行加起來合成一個：
+$$=\begin{vmatrix}1&amp;3x_A+3x_{A'}&amp;y_A\\1&amp;3x_B+3x_{B'}&amp;y_B\\1&amp;3x_C+3x_{C'}&amp;y_C\end{vmatrix}$$
+⟦為什麼是 3x+3x′｜數一數第 1 列：$x_A$ 出現在第 1、5、6 個行列式，$x_{A'}$ 出現在第 2、3、4 個，各 3 次。第 2、3 列同理。⟧
+$$\begin{aligned}&=3\begin{vmatrix}1&amp;x_A&amp;y_A\\1&amp;x_B&amp;y_B\\1&amp;x_C&amp;y_C\end{vmatrix}+3\begin{vmatrix}1&amp;x_{A'}&amp;y_A\\1&amp;x_{B'}&amp;y_B\\1&amp;x_{C'}&amp;y_C\end{vmatrix}\\&=2\cdot3\big(S_{\triangle ABC}+S_{\triangle A'B'C'}\big).\end{aligned}$$
+兩邊除以 2 即得結論。<br>
+<b>注</b>　關鍵是一開始利用 $S_{\triangle BC'A'}=S_{\triangle A'BC'}$ 這類輪換，讓各行列式有兩行相同、便於相加；同時把坐標取成最一般的形式，式子才保持對稱。
+
+=== text
+<h3>二、在解析幾何解題中活用平面幾何</h3>
+<p>反過來，解析幾何題目也常可借用幾何知識來簡化。大致有兩方面：一是用平面幾何的定理，處理直線與圓的問題時特別好用；二是處理拋物線、橢圓、雙曲線時，要記得它們的<b>幾何定義</b>（焦點、準線）。</p>
+
+=== 例 4 | 直線與圓
+zh: 求直線 $ax+by+c=0$（$a,b$ 不全為 0）與圓 $x^2+y^2=r^2$（$r&gt;0$）相交的充要條件，並求相交時直線被圓截得的弦長。
+sol: <figure class="bkfig"><svg viewBox="0 0 280 230" width="280" role="img" aria-label="圓 x²+y²=r² 與直線交於 A、B，OP 垂直於 AB"><defs><marker id="arL21_4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="currentColor" stroke-width="1.5"/></marker></defs>
+<g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18.2" y1="114.8" x2="261.8" y2="114.8" stroke-width="1" marker-end="url(#arL21_4)"/><line x1="123.2" y1="211.4" x2="123.2" y2="14" stroke-width="1" marker-end="url(#arL21_4)"/><circle cx="123.2" cy="114.8" r="84"/><line x1="35.6" y1="20.6" x2="251.1" y2="128.4" stroke="#c2562b"/><line x1="123.2" y1="114.8" x2="143.4" y2="74.5" stroke-dasharray="5 4"/><line x1="123.2" y1="114.8" x2="80" y2="42.8" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"><circle cx="80" cy="42.8" r="2.6"/><circle cx="206.8" cy="106.2" r="2.6"/><circle cx="143.4" cy="74.5" r="2.6"/></g>
+<g fill="currentColor" font-size="15" font-style="italic"><text x="252.8" y="129.8">x</text><text x="129.2" y="23">y</text><text x="110.2" y="128.8">O</text><text x="67" y="38.8">A</text><text x="210.8" y="121.2">B</text><text x="146.4" y="70.5">P</text></g>
+</svg><figcaption>OP 是圓心到直線的垂線，P 是弦 AB 的中點</figcaption></figure>
+用幾何的想法：直線與圓相交於兩點，充要條件是圓心到直線的距離小於半徑，寫成式子就是
+$$\frac{|c|}{\sqrt{a^2+b^2}}&lt;r,\quad\text{即}\quad c^2&lt;r^2(a^2+b^2).$$
+條件成立時，設直線交圓於 $A,B$，從圓心 $O$ 作直線的垂線，垂足為 $P$，則 $P$ 平分弦 $AB$⟦為什麼｜$OA=OB$，$\triangle OAB$ 是等腰三角形，底邊上的高也是中線。⟧。由畢氏定理，
+$$\begin{aligned}\tfrac14|AB|^2&amp;=|AP|^2=|OA|^2-|OP|^2\\&amp;=r^2-\frac{c^2}{a^2+b^2}=\frac{r^2(a^2+b^2)-c^2}{a^2+b^2},\end{aligned}$$
+所以
+$$|AB|=2\sqrt{\frac{r^2(a^2+b^2)-c^2}{a^2+b^2}}.$$
+ans: $c^2&lt;r^2(a^2+b^2)$；弦長 $2\sqrt{\dfrac{r^2(a^2+b^2)-c^2}{a^2+b^2}}$。
+
+=== 例 5 | 拋物線上的動弦
+zh: 長為定值 $l$（$l\ge1$）的線段 $AB$，兩端點 $A,B$ 在拋物線 $y=x^2$ 上移動。求它的中點 $M$ 到 $x$ 軸的最小距離。
+sol: <figure class="bkfig"><svg viewBox="0 0 280 270" width="280" role="img" aria-label="拋物線 y=x² 的焦弦 AB 與中點 M、準線"><defs><marker id="arL21_5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="currentColor" stroke-width="1.5"/></marker></defs>
+<g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="20.6" y1="206.3" x2="259.4" y2="206.3" stroke-width="1" marker-end="url(#arL21_5)"/><line x1="126.7" y1="239.5" x2="126.7" y2="14" stroke-width="1" marker-end="url(#arL21_5)"/><polyline points="17.3,25.8 20.1,34.8 22.8,43.5 25.6,52.1 28.4,60.4 31.1,68.4 33.9,76.3 36.6,83.9 39.4,91.3 42.2,98.4 44.9,105.4 47.7,112.1 50.4,118.5 53.2,124.8 56,130.8 58.7,136.6 61.5,142.1 64.2,147.4 67,152.5 69.8,157.4 72.5,162 75.3,166.4 78,170.6 80.8,174.5 83.6,178.2 86.3,181.7 89.1,184.9 91.8,188 94.6,190.7 97.4,193.3 100.1,195.6 102.9,197.7 105.6,199.6 108.4,201.3 111.2,202.7 113.9,203.8 116.7,204.8 119.5,205.5 122.2,206 125,206.3 127.7,206.3 130.5,206.1 133.3,205.7 136,205 138.8,204.1 141.5,203 144.3,201.7 147.1,200.1 149.8,198.3 152.6,196.2 155.3,194 158.1,191.5 160.9,188.8 163.6,185.8 166.4,182.6 169.1,179.2 171.9,175.6 174.7,171.7 177.4,167.6 180.2,163.2 182.9,158.7 185.7,153.9 188.5,148.9 191.2,143.6 194,138.1 196.7,132.4 199.5,126.5 202.3,120.3 205,113.9 207.8,107.3 210.5,100.4 213.3,93.3 216.1,86 218.8,78.4 221.6,70.7 224.3,62.6 227.1,54.4 229.9,45.9 232.6,37.2 235.4,28.3 238.1,19.1"/><line x1="20.6" y1="222.9" x2="259.4" y2="222.9" stroke-dasharray="5 4"/><line x1="108" y1="201" x2="185.3" y2="154.6" stroke="#c2562b"/><line x1="108" y1="201" x2="108" y2="222.9" stroke-dasharray="5 4"/><line x1="185.3" y1="154.6" x2="185.3" y2="222.9" stroke-dasharray="5 4"/><line x1="146.6" y1="177.8" x2="146.6" y2="222.9" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"><circle cx="108" cy="201" r="2.6"/><circle cx="185.3" cy="154.6" r="2.6"/><circle cx="146.6" cy="177.8" r="2.6"/><circle cx="126.7" cy="189.7" r="2.6"/></g>
+<g fill="currentColor" font-size="15" font-style="italic"><text x="250.4" y="221.3">x</text><text x="132.7" y="23">y</text><text x="113.7" y="220.3">O</text><text x="94" y="206">A</text><text x="190.3" y="159.6">B</text><text x="134.6" y="174.8">M</text><text x="128.7" y="202.7">F</text><text x="22.6" y="237.9" font-style="normal" font-size="12">準線</text></g>
+</svg><figcaption>焦點 F(0, 1/4)，準線 y = −1/4（虛線）；AB 過 F 時取到最小值</figcaption></figure>
+$y=x^2$ 即 $x^2=4\cdot\frac14\,y$，焦點 $F\big(0,\frac14\big)$，準線 $y=-\frac14$。由梯形中位線，$M$ 到準線的距離是 $A$、$B$ 到準線距離的平均；再用拋物線的定義（到準線距離 = 到焦點距離）：
+$$\begin{aligned}M\text{ 到準線的距離}&amp;=\tfrac12\big(A\text{ 到準線}+B\text{ 到準線}\big)\\&amp;=\tfrac12\big(|AF|+|BF|\big)\ge\tfrac12|AB|=\tfrac l2.\end{aligned}$$
+最後一步是折線 $AFB$ 不短於線段 $AB$。因為準線是 $y=-\frac14$，
+$$M\text{ 到 }x\text{ 軸的距離}\ge\frac l2-\frac14,$$
+等號成立當且僅當 $F$ 在線段 $AB$ 上，即 $AB$ 是焦弦。⟦為什麼要 l ≥ 1｜過焦點的弦中最短的是通徑（垂直於對稱軸的焦弦），它的長是 $4\cdot\frac14=1$，焦弦長可以取到 $[1,\infty)$ 的任何值。所以 $l\ge1$ 時才找得到長為 $l$ 的焦弦，等號才取得到。⟧<br>
+<b>注</b>　解法用到拋物線的定義、梯形中位線，以及「折線不短於線段」。用參數或純代數也能做，但幾何觀點簡便得多。
+ans: $\dfrac l2-\dfrac14$
+
+=== 例 6 | 焦弦圍成的梯形
+zh: 已知拋物線 $y^2=2px$（$p&gt;0$），焦點為 $F$。一條過 $F$、傾斜角為 $\theta$ 的直線交拋物線於 $A,B$；連接 $A$ 與頂點 $O$ 的直線交準線於 $B'$，連接 $B$ 與 $O$ 的直線交準線於 $A'$。求四邊形 $ABB'A'$ 的面積。
+sol: <figure class="bkfig"><svg viewBox="0 0 300 345" width="300" role="img" aria-label="拋物線 y²=2px、焦弦 AB 與準線上的 A′、B′"><defs><marker id="arL21_6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="currentColor" stroke-width="1.5"/></marker></defs>
+<g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="19" y1="230.6" x2="281" y2="230.6" stroke-width="1" marker-end="url(#arL21_6)"/><line x1="104.7" y1="326.3" x2="104.7" y2="14" stroke-width="1" marker-end="url(#arL21_6)"/><polyline points="150.1,326.3 146.6,322.5 143.1,318.6 139.8,314.8 136.7,310.9 133.7,307.1 130.9,303.3 128.2,299.4 125.6,295.6 123.2,291.7 121,287.9 118.8,284 116.9,280.2 115.1,276.4 113.4,272.5 111.9,268.7 110.5,264.8 109.3,261 108.2,257.2 107.2,253.3 106.4,249.5 105.8,245.6 105.3,241.8 104.9,238 104.7,234.1 104.7,230.3 104.8,226.4 105,222.6 105.4,218.8 105.9,214.9 106.6,211.1 107.4,207.2 108.3,203.4 109.4,199.6 110.7,195.7 112.1,191.9 113.7,188 115.4,184.2 117.2,180.3 119.2,176.5 121.3,172.7 123.6,168.8 126,165 128.6,161.1 131.3,157.3 134.2,153.5 137.2,149.6 140.4,145.8 143.7,141.9 147.1,138.1 150.7,134.3 154.5,130.4 158.4,126.6 162.4,122.7 166.6,118.9 170.9,115.1 175.4,111.2 180,107.4 184.8,103.5 189.7,99.7 194.8,95.9 200,92 205.3,88.2 210.8,84.3 216.5,80.5 222.3,76.6 228.2,72.8 234.3,69 240.6,65.1 246.9,61.3 253.5,57.4 260.1,53.6 267,49.8 273.9,45.9 281,42.1 288.3,38.2 295.7,34.4 303.3,30.6 311,26.7 318.8,22.9 326.8,19"/><line x1="54.3" y1="326.3" x2="54.3" y2="19" stroke-dasharray="5 4"/><polygon points="255.8,56.1 121.5,288.8 54.3,288.8 54.3,56.1" fill="#c2562b" fill-opacity="0.12" stroke="#c2562b"/><line x1="104.7" y1="230.6" x2="255.8" y2="56.1" stroke-dasharray="5 4"/><line x1="104.7" y1="230.6" x2="54.3" y2="288.8" stroke-dasharray="5 4"/><line x1="104.7" y1="230.6" x2="121.5" y2="288.8" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"><circle cx="255.8" cy="56.1" r="2.6"/><circle cx="121.5" cy="288.8" r="2.6"/><circle cx="54.3" cy="56.1" r="2.6"/><circle cx="54.3" cy="288.8" r="2.6"/><circle cx="155" cy="230.6" r="2.6"/></g>
+<g fill="currentColor" font-size="15" font-style="italic"><text x="272" y="245.6">x</text><text x="110.7" y="23">y</text><text x="91.7" y="244.6">O</text><text x="260.8" y="61.1">A</text><text x="125.5" y="303.8">B</text><text x="31.3" y="61.1">A′</text><text x="31.3" y="293.8">B′</text><text x="157" y="243.6">F</text></g>
+</svg><figcaption>圖中取 p = 2、θ = 60°。虛線 AO 延長交準線於 B′，BO 延長交準線於 A′；AA′、BB′ 都是水平線</figcaption></figure>
+先看 $\theta=\frac\pi2$：此時 $AB$ 是通徑，$A\big(\frac p2,p\big)$、$B\big(\frac p2,-p\big)$，$B'$、$A'$ 是 $(-\frac p2,-p)$、$(-\frac p2,p)$，四邊形是 $2p\times p$ 的矩形，面積為 $2p^2$。
+<br>當 $\theta\ne\frac\pi2$，設斜率 $k=\tan\theta$，$A(x_1,y_1)$、$B(x_2,y_2)$，$y_1^2=2px_1$，$y_2^2=2px_2$。<b>關鍵是注意到 $BB'$ 平行於 $x$ 軸。</b>
+<br>把 $AB$ 的方程 $y=k\big(x-\frac p2\big)$ 與 $y^2=2px$ 聯立，消去 $x$⟦消去 x｜由直線得 $x=\frac yk+\frac p2$，代入 $y^2=2px$：$y^2=\frac{2p}k y+p^2$。⟧得
+$$y^2-\frac{2p}{k}y-p^2=0,$$
+由韋達定理
+$$y_1y_2=-p^2,\qquad y_1+y_2=\frac{2p}{k}.\qquad(1)$$
+直線 $AO$ 是 $y=\frac{y_1}{x_1}x=\frac{2p}{y_1}x$，與準線 $x=-\frac p2$ 交於
+$$B'\Big(-\frac p2,\ -\frac{p^2}{y_1}\Big)=\Big(-\frac p2,\ y_2\Big),$$
+最後一步用了 (1) 的 $y_1y_2=-p^2$。所以 $B$ 與 $B'$ 縱坐標相等，$BB'\parallel x$ 軸。$A$、$B$ 地位對等，同理 $AA'\parallel x$ 軸。於是 $AA'B'B$ 是直角梯形，兩底 $AA'$、$BB'$ 都垂直於準線。由拋物線的定義 $|AA'|=|AF|$、$|BB'|=|BF|$，所以面積
+$$S=\tfrac12|A'B'|\big(|AA'|+|BB'|\big)=\tfrac12|A'B'|\cdot|AB|.$$
+而 $|A'B'|=|y_1-y_2|$，又 $\dfrac{y_2-y_1}{x_2-x_1}=k$，故 $|AB|=|y_1-y_2|\sqrt{1+\frac1{k^2}}$⟦弦長｜$|AB|=\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}$，其中 $|x_1-x_2|=\frac{|y_1-y_2|}{|k|}$。⟧。由 (1)，
+$$\begin{aligned}S&amp;=\tfrac12(y_1-y_2)^2\sqrt{1+\tfrac1{k^2}}\\&amp;=\tfrac12\big[(y_1+y_2)^2-4y_1y_2\big]\sqrt{1+\tfrac1{k^2}}\\&amp;=\tfrac12\Big(\tfrac{4p^2}{k^2}+4p^2\Big)\sqrt{1+\tfrac1{k^2}}=2p^2\Big(1+\frac1{k^2}\Big)^{\frac32}.\end{aligned}$$
+因為 $1+\frac1{k^2}=1+\cot^2\theta=\frac1{\sin^2\theta}$，答案也可寫成 $\dfrac{2p^2}{\sin^3\theta}$，$\theta=\frac\pi2$ 時正好是 $2p^2$，兩種情形可以合併。
+ans: $\dfrac{2p^2}{\sin^3\theta}$（即 $2p^2(1+\cot^2\theta)^{3/2}$）
+
+=== 例 7 | 與兩圓相切的動圓
+zh: 已知定圓 $O_1$ 與定圓 $O_2$，圓 $O_1$ 在圓 $O_2$ 內部。一個動圓與圓 $O_1$ 外切、與圓 $O_2$ 內切，求動圓圓心 $P$ 的軌跡。
+sol: <figure class="bkfig"><svg viewBox="0 0 280 280" width="280" role="img" aria-label="圓 O1 在圓 O2 內，動圓 P 與兩圓相切，軌跡為橢圓">
+<g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="140" cy="140" r="118.6"/><circle cx="95.5" cy="140" r="37.1"/><ellipse cx="117.8" cy="140" rx="77.8" ry="74.6" stroke-dasharray="5 4" stroke="#c2562b"/><circle cx="162.4" cy="78.9" r="53.5"/><line x1="95.5" y1="140" x2="162.4" y2="78.9"/><line x1="140" y1="140" x2="180.8" y2="28.7"/></g>
+<g fill="currentColor"><circle cx="95.5" cy="140" r="2.6"/><circle cx="140" cy="140" r="2.6"/><circle cx="162.4" cy="78.9" r="2.6"/><circle cx="122.9" cy="115" r="2.6"/><circle cx="180.8" cy="28.7" r="2.6"/></g>
+<g fill="currentColor" font-size="15" font-style="italic"><text x="76.5" y="153">O<tspan font-size="11" dy="3">1</tspan></text><text x="142" y="153">O<tspan font-size="11" dy="3">2</tspan></text><text x="167.4" y="83.9">P</text><text x="110.9" y="120">A</text><text x="183.8" y="24.7">B</text></g>
+</svg><figcaption>紅色虛線是軌跡：以 O₁、O₂ 為焦點、長軸 r₁ + r₂ 的橢圓</figcaption></figure>
+這題牽涉三個圓，直接列方程求軌跡不方便，我們完全用幾何來處理。設兩圓半徑為 $r_1&lt;r_2$。
+<br>(1) 若兩圓同心（$O_1$、$O_2$ 重合），軌跡是以 $O_1$ 為圓心、$\dfrac{r_1+r_2}{2}$ 為半徑的圓。⟦為什麼｜動圓夾在兩圓之間的環形裡，直徑等於環寬 $r_2-r_1$，所以圓心到 $O_1$ 的距離是 $r_1+\frac{r_2-r_1}2=\frac{r_1+r_2}2$。⟧
+<br>(2) 若不同心，設動圓半徑為 $r$，與圓 $O_1$、圓 $O_2$ 的切點分別為 $A$、$B$。兩圓相切時切點與兩圓心共線，所以
+$$PO_1=PA+AO_1=r+r_1,\qquad PO_2=BO_2-PB=r_2-r,$$
+相加得 $PO_1+PO_2=r_1+r_2$，是定值。由橢圓的定義，$P$ 在以 $O_1,O_2$ 為焦點、長軸長 $r_1+r_2$ 的橢圓上。
+<br>反過來，要確認橢圓上每一點都是軌跡中的點。圓 $O_1$ 上任一點到 $O_1,O_2$ 的距離和小於 $r_1+r_2$，圓 $O_2$ 上任一點的距離和大於 $r_1+r_2$⟦為什麼｜圓 $O_1$ 上的點 $Q$：$QO_1=r_1$，而 $Q$ 在圓 $O_2$ 內，$QO_2&lt;r_2$。圓 $O_2$ 上的點 $Q$：$QO_2=r_2$，而 $Q$ 在圓 $O_1$ 外，$QO_1&gt;r_1$。⟧，所以橢圓與兩圓都不相交，並且夾在兩圓之間。對橢圓上任一點 $P$，令 $r=PO_1-r_1&gt;0$，則 $PO_2=r_1+r_2-PO_1=r_2-r$，以 $P$ 為圓心、$r$ 為半徑的圓恰好與圓 $O_1$ 外切、與圓 $O_2$ 內切。
+ans: 同心時是半徑 $\frac{r_1+r_2}2$ 的同心圓；不同心時是以 $O_1,O_2$ 為焦點、長軸 $r_1+r_2$ 的橢圓。
+
+=== 習題 1
+zh: $P$ 是正三角形 $ABC$ 內切圓上任意一點，證明 $PA^2+PB^2+PC^2$ 是常數。
+hint: 這其實是計算題。以 $A$ 為原點、$AB$ 為 $x$ 軸，設邊長為 2。
+ans: 邊長為 2 時恆等於 5（一般邊長 $a$ 時為 $\frac54a^2$）。
+sol: <figure class="bkfig"><svg viewBox="0 0 220 198" width="220" role="img" aria-label="邊長 2 的正三角形與內切圓上的點 P"><defs><marker id="arL21_8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="currentColor" stroke-width="1.5"/></marker></defs>
+<g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="17.7" y1="161.7" x2="206" y2="161.7" stroke-width="1" marker-end="url(#arL21_8)"/><line x1="36.2" y1="180.2" x2="36.2" y2="14" stroke-width="1" marker-end="url(#arL21_8)"/><polygon points="36.2,161.7 183.8,161.7 110,33.8"/><circle cx="110" cy="119.1" r="42.6" stroke="#c2562b"/><line x1="73.1" y1="140.4" x2="36.2" y2="161.7" stroke-dasharray="5 4"/><line x1="73.1" y1="140.4" x2="183.8" y2="161.7" stroke-dasharray="5 4"/><line x1="73.1" y1="140.4" x2="110" y2="33.8" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"><circle cx="73.1" cy="140.4" r="2.6"/></g>
+<g fill="currentColor" font-size="15" font-style="italic"><text x="197" y="176.7">x</text><text x="42.2" y="23">y</text><text x="25.2" y="174.7">A</text><text x="179.8" y="177.7">B</text><text x="115" y="38.8">C</text><text x="61.1" y="137.4">P</text></g>
+</svg><figcaption>A 為原點、AB 在 x 軸上</figcaption></figure>
+$B(2,0)$、$C(1,\sqrt3)$，內心 $\big(1,\frac{\sqrt3}3\big)$，內切圓半徑 $\frac{\sqrt3}3$，方程
+$$(x-1)^2+\Big(y-\frac{\sqrt3}3\Big)^2=\frac13,\ \text{即}\ x^2+y^2-2x-\frac{2\sqrt3}3y=-1.\qquad(1)$$
+設 $P(x_0,y_0)$ 在內切圓上，則
+$$\begin{aligned}&amp;PA^2+PB^2+PC^2\\&amp;=(x_0^2+y_0^2)+\big[(x_0-2)^2+y_0^2\big]+\big[(x_0-1)^2+(y_0-\sqrt3)^2\big]\\&amp;=3\Big(x_0^2+y_0^2-2x_0-\frac{2\sqrt3}3y_0\Big)+8.\end{aligned}$$
+由 (1)，括號內等於 $-1$，所以和為 $-3+8=5$，與 $P$ 無關。
+
+=== 習題 2
+zh: 一條直線過點 $(1,2)$，被兩條平行直線 $4x+3y+1=0$ 與 $4x+3y+6=0$ 截得的線段長為 $\sqrt2$，求這條直線的方程。
+hint: 兩平行線的距離是 1，而截得的線段長 $\sqrt2$，所以所求直線與它們夾 $45^\circ$。
+ans: $x+7y-15=0$ 或 $7x-y-5=0$。
+sol: 兩平行線之間的距離是 $\dfrac{|6-1|}{\sqrt{4^2+3^2}}=1$。設所求直線與兩條平行線分別交於 $A$、$B$，從 $A$ 作另一條平行線的垂線，垂足 $C$，則 $AC=1$、$AB=\sqrt2$，所以 $\angle ABC=45^\circ$。設所求直線斜率為 $k$，已知直線斜率為 $-\frac43$，由夾角公式
+$$\left|\frac{k-\left(-\frac43\right)}{1+k\cdot\left(-\frac43\right)}\right|=1,$$
+解得 $k=-\frac17$ 或 $k=7$⟦解法｜$\big|3k+4\big|=\big|3-4k\big|$，所以 $3k+4=3-4k$ 得 $k=-\frac17$，或 $3k+4=-(3-4k)$ 得 $k=7$。⟧。過 $(1,2)$ 的直線為 $x+7y-15=0$ 或 $7x-y-5=0$。
+
+=== 習題 3
+zh: 已知拋物線 $y^2=2px$ 及一定點 $A$，在拋物線上找一點 $B$，使 $|AB|+|BF|$ 最小，其中 $F$ 是拋物線的焦點。
+ans: $A$ 在拋物線上：$B=A$。$A$ 在拋物線外（不含焦點的一側）：$B$ 是線段 $AF$ 與拋物線的交點。$A$ 在拋物線內：$B$ 是從 $A$ 向準線所作垂線與拋物線的交點。
+sol: 若 $A$ 在拋物線上，取 $B=A$ 即可；對拋物線上其他點 $B$，總有 $|AB|+|BF|&gt;|AF|$。
+<br>若 $A$ 在拋物線外，同樣由三角不等式 $|AB|+|BF|\ge|AF|$，線段 $AF$ 與拋物線的交點使等號成立。
+<br>若 $A$ 在拋物線內部（含焦點那一側），作準線。$B$ 到 $F$ 的距離等於 $B$ 到準線的距離 $|BB_1|$，所以 $|AB|+|BF|=|AB|+|BB_1|$，這是從 $A$ 經 $B$ 到準線的折線長，不小於 $A$ 到準線的距離；從 $A$ 向準線作垂線，它與拋物線的交點使等號成立。
+
+=== 習題 4
+zh: 已知橢圓 $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1$（$a&gt;b&gt;0$），$F_1,F_2$ 分別是左、右焦點，$P$ 是橢圓上任一點。證明：以 $PF_2$ 為直徑的圓與以長軸為直徑的圓相切。
+hint: 比較兩圓的圓心距與半徑差。
+ans: 兩圓內切。
+sol: 以長軸為直徑的圓，圓心為原點 $O$，半徑 $a$。設以 $PF_2$ 為直徑的圓圓心為 $Q$（$PF_2$ 的中點），半徑 $\frac12|PF_2|$。$O$ 是 $F_1F_2$ 的中點，所以 $OQ$ 是 $\triangle F_1F_2P$ 的中位線，$|OQ|=\frac12|PF_1|$。
+<br>兩圓半徑之差為 $a-\frac12|PF_2|$。由橢圓定義 $|PF_1|+|PF_2|=2a$，得
+$$a-\tfrac12|PF_2|=\tfrac12|PF_1|=|OQ|.$$
+圓心距等於半徑差，所以兩圓內切。

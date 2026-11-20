@@ -1,0 +1,22 @@
+=== meta
+title: 反證法怎麼找矛盾：抓特殊對象、看總量
+from: gz-L26
+order: 50
+
+=== body
+<div class="hero">假設提出後，矛盾從哪裡來？兩條路：<br>① 抓<b>特殊對象</b>（最多、最長、最近）<br>② 看<b>總量</b>（和、積、奇偶、整除、邊界長）</div>
+<div class="cards">
+<div class="card"><h4>① 最多的那一點</h4><div class="rule">度數最大的點 $A$ 連 $n$ 條</div>
+<div class="eg">8 點無三角形 ⇒ 線段 $\le(8-n)n\le16$<br>但有 17 條 <span class="pill">極端＋計數</span></div></div>
+<div class="card"><h4>② 求和看奇偶</h4><div class="rule">兩種算法，奇偶不同</div>
+<div class="eg">每組「一數 = 另兩數和」⇒ 組和為偶<br>$1+\cdots+33=561$ 是奇數 <span class="pill">分不成</span></div></div>
+<div class="card"><h4>③ 看整除</h4><div class="rule">兩邊 2 的冪次比一比</div>
+<div class="eg">$b^2-1=4n(n+1)+4ac$<br>左邊 8 的倍數，右邊不是</div></div>
+<div class="card"><h4>④ 不增的量</h4><div class="rule">塗黑時邊界長不增</div>
+<div class="eg">起初 $\le4(n-1)$，全黑要 $4n$ <span class="pill">單變量</span></div></div>
+</div>
+<p>奇偶小工具：$|x-y|$ 與 $x+y$ 同奇偶。⟦用法｜一直取差的絕對值，總和的奇偶性不變；$1+2+\cdots+4n$ 是偶數，最後剩的數也是偶數。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>只盯著某幾個對象兜圈子；卡住時改算「全部加起來」常常就通了</li>
+<li>奇偶論證忘了檢查 0、1 這類邊界情形（例如底數為 1）</li></ul></div>
+<div class="bottomline">找不到矛盾時：取極端的那一個，或把全部加起來看奇偶。</div>

@@ -1,0 +1,22 @@
+=== meta
+title: 反證法：假設不成立，找出矛盾
+from: gz-L25
+order: 60
+
+=== body
+<div class="hero">正面無從下手時，<b>先假設結論不成立</b><br>一步步合邏輯地推，直到撞上<b>矛盾</b><br>矛盾只能怪假設 → 結論成立</div>
+<div class="cards">
+<div class="card"><h4>① 證「存在」</h4><div class="rule">假設「每一個都不是」</div>
+<div class="eg">砝碼重量都 $\le\frac1{2^n}$<br>⇒ 總重 $\le1-\frac1{2^m}&lt;1$ <span class="pill">與條件矛盾</span></div></div>
+<div class="card"><h4>② 證「每一個」</h4><div class="rule">假設「有一個不是」</div>
+<div class="eg">某城只通 $n&lt;19$ 城 ⇒ 航線<br>$\le190+(n-19)(n+1)\le171&lt;172$</div></div>
+<div class="card"><h4>③ 相乘暴露矛盾</h4><div class="rule">三個「&lt;0」相乘</div>
+<div class="eg">$|x|&lt;|y-z|$ 等三式平方分解再相乘<br>得 $(\cdots)^2&lt;0$ <span class="pill">不可能</span></div></div>
+<div class="card"><h4>④ 取極端</h4><div class="rule">取最遠／最大的那一個</div>
+<div class="eg">最遠的端點 $A$ 在線段 $BC$ 內<br>⇒ $B$ 或 $C$ 更遠 <span class="pill">與選法矛盾</span></div></div>
+</div>
+<p>問句型題目（「能否……？」）：先假設能，推得出矛盾就答「不能」；推不出，再去構造。⟦例｜紙帶寬度：先用正三角形猜出 $\sqrt[4]3$，再用兩次反證法證明「不能更窄」與「這樣就夠」。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>否定寫錯：「都大於 1」的否定是「<b>至少一個</b>不大於 1」，不是「都不大於 1」</li>
+<li>推理中途用了沒證過的事，矛盾就不能怪到假設頭上</li></ul></div>
+<div class="bottomline">寫對否定、步步嚴謹，矛盾自然冒出來。</div>

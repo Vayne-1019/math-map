@@ -1,0 +1,22 @@
+=== meta
+title: 複數 = 點 = 向量，乘法 = 旋轉
+from: gz-L23
+order: 20
+
+=== body
+<div class="hero">複數既是<b>點</b>又是<b>向量</b><br>乘 $e^{i\theta}$ = 繞原點<b>轉 $\theta$</b>，長度不變<br>$\overrightarrow{PQ}$ 轉 $\theta$ 得 $\overrightarrow{PR}$ ⇔ $(q-p)e^{i\theta}=r-p$</div>
+<div class="cards">
+<div class="card"><h4>① 距離</h4><div class="rule">$|z_1-z_2|^2=(z_1-z_2)(\bar z_1-\bar z_2)$</div>
+<div class="eg">$|z_k|=1$、和為 0 ⇒<br>$|z_1-z_2|^2=2-(-1)=3$ <span class="pill">正三角形</span></div></div>
+<div class="card"><h4>② 中點</h4><div class="rule">$m=\frac{z_1+z_2}2$</div>
+<div class="eg">$ABCD$ 是平行四邊形<br>⇔ $a+c=b+d$ <span class="pill">對頂點和相等</span></div></div>
+<div class="card"><h4>③ 旋轉 90°</h4><div class="rule">乘 $i$</div>
+<div class="eg">$(B-M)i=D-M$<br>⇔ $\triangle BMD$ 等腰直角，直角在 $M$</div></div>
+<div class="card"><h4>④ 旋轉 60°</h4><div class="rule">$u=e^{i\pi/3}$，$u^2-u+1=0$</div>
+<div class="eg">$(P-R)u=Q-R$<br>⇔ $\triangle PQR$ 是正三角形</div></div>
+</div>
+<p>圓 $|z-z_0|=r$；$|z-z_0|=|z|$ 是 $O$、$z_0$ 的中垂線。⟦u²−u+1=0 由來｜$u^3=e^{i\pi}=-1$，$u^3+1=(u+1)(u^2-u+1)=0$，而 $u\ne-1$。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>乘 $e^{i\theta}$ 是<b>逆時針</b>轉；順時針要乘 $e^{-i\theta}$</li>
+<li>繞的是 $P$ 不是原點時，要先減掉 $p$：$(q-p)e^{i\theta}$，不是 $qe^{i\theta}$</li></ul></div>
+<div class="bottomline">幾何關係翻成複數：等長＋夾角 = 乘一個 $e^{i\theta}$。</div>

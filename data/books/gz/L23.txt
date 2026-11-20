@@ -1,0 +1,191 @@
+=== meta
+title: 複數與幾何（一）
+author: 常庚哲
+pages: 185-191
+units: G-8-6, A-8-1, A-8-2
+status: 完成
+
+=== text
+<p>中學課本多半從代數的角度學複數：虛數單位 $i$ 是為了讓實數範圍內無解的 $x^2+1=0$ 有根而引入的。複數的幾何性質較少被強調，幾何應用更是少見。</p>
+<p>其實很多平面幾何問題都能用複數解決，這並不奇怪：複數既可以看成平面上的<b>點</b>，又可以看成平面<b>向量</b>；而乘上一個模為 1 的複數，代表平面上的<b>旋轉</b>。這些都讓複數成為解幾何題的利器。這一講和下一講介紹複數的幾何應用。</p>
+<h3>一、複數的三種表示法</h3>
+<p>這部分是課本內容，為了完整起見簡單複習。形如 $z=x+iy$（$x,y$ 為實數，$i^2=-1$）的數稱為複數，$x$ 是實部，記作 $\operatorname{Re}z$；$y$ 是虛部，記作 $\operatorname{Im}z$。在直角坐標系中用點 $(x,y)$ 代表 $x+iy$，複數就和平面上的點一一對應：原點代表 0，橫軸上的點對應實數，所以橫軸叫<b>實軸</b>、縱軸叫<b>虛軸</b>，這個坐標系叫<b>複數平面</b>。</p>
+<p>$z=x+iy$ 的<b>共軛複數</b>是 $\bar z=x-iy$，兩者在複數平面上對實軸對稱。注意</p>
+$$z\bar z=x^2+y^2=|z|^2,\qquad(1)$$
+<p>其中 $|z|=\sqrt{x^2+y^2}$ 是點 $z$ 到原點的距離。$z=x+iy$ 稱為複數的<b>代數形式</b>。</p>
+<figure class="bkfig"><svg viewBox="0 0 230 220" width="230" role="img" aria-label="複數 z 與共軛 z̄ 對實軸對稱，|z| 是到原點的距離，θ 是輻角"><defs><marker id="arL23_1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="currentColor" stroke-width="1.5"/></marker></defs>
+<g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18.8" y1="115" x2="216" y2="115" stroke-width="1" marker-end="url(#arL23_1)"/><line x1="62.1" y1="201.6" x2="62.1" y2="14" stroke-width="1" marker-end="url(#arL23_1)"/><line x1="62.1" y1="115" x2="167.9" y2="47.7" stroke="#c2562b"/><line x1="62.1" y1="115" x2="167.9" y2="182.3" stroke-dasharray="5 4"/><line x1="167.9" y1="47.7" x2="167.9" y2="182.3" stroke-dasharray="5 4" stroke-width="1"/><polyline points="91,115 90.9,114.6 90.9,114.2 90.9,113.8 90.9,113.4 90.9,113 90.8,112.5 90.8,112.1 90.8,111.7 90.7,111.3 90.7,110.9 90.6,110.5 90.5,110.1 90.5,109.7 90.4,109.3 90.3,108.9 90.2,108.5 90.1,108.1 90,107.7 89.9,107.3 89.8,106.9 89.7,106.5 89.6,106.2 89.4,105.8 89.3,105.4 89.2,105 89,104.6 88.9,104.2 88.7,103.8 88.6,103.5 88.4,103.1 88.2,102.7 88,102.4 87.9,102 87.7,101.6 87.5,101.3 87.3,100.9 87.1,100.6 86.9,100.2 86.7,99.9 86.4,99.5" stroke-width="1"/></g>
+<g fill="currentColor"><circle cx="167.9" cy="47.7" r="2.6"/><circle cx="167.9" cy="182.3" r="2.6"/></g>
+<g fill="currentColor" font-size="15" font-style="italic"><text x="207" y="130">實軸</text><text x="68.1" y="23">虛軸</text><text x="49.1" y="129">O</text><text x="163.9" y="41.7">z = x + iy</text><text x="163.9" y="199.3">z̄ = x − iy</text><text x="95.4" y="107.4">θ</text><text x="89" y="77.3">|z|</text></g>
+</svg><figcaption>z 與 z̄ 對實軸對稱；|z| 是長度，θ 是輻角</figcaption></figure>
+<p>設 $z_1=x_1+iy_1$、$z_2=x_2+iy_2$，則 $z_1+z_2=(x_1+x_2)+i(y_1+y_2)$，所以複數的加法符合平行四邊形法則。也就是說，複數 $z$ 也可以看成從原點出發、終點為 $z$ 的向量，複數加法就是向量加法。</p>
+<figure class="bkfig"><svg viewBox="0 0 220 162" width="220" role="img" aria-label="複數加法的平行四邊形法則"><defs><marker id="arL23_2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="currentColor" stroke-width="1.5"/></marker></defs>
+<g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18.8" y1="129.2" x2="206" y2="129.2" stroke-width="1" marker-end="url(#arL23_2)"/><line x1="38" y1="143.6" x2="38" y2="14" stroke-width="1" marker-end="url(#arL23_2)"/><line x1="38" y1="129.2" x2="153.2" y2="105.2"/><line x1="38" y1="129.2" x2="76.4" y2="52.4"/><line x1="38" y1="129.2" x2="191.6" y2="28.4" stroke="#c2562b"/><line x1="153.2" y1="105.2" x2="191.6" y2="28.4" stroke-dasharray="5 4"/><line x1="76.4" y1="52.4" x2="191.6" y2="28.4" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"><circle cx="153.2" cy="105.2" r="2.6"/><circle cx="76.4" cy="52.4" r="2.6"/><circle cx="191.6" cy="28.4" r="2.6"/></g>
+<g fill="currentColor" font-size="15" font-style="italic"><text x="197" y="144.2">x</text><text x="44" y="23">y</text><text x="25" y="143.2">O</text><text x="155.2" y="118.2">z<tspan font-size="11" dy="3">1</tspan></text><text x="57.4" y="50.4">z<tspan font-size="11" dy="3">2</tspan></text><text x="142.6" y="33.4">z<tspan font-size="11" dy="3">1</tspan><tspan dy="-3">+z</tspan><tspan font-size="11" dy="3">2</tspan></text></g>
+</svg><figcaption>加法 = 向量相加（平行四邊形法則）</figcaption></figure>
+<p>從正實軸逆時針轉到向量 $\overrightarrow{OZ}$ 所轉的角 $\theta$ 稱為 $z$ 的<b>輻角</b>，記作 $\arg z$（只有 0 沒有輻角）。由 $x=|z|\cos\theta$、$y=|z|\sin\theta$ 得</p>
+$$z=|z|(\cos\theta+i\sin\theta),\qquad(3)$$
+<p>這是<b>極式</b>。記 $e^{i\theta}=\cos\theta+i\sin\theta$，(3) 可以簡寫成</p>
+$$z=|z|e^{i\theta},\qquad(4)$$
+<p>稱為<b>指數形式</b>。所以真正重要的表示法只有兩種：代數形式與指數形式，各有所長。代數形式適合做加法，體現了複數的向量性質；指數形式中，$|z|$ 是向量 $\overrightarrow{OZ}$ 的長，模為 1 的 $e^{i\theta}$ 指出它的方向，而且對乘法特別方便：若 $z=|z|e^{i\theta}$、$w=|w|e^{i\varphi}$，則</p>
+$$zw=|z||w|e^{i(\theta+\varphi)}.\qquad(5)$$
+<p>即 $|zw|=|z||w|$，而 $zw$ 的輻角是兩者輻角之和⟦為什麼｜這就是三角函數的和角公式：<br>$(\cos\theta+i\sin\theta)(\cos\varphi+i\sin\varphi)$<br>$=(\cos\theta\cos\varphi-\sin\theta\sin\varphi)+i(\sin\theta\cos\varphi+\cos\theta\sin\varphi)$<br>$=\cos(\theta+\varphi)+i\sin(\theta+\varphi)$。⟧。特別地，當 $|w|=1$：</p>
+$$z\,e^{i\varphi}=|z|e^{i(\theta+\varphi)}.\qquad(6)$$
+<p><b>用 $e^{i\varphi}$ 乘 $z$，不改變模長，只把向量 $\overrightarrow{OZ}$ 繞原點旋轉 $\varphi$ 角。</b>這個認識是用複數解幾何題的關鍵。</p>
+<h3>二、兩點間的距離</h3>
+<p>設 $z_1=x_1+iy_1$、$z_2=x_2+iy_2$，則 $z_2-z_1=z_2+(-z_1)$ 代表向量 $\overrightarrow{Z_1Z_2}$。所以 $Z_1,Z_2$ 兩點的距離是 $|z_2-z_1|$，用實部虛部寫出來就是 $\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$，正是解析幾何的距離公式。</p>
+<figure class="bkfig"><svg viewBox="0 0 260 131" width="260" role="img" aria-label="向量 Z1Z2 對應複數 z2 − z1"><defs><marker id="arL23_3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="currentColor" stroke-width="1.5"/></marker></defs>
+<g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18.3" y1="95.6" x2="241.7" y2="95.6" stroke-width="1" marker-end="url(#arL23_3)"/><line x1="99.9" y1="112.8" x2="99.9" y2="14" stroke-width="1" marker-end="url(#arL23_3)"/><line x1="99.9" y1="95.6" x2="31.2" y2="95.6"/><line x1="99.9" y1="95.6" x2="142.9" y2="39.8"/><line x1="31.2" y1="95.6" x2="142.9" y2="39.8" stroke="#c2562b"/><line x1="99.9" y1="95.6" x2="211.6" y2="39.8" stroke-dasharray="5 4"/><line x1="142.9" y1="39.8" x2="211.6" y2="39.8" stroke-dasharray="5 4" stroke-width="1"/></g>
+<g fill="currentColor"><circle cx="31.2" cy="95.6" r="2.6"/><circle cx="142.9" cy="39.8" r="2.6"/><circle cx="211.6" cy="39.8" r="2.6"/></g>
+<g fill="currentColor" font-size="15" font-style="italic"><text x="232.7" y="110.6">x</text><text x="105.9" y="23">y</text><text x="86.9" y="109.6">O</text><text x="27.2" y="112.6">Z<tspan font-size="11" dy="3">1</tspan></text><text x="138.9" y="33.8">Z<tspan font-size="11" dy="3">2</tspan></text><text x="215.6" y="44.8">z<tspan font-size="11" dy="3">2</tspan><tspan dy="-3">−z</tspan><tspan font-size="11" dy="3">1</tspan></text></g>
+</svg><figcaption>紅色向量 $\overrightarrow{Z_1Z_2}$ 平移到原點，就是 $z_2-z_1$</figcaption></figure>
+<p>滿足 $|z|=1$ 的點全體，是以 $O$ 為圓心、1 為半徑的<b>單位圓</b>。$|z|=1$ 也可寫成 $z\bar z=1$，用實部虛部表示就是 $x^2+y^2=1$，與解析幾何一致。一般地，以 $z_0$ 為圓心、$r$ 為半徑的圓是</p>
+$$|z-z_0|=r.\qquad(7)$$
+
+=== 例 1 | 和為零的三個單位向量
+zh: 三個複數 $z_1,z_2,z_3$ 滿足 $z_1+z_2+z_3=0$，$|z_1|=|z_2|=|z_3|$。在複數平面上 $\overrightarrow{OZ_1}$、$\overrightarrow{OZ_2}$、$\overrightarrow{OZ_3}$ 分別表示 $z_1,z_2,z_3$。證明 $\triangle Z_1Z_2Z_3$ 是正三角形。
+sol: <figure class="bkfig"><svg viewBox="0 0 220 217" width="220" role="img" aria-label="單位圓上三點，和為零，構成正三角形"><defs><marker id="arL23_4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="currentColor" stroke-width="1.5"/></marker></defs>
+<g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="17.4" y1="110" x2="206" y2="110" stroke-width="1" marker-end="url(#arL23_4)"/><line x1="110" y1="199.1" x2="110" y2="14" stroke-width="1" marker-end="url(#arL23_4)"/><circle cx="110" cy="110" r="68.6" stroke-dasharray="5 4"/><polygon points="170.2,77.1 51.4,74.3 108.4,178.6" stroke="#c2562b"/><line x1="110" y1="110" x2="170.2" y2="77.1" stroke-width="1"/><line x1="110" y1="110" x2="51.4" y2="74.3" stroke-width="1"/><line x1="110" y1="110" x2="108.4" y2="178.6" stroke-width="1"/></g>
+<g fill="currentColor"><circle cx="170.2" cy="77.1" r="2.6"/><circle cx="51.4" cy="74.3" r="2.6"/><circle cx="108.4" cy="178.6" r="2.6"/></g>
+<g fill="currentColor" font-size="15" font-style="italic"><text x="197" y="125">x</text><text x="116" y="23">y</text><text x="97" y="124">O</text><text x="171.2" y="75.1">Z<tspan font-size="11" dy="3">1</tspan></text><text x="32.4" y="72.3">Z<tspan font-size="11" dy="3">2</tspan></text><text x="110.4" y="191.6">Z<tspan font-size="11" dy="3">3</tspan></text></g>
+</svg><figcaption>三個單位向量相加為 0，三點把圓三等分</figcaption></figure>
+不妨設 $|z_1|=|z_2|=|z_3|=1$⟦為什麼可以｜三個數同除以它們共同的模 $r$，條件不變，三角形只是縮放了 $\frac1r$ 倍，是不是正三角形不受影響。⟧。要證的是 $|z_1-z_2|=|z_2-z_3|=|z_3-z_1|$。由 (1)，
+$$\begin{aligned}|z_1-z_2|^2&amp;=(z_1-z_2)(\bar z_1-\bar z_2)\\&amp;=|z_1|^2+|z_2|^2-(z_1\bar z_2+\bar z_1z_2)\\&amp;=2-(z_1\bar z_2+\bar z_1z_2).\end{aligned}$$
+又 $z_3=-(z_1+z_2)$，所以
+$$1=|z_3|^2=(z_1+z_2)(\bar z_1+\bar z_2)=2+(z_1\bar z_2+\bar z_1z_2),$$
+得 $z_1\bar z_2+\bar z_1z_2=-1$。因此 $|z_1-z_2|^2=2-(-1)=3$，$|z_1-z_2|=\sqrt3$。同理 $|z_2-z_3|=|z_3-z_1|=\sqrt3$。
+
+=== 例 2 | 1988 年全國高中數學聯賽
+src: 1988 年全國高中數學聯賽
+zh: 複數平面上動點 $Z_1$ 的軌跡方程為 $|z_1-z_0|=|z_1|$，$Z_0$ 是定點，$z_0\ne0$。另一動點 $Z$ 滿足 $z_1z=-1$。求 $Z$ 的軌跡，指出它在複數平面上的形狀和位置。
+sol: <figure class="bkfig"><svg viewBox="0 0 270 251" width="270" role="img" aria-label="Z1 在 O、Z0 的中垂線上，Z 的軌跡是一個圓"><defs><marker id="arL23_5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="currentColor" stroke-width="1.5"/></marker></defs>
+<g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="17.1" y1="119.5" x2="256" y2="119.5" stroke-width="1" marker-end="url(#arL23_5)"/><line x1="131.9" y1="234.3" x2="131.9" y2="14" stroke-width="1" marker-end="url(#arL23_5)"/><line x1="224.6" y1="211.9" x2="124.7" y2="12.1" stroke-dasharray="5 4"/><circle cx="90.5" cy="98.8" r="46.3" stroke="#c2562b"/><circle cx="131.9" cy="119.5" r="3.5" stroke="#c2562b"/></g>
+<g fill="currentColor"><circle cx="206.4" cy="82.3" r="2.6"/><circle cx="144.2" cy="50.9" r="2.6"/><circle cx="122.2" cy="65.1" r="2.6"/><circle cx="90.5" cy="98.8" r="2.6"/></g>
+<g fill="currentColor" font-size="15" font-style="italic"><text x="247" y="134.5">x</text><text x="137.9" y="23">y</text><text x="118.9" y="133.5">O</text><text x="211.4" y="87.3">Z<tspan font-size="11" dy="3">0</tspan></text><text x="149.2" y="55.9">Z<tspan font-size="11" dy="3">1</tspan></text><text x="108.2" y="70.1">Z</text><text x="86.5" y="114.8">−1/z<tspan font-size="11" dy="3">0</tspan></text></g>
+</svg><figcaption>虛線：$Z_1$ 的軌跡（$OZ_0$ 的中垂線）；紅圓：$Z$ 的軌跡，圓心 $-1/z_0$，經過原點（原點要除去）</figcaption></figure>
+由 $z_1z=-1$ 知 $z\ne0$，於是 $z_1=-\frac1z$。代入 $|z_1-z_0|=|z_1|$：
+$$\Big|\frac1z+z_0\Big|=\Big|\frac1z\Big|,$$
+兩邊乘以 $|z|$ 得 $|1+zz_0|=1$，再除以 $|z_0|$：
+$$\Big|z-\Big(-\frac1{z_0}\Big)\Big|=\frac1{|z_0|}.$$
+所以 $Z$ 在以 $-\frac1{z_0}$ 為圓心、$\frac1{|z_0|}$ 為半徑的圓上。這個圓經過原點⟦為什麼｜圓心 $-\frac1{z_0}$ 到原點的距離是 $\frac1{|z_0|}$，恰好等於半徑。⟧，而 $z\ne0$，所以軌跡是這個圓除去原點。
+<br>⟦幾何意義｜$|z_1-z_0|=|z_1|$ 表示 $Z_1$ 到 $Z_0$ 與到 $O$ 等距，即 $Z_1$ 在線段 $OZ_0$ 的中垂線上。$z=-\frac1{z_1}$ 把這條不過原點的直線變成一個過原點的圓（這是反演加上鏡射，第 G-5-4 單元會再談）。⟧
+ans: 以 $-\frac1{z_0}$ 為圓心、$\frac1{|z_0|}$ 為半徑的圓，除去原點。
+
+=== text
+<h3>三、中點公式</h3>
+<p>設 $Z_1,Z_2$ 是平面上兩點，線段 $Z_1Z_2$ 的中點 $M$ 可以用複數</p>
+$$m=\frac{z_1+z_2}2\qquad(8)$$
+<p>表示，這就是中點公式。公式雖然簡單，卻能幫我們做一些幾何題。</p>
+
+=== 例 3 | 平行四邊形
+zh: 證明平行四邊形的對角線互相平分。
+sol: <figure class="bkfig"><svg viewBox="0 0 200 134" width="200" role="img" aria-label="平行四邊形 ABCD 與兩條對角線">
+<g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="50.9,26.3 26.3,108.2 149.1,108.2 173.7,26.3"/><line x1="50.9" y1="26.3" x2="149.1" y2="108.2"/><line x1="26.3" y1="108.2" x2="173.7" y2="26.3"/></g>
+<g fill="currentColor"><circle cx="100" cy="67.2" r="2.6"/></g>
+<g fill="currentColor" font-size="15" font-style="italic"><text x="39.9" y="24.3">A</text><text x="15.3" y="121.2">B</text><text x="151.1" y="121.2">C</text><text x="174.7" y="24.3">D</text></g>
+</svg><figcaption>$a+c=b+d$：兩條對角線的中點重合</figcaption></figure>
+設四邊形的四個頂點 $A,B,C,D$ 依次表示複數 $a,b,c,d$。四邊形是平行四邊形的充要條件是 $\overrightarrow{AD}$ 與 $\overrightarrow{BC}$ 平行且等長，即 $d-a=c-b$，也就是
+$$a+c=b+d.\qquad(9)$$
+它表示：<b>對頂點的複數之和相等</b>，這是 $ABCD$ 為平行四邊形的充要條件。由中點公式，對角線 $AC$ 的中點是 $\frac{a+c}2$，$BD$ 的中點是 $\frac{b+d}2$，由 (9) 兩者相等，所以兩條對角線互相平分。反過來，由同樣的推理，對角線互相平分的四邊形一定是平行四邊形。
+
+=== 例 4 | 中點四邊形
+zh: 在任意給定的四邊形每一條邊上取中點，證明這四點構成一個平行四邊形。
+sol: <figure class="bkfig"><svg viewBox="0 0 220 171" width="220" role="img" aria-label="任意四邊形四邊中點構成平行四邊形">
+<g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="27.4,143.5 192.6,125.6 156.9,27.4 58.7,54.2"/><polygon points="110,134.6 174.7,76.5 107.8,40.8 43,98.8" stroke="#c2562b"/></g>
+<g fill="currentColor" font-size="15" font-style="italic"><text x="16.4" y="156.5">a</text><text x="194.6" y="138.6">b</text><text x="157.9" y="25.4">c</text><text x="47.7" y="52.2">d</text></g>
+</svg><figcaption>紅色是四邊中點連成的平行四邊形</figcaption></figure>
+設原四邊形的四個頂點依次表示複數 $a,b,c,d$，四邊中點依次是
+$$\frac{a+b}2,\quad\frac{b+c}2,\quad\frac{c+d}2,\quad\frac{d+a}2.$$
+因為
+$$\frac{a+b}2+\frac{c+d}2=\frac{b+c}2+\frac{d+a}2,$$
+對頂點之和相等，按 (9) 的意義，這四點是平行四邊形的頂點。
+
+=== text
+<h3>四、旋轉</h3>
+<p>前面說過，$ze^{i\theta}$ 所代表的點，是把線段 $OZ$ 繞原點逆時針轉 $\theta$ 角後的終點。取 $\theta=\frac\pi2$，$e^{i\theta}=i$，所以向量 $z$ 與 $iz$ 垂直、等長。更一般地，<b>$\overrightarrow{PQ}$ 繞 $P$ 逆時針轉 $\theta$ 得到 $\overrightarrow{PR}$，就是 $(q-p)e^{i\theta}=r-p$。</b></p>
+
+=== 例 5 | 1987 年全國高中數學聯賽
+src: 1987 年全國高中數學聯賽
+zh: $\triangle ABC$ 與 $\triangle ADE$ 是兩個不全等的等腰直角三角形（直角頂點分別是 $B$、$D$）。固定 $\triangle ABC$，把 $\triangle ADE$ 繞 $A$ 點在平面上旋轉。證明：不論 $\triangle ADE$ 轉到什麼位置，線段 $EC$ 上一定有一點 $M$，使 $\triangle BMD$ 為等腰直角三角形。
+sol: <figure class="bkfig"><svg viewBox="0 0 260 223" width="260" role="img" aria-label="等腰直角三角形 ABC、ADE，M 是 EC 中點，BMD 是等腰直角三角形">
+<g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="44.5,166.6 130.9,80.3 217.2,166.6"/><polygon points="44.5,166.6 116.8,153.9 104.1,81.6"/><line x1="104.1" y1="81.6" x2="217.2" y2="166.6" stroke-dasharray="5 4"/><polygon points="130.9,80.3 160.6,124.1 116.8,153.9" fill="#c2562b" fill-opacity="0.12" stroke="#c2562b"/></g>
+<g fill="currentColor"><circle cx="44.5" cy="166.6" r="2.6"/><circle cx="130.9" cy="80.3" r="2.6"/><circle cx="217.2" cy="166.6" r="2.6"/><circle cx="116.8" cy="153.9" r="2.6"/><circle cx="104.1" cy="81.6" r="2.6"/><circle cx="160.6" cy="124.1" r="2.6"/></g>
+<g fill="currentColor" font-size="15" font-style="italic"><text x="30.5" y="171.6">A</text><text x="126.9" y="74.3">B</text><text x="222.2" y="171.6">C</text><text x="118.8" y="166.9">D</text><text x="93.1" y="79.6">E</text><text x="156.6" y="141.1">M</text></g>
+</svg><figcaption>△ADE 繞 A 轉到任何位置，取 EC 中點 M，紅色 △BMD 都是等腰直角三角形</figcaption></figure>
+把原點放在 $A$，$C$ 放在正實軸上，即 $A=0$。不妨設 $C=\sqrt2$，則 $B=e^{i\pi/4}=\frac{\sqrt2}2(1+i)$⟦為什麼｜斜邊 $AC=\sqrt2$，腰長 $AB=1$，$\angle BAC=45^\circ$。⟧。開始時設 $E=\lambda$，$0&lt;\lambda&lt;\sqrt2$，則 $D=\frac{\lambda}{\sqrt2}e^{-i\pi/4}$。
+<br>旋轉任意角 $\theta$ 之後，$E$ 變為 $\lambda e^{i\theta}$，$D$ 變為 $\frac{\lambda}{\sqrt2}e^{i(\theta-\pi/4)}$（仍記為 $D$）。取 $E$ 與 $C$ 連線的中點為 $M$：
+$$M=\tfrac12\big(\lambda e^{i\theta}+\sqrt2\big).$$
+計算 $M(1+i)$。因為 $1+i=\sqrt2e^{i\pi/4}$，
+$$\begin{aligned}M(1+i)&amp;=\tfrac{\sqrt2}2\big(\lambda e^{i\theta}+\sqrt2\big)e^{i\pi/4}\\&amp;=\frac{\lambda}{\sqrt2}e^{i(\theta+\pi/4)}+e^{i\pi/4}\\&amp;=\frac{\lambda}{\sqrt2}e^{i(\theta-\pi/4)}\cdot i+e^{i\pi/4}=Di+B.\end{aligned}$$
+⟦倒數第二步｜$e^{i(\theta+\pi/4)}=e^{i(\theta-\pi/4)}\cdot e^{i\pi/2}=e^{i(\theta-\pi/4)}\cdot i$。⟧
+即 $M+Mi=Di+B$，移項得 $B-M=(M-D)i$，兩邊乘以 $i$：
+$$(B-M)i=D-M.$$
+這表示向量 $\overrightarrow{MB}$ 繞 $M$ 逆時針轉 $90^\circ$ 得到 $\overrightarrow{MD}$，所以 $\triangle BMD$ 是等腰直角三角形，直角頂點在 $M$，而 $M$ 就是 $EC$ 的中點。
+
+=== 例 6 | 內接六邊形
+zh: 設 $ABCDEF$ 是內接於半徑為 $r$ 的圓的六邊形，且 $AB=CD=EF=r$。證明：線段 $BC$、$DE$、$FA$ 的中點 $P,Q,R$ 構成一個正三角形。
+sol: <figure class="bkfig"><svg viewBox="0 0 240 240" width="240" role="img" aria-label="圓內接六邊形 ABCDEF，AB=CD=EF=r，中點 P、Q、R">
+<g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="120" cy="120" r="81.5" stroke-dasharray="5 4"/><polygon points="200.3,105.8 147.9,43.4 85.5,46.1 38.8,112.9 67.6,182.5 147.9,196.6"/><polygon points="120,120 200.3,105.8 147.9,43.4" stroke-width="1"/><polygon points="120,120 85.5,46.1 38.8,112.9" stroke-width="1"/><polygon points="120,120 67.6,182.5 147.9,196.6" stroke-width="1"/><polygon points="116.7,44.7 53.2,147.7 174.1,151.2" stroke="#c2562b"/></g>
+<g fill="currentColor"><circle cx="116.7" cy="44.7" r="2.6"/><circle cx="53.2" cy="147.7" r="2.6"/><circle cx="174.1" cy="151.2" r="2.6"/></g>
+<g fill="currentColor" font-size="15" font-style="italic"><text x="205.7" y="109">A</text><text x="146.5" y="38.4">B</text><text x="76.1" y="41.5">C</text><text x="23.2" y="117">D</text><text x="55.8" y="195.6">E</text><text x="146.5" y="211.6">F</text><text x="117.7" y="42.7">P</text><text x="40.2" y="152.7">Q</text><text x="176.1" y="164.2">R</text><text x="109" y="133">O</text></g>
+</svg><figcaption>△OAB、△OCD、△OEF 都是正三角形；紅色 △PQR 是正三角形</figcaption></figure>
+取圓心為原點，設 $A,B,C,D,E,F$ 在圓周上依逆時針排列。由題設，$\triangle OAB$、$\triangle OCD$、$\triangle OEF$ 都是正三角形。令 $u=e^{i\pi/3}$，則
+$$B=uA,\qquad D=uC,\qquad F=uE.$$
+於是
+$$2P=B+C=uA+C,\quad 2Q=D+E=uC+E,\quad 2R=F+A=uE+A.$$
+由此
+$$\begin{aligned}2(P-R)u&amp;=\big[(u-1)A+C-uE\big]u\\&amp;=(u^2-u)A+Cu-u^2E.\end{aligned}$$
+因為 $u^3=e^{i\pi}=-1$，即 $u^3+1=(u+1)(u^2-u+1)=0$，而 $u\ne-1$，所以
+$$u^2-u+1=0.\qquad(10)$$
+用 (10) 把 $u^2-u$ 換成 $-1$、$u^2$ 換成 $u-1$：
+$$\begin{aligned}2(P-R)u&amp;=-A+Cu-(u-1)E\\&amp;=(uC+E)-(uE+A)\\&amp;=2Q-2R.\end{aligned}$$
+即 $(P-R)u=Q-R$。這表示向量 $\overrightarrow{RP}$ 繞 $R$ 逆時針轉 $60^\circ$ 得到 $\overrightarrow{RQ}$，所以 $RP=RQ$ 且夾角 $60^\circ$，$\triangle PQR$ 是正三角形。
+
+=== 習題 1
+zh: 設 $A_1A_2\cdots A_n$ 是內接於圓心 $O$、半徑 $r$ 的圓的正 $n$ 邊形，$P$ 是射線 $OA_1$ 上、在 $A_1$ 外側的一點。證明 $PA_1\cdot PA_2\cdot\cdots\cdot PA_n=OP^n-r^n$。
+hint: 取單位圓，頂點用 $z^n=1$ 的 $n$ 個根表示。
+sol: 不妨設 $r=1$，取此圓為單位圓，頂點 $A_1,\dots,A_n$ 用 $z^n=1$ 的全部根 $z_1,\dots,z_n$ 表示，$z_1=1$。$P$ 用一個大於 1 的實數 $a$ 表示。因為 $z^n-1=(z-z_1)(z-z_2)\cdots(z-z_n)$，
+$$\begin{aligned}PA_1\cdots PA_n&amp;=|a-z_1|\cdots|a-z_n|=\big|(a-z_1)\cdots(a-z_n)\big|\\&amp;=|a^n-1|=a^n-1=OP^n-1.\end{aligned}$$
+一般的 $r$ 由縮放得到 $OP^n-r^n$。
+
+=== 習題 2
+zh: 設 $A_1A_2\cdots A_n$ 為內接於單位圓的正 $n$ 邊形，$P$ 為單位圓上任一點。證明 $PA_1^2+PA_2^2+\cdots+PA_n^2$ 是常數（與 $P$ 的位置無關）。
+ans: 恆等於 $2n$。
+sol: 設 $P$ 用 $z$ 表示，$A_k$ 用 $z_k$ 表示，$|z|=|z_k|=1$。
+$$PA_k^2=(z-z_k)(\bar z-\bar z_k)=1+1-z\bar z_k-\bar zz_k,$$
+所以
+$$\sum_{k=1}^nPA_k^2=2n-\bar z\sum_{k=1}^nz_k-z\sum_{k=1}^n\bar z_k.$$
+但 $z^n-1=(z-z_1)\cdots(z-z_n)$，左邊 $z^{n-1}$ 的係數為 0，所以 $\sum z_k=0$⟦為什麼｜右邊展開後 $z^{n-1}$ 的係數是 $-(z_1+\cdots+z_n)$（根與係數的關係），$n\ge2$ 時左邊這一項係數是 0。⟧，從而 $\sum\bar z_k=\overline{\sum z_k}=0$。因此和為 $2n$，與 $z$ 無關。
+
+=== 習題 3
+zh: $P_1,P_2,\dots,P_n$ 是平面上任意給定的 $n$ 個點，求一點 $A$，使 $AP_1^2+AP_2^2+\cdots+AP_n^2$ 最小。
+ans: $A$ 取這 $n$ 點的重心 $\frac{z_1+\cdots+z_n}n$。
+sol: 用 $z_k$ 表示 $P_k$，$z$ 表示 $A$。展開後配方可得
+$$\sum_{k=1}^nAP_k^2=\sum_{k=1}^n|z_k|^2-\frac{|z_1+\cdots+z_n|^2}{n}+n\Big|z-\frac{z_1+\cdots+z_n}n\Big|^2.$$
+⟦怎麼配方｜記 $s=z_1+\cdots+z_n$。$\sum|z-z_k|^2=n|z|^2-\bar zs-z\bar s+\sum|z_k|^2$，而 $n\big|z-\frac sn\big|^2=n|z|^2-\bar zs-z\bar s+\frac{|s|^2}n$，兩式相減即得。⟧
+右邊前兩項與 $z$ 無關，所以當 $z=\frac{z_1+\cdots+z_n}n$ 時和最小。
+
+=== 習題 4
+zh: 設 $A,B,C$ 是平面上任意給定的三點，$P_0$ 為同一平面上任一點。連 $P_0A$ 並延長到 $P_1$，使 $P_0A=AP_1$；連 $P_1B$ 並延長到 $P_2$，使 $P_1B=BP_2$；連 $P_2C$ 並延長到 $P_3$，使 $P_2C=CP_3$；由 $P_3$ 再對 $A$ 重複同樣的步驟得 $P_4$……如此下去。證明經過 6 次之後必回到原處，即 $P_6=P_0$。
+sol: <figure class="bkfig"><svg viewBox="0 0 280 210" width="280" role="img" aria-label="對 A、B、C 輪流作點對稱，六次後回到原點">
+<g fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="96.6,146.2 179.2,179.2 195.8,30.5 30.5,162.7 245.3,162.7 129.7,47 96.6,146.2" stroke-width="1"/></g>
+<g fill="currentColor"><circle cx="137.9" cy="162.7" r="2.6" fill="#c2562b"/><circle cx="187.5" cy="104.9" r="2.6" fill="#c2562b"/><circle cx="113.1" cy="96.6" r="2.6" fill="#c2562b"/><circle cx="96.6" cy="146.2" r="2.6"/><circle cx="179.2" cy="179.2" r="2.6"/><circle cx="195.8" cy="30.5" r="2.6"/><circle cx="30.5" cy="162.7" r="2.6"/><circle cx="245.3" cy="162.7" r="2.6"/><circle cx="129.7" cy="47" r="2.6"/></g>
+<g fill="currentColor" font-size="15" font-style="italic"><text x="138.9" y="160.7">A</text><text x="188.5" y="102.9">B</text><text x="114.1" y="94.6">C</text><text x="74.6" y="151.2">P<tspan font-size="11" dy="3">0</tspan></text><text x="183.2" y="184.2">P<tspan font-size="11" dy="3">1</tspan></text><text x="199.8" y="35.5">P<tspan font-size="11" dy="3">2</tspan></text><text x="8.5" y="167.7">P<tspan font-size="11" dy="3">3</tspan></text><text x="249.3" y="167.7">P<tspan font-size="11" dy="3">4</tspan></text><text x="133.7" y="52">P<tspan font-size="11" dy="3">5</tspan></text></g>
+</svg><figcaption>$P_0\to P_1\to\cdots\to P_6=P_0$：依次以 $A,B,C,A,B,C$ 為中心作點對稱</figcaption></figure>
+$A$ 是 $P_0P_1$ 的中點，由中點公式 $2A=P_0+P_1$，即 $P_1=2A-P_0$。同理
+$$\begin{aligned}P_2&amp;=2B-P_1=2B-2A+P_0,\\P_3&amp;=2C-P_2=2(C-B+A)-P_0.\end{aligned}$$
+也就是說，連做三次對稱的結果是 $P\mapsto 2(A-B+C)-P$。對 $P_3$ 再做一次同樣的三步，得 $P_6=2(A-B+C)-P_3=P_0$。
+
+=== 習題 5
+zh: 設 $ABCD$ 為任意給定的四邊形。以它的每一邊為斜邊，向外作一個等腰直角三角形，四個直角頂點依次記為 $A',B',C',D'$。在四邊形 $A'B'C'D'$ 的各邊上再取中點 $A'',B'',C'',D''$。證明 $A''B''C''D''$ 是正方形。
+hint: 先寫出 $A'$：$\overrightarrow{A'B}$ 轉 $90^\circ$ 得 $\overrightarrow{A'A}$。
+sol: 設 $ABCD$ 依逆時針排列，$A'$ 在邊 $AB$ 外側，於是 $\overrightarrow{A'B}$ 繞 $A'$ 逆時針轉 $90^\circ$ 得到 $\overrightarrow{A'A}$：$(B-A')i=A-A'$，即 $(1-i)A'=A-Bi$。同理
+$$(1-i)B'=B-Ci,\quad(1-i)C'=C-Di,\quad(1-i)D'=D-Ai.$$
+取中點（$A''$ 是 $A'B'$ 的中點，依此類推）：
+$$\begin{aligned}2(1-i)A''&amp;=A+B-i(B+C),\\2(1-i)B''&amp;=B+C-i(C+D),\\2(1-i)C''&amp;=C+D-i(D+A).\end{aligned}$$
+兩兩相減：
+$$\begin{aligned}2(1-i)(C''-B'')&amp;=(D-B)-i(A-C),\\2(1-i)(A''-B'')&amp;=(A-C)+i(D-B).\end{aligned}$$
+第一式乘以 $i$ 得 $i(D-B)+(A-C)$，正好等於第二式，所以
+$$(C''-B'')i=A''-B''.$$
+即 $\overrightarrow{B''C''}$ 繞 $B''$ 逆時針轉 $90^\circ$ 得到 $\overrightarrow{B''A''}$：$B''A''=B''C''$ 且 $\angle A''B''C''=90^\circ$。又任意四邊形的中點四邊形是平行四邊形（例 4），有一個角是直角、鄰邊相等的平行四邊形就是正方形。

@@ -1,0 +1,22 @@
+=== meta
+title: 直線束與圓束：不求交點就寫出方程
+from: gz-L22
+order: 40
+
+=== body
+<div class="hero">兩個方程的<b>線性組合</b>，自動經過它們的公共點<br>所以想要「過交點的線／圓」，<b>不必求交點</b><br>再用一個條件定出參數 $\lambda$</div>
+<div class="cards">
+<div class="card"><h4>① 直線束</h4><div class="rule">$l_1+\lambda l_2=0$</div>
+<div class="eg">過 $2x+3y-5=0$、$7x+15y+1=0$ 交點<br>且垂直 $12x-5y-1=0$：<br>解得 $\lambda=-1$，$5x+12y+6=0$</div></div>
+<div class="card"><h4>② 圓束</h4><div class="rule">$f_1+\alpha f_2=0$</div>
+<div class="eg">過兩圓交點且過 $(-2,1)$：<br>代點得 $\alpha=-\frac54$ <span class="pill">代點定參數</span></div></div>
+<div class="card"><h4>③ 公共弦</h4><div class="rule">$f_1-f_2=0$（$\alpha=-1$）</div>
+<div class="eg">$x^2+y^2$ 項消掉，剩下一次式<br>= 公共弦所在直線</div></div>
+<div class="card"><h4>④ 三線共點</h4><div class="rule">一條是另兩條的組合</div>
+<div class="eg">$3(5x+12y+9)-(2x+11y+4)$<br>$=13x+25y+23$ <span class="pill">共點</span></div></div>
+</div>
+<p>三個圓兩兩的公共弦：三式相加恆為 0，所以三線共點（根心）或兩兩平行。⟦為什麼｜$(f_1-f_2)+(f_2-f_3)+(f_3-f_1)=0$，第三條直線是前兩條的組合，必過它們的交點。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>$l_1+\lambda l_2$ 的寫法漏掉 $l_2$ 本身，要另外檢查 $l_2$ 是不是答案</li>
+<li>圓束要先確認兩圓真的相交：$|r_1-r_2|&lt;d&lt;r_1+r_2$</li></ul></div>
+<div class="bottomline">要「過交點」的線或圓：寫組合、代條件，交點留著不求。</div>
