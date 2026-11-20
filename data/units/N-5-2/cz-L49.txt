@@ -1,5 +1,5 @@
 === meta
-title: n! 裡有幾個質因數 p
+title: $n!$ 裡有幾個質因數 $p$
 from: cz-L49
 order: 20
 

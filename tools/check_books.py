@@ -25,6 +25,8 @@ def warn(f, msg):
 def check_text(f, where, s, book):
     if not s:
         return
+    if re.search(r"[\x00-\x08\x0b\x0c\x0e-\x1f]", s):
+        warn(f, f"{where}: 有控制字元（多半是 \\frac、\\beta 的反斜線被吃掉）")
     if s.count("⟦") != s.count("⟧"):
         warn(f, f"{where}: ⟦ ⟧ 不成對")
     for m in re.finditer(r"⟦([^⟧]*)⟧", s, re.S):
@@ -64,6 +66,8 @@ def main(books):
         for f in sorted(glob.glob(f"data/books/{book}/L*.txt")):
             no = int(re.search(r"L(\d+)", f).group(1)); lectures.add(f"{book}-L{no:02d}")
             bl = parse(f); m = meta_of(bl)
+            if re.search(r"[²³₀-₉]", m.get("title", "")):
+                warn(f, "標題用了 Unicode 上下標，請改成 $…$")
             for k in ("title", "pages", "units", "status"):
                 if not m.get(k):
                     warn(f, f"meta 缺 {k}")
@@ -82,6 +86,8 @@ def main(books):
         if unit not in UNITS:
             warn(f, f"單元資料夾 {unit} 不在大綱")
         bl = parse(f); m = meta_of(bl)
+        if re.search(r"[²³₀-₉]", m.get("title", "")):
+            warn(f, "標題用了 Unicode 上下標，請改成 $…$")
         if m.get("from") != stem:
             warn(f, f"from = {m.get('from')}，應為 {stem}")
         if stem not in lectures:

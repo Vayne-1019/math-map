@@ -1,5 +1,5 @@
 === meta
-title: 證明無理數：反設成 q/p 再找矛盾
+title: 證明無理數：反設成 $q/p$ 再找矛盾
 from: cz-L41
 order: 40
 

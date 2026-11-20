@@ -1,5 +1,5 @@
 === meta
-title: 看到 b²−4ac 的樣子，就造一個二次方程
+title: 看到 $b^2-4ac$ 的樣子，就造一個二次方程
 from: cz-L44
 order: 60
 

@@ -1,5 +1,5 @@
 === meta
-title: n 次方程
+title: $n$ 次方程
 author: 李尚志
 pages: 364-373
 units: A-2-3, A-1-5, A-3-2, A-2-2
@@ -46,11 +46,22 @@ ans: $(1,1,1,1)$，或一個 $3$、三個 $-1$（共 4 種排法）
 
 === text
 <h3>二、韋達定理</h3>
-<p>設 $n$ 次方程 $$a_0x^n+a_1x^{n-1}+\cdots+a_{n-1}x+a_n=0$$ 的 $n$ 個複數根是 $x_1,\dots,x_n$，則</p>
-$$a_0x^n+a_1x^{n-1}+\cdots+a_n=a_0(x-x_1)(x-x_2)\cdots(x-x_n).$$
-<p>把右邊展開，比較兩邊係數，得</p>
-$$\begin{aligned}\sigma_1&=x_1+x_2+\cdots+x_n=-\frac{a_1}{a_0},\\ \sigma_2&=x_1x_2+x_1x_3+\cdots+x_{n-1}x_n=\frac{a_2}{a_0},\\ &\ \ \vdots\\ \sigma_k&=\sum_{1\le i_1\lt i_2\lt\cdots\lt i_k\le n}x_{i_1}x_{i_2}\cdots x_{i_k}=(-1)^k\frac{a_k}{a_0},\\ &\ \ \vdots\\ \sigma_n&=x_1x_2\cdots x_n=(-1)^n\frac{a_n}{a_0}.\end{aligned}$$
-<p>$\sigma_k$ 就是從 $x_1,\dots,x_n$ 中每次取 $k$ 個相乘，再把所有這些乘積加起來。⟦為什麼有正負號｜展開 $(x-x_1)\cdots(x-x_n)$ 時，$x^{n-k}$ 的係數來自「$k$ 個括號取 $-x_i$、其餘取 $x$」，所以是 $(-1)^k\sigma_k$。⟧</p>
+<p><b>先看二次方程。</b>設 $ax^2+bx+c=0$（$a\ne0$）的兩根是 $\alpha,\beta$。左邊的多項式可以分解成 $a(x-\alpha)(x-\beta)$。⟦為什麼能這樣分解｜因式定理：$\alpha$ 是根，所以 $x-\alpha$ 是因式；剩下的一次式又以 $\beta$ 為根，再分出 $x-\beta$；最後剩下的常數必須等於首項係數 $a$。⟧ 把右邊展開：</p>
+$$\begin{aligned}ax^2+bx+c&=a(x-\alpha)(x-\beta)\\&=ax^2-a(\alpha+\beta)x+a\alpha\beta.\end{aligned}$$
+<p>左右兩邊是同一個多項式，所以同次項的係數相等：$x$ 項給 $b=-a(\alpha+\beta)$，常數項給 $c=a\alpha\beta$。也就是</p>
+$$\begin{aligned}\alpha+\beta&=-\frac ba,\\ \alpha\beta&=\frac ca.\end{aligned}$$
+<p>例如 $x^2-5x+6=0$：不必解，就知道兩根的和是 $5$、積是 $6$。（兩根其實是 $2$ 和 $3$，對得上。）</p>
+<p><b>再看三次方程。</b>設 $ax^3+bx^2+cx+d=0$ 的三根是 $\alpha,\beta,\gamma$，同樣分解再展開：</p>
+$$\begin{aligned}&ax^3+bx^2+cx+d\\=\ &a(x-\alpha)(x-\beta)(x-\gamma)\\=\ &a\big[x^3-(\alpha+\beta+\gamma)x^2\\&\quad+(\alpha\beta+\beta\gamma+\gamma\alpha)x-\alpha\beta\gamma\big].\end{aligned}$$
+<p>⟦展開過程｜先算 $(x-\alpha)(x-\beta)=x^2-(\alpha+\beta)x+\alpha\beta$，再乘 $(x-\gamma)$：$x^2$ 項收集到 $-(\alpha+\beta)-\gamma$；$x$ 項收集到 $\alpha\beta+(\alpha+\beta)\gamma$；常數項是 $-\alpha\beta\gamma$。⟧ 比較係數得</p>
+$$\begin{aligned}\alpha+\beta+\gamma&=-\frac ba,\\ \alpha\beta+\beta\gamma+\gamma\alpha&=\frac ca,\\ \alpha\beta\gamma&=-\frac da.\end{aligned}$$
+<p>例如 $x^3-6x^2+11x-6=0$ 的三根是 $1,2,3$：和 $=6$，兩兩乘積之和 $=2+6+3=11$，三根之積 $=6$，和上面三個式子一致。</p>
+<p><b>看出規律。</b>左邊依序是「根的和」「兩兩相乘再加起來」「三個相乘」，右邊依序是 $\frac ba,\frac ca,\frac da$，正負號 $-,+,-$ 交錯。</p>
+<p><b>推廣到 $n$ 次。</b>設 $a_0x^n+a_1x^{n-1}+\cdots+a_n=0$（$a_0\ne0$）的 $n$ 個複數根是 $x_1,\dots,x_n$。記 $\sigma_k$ 為「從這 $n$ 個根中每次取 $k$ 個相乘，再把所有乘積加起來」，例如 $\sigma_1=x_1+x_2+\cdots+x_n$，$\sigma_n=x_1x_2\cdots x_n$。同樣分解再展開：</p>
+$$\begin{aligned}&a_0x^n+a_1x^{n-1}+\cdots+a_n\\=\ &a_0(x-x_1)(x-x_2)\cdots(x-x_n)\\=\ &a_0\big[x^n-\sigma_1x^{n-1}+\sigma_2x^{n-2}\\&\quad-\cdots+(-1)^n\sigma_n\big].\end{aligned}$$
+<p>比較 $x^{n-k}$ 的係數：$a_k=(-1)^ka_0\sigma_k$，所以</p>
+$$\begin{aligned}\sigma_1&=-\frac{a_1}{a_0},\\ \sigma_2&=\frac{a_2}{a_0},\\ &\ \ \vdots\\ \sigma_k&=(-1)^k\frac{a_k}{a_0},\\ &\ \ \vdots\\ \sigma_n&=(-1)^n\frac{a_n}{a_0}.\end{aligned}$$
+<p>$n=2$、$n=3$ 時，就是前面的兩組式子。⟦為什麼有正負號｜展開 $(x-x_1)\cdots(x-x_n)$ 時，$x^{n-k}$ 的係數來自「$k$ 個括號取 $-x_i$、其餘括號取 $x$」，所以是 $(-1)^k\sigma_k$。⟧</p>
 
 === 例 4
 src: 1951–1952 年波蘭數學競賽

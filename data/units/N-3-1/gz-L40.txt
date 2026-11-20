@@ -1,5 +1,5 @@
 === meta
-title: 一次不定方程 ax+by=c
+title: 一次不定方程 $ax+by=c$
 from: gz-L40
 order: 20
 

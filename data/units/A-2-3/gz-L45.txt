@@ -4,19 +4,21 @@ from: gz-L45
 order: 50
 
 === body
-<div class="hero">根的<b>對稱式</b>都能由係數算出來 → 很多題<b>不必求根</b><br>韋達給 $\sigma_k$，牛頓公式給冪和 $s_m$</div>
+<div class="hero">把方程寫成<b>首項係數 ×（$x$ − 根）×（$x$ − 根）…</b>，展開後和原式比較係數<br>→ 根的<b>和</b>、<b>積</b>直接從係數讀出來，不必解方程</div>
 <div class="cards">
-<div class="card"><h4>① 韋達定理</h4><div class="rule">$\sigma_k=(-1)^k\dfrac{a_k}{a_0}$</div>
-<div class="eg">$x^3+ax^2+bx+c$：<br>$\sigma_1=-a,\ \sigma_2=b,\ \sigma_3=-c$</div></div>
-<div class="card"><h4>② 冪和遞推</h4><div class="rule">$s_m=\sigma_1s_{m-1}-\sigma_2s_{m-2}+\sigma_3s_{m-3}$</div>
-<div class="eg">$s_1=3,s_2=5,s_3=7$ ⇒ $\sigma=(3,2,-\frac23)$<br>$s_4=21-10-2=9$ <span class="pill">牛頓公式</span></div></div>
-<div class="card"><h4>③ 換根造新方程</h4><div class="rule">倒數：係數倒寫；平方：$\pm f(x)f(-x)$</div>
-<div class="eg">$(x^3+bx)^2-(ax^2+c)^2$<br>換 $x^2\to x$ 得以 $r^2,s^2,t^2$ 為根的方程</div></div>
-<div class="card"><h4>④ 判斷不全是實根</h4><div class="rule">實根 ⇒ $\sum x_i^2=\sigma_1^2-2\sigma_2\ge0$</div>
-<div class="eg">$\sum\frac1{x_i^2}=1-2=-1\lt0$<br>⇒ 根不全是實數 <span class="pill">平方和為負</span></div></div>
+<div class="card"><h4>① 二次：先分解再展開</h4><div class="rule">$$\begin{aligned}&ax^2+bx+c\\=\ &a(x-\alpha)(x-\beta)\\=\ &ax^2-a(\alpha+\beta)x+a\alpha\beta\end{aligned}$$</div>
+<div class="eg">對照 $x$ 項、常數項：$$\begin{aligned}\alpha+\beta&=-\tfrac ba\\ \alpha\beta&=\tfrac ca\end{aligned}$$例：$x^2-5x+6=0$ → 和 $5$、積 $6$（根是 $2,3$ ✓）</div></div>
+<div class="card"><h4>② 三次：同樣做</h4><div class="rule">$$\begin{aligned}&ax^3+bx^2+cx+d\\=\ &a(x-\alpha)(x-\beta)(x-\gamma)\end{aligned}$$</div>
+<div class="eg">展開對照：$$\begin{aligned}\alpha+\beta+\gamma&=-\tfrac ba\\ \alpha\beta+\beta\gamma+\gamma\alpha&=\tfrac ca\\ \alpha\beta\gamma&=-\tfrac da\end{aligned}$$例：$x^3-6x^2+11x-6$，根 $1,2,3$：$6,\ 11,\ 6$ ✓</div></div>
+<div class="card"><h4>③ 看出規律</h4><div class="rule">和、兩兩積、三個積…<br>正負號 $-,+,-,\dots$ 交錯</div>
+<div class="eg">$n$ 次的寫法：$\sigma_k$ = 每次取 $k$ 個根相乘再相加<br>$\sigma_k=(-1)^k\dfrac{a_k}{a_0}$ <span class="pill">正負交錯</span></div></div>
+<div class="card"><h4>④ 用途：不求根算對稱式</h4><div class="rule">$\alpha^2+\beta^2=(\alpha+\beta)^2-2\alpha\beta$</div>
+<div class="eg">$x^2-3x+1=0$ 的兩根：<br>$\alpha^2+\beta^2=3^2-2\cdot1=7$<br>根是 $\frac{3\pm\sqrt5}2$，直接算很麻煩</div></div>
 </div>
-<p>三根成等差的條件怎麼來？⟦中項 = 平均｜$x_2=\frac{\sigma_1}3=-\frac a3$ 必是根，代入得 $2a^3-9ab+27c=0$；再要求另兩根是實數。⟧</p>
+<p><b>進階一：判斷根不全是實數。</b>$x^3+x+1=0$ 的三根：和 $=0$、兩兩積之和 $=1$，所以平方和 $=0^2-2\cdot1=-2\lt0$。實數的平方和不會是負的，所以三根不全是實數。⟦平方和怎麼算｜$(x_1+x_2+x_3)^2=x_1^2+x_2^2+x_3^2+2(x_1x_2+x_2x_3+x_3x_1)$，移項即得。⟧</p>
+<p><b>進階二：冪和一路往上推。</b>已知 $x+y+z=3$，$x^2+y^2+z^2=5$，$x^3+y^3+z^3=7$，求 $x^4+y^4+z^4$。先由前三個條件求出三根的和、兩兩積之和、積：$3,\ 2,\ -\frac23$；再用牛頓公式 ⟦牛頓公式｜記 $s_m=x^m+y^m+z^m$，三根的和、兩兩積之和、積分別為 $\sigma_1,\sigma_2,\sigma_3$，則 $s_m=\sigma_1s_{m-1}-\sigma_2s_{m-2}+\sigma_3s_{m-3}$。原因：每個根都滿足 $t^3=\sigma_1t^2-\sigma_2t+\sigma_3$，兩邊乘 $t^{m-3}$ 再對三根相加。⟧ 得 $3\cdot7-2\cdot5+(-\frac23)\cdot3=9$。</p>
 <div class="pitfall"><h4>⚠ 最常錯</h4><ul>
-<li>$\sigma_k$ 的正負號：偶數 $k$ 取 $+$，奇數 $k$ 取 $-$</li>
-<li>用 $\sum x_i^2\ge0$ 前要先假設「全是實根」；複數根的平方和可以是負的</li></ul></div>
-<div class="bottomline">看到根的和、積、平方和、冪和：先寫 $\sigma_k$，別急著解方程。</div>
+<li>忘了除以首項係數 $a$：$2x^2-6x+1=0$ 的兩根和是 $3$，不是 $6$</li>
+<li>正負號：和取 $-$、兩兩積取 $+$、三個積取 $-$</li>
+<li>用「平方和 $\ge0$」之前，要先假設根全是實數</li></ul></div>
+<div class="bottomline">看到根的和、積、平方和：先寫成 $a(x-\alpha)(x-\beta)\cdots$ 比較係數，別急著解方程。</div>

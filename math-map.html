@@ -67,6 +67,9 @@ main { max-width: 920px; margin: 0 auto; padding-block: 24px 64px;
 .key b { color: var(--accent); }
 mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; max-width: 100%; }
 mjx-container[display="true"], mjx-container.mwide { min-width: 0 !important; }
+/* 獨立數學式一律靠左、固定縮排：連續幾行推導的起點才會對齊 */
+mjx-container[jax="SVG"][display="true"] { text-align: left !important; margin-left: 1.25em !important; }
+.rule mjx-container[display="true"], .eg mjx-container[display="true"], .obx mjx-container[display="true"] { margin-left: 0 !important; }
 mjx-container.mwide { display: block; max-width: 100%; overflow-x: auto; overflow-y: hidden; margin: .35em 0; padding-bottom: 2px; }
 .item, .panel, .card { min-width: 0; }
 
@@ -225,8 +228,8 @@ table.rate th { color: var(--muted); font-weight: 500; white-space: nowrap; }
 .card { border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; background: var(--surface); min-width: 0; }
 .card h4 { margin: 0 0 4px; font-family: var(--font-head); color: var(--accent); font-size: 1.02rem; }
 .card .rule { font-size: 1.12rem; font-weight: 700; margin: 2px 0; }
-.eg { background: var(--bg); border-radius: 6px; padding: 6px 10px; margin-top: 6px; font-size: .93rem; overflow-x: auto; }
-.card .rule { overflow-x: auto; }
+.eg { background: var(--bg); border-radius: 6px; padding: 6px 10px; margin-top: 6px; font-size: .93rem; overflow-x: auto; overflow-y: hidden; }
+.card .rule { overflow-x: auto; overflow-y: hidden; }
 .pill { background: #fde68a; color: #5b4300; border-radius: 4px; padding: 0 6px; font-weight: 700; white-space: nowrap; }
 .pitfall { border: 1.5px solid var(--tS); border-radius: 10px; padding: 10px 14px; }
 .pitfall h4 { margin: 0 0 4px; color: var(--tS); font-family: var(--font-head); }

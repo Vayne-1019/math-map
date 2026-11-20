@@ -1,5 +1,5 @@
 === meta
-title: 淺談 [x] 與 {x}
+title: 淺談 $[x]$ 與 $\{x\}$
 author: 余紅兵
 pages: 111-117
 units: A-5-5, N-4-3

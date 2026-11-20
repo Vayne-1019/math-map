@@ -1,5 +1,5 @@
 === meta
-title: [x] 與 {x}：先拆開，再分段
+title: $[x]$ 與 $\{x\}$：先拆開，再分段
 from: cz-L15
 order: 20
 

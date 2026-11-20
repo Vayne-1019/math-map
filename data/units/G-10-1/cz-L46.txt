@@ -1,5 +1,5 @@
 === meta
-title: 把 √(a²+b²) 畫成線段：構造圖形證不等式
+title: 把 $\sqrt{a^2+b^2}$ 畫成線段：構造圖形證不等式
 from: cz-L46
 order: 40
 

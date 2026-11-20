@@ -1,5 +1,5 @@
 === meta
-title: 質數的兩把刀：分解與「p 整除乘積」
+title: 質數的兩把刀：分解與「$p$ 整除乘積」
 from: cz-L13
 order: 20
 

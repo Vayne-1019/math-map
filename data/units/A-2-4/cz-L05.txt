@@ -1,5 +1,5 @@
 === meta
-title: 兩根的正負：Δ、積、和三個條件
+title: 兩根的正負：$\Delta$、積、和三個條件
 from: cz-L05
 order: 20
 

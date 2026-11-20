@@ -1,5 +1,5 @@
 === meta
-title: 冪和不用解方程：一切化成 e₁、e₂、e₃
+title: 冪和不用解方程：一切化成 $e_1,e_2,e_3$
 from: cz-L08
 order: 30
 
