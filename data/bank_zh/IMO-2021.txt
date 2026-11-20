@@ -1,0 +1,18 @@
+=== P1
+zh: 設 $n>100$ 為整數。Ivan 把數 $n,n+1,\dots,2n$ 各寫在不同的卡片上。接著他把這 $n+1$ 張卡片洗牌，並將它們分成兩堆。證明：至少有一堆中含有兩張卡片，其上數字之和為完全平方數。
+src: imo2021-1
+=== P2
+zh: 證明：對任意實數 $x_1,\dots,x_n$，不等式 $\displaystyle\sum_{i=1}^{n}\sum_{j=1}^{n}\sqrt{|x_i-x_j|}\le\sum_{i=1}^{n}\sum_{j=1}^{n}\sqrt{|x_i+x_j|}$ 成立。
+src: imo2021-2
+=== P3
+zh: 設 $D$ 為銳角三角形 $ABC$ 內部的一點，其中 $AB>AC$，且 $\angle DAB=\angle CAD$。線段 $AC$ 上的點 $E$ 滿足 $\angle ADE=\angle BCD$；線段 $AB$ 上的點 $F$ 滿足 $\angle FDA=\angle DBC$；直線 $AC$ 上的點 $X$ 滿足 $CX=BX$。設 $O_1,O_2$ 分別為三角形 $ADC$ 與 $EXD$ 的外心。證明：直線 $BC$、$EF$、$O_1O_2$ 共點。
+src: imo2021-3
+=== P4
+zh: 設 $\Gamma$ 為圓心為 $I$ 的圓，$ABCD$ 為凸四邊形，使得線段 $AB$、$BC$、$CD$、$DA$ 各自都與 $\Gamma$ 相切。設 $\Omega$ 為三角形 $AIC$ 的外接圓。將 $BA$ 向 $A$ 之外延長，與 $\Omega$ 相交於 $X$；將 $BC$ 向 $C$ 之外延長，與 $\Omega$ 相交於 $Z$。將 $AD$ 與 $CD$ 分別向 $D$ 之外延長，與 $\Omega$ 分別相交於 $Y$ 與 $T$。證明：$AD+DT+TX+XA=CD+DY+YZ+ZC$。
+src: imo2021-4
+=== P5
+zh: 兩隻松鼠 Bushy 與 Jumpy 為冬天收集了 $2021$ 顆核桃。Jumpy 將核桃依 $1$ 至 $2021$ 編號，並在他們最愛的大樹周圍，沿圓形挖出 $2021$ 個小洞。隔天早上 Jumpy 發現，Bushy 已把一顆核桃放入每個洞中，但完全沒有注意編號。Jumpy 很不高興，於是決定重新排列核桃，方法是執行一連串 $2021$ 次移動。在第 $k$ 次移動中，Jumpy 交換與核桃 $k$ 相鄰的兩顆核桃的位置。證明：存在某個 $k$，使得在第 $k$ 次移動中，Jumpy 交換的兩顆核桃 $a,b$ 滿足 $a<k<b$。
+src: imo2021-5
+=== P6
+zh: 設 $m>2$ 為整數，$A$ 為有限整數集合（不必為正），且 $B_1,B_2,\dots,B_m$ 為 $A$ 的子集。假設對每個 $k=1,2,\dots,m$，$B_k$ 中元素之和都等於 $mk$。證明：$A$ 至少含有 $m/2$ 個元素。
+src: imo2021-6
