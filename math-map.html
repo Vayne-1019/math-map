@@ -173,14 +173,56 @@ table.rate th { color: var(--muted); font-weight: 500; white-space: nowrap; }
 .figs { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
 .figs img { max-width: 100%; max-height: 300px; height: auto; background: #fff; border-radius: 6px; padding: 4px; border: 1px solid var(--line); }
 .qlist { display: flex; flex-direction: column; gap: 10px; }
+/* 「顯然 ▼」：點開看拆解 */
+.ob .obt { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; border-bottom: 1px dashed var(--accent); }
+.ob .obt::after { content: " ▼"; color: var(--accent); font-size: .7em; vertical-align: .15em; }
+.ob .obt[aria-expanded="true"]::after { content: " ▲"; }
+.ob .obx { display: block; margin: 6px 0 8px; padding: 8px 12px; border-left: 3px solid var(--accent); background: var(--accent-weak); border-radius: 0 6px 6px 0; font-size: .95em; }
+.ob .obx[hidden] { display: none; }
+/* 兩個入口 */
+.entries { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+.entry { display: flex; flex-direction: column; gap: 4px; padding: 14px 16px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); color: var(--fg); }
+.entry:hover { text-decoration: none; border-color: var(--accent); }
+.entry.on { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.entry .k { font-size: .76rem; letter-spacing: .1em; color: var(--muted); }
+.entry b { font-family: var(--font-head); font-size: 1.1rem; }
+.entry span:last-child { font-size: .9rem; color: var(--muted); }
+/* 書本 */
+.lec { list-style: none; margin: 0; padding: 0; }
+.lec > li { display: grid; grid-template-columns: 4.6em 1fr auto; gap: 2px 10px; padding: 7px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+.lec .no { font-family: var(--font-mono); font-size: .8rem; color: var(--muted); }
+.lec .st { font-size: .76rem; color: var(--muted); white-space: nowrap; }
+.lec .st.ok { color: var(--accent); }
+.lec a.todo { color: var(--fg); opacity: .6; }
+.bk-text > :first-child { margin-top: 0; }
+.bkfig { margin: 10px 0; text-align: center; }
+.bkfig svg { max-width: 100%; height: auto; color: var(--fg); }
+.bkfig figcaption { font-size: .86rem; color: var(--muted); }
+/* 消化版圖卡（仿指數律圖卡） */
+.digest { display: flex; flex-direction: column; gap: 12px; }
+.digest .from { font-size: .82rem; color: var(--muted); }
+.hero { background: #2d5a87; color: #f4f6fb; border-radius: 12px; padding: 14px 18px; line-height: 1.9; }
+.hero b, .hero .hl { color: #ffd76a; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+.card { border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; background: var(--surface); min-width: 0; }
+.card h4 { margin: 0 0 4px; font-family: var(--font-head); color: var(--accent); font-size: 1.02rem; }
+.card .rule { font-size: 1.12rem; font-weight: 700; margin: 2px 0; }
+.eg { background: var(--bg); border-radius: 6px; padding: 6px 10px; margin-top: 6px; font-size: .93rem; overflow-x: auto; }
+.card .rule { overflow-x: auto; }
+.pill { background: #fde68a; color: #5b4300; border-radius: 4px; padding: 0 6px; font-weight: 700; white-space: nowrap; }
+.pitfall { border: 1.5px solid var(--tS); border-radius: 10px; padding: 10px 14px; }
+.pitfall h4 { margin: 0 0 4px; color: var(--tS); font-family: var(--font-head); }
+.pitfall ul { margin: 0; padding-left: 1.2em; }
+.bottomline { background: var(--fg); color: var(--bg); border-radius: 10px; padding: 12px 16px; text-align: center; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
-@media (max-width: 520px) { h1 { font-size: 1.55rem; } .panel { padding: 14px; } .course > li { grid-template-columns: 3.4em 1fr; } .course > li .prog { grid-column: 2; } }
+@media (max-width: 520px) { h1 { font-size: 1.55rem; } .panel { padding: 14px; } .lec > li { grid-template-columns: 3.8em 1fr; } .lec .st { grid-column: 2; } .course > li { grid-template-columns: 3.4em 1fr; } .course > li .prog { grid-column: 2; } }
 </style>
 
 <header class="bar"><div class="bar-in">
   <a class="brand" href="#home">競賽數學地圖</a>
   <nav class="nav" id="nav">
     <a href="#map" data-k="map">單元地圖</a>
+    <a href="#books" data-k="books">書本</a>
     <a href="#amc" data-k="amc">AMC 課程</a>
     <a href="#exams" data-k="exams">依考卷</a>
     <a href="#board" data-k="board">畫板</a>
@@ -748,6 +790,7 @@ function viewHome() {
 function viewMap() {
   const open = new Set(['G-3', 'G-4', 'A-2', 'A-4', 'G-8']);
   return `<div><h1>單元地圖</h1><p class="lead">粗體單元已有示範內容，數字是題目數。年級標籤只是參考，不限制學習順序。</p></div>
+  ${entries('map')}
   ${DOMAINS.map(d => `<section class="domain" style="--dc:var(--d${d.code})">
     <h2><span class="letter">${d.code}</span>${esc(d.name.split(' ')[0] === d.code ? d.name.slice(2) : d.name)}</h2>
     ${d.groups.map(g => `${g.label ? `<div class="group-label">${esc(g.label)}</div>` : ''}
@@ -765,7 +808,8 @@ function viewUnit(code) {
   return `<div class="crumb"><a href="#map">${u.domain} ${DNAME[u.domain]}</a><span>›</span><span>${c.code} ${esc(c.name)}</span></div>
   <div><h1><span class="mono" style="color:var(--d${u.domain})">${code}</span> ${esc(u.name)}</h1>
   <div class="chips">${u.tags.map(t => `<span class="chip">${TAGNAME[t]}</span>`).join('')}</div></div>
-  <article class="panel prose">${body}</article>
+  ${digestForUnit(code) || `<article class="panel prose">${body}</article>`}
+  ${HAS_CONTENT.has(code) && window.UNIT_DIGEST && (window.UNIT_DIGEST[code] || []).length ? `<article class="panel prose">${body}</article>` : ''}
   <section class="panel"><h2>題目</h2>
   ${probs.length ? `<ul class="plist">${probs.map(p => {
     const here = p.sols.map((s, i) => s.units.includes(code) ? i : -1).filter(i => i >= 0);
@@ -1151,6 +1195,87 @@ function viewAmcChapter(no) {
   <nav class="pager"><span>${prev ? '← ' + link(prev) : ''}</span><span>${next ? link(next) + ' →' : ''}</span></nav>`;
 }
 
+/* ===================== 書本（入口一）與單元消化版（入口二） ===================== */
+const loaded = {};
+function need(src, ok) {  // lazy <script>; true when ready
+  if (ok()) return true;
+  if (!loaded[src]) {
+    loaded[src] = 'loading';
+    const s = document.createElement('script'); s.src = src;
+    s.onload = () => { loaded[src] = 'ok'; route(true); };
+    s.onerror = () => { loaded[src] = 'fail'; route(true); };
+    document.head.appendChild(s);
+  }
+  return false;
+}
+const waitMsg = src => loaded[src] === 'fail' ? `<p class="lead warn">資料載入失敗，請重新整理頁面。</p>` : `<p class="lead">載入中…</p>`;
+const BOOKS = { cz: '初中數學競賽教程', gz: '高中數學競賽教程' };
+function entries(on) {
+  return `<div class="entries">
+    <a class="entry${on === 'books' ? ' on' : ''}" href="#books"><span class="k">入口一</span><b>書本順序</b><span>照原書一講一講讀，步驟展開、附圖補齊。</span></a>
+    <a class="entry${on === 'map' ? ' on' : ''}" href="#map"><span class="k">入口二</span><b>單元地圖</b><span>消化後的重點圖卡，依單元整理；覺得不顯然就點 ▼ 展開。</span></a></div>`;
+}
+function bookReady(id) { return need(`books/${id}.js`, () => window.BOOK_DATA && window.BOOK_DATA[id]); }
+
+function viewBooks() {
+  const ids = Object.keys(BOOKS), ready = ids.map(bookReady).every(Boolean);
+  const head = `<div><h1>書本</h1><p class="lead">把競賽教程「解壓縮」：保留原書的講次順序，補上省略的步驟與附圖，數學式全部重新排版。講解與詳解由本站重寫，題目標明原書出處。</p></div>${entries('books')}`;
+  if (!ready) return head + waitMsg(`books/${ids.find(i => !(window.BOOK_DATA && window.BOOK_DATA[i]))}.js`);
+  return head + ids.map(id => { const B = window.BOOK_DATA[id], n = B.lectures.filter(l => l.blocks.length).length;
+    return `<section class="panel"><div class="bankhead"><h2><a href="#book-${id}">${esc(B.title)}</a></h2><span class="note">${n}／${B.lectures.length} 講已編譯</span></div>
+      <p class="note">${esc(B.editors || '')}${B.publisher ? '・' + esc(B.publisher) : ''}</p>
+      <div class="chips">${B.parts.map(p => `<a class="chip" href="#book-${id}">${esc(p.name)}（第 ${p.from}–${p.to} 講）</a>`).join('')}</div></section>`; }).join('');
+}
+function viewBook(id) {
+  if (!BOOKS[id]) return viewNotFound();
+  const crumb = `<div class="crumb"><a href="#books">書本</a><span>›</span><span>${BOOKS[id]}</span></div>`;
+  if (!bookReady(id)) return crumb + waitMsg(`books/${id}.js`);
+  const B = window.BOOK_DATA[id];
+  return `${crumb}<div><h1>${esc(B.title)}</h1><p class="lead">${esc(B.editors || '')}${B.publisher ? '・' + esc(B.publisher) : ''}</p></div>
+  ${B.parts.map(p => `<section class="panel"><h2>${esc(p.name)}</h2><ol class="lec">${B.lectures.filter(l => l.no >= p.from && l.no <= p.to).map(l => {
+    const has = l.blocks.length;
+    return `<li><span class="no">第 ${l.no} 講</span><span><a href="#book-${id}-${l.no}"${has ? ' style="font-weight:700"' : ' class="todo"'}>${esc(l.title)}</a>${l.author ? ` <span class="note">${esc(l.author)}</span>` : ''}</span>
+      <span class="st${has && l.status === '完成' ? ' ok' : ''}">${has ? esc(l.status) : '待編譯'}</span></li>`; }).join('')}</ol></section>`).join('')}`;
+}
+const THM_KINDS = ['定理', '定義', '引理', '性質', '公式', '推論'];
+function bookBlock(b) {
+  const lab = [b.kind, b.label].filter(Boolean).join(' ');
+  if (b.kind === 'text') return `<section class="panel prose bk-text">${b.html}</section>`;
+  if (THM_KINDS.includes(b.kind))
+    return `<div class="item thm"><div class="ih"><b>${esc(lab)}${b.title ? '：' + esc(b.title) : ''}</b></div><div class="body">${b.zh || ''}</div>${b.sol ? `<details><summary>證明</summary><div>${b.sol}</div></details>` : ''}</div>`;
+  const isEx = b.kind === '例';
+  return `<div class="item"><div class="ih"><b>${esc(lab)}</b>${b.title ? `<span>${esc(b.title)}</span>` : ''}${b.src ? `<span class="srcchip">${esc(b.src)}</span>` : ''}</div>
+    <div class="body">${b.zh || ''}</div>
+    ${b.hint ? `<details><summary>提示</summary><div>${b.hint}</div></details>` : ''}
+    ${b.sol ? `<details${isEx ? ' open' : ''}><summary>${isEx ? '解' : '解答'}</summary><div>${b.sol}</div></details>` : ''}
+    ${b.ans ? `<details><summary>答案</summary><div>${b.ans}</div></details>` : ''}</div>`;
+}
+function viewLecture(id, no) {
+  if (!BOOKS[id]) return viewNotFound();
+  const crumb = `<div class="crumb"><a href="#books">書本</a><span>›</span><a href="#book-${id}">${BOOKS[id]}</a></div>`;
+  if (!bookReady(id)) return crumb + waitMsg(`books/${id}.js`);
+  const B = window.BOOK_DATA[id], L = B.lectures.find(l => l.no === no); if (!L) return viewNotFound();
+  const prev = B.lectures.find(l => l.no === no - 1), next = B.lectures.find(l => l.no === no + 1);
+  const lk = l => `<a href="#book-${id}-${l.no}">第 ${l.no} 講 ${esc(l.title)}</a>`;
+  return `${crumb}<div><h1><span class="mono">第 ${no} 講</span> ${esc(L.title)}</h1>
+    <p class="lead">${L.author ? esc(L.author) + '・' : ''}原書 PDF 第 ${esc(L.pages || L.page)} 頁${L.blocks.length ? '・' + esc(L.status) : ''}</p>
+    ${L.units && L.units.length ? `<div class="chips">對應單元：${L.units.map(u => `<a class="chip" href="#u-${u}">${u} ${esc(UNITS[u] ? UNITS[u].name : '')}</a>`).join('')}</div>` : ''}</div>
+  ${L.blocks.length ? L.blocks.map(bookBlock).join('') : `<section class="panel"><p class="lead">這一講還在編譯。</p></section>`}
+  <nav class="pager"><span>${prev ? '← ' + lk(prev) : ''}</span><span>${next ? lk(next) + ' →' : ''}</span></nav>`;
+}
+function digestForUnit(code) {
+  if (!need('books/digest.js', () => window.UNIT_DIGEST)) return '';
+  const ds = window.UNIT_DIGEST[code] || [];
+  const srcName = f => { const m = /^(cz|gz)-L(\d+)$/.exec(f); return m ? `<a href="#book-${m[1]}-${+m[2]}">${BOOKS[m[1]]}第 ${+m[2]} 講</a>` : esc(f); };
+  return ds.map(d => `<section class="panel digest">${d.title ? `<h2>${esc(d.title)}</h2>` : ''}${d.html}<div class="from">出處：${srcName(d.from)}</div></section>`).join('');
+}
+app.addEventListener('click', e => {
+  const b = e.target.closest('.obt'); if (!b) return;
+  const x = b.nextElementSibling, open = b.getAttribute('aria-expanded') !== 'true';
+  b.setAttribute('aria-expanded', open); x.hidden = !open;
+  if (open && window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([x]).catch(() => {});
+});
+
 /* ===================== ROUTER ===================== */
 function route(keep) {
   boards.forEach(b => { try { if (b._ro) b._ro.disconnect(); JXG.JSXGraph.freeBoard(b); } catch (_) {} }); boards = [];
@@ -1162,6 +1287,9 @@ function route(keep) {
   else if (h === 'board') html = viewBoard();
   else if (h === 'sources') html = viewSources();
   else if (h === 'basic') html = viewBasic();
+  else if (h === 'books') html = viewBooks();
+  else if (/^book-(cz|gz)$/.test(h)) { html = viewBook(h.slice(5)); key = 'books'; }
+  else if (/^book-(cz|gz)-\d+$/.test(h)) { const [, id, n] = h.split('-'); html = viewLecture(id, +n); key = 'books'; }
   else if (h === 'amc') html = viewAmcIndex();
   else if (/^amc-\d+$/.test(h)) { html = viewAmcChapter(+h.slice(4)); key = 'amc'; }
   else if (h.startsWith('u-')) { html = viewUnit(h.slice(2)); key = 'map'; }
