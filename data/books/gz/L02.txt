@@ -1,0 +1,153 @@
+=== meta
+title: 發現題目及其解法的本質
+author: 杜錫錄
+pages: 11-17
+units: G-7-4, G-9-7
+status: 完成
+
+=== text
+<p>第 1 講談的是一題多解、一題多用。這一講把重點放在：在好幾種解法中，<b>找出最能說明題目本質的那一種</b>。這樣的解法通常最簡單，而且能推廣到更一般的情形。</p>
+
+=== 例 1 | 三個餘弦的積
+zh: 在 $\triangle ABC$ 中，證明 $\cos A\cos B\cos C\le\dfrac18$。
+sol: 若 $\triangle ABC$ 不是銳角三角形，左邊 $\le0$，不等式顯然成立。以下設三角形是銳角三角形。
+<p><b>證法一</b>（積化和差加配方）：</p>
+$$\begin{aligned}
+\cos A\cos B\cos C&=\tfrac12\big[\cos(A-B)+\cos(A+B)\big]\cos C\\
+&=\tfrac12\big[\cos(A-B)-\cos C\big]\cos C\\
+&\le\tfrac18\big[\cos(A-B)-\cos C+\cos C\big]^2\\
+&=\tfrac18\cos^2(A-B)\le\tfrac18.
+\end{aligned}$$
+⟦第三行怎麼來｜$\cos(A+B)=-\cos C$。再用 $xy\le\frac14(x+y)^2$（即 $(x-y)^2\ge0$），取 $x=\cos(A-B)-\cos C$，$y=\cos C$。⟧
+<p>等號成立要兩個不等式同時取等：$\cos(A-B)-\cos C=\cos C$ 且 $\cos^2(A-B)=1$，解得 $A=B$，$\cos C=\frac12$，即 $A=B=C=60^\circ$。</p>
+<p>這個證法已經夠簡單，但還不是最好的。</p>
+<p><b>證法二</b>（射影定理加算幾不等式）：由射影定理（投影公式）與算幾不等式，</p>
+$$\begin{aligned}
+a&=b\cos C+c\cos B\ge2\sqrt{bc\cos B\cos C},\\
+b&=c\cos A+a\cos C\ge2\sqrt{ca\cos A\cos C},\\
+c&=a\cos B+b\cos A\ge2\sqrt{ab\cos A\cos B}.
+\end{aligned}$$
+三式相乘，右邊是 $8\sqrt{a^2b^2c^2\cos^2A\cos^2B\cos^2C}=8abc\cos A\cos B\cos C$，兩邊消去 $abc$，得 $1\ge8\cos A\cos B\cos C$。
+<p>這個證法整齊、對稱，只用到射影定理和平均不等式。千萬別小看射影定理，某種意義上它比餘弦定理更根本。說它「本質」，是因為它揭示了這個不等式和射影定理的關係，而這種關係在空間中同樣存在。</p>
+
+=== text
+<h3>一、推廣到四面體</h3>
+<p>對四面體 $A_1A_2A_3A_4$，記 $\theta_{ij}$ 為稜 $A_iA_j$ 上的二面角，$S_i$ 為頂點 $A_i$ 所對的面的面積。用證法一的方法推廣會非常困難；證法二卻能整個搬過去，只要先有空間的射影定理。</p>
+
+=== 定理 | 空間射影定理
+zh: 在四面體 $A_1A_2A_3A_4$ 中，若六條稜上的二面角都是銳角，則
+$$S_1=S_2\cos\theta_{34}+S_3\cos\theta_{24}+S_4\cos\theta_{23},$$
+其餘三個面同理。
+sol: <figure class="bkfig"><svg viewBox="0 0 240 185" width="240" role="img" aria-label="四面體 A1A2A3A4，A1 到底面的垂足 H"><g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="108.6" y1="22.0" x2="22.0" y2="144.4"/><line x1="108.6" y1="22.0" x2="71.8" y2="163.5"/><line x1="108.6" y1="22.0" x2="218.0" y2="133.9"/><line x1="22.0" y1="144.4" x2="71.8" y2="163.5"/><line x1="71.8" y1="163.5" x2="218.0" y2="133.9"/><line x1="22.0" y1="144.4" x2="218.0" y2="133.9" stroke-dasharray="5 4"/><line x1="108.6" y1="22.0" x2="108.6" y2="147.6" stroke-dasharray="5 4"/><line x1="22.0" y1="144.4" x2="108.6" y2="147.6" stroke-dasharray="5 4"/><line x1="71.8" y1="163.5" x2="108.6" y2="147.6" stroke-dasharray="5 4"/><line x1="218.0" y1="133.9" x2="108.6" y2="147.6" stroke-dasharray="5 4"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="100.6" y="14.0">A<tspan font-size="11" dy="4">1</tspan></text><text x="0.0" y="150.4">A<tspan font-size="11" dy="4">2</tspan></text><text x="65.8" y="181.5">A<tspan font-size="11" dy="4">3</tspan></text><text x="224.0" y="139.9">A<tspan font-size="11" dy="4">4</tspan></text><text x="112.6" y="161.6">H</text></g></svg><figcaption>A₁H ⊥ 底面，H 在 △A₂A₃A₄ 內；後方的稜與輔助線用虛線</figcaption></figure>
+從 $A_1$ 作底面 $A_2A_3A_4$ 的垂線，垂足 $H$。二面角都是銳角，所以 $H$ 在 $\triangle A_2A_3A_4$ 內，底面被分成三塊：
+$$S_1=S_{\triangle HA_3A_4}+S_{\triangle HA_2A_4}+S_{\triangle HA_2A_3}.$$
+$\triangle HA_3A_4$ 是側面 $A_1A_3A_4$（面積 $S_2$）在底面上的正射影，兩面的夾角就是稜 $A_3A_4$ 上的二面角 $\theta_{34}$，所以 $S_{\triangle HA_3A_4}=S_2\cos\theta_{34}$。⟦為什麼面積乘 cos｜射影面積公式：平面圖形投影到另一平面，面積乘上兩平面夾角的餘弦。對 $\triangle HA_3A_4$ 與 $\triangle A_1A_3A_4$ 來說，兩者同底 $A_3A_4$，高的比正是 $\cos\theta_{34}$。⟧另兩塊同理。
+
+=== 例 2 | 六個二面角的餘弦
+zh: 設四面體 $A_1A_2A_3A_4$ 六條稜上的二面角 $\theta_{12},\theta_{13},\theta_{14},\theta_{23},\theta_{24},\theta_{34}$ 都是銳角。證明
+$$\sqrt[6]{\cos\theta_{12}\cos\theta_{13}\cos\theta_{14}\cos\theta_{23}\cos\theta_{24}\cos\theta_{34}}\le\frac13.$$
+sol: 對四個面分別用空間射影定理和三元算幾不等式：
+$$\begin{aligned}
+S_1&=S_2\cos\theta_{34}+S_3\cos\theta_{24}+S_4\cos\theta_{23}\\
+&\ge3\sqrt[3]{S_2S_3S_4\cos\theta_{23}\cos\theta_{24}\cos\theta_{34}},\\
+S_2&=S_1\cos\theta_{34}+S_3\cos\theta_{14}+S_4\cos\theta_{13}\\
+&\ge3\sqrt[3]{S_1S_3S_4\cos\theta_{13}\cos\theta_{14}\cos\theta_{34}},\\
+S_3&=S_1\cos\theta_{24}+S_2\cos\theta_{14}+S_4\cos\theta_{12}\\
+&\ge3\sqrt[3]{S_1S_2S_4\cos\theta_{12}\cos\theta_{14}\cos\theta_{24}},\\
+S_4&=S_1\cos\theta_{23}+S_2\cos\theta_{13}+S_3\cos\theta_{12}\\
+&\ge3\sqrt[3]{S_1S_2S_3\cos\theta_{12}\cos\theta_{13}\cos\theta_{23}}.
+\end{aligned}$$
+四式相乘。右邊每個 $S_i$ 出現三次、每個 $\cos\theta_{ij}$ 出現兩次⟦數一數｜例如 $\cos\theta_{34}$ 只出現在 $S_1$、$S_2$ 兩式；$S_1$ 出現在 $S_2,S_3,S_4$ 三式。⟧，記 $K=\prod\cos\theta_{ij}$，得
+$$S_1S_2S_3S_4\ge3^4\,S_1S_2S_3S_4\,K^{2/3}.$$
+消去 $S_1S_2S_3S_4$：$K^{2/3}\le\dfrac1{3^4}$，兩邊開 4 次方得 $K^{1/6}\le\dfrac13$。
+<p>不難證明，等號成立若且唯若四面體是正四面體。</p>
+
+=== text
+<p>這個證明和例 1 的證法二如出一轍。更高維的單形也有同樣的性質，用相同的方法可以證明，只是要先建立對應的射影定理，這已超出高中範圍。對簡單的題目深入了解、抓住本質，就可能得到更一般的結果；數學的美妙與發展大多在此。</p>
+<h3>二、勾股定理也靠射影定理</h3>
+<p>勾股定理的證法很多，其中一個本質的證法正是靠射影定理。</p>
+<figure class="bkfig"><svg viewBox="0 0 240 138" width="240" role="img" aria-label="直角三角形 ABC，∠C＝90°，CD 為斜邊上的高"><g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="22.0,116.1 218.0,116.1 92.6,22.0"/><line x1="92.6" y1="22.0" x2="92.6" y2="116.1" stroke-dasharray="5 4"/></g><path d="M100.6,116.1 v-8 h-8" fill="none" stroke="currentColor"/><g fill="currentColor" font-size="15" font-style="italic"><text x="8.0" y="130.1">A</text><text x="222.0" y="130.1">B</text><text x="87.6" y="14.0">C</text><text x="88.6" y="133.1">D</text></g></svg><figcaption>∠C＝90°，CD ⊥ AB</figcaption></figure>
+<p>在 $\triangle ABC$ 中 $\angle C=90^\circ$，則 $c=a\cos B+b\cos A$，而 $a=c\cos B$、$b=c\cos A$，代入得 $c=c(\cos^2A+\cos^2B)$，即 $\cos^2A+\cos^2B=1$，所以</p>
+$$a^2+b^2=c^2(\cos^2A+\cos^2B)=c^2.$$
+<p><b>三維空間的勾股定理</b>：設四面體 $A_1A_2A_3A_4$ 中，$A_1$ 處的三面角是直三面角（三條稜兩兩垂直），$S_i$ 是 $A_i$ 所對面的面積，則 $S_1^2=S_2^2+S_3^2+S_4^2$。</p>
+<p><b>證</b>：因為 $A_1A_2$ 垂直於平面 $A_1A_3A_4$，底面 $\triangle A_2A_3A_4$ 投影到平面 $A_1A_3A_4$ 恰好是 $\triangle A_1A_3A_4$，所以 $S_2=S_1\cos\theta_{34}$；同理 $S_3=S_1\cos\theta_{24}$，$S_4=S_1\cos\theta_{23}$。代入射影定理</p>
+$$S_1=S_2\cos\theta_{34}+S_3\cos\theta_{24}+S_4\cos\theta_{23}=S_1(\cos^2\theta_{34}+\cos^2\theta_{24}+\cos^2\theta_{23}),$$
+<p>得 $\cos^2\theta_{34}+\cos^2\theta_{24}+\cos^2\theta_{23}=1$，於是</p>
+$$S_2^2+S_3^2+S_4^2=S_1^2(\cos^2\theta_{34}+\cos^2\theta_{24}+\cos^2\theta_{23})=S_1^2.$$
+<p>兩個勾股定理的證明驚人地相似，這正是它們的本質所在。</p>
+<h3>三、比較 $c^n$ 與 $a^n+b^n$</h3>
+<p>直角三角形中 $c^2=a^2+b^2$，又 $c&lt;a+b$。自然要問：$c^n$ 和 $a^n+b^n$ 誰大？$n=2$ 相等，$n=1$ 時 $c&lt;a+b$；猜想 $0&lt;n&lt;2$ 時 $c^n&lt;a^n+b^n$，$n&gt;2$ 時 $c^n&gt;a^n+b^n$；$n\le0$ 時⟦顯然｜$c&gt;a$，所以 $n&lt;0$ 時 $c^n&lt;a^n$，更小於 $a^n+b^n$；$n=0$ 時 $1&lt;2$。⟧$c^n&lt;a^n+b^n$。</p>
+
+=== 定理 | 直角三角形的 $n$ 次方
+zh: 在直角 $\triangle ABC$ 中，$\angle C=90^\circ$，則<br>(i) $c^2=a^2+b^2$；<br>(ii) 當 $n&gt;2$ 時，$c^n&gt;a^n+b^n$；<br>(iii) 當 $n&lt;2$ 時，$c^n&lt;a^n+b^n$。
+sol: (i) 即勾股定理。(ii) $n&gt;2$ 時 $n-2&gt;0$，又 $c&gt;a$、$c&gt;b$，所以 $c^{n-2}&gt;a^{n-2}$、$c^{n-2}&gt;b^{n-2}$：
+$$c^n=c^{n-2}(a^2+b^2)=c^{n-2}a^2+c^{n-2}b^2&gt;a^n+b^n.$$
+(iii) 同理，$n&lt;2$ 時 $c^{n-2}&lt;a^{n-2}$、$c^{n-2}&lt;b^{n-2}$，不等號反向。
+
+=== 例 3 | 直三面角四面體的性質
+zh: 設四面體 $A_1A_2A_3A_4$ 中 $A_1$ 處是直三面角，$A_1,A_2,A_3,A_4$ 所對的面積分別為 $S_1,S_2,S_3,S_4$。則<br>(i) $S_1^2=S_2^2+S_3^2+S_4^2$；<br>(ii) $n&gt;2$ 時 $S_1^n&gt;S_2^n+S_3^n+S_4^n$；<br>(iii) $n&lt;2$ 時 $S_1^n&lt;S_2^n+S_3^n+S_4^n$；<br>(iv) $\triangle A_2A_3A_4$ 是銳角三角形；<br>(v) 從 $A_1$ 作平面 $A_2A_3A_4$ 的垂線，垂足是 $\triangle A_2A_3A_4$ 的垂心。
+sol: (i) 是空間勾股定理，已證。(ii)(iii) 和上面定理的證法完全相同（由 (i)，$S_1$ 大於每個 $S_i$）。
+<p>(iv) 三條稜兩兩垂直，各側面是直角三角形，由勾股定理</p>
+$$\begin{aligned}
+A_2A_3^2+A_2A_4^2&=(A_1A_2^2+A_1A_3^2)+(A_1A_2^2+A_1A_4^2)\\
+&&gt;A_1A_3^2+A_1A_4^2=A_3A_4^2,
+\end{aligned}$$
+所以 $\angle A_3A_2A_4$ 是銳角⟦為什麼｜由餘弦定理，$\cos\angle A_3A_2A_4=\dfrac{A_2A_3^2+A_2A_4^2-A_3A_4^2}{2\,A_2A_3\cdot A_2A_4}&gt;0$。⟧。同理另外兩角也是銳角。
+<p>(v) 設垂足為 $H$。</p>
+$$\begin{aligned}
+&A_1A_4\perp A_1A_2,\ A_1A_4\perp A_1A_3\Rightarrow A_1A_4\perp\text{平面}A_1A_2A_3\\
+&\Rightarrow A_1A_4\perp A_2A_3.
+\end{aligned}$$
+又 $A_1H\perp A_2A_3$，所以 $A_2A_3$ 垂直於平面 $A_1A_4H$，因此 $A_2A_3\perp A_4H$。同理 $A_3A_4\perp A_2H$、$A_4A_2\perp A_3H$，所以 $H$ 是垂心。
+<p>從 (v) 的證明還看出：若 $S$ 是 $\triangle A_2A_3A_4$ 的邊（例如 $A_3A_4$）上任一點，則 $\angle A_2A_1S=90^\circ$（$A_1A_2$ 垂直於平面 $A_1A_3A_4$，而 $A_1S$ 在這個平面上）。這個性質的逆命題經過變形，就是 1938 年匈牙利數學競賽第 3 題，也就是下面的例 4。</p>
+
+=== 例 4 | 讓每條截線都張直角的點
+src: 1938 年匈牙利數學競賽第 3 題（變形）
+zh: 連接三角形一個頂點和對邊（或其延長線）上任一點的線段，叫做三角形的<b>截線</b>。證明：對空間中任一個銳角三角形，一定能找到一個點，使任一條截線對這一點所張的角都是直角。
+sol: 由例 3，這樣的點是存在的：它和銳角三角形構成一個四面體，而它所在的三面角是直三面角。下面具體把它找出來（只看三角形所在平面的一側）。
+<figure class="bkfig"><svg viewBox="0 0 240 151" width="240" role="img" aria-label="直三面角 A1-A2A3A4，H 為底面垂心"><g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="100.8" y1="22.0" x2="22.0" y2="97.7"/><line x1="100.8" y1="22.0" x2="142.5" y2="128.6"/><line x1="100.8" y1="22.0" x2="218.0" y2="53.2"/><line x1="22.0" y1="97.7" x2="142.5" y2="128.6"/><line x1="142.5" y1="128.6" x2="218.0" y2="53.2"/><line x1="22.0" y1="97.7" x2="218.0" y2="53.2" stroke-dasharray="5 4"/><line x1="100.8" y1="22.0" x2="100.8" y2="97.7" stroke-dasharray="5 4"/><line x1="22.0" y1="97.7" x2="173.5" y2="97.7" stroke-dasharray="5 4"/><line x1="100.8" y1="22.0" x2="173.5" y2="97.7" stroke-dasharray="5 4"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="92.8" y="14.0">A<tspan font-size="11" dy="4">1</tspan></text><text x="0.0" y="103.7">A<tspan font-size="11" dy="4">2</tspan></text><text x="136.5" y="146.6">A<tspan font-size="11" dy="4">3</tspan></text><text x="224.0" y="59.2">A<tspan font-size="11" dy="4">4</tspan></text><text x="86.8" y="111.7">H</text><text x="177.5" y="111.7">B</text></g></svg><figcaption>A₁ 處三條稜兩兩垂直；A₂B 是底面的高，H 是垂心</figcaption></figure>
+設銳角三角形是 $\triangle A_2A_3A_4$，垂心為 $H$；設所求點是 $A_1$。由例 3，$A_1H$ 垂直於平面 $A_2A_3A_4$。連 $A_2H$ 並延長交 $A_3A_4$ 於 $B$，則 $\triangle A_1A_2B$ 是以 $\angle A_2A_1B$ 為直角的直角三角形，$A_1H$ 是斜邊上的高，所以
+$$A_1H^2=A_2H\cdot HB.$$
+<p><b>作法</b>：過垂心 $H$ 作平面 $A_2A_3A_4$ 的垂線，在垂線上取點 $A_1$，使 $A_1H^2=A_2H\cdot HB$。</p>
+<p><b>驗證</b>：這時 $\angle A_2A_1B=90^\circ$⟦為什麼｜$A_1H\perp A_2B$ 且 $A_1H^2=A_2H\cdot HB$，即 $\frac{A_1H}{A_2H}=\frac{HB}{A_1H}$，所以 $\triangle A_2HA_1\sim\triangle A_1HB$，$\angle A_2A_1H+\angle HA_1B=\angle A_2A_1H+\angle HA_2A_1=90^\circ$。⟧。又 $A_3A_4\perp A_2B$、$A_3A_4\perp A_1H$，所以 $A_3A_4\perp$ 平面 $A_1A_2B$，$A_3A_4\perp A_1A_2$。於是 $A_1A_2$ 垂直於 $A_1B$ 和 $A_3A_4$，即垂直於平面 $A_1A_3A_4$。</p>
+<p>銳角三角形的垂心把三條高分成的兩段之積都相等⟦為什麼相等｜設 $A_3$ 引的高交 $A_2A_4$ 於 $C$。$A_2,C,B,A_3$ 四點共圓（$\angle A_2CA_3=\angle A_2BA_3=90^\circ$），由相交弦定理 $A_2H\cdot HB=A_3H\cdot HC$。另一條高同理。⟧，所以對另外兩條高也有 $A_1H^2=A_3H\cdot HC$ 等等，同樣得到 $A_1A_3\perp$ 平面 $A_1A_2A_4$、$A_1A_4\perp$ 平面 $A_1A_2A_3$。</p>
+<p>因此任一條截線，例如 $A_2S$（$S$ 在直線 $A_3A_4$ 上），$A_1S$ 在平面 $A_1A_3A_4$ 內，與 $A_1A_2$ 垂直，所以 $\angle A_2A_1S=90^\circ$。</p>
+<p>三角形必須是銳角三角形，$H$ 才在三角形內部，$A_2H\cdot HB$ 才是正數。</p>
+
+=== text
+<p>例 4 也可以寫成這樣的命題：「具有例 4 性質的點 $A_1$，若且唯若 $A_1$ 在過 $H$ 垂直於平面 $A_2A_3A_4$ 的直線上，而且 $A_1$ 對三角形三邊中至少一邊所張的角是直角。」再把其中的度量關係加進去，就得到下一題。</p>
+
+=== 例 5 | 周長平方與稜長平方和
+src: 原書註明為 1972 年國際數學奧林匹克第 5 題
+zh: 在四面體 $ABCD$ 中，$\angle BDC$ 是直角，$D$ 到平面 $ABC$ 的垂足 $S$ 是 $\triangle ABC$ 的垂心。證明
+$$(AB+BC+CA)^2\le6(AD^2+BD^2+CD^2).$$
+等號成立時是什麼樣的四面體？
+sol: <figure class="bkfig"><svg viewBox="0 0 240 151" width="240" role="img" aria-label="四面體 ABCD，D 處為直三面角，S 為 △ABC 垂心"><g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="100.8" y1="22.0" x2="142.5" y2="128.6"/><line x1="100.8" y1="22.0" x2="218.0" y2="53.2"/><line x1="100.8" y1="22.0" x2="22.0" y2="97.7"/><line x1="22.0" y1="97.7" x2="142.5" y2="128.6"/><line x1="142.5" y1="128.6" x2="218.0" y2="53.2"/><line x1="22.0" y1="97.7" x2="218.0" y2="53.2" stroke-dasharray="5 4"/><line x1="100.8" y1="22.0" x2="100.8" y2="97.7" stroke-dasharray="5 4"/><line x1="218.0" y1="53.2" x2="69.0" y2="109.7" stroke-dasharray="5 4"/><line x1="22.0" y1="97.7" x2="173.5" y2="97.7" stroke-dasharray="5 4"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="95.8" y="14.0">D</text><text x="6.0" y="103.7">C</text><text x="137.5" y="146.6">A</text><text x="224.0" y="59.2">B</text><text x="96.8" y="91.7">S</text><text x="55.0" y="121.7">E</text><text x="177.5" y="111.7">F</text></g></svg><figcaption>BE、CF 是 △ABC 的高，交於垂心 S；DS ⊥ 平面 ABC</figcaption></figure>
+作 $\triangle ABC$ 的高 $BE$ 與 $CF$，交於 $S$。
+$$\left.\begin{aligned}&DS\perp AC\\&AC\perp BE\end{aligned}\right\}\Rightarrow AC\perp\text{平面}DBE\Rightarrow AC\perp BD.$$
+又 $BD\perp CD$，所以 $BD$ 垂直於平面 $ACD$，$BD\perp AD$。同理（用高 $CF$ 得 $AB\perp CD$，再配合 $CD\perp BD$）$CD\perp AD$。所以 $D$ 處是直三面角，各側面都是直角三角形：
+$$AB^2+BC^2+CA^2=2(AD^2+BD^2+CD^2).$$
+再用 $(x+y+z)^2\le3(x^2+y^2+z^2)$⟦這個不等式｜展開後等價於 $(x-y)^2+(y-z)^2+(z-x)^2\ge0$。⟧：
+$$(AB+BC+CA)^2\le3(AB^2+BC^2+CA^2)=6(AD^2+BD^2+CD^2).$$
+等號成立若且唯若 $AB=BC=CA$，此時四面體是頂點處為直三面角的正三稜錐（$DA=DB=DC$）。
+
+=== text
+<p class="note">原書本講只附「思考題」，書末沒有答案；下面的解答是本站補寫的。</p>
+
+=== 思考題 1
+zh: 設 $P$ 是銳角三角形內任一點。證明：$P$ 到三邊上的點的最大距離 $D$，至少是 $P$ 到三邊的最小距離 $d$ 的兩倍。在什麼條件下 $D=2d$？
+hint: 把 $P$ 和三個頂點、三個垂足連起來，$P$ 周圍出現六個角，總和 $360^\circ$。
+sol: 設 $A,B,C$ 是頂點，$P$ 到 $BC,CA,AB$ 的垂足為 $X,Y,Z$。三角形是銳角三角形，垂足都落在邊上⟦為什麼｜例如 $\angle A,\angle B$ 都是銳角，三角形整個夾在過 $A$、過 $B$ 而垂直於 $AB$ 的兩條直線之間，所以 $P$ 在 $AB$ 上的垂足落在線段 $AB$ 上。⟧。而 $P$ 到邊上的點的距離，在頂點處最大⟦為什麼｜沿著一條線段移動時，到 $P$ 的距離先減後增（或單調），最大值在端點。⟧，所以 $D=\max(PA,PB,PC)$，$d=\min(PX,PY,PZ)$。
+<p>射線 $PA,PZ,PB,PX,PC,PY$ 依序把 $P$ 的周角分成六個角，總和 $360^\circ$，其中必有一個 $\ge60^\circ$，例如 $\angle APZ\ge60^\circ$。在直角 $\triangle APZ$ 中</p>
+$$d\le PZ=PA\cos\angle APZ\le\frac12PA\le\frac12D.$$
+<p>若 $D=2d$，則對六個角中的每一個 $\theta$（例如 $\angle APZ$）都有 $d\le PZ=PA\cos\theta\le D\cos\theta=2d\cos\theta$，所以 $\theta\le60^\circ$；六個角和為 $360^\circ$，只能全是 $60^\circ$，而且上面每個不等號都取等，$PA=PB=PC$、$PX=PY=PZ$。所以三角形是正三角形，$P$ 是它的中心。反之顯然成立。</p>
+ans: $D\ge2d$；等號若且唯若三角形是正三角形且 $P$ 是中心。
+
+=== 思考題 2
+zh: (1) 第 1 題還有其他證法嗎？條件可以改變嗎？<br>(2) 把第 1 題推廣到三維空間，並給出證明。<br>(3) 你還能改造成其他題目嗎？
+sol: (1) <b>面積證法</b>：設三邊上的高為 $h_a,h_b,h_c$，$P$ 到三邊的距離為 $x,y,z$。把三角形從 $P$ 分成三塊，得
+$$\frac x{h_a}+\frac y{h_b}+\frac z{h_c}=1.$$
+又 $A$ 到 $BC$ 的距離不超過 $A\to P\to BC$ 的折線長，$h_a\le PA+x$，所以 $\frac x{h_a}\ge\frac x{PA+x}\ge\frac d{D+d}$⟦為什麼最後一步｜$\frac x{PA+x}=1-\frac{PA}{PA+x}$，$PA$ 變大或 $x$ 變小時它變小；而 $PA\le D$，$x\ge d$。⟧。三式相加得 $1\ge\frac{3d}{D+d}$，即 $D\ge2d$。這個證法沒有用到「銳角」：只要 $P$ 在三角形內，並把 $d$ 理解為到三邊所在直線的最小距離，結論都成立。
+<p>(2) <b>空間推廣</b>：$P$ 在四面體內，$D$ 為 $P$ 到四個頂點的最大距離，$d$ 為 $P$ 到四個面的最小距離，則 $D\ge3d$。證明完全照搬：把四面體從 $P$ 分成四塊，體積比得 $\sum\frac{x_i}{h_i}=1$；又 $h_i\le PA_i+x_i$，所以 $1\ge\frac{4d}{D+d}$，即 $D\ge3d$。正四面體的中心取等號。</p>
+<p>(3) 例如推廣到 $n$ 維單形得 $D\ge n\,d$；或改成「$P$ 到三頂點距離之和至少是到三邊距離之和的兩倍」（Erdős–Mordell 不等式，較難）。</p>
+ans: (1) 可用面積法，且不必限定銳角三角形。(2) 四面體中 $D\ge3d$。

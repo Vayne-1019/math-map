@@ -1,0 +1,186 @@
+=== meta
+title: 構造性解題方法（一）
+author: 余紅兵
+pages: 18-24
+units: C-4-6, G-8-1
+status: 完成
+
+=== text
+<p>一般的思路是從條件一路推到結論。但有些題目這樣想很難、甚至無從下手，這時要換個方向：<b>針對題目的特點構造一個「模型」</b>，在模型裡問題變得直觀、容易。這就是構造性的想法。</p>
+<h3>一、構造幾何模型</h3>
+
+=== 例 1 | 兩個根號的和
+zh: 設 $x$ 是實數，求 $\sqrt{x^2-2x+2}+\sqrt{x^2-10x+34}$ 的最小值。
+sol: 配方：
+$$\sqrt{(x-1)^2+1^2}+\sqrt{(x-5)^2+3^2}.$$
+這是坐標平面上動點 $P(x,0)$ 到 $A(1,1)$ 與 $B(5,3)$ 的距離和 $PA+PB$。
+<figure class="bkfig"><svg viewBox="0 0 300 207" width="300" role="img" aria-label="點 A(1,1)、B(5,3) 與 A 關於 x 軸的對稱點 A′(1,−1)"><g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="22.0" y1="143.9" x2="278.0" y2="143.9"/><line x1="74.8" y1="103.3" x2="180.5" y2="143.9"/><line x1="180.5" y1="143.9" x2="237.4" y2="22.0"/><line x1="74.8" y1="103.3" x2="74.8" y2="184.5" stroke-dasharray="5 4"/><line x1="74.8" y1="184.5" x2="115.5" y2="143.9" stroke-dasharray="5 4"/><line x1="74.8" y1="103.3" x2="115.5" y2="143.9" stroke="#c2562b" stroke-width="2"/><line x1="115.5" y1="143.9" x2="237.4" y2="22.0" stroke="#c2562b" stroke-width="2"/></g><g fill="currentColor"><circle cx="74.8" cy="103.3" r="2.5"/><circle cx="237.4" cy="22.0" r="2.5"/><circle cx="115.5" cy="143.9" r="2.5"/><circle cx="74.8" cy="184.5" r="2.5"/><circle cx="180.5" cy="143.9" r="2.5"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="60.8" y="99.3">A</text><text x="241.4" y="16.0">B</text><text x="50.8" y="190.5">A′</text><text x="111.5" y="161.9">C</text><text x="176.5" y="161.9">P</text></g></svg><figcaption>PA＋PB＝PA′＋PB ≥ A′B；A′B 與 x 軸交於 C(2,0) 時取等號</figcaption></figure>
+作 $A$ 關於 $x$ 軸的對稱點 $A'(1,-1)$，則 $PA=PA'$，所以 $PA+PB=PA'+PB\ge A'B$。直線 $A'B$ 的斜率是 $\frac{3-(-1)}{5-1}=1$，方程 $y=x-2$，交 $x$ 軸於 $C(2,0)$。所以 $x=2$ 時取到最小值
+$$A'B=\sqrt{4^2+4^2}=4\sqrt2.$$
+<p><b>注</b>：特點是「換個角度看」：針對題目特點構造一個模型，問題就變得直觀。</p>
+ans: 最小值 $4\sqrt2$（$x=2$ 時）。
+
+=== 例 2 | 六個數中必有非負的
+zh: 任給 8 個非零實數 $a_1,\dots,a_8$。證明：六個數
+$$\begin{aligned}&a_1a_3+a_2a_4,\ a_1a_5+a_2a_6,\ a_1a_7+a_2a_8,\\&a_3a_5+a_4a_6,\ a_3a_7+a_4a_8,\ a_5a_7+a_6a_8\end{aligned}$$
+中至少有一個是非負的。
+sol: 在坐標平面上考慮四個向量（$O$ 是原點）
+$$\overrightarrow{OA}=(a_1,a_2),\ \overrightarrow{OB}=(a_3,a_4),\ \overrightarrow{OC}=(a_5,a_6),\ \overrightarrow{OD}=(a_7,a_8).$$
+（原書用複平面上的點 $a_1+a_2i$ 等，意思相同。）題中六個數恰好是這四個向量兩兩的內積，例如 $a_1a_3+a_2a_4=\overrightarrow{OA}\cdot\overrightarrow{OB}$。
+<p>四條射線把周角分成四份，總和 $360^\circ$，所以相鄰的兩個向量中，必有一對夾角 $\le\frac{360^\circ}4=90^\circ$。不妨設 $\overrightarrow{OA}$ 與 $\overrightarrow{OB}$ 的夾角 $\le90^\circ$，則由餘弦定理 $|OA|^2+|OB|^2-|AB|^2\ge0$⟦這一步｜餘弦定理 $|AB|^2=|OA|^2+|OB|^2-2|OA||OB|\cos\angle AOB$，夾角 $\le90^\circ$ 時 $\cos\ge0$。⟧，展開即 $a_1a_3+a_2a_4\ge0$。</p>
+
+=== 例 3 | 面積模型
+zh: 設 $a_1,\dots,a_{100}$ 都是正數，$a_1+\dots+a_{100}=300$，$a_1^2+\dots+a_{100}^2&gt;10000$。證明：必有三個數的和大於 $100$。
+sol: 不妨設 $a_1\ge a_2\ge\dots\ge a_{100}$，我們證明 $a_1+a_2+a_3&gt;100$。
+<p><b>模型</b>：把 $a_i^2$ 看成邊長 $a_i$ 的小正方形面積。三個邊長 100 的大正方形並排成一個 $300\times100$ 的長方形，把小正方形依序沿上緣排進去（總長恰好 300）。中間那個大正方形裡的小正方形都在 $100\times a_2$ 的長條內，右邊那個大正方形裡的都在 $100\times a_3$ 的長條內。若 $a_1+a_2+a_3\le100$，把這兩個長條搬到左邊大正方形中、邊長 $a_1$ 的那個正方形下方，所有小正方形就能不重疊地放進一個 $100\times100$ 的正方形，總面積 $\le10000$，矛盾。</p>
+<p>把這個想法寫成式子（較嚴謹）：設 $s=a_1+a_2+a_3\le100$。$i\ge4$ 時 $a_i\le a_3$，所以</p>
+$$\sum_{i\ge4}a_i^2\le a_3\sum_{i\ge4}a_i=a_3(300-s).$$
+又 $a_1^2+a_2^2+a_3^2\le a_1s$，且 $a_1=s-a_2-a_3\le s-2a_3$，所以
+$$\begin{aligned}\sum_{i=1}^{100}a_i^2&\le(s-2a_3)s+a_3(300-s)\\&=s^2+a_3(300-3s)\\&\le s^2+\frac s3(300-3s)=100s\le10000,\end{aligned}$$
+⟦倒數第二步｜$s\le100$ 所以 $300-3s\ge0$；又 $a_3$ 是三個數中最小的，$a_3\le\frac s3$。⟧
+與 $\sum a_i^2&gt;10000$ 矛盾。所以 $a_1+a_2+a_3&gt;100$。
+
+=== 例 4 | 用等腰三角形算餘弦
+zh: 證明：$\cos\dfrac\pi7-\cos\dfrac{2\pi}7+\cos\dfrac{3\pi}7=\dfrac12$。
+sol: <figure class="bkfig"><svg viewBox="0 0 320 164" width="320" role="img" aria-label="∠MON＝π/7，OA＝AB＝BC＝CD＝1"><g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="22.0" y1="141.8" x2="270.7" y2="22.0"/><line x1="22.0" y1="141.8" x2="298.0" y2="141.8"/><line x1="97.4" y1="105.5" x2="172.7" y2="141.8"/><line x1="172.7" y1="141.8" x2="191.3" y2="60.2"/><line x1="191.3" y1="60.2" x2="209.9" y2="141.8"/></g><g fill="currentColor"><circle cx="97.4" cy="105.5" r="2.5"/><circle cx="172.7" cy="141.8" r="2.5"/><circle cx="191.3" cy="60.2" r="2.5"/><circle cx="209.9" cy="141.8" r="2.5"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="6.0" y="147.8">O</text><text x="274.7" y="22.0">M</text><text x="302.0" y="147.8">N</text><text x="91.4" y="97.5">A</text><text x="168.7" y="159.8">B</text><text x="185.3" y="52.2">C</text><text x="205.9" y="159.8">D</text></g></svg><figcaption>∠MON＝π/7，OA＝AB＝BC＝CD＝1，得到一串等腰三角形</figcaption></figure>
+作 $\angle MON=\frac\pi7$。在 $OM$ 上取 $OA=1$；在 $ON$ 上取 $B$ 使 $AB=1$；在 $OM$ 上取異於 $A$ 的 $C$ 使 $BC=1$；在 $ON$ 上取異於 $B$ 的 $D$ 使 $CD=1$。
+<p>一路是等腰三角形，由外角定理⟦角度怎麼推｜$\triangle OAB$ 等腰：$\angle ABO=\frac\pi7$，外角 $\angle CAB=\frac{2\pi}7$。$\triangle ABC$ 等腰：$\angle ACB=\frac{2\pi}7$。$\triangle OBC$ 的外角 $\angle CBD=\frac\pi7+\frac{2\pi}7=\frac{3\pi}7$。$\triangle BCD$ 等腰：$\angle CDB=\frac{3\pi}7$。⟧</p>
+$$\angle CAB=\angle ACB=\frac{2\pi}7,\qquad\angle CBD=\angle CDB=\frac{3\pi}7.$$
+在 $\triangle OCD$ 中，$\angle OCD=\pi-\frac\pi7-\frac{3\pi}7=\frac{3\pi}7=\angle ODC$，所以 $OC=OD$。而等腰三角形的底邊等於「腰 $\times\cos$ 底角 $\times2$」：
+$$\begin{aligned}OC&=OA+AC=1+2\cos\tfrac{2\pi}7,\\OD&=OB+BD=2\cos\tfrac\pi7+2\cos\tfrac{3\pi}7.\end{aligned}$$
+兩式相等，移項除以 2 即得 $\cos\frac\pi7-\cos\frac{2\pi}7+\cos\frac{3\pi}7=\frac12$。
+
+=== 例 5 | 夾在兩段圓弧之間的直線
+zh: 證明：使不等式 $\big|\sqrt{1-x^2}-px-q\big|\le\dfrac{\sqrt2-1}2$ 對每個 $0\le x\le1$ 都成立的實數對 $(p,q)$，只有 $\Big(-1,\dfrac{1+\sqrt2}2\Big)$。
+sol: 記 $h=\frac{\sqrt2-1}2$。不等式就是
+$$\sqrt{1-x^2}-h\le px+q\le\sqrt{1-x^2}+h\qquad(0\le x\le1).$$
+以 $A(0,h)$、$B(0,-h)$ 為圓心、1 為半徑作兩圓。圓 $A$ 在第一象限的四分之一弧記為 $l_1$，端點 $\big(0,\frac{\sqrt2+1}2\big)$ 與 $(1,h)$；圓 $B$ 對應的四分之一弧記為 $l_2$，端點 $\big(0,\frac{3-\sqrt2}2\big)$ 與 $(1,-h)$。不等式的意思是：在 $0\le x\le1$ 上，直線 $y=px+q$ 夾在 $l_2$ 與 $l_1$ 之間。
+<figure class="bkfig"><svg viewBox="0 0 260 360" width="260" role="img" aria-label="兩段四分之一圓弧 l1、l2 與切線"><g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="238.0" y1="262.9" x2="22.0" y2="262.9"/><line x1="22.0" y1="337.7" x2="22.0" y2="22.0"/><line x1="22.0" y1="62.4" x2="221.4" y2="261.7" stroke="#c2562b" stroke-width="2"/></g><polyline fill="none" stroke="currentColor" stroke-width="1.8" points="188.2,228.5 188.1,224.1 187.9,219.8 187.6,215.5 187.2,211.1 186.7,206.8 186.1,202.5 185.4,198.2 184.5,193.9 183.6,189.7 182.5,185.5 181.3,181.3 180.0,177.1 178.6,173.0 177.1,168.9 175.5,164.9 173.8,160.9 172.0,157.0 170.0,153.1 168.0,149.2 165.9,145.4 163.7,141.7 161.3,138.0 158.9,134.4 156.4,130.8 153.8,127.3 151.1,123.9 148.3,120.6 145.5,117.3 142.5,114.1 139.5,111.0 136.4,108.0 133.2,105.0 129.9,102.1 126.6,99.4 123.1,96.7 119.7,94.1 116.1,91.6 112.5,89.1 108.8,86.8 105.1,84.6 101.3,82.5 97.4,80.4 93.5,78.5 89.6,76.7 85.6,75.0 81.5,73.4 77.5,71.9 73.3,70.5 69.2,69.2 65.0,68.0 60.8,66.9 56.5,66.0 52.3,65.1 48.0,64.4 43.7,63.8 39.4,63.2 35.0,62.8 30.7,62.6 26.3,62.4 22.0,62.3"/><polyline fill="none" stroke="currentColor" stroke-width="1.8" points="188.2,297.3 188.1,293.0 187.9,288.6 187.6,284.3 187.2,279.9 186.7,275.6 186.1,271.3 185.4,267.0 184.5,262.8 183.6,258.5 182.5,254.3 181.3,250.1 180.0,246.0 178.6,241.8 177.1,237.8 175.5,233.7 173.8,229.7 172.0,225.8 170.0,221.9 168.0,218.0 165.9,214.2 163.7,210.5 161.3,206.8 158.9,203.2 156.4,199.6 153.8,196.2 151.1,192.7 148.3,189.4 145.5,186.1 142.5,182.9 139.5,179.8 136.4,176.8 133.2,173.8 129.9,171.0 126.6,168.2 123.1,165.5 119.7,162.9 116.1,160.4 112.5,158.0 108.8,155.6 105.1,153.4 101.3,151.3 97.4,149.3 93.5,147.3 89.6,145.5 85.6,143.8 81.5,142.2 77.5,140.7 73.3,139.3 69.2,138.0 65.0,136.8 60.8,135.7 56.5,134.8 52.3,133.9 48.0,133.2 43.7,132.6 39.4,132.1 35.0,131.7 30.7,131.4 26.3,131.2 22.0,131.2"/><g font-size="13" fill="currentColor"><text x="82.0" y="68.4">l₁</text><text x="92.0" y="161.2">l₂</text></g><g fill="currentColor"><circle cx="22.0" cy="62.4" r="2.5"/><circle cx="188.2" cy="228.5" r="2.5"/><circle cx="139.5" cy="179.8" r="2.5"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="8.0" y="276.9">O</text><text x="28.0" y="58.4">E<tspan font-size="11" dy="4">1</tspan></text><text x="194.2" y="222.5">E<tspan font-size="11" dy="4">2</tspan></text><text x="115.5" y="173.8">T</text></g></svg><figcaption>直線 y＝−x＋(√2+1)/2 過 l₁ 兩端點，並與 l₂ 相切於 T</figcaption></figure>
+<p><b>關鍵</b>：連接 $l_1$ 兩端點的直線 $y=-x+\frac{\sqrt2+1}2$ 恰好與圓 $B$ 相切⟦為什麼相切｜$B(0,-h)$ 到直線 $x+y-\frac{\sqrt2+1}2=0$ 的距離是 $\dfrac{|-h-\frac{\sqrt2+1}2|}{\sqrt2}=\dfrac{\sqrt2}{\sqrt2}=1$，等於半徑。切點 $T\big(\frac1{\sqrt2},\frac12\big)$ 在 $l_2$ 上。⟧，切點 $T\big(\frac1{\sqrt2},\frac12\big)$ 在 $l_2$ 上。</p>
+<p><b>只有這一條</b>：直線在 $x=0$、$x=1$ 不能高過 $l_1$，在 $x=\frac1{\sqrt2}$ 不能低於 $l_2$：</p>
+$$q\le\tfrac{\sqrt2+1}2,\qquad p+q\le h,\qquad \tfrac p{\sqrt2}+q\ge\tfrac12.$$
+但 $\frac p{\sqrt2}+q=\frac1{\sqrt2}(p+q)+\big(1-\frac1{\sqrt2}\big)q\le\frac1{\sqrt2}h+\big(1-\frac1{\sqrt2}\big)\frac{\sqrt2+1}2=\frac12$⟦算一下｜$\frac1{\sqrt2}\cdot\frac{\sqrt2-1}2+\frac{\sqrt2-1}{\sqrt2}\cdot\frac{\sqrt2+1}2=\frac{(\sqrt2-1)+1}{2\sqrt2}=\frac12$。⟧，所以三個不等式都必須取等號：$q=\frac{\sqrt2+1}2$，$p=h-q=-1$。
+<p><b>確實可行</b>：這條直線是凹弧 $l_1$ 的弦，在 $[0,1]$ 上不高於 $l_1$；又是圓 $B$ 的切線，不低於弧 $l_2$。</p>
+
+=== text
+<h3>二、構造方程、函數、恆等式</h3>
+<p>構造的想法也可以用在數量關係上：把題設的數量關係組合成一個新的具體關係，例如方程、函數、數列、恆等式。下面幾例顯示這種想法用起來很靈活，不能生搬硬套。</p>
+
+=== 例 6 | 判別式為零
+zh: 設實數 $a,b,c$ 滿足 $(a-c)^2-4(a-b)(b-c)=0$。證明 $a,b,c$ 成等差數列。
+sol: 若 $a=b$，條件變成 $(a-c)^2=0$，所以 $a=b=c$，結論成立。
+<p>設 $a\ne b$。條件正是二次方程</p>
+$$(a-b)x^2+(c-a)x+(b-c)=0$$
+<p>的判別式為零，所以它有兩個相等的實根。另一方面，係數和 $(a-b)+(c-a)+(b-c)=0$，所以 $x=1$ 是根，於是 $x=1$ 是重根。由韋達定理，兩根之積</p>
+$$\frac{b-c}{a-b}=1\times1=1,$$
+即 $a-b=b-c$，$a,b,c$ 成等差數列。
+
+=== 例 7 | 構造以 tan 值為根的方程
+zh: 證明：$\tan\dfrac\pi7\cdot\tan\dfrac{2\pi}7\cdot\tan\dfrac{3\pi}7=\sqrt7$。
+sol: $\theta=\frac{n\pi}7$（$n=0,1,\dots,6$）都是 $\tan7\theta=0$ 的根。設 $x=\tan\theta$。由 $\tan7\theta=0$ 得 $\tan4\theta=-\tan3\theta$，用倍角公式寫成 $x$ 的式子：
+$$\frac{4x-4x^3}{1-6x^2+x^4}=-\frac{3x-x^3}{1-3x^2}.$$
+⟦兩個倍角公式｜$\tan3\theta=\dfrac{3x-x^3}{1-3x^2}$；$\tan4\theta=\dfrac{2\tan2\theta}{1-\tan^22\theta}$，其中 $\tan2\theta=\dfrac{2x}{1-x^2}$，化簡得 $\dfrac{4x-4x^3}{1-6x^2+x^4}$。⟧
+交叉相乘：左邊 $4x-16x^3+12x^5$，右邊 $-3x+19x^3-9x^5+x^7$，移項後約去 $x$，得
+$$x^6-21x^4+35x^2-7=0.$$
+$\tan\frac\pi7,\tan\frac{2\pi}7,\dots,\tan\frac{6\pi}7$ 是這個六次方程的六個相異根，由韋達定理，它們的積等於常數項 $-7$。又 $\tan\frac{6\pi}7=-\tan\frac\pi7$、$\tan\frac{5\pi}7=-\tan\frac{2\pi}7$、$\tan\frac{4\pi}7=-\tan\frac{3\pi}7$，所以
+$$-\tan^2\frac\pi7\tan^2\frac{2\pi}7\tan^2\frac{3\pi}7=-7.$$
+三個正切都是正數，開方得 $\tan\frac\pi7\tan\frac{2\pi}7\tan\frac{3\pi}7=\sqrt7$。
+
+=== 例 8 | 中間的二項式係數
+zh: 設 $n$ 為正整數，證明 $\dfrac{2^{2n}}{2n}\le C_{2n}^n\le2^{2n}$。
+sol: 可以用歸納法，這裡給一個利用恆等式的證法。由二項式定理
+$$2^{2n}=(1+1)^{2n}=C_{2n}^0+C_{2n}^1+\dots+C_{2n}^n+\dots+C_{2n}^{2n},$$
+立刻得到 $2^{2n}\ge C_{2n}^n$。
+<p>另一方面，把頭尾兩項合併（$C_{2n}^0+C_{2n}^{2n}=2$），右邊變成 $2n$ 項的和：</p>
+$$2^{2n}=2+C_{2n}^1+\dots+C_{2n}^n+\dots+C_{2n}^{2n-1}.$$
+$C_{2n}^n$ 是其中最大的一項，又 $C_{2n}^n\ge2$⟦為什麼｜$n\ge1$ 時 $C_{2n}^n\ge C_2^1=2$；而二項式係數從兩端往中間遞增，中間的最大。⟧，所以 $2^{2n}\le2n\,C_{2n}^n$，即 $C_{2n}^n\ge\frac{2^{2n}}{2n}$。
+
+=== 例 9 | 構造恆等式
+zh: 設實數 $a,b,c,d$ 滿足 $a^2+b^2+c^2+d^2\le1$。證明
+$$(a+b)^4+(a+c)^4+(a+d)^4+(b+c)^4+(b+d)^4+(c+d)^4\le6.$$
+sol: 訣竅是構造一個和題目密切相關的恆等式。由
+$$(a+b)^4+(a-b)^4=2a^4+12a^2b^2+2b^4$$
+（奇次項互相抵消），對六對都這樣配，每個 $a^4$ 出現在三對中：
+$$\begin{aligned}&\textstyle\sum(a+b)^4+\sum(a-b)^4\\&=6(a^4+b^4+c^4+d^4)+12(a^2b^2+a^2c^2+\dots+c^2d^2)\\&=6(a^2+b^2+c^2+d^2)^2.\end{aligned}$$
+（$\sum$ 跑遍六對。）因為 $\sum(a-b)^4\ge0$，所以
+$$\textstyle\sum(a+b)^4\le6(a^2+b^2+c^2+d^2)^2\le6.$$
+<p><b>注</b>：用其他方法（例如用著名不等式）證這題不容易奏效。從解答也看得出題目是怎麼編出來的。構造並利用恆等式，是證明不等式和解決其他問題的基本技能。</p>
+
+=== 例 10 | 同時考慮共軛
+zh: 設 $k$ 是給定的正整數，$\alpha=k+\dfrac12+\sqrt{k^2+\dfrac14}$。證明：對每個 $n\ge1$，$\alpha^n$ 的整數部分 $[\alpha^n]$ 都能被 $k$ 整除。
+sol: 這類問題的關鍵是同時考慮 $\alpha$ 和它的「共軛」。$\alpha$ 是方程 $x^2-(2k+1)x+k=0$ 的一個根⟦檢查｜兩根和 $(k+\frac12)\cdot2=2k+1$，積 $(k+\frac12)^2-(k^2+\frac14)=k$。⟧，另一根是
+$$\beta=k+\frac12-\sqrt{k^2+\frac14}.$$
+$\beta=\frac k\alpha$，而 $\alpha&gt;2k$，所以 $0&lt;\beta&lt;1$。
+<p>考慮 $u_n=\alpha^n+\beta^n$。因為 $0&lt;\beta^n&lt;1$，若 $u_n$ 是整數，則 $u_n-1&lt;\alpha^n&lt;u_n$，$[\alpha^n]=u_n-1$。所以只要證明 $u_n$ 是整數，且 $u_n\equiv1\pmod k$。</p>
+<p>由輔助方程作出遞推式：$\alpha,\beta$ 都滿足 $x^{n+2}=(2k+1)x^{n+1}-kx^n$，兩式相加得</p>
+$$u_{n+2}=(2k+1)u_{n+1}-ku_n=k(2u_{n+1}-u_n)+u_{n+1}.$$
+又 $u_1=2k+1\equiv1$，$u_2=(\alpha+\beta)^2-2\alpha\beta=4k^2+2k+1\equiv1\pmod k$。由遞推式用歸納法，$u_n$ 都是整數，且 $u_{n+2}\equiv u_{n+1}\equiv1\pmod k$。所以 $k\mid u_n-1=[\alpha^n]$。
+
+=== text
+<h3>三、構造實例與反例</h3>
+<p>構造實例和反例是基本技能。構造實例是舉一個例子，說明某個命題可以成立；要說明一個命題不成立，常選一個符合題設、但結論不成立的特例，這叫構造反例。選特殊值或極端情形，常是構造反例的出發點。</p>
+
+=== 例 11 | 到四頂點等距的點在哪裡
+zh: 平面上一點 $P$ 到一個凸四邊形四個頂點的距離都相等。$P$ 是否一定在四邊形內部，或一定在邊界上，或一定在外部？
+sol: 都不一定，三種情形都可能。構造實例：
+<p>(1) 正方形的中心到四頂點等距，在內部。</p>
+<p>(2) 以線段 $AB$ 為直徑作半圓，在半圓上取兩個異於 $A,B$ 的點，和 $A,B$ 組成四邊形；$AB$ 的中點到四頂點等距，在邊 $AB$ 上。</p>
+<p>(3) 在同一個半圓弧上取四個異於 $A,B$ 的點組成四邊形；圓心（$AB$ 的中點）到四頂點等距，卻在四邊形外部。</p>
+
+=== 例 12 | 先估下界，再構造實例
+zh: 設 $n$ 個實數滿足 $|x_i|&lt;1$（$i=1,\dots,n$），且 $|x_1|+|x_2|+\dots+|x_n|=19+|x_1+x_2+\dots+x_n|$。求 $n$ 的最小值。
+sol: 分兩步。<b>第一步，估出下界</b>：由 $|x_i|&lt;1$，
+$$\sum_{i=1}^n|x_i|-\Big|\sum_{i=1}^nx_i\Big|\le\sum_{i=1}^n|x_i|&lt;n.$$
+左邊等於 19，所以 $n&gt;19$。
+<p><b>第二步，構造實例</b>說明 $n=20$ 可以做到：取</p>
+$$x_i=\begin{cases}0.95&amp;(i\text{ 為奇數})\\-0.95&amp;(i\text{ 為偶數})\end{cases}\quad(i=1,\dots,20).$$
+則 $\sum|x_i|=19$，$\sum x_i=0$，條件成立。所以 $n$ 的最小值是 20。
+<p>有時候，構造實例是論證中不可缺少的一部分，像這題，光有估計還不夠。</p>
+ans: $20$
+
+=== 習題 1
+zh: 設 $0&lt;a,b&lt;1$，證明
+$$\begin{aligned}&\sqrt{a^2+b^2}+\sqrt{a^2+(1-b)^2}\\&+\sqrt{b^2+(1-a)^2}+\sqrt{(1-a)^2+(1-b)^2}\ge2\sqrt2.\end{aligned}$$
+（原書此處印成 $\le$，與書末提示「仿例 1」及實際數值都不合，應為 $\ge$。）
+hint: 仿例 1：四項是點 $(a,b)$ 到正方形四頂點的距離。
+sol: 設 $P(a,b)$ 在單位正方形 $O(0,0),A(1,0),B(1,1),C(0,1)$ 內，四項依序是 $PO,PC,PA,PB$。由三角不等式 $PO+PB\ge OB=\sqrt2$，$PA+PC\ge AC=\sqrt2$，相加即得。等號在 $P$ 是正方形中心時成立。
+
+=== 習題 2
+zh: 設 $a&gt;0$，實數 $x,y,z$ 滿足 $x+y+z=a$，$x^2+y^2+z^2=\dfrac{a^2}2$。構造一個模型證明 $0\le x,y,z\le\dfrac23a$。
+hint: 把 $z$ 看成參數，另兩式是坐標平面上的一條直線和一個圓。
+sol: 把條件寫成
+$$x+y=a-z,\qquad x^2+y^2=\frac{a^2}2-z^2.$$
+兩式同時成立，表示 $xy$ 平面上這條直線和這個圓有交點，所以原點到直線的距離不超過圓的半徑：
+$$\frac{|a-z|}{\sqrt2}\le\sqrt{\frac{a^2}2-z^2}.$$
+平方整理得 $3z^2-2az\le0$，即 $0\le z\le\frac23a$。同理 $0\le x,y\le\frac23a$。
+
+=== 習題 3
+zh: 正數 $x,y,z$ 滿足方程組
+$$\begin{cases}x^2+xy+\dfrac{y^2}3=25,\\[2pt]\dfrac{y^2}3+z^2=9,\\[2pt]z^2+xz+x^2=16.\end{cases}$$
+求 $xy+2yz+3xz$ 的值。
+hint: 三式都是餘弦定理（或勾股定理）的形狀，而 $3,4,5$ 是直角三角形。
+sol: 把方程組改寫為
+$$\begin{cases}x^2+\big(\frac y{\sqrt3}\big)^2-2x\cdot\frac y{\sqrt3}\cos150^\circ=5^2,\\\big(\frac y{\sqrt3}\big)^2+z^2=3^2,\\z^2+x^2-2zx\cos120^\circ=4^2.\end{cases}$$
+作直角三角形 $ABC$，$AB=3,\ AC=4,\ BC=5$，在內部取點 $P$，使 $PA=z$，$PB=\frac y{\sqrt3}$，$PC=x$，$\angle APB=90^\circ$，$\angle APC=120^\circ$，$\angle BPC=150^\circ$（三角和為 $360^\circ$）。用面積：
+$$\begin{aligned}6=S_{ABC}&=S_{APB}+S_{APC}+S_{BPC}\\&=\tfrac12z\cdot\tfrac y{\sqrt3}+\tfrac12zx\sin120^\circ+\tfrac12x\cdot\tfrac y{\sqrt3}\sin150^\circ\\&=\tfrac1{4\sqrt3}(xy+2yz+3xz).\end{aligned}$$
+ans: $xy+2yz+3xz=24\sqrt3$。
+
+=== 習題 4
+zh: 證明：當 $n=1,2,\dots$ 時，$\big[(\sqrt2+1)^n\big]$ 輪流取偶數、奇數。
+hint: $1\pm\sqrt2$ 是方程 $x^2-2x-1=0$ 的根，仿例 10 考慮 $u_n=(1+\sqrt2)^n+(1-\sqrt2)^n$。
+sol: 由輔助方程得 $u_{n+2}=2u_{n+1}+u_n$，$u_1=2$，$u_2=6$，用歸納法知 $u_n$ 都是偶數。又 $-1&lt;1-\sqrt2&lt;0$：
+<p>$n$ 為奇數時 $-1&lt;(1-\sqrt2)^n&lt;0$，所以 $u_n&lt;(1+\sqrt2)^n&lt;u_n+1$，$\big[(1+\sqrt2)^n\big]=u_n$ 是偶數；</p>
+<p>$n$ 為偶數時 $0&lt;(1-\sqrt2)^n&lt;1$，所以 $u_n-1&lt;(1+\sqrt2)^n&lt;u_n$，$\big[(1+\sqrt2)^n\big]=u_n-1$ 是奇數。</p>
+
+=== 習題 5
+src: 1971 年國際數學奧林匹克第 1 題
+zh: 設 $n$ 為大於 2 的自然數。證明：下面的斷言只對 $n=3$ 和 $n=5$ 成立：對任意實數 $a_1,\dots,a_n$，都有
+$$\begin{aligned}&(a_1-a_2)(a_1-a_3)\cdots(a_1-a_n)\\+&(a_2-a_1)(a_2-a_3)\cdots(a_2-a_n)+\cdots\\+&(a_n-a_1)(a_n-a_2)\cdots(a_n-a_{n-1})\ge0.\end{aligned}$$
+（原書此處印成 $\le0$；由書末解答的論證可知應為 $\ge0$。）
+hint: 由對稱性可設 $a_1\le a_2\le\dots\le a_n$。不成立時，構造反例讓左邊只剩一個非零項。
+sol: 設 $a_1\le a_2\le\dots\le a_n$。
+<p>$n=3$：前兩項之和是 $(a_1-a_2)\big[(a_1-a_3)-(a_2-a_3)\big]=(a_1-a_2)^2\ge0$，第三項 $(a_3-a_1)(a_3-a_2)\ge0$，成立。</p>
+<p>$n=5$：前兩項之和是 $(a_1-a_2)\big[(a_1-a_3)(a_1-a_4)(a_1-a_5)-(a_2-a_3)(a_2-a_4)(a_2-a_5)\big]$，第一個因式 $\le0$，方括號裡兩個乘積都是三個非正數相乘，而前者絕對值較大，所以方括號 $\le0$，乘積 $\ge0$。同理末兩項之和 $\ge0$。第三項 $(a_3-a_1)(a_3-a_2)(a_3-a_4)(a_3-a_5)$ 是兩個非負數乘兩個非正數，也 $\ge0$。成立。</p>
+<p>其他 $n$ 構造反例：</p>
+<ul><li>$n$ 為偶數：取 $a_1&lt;a_2=a_3=\dots=a_n$。除第一項外每項都含因式 0，第一項是 $n-1$（奇數）個負數相乘，小於 0。</li>
+<li>$n\ge7$ 為奇數：取 $a_1=a_2=a_3&lt;a_4&lt;a_5=a_6=\dots=a_n$。只剩第 4 項 $(a_4-a_1)(a_4-a_2)(a_4-a_3)(a_4-a_5)\cdots(a_4-a_n)$，前三個因式為正，後 $n-4$（奇數）個為負，乘積小於 0。</li></ul>
