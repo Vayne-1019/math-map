@@ -14,5 +14,5 @@ src: imo1996-4
 zh: 設凸六邊形 $ABCDEF$ 滿足：$AB\parallel DE$，$BC\parallel EF$，$CD\parallel FA$。設 $R_A,R_C,R_E$ 分別為三角形 $FAB$、$BCD$、$DEF$ 的外接圓半徑，設 $P$ 為此六邊形的周長。證明：$R_A+R_C+R_E\ge\dfrac P2$。
 src: imo1996-5
 === P6
-zh: 設 $p,q,n$ 為正整數，且 $p+q<n$。設 $(x_0,x_1,\dots,x_n)$ 為 $n+1$ 個整數所成的數組，滿足：(a) $x_0=x_n=0$。(b) 對每個 $1\le i\le n$，都有 $x_i-x_{i-1}=p$ 或 $x_i-x_{i-1}=-q$。證明：存在指標 $i<j$，且 $(i,j) e(0,n)$，使得 $x_i=x_j$。
+zh: 設 $p,q,n$ 為正整數，且 $p+q<n$。設 $(x_0,x_1,\dots,x_n)$ 為 $n+1$ 個整數所成的數組，滿足：(a) $x_0=x_n=0$。(b) 對每個 $1\le i\le n$，都有 $x_i-x_{i-1}=p$ 或 $x_i-x_{i-1}=-q$。證明：存在指標 $i<j$，且 $(i,j)\ne(0,n)$，使得 $x_i=x_j$。
 src: imo1996-6
