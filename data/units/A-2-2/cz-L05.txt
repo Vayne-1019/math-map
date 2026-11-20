@@ -1,22 +1,20 @@
 === meta
-title: 兩根的正負：$\Delta$、積、和三個條件
+title: 整數根、有理根：判別式要是完全平方
 from: cz-L05
-order: 20
+order: 30
 
 === body
-<div class="hero">兩根的正負只要看三個數：<br><b>Δ</b>（有沒有根）、<b>兩根之積</b>（同號或異號）、<b>兩根之和</b>（同號時是正或負）</div>
+<div class="hero">整係數 $ax^2+bx+c=0$ 有<b>有理根</b> $\iff$ $\Delta=b^2-4ac$ 是<b>完全平方數</b><br>要整數根？先讓 $\Delta$ 是平方，再加上整除條件</div>
 <div class="cards">
-<div class="card"><h4>① 最簡單的例子</h4><div class="rule">$x^2-5x+6=0$<br>積 $6\gt0$、和 $5\gt0$ ⇒ 兩根同為正</div>
-<div class="eg">兩根是 $2,3$，都是正的 ✓</div></div>
-<div class="card"><h4>② 兩正根</h4><div class="rule">$\Delta\ge0,\ x_1x_2\gt0,\ x_1+x_2\gt0$</div>
-<div class="eg">設 $x^2-kx+k^2-4=0$，求 $k$ 使兩根都是正的：<br>$16-3k^2\ge0,\ k^2\gt4,\ k\gt0$<br>⇒ $2\lt k\le\frac43\sqrt3$</div></div>
-<div class="card"><h4>③ 一正一負</h4><div class="rule">只要 $x_1x_2\lt 0$</div>
-<div class="eg">同一方程 $x^2-kx+k^2-4=0$，求兩根一正一負的 $k$：<br>$k^2-4\lt 0$ ⇒ $-2\lt k\lt 2$<br><span class="pill">Δ 自動 &gt; 0</span></div></div>
-<div class="card"><h4>④ 別漏零根</h4><div class="rule">$x_1x_2=0$ 時看另一根的正負</div>
-<div class="eg">$k=2$：$x^2-2x=0$，根是 $0,2$<br>⇒ 只有一個正根</div></div>
+<div class="card"><h4>① 最簡單的例子</h4><div class="rule">$x^2-5x+6=0$：$\Delta=1=1^2$ ⇒ 有理根</div>
+<div class="eg">根是 $\frac{5\pm1}2=2,\,3$ ✓<br>$x^2-2=0$：$\Delta=8$ 不是平方 ⇒ 根是無理數</div></div>
+<div class="card"><h4>② 直接看 Δ</h4><div class="rule">$\Delta=$ 某數的平方</div>
+<div class="eg">設 $m$ 為整數，$4\lt m\lt40$，方程 $x^2-2(2m-3)x+4m^2-14m+8=0$ 有兩個整數根，求 $m$。<br>$\frac\Delta4=2m+1$ 要是奇數的平方，$9\lt2m+1\lt81$ ⇒ $25$ 或 $49$，得 $m=12,24$</div></div>
+<div class="card"><h4>③ 看尾數、看奇偶</h4><div class="rule">平方數尾數只有 $0,1,4,5,6,9$</div>
+<div class="eg">整係數方程 $ax^2+bx+c=0$ 能否使 $b^2-4ac=1986$？<br>$b$ 偶 ⇒ 左邊是 4 的倍數，$1986\equiv2\pmod 4$ <span class="pill">不可能</span></div></div>
 </div>
-<p>為什麼積 &lt; 0 就不用檢查 Δ？⟦理由｜$x_1x_2=\frac ca\lt 0$ 表示 $a,c$ 異號，$-4ac\gt0$，所以 $\Delta=b^2-4ac\gt0$。⟧</p>
+<p>也可以從韋達定理下手：⟦兩根之積是整數｜$(k-1)x^2-px+k=0$ 有兩個正整數根 ⇒ $\frac k{k-1}$ 是整數 ⇒ $k-1\mid k$ ⇒ $k=2$。⟧</p>
 <div class="pitfall"><h4>⚠ 最常錯</h4><ul>
-<li>「只有一個正根」漏掉「一正一零」的情形</li>
-<li>兩正根忘了加 $\Delta\ge0$：積和都正不代表有實根</li></ul></div>
-<div class="bottomline">先判有無根，再用積判同號異號，最後用和判正負。</div>
+<li>$\Delta$ 是平方只保證<b>有理</b>根；整數根還要 $2a$ 整除 $-b\pm\sqrt\Delta$</li>
+<li>二次方程要求 $a\neq0$：題目寫 $(k-1)x^2$ 就先排除 $k=1$</li></ul></div>
+<div class="bottomline">整數根問題 = 判別式是平方數 + 數論（奇偶、整除、因數分解）。</div>
