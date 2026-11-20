@@ -1,0 +1,20 @@
+=== meta
+title: 立體作圖：只畫球心、借用立方體
+from: gz-L09
+order: 40
+
+=== body
+<div class="hero">圖不能代替證明，但<b>好的圖</b>能反映構形的本質<br>球太難畫 → <b>只畫球心</b>；互相垂直的異面直線 → <b>借立方體</b></div>
+<div class="cards">
+<div class="card"><h4>① 只畫球心</h4><div class="rule">外切：心距＝半徑和；內切：半徑差</div>
+<div class="eg">四個半徑 $r$ 的球兩兩外切：球心是稜長 $2r$ 的正四面體<br>大球 $R=r+\frac{\sqrt6}2r$</div></div>
+<div class="card"><h4>② 借立方體</h4><div class="rule">稜長 $2r$ 的三條兩兩垂直異面稜</div>
+<div class="eg">三個圓柱夾住的最小球：<br>中心到稜距離 $\sqrt2r$ ⇒ 半徑 $(\sqrt2-1)r$</div></div>
+<div class="card"><h4>③ 分情形畫圖</h4><div class="rule">垂足在內、在邊上、在外</div>
+<div class="eg">側面與底面都成 $45^\circ$：垂足是內心或旁心<br>體積 $341\frac13$、$768$、$3072$</div></div>
+</div>
+<p>正四面體（稜長 $a$）外接球半徑是 $\frac{\sqrt6}4a$。⟦怎麼記｜高是 $\sqrt{\frac23}a$，球心在高上離頂點 $\frac34$ 處，$\frac34\sqrt{\frac23}=\frac{\sqrt6}4$。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>照「一般位置」畫圖，結果圖不符合條件（例：垂足其實在稜上）</li>
+<li>只討論一種位置（例如垂足在三角形內），答案不完整</li></ul></div>
+<div class="bottomline">推理中發現圖不對就改圖；改對了，題目也差不多解完了。</div>

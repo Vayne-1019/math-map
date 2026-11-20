@@ -1,0 +1,20 @@
+=== meta
+title: 面積法：同一塊面積算兩次
+from: gz-L07
+order: 50
+
+=== body
+<div class="hero">面積法的要點：<b>用兩種方法算同一塊面積</b>，列出等式<br>同底 → 面積比＝高比；同高 → 面積比＝底比</div>
+<div class="cards">
+<div class="card"><h4>① 塞瓦線比例</h4><div class="rule">$\frac{PQ_1}{P_1Q_1}+\frac{PQ_2}{P_2Q_2}+\frac{PQ_3}{P_3Q_3}=1$</div>
+<div class="eg">$d=3$、$a+b+c=43$：<br>$abc=2d^3+(a+b+c)d^2=441$</div></div>
+<div class="card"><h4>② 兩個面積公式</h4><div class="rule">$\triangle=rp=\frac12ah_a$</div>
+<div class="eg">三邊成等差 $a,b,c$：<br>$\frac32rb=\frac12h_bb$ ⇒ $r=\frac13h_b$</div></div>
+<div class="card"><h4>③ 分割求和</h4><div class="rule">$\triangle BCN=\triangle BCM+\triangle MCN$</div>
+<div class="eg">正六邊形：$2r=(1-r)+3r(1-r)$<br>$\Rightarrow r=\frac{\sqrt3}3$ <span class="pill">IMO 1982</span></div></div>
+</div>
+<p>海龍公式的變形也常用：$16\triangle^2=2a^2b^2+2b^2c^2+2c^2a^2-a^4-b^4-c^4$。⟦例子｜邊長 3、4、5：$2(144+400+225)-81-256-625=576$，$\triangle^2=36$，$\triangle=6$。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>面積比換成線段比時，搞錯是「同底」還是「同高」</li>
+<li>點在外部時，分割的面積要改成相減</li></ul></div>
+<div class="bottomline">要線段比，先找兩個共底或共高的三角形。</div>

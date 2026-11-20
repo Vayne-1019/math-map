@@ -1,0 +1,22 @@
+=== meta
+title: 平移與旋轉：把分散的量湊在一起
+from: gz-L08
+order: 40
+
+=== body
+<div class="hero"><b>平移</b>搬動線段，<b>旋轉</b>把三條分散的線段湊成一個三角形<br>正三角形配 $60^\circ$，正方形配 $90^\circ$</div>
+<div class="cards">
+<div class="card"><h4>① 旋轉 $60^\circ$</h4><div class="rule">正三角形內一點：繞頂點轉</div>
+<div class="eg">$PA,PB,PC=4,5,3$：轉出 3-4-5 直角三角形<br>$\angle APC=150^\circ$，邊長 $\sqrt{25+12\sqrt3}$</div></div>
+<div class="card"><h4>② 旋轉 $90^\circ$</h4><div class="rule">正方形：把 $B$ 轉到 $D$</div>
+<div class="eg">$\angle BAM=\angle MAK$ ⇒ $AK=BM+KD$</div></div>
+<div class="card"><h4>③ 平移集中</h4><div class="rule">把所有直線移到同一點</div>
+<div class="eg">1988 條直線：$3976$ 個角和為 $2\pi$<br>必有一角 $\le\frac\pi{1987}$</div></div>
+<div class="card"><h4>④ 軸對稱</h4><div class="rule">鏡射後，兩點之間直線最短</div>
+<div class="eg">$h_a\le\sqrt{p(p-a)}$：<br>$b+c\ge\sqrt{a^2+4h_a^2}$</div></div>
+</div>
+<p>繞哪個點、轉幾度？⟦判斷方法｜找兩條等長、夾角固定的線段（正三角形的兩邊、正方形的兩邊），繞它們的公共端點轉這個角，把一邊轉到另一邊，附近的線段就跟著搬過去了。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>旋轉方向弄反，$B$ 沒有轉到 $A$</li>
+<li>以為三條線段一定能構成三角形：要檢查不共線</li></ul></div>
+<div class="bottomline">三條線段散在各處？轉一下，讓它們圍成一個三角形。</div>

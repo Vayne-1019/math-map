@@ -1,0 +1,20 @@
+=== meta
+title: 一題變多題：把幾何條件翻成三角式
+from: gz-L01
+order: 60
+
+=== body
+<div class="hero">做完一題別急著丟：<b>換面貌</b>再看一次<br>條件↔結論對調 → <b>逆命題</b>；幾何條件 → <b>三角式</b>；代數式 → <b>距離</b></div>
+<div class="cards">
+<div class="card"><h4>① 等腰 → 三角式</h4><div class="rule">$AB=AC\iff a=2b\cos C$</div>
+<div class="eg">配合投影公式 $a=b\cos C+c\cos B$<br>得 $\sin(B-C)=0$ <span class="pill">B＝C</span></div></div>
+<div class="card"><h4>② 角平分線 → $\frac B2$</h4><div class="rule">兩次正弦定理算 $BD$、$AD$</div>
+<div class="eg">頂角 $100^\circ$ 的等腰三角形：<br>$BD+AD=BC\cdot\frac{\sin80^\circ}{\sin100^\circ}=BC$</div></div>
+<div class="card"><h4>③ 代數式 → 距離</h4><div class="rule">$(u-v)^2+(y_1-y_2)^2$ 是兩點距離平方</div>
+<div class="eg">$\sqrt{a^2\pm a+1}$ 是 $(a,0)$ 到 $(\mp\frac12,\frac{\sqrt3}2)$ 的距離 <span class="pill">差的值域 (−1,1)</span></div></div>
+</div>
+<p>為什麼逆命題常也成立？⟦唯一性｜條件與結論都「只能畫出一種」（定長、定角、角平分線、兩段和）時，把某個條件和結論對調，圖形仍被唯一決定，所以逆命題通常也成立；但仍需證明。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>以為逆命題一定成立而不證：要有唯一性論證（例如單調性）</li>
+<li>把 $\sqrt{2-u^2}$ 看成整個圓：其實只是上半圓</li></ul></div>
+<div class="bottomline">同一個數學事實，換成幾何、三角、坐標三種語言，總有一種最好做。</div>

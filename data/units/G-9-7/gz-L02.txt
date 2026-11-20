@@ -1,0 +1,20 @@
+=== meta
+title: 射影定理：從三角形搬到四面體
+from: gz-L02
+order: 40
+
+=== body
+<div class="hero">三角形：$a=b\cos C+c\cos B$<br>四面體：<b>一個面＝其餘三面 × cos（二面角）之和</b><br>本質的證法，換一個維度照樣能用</div>
+<div class="cards">
+<div class="card"><h4>① 平面版</h4><div class="rule">三式相乘＋算幾</div>
+<div class="eg">$a=b\cos C+c\cos B\ge2\sqrt{bc\cos B\cos C}$<br>$\Rightarrow\cos A\cos B\cos C\le\frac18$</div></div>
+<div class="card"><h4>② 空間版</h4><div class="rule">$S_1=S_2\cos\theta_{34}+S_3\cos\theta_{24}+S_4\cos\theta_{23}$</div>
+<div class="eg">四式相乘＋三元算幾<br>$\sqrt[6]{\prod\cos\theta_{ij}}\le\frac13$ <span class="pill">正四面體取等</span></div></div>
+<div class="card"><h4>③ 空間勾股</h4><div class="rule">直三面角：$S_1^2=S_2^2+S_3^2+S_4^2$</div>
+<div class="eg">直角頂的三稜都是 1：<br>$S_2=S_3=S_4=\frac12$，$S_1=\frac{\sqrt3}2$，$\frac34=3\cdot\frac14$</div></div>
+</div>
+<p>直三面角的底面一定是<b>銳角三角形</b>，頂點的垂足正是底面的<b>垂心</b>。⟦為什麼是垂心｜$A_1A_4$ 垂直於平面 $A_1A_2A_3$，所以 $A_1A_4\perp A_2A_3$；又 $A_1H\perp A_2A_3$，得 $A_2A_3\perp A_4H$。三條邊都這樣。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>空間射影定理要垂足落在底面內（二面角都銳角），否則要帶正負號</li>
+<li>「積化和差＋配方」的證法在平面好用，卻推廣不到四面體：先找本質的證法</li></ul></div>
+<div class="bottomline">好的證法能「整個搬過去」；搬不過去的，通常只是技巧。</div>
