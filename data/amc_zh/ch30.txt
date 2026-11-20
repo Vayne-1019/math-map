@@ -1,0 +1,174 @@
+=== intro
+<p>幾何角度題大多靠「追蹤角度」：從已知角出發，利用三角形內角和、等腰三角形的兩底角相等、平行線的內錯角與同位角，一步一步把未知角算出來。圓是最常用的工具，因為圓周角、弦切角與圓心角之間有固定關係。</p>
+<ul>
+<li><b>先標出已知的等長邊與等角</b>，等腰三角形的底角與頂角會立刻給出關係。</li>
+<li><b>遇到圓，先畫半徑與直徑</b>，直徑所對的圓周角是直角。</li>
+<li><b>正多邊形的角</b>可以用內角和公式 $(n-2)\cdot 180^\circ$ 直接算。</li>
+<li><b>設未知數比較快</b>：把未知角設成 $x$，用角之間的關係列式。</li>
+</ul>
+
+=== 30.1
+zh: 在 $\triangle ABC$ 中，$AB=2\cdot AC$。$D$ 在 $AB$ 上，$E$ 在 $BC$ 上，使 $\angle BAE=\angle ACD$。$F$ 為線段 $AE$ 與 $CD$ 的交點，且 $\triangle CFE$ 是正三角形。求 $\angle ACB$。
+sol: 設 $\angle BAE=\angle ACD=x$，$\angle A=\angle BAC$。在 $\triangle AFC$ 中，$\angle FAC=\angle A-x$，$\angle FCA=x$，所以 $\angle AFC=180^\circ-\angle A$。因為 $E$ 在 $AF$ 的延長線上，$\angle CFE=180^\circ-\angle AFC=\angle A$。$\triangle CFE$ 是正三角形，故 $\angle A=60^\circ$。再由 $AB=2AC$ 得 $\dfrac{\sin C}{\sin B}=2$，代入 $B=120^\circ-C$ 化簡得 $\sqrt3\cos C=0$，所以 $C=90^\circ$。
+ans: $90^\circ$（與原書相同）
+hint: 用 $\triangle AFC$ 的內角和把 $\angle CFE$ 轉成 $\angle A$，再用正弦定理處理邊長比。
+
+=== 30.2
+zh: 在 $\triangle ABC$ 中，$AB=AC$。$D$ 在邊 $AC$ 上（嚴格位於 $A$ 與 $C$ 之間），$E$ 在邊 $AB$ 上（嚴格位於 $A$ 與 $B$ 之間），使 $AE=ED=DB=BC$。$\angle ABC$ 的度數可寫成 $\dfrac mn$，其中 $m,n$ 互質。求 $m+n$。
+sol: 設 $\angle A=a$。由 $AE=ED$ 得 $\angle EDA=a$，所以 $\angle DEB=2a$。由 $ED=DB$ 得 $\angle DBE=2a$，故 $\angle ADB=180^\circ-3a$，從而 $\angle BDC=3a$。由 $BD=BC$ 得 $\angle BCD=\angle BDC=3a$，即 $\angle C=3a$。因為 $AB=AC$，$\angle B=\angle C=3a$。再由 $\angle A+\angle B+\angle C=180^\circ$ 得 $7a=180^\circ$，所以 $\angle B=\dfrac{540^\circ}{7}$，$m+n=540+7=547$。
+ans: $547$（與原書相同）
+hint: 一路用等腰三角形把角都換成 $a$。
+
+=== 30.3
+zh: 設 $\triangle ABC$ 為等腰三角形，$BC=AC$，$\angle ACB=40^\circ$。以 $BC$ 為直徑作圓，此圓與邊 $AC$、$AB$ 分別交於另一點 $D$、$E$。$F$ 為四邊形 $BCDE$ 兩條對角線的交點。求 $\angle BFC$。
+sol: 因為 $BC$ 是直徑，$\angle BDC=\angle BEC=90^\circ$。在 $\triangle ABC$ 中，$\angle A=\angle B=70^\circ$。在直角三角形 $BDC$ 中，$\angle DCB=40^\circ$，故 $\angle DBC=50^\circ$。在直角三角形 $BEC$ 中，$\angle EBC=70^\circ$，故 $\angle ECB=20^\circ$。於是在 $\triangle FBC$ 中 $\angle FBC=50^\circ$、$\angle FCB=20^\circ$，$\angle BFC=110^\circ$。
+ans: $110^\circ$（與原書相同）
+
+=== 30.1.5 | 多邊形的內角和
+zh: $n$ 邊形的內角和為 $(n-2)\cdot 180^\circ$；正 $n$ 邊形每個內角為 $\dfrac{(n-2)}{n}\cdot 180^\circ$，每個外角為 $\dfrac{360^\circ}{n}$。
+
+=== 30.1.7 | 圓周角定理
+zh: 同一段弧所對的圓心角，是圓周角的 $2$ 倍。
+
+=== 30.1.8 | 直徑上的圓周角
+zh: 以直徑為一邊的內接三角形必為直角三角形。
+
+=== 30.1.9 | 弦
+zh: 圓上任兩相異點之間的線段稱為弦。圓中最長的弦是直徑。
+
+=== 30.1.10 | 弦的中垂線過圓心
+zh: 任一弦的中垂線必通過圓心。因此兩條弦的中垂線交點就是圓心。
+
+=== 30.1.11 | 等弦的性質
+zh: 等長的弦到圓心的距離相等；等弦所截的弧相等；等弦所對的圓心角也相等。
+
+=== 30.1.12 | 圓內兩弧夾角
+zh: 圖中所標的角，等於兩段紅弧度數差的一半。（$\angle APC=\dfrac12(\overset\frown{BD}-\overset\frown{AC})$）
+
+=== 30.1.13 | 相交弦的夾角
+zh: 若弦 $AB$ 與 $CD$ 交於 $P$，則 $\angle BPC$ 與 $\angle APD$ 都等於兩段相關弧度數和的一半。（$\angle BPC=\angle APD=\dfrac12(\overset\frown{BC}+\overset\frown{AD})$）
+
+=== 30.1.14 | 弦切角
+zh: 若切線 $R$ 在 $Q$ 點與圓相切，連弦 $QP$，則 $\angle RQP$ 等於所夾弧度數的一半。
+
+=== 30.1.15 | 圓與角度追蹤
+zh: 圓很適合做角度追蹤，遇到題目要留意圓周角定理。
+
+=== 30.1.16 | 正多邊形的外接圓
+zh: 解正多邊形的角度題時，常在正多邊形外畫一個圓，再用圓周角定理。
+
+=== 30.1.17 | 等弦對等弧
+zh: 兩條等長的弦所截出的弧相等，因此它們所夾的扇形也相等。
+
+=== 30.1.18 | 切線
+zh: 切線是從圓外一點出發、恰好只碰到圓一次的直線。
+
+=== 30.1.19 | 切點與圓心
+zh: 圓心與切點的連線，會和切線垂直，形成直角。
+
+=== 30.1.20 | 切線問題的輔助線
+zh: 這個性質讓我們能用直角來解題。另外，畫出通往各重要點的半徑，常能引出新的已知量。
+
+=== 30.1.21 | 圓內接四邊形
+zh: 圓內接四邊形的一組對角和為 $180^\circ$。
+
+=== 30.2.1
+zh: 等角六邊形 $ABCDEF$ 的直線 $AB$、$CD$、$EF$ 圍成的三角形面積為 $192\sqrt3$，直線 $BC$、$DE$、$FA$ 圍成的三角形面積為 $324\sqrt3$。六邊形的周長可寫成 $m+n\sqrt p$，其中 $m,n,p$ 為正整數且 $p$ 不被任何質數的平方整除。求 $m+n+p$。
+sol: 設六邊依序為 $a,b,c,d,e,f$。延長 $AB,CD,EF$ 得到的正三角形，邊長為 $S_1=a+b+f=b+c+d=d+e+f$；延長 $BC,DE,FA$ 得到的正三角形，邊長為 $S_2=a+b+c=c+d+e=e+f+a$。由面積 $\dfrac{\sqrt3}{4}S^2$ 得 $S_1^2=768$，$S_1=16\sqrt3$；$S_2^2=1296$，$S_2=36$。周長 $=S_1+S_2=36+16\sqrt3$，故 $m+n+p=36+16+3=55$。
+ans: $55$（與原書相同）
+hint: 六邊形的周長可以拆成兩個大正三角形的邊長和。
+
+=== 30.2.2
+zh: 兩個全等的圓，圓心分別為 $A$、$B$，且每個圓都經過另一個圓的圓心。直線 $AB$ 延長後與兩圓分別交於 $C$、$D$。兩圓相交於兩點，其中一點為 $E$。求 $\angle CED$ 的度數。
+sol: 設半徑為 $r$，則 $AB=r$。取 $A=(0,0)$、$B=(r,0)$，得 $C=(-r,0)$、$D=(2r,0)$，兩圓的交點 $E=\left(\dfrac r2,\dfrac{\sqrt3}{2}r\right)$。計算得 $\vec{EC}\cdot\vec{ED}=-\tfrac32r^2$，且 $|EC|=|ED|=\sqrt3\,r$，故 $\cos\angle CED=-\dfrac12$，$\angle CED=120^\circ$。
+ans: $120^\circ$（與原書相同）
+
+=== 30.2.3
+zh: Abdul 與 Chiang 在田地中相距 $48$ 呎。Bharat 站在同一塊田地中，使他看 Abdul 與 Chiang 的視線夾角為 $60^\circ$，而且他與 Abdul 的距離盡可能遠。求 Bharat 與 Abdul 距離的平方（單位：呎）。
+sol: Bharat 的位置在過 $A,C$ 且對 $AC$ 張角為 $60^\circ$ 的圓上。由正弦定理，外接圓半徑 $R=\dfrac{48}{2\sin60^\circ}=16\sqrt3$。$AB=2R\sin C$，當 $C=90^\circ$ 時最大，此時 $AB=2R=32\sqrt3$，平方為 $3072$。
+ans: $3072$（與原書相同）
+
+=== 30.2.4
+zh: 正方形 $ABCD$ 繞其中心順時針旋轉 $20^\circ$ 得到正方形 $EFGH$（如圖）。求 $\angle EAB$。
+sol: 取中心為原點，$A$ 在單位圓上、位於 $90^\circ$，$B$ 位於 $0^\circ$。$E$ 是 $A$ 順時針轉 $20^\circ$ 的位置，位於 $70^\circ$。$\overrightarrow{AE}$ 的方向約為 $-9.9^\circ$，$\overrightarrow{AB}$ 的方向為 $-45^\circ$，夾角約為 $35^\circ$。
+ans: $35^\circ$（與原書相同）
+
+=== 30.2.5
+zh: 正六邊形內部有一個正方形，圖中標示了某些頂點。求 $\angle ABC$ 的度數。
+sol: 本題依賴圖形，僅憑文字無法唯一重建。依原書圖形與答案，$\angle ABC=45^\circ$。（本條未能獨立核對，請對照圖形。）
+ans: $45^\circ$（依原書；未獨立核對）
+
+=== 30.2.6
+zh: 圓中，直徑 $EB$ 與弦 $DC$ 平行，$AB$ 與 $ED$ 平行。$\angle AEB$ 與 $\angle ABE$ 的比為 $4:5$。求 $\angle BCD$ 的度數。
+sol: 設 $\angle AEB=4k$，$\angle ABE=5k$。因 $EB$ 為直徑，$\angle EAB=90^\circ$，故 $9k=90^\circ$，$k=10^\circ$，$\angle ABE=50^\circ$。由 $AB\parallel ED$，$\angle BED=50^\circ$，故不含 $E$ 的弧 $\overset\frown{BD}=100^\circ$。由 $DC\parallel EB$，$C$ 與 $D$ 關於圓心所在的垂直線對稱，$\angle BCD$ 所對的弧為 $360^\circ-100^\circ=260^\circ$，故 $\angle BCD=130^\circ$。
+ans: $130^\circ$（與原書相同）
+
+=== 30.2.7
+zh: 拱門（keystone arch）由 $9$ 個全等的等腰梯形沿腰拼接而成，兩端的底邊水平。若較大的內角為 $x$ 度，求 $x$。
+sol: 各梯形的腰都沿過圓心的半徑方向，兩端底邊水平，故 $9$ 個梯形共占半圓，每個梯形占圓心角 $20^\circ$。梯形的腰與較長底邊的夾角為 $90^\circ-10^\circ=80^\circ$，所以較大的內角（在短底邊上）為 $180^\circ-80^\circ=100^\circ$。
+ans: $100$（與原書相同）
+
+=== 30.2.8
+zh: $\triangle ABC$ 為以 $AC$ 為底的等腰三角形。$P,Q$ 分別在 $CB$、$AB$ 上，使 $AC=AP=PQ=QB$。求 $\angle B$ 的度數。
+sol: 設 $\angle B=x$，則底角 $\angle A=\angle C=y=\dfrac{180^\circ-x}{2}$。由 $PQ=QB$ 得 $\angle QPB=x$，$\angle PQA=2x$；由 $AP=PQ$ 得 $\angle PAQ=2x$。又 $\angle CAP=180^\circ-2y=x$，且 $\angle A=\angle CAP+\angle PAQ=3x$。由 $3x=\dfrac{180^\circ-x}{2}$ 得 $x=\dfrac{180^\circ}{7}$。
+ans: $\dfrac{180}{7}^\circ$（即 $25\dfrac57^\circ$，與原書相同）
+
+=== 30.2.9
+zh: 等腰三角形 $ABC$（$AB=AC$）內接正三角形 $DEF$，$D,E,F$ 分別在 $AB,AC,BC$ 上（依圖）。令 $a=\angle BFD$，$b=\angle ADE$，$c=\angle FEC$。則：（A）$b=\dfrac{a+c}{2}$（B）$b=\dfrac{a-c}{2}$（C）$a=\dfrac{b-c}{2}$（D）$a=\dfrac{b+c}{2}$（E）none of these
+sol: 在 $F$ 處，$\angle DFE=60^\circ$，故 $\angle EFC=120^\circ-a$；在 $D$ 處，$\angle FDB=120^\circ-b$。在 $\triangle BDF$ 中 $B+a+(120^\circ-b)=180^\circ$，得 $a=60^\circ+b-B$；在 $\triangle FEC$ 中 $C+c+(120^\circ-a)=180^\circ$，得 $c=60^\circ+a-C$。因 $B=C$，相加得 $b+c=2a$，即 $a=\dfrac{b+c}{2}$。
+ans: (D)（與原書相同；此結果依上述圖形標示推得）
+
+=== 30.2.10
+zh: 有多少個不相似的三角形，其三個內角的度數皆為互不相同的正整數，且成等差數列？
+sol: 設三內角為 $60^\circ-d,\ 60^\circ,\ 60^\circ+d$（中間項必為 $60^\circ$，因為三數和為 $180^\circ$）。$d$ 為正整數，且 $60^\circ-d>0$，$d\le59$。每個 $d$ 對應不同的角組，互不相似，共 $59$ 個。
+ans: $59$（與原書相同）
+
+=== 30.2.11
+zh: 凹四邊形 $ABCD$ 對稱於直線 $AC$。已知 $\angle DAB=84^\circ$，$\angle ABC=32^\circ$。虛線分別平分 $\angle ABC$ 與 $\angle ADC$。求兩條虛線相交所成的銳角度數。
+sol: 由對稱，$\angle BAC=\angle DAC=42^\circ$，$\angle ACB=180^\circ-42^\circ-32^\circ=106^\circ$。兩條平分線的交點 $P$ 在對稱軸 $AC$ 上。在 $\triangle BPC$ 中，$\angle PBC=16^\circ$，$\angle BCP=106^\circ$，故 $\angle BPC=58^\circ$。兩虛線 $PB$、$PD$ 的夾角為 $2\times58^\circ=116^\circ$，其補角 $64^\circ$ 為銳角。
+ans: $64^\circ$（與原書相同）
+
+=== 30.2.12
+zh: 如圖，$E$ 位於直線 $CD$ 與 $A$ 相異的半平面上，使 $\angle CDE=110^\circ$。$F$ 在 $AD$ 上，使 $DE=DF$，且 $ABCD$ 為正方形。求 $\angle AFE$。
+sol: 取正方形邊長為 $1$，$D=(0,0)$，$C=(1,0)$，$A=(0,1)$。取 $DE=t$，$E=t(\cos(-110^\circ),\sin(-110^\circ))$，$F=(0,t)$。計算 $\overrightarrow{FA}=(0,1-t)$ 與 $\overrightarrow{FE}$ 的夾角，約為 $170^\circ$，與 $t$ 無關。
+ans: $170^\circ$（與原書相同）
+
+=== 30.2.13
+zh: 正方形 $ABCD$ 之外，以 $AB$ 為邊向外作正三角形 $ABE$（$E$ 在正方形外）。求 $\angle AED$ 的度數。
+sol: 取 $A=(0,0)$，$B=(1,0)$，$D=(0,1)$，$E=\left(\dfrac12,-\dfrac{\sqrt3}{2}\right)$。$\overrightarrow{EA}=\left(-\dfrac12,\dfrac{\sqrt3}2\right)$，$\overrightarrow{ED}=\left(-\dfrac12,1+\dfrac{\sqrt3}2\right)$，夾角餘弦約為 $0.966$，即 $15^\circ$。
+ans: $15^\circ$（與原書相同）
+
+=== 30.2.14
+zh: 四邊形 $ABCD$ 的內角滿足 $\angle A=2\angle B=3\angle C=4\angle D$。求 $\angle A$ 的度數，精確到整數。
+sol: 設 $\angle A=\theta$，則 $\angle B=\dfrac\theta2$，$\angle C=\dfrac\theta3$，$\angle D=\dfrac\theta4$。由內角和 $\theta\left(1+\tfrac12+\tfrac13+\tfrac14\right)=360^\circ$，$\dfrac{25}{12}\theta=360^\circ$，$\theta=172.8^\circ$，四捨五入為 $173$。
+ans: $173$（與原書相同）
+
+=== 30.2.15
+zh: 三角形中兩個角的和是直角的 $\dfrac65$，其中一個角比另一個大 $30^\circ$。求最大內角的度數。
+sol: 兩角和為 $\dfrac65\times90^\circ=108^\circ$。設較小者為 $x$，則 $x+(x+30^\circ)=108^\circ$，$x=39^\circ$，另一角為 $69^\circ$，第三角為 $72^\circ$。最大角為 $72^\circ$。
+ans: $72$（與原書相同）
+
+=== 30.2.16
+zh: Mary 把圓分成 $12$ 個扇形，各扇形的圓心角度數皆為整數，且成等差數列。求最小扇形角度的可能最小值。
+sol: 設首項為 $a$、公差為 $d$，則 $12a+66d=360$，即 $2a+11d=60$，故 $d$ 為偶數。取 $d=4$ 得 $a=8$，各項為 $8,12,\dots,52$，全為正。取 $d=-4$ 時 $a=52$，最小項為 $52-44=8$。$|d|\ge6$ 時最小項必不為正或更大，所以最小角的可能最小值為 $8^\circ$。
+ans: $8$（與原書相同）
+
+=== 30.2.17
+zh: 銳角等腰三角形 $ABC$ 內接於圓，過 $B,C$ 作圓的切線，交於 $D$。若 $\angle ABC=\angle ACB=2\angle D$，且 $x$ 為 $\angle A$ 的弧度數，求 $x$。
+sol: 設 $\angle B=\angle C=\beta$，則 $\angle A=180^\circ-2\beta$，而 $\angle D=180^\circ-2\angle A=4\beta-180^\circ$。由 $\beta=2\angle D=8\beta-360^\circ$，得 $\beta=\dfrac{360^\circ}{7}$，$\angle A=\dfrac{540^\circ}{7}=\dfrac{3\pi}{7}$ 弧度。
+ans: $\dfrac{3\pi}{7}$（與原書相同）
+
+=== 30.2.18
+zh: 三角形 $ABC$ 為等腰三角形，$AC=BC$，$\angle ACB=106^\circ$。點 $M$ 在三角形內部，使 $\angle MAC=7^\circ$、$\angle MCA=23^\circ$。求 $\angle CMB$ 的度數。
+sol: 底角 $\angle A=\angle B=37^\circ$。$\angle MAB=30^\circ$，$\angle MCB=83^\circ$。設 $\angle ABM=y$，由三角形 Ceva 定理 $\dfrac{\sin30^\circ}{\sin7^\circ}\cdot\dfrac{\sin23^\circ}{\sin83^\circ}\cdot\dfrac{\sin(37^\circ-y)}{\sin y}=1$，解得 $y=23^\circ$，故 $\angle MBC=14^\circ$。於是 $\angle CMB=180^\circ-83^\circ-14^\circ=83^\circ$。
+ans: $83$（與原書相同）
+
+=== 30.2.19
+zh: 四邊形 $ABCD$ 中，$AB=BC=CD$，$\angle ABC=70^\circ$，$\angle BCD=170^\circ$。求 $\angle BAD$ 的度數。
+sol: 在 $\triangle ABC$ 中 $\angle BCA=\angle BAC=55^\circ$；在 $\triangle BCD$ 中 $\angle CBD=\angle CDB=5^\circ$。取 $B=(0,0)$、$C=(1,0)$、$A=(\cos70^\circ,\sin70^\circ)$、$D=(1+\cos10^\circ,\sin10^\circ)$，計算得 $\cos\angle BAD\approx0.087$，$\angle BAD\approx85^\circ$。
+ans: $85$（與原書相同）
+
+=== 30.2.20
+zh: 光線在 $C$ 點射到 $BC$，入射角 $\alpha=19.94^\circ$，之後依「入射角等於反射角」的規則在線段 $AB$、$BC$ 之間反射。已知 $\beta=\alpha/10=1.994^\circ$，且 $AB=BC$。問光線會碰到兩線段多少次？（含 $C$ 點的第一次反射。）
+sol: 每換到另一邊反射一次，入射角增加 $\beta$，第 $k$ 次的入射角為 $\alpha+k\beta$。角度小於 $90^\circ$ 的正向反射共 $36$ 次（$k=0,\dots,35$，$\alpha+35\beta\approx89.7^\circ$）；之後光線折返，沿原路再反射 $35$ 次。合計 $36+35=71$ 次。
+ans: $71$（與原書 071 相同）
