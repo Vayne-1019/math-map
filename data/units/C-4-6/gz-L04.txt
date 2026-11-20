@@ -1,0 +1,22 @@
+=== meta
+title: 構造性證明：直接把東西造出來
+from: gz-L04
+order: 45
+
+=== body
+<div class="hero">證「存在」有兩條路：抽屜原理（只知道有，不知道是誰）<br>或 <b>構造性證明</b>：直接把對象造出來</div>
+<div class="cards">
+<div class="card"><h4>① 恆等式</h4><div class="rule">$(x_1^2+y_1^2)(x_2^2+y_2^2)$<br>$=(x_1x_2+y_1y_2)^2+(x_1y_2-x_2y_1)^2$</div>
+<div class="eg">$5\cdot13=65=8^2+1^2$ <span class="pill">兩平方和相乘還是</span></div></div>
+<div class="card"><h4>② 一組解生無窮組</h4><div class="rule">$(xd^2)^3+(yd^2)^3=(zd^3)^2$</div>
+<div class="eg">$1^3+2^3=3^2$ ⇒ $4^3+8^3=24^2$</div></div>
+<div class="card"><h4>③ 畫出來</h4><div class="rule">$\sqrt{a^2+(c+d)^2}$ 是長方形的斜線</div>
+<div class="eg">對稜相等的四面體＝長方體隔一個頂點取一個</div></div>
+<div class="card"><h4>④ 奇偶構造</h4><div class="rule">按坐標奇偶分類染色</div>
+<div class="eg">(奇,奇) 白、(偶,偶) 黑、其餘紅<br>$D=A+C-B$ 一定是紅點</div></div>
+</div>
+<p>例：任何整數都是五個整數的立方和。⟦怎麼造｜$6x=(x+1)^3+(x-1)^3+(-x)^3+(-x)^3$，而 $n-n^3$ 是 6 的倍數，取 $x=\frac{n-n^3}6$，就有 $n=6x+n^3$。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>造出的對象要逐條驗證所有條件（例如「三點不共線」常被忘記）</li>
+<li>「退一步」找充分條件時，條件要真的推得出結論</li></ul></div>
+<div class="bottomline">構造的功夫，大半來自因式分解與恆等式的基本功。</div>

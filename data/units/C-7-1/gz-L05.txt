@@ -1,0 +1,21 @@
+=== meta
+title: 命題的四種形式與否定
+from: gz-L05
+order: 60
+
+=== body
+<div class="hero">原命題 ⟺ <b>逆否命題</b>；逆命題 ⟺ <b>否命題</b><br>「任意」的否定是「存在」，「存在」的否定是「任意」</div>
+<div class="cards">
+<div class="card"><h4>① 四種形式</h4><div class="rule">若 $A$ 則 $B$ ／ 若 $B$ 則 $A$<br>若 $\overline A$ 則 $\overline B$ ／ 若 $\overline B$ 則 $\overline A$</div>
+<div class="eg">對頂角相等（真）<br>相等的角是對頂角（假）<br>不等的角不是對頂角（真）</div></div>
+<div class="card"><h4>② 充分、必要</h4><div class="rule">$A\Rightarrow B$：$A$ 是充分條件、$B$ 是必要條件</div>
+<div class="eg">面積相等是全等的<br>必要但不充分條件</div></div>
+<div class="card"><h4>③ 寫否定</h4><div class="rule">任意 ↔ 存在，「都」↔「不都」</div>
+<div class="eg">「任兩點連線都不平行 $x$ 軸」<br>否定：「<b>存在</b>兩點連線平行 $x$ 軸」</div></div>
+</div>
+<p>求範圍時列出的條件必須是<b>充要</b>的。⟦例子｜$x^2+(2k-1)x+k^2=0$ 兩根都大於 1：只寫 $x_1+x_2&gt;2$、$x_1x_2&gt;1$ 不夠，要寫判別式 $\ge0$、$(x_1-1)+(x_2-1)&gt;0$、$(x_1-1)(x_2-1)&gt;0$，得 $k&lt;-2$。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>把大前提的條件和結論顛倒（拿「直角 ⇒ 勾股」去證「勾股 ⇒ 直角」）</li>
+<li>反證法的否定寫錯，或只驗證了一個特例</li>
+<li>用距離公式證勾股定理：循環論證</li></ul></div>
+<div class="bottomline">直接證不出來，就證逆否命題；千萬別誤證成逆命題。</div>

@@ -1,0 +1,22 @@
+=== meta
+title: 三面角與三角形的類比
+from: gz-L10
+order: 50
+
+=== body
+<div class="hero">三面角的<b>面角</b>對應三角形的<b>邊</b>，<b>二面角</b>對應三角形的<b>角</b><br>結論大多平行，但有例外：三個二面角的和 <b>大於 π</b></div>
+<div class="cards">
+<div class="card"><h4>① 不等式</h4><div class="rule">面角：兩面角之差 &lt; 第三面角 &lt; 兩面角之和</div>
+<div class="eg">三個面角和 $&lt;2\pi$<br>三個二面角和 $&gt;\pi$（三角形是 $=\pi$）</div></div>
+<div class="card"><h4>② 正弦定理</h4><div class="rule">$\frac{\sin\alpha}{\sin A}=\frac{\sin\beta}{\sin B}=\frac{\sin\gamma}{\sin C}$</div>
+<div class="eg">兩個面角相等 ⟺ 所對的二面角相等<br><span class="pill">等腰三面角</span></div></div>
+<div class="card"><h4>③ 餘弦定理</h4><div class="rule">$\cos\gamma=\cos\alpha\cos\beta+\sin\alpha\sin\beta\cos C$</div>
+<div class="eg">$C=90^\circ$ 時：$\cos\gamma=\cos\alpha\cos\beta$<br>（立體版的勾股）</div></div>
+<div class="card"><h4>④ 平分面定理</h4><div class="rule">分對稜之比＝兩界面面積比</div>
+<div class="eg">對應三角形的角平分線定理<br>$\frac{MC}{MB}=\frac{S_{ADC}}{S_{ADB}}$</div></div>
+</div>
+<p>第二餘弦定理怎麼來？⟦補三面角｜作補三面角：它的面角是原二面角的補角，二面角是原面角的補角。對它用第一餘弦定理，再把 $\pi-x$ 換回來，得 $\cos A=-\cos B\cos C+\sin B\sin C\cos\alpha$。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>把三角形「內角和 $=\pi$」直接搬到三面角</li>
+<li>二面角為鈍角時，投影的平面角要用補角</li></ul></div>
+<div class="bottomline">立體三法：投影到一個面、化立體為平面、用面積體積算兩次。</div>

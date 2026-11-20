@@ -1,0 +1,20 @@
+=== meta
+title: 邏輯推理：從極端入手、二難推理
+from: gz-L06
+order: 60
+
+=== body
+<div class="hero">先看<b>最極端</b>的那一個（握手最多的人、最差的棋手）<br>分不出是哪種情形？兩種都推出同一結論 → <b>二難推理</b></div>
+<div class="cards">
+<div class="card"><h4>① 從極端配對</h4><div class="rule">次數 0～32 各一人</div>
+<div class="eg">握 32 次的人，只有握 0 次的人沒和他握<br>⇒ 兩人同國；剝掉再重複<br>剩下 $t_{16}$ <span class="pill">答 16</span></div></div>
+<div class="card"><h4>② 二難推理</h4><div class="rule">若 $A$ 則 $C$，若 $B$ 則 $C$；$A$ 或 $B$ ⇒ $C$</div>
+<div class="eg">$r\ne0$：$r\in S$ 或 $-r\in S$，<br>兩種都得 $r^2\in S$</div></div>
+<div class="card"><h4>③ 數字化</h4><div class="rule">對記 $+1$、錯記 $-1$</div>
+<div class="eg">判「對」的人得 $x_i$ 分；<br>四式相加剛好卡到上界 8 ⇒ 每個 $x_i$ 都定了</div></div>
+</div>
+<p>例：$\{1,\dots,15\}$ 分成兩組，必有一組含兩數之和為平方數。⟦推理鏈｜$1\in A\Rightarrow3\in B\Rightarrow6\in A\Rightarrow10\in B$；$15$ 放 $A$ 有 $1+15=16$，放 $B$ 有 $10+15=25$，兩邊都不行。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>假設一個答案、驗證不矛盾，就斷言它對（只說明了「可能」）</li>
+<li>只排除一部分情形就下結論：要列出所有情形逐一排除</li></ul></div>
+<div class="bottomline">先列出所有可能，再一個一個用矛盾刪掉，剩下的就是答案。</div>

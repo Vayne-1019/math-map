@@ -1,0 +1,161 @@
+=== meta
+title: 命題轉換與解法探求
+author: 杜錫錄
+pages: 4-10
+units: G-7-5, G-8-1
+status: 完成
+
+=== text
+<p>競賽裡的「新題」，很多其實是把一道好的舊題換個面貌：把結論和條件對調、把幾何條件改寫成三角式、把代數式看成距離。出題者常這樣做，解題者如果也會這一套，對題目的理解就深了一層。</p>
+<p>所以做完一道好題，不要立刻丟下。問自己四件事：</p>
+<ol>
+<li>還有別的解法嗎？</li>
+<li>這些解法裡，哪一個最本質、最簡單？</li>
+<li>能用這些解法把題目改一改嗎？改完自己試著做。</li>
+<li>從最本質的那個解法出發，能推廣嗎？</li>
+</ol>
+<p>下面用一道等腰三角形的題目，示範一題怎麼長出好幾題。</p>
+
+=== 例 1 | 頂角 100° 的等腰三角形
+zh: 在 $\triangle ABC$ 中，$AB=AC$，$\angle A=100^\circ$，$\angle B$ 的平分線交 $AC$ 於 $D$。證明：$BC=BD+AD$。
+sol: <figure class="bkfig"><svg viewBox="0 0 320 160" width="320" role="img" aria-label="等腰三角形 ABC，頂角 100°，BD 平分角 B"><g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="160.0,22.0 22.0,137.8 298.0,137.8"/><line x1="22.0" y1="137.8" x2="214.5" y2="67.7"/><line x1="214.5" y1="67.7" x2="202.1" y2="137.8" stroke-dasharray="5 4"/><line x1="214.5" y1="67.7" x2="226.9" y2="137.8" stroke-dasharray="5 4"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="155.0" y="14.0">A</text><text x="8.0" y="151.8">B</text><text x="302.0" y="151.8">C</text><text x="218.5" y="61.7">D</text><text x="194.1" y="154.8">A′</text><text x="224.9" y="154.8">D′</text></g></svg><figcaption>在 BC 上取 BA′＝BA、DD′＝DA′（虛線）</figcaption></figure>
+<b>想法</b>：要證「一段等於兩段的和」，就在長的那段 $BC$ 上切出一段等於 $BD$，再證剩下的等於 $AD$。
+<p>先把 $\triangle ABD$ 沿 $BD$ 翻折：在 $BC$ 上取 $A'$ 使 $BA'=BA$，連 $DA'$。⟦顯然｜$BA=BA'$，$\angle ABD=\angle A'BD$（$BD$ 是角平分線），$BD$ 共用，所以 SAS 全等。⟧$\triangle ABD\cong\triangle A'BD$，因此 $DA'=DA$，$\angle BA'D=\angle A=100^\circ$。</p>
+<p>再在 $BC$ 上取 $D'$ 使 $DD'=DA'$，連 $DD'$。由於 $\angle B=\angle C=40^\circ$，各角依序為：</p>
+$$\begin{aligned}
+&\angle DA'D'=180^\circ-100^\circ=80^\circ\\
+&\Rightarrow \angle DD'A'=80^\circ\ (\text{等腰})\\
+&\Rightarrow \angle A'DD'=20^\circ.
+\end{aligned}$$
+<p>又 $\angle BDA'=\angle BDA=180^\circ-100^\circ-20^\circ=60^\circ$，所以 $\angle BDD'=60^\circ+20^\circ=80^\circ=\angle BD'D$，得 $BD'=BD$。</p>
+<p>最後看 $\triangle DD'C$：$\angle DD'C=180^\circ-80^\circ=100^\circ$，所以 $\angle D'DC=180^\circ-100^\circ-40^\circ=40^\circ=\angle C$，得 $CD'=DD'=DA'=AD$。於是</p>
+$$BC=BD'+D'C=BD+AD.$$
+<p><b>關鍵</b>：把 $\triangle ABD$ 以 $BD$ 為軸翻折（對稱變換），以及 $AD=DA'=DD'=D'C$ 這一串相等的線段。</p>
+
+=== text
+<h3>一、條件與結論都「唯一」，逆命題也成立</h3>
+<p>例 1 有三個條件、一個結論，每一個都「只能有一種畫法」：</p>
+<ul>
+<li>$AB=AC$：作一段等於已知線段，只有一種；</li>
+<li>$BD$ 平分 $\angle B$：角平分線只有一條；</li>
+<li>$\angle A=100^\circ$：作等於已知角的角，只有一種；</li>
+<li>$BC=BD+AD$：作等於兩段和的線段，只有一種。</li>
+</ul>
+<p>條件和結論都滿足這種唯一性時，把某個條件和結論對調，得到的命題通常也成立。這樣就能從一題得到一系列有難度的新題。先看其中一個逆命題。</p>
+
+=== 例 2 | 例 1 的逆命題
+zh: 在 $\triangle ABC$ 中，$AB=AC$，$\angle B$ 的平分線交 $AC$ 於 $D$，且 $BC=BD+AD$。求證 $\angle A=100^\circ$（或：求 $\triangle ABC$ 的三個角）。
+sol: 圖同例 1。在 $BC$ 上取 $A'$ 使 $BA'=BA$，連 $DA'$，和例 1 一樣 $\triangle ABD\cong\triangle A'BD$，所以 $AD=DA'$。
+<p>設 $\angle B=2x$，則</p>
+$$\begin{aligned}
+&\angle C=2x,\quad \angle A=180^\circ-4x,\\
+&\angle ADB=\angle A'DB=3x,\quad \angle DA'C=4x.
+\end{aligned}$$
+⟦這些角怎麼來｜$\angle ADB=180^\circ-\angle A-\angle ABD=180^\circ-(180^\circ-4x)-x=3x$；全等得 $\angle A'DB=3x$。<br>$\angle BA'D=\angle A=180^\circ-4x$，所以鄰補角 $\angle DA'C=4x$。⟧
+<p>在 $BC$ 上取 $D'$，使 $\angle CDD'=2x$，則 $\triangle CDD'$ 兩底角都是 $2x$，所以 $CD'=DD'$。</p>
+<p>$\angle DD'A'$ 是 $\triangle CDD'$ 的外角，等於 $2x+2x=4x=\angle DA'D'$，所以 $\triangle DA'D'$ 也等腰，$DD'=DA'$。合起來</p>
+$$CD'=DD'=DA'=AD.$$
+<p>由條件 $BC=BD+AD=BD+CD'$，又 $BC=BD'+D'C$，所以 $BD'=BD$，$\triangle BDD'$ 等腰：$\angle BDD'=\angle BD'D=4x$。於是</p>
+$$\angle A'DD'=\angle BDD'-\angle BDA'=4x-3x=x.$$
+<p>在 $\triangle A'DD'$ 中三個角是 $x,4x,4x$，所以 $9x=180^\circ$，$x=20^\circ$，$\angle A=180^\circ-80^\circ=100^\circ$，$\angle B=\angle C=40^\circ$。</p>
+<p><b>注</b>：和例 1 一樣，關鍵是翻折得到的全等 $\triangle ABD\cong\triangle A'BD$，以及四條相等的線段 $AD=DA'=DD'=CD'$。</p>
+
+=== text
+<h3>二、換成三角的面貌</h3>
+<p>例 1 也可以完全用正弦定理算出來。</p>
+<p><b>例 1 的三角證法</b>：$\angle BDC$ 是 $\triangle ABD$ 的外角，$\angle BDC=A+\tfrac B2=120^\circ$。在 $\triangle BCD$ 中用正弦定理：</p>
+$$BD=\frac{\sin C}{\sin\angle BDC}\,BC=\frac{\sin40^\circ}{\sin60^\circ}\,BC.$$
+<p>在 $\triangle ABD$ 中用正弦定理：</p>
+$$AD=\frac{\sin\frac B2}{\sin A}\,BD=\frac{\sin20^\circ}{\sin100^\circ}\cdot\frac{\sin40^\circ}{\sin60^\circ}\,BC.$$
+<p>相加：</p>
+$$\begin{aligned}
+BD+AD&=BC\cdot\frac{\sin40^\circ}{\sin60^\circ}\cdot\frac{\sin100^\circ+\sin20^\circ}{\sin100^\circ}\\
+&=BC\cdot\frac{\sin40^\circ}{\sin60^\circ}\cdot\frac{2\sin60^\circ\cos40^\circ}{\sin100^\circ}\\
+&=BC\cdot\frac{\sin80^\circ}{\sin100^\circ}=BC.
+\end{aligned}$$
+⟦和差化積這一步｜$\sin\alpha+\sin\beta=2\sin\frac{\alpha+\beta}2\cos\frac{\alpha-\beta}2$，取 $\alpha=100^\circ,\beta=20^\circ$ 得 $2\sin60^\circ\cos40^\circ$。之後 $2\sin40^\circ\cos40^\circ=\sin80^\circ$，而 $\sin80^\circ=\sin100^\circ$。⟧
+<p>既然三角法這麼直接，可以更進一步：把題目<b>所有條件</b>都改寫成三角式，把它徹底改造成一道三角題。</p>
+<ul>
+<li>等腰 $AB=AC$ 等價於 $a=2b\cos C$。⟦為什麼｜$AB=AC$ 時，從 $A$ 作 $BC$ 的垂線，垂足是 $BC$ 中點，所以 $\frac a2=b\cos C$。反過來也成立（見例 3 的解）。⟧</li>
+<li>出現 $\frac B2$ 就暗含角平分線。仿照上面的算法，$BC=BD+AD$ 可以改寫成
+$$\sin A\sin\Big(\frac B2+C\Big)=\sin C\Big(\sin\frac B2+\sin A\Big).$$
+⟦怎麼改寫｜由上面兩次正弦定理，$BD=\dfrac{\sin C}{\sin(A+\frac B2)}a$，$AD=\dfrac{\sin\frac B2}{\sin A}BD$。代入 $a=BD+AD=BD\cdot\dfrac{\sin A+\sin\frac B2}{\sin A}$，整理得 $\sin A\sin(A+\tfrac B2)=\sin C(\sin A+\sin\tfrac B2)$。再用 $A+\tfrac B2=180^\circ-(\tfrac B2+C)$，正弦值相同。⟧</li>
+</ul>
+<p>於是得到下面這一題。</p>
+
+=== 例 3 | 改造成三角題
+src: 1979 年安徽省數學競賽第一試第 9 題
+zh: 在 $\triangle ABC$ 中，已知 $a=2b\cos C$，且 $\sin A\sin\big(\frac B2+C\big)=\sin C\big(\sin\frac B2+\sin A\big)$。求這個三角形的各角度數（不用反三角函數表示）。
+sol: 由投影公式 $a=b\cos C+c\cos B$⟦投影公式｜從 $A$ 作 $BC$ 的垂線，$BC$ 被垂足分成 $c\cos B$ 和 $b\cos C$ 兩段（鈍角時一段取負號，公式仍成立）。⟧，和條件 $a=2b\cos C$ 比較，得 $b\cos C=c\cos B$。再用正弦定理 $b=2R\sin B$、$c=2R\sin C$：
+$$\sin B\cos C-\cos B\sin C=0\ \Rightarrow\ \sin(B-C)=0.$$
+所以 $B=C$，$A=\pi-2B$，且 $0\lt B\lt \frac\pi2$。
+<p>代入第二個條件：$\sin A=\sin2B$，$\frac B2+C=\frac{3B}2$，得</p>
+$$\sin2B\sin\frac{3B}2=\sin B\Big(\sin\frac B2+\sin2B\Big).$$
+兩邊除以 $\sin B$（$\sin2B=2\sin B\cos B$）：
+$$2\cos B\sin\frac{3B}2=\sin\frac B2+\sin2B.$$
+左邊積化和差⟦積化和差｜$2\cos\alpha\sin\beta=\sin(\beta+\alpha)+\sin(\beta-\alpha)$，取 $\alpha=B,\ \beta=\frac{3B}2$。⟧等於 $\sin\frac{5B}2+\sin\frac B2$，所以
+$$\sin\frac{5B}2=\sin2B\ \Rightarrow\ 2\sin\frac B4\cos\frac{9B}4=0.$$
+因為 $0\lt B\lt \frac\pi2$，$\sin\frac B4\ne0$，所以 $\cos\frac{9B}4=0$。又 $0\lt \frac{9B}4\lt \frac{9\pi}8$，只能 $\frac{9B}4=\frac\pi2$，即 $B=\frac{2\pi}9$。
+ans: $A=\dfrac{5\pi}9,\ B=C=\dfrac{2\pi}9$（即 $100^\circ,40^\circ,40^\circ$）。
+
+=== text
+<p>如果沒有前面的分析，很難看出例 3 是從例 1 變來的；就算熟悉例 1，大概也要算出答案後才恍然大悟。讀者可以試著把例 1 的其他逆命題、否命題、逆否命題都寫出來，再改寫成三角形式（見思考題 1）。</p>
+<h3>三、代數式背後的幾何</h3>
+<p>例 1 也能用解析幾何做，比較簡單但沒有特色，這裡不談。下面這題是 1983 年美國普特南大學生數學競賽題，展示解析幾何的妙用。</p>
+
+=== 例 4 | 看成兩點距離
+src: 1983 年美國普特南數學競賽
+zh: 求二元函數 $f(u,v)=(u-v)^2+\Big(\sqrt{2-u^2}-\dfrac9v\Big)^2$ 的最小值。
+sol: 直接用微積分求極值很麻煩。注意 $f$ 是兩點距離的平方，這兩點是
+$$P\big(u,\sqrt{2-u^2}\big),\qquad Q\Big(v,\frac9v\Big).$$
+$P$ 滿足 $u^2+(\sqrt{2-u^2})^2=2$，在圓 $x^2+y^2=2$ 上（上半圓）；$Q$ 滿足 $v\cdot\frac9v=9$，在雙曲線 $xy=9$ 上。所以題目其實是：
+<p style="text-align:center"><b>求圓 $x^2+y^2=2$ 和雙曲線 $xy=9$ 之間的最短距離。</b></p>
+<figure class="bkfig"><svg viewBox="0 0 260 260" width="260" role="img" aria-label="圓 x²+y²=2 與雙曲線 xy=9，最近兩點 P(1,1)、Q(3,3)"><g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="22.0" y1="190.0" x2="238.0" y2="190.0"/><line x1="70.0" y1="238.0" x2="70.0" y2="22.0"/><line x1="70.0" y1="190.0" x2="94.0" y2="166.0" stroke-dasharray="5 4"/><line x1="94.0" y1="166.0" x2="142.0" y2="118.0" stroke="#c2562b" stroke-width="2"/><circle cx="70.0" cy="190.0" r="33.9"/></g><g fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="101.2,23.8 102.4,30.0 103.6,35.7 104.8,41.0 106.0,46.0 107.2,50.6 108.4,55.0 109.6,59.1 110.8,62.9 112.0,66.6 113.2,70.0 114.4,73.2 115.6,76.3 116.8,79.2 118.0,82.0 119.2,84.6 120.4,87.1 121.6,89.5 122.8,91.8 124.0,94.0 125.2,96.1 126.4,98.1 127.6,100.0 128.8,101.8 130.0,103.6 131.2,105.3 132.4,106.9 133.6,108.5 134.8,110.0 136.0,111.5 137.2,112.9 138.4,114.2 139.6,115.5 140.8,116.8 142.0,118.0 143.2,119.2 144.4,120.3 145.6,121.4 146.8,122.5 148.0,123.5 149.2,124.5 150.4,125.5 151.6,126.5 152.8,127.4 154.0,128.3 155.2,129.2 156.4,130.0 157.6,130.8 158.8,131.6 160.0,132.4 161.2,133.2 162.4,133.9 163.6,134.6 164.8,135.3 166.0,136.0 167.2,136.7 168.4,137.3 169.6,138.0 170.8,138.6 172.0,139.2 173.2,139.8 174.4,140.3 175.6,140.9 176.8,141.5 178.0,142.0 179.2,142.5 180.4,143.0 181.6,143.5 182.8,144.0 184.0,144.5 185.2,145.0 186.4,145.5 187.6,145.9 188.8,146.4 190.0,146.8 191.2,147.2 192.4,147.6 193.6,148.1 194.8,148.5 196.0,148.9 197.2,149.2 198.4,149.6 199.6,150.0 200.8,150.4 202.0,150.7 203.2,151.1 204.4,151.4 205.6,151.8 206.8,152.1 208.0,152.4 209.2,152.8 210.4,153.1 211.6,153.4 212.8,153.7 214.0,154.0 215.2,154.3 216.4,154.6 217.6,154.9 218.8,155.2 220.0,155.4 221.2,155.7 222.4,156.0 223.6,156.2 224.8,156.5 226.0,156.8 227.2,157.0 228.4,157.3 229.6,157.5 230.8,157.8 232.0,158.0 233.2,158.2 234.4,158.5 235.6,158.7 236.8,158.9 238.0,159.1"/></g><g font-size="12" fill="currentColor"><text x="195" y="137">xy=9</text><text x="24" y="236">x²+y²=2</text></g><g fill="currentColor"><circle cx="94.0" cy="166.0" r="2.5"/><circle cx="142.0" cy="118.0" r="2.5"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="56.0" y="204.0">O</text><text x="98.0" y="180.0">P</text><text x="148.0" y="122.0">Q</text></g></svg><figcaption>P(1,1) 與 Q(3,3) 都在直線 y=x 上，PQ＝2√2</figcaption></figure>
+初看是代數題，本質卻是幾何題；想到這一點，題目就簡單了。完整解答見思考題 2。
+<p>例 4 還能再變：把圓和雙曲線寫成參數式 $x=\sqrt2\cos\theta,\ y=\sqrt2\sin\theta$ 與 $x=3\tan\varphi,\ y=3\cot\varphi$，代進去就變成一道三角題：</p>
+<p style="text-align:center">求 $f(\theta,\varphi)=(\sqrt2\cos\theta-3\tan\varphi)^2+(\sqrt2\sin\theta-3\cot\varphi)^2$ 的最小值。</p>
+
+=== text
+<p><b>結語</b>：這種「變形與聯想」的想法很重要，平常做題時要多留意。</p>
+<p class="note">原書本講只附「思考題」，書末沒有答案；下面的解答是本站補寫的。</p>
+
+=== 思考題 1
+zh: 把例 1 的所有逆命題、否命題、逆否命題寫出來。能不能把它們改成三角形式？試給出證明。
+hint: 例 1 的條件是 (a) $AB=AC$，(b) $\angle A=100^\circ$，(c) $BD$ 平分 $\angle B$；結論是 (d) $BC=BD+AD$。逆命題就是用 (d) 換掉 (a)、(b)、(c) 中的一個。
+sol: <b>三個逆命題</b>（都假設 $D$ 在 $AC$ 上）：
+<ul>
+<li>(a)(c)(d) ⇒ (b)：就是例 2。</li>
+<li>(a)(b)(d) ⇒ (c)：$AB=AC$，$\angle A=100^\circ$，$BC=BD+AD$，則 $BD$ 平分 $\angle B$。</li>
+<li>(b)(c)(d) ⇒ (a)：$\angle A=100^\circ$，$BD$ 平分 $\angle B$，$BC=BD+AD$，則 $AB=AC$。</li>
+</ul>
+<b>否命題</b>：保留兩個條件、否定第三個條件，結論改成「$BC\ne BD+AD$」，例如「$AB=AC$，$BD$ 平分 $\angle B$，$\angle A\ne100^\circ$，則 $BC\ne BD+AD$」。它正是對應逆命題（例 2）的逆否命題，所以和逆命題同真同假。<b>逆否命題</b>：「若 $BC\ne BD+AD$，且 $AB=AC$、$BD$ 平分 $\angle B$，則 $\angle A\ne100^\circ$」，和例 1 本身等價。所以只要證明三個逆命題。
+<p><b>證 (a)(b)(d) ⇒ (c)</b>：$\angle A=100^\circ$ 是鈍角，從 $B$ 到直線 $AC$ 的垂足落在 $CA$ 的延長線上，所以 $D$ 從 $A$ 往 $C$ 移動時，$BD$ 和 $AD$ 都嚴格變大⟦為什麼 BD 變大｜$BD^2=BH^2+HD^2$，$H$ 是垂足。$H$ 在 $A$ 的外側，$D$ 越往 $C$ 走離 $H$ 越遠。⟧，$BD+AD$ 嚴格遞增，滿足 $BC=BD+AD$ 的點至多一個。由例 1，角平分線與 $AC$ 的交點就滿足，所以 $D$ 就是它。</p>
+<p><b>證 (b)(c)(d) ⇒ (a)</b>，用三角形式。設 $\frac B2=t$，$0\lt t\lt 40^\circ$，$C=80^\circ-2t$。條件 (d) 的三角形式是 $\sin A\sin(\frac B2+C)=\sin C(\sin\frac B2+\sin A)$，即</p>
+$$\sin80^\circ\big[\sin(80^\circ-t)-\sin(80^\circ-2t)\big]=\sin(80^\circ-2t)\sin t.$$
+左邊方括號和差化積成 $2\cos(80^\circ-\tfrac32t)\sin\tfrac t2$，右邊 $\sin t=2\sin\frac t2\cos\frac t2$，約去 $2\sin\frac t2$，再積化和差，整理成
+$$g(t)=\sin\big(20^\circ+\tfrac32t\big)+\sin\tfrac32t-\sin\big(80^\circ-\tfrac32t\big)-\sin\big(80^\circ-\tfrac52t\big)=0.$$
+⟦積化和差細節｜左：$\sin80^\circ\cos(80^\circ-\tfrac32t)=\tfrac12[\sin(160^\circ-\tfrac32t)+\sin\tfrac32t]$，而 $\sin(160^\circ-\tfrac32t)=\sin(20^\circ+\tfrac32t)$。<br>右：$\sin(80^\circ-2t)\cos\tfrac t2=\tfrac12[\sin(80^\circ-\tfrac32t)+\sin(80^\circ-\tfrac52t)]$。⟧
+當 $0\lt t\lt 40^\circ$ 時，四個正弦的角度都落在 $(-90^\circ,90^\circ)$ 內，前兩項隨 $t$ 遞增、後兩項（帶負號）也隨 $t$ 遞增，所以 $g$ 嚴格遞增，至多一個根。而 $g(20^\circ)=\sin50^\circ+\sin30^\circ-\sin50^\circ-\sin30^\circ=0$，所以 $t=20^\circ$，$B=40^\circ=C$，$AB=AC$。
+ans: 三個逆命題都成立；否命題與逆否命題分別和逆命題、原命題等價，也都成立。
+
+=== 思考題 2
+zh: 把例 4 解出來。
+hint: 圓上的點到原點距離是 $\sqrt2$；雙曲線 $xy=9$ 上的點到原點距離至少多少？
+sol: 設 $P$ 在圓 $x^2+y^2=2$ 上，$Q(x,y)$ 在雙曲線 $xy=9$ 上。因為
+$$x^2+y^2\ge2|xy|=18,$$
+所以 $OQ\ge3\sqrt2$。由三角不等式
+$$PQ\ge OQ-OP\ge3\sqrt2-\sqrt2=2\sqrt2,$$
+所以 $f(u,v)=PQ^2\ge8$。當 $u=1,\ v=3$ 時，$P(1,1)$、$Q(3,3)$ 都在直線 $y=x$ 上，$f(1,3)=(1-3)^2+(1-3)^2=8$，等號成立。
+ans: 最小值為 $8$（在 $u=1,v=3$ 時取到）。
+
+=== 思考題 3
+src: 1978 年羅馬尼亞競賽題
+zh: 對於實數 $a$，求 $\sqrt{a^2+a+1}-\sqrt{a^2-a+1}$ 的所有可能值。
+hint: 配方後看成點 $(a,0)$ 到兩個定點的距離差。
+sol: 配方：
+$$a^2\pm a+1=\Big(a\pm\frac12\Big)^2+\Big(\frac{\sqrt3}2\Big)^2.$$
+所以原式是 $x$ 軸上的點 $M(a,0)$ 到 $E\big(-\frac12,\frac{\sqrt3}2\big)$ 和 $F\big(\frac12,\frac{\sqrt3}2\big)$ 的距離差 $ME-MF$。$M,E,F$ 不共線，由三角不等式 $|ME-MF|\lt EF=1$，所以值在 $(-1,1)$ 內。
+<p>反過來，記 $h(a)=ME-MF$，它是連續的奇函數，$h(0)=0$，而且</p>
+$$h(a)=\frac{(a^2+a+1)-(a^2-a+1)}{\sqrt{a^2+a+1}+\sqrt{a^2-a+1}}=\frac{2a}{\sqrt{a^2+a+1}+\sqrt{a^2-a+1}}\to1\quad(a\to+\infty).$$
+由連續性（中間值定理），$h$ 取遍 $(0,1)$，再由奇函數取遍 $(-1,0)$。
+ans: 所有可能值為開區間 $(-1,1)$。
