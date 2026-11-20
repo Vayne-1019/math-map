@@ -2,7 +2,7 @@
 
 給台灣數學教育圈的競賽數學知識平台：代數（A）、數論（N）、組合（C）、幾何（G）四大領域的單元地圖，每個單元補上思路，題目標出處、分難度，一題多解互相連結。
 
-網站：https://vayne-poker.github.io/math-map/
+網站：https://vayne-1019.github.io/math-map/
 
 ## 內容
 
