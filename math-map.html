@@ -12,6 +12,7 @@ window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] 
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraphcore.js"></script>
 <script src="curric.js"></script>
+<script src="board.js"></script>
 <style>
 /* Layout: a narrow reading column under a sticky bar; the map is a stack of four domain blocks. */
 :root {
@@ -194,6 +195,39 @@ table.rate th { color: var(--muted); font-weight: 500; white-space: nowrap; }
 .ob .obt[aria-expanded="true"]::after { content: " ▲"; }
 .ob .obx { display: block; margin: 6px 0 8px; padding: 8px 12px; border-left: 3px solid var(--accent); background: var(--accent-weak); border-radius: 0 6px 6px 0; font-size: .95em; }
 .ob .obx[hidden] { display: none; }
+/* 畫板 */
+.gb { display: flex; flex-direction: column; gap: 6px; min-height: 0; }
+.gb-groups, .gb-tools, .gb-foot { display: flex; flex-wrap: wrap; gap: 5px; }
+.gb button { font: inherit; font-size: .88rem; border: 1px solid var(--line); background: var(--surface); color: var(--fg); border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.gb-groups button.on { background: var(--accent-weak); border-color: var(--accent); color: var(--accent); font-weight: 700; }
+.gb-tools button.on { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+.gb-tools { padding: 6px; border-radius: 8px; background: var(--bg); min-height: 38px; }
+.gb-status { font-size: .86rem; color: var(--muted); min-height: 1.5em; }
+.gb-stage { position: relative; flex: 1; min-height: 0; }
+.gb-box { position: relative; overflow: hidden; touch-action: none; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; width: 100%; aspect-ratio: 4 / 3; }
+.gb-view { position: absolute; right: 8px; top: 8px; display: flex; flex-direction: column; gap: 4px; z-index: 5; }
+.gb-view button { width: 34px; height: 34px; padding: 0; font-size: 1.05rem; line-height: 1; opacity: .92; }
+.gb-list { max-height: 30vh; overflow: auto; border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; font-size: .88rem; }
+.gb-list ul { list-style: none; margin: 0; padding: 0; } .gb-list li { padding: 2px 0; } .gb-list span { color: var(--muted); } .gb-list .v { font-variant-numeric: tabular-nums; }
+.tostudy { display: block; margin: 6px auto 0; font: inherit; font-size: .85rem; border: 1px solid var(--accent); color: var(--accent); background: var(--surface); border-radius: 14px; padding: 3px 12px; cursor: pointer; }
+#study { position: fixed; z-index: 50; background: var(--bg); border-left: 1px solid var(--line); display: flex; flex-direction: column; padding: 10px 12px; gap: 6px; }
+.study-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.study-head .note { flex: 1; }
+.study-x { font: inherit; border: 1px solid var(--line); background: var(--surface); color: var(--fg); border-radius: 6px; width: 34px; height: 34px; cursor: pointer; }
+.study-body { flex: 1; min-height: 0; display: flex; }
+.study-body .gb { flex: 1; }
+.study-body .gb-box { aspect-ratio: auto; height: 100%; min-height: 220px; }
+.studying-src { box-shadow: 0 0 0 2px var(--accent); scroll-margin-top: 120px; }
+@media (min-width: 900px) {
+  #study { top: 0; right: 0; bottom: 0; width: 50vw; }
+  body.studying main { max-width: none; margin: 0 calc(50vw + 8px) 0 0; padding-inline: 16px; }
+  body.studying header.bar { margin-right: 50vw; }
+}
+@media (max-width: 899px) {
+  #study { left: 0; right: 0; bottom: 0; height: 58vh; border-left: 0; border-top: 1px solid var(--line); box-shadow: 0 -6px 18px rgba(0,0,0,.12); padding: 8px 10px; }
+  body.studying main { padding-bottom: 60vh; }
+  .study-head .note { display: none; }
+}
 /* 兩個入口 */
 .zhq { margin: .4em 0; line-height: 1.75; }
 .resume { display: flex; flex-direction: column; gap: 4px; padding: 14px 16px; border-radius: 10px; border: 1px solid var(--accent); background: var(--accent-weak); color: var(--fg); }
@@ -965,15 +999,8 @@ function viewBankAMC() {
 }
 
 function viewBoard() {
-  return `<div><h1>畫板</h1><p class="lead">自己畫圖、量測，先猜性質再證明。點在線或圓上時，新的點會黏在上面，可以沿著滑動。</p></div>
-  <section class="panel">
-    <div class="tools" id="tools">
-      ${[['move', '移動'], ['point', '點'], ['segment', '線段'], ['line', '直線'], ['circle', '圓（圓心＋一點）'], ['midpoint', '中點'], ['intersect', '交點'], ['dist', '量長'], ['angle', '量角']].map(([k, n]) => `<button type="button" data-mode="${k}"${k === 'move' ? ' class="on"' : ''}>${n}</button>`).join('')}
-      <button type="button" data-act="undo">復原</button><button type="button" data-act="clear">清除</button>
-    </div>
-    <p class="status" id="status">拖動任一點。選上方工具開始畫。</p>
-    <div class="demo" data-demo="sandbox"></div>
-  </section>`;
+  return `<div><h1>畫板</h1><p class="lead">自己畫圖、量測，先猜性質再證明。上排選工具類別，下排選工具；滾輪或雙指可以縮放，拖空白處可以移動畫面。書上的幾何附圖下方有「在畫板研究」，會在題目右邊開一個載入那張圖的畫板。</p></div>
+  <section class="panel"><div class="demo gbhost" data-demo="sandbox"></div></section>`;
 }
 
 function viewSources() {
@@ -1127,56 +1154,8 @@ const DEMOS = {
     b.on('update', upd); upd();
   },
   sandbox(el) {
-    const c = palette(), box = document.createElement('div'); el.appendChild(box);
-    const b = makeBoard(box, [-6, 4.5, 6, -4.5]);
-    let mode = 'move', picks = [], hist = [], letter = 0;
-    const status = document.getElementById('status');
-    const nextName = () => { const s = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'; const n = s[letter % 26] + (letter >= 26 ? Math.floor(letter / 26) : ''); letter++; return n; };
-    const need = { point: 1, segment: 2, line: 2, circle: 2, midpoint: 2, dist: 2, angle: 3, intersect: 2 };
-    const hint = { move: '拖動任一點。', point: '點一下放一個點。', segment: '依序點兩個點。', line: '依序點兩個點。', circle: '先點圓心，再點圓上一點。', midpoint: '點兩個點。', intersect: '點兩條線或圓。', dist: '點兩個點。', angle: '依序點三個點，中間那個是頂點。' };
-    const setStatus = () => { status.textContent = hint[mode] + (picks.length && need[mode] > 1 ? `（已選 ${picks.length} / ${need[mode]}）` : ''); };
-    const P = (xy, on) => { const o = { name: nextName(), size: 3.5, strokeColor: c.fg, fillColor: c.fg, label: { strokeColor: c.fg, fontSize: 14 } };
-      return on ? b.create('glider', [xy[0], xy[1], on], o) : b.create('point', xy, o); };
-    const hit = (pos, kinds) => Object.values(b.objects).find(o => kinds.includes(o.elementClass) && o.visPropCalc && o.visPropCalc.visible && o.hasPoint(pos[0], pos[1]));
-    const commit = els => { hist.push(els.filter(Boolean)); picks = []; setStatus(); };
-    b.on('down', e => {
-      if (mode === 'move') return;
-      const pos = b.getMousePosition(e), uc = new JXG.Coords(JXG.COORDS_BY_SCREEN, pos, b).usrCoords.slice(1);
-      if (mode === 'intersect') {
-        const o = hit(pos, [JXG.OBJECT_CLASS_LINE, JXG.OBJECT_CLASS_CIRCLE]); if (!o || picks.includes(o)) return;
-        picks.push(o); if (picks.length < 2) return setStatus();
-        const two = picks.some(x => x.elementClass === JXG.OBJECT_CLASS_CIRCLE);
-        const io = i => b.create('intersection', [picks[0], picks[1], i], { name: nextName(), size: 3.5, strokeColor: c.warm, fillColor: c.warm, label: { strokeColor: c.warm, fontSize: 14 } });
-        return commit(two ? [io(0), io(1)] : [io(0)]);
-      }
-      let created = null, p = hit(pos, [JXG.OBJECT_CLASS_POINT]);
-      if (!p) { created = P(uc, hit(pos, [JXG.OBJECT_CLASS_LINE, JXG.OBJECT_CLASS_CIRCLE])); p = created; }
-      if (mode === 'point') return commit([created]);
-      if (picks.includes(p)) return; picks.push(p); if (created) (picks.made = picks.made || []).push(created);
-      if (picks.length < need[mode]) return setStatus();
-      const made = picks.made || [], [p1, p2, p3] = picks; let els = [];
-      if (mode === 'segment') els = [b.create('segment', [p1, p2], { strokeColor: c.fg, strokeWidth: 2 })];
-      if (mode === 'line') els = [b.create('line', [p1, p2], { strokeColor: c.accent, strokeWidth: 1.5 })];
-      if (mode === 'circle') els = [b.create('circle', [p1, p2], { strokeColor: c.fg, strokeWidth: 2 })];
-      if (mode === 'midpoint') els = [b.create('midpoint', [p1, p2], { name: nextName(), size: 3.5, strokeColor: c.warm, fillColor: c.warm, label: { strokeColor: c.warm, fontSize: 14 } })];
-      if (mode === 'dist') els = [b.create('segment', [p1, p2], { strokeColor: c.muted, dash: 2 }), b.create('text', [() => (p1.X() + p2.X()) / 2 + 0.15, () => (p1.Y() + p2.Y()) / 2 + 0.3, () => p1.Dist(p2).toFixed(2)], { strokeColor: c.accent, fontSize: 14 })];
-      if (mode === 'angle') {
-        const deg = () => { const ax = p1.X() - p2.X(), ay = p1.Y() - p2.Y(), bx = p3.X() - p2.X(), by = p3.Y() - p2.Y(); const v = Math.acos(Math.max(-1, Math.min(1, (ax * bx + ay * by) / (Math.hypot(ax, ay) * Math.hypot(bx, by))))) * 180 / Math.PI; return isFinite(v) ? v : 0; };
-        const lab = k => { const ax = p1.X() - p2.X(), ay = p1.Y() - p2.Y(), bx = p3.X() - p2.X(), by = p3.Y() - p2.Y(); const la = Math.hypot(ax, ay) || 1, lb = Math.hypot(bx, by) || 1; let mx = ax / la + bx / lb, my = ay / la + by / lb; const m = Math.hypot(mx, my) || 1; return k === 0 ? p2.X() + mx / m * 1.9 : p2.Y() + my / m * 1.9; };
-        els = [b.create('nonreflexangle', [p1, p2, p3], { radius: 0.6, name: '', withLabel: false, strokeColor: c.accent, fillColor: c.accent, fillOpacity: 0.18 }),
-               b.create('text', [() => lab(0), () => lab(1), () => deg().toFixed(1) + '°'], { strokeColor: c.accent, fontSize: 14, anchorX: 'middle', anchorY: 'middle' })];
-      }
-      commit(made.concat(els));
-    });
-    document.getElementById('tools').addEventListener('click', e => {
-      const t = e.target.closest('button'); if (!t) return;
-      if (t.dataset.mode) { mode = t.dataset.mode; picks = []; document.querySelectorAll('#tools [data-mode]').forEach(x => x.classList.toggle('on', x === t)); setStatus(); }
-      if (t.dataset.act === 'undo') { const els = hist.pop(); if (els) els.slice().reverse().forEach(o => { try { b.removeObject(o); } catch (_) {} }); picks = []; setStatus(); }
-      if (t.dataset.act === 'clear') { hist.slice().reverse().forEach(els => els.slice().reverse().forEach(o => { try { b.removeObject(o); } catch (_) {} })); hist = []; picks = []; letter = 0; setStatus(); }
-    });
-    // starter figure: a triangle to play with
-    const A = P([-3, -2]), B = P([3, -2]), C = P([0.6, 2.6]);
-    hist.push([A, B, C, b.create('segment', [A, B], { strokeColor: c.fg, strokeWidth: 2 }), b.create('segment', [B, C], { strokeColor: c.fg, strokeWidth: 2 }), b.create('segment', [C, A], { strokeColor: c.fg, strokeWidth: 2 })]);
+    if (!window.GeoBoard) { el.textContent = '畫板元件載入失敗，請重新整理。'; return; }
+    gbPage.push(GeoBoard.mount(el));
   }
 };
 
@@ -1378,9 +1357,43 @@ app.addEventListener('click', e => {
   if (open && window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([x]).then(() => fitMath(x)).catch(() => {}); else if (open) fitMath(x);
 });
 
+/* ===================== 在畫板研究：題目留在左邊，右邊開畫板 ===================== */
+let gbPage = [], study = null;
+function addStudyButtons(root) {
+  if (!window.GeoBoard || !window.JXG) return;
+  root.querySelectorAll('figure.bkfig').forEach(fig => {
+    const svg = fig.querySelector('svg'); if (!svg || fig.querySelector('.tostudy') || !GeoBoard.importable(svg)) return;
+    const btn = document.createElement('button'); btn.type = 'button'; btn.className = 'tostudy'; btn.textContent = '在畫板研究 ▸';
+    btn.addEventListener('click', () => openStudy(fig));
+    fig.appendChild(btn);
+  });
+}
+function openStudy(fig) {
+  closeStudy();
+  const item = fig.closest('.item, .panel, .card');
+  const title = item && item.querySelector('.ih b, h2, h4') ? item.querySelector('.ih b, h2, h4').textContent.trim() : '附圖';
+  const aside = document.createElement('aside'); aside.id = 'study'; aside.setAttribute('aria-label', '畫板');
+  aside.innerHTML = `<div class="study-head"><b>畫板・${esc(title)}</b><span class="note">左邊對照題目，右邊自由作圖</span><button type="button" class="study-x" aria-label="關閉畫板">✕</button></div><div class="study-body"></div>`;
+  document.body.appendChild(aside); document.body.classList.add('studying');
+  aside.querySelector('.study-x').addEventListener('click', closeStudy);
+  document.querySelectorAll('.studying-src').forEach(x => x.classList.remove('studying-src'));
+  if (item) { item.classList.add('studying-src'); }
+  study = GeoBoard.mount(aside.querySelector('.study-body'), { svg: fig.querySelector('svg') });
+  if (item) setTimeout(() => item.scrollIntoView({ block: 'start' }), 120);
+}
+function closeStudy() {
+  if (study) { study.destroy(); study = null; }
+  const a = document.getElementById('study'); if (a) a.remove();
+  document.body.classList.remove('studying');
+  document.querySelectorAll('.studying-src').forEach(x => x.classList.remove('studying-src'));
+}
+window.addEventListener('hashchange', closeStudy);
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && study) closeStudy(); });
+
 /* ===================== ROUTER ===================== */
 function route(keep) {
   boards.forEach(b => { try { if (b._ro) b._ro.disconnect(); JXG.JSXGraph.freeBoard(b); } catch (_) {} }); boards = [];
+  gbPage.forEach(g => g.destroy()); gbPage = [];
   const h = (location.hash || '#home').slice(1);
   let html, key = h; curLecture = null;
   if (h === 'home' || h === '') html = viewHome();
@@ -1402,6 +1415,7 @@ function route(keep) {
   app.innerHTML = html;
   document.querySelectorAll('#nav a').forEach(a => a.classList.toggle('on', a.dataset.k === key));
   if (keep !== true) window.scrollTo(0, 0);
+  addStudyButtons(app);
   if (window.JXG) app.querySelectorAll('.demo').forEach(el => { const f = DEMOS[el.dataset.demo]; if (f) try { f(el); } catch (err) { el.textContent = '互動圖載入失敗：' + err.message; } });
   else app.querySelectorAll('.demo').forEach(el => { el.textContent = '互動圖需要網路載入繪圖元件。'; });
   const resume = resumeNext && curLecture, jump = jumpTo; resumeNext = false; jumpTo = '';
