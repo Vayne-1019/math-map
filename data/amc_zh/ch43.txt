@@ -1,0 +1,156 @@
+=== intro
+<p>代數三角的重點是把三角式化成 $\sin$、$\cos$ 的代數式，再用恆等式化簡。對稱式可以用 $s=\sin$、$c=\cos$ 的和與積表示；遇到角度和差時，套用和角公式或積化和差。</p>
+<ul>
+<li><b>畢氏恆等式。</b>$\sin^2+\cos^2=1$ 是化簡的起點。</li>
+<li><b>和角、倍角、半角公式。</b>把角度拆開或合併。</li>
+<li><b>和差化積與積化和差。</b>處理兩個三角函數之和或積。</li>
+<li><b>檢查定義域與區間。</b>求解時留意題目限制的區間與解的個數。</li>
+</ul>
+
+=== 43.1.1 | 正弦、餘弦、正切
+zh: $\sin a=\dfrac{\text{對邊}}{\text{斜邊}}$，$\cos a=\dfrac{\text{鄰邊}}{\text{斜邊}}$，$\tan a=\dfrac{\text{對邊}}{\text{鄰邊}}=\dfrac{\sin a}{\cos a}$。
+sol: 這是直角三角形中的定義。
+
+=== 43.1.2 | 記憶口訣
+zh: SOH（sin = 對/斜）、CAH（cos = 鄰/斜）、TOA（tan = 對/鄰）。
+sol: 這是記憶方法。
+
+=== 43.2.1 | 倒數函數
+zh: $\csc a=\dfrac1{\sin a}$，$\sec a=\dfrac1{\cos a}$，$\cot a=\dfrac1{\tan a}=\dfrac{\cos a}{\sin a}$。
+sol: 這是定義。
+
+=== 43.4.1 | 對稱與補角關係
+zh: $\sin(-a)=-\sin a$，$\sin a=\sin(180^\circ-a)$，$\cos(-a)=\cos a$，$\cos a=-\cos(180^\circ-a)$，$\tan(-a)=-\tan a$，$\tan a=-\tan(180^\circ-a)$。
+sol: 由單位圓上的對稱性直接可見。
+
+=== 43.5.1 | 畢氏恆等式
+zh: $\sin^2a+\cos^2a=1$，$\tan^2a+1=\sec^2a$，$\cot^2a+1=\csc^2a$。
+sol: 由 $\sin^2+\cos^2=1$ 兩邊除以 $\cos^2$ 或 $\sin^2$ 即得。
+
+=== 43.6.1 | 倍角公式
+zh: $\sin2a=2\sin a\cos a$；$\cos2a=\cos^2a-\sin^2a=2\cos^2a-1=1-2\sin^2a$；$\tan2a=\dfrac{2\tan a}{1-\tan^2a}$。
+sol: 由和角公式令 $b=a$ 得到。
+
+=== 43.7.1 | 和角與差角公式
+zh: $\sin(a\pm b)=\sin a\cos b\pm\cos a\sin b$；$\cos(a\pm b)=\cos a\cos b\mp\sin a\sin b$；$\tan(a\pm b)=\dfrac{\tan a\pm\tan b}{1\mp\tan a\tan b}$。
+sol: 這是標準公式，可由單位圓上的旋轉推出。
+
+=== 43.8.1 | 半角公式
+zh: $\sin\dfrac a2=\pm\sqrt{\dfrac{1-\cos a}2}$，$\cos\dfrac a2=\pm\sqrt{\dfrac{1+\cos a}2}$（正負號由象限決定）。
+sol: 由倍角公式 $\cos a=1-2\sin^2\dfrac a2$ 推出。
+
+=== 43.9.1 | 和差化積
+zh: $\sin a+\sin b=2\sin\dfrac{a+b}2\cos\dfrac{a-b}2$；$\sin a-\sin b=2\cos\dfrac{a+b}2\sin\dfrac{a-b}2$；$\cos a+\cos b=2\cos\dfrac{a+b}2\cos\dfrac{a-b}2$；$\cos a-\cos b=-2\sin\dfrac{a+b}2\sin\dfrac{a-b}2$。
+sol: 由和角公式相加減推出。
+
+=== 43.10.1 | 積化和差
+zh: $\sin a\sin b=\dfrac12[\cos(a-b)-\cos(a+b)]$；$\cos a\cos b=\dfrac12[\cos(a-b)+\cos(a+b)]$；$\sin a\cos b=\dfrac12[\sin(a+b)+\sin(a-b)]$。
+sol: 由和角公式相加減推出。
+
+=== 43.1 | 例題 43.1
+zh: 設 $\sin a+\sin b=\sqrt{\dfrac53}$，$\cos a+\cos b=1$。求 $\cos(a-b)$。
+sol: 兩式平方相加得 $2+2\cos(a-b)=\dfrac53+1=\dfrac83$，故 $\cos(a-b)=\dfrac13$。
+ans: $\dfrac13$
+
+=== 43.2 | 例題 43.2
+zh: 設實數 $x$ 滿足 $\sin^{10}x+\cos^{10}x=\dfrac{11}{36}$。則 $\sin^{12}x+\cos^{12}x=\dfrac mn$，$m,n$ 互質，求 $m+n$。
+sol: 令 $p=\sin^2x\cos^2x$。由 $\sin^{10}+\cos^{10}=1-5p+5p^2=\dfrac{11}{36}$，取 $p=\dfrac16$（另一根 $\dfrac56>\dfrac14$ 不合）。再算 $\sin^{12}+\cos^{12}=(1-3p)^2-2p^3=\dfrac14-\dfrac1{108}=\dfrac{13}{54}$，$m+n=67$。
+ans: 67
+
+=== 43.3 | 例題 43.3
+zh: 對每個整數 $n>1$，令 $F(n)$ 為方程 $\sin x=\sin(nx)$ 在區間 $[0,\pi]$ 上的解數。求 $\sum_{n=2}^{2007}F(n)$。
+sol: 採原書答案，未獨立驗算。（註：尚未獨立驗算，請之後再檢查。）
+ans: 2016532
+
+=== 43.11.1 | 週期函數
+zh: 週期函數是每隔固定區間重複相同 $y$ 值模式的函數；一個完整的重複稱為一個週期。
+sol: 這是定義。
+
+=== 43.12.4 | 化簡長式子的提醒
+zh: 冗長的三角式可用裂項、恆等式或複數代換化簡。
+sol: 這是方法提醒。
+
+=== 43.13.1 | 練習題 43.13.1
+zh: 方程 $\sin\left(\dfrac\pi2\cos x\right)=\cos\left(\dfrac\pi2\sin x\right)$ 在閉區間 $[0,\pi]$ 上有幾個解？
+sol: 採原書答案，未獨立驗算。（註：尚未獨立驗算，請之後再檢查。）
+ans: 2
+
+=== 43.13.2 | 練習題 43.13.2
+zh: 多項式 $P(x)=x^3+ax^2+bx+c$ 的根為 $\cos^2\dfrac\pi7,\cos^2\dfrac{4\pi}7,\cos^2\dfrac{6\pi}7$（弧度制），求 $abc$。
+sol: 採原書答案，未獨立驗算。（註：尚未獨立驗算，請之後再檢查。）
+ans: $\dfrac1{32}$
+
+=== 43.13.3 | 練習題 43.13.3
+zh: 三角形三邊長成等差數列，最短邊為 $6$，其中一內角為 $120^\circ$。求三角形面積。
+sol: 設三邊 $6,6+d,6+2d$，$120^\circ$ 對最長邊：$(6+2d)^2=36+(6+d)^2+6(6+d)$，得 $d=4$。三邊為 $6,10,14$，面積 $\dfrac12\cdot6\cdot10\cdot\sin120^\circ=15\sqrt3$。
+ans: $15\sqrt3$
+
+=== 43.13.4 | 練習題 43.13.4
+zh: 青蛙 Cyrus 每次跳 $2$ 英尺，方向隨機。求兩次跳後落在離出發點 $1$ 英尺內（原書敘述之星形位置）的機率。
+sol: 採原書答案，未獨立驗算。（註：尚未獨立驗算，請之後再檢查。）
+ans: $\dfrac{2}{\pi}\arcsin\dfrac14$
+
+=== 43.13.5 | 練習題 43.13.5
+zh: Usain 在 $100$ 公尺乘 $30$ 公尺的矩形場地上來回走，從 A 點出發，終點在線段 BC 上。（後續條件見原書。）
+sol: 採原書答案，未獨立驗算。（註：尚未獨立驗算，請之後再檢查。）
+ans: $\arccos\dfrac56$
+
+=== 43.13.6 | 練習題 43.13.6
+zh: 在區間 $0<\theta\le2\pi$ 中，有幾個 $\theta$ 滿足 $1-3\sin\theta+5\cos3\theta=0$？
+sol: 採原書答案，未獨立驗算。（註：尚未獨立驗算，請之後再檢查。）
+ans: 6
+
+=== 43.13.7 | 練習題 43.13.7
+zh: 三角形 $ABC$ 內接於圓 $\omega$。過 $B,C$ 的切線交於 $P$，直線 $AP$ 交 $\omega$ 於 $D$。若 $AB=5$，$BC=9$，$AC=10$，求 $AD$。
+sol: 採原書答案，未獨立驗算。（註：原書答案為 113，尚未獨立驗算。）
+ans: 113
+
+=== 43.13.8 | 練習題 43.13.8
+zh: $\sin x$ 與 $\cos x$ 的最小週期皆為 $2\pi$。求 $\cos(\sin x)$ 的最小週期。
+sol: $\cos(\sin(x+\pi))=\cos(-\sin x)=\cos(\sin x)$，故週期為 $\pi$；又 $\cos(\sin x)$ 在 $(0,\pi)$ 不為常數且非更小的週期，故最小週期為 $\pi$。
+ans: $\pi$
+
+=== 43.13.9 | 練習題 43.13.9
+zh: 數列 $a_1=1$，$a_2=\dfrac1{\sqrt3}$，且 $a_{n+2}=\dfrac{a_n+a_{n+1}}{1-a_na_{n+1}}$。求 $|a_{2009}|$。
+sol: 令 $a_n=\tan\theta_n$，則 $\theta_{n+2}\equiv\theta_n+\theta_{n+1}\pmod\pi$，由 $\theta_1=\dfrac\pi4$、$\theta_2=\dfrac\pi6$ 逐項算到 $\theta_5\equiv0$，之後的 $a_n$ 出現 $0$，故 $|a_{2009}|=0$（採原書答案）。
+ans: $0$
+
+=== 43.13.10 | 練習題 43.13.10
+zh: 物體沿直線從 $A$ 走 $8$ 公分到 $B$，在 $B$ 轉角 $\alpha$（在 $(0,\pi)$ 中均勻隨機），再直行 $5$ 公分到 $C$。求 $AC<7$ 的機率。
+sol: 設 $B$ 處內角為 $\theta=\pi-\alpha$，$AC^2=89-80\cos\theta$。$AC<7\iff\cos\theta>\dfrac12\iff\theta<\dfrac\pi3$，機率為 $\dfrac13$。
+ans: $\dfrac13$
+
+=== 43.13.11 | 練習題 43.13.11
+zh: 曲線 $y=\sin\dfrac1x$ 在區間 $(0.0001,0.001)$ 內的 $x$ 截距個數最接近下列哪個數？(A) $2900$ (B) $3000$ (C) $3100$ (D) $3200$ (E) $3300$
+sol: 零點為 $x=\dfrac1{k\pi}$，需 $1000<k\pi<10000$，$k$ 從 $319$ 到 $3183$，共 $2865$ 個，最接近 $2900$，選 (A)。
+ans: 2900（選 (A)）
+
+=== 43.13.12 | 練習題 43.13.12
+zh: 若 $\sum_{n=0}^\infty\cos^{2n}\theta=5$，求 $\cos2\theta$。
+sol: 幾何級數和 $\dfrac1{1-\cos^2\theta}=5$，得 $\cos^2\theta=\dfrac45$，故 $\cos2\theta=2\cdot\dfrac45-1=\dfrac35$。
+ans: $\dfrac35$
+
+=== 43.13.13 | 練習題 43.13.13
+zh: 方程 $\tan2x=\cos\dfrac x2$ 在區間 $[0,2\pi]$ 上有幾個解？(A) 1 (B) 2 (C) 3 (D) 4 (E) 5
+sol: 採原書答案，未獨立驗算。（註：原書答案為 5，尚未獨立驗算，請之後再檢查。）
+ans: 5（選 (E)）
+
+=== 43.13.14 | 練習題 43.13.14
+zh: 求閉區間 $[0,\pi]$ 中最大的子集，使對所有 $x\in[0,\pi]$ 都有 $\sin(x+y)\le\sin x+\sin y$。
+sol: 採原書答案，未獨立驗算。（註：尚未獨立驗算，請之後再檢查。）
+ans: $0\le y\le\pi$
+
+=== 43.13.15 | 練習題 43.13.15
+zh: 令 $A_k=k(k-1)/2\cdot\cos\dfrac{k(k-1)\pi}2$，求 $|A_{19}+A_{20}+\cdots+A_{98}|$。
+sol: 採原書答案，未獨立驗算。（註：尚未獨立驗算，請之後再檢查。）
+ans: 40
+
+=== 43.13.16 | 練習題 43.13.16
+zh: 已知 $(1+\sin t)(1+\cos t)=\dfrac54$，且 $(1-\sin t)(1-\cos t)=\dfrac mn-\sqrt k$，求 $k+m+n$。
+sol: 採原書答案，未獨立驗算。（註：尚未獨立驗算，請之後再檢查。）
+ans: 27
+
+=== 43.13.17 | 練習題 43.13.17
+zh: 實數 $a$ 使方程 $a(\sin x+\sin2x)=\sin3x$ 在 $(0,\pi)$ 內有超過一個解。所有這樣的 $a$ 的集合可寫成 $(p,q)\cup(q,r)$ 的形式，求 $p+q+r$（原書敘述）。
+sol: 採原書答案，未獨立驗算。（註：尚未獨立驗算，請之後再檢查。）
+ans: $-4$
