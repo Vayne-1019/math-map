@@ -1,0 +1,242 @@
+=== meta
+title: 證明不等式的常用方法與技巧（二）
+author: 嚴鎮軍
+pages: 102-112
+units: A-4-7
+status: 完成
+
+=== text
+<h3>一、數學歸納法</h3>
+<p>和正整數 $n$ 有關的不等式（出現 $n$ 次方、或含 $n$ 的式子），常用數學歸納法。</p>
+
+=== 例 1 | 冪塔
+zh: 設 $x>0$，定義 $f_n(x)=x^{x^{\cdot^{\cdot^{x}}}}$（共 $n$ 個 $x$），$n=1,2,\dots$。證明：對一切不小於 $3$ 的正整數 $m$，
+$$f_{n+1}(m)>2f_n(m+1),\qquad n=1,2,\dots\qquad(1)$$
+sol: （原書題目印作「小於 3」，由證明可知應為 $m\ge3$。）對 $n$ 歸納。
+$n=1$：$f_2(m)=m^m\ge m^2$⟦為什麼｜$m\ge3>2$，底數 $m>1$，指數越大值越大。⟧，$2f_1(m+1)=2(m+1)$，而
+$$m^2-2(m+1)=(m-1)^2-3\ge4-3>0,$$
+所以 $f_2(m)>2f_1(m+1)$。
+設 $n=k$ 時 (1) 對一切 $m\ge3$ 成立，即 $f_{k+1}(m)>2f_k(m+1)$。則 $n=k+1$ 時：
+$$\begin{aligned}f_{k+2}(m)&=m^{f_{k+1}(m)}>m^{2f_k(m+1)}=(m^2)^{f_k(m+1)}\\&>\big[2(m+1)\big]^{f_k(m+1)}=2^{f_k(m+1)}\cdot(m+1)^{f_k(m+1)}\\&>2f_{k+1}(m+1).\end{aligned}$$
+⟦每一步｜第一個 $>$：歸納假設，加上 $m>1$ 時 $m^t$ 隨 $t$ 遞增。第二個 $>$：$n=1$ 時已證 $m^2>2(m+1)$。最後：$(m+1)^{f_k(m+1)}$ 正是 $f_{k+1}(m+1)$，而 $f_k(m+1)\ge4$，所以 $2^{f_k(m+1)}>2$。⟧
+所以對一切正整數 $n$ 及一切 $m\ge3$，(1) 成立。
+
+=== 例 2 | 分兩種情況放大
+zh: 設 $a_n>0$，且 $a_n^2\le a_n-a_{n+1}$（$n=1,2,\dots$）。求證：對一切正整數 $n$，$a_n\lt \dfrac1n$。
+sol: 由題設 $0\lt a_2\le a_1-a_1^2=a_1(1-a_1)$，又 $a_1>0$，故 $1-a_1>0$，即 $a_1\lt 1$。
+設 $a_k\lt \frac1k$，下面證 $a_{k+1}\lt \frac1{k+1}$。由題設 $a_{k+1}\le a_k-a_k^2=a_k(1-a_k)$。
+(1) 若 $a_k\le\frac1{k+1}$，則 $a_{k+1}\le a_k(1-a_k)\lt a_k\le\frac1{k+1}$。
+(2) 若 $\frac1{k+1}\lt a_k\lt \frac1k$，則
+$$a_{k+1}\le a_k(1-a_k)\lt \frac1k\Big(1-\frac1{k+1}\Big)=\frac1k\cdot\frac{k}{k+1}=\frac1{k+1}.$$
+<b>注.</b> 分兩種情況是為了方便放大乘積 $a_k(1-a_k)$：第一個因子 $a_k$ 用上界 $\frac1k$ 代替，$1-a_k$ 裡的 $a_k$ 用下界 $\frac1{k+1}$ 代替。⟦為什麼不能一次放大｜$a_k(1-a_k)$ 裡 $a_k$ 變大時第一個因子變大、第二個因子變小，方向相反。把範圍切開，兩個因子才能各自用對的那一端。⟧ 這種技巧在證不等式時很有用。
+
+=== 例 3 | 條件 $\frac1a+\frac1b=1$
+src: 1988 年全國高中數學聯賽
+zh: 已知 $a,b$ 為正數，且 $\dfrac1a+\dfrac1b=1$。求證：對一切正整數 $n$，$(a+b)^n-a^n-b^n\ge2^{2n}-2^{n+1}$。
+sol: $n=1$ 時左邊 $=0=$ 右邊，成立。設 $n=k$ 時成立：
+$$(a+b)^k-a^k-b^k\ge2^{2k}-2^{k+1}.\qquad(2)$$
+$n=k+1$ 時，
+$$\begin{aligned}\text{左邊}&=(a+b)^{k+1}-a^{k+1}-b^{k+1}\\&=(a+b)\big[(a+b)^k-a^k-b^k\big]+a^kb+ab^k.\qquad(3)\end{aligned}$$
+⟦展開驗證｜$(a+b)(a^k+b^k)=a^{k+1}+a^kb+ab^k+b^{k+1}$，所以 $(a+b)\big[(a+b)^k-a^k-b^k\big]=(a+b)^{k+1}-a^{k+1}-b^{k+1}-a^kb-ab^k$。⟧
+由 $\frac1a+\frac1b=1$ 得 $ab=a+b$；又 $(a+b)\big(\frac1a+\frac1b\big)\ge4$⟦為什麼｜展開 $=2+\frac ab+\frac ba\ge2+2=4$。⟧，所以 $ab=a+b\ge4$。從而
+$$a^kb+ab^k\ge2\sqrt{a^kb\cdot ab^k}=2\sqrt{(ab)^{k+1}}\ge2\cdot2^{k+1}=2^{k+2}.$$
+由 (2)、(3)：
+$$\text{左邊}\ge4\big(2^{2k}-2^{k+1}\big)+2^{k+2}=2^{2k+2}-2^{k+2}=\text{右邊}.$$
+⟦計算｜$4\cdot2^{2k}=2^{2k+2}$，$4\cdot2^{k+1}=2^{k+3}$，$-2^{k+3}+2^{k+2}=-2^{k+2}$。右邊 $2^{2(k+1)}-2^{(k+1)+1}$ 正是這個。另外 (2) 的右邊非負、$a+b\ge4$，才可以把 $a+b$ 換成 $4$。⟧
+
+=== text
+<h3>二、變數代換法</h3>
+<p>引進適當的代換，不僅能簡化證明，也比較容易找到思路。用哪種代換因題而異，總目標是<b>化繁為簡</b>：化超越式為代數式、化無理式為有理式、化分式為整式、化高次為低次等。</p>
+
+=== 例 4 | 根式換成新字母
+zh: 設 $a>1$，$n$ 為正整數，$n\ge2$。求證：$\sqrt[n]a-1\lt \dfrac{a-1}{n}$。
+sol: 直接處理 $\sqrt[n]a$ 不容易。令 $x=\sqrt[n]a-1>0$，則 $a=(1+x)^n$，原來的無理不等式化為有理不等式
+$$(1+x)^n>1+nx.$$
+由二項式定理及 $n>1,\ x>0$，這顯然成立⟦展開｜$(1+x)^n=1+nx+\mathrm C_n^2x^2+\dots\ge1+nx+\mathrm C_n^2x^2>1+nx$，因為 $n\ge2$ 時 $\mathrm C_n^2x^2>0$。⟧，所以原式成立。
+
+=== 例 5 | 換成乘積為 1 的變數
+zh: 設 $x_1,\dots,x_n$ 為正數（$n\ge2$），求證
+$$\frac{x_1^2}{x_1^2+x_2x_3}+\frac{x_2^2}{x_2^2+x_3x_4}+\dots+\frac{x_{n-1}^2}{x_{n-1}^2+x_nx_1}+\frac{x_n^2}{x_n^2+x_1x_2}\le n-1.$$
+sol: 為了寫得對稱，記 $x_{n+1}=x_1,\ x_{n+2}=x_2$。令 $y_i=\dfrac{x_i^2}{x_{i+1}x_{i+2}}$，則
+$$\frac{x_i^2}{x_i^2+x_{i+1}x_{i+2}}=\frac{y_i}{1+y_i}=1-\frac1{1+y_i},\qquad y_1y_2\cdots y_n=1.$$
+⟦乘積為什麼是 1｜分子乘起來是 $\prod x_i^2$；分母 $\prod x_{i+1}x_{i+2}$ 中每個 $x_j$ 恰好出現兩次，也是 $\prod x_i^2$。⟧
+原不等式成為 $\sum\big(1-\frac1{1+y_i}\big)\le n-1$，即
+$$\sum_{i=1}^n\frac1{1+y_i}\ge1\qquad(y_i>0,\ y_1\cdots y_n=1).\qquad(4)$$
+對 $n$ 歸納。$n=2$：$y_1y_2=1$，
+$$\frac1{1+y_1}+\frac1{1+y_2}=\frac{2+y_1+y_2}{1+y_1+y_2+y_1y_2}=\frac{2+y_1+y_2}{2+y_1+y_2}=1.$$
+設 (4) 對 $k$ 個變數成立。對 $k+1$ 個變數，$y_1\cdots y_{k-1}(y_ky_{k+1})=1$，把 $y_ky_{k+1}$ 看成一個變數，由歸納假設
+$$\frac1{1+y_1}+\dots+\frac1{1+y_{k-1}}+\frac1{1+y_ky_{k+1}}\ge1.$$
+而 $\dfrac1{1+y_k}+\dfrac1{1+y_{k+1}}>\dfrac1{1+y_ky_{k+1}}$⟦為什麼｜對 $p,q>0$，通分後比較 $(2+p+q)(1+pq)$ 與 $(1+p)(1+q)$：差為 $1+pq+p^2q+pq^2>0$。⟧，所以 $\sum_{i=1}^{k+1}\frac1{1+y_i}>1$。於是 (4) 對一切 $n\ge2$ 成立，原不等式成立。
+
+=== text
+<p><b>三角代換</b>對證明某些條件不等式（題設中有一個等式或不等式）很有用。</p>
+
+=== 例 6 | $a+b=1$ 換成 $\sin^2+\cos^2$
+zh: 設 $a,b$ 為正數，$a+b=1$。求證 $\Big(a+\dfrac1a\Big)^2+\Big(b+\dfrac1b\Big)^2\ge\dfrac{25}2$，並確定等號成立的條件。
+sol: 可令 $a=\sin^2\varphi,\ b=\cos^2\varphi$。由 $m^2+n^2\ge\frac12(m+n)^2$⟦為什麼｜$2(m^2+n^2)-(m+n)^2=(m-n)^2\ge0$。⟧，
+$$\begin{aligned}\text{左邊}&\ge\frac12\Big[\sin^2\varphi+\frac1{\sin^2\varphi}+\cos^2\varphi+\frac1{\cos^2\varphi}\Big]^2\\&=\frac12\Big(1+\frac{\sin^2\varphi+\cos^2\varphi}{\sin^2\varphi\cos^2\varphi}\Big)^2\\&=\frac12\Big(1+\frac4{\sin^22\varphi}\Big)^2\ge\frac12(1+4)^2=\frac{25}2.\end{aligned}$$
+⟦中間兩步｜$\frac1{\sin^2\varphi}+\frac1{\cos^2\varphi}=\frac{\cos^2\varphi+\sin^2\varphi}{\sin^2\varphi\cos^2\varphi}=\frac1{\sin^2\varphi\cos^2\varphi}$；又 $\sin\varphi\cos\varphi=\frac12\sin2\varphi$，所以 $=\frac4{\sin^22\varphi}$；而 $\sin^22\varphi\le1$。⟧
+第一個不等號取等號的充要條件是 $\sin^2\varphi=\cos^2\varphi$，第二個是 $\sin^22\varphi=1$，所以等號成立當且僅當 $a=b=\frac12$。
+
+=== 例 7 | 極坐標
+zh: 設 $x,y$ 為實數，$x^2+y^2\le1$。求證 $|x^2+2xy-y^2|\le\sqrt2$。
+sol: （原書題目印作 $x^2+y^2\ge1$，與證明不符；若 $x^2+y^2$ 可以很大，左邊沒有上界，所以應為 $\le1$。）設 $x^2+y^2=k^2$（$0\le k\le1$），令 $x=k\cos\varphi,\ y=k\sin\varphi$，則
+$$\begin{aligned}|x^2+2xy-y^2|&=k^2\,\big|2\sin\varphi\cos\varphi+(\cos^2\varphi-\sin^2\varphi)\big|\\&=k^2|\sin2\varphi+\cos2\varphi|=\sqrt2\,k^2\Big|\sin\Big(2\varphi+\frac\pi4\Big)\Big|\le\sqrt2.\end{aligned}$$
+⟦疊合｜$\sin\alpha+\cos\alpha=\sqrt2\big(\sin\alpha\cos\frac\pi4+\cos\alpha\sin\frac\pi4\big)=\sqrt2\sin\big(\alpha+\frac\pi4\big)$。⟧
+
+=== text
+<p>再介紹一種常用的代換。例如在 $a\ge b\ge c$ 的假設下證明關於 $a,b,c$ 的不等式，可令 $a=c+\delta_1,\ b=c+\delta_2$（$\delta_1\ge\delta_2\ge0$）再論證。這叫<b>增量法</b>（或鬆弛法），對很多不等式，特別是對稱不等式很有效。</p>
+
+=== 例 8 | 增量法
+zh: 設 $a\ge4$，求證：$\dfrac{\lg a-\lg3}{\lg4-\lg3}\ge\dfrac{\lg(a-2)}{\lg2}$。
+sol: （原書印作「$>$」，但 $a=4$ 時兩邊都是 $1$，應為「$\ge$」；$a>4$ 時嚴格成立。）設 $a=4+\delta$（$\delta\ge0$），兩邊各減 $1$，原式依序等價於
+$$\begin{aligned}&\frac{\lg(4+\delta)-\lg4}{\lg\frac43}\ge\frac{\lg(2+\delta)-\lg2}{\lg2}\\ \iff{}&\frac{2\lg\big(1+\frac\delta4\big)}{2\lg\frac43}\ge\frac{\lg\big(1+\frac\delta2\big)}{\lg2}\\ \iff{}&\frac{\lg\big(1+\frac\delta2+\frac{\delta^2}{16}\big)}{\lg\frac{16}9}\ge\frac{\lg\big(1+\frac\delta2\big)}{\lg2}.\end{aligned}$$
+⟦第一步｜$\frac{\lg(4+\delta)-\lg3}{\lg4-\lg3}-1=\frac{\lg(4+\delta)-\lg4}{\lg\frac43}$，$\frac{\lg(2+\delta)}{\lg2}-1=\frac{\lg(2+\delta)-\lg2}{\lg2}$。最後一步把分子分母都乘 2，用 $2\lg u=\lg u^2$：$\big(1+\frac\delta4\big)^2=1+\frac\delta2+\frac{\delta^2}{16}$，$\big(\frac43\big)^2=\frac{16}9$。⟧
+因為 $\lg\big(1+\frac\delta2+\frac{\delta^2}{16}\big)\ge\lg\big(1+\frac\delta2\big)\ge0$，且 $0\lt \lg\frac{16}9\lt \lg2$，最後一式成立（左邊分子較大、分母較小）。
+
+=== 例 9 | 對稱不等式先排序再增量
+src: 第 25 屆 IMO 第 1 題（1984）
+zh: 設 $x,y,z$ 是非負實數，且 $x+y+z=1$。求證：$0\le yz+zx+xy-2xyz\le\dfrac7{27}$。
+sol: 由對稱性，設 $x\ge y\ge z$，於是 $1=x+y+z\ge3z$，即 $z\le\frac13$，從而 $2xyz\le\frac23xy\le xy$，所以
+$$yz+zx+(xy-2xyz)\ge0.$$
+再證右邊。在前述假設下 $z\le\frac13$，$x+y\ge\frac23$。令 $x+y=\frac23+\delta$，則 $z=\frac13-\delta$，$0\le\delta\le\frac13$。又
+$$xy\le\Big(\frac{x+y}2\Big)^2=\Big(\frac13+\frac\delta2\Big)^2,$$
+而 $1-2z=\frac13+2\delta>0$，所以
+$$\begin{aligned}yz+zx+xy-2xyz&=z(x+y)+xy(1-2z)\\&\le\Big(\frac13-\delta\Big)\Big(\frac23+\delta\Big)+\Big(\frac13+\frac\delta2\Big)^2\Big(\frac13+2\delta\Big)\\&=\frac7{27}-\frac{\delta^2}4+\frac{\delta^3}2=\frac7{27}-\frac{\delta^2}2\Big(\frac12-\delta\Big)\le\frac7{27}.\end{aligned}$$
+⟦展開過程｜$\big(\frac13-\delta\big)\big(\frac23+\delta\big)=\frac29-\frac\delta3-\delta^2$。$\big(\frac13+\frac\delta2\big)^2=\frac19+\frac\delta3+\frac{\delta^2}4$，乘以 $\frac13+2\delta$ 得 $\frac1{27}+\frac\delta3+\frac34\delta^2+\frac{\delta^3}2$。相加：$\frac29+\frac1{27}=\frac7{27}$，$\delta$ 項抵消，$\delta^2$ 項 $-1+\frac34=-\frac14$。最後 $\delta\le\frac13\lt \frac12$。⟧
+等號在 $\delta=0$ 且 $x=y$，即 $x=y=z=\frac13$ 時成立。
+
+=== text
+<h3>三、函數方法</h3>
+<p>函數方法是證明不等式的基本方法，內容很廣，這裡只談三方面：1. 二次函數 $y=x^2+bx+c$（判別式）的應用；2. $|A\sin x|\le|A|$ 的應用；3. 利用已知函數的增減性。</p>
+
+=== 例 10 | 看成二次方程用判別式
+zh: 設 $a,b,x,y,k$ 為正數（$k\lt 2$），且 $a^2+b^2-kab=1$，$x^2+y^2-kxy=1$。求證
+$$|ax-by|\le\frac2{\sqrt{4-k^2}},\qquad|ay+bx-kby|\le\frac2{\sqrt{4-k^2}}.$$
+sol: 由題設，
+$$\begin{aligned}1&=(a^2+b^2-kab)(x^2+y^2-kxy)\\&=(ax-by)^2+(ay+bx-kby)^2-k(ax-by)(ay+bx-kby).\end{aligned}$$
+⟦這個恆等式｜兩邊都展開比較即可：左邊乘開共 9 項，右邊 $A^2,B^2,-kAB$ 展開後合併，逐項相同（可代 $a=b=x=y=1$、$k=1$ 檢查：兩邊都是 $1$）。⟧
+記 $A=ax-by$，$B=ay+bx-kby$，上式成為
+$$A^2-kAB+B^2-1=0.\qquad(5)$$
+把它看成 $A$ 的二次方程，$A$ 是實數，所以判別式
+$$\Delta=(-kB)^2-4(B^2-1)\ge0\ \Rightarrow\ (4-k^2)B^2\le4\ \Rightarrow\ |B|\le\frac2{\sqrt{4-k^2}}.$$
+同理，把 (5) 看成 $B$ 的二次方程，得 $|A|\le\dfrac2{\sqrt{4-k^2}}$。
+
+=== 例 11 | 萬能代換＋判別式
+zh: 求證：對任何實數 $x$，$-\dfrac13\le\dfrac{6\cos x+\sin x-5}{2\cos x-3\sin x-5}\le3$。
+sol: 作萬能代換 $t=\tan\frac x2$，則 $\sin x=\dfrac{2t}{1+t^2}$，$\cos x=\dfrac{1-t^2}{1+t^2}$，所以
+$$y=\frac{6\cos x+\sin x-5}{2\cos x-3\sin x-5}=\frac{-11t^2+2t+1}{-7t^2-6t-3}.$$
+⟦分子分母各乘 1+t²｜分子：$6(1-t^2)+2t-5(1+t^2)=-11t^2+2t+1$；分母：$2(1-t^2)-6t-5(1+t^2)=-7t^2-6t-3$。⟧
+因 $6^2-4\cdot7\cdot3\lt 0$，分母 $-7t^2-6t-3$ 恆小於 $0$。整理成 $t$ 的二次方程
+$$(7y-11)t^2+2(3y+1)t+3y+1=0.$$
+當 $y\ne\frac{11}7$ 時，由 $t$ 為實數，
+$$\frac\Delta4=(3y+1)^2-(7y-11)(3y+1)=(3y+1)(12-4y)\ge0,$$
+即 $(3y+1)(3-y)\ge0$，所以 $-\frac13\le y\le3$。又 $y=\frac{11}7$ 時不等式也成立。⟦漏掉的 x｜$t=\tan\frac x2$ 不能表示 $x=\pi+2k\pi$。這時 $\cos x=-1,\sin x=0$，$y=\frac{-11}{-7}=\frac{11}7$，也在範圍內。⟧
+<b>注.</b> 這是證明關於 $\sin x,\cos x$ 的三角有理式 $R(\sin x,\cos x)$ 的常用方法：萬能代換總可以把它化成 $t$ 的有理式。
+
+=== 例 12 | 三數的範圍
+zh: 設 $x_1+x_2+x_3=p$，$x_1x_2+x_2x_3+x_3x_1=q$。求證：(1) $p^2-3q\ge0$；(2) $\dfrac p3-\dfrac23\sqrt{p^2-3q}\le x_i\le\dfrac p3+\dfrac23\sqrt{p^2-3q}$，$i=1,2,3$。
+sol: (1) 由題設 $x_1^2+x_2^2+x_3^2=p^2-2q$。所以
+$$\begin{aligned}0&\le(x_1-x_2)^2+(x_2-x_3)^2+(x_3-x_1)^2\\&=2(x_1^2+x_2^2+x_3^2)-2(x_1x_2+x_2x_3+x_3x_1)\\&=2(p^2-2q)-2q=2p^2-6q,\end{aligned}$$
+從而 $p^2-3q\ge0$。
+(2) 由對稱性只需對 $x_1$ 證。設法造出 $x_1$ 的二次不等式。因為 $x_2+x_3=p-x_1$，
+$$x_2x_3=q-x_1(x_2+x_3)=q-x_1(p-x_1).$$
+於是
+$$2\big[q-x_1(p-x_1)\big]=2x_2x_3\le x_2^2+x_3^2=p^2-2q-x_1^2,$$
+即
+$$3x_1^2-2px_1+4q-p^2\le0.$$
+因 $p^2-3q\ge0$，二次方程 $3x_1^2-2px_1+4q-p^2=0$ 有兩實根 $\dfrac{p\pm2\sqrt{p^2-3q}}3$⟦求根｜$\frac{\Delta}4=p^2-3(4q-p^2)=4p^2-12q=4(p^2-3q)$，根為 $\frac{p\pm2\sqrt{p^2-3q}}3$。⟧，$x_1$ 在兩根之間，得證。
+
+=== 例 13 | 取兩個點湊出負值
+src: 第 19 屆 IMO 第 4 題（1977）
+zh: 設 $a,b,A,B$ 都是已知實數。若對任何實數 $x$，$f(x)=1-a\cos x-b\sin x-A\cos2x-B\sin2x\ge0$，求證：$a^2+b^2\le2$，$A^2+B^2\le1$。
+sol: 用反證法。思路：反設 $a^2+b^2>2$（或 $A^2+B^2>1$），找一個 $x_0$ 使 $f(x_0)\lt 0$。先用輔助角把 $f$ 的項數減少：選 $\theta,\varphi$ 使
+$$f(x)=1-\sqrt{a^2+b^2}\sin(x+\theta)-\sqrt{A^2+B^2}\sin2(x+\varphi).$$
+⟦輔助角｜$a\cos x+b\sin x=\sqrt{a^2+b^2}\sin(x+\theta)$，其中 $\sin\theta=\frac a{\sqrt{a^2+b^2}},\cos\theta=\frac b{\sqrt{a^2+b^2}}$；第二組同理。⟧
+若 $a^2+b^2>2$，取 $x_1=\frac\pi4-\theta$，$x_2=\frac{3\pi}4-\theta=x_1+\frac\pi2$，則
+$$\begin{aligned}f(x_1)&=1-\sqrt{a^2+b^2}\sin\frac\pi4-\sqrt{A^2+B^2}\sin2(x_1+\varphi)\\&\lt 1-\sqrt2\sin\frac\pi4-\sqrt{A^2+B^2}\sin2(x_1+\varphi)=-\sqrt{A^2+B^2}\sin2(x_1+\varphi),\\ f(x_2)&\lt -\sqrt{A^2+B^2}\sin2(x_2+\varphi)=\sqrt{A^2+B^2}\sin2(x_1+\varphi).\end{aligned}$$
+⟦x₂ 那一行｜$\sin\big(x_2+\theta\big)=\sin\frac{3\pi}4=\frac{\sqrt2}2$，同樣得到 $\lt $；又 $2(x_2+\varphi)=2(x_1+\varphi)+\pi$，正弦變號。⟧
+兩式右邊互為相反數，所以 $f(x_1)\lt 0$ 與 $f(x_2)\lt 0$ 至少一個成立，矛盾。故 $a^2+b^2\le2$。
+$A^2+B^2\le1$ 的證明類似：⟦提示｜反設 $A^2+B^2>1$，取 $y_1=\frac\pi4-\varphi$、$y_2=y_1+\pi$。則 $\sin2(y_i+\varphi)=1$，$f(y_i)\lt -\sqrt{a^2+b^2}\sin(y_i+\theta)$；而 $\sin(y_2+\theta)=-\sin(y_1+\theta)$，兩者必有一個 $\lt 0$（或兩者都 $\lt 0$ 若 $a=b=0$），矛盾。⟧
+
+=== 例 14 | 和差化積後夾範圍
+zh: 設 $x$ 為實數，求證
+$$2\sin^2\Big(\frac\pi4-\frac{\sqrt2}2\Big)\le\cos(\sin x)-\sin(\cos x)\le2\sin^2\Big(\frac\pi4+\frac{\sqrt2}2\Big).$$
+sol: 作三角變形：
+$$\begin{aligned}\cos(\sin x)-\sin(\cos x)&=\cos(\sin x)-\cos\Big(\frac\pi2-\cos x\Big)\\&=2\sin\Big(\frac\pi4-\frac{\cos x+\sin x}2\Big)\sin\Big(\frac\pi4-\frac{\cos x-\sin x}2\Big).\end{aligned}$$
+⟦和差化積｜$\cos\alpha-\cos\beta=2\sin\frac{\alpha+\beta}2\sin\frac{\beta-\alpha}2$，取 $\alpha=\sin x$、$\beta=\frac\pi2-\cos x$：$\frac{\alpha+\beta}2=\frac\pi4-\frac{\cos x-\sin x}2$，$\frac{\beta-\alpha}2=\frac\pi4-\frac{\cos x+\sin x}2$。⟧
+由 $\cos x\pm\sin x=\sqrt2\sin\big(x\pm\frac\pi4\big)$ 得 $-\sqrt2\le\cos x\pm\sin x\le\sqrt2$，故兩個角都滿足
+$$\frac\pi4-\frac{\sqrt2}2\le\frac\pi4-\frac{\cos x\pm\sin x}2\le\frac\pi4+\frac{\sqrt2}2.$$
+又 $0\lt \frac\pi4-\frac{\sqrt2}2\lt \frac\pi4+\frac{\sqrt2}2\lt \frac\pi2$⟦數值｜$\frac\pi4\approx0.785$，$\frac{\sqrt2}2\approx0.707$，兩端約 $0.078$ 與 $1.492$，都在 $(0,1.571)$ 內。⟧，且 $\sin$ 在 $\big[0,\frac\pi2\big]$ 上遞增，兩個正弦因子都在 $\sin\big(\frac\pi4-\frac{\sqrt2}2\big)$ 與 $\sin\big(\frac\pi4+\frac{\sqrt2}2\big)$ 之間且為正，相乘即得原式。
+
+=== 習題 1
+zh: 設 $n$ 為正整數，求證：$\dfrac1{\sqrt{3n+1}}\le\dfrac12\cdot\dfrac45\cdot\dfrac78\cdots\dfrac{3n-2}{3n-1}\lt \dfrac1{\sqrt[3]{3n+1}}$。
+hint: 兩邊各自用歸納法，從 $k$ 到 $k+1$ 時乘以 $\frac{3k+1}{3k+2}$。
+sol: 記左右之間的乘積為 $P_n$。$n=1$：$P_1=\frac12$，$\frac1{\sqrt4}=\frac12$，$\frac1{\sqrt[3]4}>\frac12$，成立。
+<b>左邊.</b> 設 $P_k\ge\frac1{\sqrt{3k+1}}$，只要證 $\frac1{\sqrt{3k+1}}\cdot\frac{3k+1}{3k+2}\ge\frac1{\sqrt{3k+4}}$，平方後等價於 $(3k+1)(3k+4)\ge(3k+2)^2$，即 $9k^2+15k+4\ge9k^2+12k+4$，成立。
+<b>右邊.</b> 設 $P_k\lt \frac1{\sqrt[3]{3k+1}}$，只要證 $\frac1{\sqrt[3]{3k+1}}\cdot\frac{3k+1}{3k+2}\lt \frac1{\sqrt[3]{3k+4}}$。立方後等價於 $(3k+1)^2(3k+4)\lt (3k+2)^3$。令 $u=3k+1$：$u^3+3u^2\lt u^3+3u^2+3u+1$，成立。
+
+=== 習題 2
+zh: 數列 $a_1=f(a)$，$a_{n+1}=f(a_n)$（$n=1,2,\dots$），其中 $f(x)=2x(1-x)$，$0\lt a\lt 1$。求證：$0\lt a_n\le a_{n+1}$。
+sol: $f(x)=-2\big(x-\frac12\big)^2+\frac12$ 是開口向下的拋物線，最大值 $f\big(\frac12\big)=\frac12$，且 $f(0)=f(1)=0$。因 $0\lt a\lt 1$，$0\lt a_1=f(a)\le\frac12$；若 $0\lt a_k\le\frac12$，則 $0\lt a_{k+1}=f(a_k)\le\frac12$。所以一切 $0\lt a_n\le\frac12$，於是
+$$a_{n+1}-a_n=2a_n(1-a_n)-a_n=a_n(1-2a_n)\ge0.$$
+
+=== 習題 3
+zh: 設 $1\lt x_1\lt 2$，$x_{n+1}=1+x_n-\frac12x_n^2$（$n=1,2,\dots$）。求證：$|x_n-\sqrt2|\lt 2^{-n}$（$n\ge3$）。
+hint: $\sqrt2$ 是 $f(x)=1+x-\frac12x^2$ 的不動點；先夾出 $x_3$ 的範圍，再歸納。
+sol: 設 $f(x)=1+x-\frac12x^2=-\frac12(x-1)^2+\frac32$，則 $x_{n+1}=f(x_n)$，$f$ 在 $x\ge1$ 時遞減。由 $1\lt x_1\lt 2$：$1=f(2)\lt x_2\lt f(1)=\frac32$；再得 $\frac{11}8=f\big(\frac32\big)\lt x_3\lt f(1)=\frac32$。所以
+$$-\frac18\lt \frac{11-8\sqrt2}8\lt x_3-\sqrt2\lt \frac{12-8\sqrt2}8\lt \frac18,$$
+⟦數值｜$8\sqrt2\approx11.31$，所以兩端約 $-0.04$ 與 $0.09$。⟧ $n=3$ 成立。設 $|x_k-\sqrt2|\lt 2^{-k}\le\frac18$，則
+$$\begin{aligned}|x_{k+1}-\sqrt2|&=\Big|1+x_k-\frac12x_k^2-\sqrt2\Big|=\frac12|x_k-\sqrt2|\,|x_k+\sqrt2-2|\\&\le\frac12|x_k-\sqrt2|\Big(2\sqrt2-2+\frac18\Big)\lt \frac12|x_k-\sqrt2|\lt 2^{-(k+1)}.\end{aligned}$$
+⟦因式分解與估計｜$1+x-\frac12x^2-\sqrt2=(x-\sqrt2)-\frac12(x^2-2)=-\frac12(x-\sqrt2)(x+\sqrt2-2)$。又 $|x_k+\sqrt2-2|\le|x_k-\sqrt2|+(2\sqrt2-2)\lt \frac18+0.83\lt 1$。⟧
+
+=== 習題 4
+zh: 設 $a_1,a_2,b_1,b_2$ 為正數，且 $a_1c_1-b_1^2=a_2c_2-b_2^2$。求證：$(a_1-a_2)(c_1-c_2)-(b_1-b_2)^2\le0$。
+sol: 令 $A=a_1c_1-b_1^2=a_2c_2-b_2^2$，並設 $A\ge0$（見下方說明）。則
+$$\text{左邊}=2A+2b_1b_2-(a_1c_2+a_2c_1)\le2A+2b_1b_2-2\sqrt{a_1a_2c_1c_2}.$$
+⟦展開｜$(a_1-a_2)(c_1-c_2)=a_1c_1+a_2c_2-a_1c_2-a_2c_1$，$(b_1-b_2)^2=b_1^2+b_2^2-2b_1b_2$，相減後 $a_1c_1-b_1^2+a_2c_2-b_2^2=2A$。後面用 AM-GM。⟧
+又
+$$a_1c_1a_2c_2=(A+b_1^2)(A+b_2^2)=A^2+b_1^2b_2^2+(b_1^2+b_2^2)A\ge(A+b_1b_2)^2,$$
+⟦為什麼｜差是 $A(b_1^2+b_2^2-2b_1b_2)=A(b_1-b_2)^2\ge0$，這裡用到 $A\ge0$。⟧
+所以左邊 $\le2A+2b_1b_2-2(A+b_1b_2)=0$。
+<b>說明.</b> 原書解答默認了 $A\ge0$（即 $a_ic_i\ge b_i^2$）。若 $A\lt 0$，結論不成立，例如 $a_1=1,b_1=1,c_1=0$ 與 $a_2=3,b_2=3,c_2=\frac83$（$A=-1$），左邊 $=(-2)\big(-\frac83\big)-4=\frac43>0$。
+
+=== 習題 5
+zh: 設 $m,n$ 為正數，$0\lt x\lt 1$。求證：$\dfrac{m^2}{1-x}+\dfrac{n^2}{x}\ge(m+n)^2$。
+sol: 令 $x=\cos^2\varphi$，則
+$$\begin{aligned}\text{左邊}&=m^2\csc^2\varphi+n^2\sec^2\varphi=(m^2+n^2)+(m^2\cot^2\varphi+n^2\tan^2\varphi)\\&\ge m^2+n^2+2mn=(m+n)^2.\end{aligned}$$
+⟦兩步｜$\csc^2=1+\cot^2$，$\sec^2=1+\tan^2$。AM-GM：$m^2\cot^2\varphi+n^2\tan^2\varphi\ge2mn\cot\varphi\tan\varphi=2mn$。⟧
+
+=== 習題 6
+zh: 設 $a,b,c$ 為正數，且 $a+b>c$。求證：$a^3+b^3+c^3+3abc>2(a+b)c^2$。
+hint: 令 $a+b=c+\delta$（$\delta>0$）。
+sol: 記 $s=a+b=c+\delta$，$p=ab\le\frac{s^2}4$。由 $a^3+b^3=s^3-3ps$，
+$$\text{左}-\text{右}=s^3+c^3-2sc^2-3p(s-c).$$
+代入 $s=c+\delta$：$s^3+c^3-2sc^2=c^2\delta+3c\delta^2+\delta^3$⟦展開｜$(c+\delta)^3+c^3-2(c+\delta)c^2=c^3+3c^2\delta+3c\delta^2+\delta^3+c^3-2c^3-2c^2\delta$。⟧，而 $3p(s-c)=3p\delta\le\frac34(c+\delta)^2\delta$，所以
+$$\text{左}-\text{右}\ge\delta\Big[c^2+3c\delta+\delta^2-\frac34(c^2+2c\delta+\delta^2)\Big]=\delta\Big(\frac{c^2}4+\frac32c\delta+\frac{\delta^2}4\Big)>0.$$
+
+=== 習題 7
+zh: 設 $x,y$ 為正數，$n$ 為正整數。求證：$\dfrac{x^n+y^n}2\ge\Big(\dfrac{x+y}2\Big)^n$。
+sol: 設 $x\ge y$，令 $x=a+\delta,\ y=a-\delta$，則 $a=\frac{x+y}2>0$，$\delta=\frac{x-y}2\ge0$。
+$$\text{左}=\frac12\big[(a+\delta)^n+(a-\delta)^n\big]=a^n+\mathrm C_n^2a^{n-2}\delta^2+\mathrm C_n^4a^{n-4}\delta^4+\dots\ge a^n=\text{右}.$$
+⟦為什麼只剩偶次項｜二項式展開中 $\delta$ 的奇次項在 $(a+\delta)^n$ 與 $(a-\delta)^n$ 裡正負相反，相加抵消；偶次項相同，相加再除以 2 不變，而且都非負。⟧
+
+=== 習題 8
+zh: 設 $|a|\lt 1,\ |b|\lt 1,\ |c|\lt 1$，求證：$ab+bc+ca>-1$。
+sol: 把 $a$ 看成變數：令 $f(x)=(b+c)x+bc+1$，則 左$-$右 $=f(a)$。而 $f(1)=(1+b)(1+c)>0$，$f(-1)=(1-b)(1-c)>0$。$f$ 是一次函數（或常數），在 $[-1,1]$ 兩端都為正，在中間也為正，所以 $-1\lt a\lt 1$ 時 $f(a)>0$。
+
+=== 習題 9
+zh: 設 $a>b>0$，$0\lt \theta\lt \dfrac\pi2$。求證：$a\sec\theta-b\tan\theta\ge\sqrt{a^2-b^2}$。
+sol: （原書題目印作 $\sqrt{a^2+b^2}$，但 $\theta\to0$ 時左邊趨近 $a\lt \sqrt{a^2+b^2}$，應為 $\sqrt{a^2-b^2}$，與書末解答一致。）設 $y=a\sec\theta-b\tan\theta=a\sqrt{1+\tan^2\theta}-b\tan\theta$，則 $(y+b\tan\theta)^2=a^2(1+\tan^2\theta)$，即
+$$(a^2-b^2)\tan^2\theta-2by\tan\theta+a^2-y^2=0.$$
+$\tan\theta$ 是實數，故 $\Delta=4b^2y^2-4(a^2-b^2)(a^2-y^2)\ge0$，化簡得 $a^2y^2\ge a^2(a^2-b^2)$⟦化簡｜$b^2y^2-(a^4-a^2y^2-a^2b^2+b^2y^2)=a^2y^2-a^4+a^2b^2$。⟧，即 $y\ge\sqrt{a^2-b^2}$ 或 $y\le-\sqrt{a^2-b^2}$。而 $\theta$ 是銳角時 $y>0$⟦為什麼｜$\sec\theta>\tan\theta>0$ 且 $a>b$，所以 $a\sec\theta>b\tan\theta$。⟧，只能 $y\ge\sqrt{a^2-b^2}$。
+
+=== 習題 10
+zh: 設 $a_i,b_i$ 為正數（$i=1,\dots,n$），且 $b_1^2>b_2^2+\dots+b_n^2$。求證：
+$$(a_1^2-a_2^2-\dots-a_n^2)(b_1^2-b_2^2-\dots-b_n^2)\le(a_1b_1-a_2b_2-\dots-a_nb_n)^2,$$
+等號當且僅當 $\dfrac{b_1}{a_1}=\dfrac{b_2}{a_2}=\dots=\dfrac{b_n}{a_n}$ 時成立。
+sol: 比值全相等時，兩邊顯然相等。若不全相等，可設 $\frac{a_1}{b_1}b_i-a_i\ne0$ 對某個 $i\ge2$ 成立。令
+$$f(x)=(b_1x-a_1)^2-(b_2x-a_2)^2-\dots-(b_nx-a_n)^2,$$
+則 $f\big(\frac{a_1}{b_1}\big)=-\sum_{i\ge2}\big(\frac{a_1}{b_1}b_i-a_i\big)^2\lt 0$。展開，$f(x)=(b_1^2-\sum_{i\ge2}b_i^2)x^2-2(a_1b_1-\sum_{i\ge2}a_ib_i)x+(a_1^2-\sum_{i\ge2}a_i^2)$，二次項係數為正。開口向上又取到負值，所以有兩相異實根，判別式 $>0$：
+$$(a_1b_1-\textstyle\sum a_ib_i)^2>(a_1^2-\sum a_i^2)(b_1^2-\sum b_i^2),$$
+即要證的不等式（嚴格成立）。
