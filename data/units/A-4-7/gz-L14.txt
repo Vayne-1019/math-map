@@ -1,0 +1,20 @@
+=== meta
+title: 換元三招：增量、三角、乘積為 1
+from: gz-L14
+order: 30
+
+=== body
+<div class="hero">代換的目標只有一個：<b>化繁為簡</b><br>根式 → 新字母、條件等式 → 三角、對稱式 → <b>排序後設增量</b></div>
+<div class="cards">
+<div class="card"><h4>① 增量法</h4><div class="rule">$a\ge b\ge c$ ⇒ $a=c+\delta_1,\ b=c+\delta_2$</div>
+<div class="eg">IMO 1984：$x+y=\frac23+\delta,\ z=\frac13-\delta$<br>化成 $\frac7{27}-\frac{\delta^2}2\big(\frac12-\delta\big)$ <span class="pill">變成一個變數</span></div></div>
+<div class="card"><h4>② 三角代換</h4><div class="rule">$a+b=1$ ⇒ $a=\sin^2\varphi,\ b=\cos^2\varphi$<br>$x^2+y^2\le1$ ⇒ $x=k\cos\varphi,\ y=k\sin\varphi$</div>
+<div class="eg">$x^2+2xy-y^2=k^2(\sin2\varphi+\cos2\varphi)$<br>$\le\sqrt2$</div></div>
+<div class="card"><h4>③ 比值代換</h4><div class="rule">$y_i=\dfrac{x_i^2}{x_{i+1}x_{i+2}}$ ⇒ $\prod y_i=1$</div>
+<div class="eg">$\dfrac{x_i^2}{x_i^2+x_{i+1}x_{i+2}}=1-\dfrac1{1+y_i}$</div></div>
+</div>
+<p>代換之後常接<b>判別式</b>：把式子看成某個實數變數的二次方程，$\Delta\ge0$ 就是要的不等式。⟦例｜$y=\dfrac{6\cos x+\sin x-5}{2\cos x-3\sin x-5}$，令 $t=\tan\frac x2$ 化成 $(7y-11)t^2+2(3y+1)t+3y+1=0$，$\Delta\ge0$ 得 $-\frac13\le y\le3$。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>代換後忘了新變數的<b>範圍</b>（$\delta\ge0$、$0\le k\le1$）</li>
+<li>萬能代換 $t=\tan\frac x2$ 漏掉 $x=\pi$ 那一點</li></ul></div>
+<div class="bottomline">看到條件等式先問：能不能換成「自動滿足條件」的參數？</div>

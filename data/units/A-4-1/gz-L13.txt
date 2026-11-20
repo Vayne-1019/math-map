@@ -1,0 +1,25 @@
+=== meta
+title: 證不等式的五種基本方法
+from: gz-L13
+order: 40
+
+=== body
+<div class="hero">證 $A\ge B$ 沒有固定程序，但出發點只有一個：<b>$A-B\ge0$</b><br>其餘方法都是把它<b>變形、拆開、找中間量</b></div>
+<div class="cards">
+<div class="card"><h4>① 比較法</h4><div class="rule">$A-B\ge0$ 或 $\dfrac AB\ge1$</div>
+<div class="eg">$\dfrac{a^ab^bc^c}{(abc)^{(a+b+c)/3}}=\prod\Big(\dfrac ab\Big)^{\frac{a-b}3}\ge1$ <span class="pill">次方用商</span></div></div>
+<div class="card"><h4>② 放縮法</h4><div class="rule">$A\le C\le B$</div>
+<div class="eg">$\dfrac12\cdot\dfrac34\cdots\dfrac{99}{100}=A\lt B=\dfrac23\cdot\dfrac45\cdots\dfrac{100}{101}$<br>$A^2\lt AB=\frac1{101}$ <span class="pill">配夥伴</span></div></div>
+<div class="card"><h4>③ 綜合法</h4><div class="rule">簡單不等式相加／相乘</div>
+<div class="eg">$\dfrac{x_1^2}{x_2}+x_2\ge2x_1$，輪換 $n$ 式相加</div></div>
+<div class="card"><h4>④ 分析法</h4><div class="rule">由結論往回推，每步可逆</div>
+<div class="eg">$\dfrac a{a+m}+\dfrac b{b+m}>\dfrac c{c+m}$<br>$\iff m^2(c-a-b)\lt ab(2m+c)$</div></div>
+<div class="card"><h4>⑤ 反證法</h4><div class="rule">否定結論 → 矛盾</div>
+<div class="eg">$a^3+b^3=2$，若 $a+b>2$：<br>$a^3+b^3>(2-b)^3+b^3=6(b-1)^2+2\ge2$</div></div>
+</div>
+<p>對稱的式子可以先排序。⟦為什麼可以｜任意對調兩個字母不等式不變，所以只要證 $a\ge b\ge c$ 這一種情形，其餘情形改名字就好。例：證 $\frac a{b+c+1}+\dots\le\frac{a+b+c}{a+b+1}$ 時，設 $c$ 最大，三個分母都 $\ge a+b+1$。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>分析法寫成「⇒」：每一步必須<b>可逆</b>，否則只證了反方向</li>
+<li>放縮放過頭：$A\le C$ 對了，但 $C\le B$ 已經不成立</li>
+<li>兩邊同乘、取倒數時沒有確認<b>正負</b></li></ul></div>
+<div class="bottomline">先試差值能不能配方或分解；不行，再找中間量。</div>

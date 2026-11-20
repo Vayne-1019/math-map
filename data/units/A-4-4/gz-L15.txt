@@ -1,0 +1,20 @@
+=== meta
+title: 排序不等式：大配大最大
+from: gz-L15
+order: 20
+
+=== body
+<div class="hero">兩組數兩兩相乘再相加：<b>大配大、小配小</b>總和最大；<b>大配小</b>總和最小<br>順序和 ≥ 亂序和 ≥ 逆序和</div>
+<div class="cards">
+<div class="card"><h4>① 為什麼</h4><div class="rule">對調兩項：$(a_n-a_k)(b_n-b_j)\ge0$</div>
+<div class="eg">$3\cdot5+1\cdot2=17$<br>$3\cdot2+1\cdot5=11$ <span class="pill">交換變小</span></div></div>
+<div class="card"><h4>② 造兩組同序數</h4><div class="rule">$a\ge b\ge c$ ⇒ $a^2\ge b^2\ge c^2$，$\frac1c\ge\frac1b\ge\frac1a$</div>
+<div class="eg">$a+b+c$ 是逆序和 $\le$ 任何亂序和<br>如 $\frac{a^2}b+\frac{b^2}c+\frac{c^2}a$</div></div>
+<div class="card"><h4>③ 取對數</h4><div class="rule">$a$ 與 $\lg a$ 同序</div>
+<div class="eg">$a\lg a+b\lg b\ge a\lg b+b\lg a$<br>⇒ $a^ab^b\ge a^bb^a$</div></div>
+</div>
+<p>兩個亂序和相加常能湊出漂亮的式子。⟦Nesbitt 的例子｜$a\ge b\ge c$ 時 $\frac1{b+c}\ge\frac1{c+a}\ge\frac1{a+b}$ 與 $a,b,c$ 同序，順序和 $\sum\frac a{b+c}$ 不小於兩個亂序和，相加後分子分母約掉：$2\sum\frac a{b+c}\ge3$。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>兩組數<b>沒有先排好序</b>就套用</li>
+<li>把「亂序和」與「逆序和」的方向弄反</li></ul></div>
+<div class="bottomline">對稱式先排序，再問：哪兩組數同序？</div>

@@ -1,0 +1,20 @@
+=== meta
+title: 凸包：先看最外圈
+from: gz-L20
+order: 20
+
+=== body
+<div class="hero">有限點集的<b>凸包</b> = 套住所有點的橡皮筋<br>點集問題的第一步：<b>按凸包是幾邊形分情況</b>，凸包外圈的點是「角」，裡面的點落在某個三角形中</div>
+<div class="cards">
+<div class="card"><h4>① 凸集的交還是凸集</h4><div class="rule">凸包 = 所有包含它的凸集的交</div>
+<div class="eg">圓、半平面、線段都是凸集<br>兩個凸集的<b>聯集</b>不一定是</div></div>
+<div class="card"><h4>② 5 點必有凸四邊形</h4><div class="rule">凸包是 5、4、3 邊形三種情況</div>
+<div class="eg">3 邊形時：直線 $A_4A_5$ 切掉一個角，<br>剩下 $A_2A_3A_5A_4$ 是凸的</div></div>
+<div class="card"><h4>③ 角度和逼出大角</h4><div class="rule">內部一點：三個角和 $360^\circ$ ⇒ 有角 $\ge120^\circ$<br>凸 $n$ 邊形：有內角 $\ge\frac{(n-2)180^\circ}n$</div>
+<div class="eg">5 點：最大距離 / 最小距離 $\ge2\sin54^\circ=\frac{1+\sqrt5}2$<br>等號 ⟺ 正五邊形</div></div>
+</div>
+<p>為什麼一個 $120^\circ$ 的角就夠了？⟦餘弦定理｜$\angle ADB\ge120^\circ$、$AD\le BD$ 時，$AB^2\ge AD^2+BD^2+AD\cdot BD\ge3AD^2$，所以 $\frac{AB}{AD}\ge\sqrt3$。例：$AD=BD=1$、夾角 $120^\circ$，$AB=\sqrt3$。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>漏掉「凸包是三角形」或「有三點共線」這些退化情況</li>
+<li>以為凸包的頂點也可能在某個三角形內部（不可能：它們是最外圈）</li></ul></div>
+<div class="bottomline">平面點集題卡住時，畫出凸包，按外圈有幾個點分類。</div>

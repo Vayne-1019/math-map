@@ -1,0 +1,191 @@
+=== meta
+title: 凸包概念在平面幾何解題中的應用
+author: 杜錫錄
+pages: 163-169
+units: C-6-2
+status: 完成
+
+=== text
+<p>前面討論的主要是古典的平面幾何。現代數學把組合數學的思想方法與傳統平面幾何結合起來，稱為<b>組合幾何</b>。其中一個主要問題是討論以幾何元素為元素的集合，它的結構與性質；一個重要的工具就是<b>凸包</b>。</p>
+
+=== 定義 1 | 凸集
+zh: 若對點集 $M$ 中的任意兩點 $A,B$，線段 $AB$ 上的每一點都屬於 $M$，就稱 $M$ 為凸集。
+
+=== text
+<p>線段、直線、射線、帶形以及整個平面都是凸集；空集、單點集也規定為凸集。</p>
+
+=== 例 1 | 圓是凸集
+zh: 證明圓（圓面）是凸集。
+sol: <figure class="bkfig"><svg viewBox="0 0 200 200" width="200" role="img" aria-label="圓內兩點 A、B 與線段上一點 C，虛線連圓心 O">
+  <g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="171.4" y1="74.0" x2="58.6" y2="40.9"/></g>
+  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="100.0" y1="100.0" x2="171.4" y2="74.0"/><line x1="100.0" y1="100.0" x2="58.6" y2="40.9"/><line x1="100.0" y1="100.0" x2="98.1" y2="52.5"/></g>
+  <g fill="currentColor"><circle cx="100.0" cy="100.0" r="2.6"/><circle cx="171.4" cy="74.0" r="2.6"/><circle cx="58.6" cy="40.9" r="2.6"/><circle cx="98.1" cy="52.5" r="2.6"/></g>
+  <circle cx="100.0" cy="100.0" r="76.0" fill="none" stroke="currentColor" stroke-width="1.3"/>
+  <g fill="currentColor" font-size="14" font-style="italic"><text x="96.0" y="118.0">O</text><text x="177.4" y="74.0">A</text><text x="44.6" y="36.9">B</text><text x="94.1" y="44.5">C</text></g>
+</svg><figcaption>$C$ 在弦 $AB$ 上；虛線連圓心</figcaption></figure>
+設圓心為 $O$、半徑為 $r$。若 $A,B$ 屬於這個圓，則 $OA\le r$，$OB\le r$。設 $C$ 是線段 $AB$ 上任一點，$\angle OCA$ 與 $\angle OCB$ 互補，其中必有一個不小於直角，不妨設 $\angle OCB\ge90^\circ$。在 $\triangle OCB$ 中，$\angle OCB$ 是最大角，所以 $OC\le OB\le r$⟦為什麼｜三角形中大角對大邊：$\angle OCB\ge90^\circ$ 比另兩個角都大，它的對邊 $OB$ 最長。$C=B$ 時直接成立。⟧，即 $C$ 屬於這個圓。所以圓是凸集。
+
+=== text
+<p>一條直線 $l$ 把平面分成兩部分，$l$ 同一側的點組成的集合叫<b>開半平面</b>，記為 $\alpha$ 與 $\beta$；$\alpha\cup l$ 叫<b>閉半平面</b>。開、閉半平面都是凸集。但 $\alpha\cup\beta$ 不是凸集，可見<b>兩個凸集的聯集不一定是凸集</b>。對交集則有下面的結論。</p>
+
+=== 命題 1 | 凸集的交
+zh: 兩個凸集的交一定是凸集。
+sol: 設 $M_1,M_2$ 是凸集。若 $M_1\cap M_2=\varnothing$，空集是凸集。設 $A,B\in M=M_1\cap M_2$，則 $A,B\in M_1$，所以線段 $AB\subseteq M_1$；同理 $AB\subseteq M_2$，即 $AB\subseteq M$。所以 $M$ 是凸集。
+
+=== 命題 2 | 任意多個凸集的交
+zh: 任意多個凸集的交仍是凸集。
+sol: 證法與命題 1 相同：$A,B$ 屬於每一個凸集，線段 $AB$ 就包含在每一個凸集裡。
+
+=== 定義 2 | 凸包
+zh: 每個平面點集 $M$ 都有包含它的凸集（例如整個平面）。所有包含 $M$ 的凸集的交仍是凸集，而且是包含 $M$ 的<b>最小</b>凸集，稱為 $M$ 的凸包，記為 $\overline M$。
+
+=== text
+<p>有限點集的凸包是一個凸多邊形或一條線段（或一點）。例如 $M$ 由四點 $A_1,A_2,A_3,A_4$ 組成，有三種情況：(1) $\overline M$ 是凸四邊形 $A_1A_2A_3A_4$；(2) $\overline M$ 是三角形，例如 $\triangle A_1A_2A_3$，$A_4$ 在裡面；(3) $\overline M$ 是一條線段，例如 $A_1A_2$。</p>
+<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center"><figure class="bkfig"><svg viewBox="0 0 110 119" width="110" role="img" aria-label="凸包是四邊形">
+  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="31.2,24.0 24.0,95.5 86.0,95.5 81.2,31.2"/></g>
+  <g fill="currentColor"><circle cx="31.2" cy="24.0" r="2.6"/><circle cx="24.0" cy="95.5" r="2.6"/><circle cx="86.0" cy="95.5" r="2.6"/><circle cx="81.2" cy="31.2" r="2.6"/></g>
+  <g fill="currentColor" font-size="14" font-style="italic"><text x="25.2" y="16.0">A₁</text><text x="10.0" y="109.5">A₂</text><text x="88.0" y="109.5">A₃</text><text x="85.2" y="25.2">A₄</text></g>
+</svg><figcaption>(1)</figcaption></figure><figure class="bkfig"><svg viewBox="0 0 110 114" width="110" role="img" aria-label="凸包是三角形，A₄ 在內部">
+  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="55.0,24.0 24.0,90.4 86.0,90.4"/></g>
+  <g fill="currentColor"><circle cx="55.0" cy="24.0" r="2.6"/><circle cx="24.0" cy="90.4" r="2.6"/><circle cx="86.0" cy="90.4" r="2.6"/><circle cx="55.0" cy="66.1" r="2.6"/></g>
+  <g fill="currentColor" font-size="14" font-style="italic"><text x="49.0" y="16.0">A₁</text><text x="10.0" y="104.4">A₂</text><text x="88.0" y="104.4">A₃</text><text x="47.0" y="58.1">A₄</text></g>
+</svg><figcaption>(2)</figcaption></figure><figure class="bkfig"><svg viewBox="0 0 110 72" width="110" role="img" aria-label="凸包是線段 A₁A₂">
+  <g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="24.0" y1="36.4" x2="86.0" y2="36.4"/></g>
+  <g fill="currentColor"><circle cx="24.0" cy="36.4" r="2.6"/><circle cx="42.6" cy="36.4" r="2.6"/><circle cx="59.1" cy="36.4" r="2.6"/><circle cx="86.0" cy="36.4" r="2.6"/></g>
+  <g fill="currentColor" font-size="14" font-style="italic"><text x="18.0" y="52.4">A₁</text><text x="36.6" y="52.4">A₃</text><text x="53.1" y="52.4">A₄</text><text x="80.0" y="52.4">A₂</text></g>
+</svg><figcaption>(3)</figcaption></figure></div>
+<p>⟦直觀的想法｜把每個點想成釘在板上的釘子，用橡皮筋套住所有釘子再放手，橡皮筋圍成的就是凸包。⟧
+無窮點集的凸包比較複雜：兩個半平面的凸包可能是一個半平面，也可能是整個平面。又如兩個相離的圓組成的集合，凸包是下圖的陰影部分，其中 $AB,CD$ 是兩圓的外公切線。</p>
+<figure class="bkfig"><svg viewBox="0 0 300 169" width="300" role="img" aria-label="兩個相離的圓組成的點集，凸包是陰影部分，AB、CD 是外公切線">
+  <g fill="none" stroke="currentColor" stroke-width="1.5"></g>
+  <path d="M93.2,24.6 L242.1,45.6 A39.5,39.5 0 0 1 242.1,123.8 L93.2,144.8 A60.7,60.7 0 1 1 93.2,24.6 Z" fill="currentColor" fill-opacity="0.15" stroke="currentColor" stroke-width="1.5"/><circle cx="84.7" cy="84.7" r="60.7" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="4 3"/><circle cx="236.5" cy="84.7" r="39.5" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="4 3"/>
+  <g fill="currentColor" font-size="14" font-style="italic"><text x="89.2" y="16.6">A</text><text x="244.1" y="37.6">B</text><text x="89.2" y="162.8">C</text><text x="244.1" y="141.8">D</text></g>
+</svg><figcaption>兩個相離的圓（虛線）的凸包：兩條外公切線加上兩段外側的圓弧</figcaption></figure>
+
+=== text
+<p>凸包的應用十分廣泛，先看下面幾個例題。</p>
+
+=== 例 2 | 五點中必有凸四邊形
+zh: 平面上任意給定 5 個點，其中任三點不共線。證明：可以選出 4 個點，構成一個凸四邊形的頂點。
+sol: 設這 5 點為 $A_1,\dots,A_5$，考慮它們的凸包，有三種情況：
+(1) 凸包是凸五邊形：其中任意 4 點都構成凸四邊形。
+(2) 凸包是凸四邊形，例如 $A_1A_2A_3A_4$：這 4 點即為所求。
+(3) 凸包是三角形，設 $A_4,A_5$ 在 $\triangle A_1A_2A_3$ 內。直線 $A_4A_5$ 只能與三角形的兩條邊相交⟦為什麼｜直線穿過三角形內部，進去一次、出來一次，交兩條邊；任三點不共線，所以不會穿過頂點。⟧，例如與 $A_1A_2,\ A_1A_3$ 相交，則 $A_2A_3A_5A_4$ 是凸四邊形⟦為什麼是凸的｜四點構成凸四邊形 ⟺ 沒有一點落在另三點的三角形裡。$A_2,A_3$ 是整個點集凸包的頂點，不可能在別的三角形裡。直線 $A_4A_5$ 把 $A_1$ 與 $A_2,A_3$ 分在兩側，所以 $\triangle A_2A_3A_5$ 只在直線上碰到 $A_5$ 一點，$A_4$ 不在它裡面；同理 $A_5$ 不在 $\triangle A_2A_3A_4$ 裡。⟧。
+<figure class="bkfig"><svg viewBox="0 0 220 187" width="220" role="img" aria-label="三角形 A₁A₂A₃ 內有 A₄、A₅，直線 A₄A₅ 交 A₁A₂、A₁A₃，紅色是凸四邊形 A₂A₃A₅A₄">
+  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="105.9,24.0 24.0,163.2 196.0,163.2"/></g>
+  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="36.0" y1="105.0" x2="175.8" y2="94.2"/></g>
+  <g fill="none" stroke="#c2562b" stroke-width="2"><line x1="24.0" y1="163.2" x2="196.0" y2="163.2"/><line x1="196.0" y1="163.2" x2="130.5" y2="97.7"/><line x1="130.5" y1="97.7" x2="77.2" y2="101.8"/><line x1="77.2" y1="101.8" x2="24.0" y2="163.2"/></g>
+  <g fill="currentColor"><circle cx="77.2" cy="101.8" r="2.6"/><circle cx="130.5" cy="97.7" r="2.6"/></g>
+  <g fill="currentColor" font-size="14" font-style="italic"><text x="99.9" y="16.0">A₁</text><text x="8.0" y="177.2">A₂</text><text x="198.0" y="177.2">A₃</text><text x="71.2" y="117.8">A₄</text><text x="128.5" y="113.7">A₅</text></g>
+</svg><figcaption>虛線是直線 $A_4A_5$；紅色是凸四邊形 $A_2A_3A_5A_4$</figcaption></figure>
+這題看似簡單，但不用凸包很難描述清楚。
+
+=== 例 3 | 銳角三角形至多 7 個
+zh: 平面上任意給定 5 點，其中任三點不共線。證明：以它們為頂點的三角形中，至多有 7 個銳角三角形。
+sol: 5 點共可組成 $\mathrm C_5^3=10$ 個三角形，所以只要證等價命題：<b>至少有 3 個非銳角三角形</b>。設 5 點為 $A_1,\dots,A_5$，考慮其凸包。
+(1) 凸包是五邊形 $A_1A_2A_3A_4A_5$。內角和 $540^\circ$，至少有兩個內角是非銳角⟦為什麼｜若至多一個非銳角，其餘四個都 $\lt 90^\circ$，總和 $\lt 4\times90^\circ+180^\circ=540^\circ$，矛盾。⟧，而內角 $\angle A_i$ 非銳角，就表示 $\triangle A_{i-1}A_iA_{i+1}$ 是非銳角三角形。
+① 兩個非銳角內角不相鄰，例如 $A_1,A_4$：得到 $\triangle A_5A_1A_2$ 與 $\triangle A_3A_4A_5$。再連 $A_1A_4$，四邊形 $A_1A_2A_3A_4$ 內角和 $360^\circ$，至少有一個非銳角，又得一個非銳角三角形（它的三個頂點都在 $A_1,\dots,A_4$ 中，與前兩個不同）。共至少 3 個。
+② 兩個非銳角內角相鄰，例如 $A_1,A_2$：得到 $\triangle A_5A_1A_2$ 與 $\triangle A_1A_2A_3$。連 $A_2A_5$，四邊形 $A_2A_3A_4A_5$ 至少有一個非銳角內角，又得一個。共至少 3 個。
+<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center"><figure class="bkfig"><svg viewBox="0 0 150 150" width="150" role="img" aria-label="凸五邊形，A₁、A₄ 不相鄰，虛線連 A₁A₄">
+  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="24.0,63.7 41.0,126.0 109.0,126.0 126.0,60.8 77.8,24.0"/></g>
+  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="24.0" y1="63.7" x2="126.0" y2="60.8"/></g>
+  <g fill="currentColor" font-size="14" font-style="italic"><text x="4.0" y="67.7">A₁</text><text x="33.0" y="142.0">A₂</text><text x="109.0" y="142.0">A₃</text><text x="132.0" y="64.8">A₄</text><text x="73.8" y="16.0">A₅</text></g>
+</svg><figcaption>①</figcaption></figure><figure class="bkfig"><svg viewBox="0 0 150 156" width="150" role="img" aria-label="凸五邊形，A₁、A₂ 相鄰，虛線連 A₂A₅">
+  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="24.0,60.0 33.0,132.0 114.0,132.0 126.0,60.0 66.0,24.0"/></g>
+  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="33.0" y1="132.0" x2="66.0" y2="24.0"/></g>
+  <g fill="currentColor" font-size="14" font-style="italic"><text x="4.0" y="64.0">A₁</text><text x="25.0" y="148.0">A₂</text><text x="114.0" y="148.0">A₃</text><text x="132.0" y="64.0">A₄</text><text x="62.0" y="16.0">A₅</text></g>
+</svg><figcaption>②</figcaption></figure></div>
+(2) 凸包是四邊形，設 $A_5$ 在四邊形 $A_1A_2A_3A_4$ 內，不妨設 $A_5$ 在 $\triangle A_1A_2A_3$ 內。
+<figure class="bkfig"><svg viewBox="0 0 200 187" width="200" role="img" aria-label="凸四邊形 A₁A₂A₃A₄，A₅ 在三角形 A₁A₂A₃ 內">
+  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="24.0,36.7 32.4,163.3 176.0,159.1 163.3,24.0"/><line x1="70.4" y1="104.2" x2="24.0" y2="36.7"/><line x1="70.4" y1="104.2" x2="32.4" y2="163.3"/><line x1="70.4" y1="104.2" x2="176.0" y2="159.1"/><line x1="24.0" y1="36.7" x2="176.0" y2="159.1"/></g>
+  <g fill="currentColor"><circle cx="70.4" cy="104.2" r="2.6"/></g>
+  <g fill="currentColor" font-size="14" font-style="italic"><text x="4.0" y="36.7">A₁</text><text x="14.4" y="177.3">A₂</text><text x="180.0" y="173.1">A₃</text><text x="167.3" y="20.0">A₄</text><text x="66.4" y="96.2">A₅</text></g>
+</svg><figcaption>$A_5$ 在 $\triangle A_1A_2A_3$ 內</figcaption></figure>
+四邊形 $A_1A_2A_3A_4$ 至少有一個非銳角內角，得一個非銳角三角形；而 $\triangle A_1A_2A_5,\ \triangle A_2A_3A_5,\ \triangle A_3A_1A_5$ 中至少有兩個是非銳角三角形⟦為什麼｜這三個三角形在 $A_5$ 的角加起來是 $360^\circ$，每個 $\lt 180^\circ$。若至多一個 $\ge90^\circ$，總和 $\lt 180^\circ+90^\circ+90^\circ=360^\circ$，矛盾。⟧。共至少 3 個。
+(3) 凸包是三角形，設 $A_4,A_5$ 在 $\triangle A_1A_2A_3$ 內。同上理由，$\triangle A_1A_2A_4,\triangle A_2A_3A_4,\triangle A_3A_1A_4$ 中至少兩個非銳角，$\triangle A_1A_2A_5,\triangle A_2A_3A_5,\triangle A_3A_1A_5$ 中也至少兩個，這種情況至少有 4 個非銳角三角形。
+綜合三種情況，命題得證。
+
+=== text
+<p>下面一類問題近來很熱門，屬於 <b>Heilbronn 型問題</b>，多次出現在數學競賽中。</p>
+
+=== 例 4 | 最大距離與最小距離的比
+src: 1985 年全國高中數學聯賽（$n=5$ 的情形）
+zh: 平面上任給 $n$ 個點，每兩點之間有一個距離。最大距離與最小距離的比記為 $\lambda_n$，求 $\lambda_n$ 的最小值（下確界）。
+sol: 對這個問題的研究還不深入。已知的下界有 $\lambda_4\ge\sqrt2$，$\lambda_5\ge2\sin54^\circ$，$\lambda_6\ge\sqrt3$；$\lambda_7$ 尚屬未知。有人猜想 $\lambda_n\ge2\sin\frac{n-2}{2n}\pi$，但還沒有證明。⟦猜想的來由｜正 $n$ 邊形的最長對角線與邊長的比。例如正五邊形：$2\sin54^\circ=\frac{1+\sqrt5}2\approx1.618$；正方形：$2\sin45^\circ=\sqrt2$。⟧
+下面只考慮 $\lambda_5$。
+<b>命題.</b> 平面上任給 5 個相異的點，它們之間最大距離與最小距離的比記為 $\lambda_5$。求證 $\lambda_5\ge2\sin54^\circ$，並討論等號成立的充要條件。
+<b>證明.</b> 設 5 點為 $A,B,C,D,E$，討論其凸包。
+(1) 有三點共線，設 $B$ 在 $A,C$ 之間：$$\lambda_5\ge\dfrac{|AC|}{\min(|AB|,|BC|)}\ge2>2\sin54^\circ$$。
+(2) 凸包是三角形，設 $D,E$ 在 $\triangle ABC$ 內部。$\angle ADB,\angle BDC,\angle CDA$ 的和是 $360^\circ$，至少一個不小於 $120^\circ$，設 $\angle ADB\ge120^\circ$。由餘弦定理，
+$$AB^2=AD^2+BD^2-2AD\cdot BD\cos\angle ADB\ge AD^2+BD^2+AD\cdot BD.$$
+設 $AD\le BD$，得 $AB^2\ge3AD^2>4AD^2\sin^254^\circ$⟦數值｜$$4\sin^254^\circ=\big(\frac{1+\sqrt5}2\big)^2=\frac{3+\sqrt5}2\approx2.618\lt 3$$。⟧，所以 $\lambda_5\ge\frac{AB}{AD}>2\sin54^\circ$。
+(3) 凸包是四邊形，設 $E$ 在凸四邊形 $ABCD$ 內部，則 $E$ 必在 $\triangle ABC$ 或 $\triangle ACD$ 中，照 (2) 的證明得 $\lambda_5>2\sin54^\circ$。
+(4) 凸包是五邊形 $ABCDE$。內角和 $540^\circ$，至少一個內角不小於 $108^\circ$，設為 $B$，則
+$$AC^2=AB^2+BC^2-2AB\cdot BC\cos B\ge AB^2+BC^2-2AB\cdot BC\cos108^\circ.\qquad(\mathrm I)$$
+設 $AB\le BC$，則
+$$AC^2\ge2AB^2(1-\cos108^\circ)=4AB^2\sin^254^\circ,\qquad(\mathrm{II})$$
+⟦兩步｜$\cos108^\circ\lt 0$，所以 $$-2AB\cdot BC\cos108^\circ\ge-2AB^2\cos108^\circ$$，又 $BC^2\ge AB^2$。再用 $1-\cos108^\circ=2\sin^254^\circ$（半角公式）。⟧
+於是 $\lambda_5\ge\dfrac{AC}{AB}\ge2\sin54^\circ$。
+<b>等號條件.</b> 情況 (1)(2)(3) 中等號不可能成立，只需討論 (4)。(I) 取等號當且僅當 $B=108^\circ$，所以任一內角都不能大於 $108^\circ$，必須 $A=B=C=D=E=108^\circ$；(II) 取等號當且僅當 $AB=BC$，所以五條邊都相等。因此 $\lambda_5=2\sin54^\circ$ 的充要條件是：所給的點構成一個正五邊形。
+
+=== text
+<p>對給定的 $n$ 點組，若任三點不共線，可以對它們構成的三角形的面積做類似的討論，得到類似例 4 的問題。</p>
+
+=== 例 5 | 最大面積與最小面積的比
+zh: 平面上任意給定 $n$ 個點，其中任三點都可組成三角形。最大面積與最小面積的比記為 $\mu_n$，求 $\mu_n$ 的最小值（下確界）。
+sol: 這個問題也還沒有深入研究。中國科學技術大學學生李文志得到：$\mu_4\ge1$；$\mu_5\ge\frac{\sqrt5+1}2$；$\mu_6\ge3$。7 點以上還沒有結果。下面證明 $\mu_5\ge\frac{\sqrt5+1}2$。
+設 5 點為 $A_1,\dots,A_5$。
+(1) 凸包不是凸五邊形：必有一點落在某個三角形中，設 $A_4$ 在 $\triangle A_1A_2A_3$ 內。三個小三角形面積相加等於大三角形，最小的不超過三分之一，所以
+$$\mu_5\ge\frac{\triangle A_1A_2A_3}{\min(\triangle A_1A_2A_4,\triangle A_2A_3A_4,\triangle A_3A_1A_4)}\ge3>\frac{\sqrt5+1}2.$$
+(2) 凸包是凸五邊形 $A_1A_2A_3A_4A_5$。作直線 $MN\parallel A_3A_4$，交 $A_1A_3$、$A_1A_4$ 於 $M,N$，且 $\dfrac{A_1M}{MA_3}=\dfrac{A_1N}{NA_4}=\dfrac{\sqrt5-1}2$。
+① 若 $A_2,A_5$ 中有一點（設為 $A_2$）與 $A_3,A_4$ 在 $MN$ 的同側：
+<figure class="bkfig"><svg viewBox="0 0 220 263" width="220" role="img" aria-label="凸五邊形，MN 平行 A₃A₄，A₂ 在 MN 與 A₃A₄ 之間">
+  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="110.0,24.0 36.9,196.0 24.0,239.0 178.8,239.0 196.0,110.0"/><line x1="41.7" y1="106.1" x2="171.8" y2="106.1"/><line x1="110.0" y1="24.0" x2="24.0" y2="239.0"/><line x1="110.0" y1="24.0" x2="178.8" y2="239.0"/></g>
+  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="36.9" y1="196.0" x2="178.8" y2="239.0"/></g>
+  <g fill="currentColor"><circle cx="77.2" cy="106.1" r="2.6"/><circle cx="136.3" cy="106.1" r="2.6"/></g>
+  <g fill="currentColor" font-size="14" font-style="italic"><text x="106.0" y="16.0">A₁</text><text x="16.9" y="200.0">A₂</text><text x="8.0" y="253.0">A₃</text><text x="182.8" y="253.0">A₄</text><text x="202.0" y="110.0">A₅</text><text x="59.2" y="102.1">M</text><text x="142.3" y="102.1">N</text></g>
+</svg><figcaption>$A_2$ 落在 $MN$ 與 $A_3A_4$ 之間</figcaption></figure>
+兩個三角形同底 $A_3A_4$，$A_2$ 到 $A_3A_4$ 的距離不超過 $M$ 到 $A_3A_4$ 的距離，所以
+$$\mu_5\ge\frac{\triangle A_1A_3A_4}{\triangle A_2A_3A_4}\ge\frac{A_1A_3}{MA_3}=1+\frac{A_1M}{MA_3}=1+\frac{\sqrt5-1}2=\frac{\sqrt5+1}2.$$
+⟦第二個 ≥｜同底的三角形面積比是高的比；$A_1$ 與 $M$ 到 $A_3A_4$ 的距離之比等於 $A_1A_3:MA_3$（相似）。⟧
+② 若 $A_2,A_5$ 都與 $A_1$ 在 $MN$ 的同側：
+<figure class="bkfig"><svg viewBox="0 0 220 243" width="220" role="img" aria-label="凸五邊形，A₂、A₅ 都在 MN 上方，A₂A₅ 交 A₁A₃ 於 O">
+  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="113.9,24.0 24.0,78.7 35.7,219.5 176.5,219.5 196.0,86.5"/><line x1="51.8" y1="98.7" x2="170.1" y2="98.7"/><line x1="113.9" y1="24.0" x2="35.7" y2="219.5"/><line x1="113.9" y1="24.0" x2="176.5" y2="219.5"/><line x1="24.0" y1="78.7" x2="196.0" y2="86.5"/></g>
+  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="35.7" y1="219.5" x2="24.0" y2="78.7"/><line x1="35.7" y1="219.5" x2="196.0" y2="86.5"/></g>
+  <g fill="currentColor"><circle cx="84.0" cy="98.7" r="2.6"/><circle cx="137.8" cy="98.7" r="2.6"/><circle cx="90.8" cy="81.8" r="2.6"/></g>
+  <g fill="currentColor" font-size="14" font-style="italic"><text x="109.9" y="16.0">A₁</text><text x="4.0" y="82.7">A₂</text><text x="19.7" y="233.5">A₃</text><text x="180.5" y="233.5">A₄</text><text x="202.0" y="86.5">A₅</text><text x="66.0" y="94.7">M</text><text x="143.8" y="94.7">N</text><text x="74.8" y="77.8">O</text></g>
+</svg><figcaption>$A_2A_5$ 交 $A_1A_3$ 於 $O$，$O$ 在 $MN$ 上方</figcaption></figure>
+設 $A_2A_5$ 交 $A_1A_3$ 於 $O$，則 $A_1O\le A_1M$。$\triangle A_2A_3A_5$ 與 $\triangle A_1A_2A_5$ 同底 $A_2A_5$，面積比等於 $A_3$ 與 $A_1$ 到 $A_2A_5$ 的距離比，也就是 $OA_3:A_1O$，所以
+$$\mu_5\ge\frac{\triangle A_2A_3A_5}{\triangle A_1A_2A_5}=\frac{OA_3}{A_1O}\ge\frac{MA_3}{A_1M}=\frac1{\frac{\sqrt5-1}2}=\frac{\sqrt5+1}2.$$
+⟦第二個 ≥｜$A_1O\le A_1M$，所以 $$OA_3=A_1A_3-A_1O\ge A_1A_3-A_1M=MA_3$$，分子變大、分母變小。⟧
+
+=== 習題 1
+zh: 設 $A,B$ 是平面上兩個沒有公共元素的有限點集，且 $A\cup B$ 中任三個不同的點不共線。如果 $A,B$ 中至少有一個集合的點數不少於 5，證明：存在一個三角形，它的頂點全在 $A$ 中或全在 $B$ 中，它的內部不含另一個集合中的點。
+hint: 設 $A$ 有 5 點以上。先從 $A$ 中選 5 點，使它們的凸包不含 $A$ 的其他點，再按凸包的形狀分三種情況。
+sol: 設 $|A|\ge5$。<b>先選 5 點.</b> 取 $A$ 的凸包的一個頂點 $A_1$ 及相鄰頂點 $A_2$，其餘點都在射線 $A_1A_2$ 的同一側。把 $A$ 的其他點按 $\angle A_2A_1A_i$ 由小到大排成 $A_3,A_4,A_5,\dots$，取 $A_1,\dots,A_5$。它們的凸包落在角 $\angle A_2A_1A_5$ 之內，而這個角內除了 $A_2,\dots,A_5$ 沒有 $A$ 的其他點，所以凸包不含 $A$ 的其他點。
+(1) 凸包是五邊形 $A_1A_2A_3A_4A_5$：看 $\triangle A_1A_2A_3,\triangle A_1A_3A_4,\triangle A_1A_4A_5$。若其中一個不含 $B$ 的點，它就是所求。否則它們分別含 $B$ 的點 $B_1,B_2,B_3$，則 $\triangle B_1B_2B_3$ 即為所求⟦為什麼不含 A 的點｜$\triangle B_1B_2B_3$ 在五邊形內，而五邊形內 $A$ 的點只有五個頂點；頂點是凸包的「角」，不可能落在由形內其他點構成的三角形內部。⟧。
+(2) 凸包是四邊形，設 $A_3$ 在四邊形 $A_1A_2A_4A_5$ 內部：看 $$\triangle A_3A_1A_2,\triangle A_3A_2A_4,\triangle A_3A_4A_5,\triangle A_3A_5A_1$$。若其中一個不含 $B$ 的點即為所求；否則各含一點 $B_1,B_2,B_3,B_4$，則 $\triangle B_1B_2B_3$ 和 $\triangle B_1B_3B_4$ 中必有一個不含 $A_3$⟦為什麼｜四邊形 $B_1B_2B_3B_4$ 被對角線 $B_1B_3$ 分成這兩個三角形，$A_3$ 不在 $B_1B_3$ 上（任三點不共線），只能在其中一個裡面（或都不在）。⟧，即為所求。
+(3) 凸包是三角形，設 $A_4,A_5$ 在 $\triangle A_1A_2A_3$ 內：把三角形以 $A_4,A_5$ 剖分成 5 個小三角形（例如直線 $A_4A_5$ 交 $A_1A_2,A_1A_3$ 時，取 $\triangle A_1A_4A_5$、$\triangle A_1A_2A_4$、$\triangle A_1A_5A_3$ 及凸四邊形 $A_2A_3A_5A_4$ 的兩個三角形）。若其中一個不含 $B$ 的點即為所求；否則 5 個小三角形各含一個 $B$ 的點，直線 $A_4A_5$ 的某一側至少有其中 3 點⟦鴿籠｜5 個點分在直線兩側，必有一側至少 3 個。⟧，這 3 點構成的三角形在直線的一側，不含 $A_4,A_5$，也不含 $A_1,A_2,A_3$（凸包頂點），即為所求。
+
+=== 習題 2
+zh: 證明 $\lambda_6\ge\sqrt3$。
+sol: 設六點集為 $Z=\{A_1,\dots,A_6\}$。只要出現下面兩種情況之一就行：
+① $Z$ 中有三點共線，例如 $A_2$ 在線段 $A_1A_3$ 上且 $A_1A_2\le A_2A_3$，則 $\lambda_6\ge\dfrac{A_1A_3}{A_1A_2}\ge2>\sqrt3$。
+② $Z$ 中有三點構成的三角形有一個內角不小於 $120^\circ$，例如 $\angle A_1A_2A_3\ge120^\circ$，$A_2A_3\ge A_1A_2$，則
+$$A_1A_3^2=A_1A_2^2+A_2A_3^2-2A_1A_2\cdot A_2A_3\cos\angle A_1A_2A_3\ge A_1A_2^2+A_2A_3^2+A_1A_2\cdot A_2A_3\ge3A_1A_2^2,$$
+於是 $\lambda_6\ge\frac{A_1A_3}{A_1A_2}\ge\sqrt3$。
+下面證明 $Z$ 一定有 ①、② 之一。設 $Z$ 沒有 ①，討論凸包：
+(1) 凸包是 $\triangle A_1A_2A_3$：內部一點 $A_4$ 使 $\angle A_1A_4A_2,\angle A_2A_4A_3,\angle A_3A_4A_1$ 中至少一個 $\ge120^\circ$（和為 $360^\circ$），即有 ②。
+(2) 凸包是四邊形 $A_1A_2A_3A_4$：$A_5$ 必在 $\triangle A_1A_2A_3$ 或 $\triangle A_1A_3A_4$ 中，由 (1) 有 ②。
+(3) 凸包是五邊形 $A_1\cdots A_5$：$A_6$ 必在 $\triangle A_1A_2A_3,\triangle A_1A_3A_4,\triangle A_1A_4A_5$ 之一的內部，由 (1) 有 ②。
+(4) 凸包是六邊形：內角和 $720^\circ$，必有一個內角 $\ge120^\circ$，即有 ②。
+所以結論總成立。
+
+=== 習題 3
+zh: 平面上有 4 個圓（圓面），如果每三個圓都有公共點，證明這 4 個圓必有公共點。
+hint: 取 $A_i$ 為除了第 $i$ 個圓以外三個圓的公共點，再看 $A_1,\dots,A_4$ 的凸包。
+sol: 設四個圓為 $\odot O_1,\dots,\odot O_4$。取 $A_1$ 為 $\odot O_2,\odot O_3,\odot O_4$ 的公共點，$A_2$ 為 $\odot O_1,\odot O_3,\odot O_4$ 的公共點，$A_3$ 為 $\odot O_1,\odot O_2,\odot O_4$ 的公共點，$A_4$ 為 $\odot O_1,\odot O_2,\odot O_3$ 的公共點。（原書只寫到「考慮其凸包……」，以下為補全。）
+若有兩點重合，例如 $A_1=A_2$，它同時屬於四個圓，得證。設四點相異，考慮其凸包：
+(1) 凸包是三角形（或有三點共線），設 $A_4$ 在 $\triangle A_1A_2A_3$ 上或內部。$A_1,A_2,A_3$ 都屬於 $\odot O_4$，圓是凸集（例 1），所以整個 $\triangle A_1A_2A_3$ 都在 $\odot O_4$ 內，$A_4\in\odot O_4$。又 $A_4$ 本來就屬於另三個圓，所以 $A_4$ 是公共點。
+(2) 凸包是凸四邊形。四點中某兩條連線是它的對角線，例如 $A_1A_3$ 與 $A_2A_4$ 相交於 $P$⟦其他配對同理｜若對角線是 $A_1A_2$ 與 $A_3A_4$ 或 $A_1A_4$ 與 $A_2A_3$，論證完全一樣，只是換成另兩對圓。⟧。$A_1,A_3$ 都屬於 $\odot O_2$ 和 $\odot O_4$，所以線段 $A_1A_3\subseteq\odot O_2\cap\odot O_4$；$A_2,A_4$ 都屬於 $\odot O_1$ 和 $\odot O_3$，所以線段 $A_2A_4\subseteq\odot O_1\cap\odot O_3$。交點 $P$ 同時在兩條線段上，屬於四個圓。
+得證。（這是 Helly 定理在平面上 $4$ 個凸集時的特例。）

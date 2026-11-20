@@ -1,0 +1,20 @@
+=== meta
+title: 三角形不等式：邊角互換
+from: gz-L16
+order: 30
+
+=== body
+<div class="hero">三角形裡的不等式，三條路：<b>幾何</b>（兩邊和大於第三邊）、<b>三角</b>（邊換成角）、<b>代數</b>（AM-GM、配方）<br>最常用的一步：<b>邊角互換</b> $a=2R\sin A$、$\triangle=\frac{abc}{4R}$</div>
+<div class="cards">
+<div class="card"><h4>① 角的基本不等式</h4><div class="rule">$\sin^2A+\sin^2B+\sin^2C\le\frac94$</div>
+<div class="eg">$=2+\cos C\cos(A-B)-\cos^2C$<br>$\le2+|\cos C|-\cos^2C\le\frac94$ <span class="pill">配方</span></div></div>
+<div class="card"><h4>② 換成邊</h4><div class="rule">$\sum\sin^2\le\frac94\iff a^2+b^2+c^2\le9R^2$</div>
+<div class="eg">$\cos A+\cos B+\cos C\le\frac32$<br>$\iff\sum a^2(b+c-a)\le3abc$</div></div>
+<div class="card"><h4>③ Weitzenböck</h4><div class="rule">$a^2+b^2+c^2\ge4\sqrt3\,\triangle$</div>
+<div class="eg">$=2[a^2+b^2-2ab\sin(C+30^\circ)]$<br>$\ge2(a-b)^2\ge0$</div></div>
+</div>
+<p>正三角形是幾乎所有對稱不等式的等號情形。⟦一串推論｜$\sin A+\sin B+\sin C\le\frac{3\sqrt3}2$、$\cos A\cos B\cos C\le\frac18$、$\sin\frac A2\sin\frac B2\sin\frac C2\le\frac18$……都在 $A=B=C=60^\circ$ 取等號。例：正三角形 $\sin60^\circ\times3=\frac{3\sqrt3}2$。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>對 $\cos A$ 直接套「$\sin$ 的凹性」：$\frac\pi2-A$ 可能是負角</li>
+<li>只證了不等式，忘了寫<b>等號條件</b></li></ul></div>
+<div class="bottomline">先猜正三角形取等號，再選邊或角其中一種語言做到底。</div>

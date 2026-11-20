@@ -1,0 +1,20 @@
+=== meta
+title: 代換聯立：讓方程自己轉回來
+from: gz-L12
+order: 30
+
+=== body
+<div class="hero">把 $x$ 換成 $u(x)$，得到一條<b>新方程</b><br>若 $u$ 迭代幾次會<b>回到 $x$</b>，就有一組聯立方程，<b>消去</b>就解出 $f$</div>
+<div class="cards">
+<div class="card"><h4>① 兩步回來</h4><div class="rule">$u(x)=\frac1x,\ -x,\ 1-x$</div>
+<div class="eg">$f(x)=f\big(\frac1x\big)\lg x+1$<br>換 $x\to\frac1x$ 再代回<br>$f(x)=\dfrac{1+\lg x}{1+\lg^2x}$</div></div>
+<div class="card"><h4>② 三步回來</h4><div class="rule">$x\to\frac{x-1}{x}\to\frac{1}{1-x}\to x$</div>
+<div class="eg">$F(x)+F\big(\frac{x-1}x\big)=1+x$<br>三式 (1)−(2)+(3) 得 $2F(x)$ <span class="pill">輪換消去</span></div></div>
+<div class="card"><h4>③ 特殊值</h4><div class="rule">$x=y$、$x=1$、$x=0$</div>
+<div class="eg">$f\big(\frac xy\big)=f(x)-f(y)$<br>取 $x=y$ 得 $f(1)=0$</div></div>
+</div>
+<p>怎麼看出 $\frac{x-1}x$ 轉三次回來？⟦直接算｜$\frac{x-1}x\mapsto\frac{\frac{x-1}x-1}{\frac{x-1}x}=\frac1{1-x}\mapsto\frac{\frac1{1-x}-1}{\frac1{1-x}}=x$。代 $x=2$：$2\to\frac12\to-1\to2$。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>換變數後忘了把右邊的 $x$ 也一起換</li>
+<li>解出 $f$ 後沒有<b>代回原方程驗算</b></li></ul></div>
+<div class="bottomline">函數方程第一步：代特殊值；第二步：找會「轉回來」的代換。</div>

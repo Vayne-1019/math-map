@@ -1,0 +1,20 @@
+=== meta
+title: 埃爾德什－莫德爾不等式
+from: gz-L16
+order: 20
+
+=== body
+<div class="hero">$P$ 在三角形內（或邊上）：<b>到三頂點距離和 ≥ 到三邊距離和的 2 倍</b><br>$PA+PB+PC$ $\ge2(PD+PE+PF)$<br>正三角形中心取等號</div>
+<div class="cards">
+<div class="card"><h4>① 關鍵估計</h4><div class="rule">$PC\sin C=DE$<br>$\ge p\sin B+q\sin A$</div>
+<div class="eg">$P,D,C,E$ 共圓，直徑 $PC$ <span class="pill">投影</span></div></div>
+<div class="card"><h4>② 相加</h4><div class="rule">$p\big(\frac{\sin B}{\sin C}+\frac{\sin C}{\sin B}\big)+\cdots$</div>
+<div class="eg">每個括號 $\ge2$（$x+\frac1x\ge2$）</div></div>
+<div class="card"><h4>③ 推論</h4><div class="rule">$P=I$：$AI+BI+CI\ge6r$</div>
+<div class="eg">正三角形邊長 $2\sqrt3$：$r=1$，$AI=2$，$3\times2=6$ ✓</div></div>
+</div>
+<p>$P$ 在邊上也成立。⟦例｜等腰 $\triangle$ 底邊上一點 $D$，到兩腰距離 $DE,DF$：$DA+DB+DC\ge2(DE+DF)$，即 $\frac12(AD+BC)\ge DE+DF$。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>把「到邊的距離」當成到頂點的連線長</li>
+<li>$P$ 在三角形外時不等式不一定成立</li></ul></div>
+<div class="bottomline">距離和的下界問題，先想 E-M：頂點距離 ≥ 2 倍邊距離。</div>

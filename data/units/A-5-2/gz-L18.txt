@@ -1,0 +1,22 @@
+=== meta
+title: 求最值的四種初等方法
+from: gz-L18
+order: 40
+
+=== body
+<div class="hero">求最值不用微積分，四條路：<b>配方、判別式、消元、三角</b><br>但每一條都要回頭檢查：<b>極值點在定義域裡嗎？取得到嗎？</b></div>
+<div class="cards">
+<div class="card"><h4>① 配方</h4><div class="rule">$y=a(t-h)^2+k$，看 $h$ 在不在範圍</div>
+<div class="eg">$5\sin x+\cos2x=-2\big(t-\frac54\big)^2+\frac{33}8$<br>$t=\sin x\le1$ ⇒ $y_{\max}=4$，不是 $\frac{33}8$</div></div>
+<div class="card"><h4>② 判別式</h4><div class="rule">$y$ 放進係數，實根 ⇒ $\Delta\ge0$</div>
+<div class="eg">$y=\frac{2x}{x^2+x+1}$ ⇒ $yx^2+(y-2)x+y=0$<br>$-2\le y\le\frac23$，再代回找 $x$</div></div>
+<div class="card"><h4>③ 消元</h4><div class="rule">用條件消去變數，留意新範圍</div>
+<div class="eg">$3x^2+2y^2=6x$ ⇒ $0\le x\le2$<br>$x^2+y^2=\frac92-\frac12(x-3)^2\le4$</div></div>
+<div class="card"><h4>④ 三角</h4><div class="rule">$a\sin x+b\cos x=\sqrt{a^2+b^2}\sin(x+\theta)$</div>
+<div class="eg">$\frac{4\sin x-1}{5\cos x+10}$：$|10y+1|\le\sqrt{16+25y^2}$<br>$-\frac35\le y\le\frac13$</div></div>
+</div>
+<p>為什麼判別式法要代回檢查？⟦平方會擴大範圍｜$y=-\frac x2+\frac{\sqrt3}4\sqrt{1+4x^2}$ 平方後由 $\Delta\ge0$ 得 $y\le-\frac{\sqrt2}4$ 或 $y\ge\frac{\sqrt2}4$，但原函數恆正，前一段是平方帶進來的假解。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>韋達定理求 $x_1^2+x_2^2$ 時忘了「有實根」這個限制（1982 聯賽：答 18 不是 19）</li>
+<li>由 $a\le y\le b$ 直接說最大值是 $b$，沒驗證 $b$ 取得到</li></ul></div>
+<div class="bottomline">最值 = 不等式 + 等號取得到。兩件事都要寫。</div>

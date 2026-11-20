@@ -1,0 +1,21 @@
+=== meta
+title: 一一對應：換一個好數的集合
+from: gz-L11
+order: 20
+
+=== body
+<div class="hero">直接數 $A$ 很難 → 找一個<b>好數的</b> $B$<br>建立 $f:A\to B$，證明它<b>不重複、不遺漏</b><br>就得到 $|A|=|B|$</div>
+<div class="cards">
+<div class="card"><h4>① 單射</h4><div class="rule">$f(a_1)=f(a_2)\Rightarrow a_1=a_2$</div>
+<div class="eg">不同的東西對到不同的編碼<br>⇒ $|A|\le|B|$ <span class="pill">不重複</span></div></div>
+<div class="card"><h4>② 滿射</h4><div class="rule">每個 $b$ 都有原像</div>
+<div class="eg">每個編碼都能還原成一個東西<br>⇒ $|A|\ge|B|$ <span class="pill">不遺漏</span></div></div>
+<div class="card"><h4>③ 雙射＝計數</h4><div class="rule">①＋② ⇒ $|A|=|B|$</div>
+<div class="eg">三角形每邊 $n$ 等分畫格線<br>平行四邊形 ↔ 底線上 4 個點<br>共 $3\,\mathrm C_{n+2}^4$ 個 <span class="pill">編碼成組合</span></div></div>
+</div>
+<p>為什麼平行四邊形對到 4 個點？⟦拆解｜把兩邊各延長一格到 $B'C'$，所有格線延長後在 $B'C'$ 上有 $n+2$ 個點。邊不平行 $BC$ 的平行四邊形，四條邊延長落在 $i\lt j\lt k\lt l$；反過來任選四點畫線也圍出唯一一個。$n=2$ 時共 $3\mathrm C_4^4=3$ 個：三個小菱形。⟧</p>
+<p>單射也能證「一定存在」：$|X|\le|Y|$ 卻又數出 $|X|\ge|Y|$，就逼出 $f$ 是一一對應，再從「每張骨牌下面都有空格」找到矛盾或結論。⟦看例子｜$6\times6$ 棋盤 11 張骨牌、14 個空格：每個空格對到正上方的骨牌是單射，逼出相等後，最底列不可能有骨牌，整列空著。詳見書本版例 5。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>只證了「每個 $A$ 都有編碼」，忘了證<b>不同的</b>東西編碼不同</li>
+<li>只證了單射，忘了檢查每個編碼都<b>真的造得出來</b>（例如畫出的四邊形要在三角形裡）</li></ul></div>
+<div class="bottomline">計數困難時，先問：這些東西能不能用「選幾個點」來編碼？</div>

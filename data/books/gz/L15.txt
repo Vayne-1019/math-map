@@ -1,0 +1,230 @@
+=== meta
+title: 重要不等式的應用
+author: 嚴鎮軍
+pages: 113-123
+units: A-4-4, A-4-2, A-4-3
+status: 完成
+
+=== text
+<h3>一、排序不等式及其應用</h3>
+
+=== 定理 1 | 排序不等式（排序原理）
+zh: 設有兩組有序數 $a_1\le a_2\le\dots\le a_n$ 及 $b_1\le b_2\le\dots\le b_n$，則
+$$\begin{aligned}&a_1b_1+a_2b_2+\dots+a_nb_n\quad(\text{順序和})\\ \ge{}&a_1b_{j_1}+a_2b_{j_2}+\dots+a_nb_{j_n}\quad(\text{亂序和})\\ \ge{}&a_1b_n+a_2b_{n-1}+\dots+a_nb_1\quad(\text{逆序和}),\end{aligned}$$
+其中 $j_1,j_2,\dots,j_n$ 是 $1,2,\dots,n$ 的任一排列。當且僅當 $a_1=\dots=a_n$ 或 $b_1=\dots=b_n$ 時，等號對任一排列成立。
+sol: <b>關鍵一步：對調兩項只會變大.</b> 設亂序和 $S$ 中 $j_n\ne n$（若 $j_n=n$，就改看 $a_{n-1}$），而 $b_n$ 跟某個 $a_k$（$k\ne n$）配對。則
+$$a_kb_n+a_nb_{j_n}\le a_kb_{j_n}+a_nb_n.\qquad(1)$$
+⟦為什麼｜右減左 $$=a_nb_n-a_kb_n+a_kb_{j_n}-a_nb_{j_n}=(a_n-a_k)(b_n-b_{j_n})\ge0$$，因為 $a_n$ 最大、$b_n$ 最大。⟧
+所以在 $S$ 中把 $b_n$ 和 $b_{j_n}$ 的位置對調（其餘不動），新和 $S_1\ge S$。調好 $a_n$ 與 $b_n$ 後，再照樣調整 $a_{n-1}$ 與 $b_{n-1}$，得 $S_2\ge S_1$。如此至多經過 $n-1$ 次調整就得到順序和，所以
+$$a_1b_1+a_2b_2+\dots+a_nb_n\ge a_1b_{j_1}+a_2b_{j_2}+\dots+a_nb_{j_n}.\qquad(2)$$
+當 $a_i$ 全相等或 $b_i$ 全相等時，(2) 顯然取等號。反之若兩組都不全相等，可以找到一個排列，其中有 $j_n$ 與 $k$ 使 $b_n>b_{j_n}$、$a_n>a_k$，這時 (1) 嚴格成立，(2) 對這個排列也嚴格成立。
+「亂序和不小於逆序和」可類似地證明。⟦怎麼類似｜把 $b$ 換成 $-b_n\le-b_{n-1}\le\dots\le-b_1$，套用「順序和 $\ge$ 亂序和」，兩邊再乘 $-1$ 就是「逆序和 $\le$ 亂序和」。⟧
+<b>口訣</b>：大配大、小配小時總和最大；大配小時總和最小。
+
+=== 例 1 | 造兩組有序數
+zh: 設 $a,b,c$ 為正數，求證
+$$a+b+c\le\frac{a^2+b^2}{2c}+\frac{b^2+c^2}{2a}+\frac{c^2+a^2}{2b}\le\frac{a^2}{bc}+\frac{b^2}{ca}+\frac{c^2}{ab}.$$
+sol: 不等式對 $a,b,c$ 對稱，設 $a\ge b\ge c>0$，於是
+$$a^2\ge b^2\ge c^2,\qquad\frac1c\ge\frac1b\ge\frac1a.$$
+對這兩組數用排序不等式（逆序和最小）：
+$$\begin{aligned}a^2\cdot\frac1a+b^2\cdot\frac1b+c^2\cdot\frac1c&\le a^2\cdot\frac1b+b^2\cdot\frac1c+c^2\cdot\frac1a,\\ a^2\cdot\frac1a+b^2\cdot\frac1b+c^2\cdot\frac1c&\le a^2\cdot\frac1c+b^2\cdot\frac1a+c^2\cdot\frac1b.\end{aligned}$$
+⟦哪一個是逆序和｜$a^2$ 最大配 $\frac1a$ 最小，$c^2$ 最小配 $\frac1c$ 最大，所以左邊是逆序和；右邊兩個都是亂序和。⟧
+兩式相加再除以 2，左邊是 $a+b+c$，右邊整理後正好是 $\frac{a^2+b^2}{2c}+\frac{b^2+c^2}{2a}+\frac{c^2+a^2}{2b}$，得第一個不等式。
+第二個不等式：考慮 $a^3\ge b^3\ge c^3>0$ 及 $\dfrac1{bc}\ge\dfrac1{ca}\ge\dfrac1{ab}$，⟦照樣做｜順序和 $\frac{a^3}{bc}+\frac{b^3}{ca}+\frac{c^3}{ab}$ 不小於兩個亂序和 $\frac{a^3}{ca}+\frac{b^3}{ab}+\frac{c^3}{bc}=\frac{a^2}c+\frac{b^2}a+\frac{c^2}b$ 與 $\frac{a^3}{ab}+\frac{b^3}{bc}+\frac{c^3}{ca}=\frac{a^2}b+\frac{b^2}c+\frac{c^2}a$。兩式相加除以 2，右邊恰是中間那個式子。⟧
+<b>注.</b> 用排序不等式證其他不等式時，關鍵是造出兩組合適的有序數。
+
+=== 例 2 | 互不相同的正整數
+src: 第 20 屆 IMO 第 5 題（1978）
+zh: 設 $a_1,a_2,\dots,a_n$ 是互不相同的正整數。求證：$$1+\dfrac12+\dfrac13+\dots+\dfrac1n\le a_1+\dfrac{a_2}{2^2}+\dots+\dfrac{a_n}{n^2}$$。
+sol: 設 $b_1,b_2,\dots,b_n$ 是 $a_1,\dots,a_n$ 由小到大的重排：$b_1\lt b_2\lt \dots\lt b_n$。又 $1>\frac1{2^2}>\frac1{3^2}>\dots>\frac1{n^2}$。原式右邊是亂序和，不小於逆序和：
+$$a_1+\frac{a_2}{2^2}+\dots+\frac{a_n}{n^2}\ge b_1+\frac{b_2}{2^2}+\dots+\frac{b_n}{n^2}.$$
+⟦為什麼這是逆序和｜$b_k$ 由小到大，配上由大到小的 $\frac1{k^2}$。⟧
+$b_1,\dots,b_n$ 是互不相同的正整數，所以 $b_1\ge1,\ b_2\ge2,\ \dots,\ b_n\ge n$⟦為什麼｜$b_1\ge1$；每往後一個至少多 1，所以 $b_k\ge k$。⟧，從而
+$$b_1+\frac{b_2}{2^2}+\dots+\frac{b_n}{n^2}\ge1+\frac2{2^2}+\dots+\frac n{n^2}=1+\frac12+\dots+\frac1n.$$
+故原式得證。
+
+=== text
+<p>利用排序不等式及函數的單調性，可以寫出許多不等式。例如設 $0\le x_1\le x_2\le\dots\le x_n\le\frac\pi2$，則
+$$\sum_{i=1}^nx_i\sin x_i\ge\sum_{i=1}^nx_i\sin y_i\ge\sum_{i=1}^nx_{n+1-i}\sin x_i,$$
+其中 $y_1,\dots,y_n$ 是 $x_1,\dots,x_n$ 的一個排列。⟦為什麼｜$\sin$ 在 $\big[0,\frac\pi2\big]$ 遞增，所以 $\sin x_1\le\dots\le\sin x_n$，和 $x_i$ 同序。⟧ 許多重要的不等式都可以由排序不等式推出。</p>
+<h3>二、平均不等式及其應用</h3>
+<p>$n$ 個正數 $a_1,\dots,a_n$ 的算術平均與幾何平均分別是
+$$A_n=\frac{a_1+a_2+\dots+a_n}n,\qquad G_n=\sqrt[n]{a_1a_2\cdots a_n}.$$
+此外還有調和平均（光學、電路中用到）與平方平均（統計、誤差分析中用到）：
+$$H_n=\frac{n}{\frac1{a_1}+\frac1{a_2}+\dots+\frac1{a_n}},\qquad Q_n=\sqrt{\frac{a_1^2+a_2^2+\dots+a_n^2}n}.$$</p>
+
+=== 定理 2 | 平均不等式
+zh: $$H_n\le G_n\le A_n\le Q_n,$$
+其中每個等號成立的充要條件都是 $a_1=a_2=\dots=a_n$。
+sol: <b>先證 $A_n\ge G_n$（用排序不等式）.</b> 記
+$$x_1=\frac{a_1}{G_n},\ x_2=\frac{a_1a_2}{G_n^2},\ \dots,\ x_n=\frac{a_1a_2\cdots a_n}{G_n^n}=1,\qquad y_i=\frac1{x_i}.$$
+兩組數對應項互為倒數，所以 $x_i$ 越大 $y_i$ 越小，$x_1y_1+\dots+x_ny_n$ 是逆序和，不大於亂序和 $x_1y_n+x_2y_1+\dots+x_ny_{n-1}$：
+$$n\le\frac{a_1}{G_n}+\frac{a_2}{G_n}+\dots+\frac{a_n}{G_n}.$$
+⟦亂序和為什麼是這個｜$y_n=1$，所以 $x_1y_n=\frac{a_1}{G_n}$；$x_ky_{k-1}=\frac{a_1\cdots a_k}{G_n^k}\cdot\frac{G_n^{k-1}}{a_1\cdots a_{k-1}}=\frac{a_k}{G_n}$。⟧
+從而 $A_n\ge G_n$。等號當且僅當 $x_i$ 全相等或 $y_i$ 全相等，兩者都推出 $a_1=\dots=a_n$。
+<b>再證 $H_n\le G_n$.</b> 對 $n$ 個正數 $\frac1{a_1},\dots,\frac1{a_n}$ 用 $G_n\le A_n$：
+$$\frac{\frac1{a_1}+\dots+\frac1{a_n}}n\ge\sqrt[n]{\frac1{a_1}\cdots\frac1{a_n}},$$
+兩邊取倒數即 $G_n\ge H_n$，等號條件相同。
+<b>最後證 $A_n\le Q_n$.</b> 它等價於 $$n(a_1^2+\dots+a_n^2)-(a_1+\dots+a_n)^2\ge0$$，而
+$$\text{左邊}=\sum_{1\le i\lt j\le n}(a_i-a_j)^2\ge0.$$
+⟦為什麼｜$$(a_1+\dots+a_n)^2=\sum a_i^2+2\sum_{i\lt j}a_ia_j$$；$$\sum_{i\lt j}(a_i-a_j)^2=(n-1)\sum a_i^2-2\sum_{i\lt j}a_ia_j$$。兩者相加得 $n\sum a_i^2$。⟧
+不等式與等號條件都清楚了。由這個證明可見 $A_n\le Q_n$ 對一切實數 $a_i$ 都成立。
+
+=== 例 3 | 同一個乘積，不同的拆法
+zh: 設 $x+y+z=0$，求證 $6(x^3+y^3+z^3)^2\le(x^2+y^2+z^2)^3$。
+sol: <b>證法一.</b> 由 $z=-(x+y)$ 得 $x^3+y^3+z^3=3xyz$⟦為什麼｜$$x^3+y^3+z^3-3xyz=(x+y+z)(x^2+y^2+z^2-xy-yz-zx)=0$$。⟧，記 $I=6(x^3+y^3+z^3)^2=54x^2y^2z^2$。直接對 $x^2,y^2,z^2$ 用 $G_3\le A_3$ 只能得到較粗的
+$$I\le54\Big(\frac{x^2+y^2+z^2}3\Big)^3=2(x^2+y^2+z^2)^3.$$
+要重新考慮。由 $x+y+z=0$ 與對稱性，可設 $x\ge0,\ y\le0$⟦為什麼可以｜三數和為 0，必有兩數異號（或有 0），把它們叫做 $x,y$。⟧，把 $I$ 改寫成
+$$I=216\cdot\frac{|xy|}2\cdot\frac{|xy|}2\cdot z^2\le216\Big(\frac{\frac{|xy|}2+\frac{|xy|}2+z^2}3\Big)^3=(2z^2+2|xy|)^3.$$
+⟦常數｜$216\cdot\frac14=54$；$216\cdot\frac1{27}=8$，$8(z^2+|xy|)^3=(2z^2+2|xy|)^3$。⟧
+再注意 $$x^2+y^2=(x+y)^2-2xy=z^2+2|xy|$$，故 $2z^2+2|xy|=x^2+y^2+z^2$，原式得證。
+<b>注.</b> 同一個乘積用不同方式看成幾個因子的乘積（$x^2\cdot y^2\cdot z^2$ 或 $4\cdot\frac{|xy|}2\cdot\frac{|xy|}2\cdot z^2$），用 $G_n\le A_n$ 得到的結果不同。同樣，一個和也可以用不同方式拆成幾項。
+<b>證法二.</b> 設 $x,y\ge0,\ z\le0$（由對稱性可以）。由 $z^2=(x+y)^2$，
+$$(x^2+y^2+z^2)^3=8(x^2+xy+y^2)^3.$$
+由 $A_3\ge G_3$：
+$$\begin{aligned}x^2+xy+y^2&=\frac{x(x+y)}2+\frac{y(x+y)}2+\frac{x^2+y^2}2\\&\ge3\sqrt[3]{\frac{xy(x+y)^2}4\cdot\frac{x^2+y^2}2}\ge3\sqrt[3]{\frac{x^2y^2z^2}4},\end{aligned}$$
+⟦最後一個 ≥｜$\frac{x^2+y^2}2\ge xy$，且 $(x+y)^2=z^2$。⟧
+所以 $$(x^2+y^2+z^2)^3\ge8\times27\times\frac{x^2y^2z^2}4=54x^2y^2z^2=6(x^3+y^3+z^3)^2$$。
+
+=== 例 4 | 湊上因子 1
+zh: 設 $a_1,\dots,a_n$ 為正數，$S=a_1+\dots+a_n$。求證
+$$(1+a_1)(1+a_2)\cdots(1+a_n)\le1+S+\frac{S^2}{2!}+\dots+\frac{S^n}{n!}.$$
+sol: 由 $G_n\le A_n$，
+$$\begin{aligned}\text{左邊}&\le\Big(\frac{n+a_1+\dots+a_n}n\Big)^n=\Big(1+\frac Sn\Big)^n\\&=1+\mathrm C_n^1\frac Sn+\mathrm C_n^2\Big(\frac Sn\Big)^2+\dots+\mathrm C_n^m\Big(\frac Sn\Big)^m+\dots+\Big(\frac Sn\Big)^n.\end{aligned}$$
+因為 $$n!=(n-m)!\,(n-m+1)\cdots n\le(n-m)!\,n^m$$，所以
+$$\mathrm C_n^m\Big(\frac Sn\Big)^m=\frac{n!}{m!(n-m)!}\cdot\frac{S^m}{n^m}\le\frac{S^m}{m!},$$
+從而 左邊 $\le1+S+\dots+\dfrac{S^m}{m!}+\dots+\dfrac{S^n}{n!}$。
+用 $G_n\le A_n$ 時常把乘冪看成連乘積，有時還要巧妙地湊上因子 $1$。
+
+=== 例 5 | 湊一個 1 再用平均不等式
+zh: 設 $n$ 為正整數，求證：$\Big(1+\dfrac1n\Big)^{n+1}>\Big(1+\dfrac1{n+1}\Big)^{n+2}$。
+sol: 把 $\big(1+\frac1n\big)^{-(n+1)}$ 看成 $n+2$ 個數的乘積：一個 $1$ 和 $n+1$ 個 $\big(1+\frac1n\big)^{-1}$。這些數不全相等，由 $G_n\lt A_n$：
+$$\Big(1+\frac1n\Big)^{-(n+1)}\lt \left[\frac{1+(n+1)\big(1+\frac1n\big)^{-1}}{n+2}\right]^{n+2}=\Big(\frac{n+1}{n+2}\Big)^{n+2}.$$
+⟦中括號裡｜$(n+1)\cdot\frac{n}{n+1}=n$，所以分子是 $1+n$，平均是 $\frac{n+1}{n+2}$。⟧
+取倒數：$$\Big(1+\dfrac1n\Big)^{n+1}>\Big(\dfrac{n+2}{n+1}\Big)^{n+2}=\Big(1+\dfrac1{n+1}\Big)^{n+2}$$。
+
+=== 例 6 | 加權的平均不等式
+zh: 設 $x_1,\dots,x_n$ 是互不相同的正有理數（$n\ge2$），求證
+$$\Big(\frac{x_1^2+x_2^2+\dots+x_n^2}{x_1+x_2+\dots+x_n}\Big)^{x_1+x_2+\dots+x_n}>x_1^{x_1}x_2^{x_2}\cdots x_n^{x_n}.$$
+sol: 先設所有 $x_i$ 都是正整數。把 $x_i$ 重複寫 $x_i$ 次，共 $N=x_1+\dots+x_n$ 個數，用 $A_N>G_N$（這些數不全相等）：
+$$\text{左邊}=\left(\frac{\sum_{i=1}^n(\overbrace{x_i+\dots+x_i}^{x_i\text{ 個}})}{x_1+\dots+x_n}\right)^{x_1+\dots+x_n}>x_1^{x_1}x_2^{x_2}\cdots x_n^{x_n}.$$
+⟦為什麼｜這 $N$ 個數的和是 $\sum x_i\cdot x_i=\sum x_i^2$，乘積是 $\prod x_i^{x_i}$。$A_N>G_N$ 兩邊 $N$ 次方就是上式。⟧
+再設 $x_i$ 是正有理數。記 $m$ 為各分母的最小公倍數，則 $mx_1,\dots,mx_n$ 都是正整數，由已證：
+$$\Big[\frac{(mx_1)^2+\dots+(mx_n)^2}{mx_1+\dots+mx_n}\Big]^{mx_1+\dots+mx_n}>(mx_1)^{mx_1}\cdots(mx_n)^{mx_n}.$$
+兩邊開 $m$ 次方，再除以 $m^{x_1+\dots+x_n}$，即得原式。⟦細節｜左邊括號內 $=m\cdot\frac{\sum x_i^2}{\sum x_i}$，開 $m$ 次方得 $m^{\sum x_i}\big(\frac{\sum x_i^2}{\sum x_i}\big)^{\sum x_i}$；右邊開 $m$ 次方得 $\prod(mx_i)^{x_i}=m^{\sum x_i}\prod x_i^{x_i}$。⟧
+
+=== 例 7 | 兩次 $G_2\le A_2$
+zh: 設 $a,b,c,d$ 為正數，求證：$$\sqrt[3]{\dfrac{abc+bcd+cda+dab}4}\le\sqrt{\dfrac{a^2+b^2+c^2+d^2}4}$$。
+sol: 先兩次用 $G_2\le A_2$：
+$$\begin{aligned}\frac{abc+bcd+cda+dab}4&=\frac12\Big(ab\cdot\frac{c+d}2+cd\cdot\frac{a+b}2\Big)\\&\le\frac12\Big[\Big(\frac{a+b}2\Big)^2\frac{c+d}2+\Big(\frac{c+d}2\Big)^2\frac{a+b}2\Big]\\&=\frac{a+b}2\cdot\frac{c+d}2\cdot\frac{a+b+c+d}4\\&\le\Big(\frac{\frac{a+b}2+\frac{c+d}2}2\Big)^2\cdot\frac{a+b+c+d}4=\Big(\frac{a+b+c+d}4\Big)^3.\end{aligned}$$
+⟦第一行與第二個 ≤｜$abc+abd=ab(c+d)$，$bcd+cda=cd(a+b)$。$ab\le\big(\frac{a+b}2\big)^2$；最後一步是 $pq\le\big(\frac{p+q}2\big)^2$，$p=\frac{a+b}2,\ q=\frac{c+d}2$。⟧
+即 $$\sqrt[3]{\dfrac{abc+bcd+cda+dab}4}\le\dfrac{a+b+c+d}4$$。再由 $A_4\le Q_4$，$$\dfrac{a+b+c+d}4\le\sqrt{\dfrac{a^2+b^2+c^2+d^2}4}$$，得證。
+
+=== text
+<h3>三、柯西不等式及其應用</h3>
+
+=== 定理 3 | 柯西（Cauchy）不等式
+zh: 設 $a_1,\dots,a_n,b_1,\dots,b_n$ 是任意實數，則
+$$(a_1b_1+a_2b_2+\dots+a_nb_n)^2\le(a_1^2+a_2^2+\dots+a_n^2)(b_1^2+b_2^2+\dots+b_n^2),$$
+等號當且僅當 $b_i=ka_i$（$k$ 為常數，$i=1,\dots,n$）時成立。
+sol: 若 $a_i$ 全為 $0$ 或 $b_i$ 全為 $0$，顯然成立。否則記 $A=\sqrt{\sum a_i^2}$，$B=\sqrt{\sum b_i^2}$，令 $x_i=\frac{a_i}A$，$y_i=\frac{b_i}B$，則 $\sum x_i^2=\sum y_i^2=1$，原式成為 $\sum x_iy_i\le1$⟦為什麼｜原式除以 $A^2B^2$ 再開方：$\big|\sum x_iy_i\big|\le1$。只要證 $\sum x_iy_i\le1$，再把 $y_i$ 換成 $-y_i$ 就得另一邊。⟧，即
+$$2(x_1y_1+\dots+x_ny_n)\le x_1^2+\dots+x_n^2+y_1^2+\dots+y_n^2,$$
+它等價於 $(x_1-y_1)^2+\dots+(x_n-y_n)^2\ge0$，顯然成立；等號當且僅當 $x_i=y_i$，即 $b_i=ka_i$（$k=\frac BA$）。
+
+=== 例 8 | 柯西兩次
+zh: 設 $a_i$ 為正數（$i=1,\dots,n$），$a_1+a_2+\dots+a_n=1$。求證 $\displaystyle\sum_{i=1}^n\Big(a_i+\frac1{a_i}\Big)^2\ge\frac{(n^2+1)^2}n$。
+sol: 先證：對任何正數 $a_i$，
+$$(a_1+\dots+a_n)\Big(\frac1{a_1}+\dots+\frac1{a_n}\Big)\ge n^2.$$
+由柯西不等式，左邊 $$=\sum(\sqrt{a_i})^2\cdot\sum\big(\frac1{\sqrt{a_i}}\big)^2\ge\big(\sum\sqrt{a_i}\cdot\frac1{\sqrt{a_i}}\big)^2=n^2$$。
+再證原式，仍用柯西不等式（一組全是 $1$）：
+$$\Big[\sum_{i=1}^n1\cdot\Big(a_i+\frac1{a_i}\Big)\Big]^2\le n\sum_{i=1}^n\Big(a_i+\frac1{a_i}\Big)^2.$$
+因為 $\sum a_i=1$，
+$$\Big[\sum\Big(a_i+\frac1{a_i}\Big)\Big]^2=\Big(1+\sum\frac1{a_i}\Big)^2=\Big[1+\Big(\sum a_i\Big)\Big(\sum\frac1{a_i}\Big)\Big]^2\ge(n^2+1)^2.$$
+從而 $\sum\big(a_i+\frac1{a_i}\big)^2\ge\dfrac{(n^2+1)^2}n$。
+
+=== 例 9 | 四次方的柯西
+zh: 設 $a_i,b_i,c_i,d_i$ 為正數（$i=1,\dots,n$），求證
+$$\Big(\sum_{i=1}^na_ib_ic_id_i\Big)^4\le\sum a_i^4\cdot\sum b_i^4\cdot\sum c_i^4\cdot\sum d_i^4.$$
+sol: 兩次應用柯西不等式：
+$$\begin{aligned}\text{左邊}&=\Big[\sum(a_ib_i)(c_id_i)\Big]^4\le\Big[\sum(a_ib_i)^2\Big]^2\Big[\sum(c_id_i)^2\Big]^2\\&=\Big[\sum a_i^2b_i^2\Big]^2\Big[\sum c_i^2d_i^2\Big]^2\le\sum a_i^4\sum b_i^4\sum c_i^4\sum d_i^4.\end{aligned}$$
+⟦兩次分別是｜第一次：$\big(\sum u_iv_i\big)^2\le\sum u_i^2\sum v_i^2$，$u_i=a_ib_i,\ v_i=c_id_i$，再平方。第二次：$\big(\sum a_i^2b_i^2\big)^2\le\sum a_i^4\sum b_i^4$，$c,d$ 同理。⟧
+
+=== 例 10 | 到三邊距離
+zh: 設 $P$ 是 $\triangle ABC$ 內一點，$r_1,r_2,r_3$ 是 $P$ 到三邊 $a_1,a_2,a_3$ 的距離，$R$ 是外接圓半徑。求證 $$\sqrt{r_1}+\sqrt{r_2}+\sqrt{r_3}\le\dfrac1{\sqrt{2R}}\big(a_1^2+a_2^2+a_3^2\big)^{1/2}$$，並分析等號何時成立。
+sol: <figure class="bkfig"><svg viewBox="0 0 320 220" width="300" role="img" aria-label="三角形 ABC 內一點 P 到三邊的垂線段 r1 r2 r3">
+  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="120,20 20,200 300,200"/></g>
+  <g fill="none" stroke="#c2562b" stroke-width="1.5" stroke-dasharray="5 3">
+    <line x1="150" y1="130" x2="150" y2="200"/><line x1="150" y1="130" x2="190" y2="90"/><line x1="150" y1="130" x2="80.4" y2="91.3"/>
+  </g>
+  <circle cx="150" cy="130" r="2.8" fill="currentColor"/>
+  <g fill="currentColor" font-size="15" font-style="italic">
+    <text x="114" y="14">A</text><text x="6" y="214">B</text><text x="302" y="214">C</text><text x="156" y="136">P</text>
+  </g>
+  <g fill="currentColor" font-size="13" font-style="italic"><text x="155" y="172">r₁</text><text x="172" y="122">r₂</text><text x="104" y="104">r₃</text><text x="160" y="216">a₁</text><text x="236" y="112">a₂</text><text x="50" y="110">a₃</text></g>
+</svg><figcaption>虛線是 $P$ 到三邊的垂線段</figcaption></figure>
+由柯西不等式，
+$$\begin{aligned}\sqrt{r_1}+\sqrt{r_2}+\sqrt{r_3}&=\sqrt{a_1r_1}\sqrt{\tfrac1{a_1}}+\sqrt{a_2r_2}\sqrt{\tfrac1{a_2}}+\sqrt{a_3r_3}\sqrt{\tfrac1{a_3}}\\&\le(a_1r_1+a_2r_2+a_3r_3)^{1/2}\Big(\frac1{a_1}+\frac1{a_2}+\frac1{a_3}\Big)^{1/2}.\end{aligned}$$
+記 $S$ 為 $\triangle ABC$ 的面積，則
+$$a_1r_1+a_2r_2+a_3r_3=2S=2\cdot\frac{a_1a_2a_3}{4R}=\frac{a_1a_2a_3}{2R}.$$
+⟦兩個面積公式｜把三角形以 $P$ 為頂點切成三塊，面積 $\frac12a_ir_i$ 相加是 $S$。另外 $S=\frac12a_1a_2\sin C$，$\sin C=\frac{a_3}{2R}$。⟧
+所以
+$$\begin{aligned}\sqrt{r_1}+\sqrt{r_2}+\sqrt{r_3}&\le\Big(\frac{a_1a_2a_3}{2R}\Big)^{1/2}\Big(\frac{a_2a_3+a_3a_1+a_1a_2}{a_1a_2a_3}\Big)^{1/2}=\frac1{\sqrt{2R}}(a_2a_3+a_3a_1+a_1a_2)^{1/2}\\&\le\frac1{\sqrt{2R}}\big[(a_2^2+a_3^2+a_1^2)^{1/2}(a_3^2+a_1^2+a_2^2)^{1/2}\big]^{1/2}=\frac1{\sqrt{2R}}(a_1^2+a_2^2+a_3^2)^{1/2}.\qquad(3)\end{aligned}$$
+⟦第二個 ≤｜對 $(a_2,a_3,a_1)$ 與 $(a_3,a_1,a_2)$ 用柯西：$a_2a_3+a_3a_1+a_1a_2\le\sqrt{\sum a_i^2}\sqrt{\sum a_i^2}$。⟧
+兩次用了柯西不等式。(3) 中第一個不等式取等號的充要條件是 $\sqrt{a_ir_i}=k\sqrt{1/a_i}$，即
+$$a_1^2r_1=a_2^2r_2=a_3^2r_3;\qquad(4)$$
+第二個取等號的充要條件是 $\dfrac{a_2}{a_3}=\dfrac{a_3}{a_1}=\dfrac{a_1}{a_2}$，即 $a_1=a_2=a_3$⟦為什麼｜設三個比值都等於 $t$，相乘得 $t^3=1$，$t=1$。⟧。(5)
+由 (4)(5)，等號成立的充要條件是：$\triangle ABC$ 是正三角形，且 $P$ 為內心（即 $r_1=r_2=r_3$）。
+
+=== 習題 1
+zh: 設 $a,b,c$ 為正數，用排序不等式證明：(1) $a^ab^b>a^bb^a$（$a\ne b$）；(2) $a^{2a}b^{2b}c^{2c}\ge a^{b+c}b^{c+a}c^{a+b}$；(3) $a^ab^bc^c\ge(abc)^{\frac{a+b+c}3}$；(4) $\dfrac a{b+c}+\dfrac b{c+a}+\dfrac c{a+b}\ge\dfrac32$；(5) $\dfrac{a^{12}}{bc}+\dfrac{b^{12}}{ca}+\dfrac{c^{12}}{ab}\ge a^{10}+b^{10}+c^{10}$。
+hint: 取對數後，$a,b,c$ 和 $\lg a,\lg b,\lg c$ 是同序的兩組數。
+sol: (1)（原書題目印作「$\lt $」，依解答應為「$>$」。）不妨設 $a>b>0$，則 $\lg a>\lg b$，由排序不等式（嚴格）$a\lg a+b\lg b>a\lg b+b\lg a$，即 $a^ab^b>a^bb^a$。
+(2) 設 $a\ge b\ge c>0$，則 $\lg a\ge\lg b\ge\lg c$，所以
+$$\begin{aligned}a\lg a+b\lg b+c\lg c&\ge b\lg a+c\lg b+a\lg c,\\ a\lg a+b\lg b+c\lg c&\ge c\lg a+a\lg b+b\lg c,\end{aligned}$$
+兩式相加即得（取指數）。
+(3) 證法與 (2) 同：⟦怎麼接｜(2) 兩邊同乘 $a^ab^bc^c$ 得 $(a^ab^bc^c)^3\ge(abc)^{a+b+c}$，開立方即得。⟧
+(4) 設 $a\ge b\ge c>0$，則 $\frac1{b+c}\ge\frac1{c+a}\ge\frac1{a+b}$，與 $a\ge b\ge c$ 同序。順序和 $\ge$ 兩個亂序和：
+$$\frac a{b+c}+\frac b{c+a}+\frac c{a+b}\ge\frac b{b+c}+\frac c{c+a}+\frac a{a+b},\quad\ge\frac c{b+c}+\frac a{c+a}+\frac b{a+b}.$$
+相加：$2\cdot\text{左邊}\ge\frac{b+c}{b+c}+\frac{c+a}{c+a}+\frac{a+b}{a+b}=3$。
+(5) 設 $a\ge b\ge c>0$，則 $a^{12}\ge b^{12}\ge c^{12}$，$\frac1{bc}\ge\frac1{ca}\ge\frac1{ab}$。順序和 $\ge$ 亂序和：
+$$\frac{a^{12}}{bc}+\frac{b^{12}}{ca}+\frac{c^{12}}{ab}\ge\frac{a^{12}}{ca}+\frac{b^{12}}{ab}+\frac{c^{12}}{bc}=\frac{a^{11}}c+\frac{b^{11}}a+\frac{c^{11}}b.$$
+又 $a^{11}\ge b^{11}\ge c^{11}$，$\frac1c\ge\frac1b\ge\frac1a$，右邊是亂序和，不小於逆序和 $\frac{a^{11}}a+\frac{b^{11}}b+\frac{c^{11}}c=a^{10}+b^{10}+c^{10}$。
+
+=== 習題 2
+zh: 設 $a_1,\dots,a_n$ 為正數，求證：$\dfrac{a_1}{a_2}+\dfrac{a_2}{a_3}+\dots+\dfrac{a_{n-1}}{a_n}+\dfrac{a_n}{a_1}\ge n$。
+sol: 由 $A_n\ge G_n$：左邊 $\ge n\sqrt[n]{\frac{a_1}{a_2}\cdot\frac{a_2}{a_3}\cdots\frac{a_n}{a_1}}=n\sqrt[n]1=n$。
+
+=== 習題 3
+zh: 設 $n$ 為正整數，$n>1$，求證：$\mathrm C_n^1+\mathrm C_n^2+\dots+\mathrm C_n^n>n\cdot2^{\frac{n-1}2}$。
+sol: 由二項式定理，左邊 $=2^n-1=1+2+2^2+\dots+2^{n-1}$。對右邊這 $n$ 個數用 $A_n\ge G_n$（它們不全相等，嚴格成立）：
+$$1+2+\dots+2^{n-1}>n\sqrt[n]{2^{0+1+\dots+(n-1)}}=n\cdot2^{\frac{n-1}2}.$$
+⟦指數｜$0+1+\dots+(n-1)=\frac{n(n-1)}2$，開 $n$ 次方得 $\frac{n-1}2$。⟧
+
+=== 習題 4
+zh: 設 $a_1>0,\ d>0$，$a_{k+1}=a_k+d$（$k=1,2,\dots$）。求證
+$$\frac nd\Big(\sqrt[n]{\frac{a_{n+1}}{a_1}}-1\Big)\lt \sum_{k=1}^n\frac1{a_k}\lt \frac1{a_1}+\frac{n-1}d\Big(1-\sqrt[n-1]{\frac{a_1}{a_n}}\Big).$$
+sol: 因 $\dfrac d{a_k}=\dfrac{a_{k+1}}{a_k}-1$，由 $A_n>G_n$（各比值不相等）：
+$$\sum_{k=1}^n\frac d{a_k}=\sum_{k=1}^n\frac{a_{k+1}}{a_k}-n>n\sqrt[n]{\frac{a_{n+1}}{a_1}}-n,$$
+⟦乘積｜$\frac{a_2}{a_1}\cdot\frac{a_3}{a_2}\cdots\frac{a_{n+1}}{a_n}=\frac{a_{n+1}}{a_1}$。⟧ 兩邊除以 $d$ 得第一個不等式。第二個利用 $\dfrac d{a_k}=1-\dfrac{a_{k-1}}{a_k}$（$k=2,\dots,n$）：
+$$\sum_{k=2}^n\frac d{a_k}=(n-1)-\sum_{k=2}^n\frac{a_{k-1}}{a_k}\lt (n-1)-(n-1)\sqrt[n-1]{\frac{a_1}{a_n}},$$
+除以 $d$，再加上 $\frac1{a_1}$ 即得。（$n=2$ 時第二式取等號，嚴格不等需 $n\ge3$。）
+
+=== 習題 5
+zh: 求證：$$\Big(1-\dfrac1{365}\Big)\Big(1-\dfrac2{365}\Big)\cdots\Big(1-\dfrac{25}{365}\Big)\lt \dfrac12$$。
+hint: 先用 $G\le A$ 化成 $\big(1-\frac{13}{365}\big)^{25}$，再展開並兩兩配對。
+sol: 這 25 個因子的平均是 $1-\frac{13}{365}$⟦平均｜$\frac{1+2+\dots+25}{25}=\frac{325}{25}=13$。⟧，由 $A_n>G_n$，左邊 $\lt \big(1-\frac{13}{365}\big)^{25}$。記 $x=\frac{13}{365}$。展開後，相鄰兩項滿足
+$$\mathrm C_{25}^kx^k>\mathrm C_{25}^{k+1}x^{k+1}\quad\Big(\text{因為 }\frac{\mathrm C_{25}^{k+1}}{\mathrm C_{25}^k}x=\frac{25-k}{k+1}\cdot\frac{13}{365}\lt 1\Big),$$
+所以
+$$(1-x)^{25}=1-\mathrm C_{25}^1x+\mathrm C_{25}^2x^2-\big[\mathrm C_{25}^3x^3-\mathrm C_{25}^4x^4\big]-\dots-x^{25}\lt 1-25x+300x^2.$$
+而 $$1-25\cdot\frac{13}{365}+300\cdot\big(\frac{13}{365}\big)^2\approx1-0.8904+0.3806=0.4902\lt \frac12$$。（原書解答最後一式印作 $\big(\frac2{365}\big)^2$，應為 $\big(\frac{13}{365}\big)^2$。）
+
+=== 習題 6
+zh: 用柯西不等式證明例 2 中的不等式。
+sol: （原書未附解答，以下為本站補充。）記 $T=1+\frac12+\dots+\frac1n$。由柯西不等式，
+$$\Big(\sum_{k=1}^n\frac1k\Big)^2=\Big(\sum_{k=1}^n\frac{\sqrt{a_k}}k\cdot\frac1{\sqrt{a_k}}\Big)^2\le\sum_{k=1}^n\frac{a_k}{k^2}\cdot\sum_{k=1}^n\frac1{a_k}.$$
+$a_k$ 是互不相同的正整數，所以 $\sum\frac1{a_k}\le1+\frac12+\dots+\frac1n=T$⟦為什麼｜把 $a_k$ 由小到大排成 $b_1\lt \dots\lt b_n$，$b_k\ge k$，所以 $\frac1{b_k}\le\frac1k$。⟧。因此 $T^2\le\sum\frac{a_k}{k^2}\cdot T$，即 $\sum\frac{a_k}{k^2}\ge T$。
+
+=== 習題 7
+zh: 設 $n$ 為正整數，求證：$\displaystyle\sum_{k=1}^n\sqrt{\mathrm C_n^k}\le\sqrt{n(2^n-1)}$。
+sol: 由柯西不等式（一組全是 $1$）：
+$$\sum_{k=1}^n1\cdot\sqrt{\mathrm C_n^k}\le(1+1+\dots+1)^{1/2}\Big(\sum_{k=1}^n\mathrm C_n^k\Big)^{1/2}=\sqrt{n(2^n-1)}.$$
