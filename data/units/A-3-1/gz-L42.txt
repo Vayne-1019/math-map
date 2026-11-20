@@ -1,0 +1,20 @@
+=== meta
+title: 代值的威力：餘式定理與整係數
+from: gz-L42
+order: 40
+
+=== body
+<div class="hero">$f(x)$ 除以 $x-a$ 的餘數 = <b>$f(a)$</b><br>所以「整除」問題，常常只要<b>代根進去看是不是 0</b></div>
+<div class="cards">
+<div class="card"><h4>① 代根驗整除</h4><div class="rule">$g$ 的根都是 $f$ 的根 ⇒ $g\mid f$（$g$ 無重根）</div>
+<div class="eg">$x^3+x^2+x+1=(x+1)(x^2+1)$<br>$x^{4a}+x^{4b+1}+x^{4c+2}+x^{4d+3}$ 在 $-1,\pm i$ 都是 $0$ <span class="pill">代單位根</span></div></div>
+<div class="card"><h4>② 先除一個好除的</h4><div class="rule">$f\mid h$ 時，除以 $h$ 的餘式再除以 $f$</div>
+<div class="eg">$f=x^4+\cdots+1\mid x^5-1$<br>$f(x^5)\equiv f(1)=5$ <span class="pill">餘式 5</span></div></div>
+<div class="card"><h4>③ 整係數：$(a-b)\mid P(a)-P(b)$</h4><div class="rule">代整數得整除條件</div>
+<div class="eg">$x^2-x+a\mid x^{13}+x+90$：<br>$x=0,1$ ⇒ $a\mid90,\ a\mid92$ ⇒ $a\mid2$ ⇒ $a=2$</div></div>
+</div>
+<p>$P(a)=b,\ P(b)=c,\ P(c)=a$ 為什麼不可能？⟦繞一圈｜$(b-a)\mid(c-b)\mid(a-c)\mid(b-a)$，三個差的絕對值全相等，但 $(b-a)+(c-b)=c-a$，不可能。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>$g(x_0)\mid f(x_0)$ 要求商式是<b>整係數</b>：除式須首一（或首項 $\pm1$）</li>
+<li>$0$ 不整除任何非零數：$a=-2$ 時 $g(-1)=0\nmid88$</li></ul></div>
+<div class="bottomline">整除看根，餘式看值，整係數看差。</div>

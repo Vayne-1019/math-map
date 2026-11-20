@@ -1,0 +1,22 @@
+=== meta
+title: 換個底數，題目就變簡單
+from: gz-L41
+order: 40
+
+=== body
+<div class="hero">$b$ 進位：每個數<b>唯一</b>寫成 $\sum a_i b^i$，$0\le a_i\le b-1$<br>二進位 = <b>選或不選</b>；三進位只用 0、1 = <b>不會進位</b>；平衡三進位 = <b>加或減</b></div>
+<div class="cards">
+<div class="card"><h4>① 轉換</h4><div class="rule">反覆扣掉最大冪次</div>
+<div class="eg">$203=2^7+2^6+2^3+2+1$<br>$=(11001011)_2=(21112)_3$</div></div>
+<div class="card"><h4>② 二進位 = 子集</h4><div class="rule">$x=\sum 2^s$：每個冪次用一次</div>
+<div class="eg">$ax+by=n$ 有解 ⇒ $n$ 是 $\{a\cdot2^s\}\cup\{b\cdot2^t\}$ 中不同項之和 <span class="pill">選或不選</span></div></div>
+<div class="card"><h4>③ 平衡三進位</h4><div class="rule">數字取 $1,0,\bar1$（$\bar1=-1$）</div>
+<div class="eg">$203=(10\bar1\bar1\bar1\bar1)_{3'}$<br>$=243-27-9-3-1$ <span class="pill">遇 2 改 −1 進 1</span></div></div>
+<div class="card"><h4>④ 用二進位猜遞迴</h4><div class="rule">把 $n$、$f(n)$ 都寫成二進位找規律</div>
+<div class="eg">IMO 1988：$f(n)$ = 把 $n$ 的二進位<b>倒過來</b><br>$f(n)=n$ ⇔ 迴文數，$\le1988$ 有 $92$ 個</div></div>
+</div>
+<p>三進位不含 2 的數為什麼沒有三項等差？⟦不會進位｜$2y=x+z$。$x,z$ 每位是 0 或 1，相加不進位；$2y$ 每位是 0 或 2。逐位比較：0 只能是 $0+0$，2 只能是 $1+1$，所以 $x=y=z$。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>$2n$ 和 $2n+1$ 的二進位只差最後一位；$m$ 和 $2^l+m$ 只差最前一位——配對時別搞混</li>
+<li>$l$ 位數的最高位不能是 0，數迴文數時第一位已固定為 1</li></ul></div>
+<div class="bottomline">看到 2 的冪、3 的冪、「選或不選」，就換到那個底數去想。</div>

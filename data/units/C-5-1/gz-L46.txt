@@ -1,0 +1,20 @@
+=== meta
+title: 把題目翻成圖：點、邊、度
+from: gz-L46
+order: 20
+
+=== body
+<div class="hero">人、顏色、點 → <b>頂點</b>；「認識」「搭配過」「距離為 1」→ <b>邊</b><br>翻譯對了，題目就變成數邊、數度</div>
+<div class="cards">
+<div class="card"><h4>① 先定相鄰關係</h4><div class="rule">誰是頂點？什麼時候連邊？</div>
+<div class="eg">六色紗，搭配過就連邊<br>「三種布用完六色」= 三條<b>不共端點</b>的邊</div></div>
+<div class="card"><h4>② 握手定理</h4><div class="rule">$d_1+d_2+\cdots+d_n=2q$</div>
+<div class="eg">每條邊被兩個端點各算一次<br>⇒ 奇頂點有<b>偶數</b>個 <span class="pill">奇偶性</span></div></div>
+<div class="card"><h4>③ 度的上界 → 邊的上界</h4><div class="rule">每點度 $\le k$ ⇒ 邊數 $\le\frac{kn}2$</div>
+<div class="eg">兩兩距離 $\ge1$ 的點，單位圓上至多 6 個鄰點<br>⇒ 距離恰為 1 的點對 $\le3n$</div></div>
+</div>
+<p>「任 4 人中有人認識另 3 人」為什麼逼出很多人認識所有人？⟦找不相鄰的對｜若 $x,y$ 不相鄰，則其餘任兩人必相鄰，否則 $x,y,u,v$ 中沒人認識另三人。一路推下去，認識所有人的至少 $1982-3=1979$ 個。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>競賽題的「認識」是<b>互相</b>認識，所以是無向圖</li>
+<li>畫圖時兩邊的交叉點<b>不是</b>頂點；環在度數中要算兩次</li></ul></div>
+<div class="bottomline">圖論題第一步不是想定理，是把「誰和誰連邊」寫清楚。</div>

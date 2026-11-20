@@ -1,0 +1,22 @@
+=== meta
+title: 能不能再分？看係數範圍
+from: gz-L43
+order: 20
+
+=== body
+<div class="hero">同一個多項式，能不能分解要看<b>係數允許取在哪</b><br>複數：全分成一次 ｜ 實數：一次與二次 ｜ 有理數：<b>要另外判斷</b></div>
+<div class="cards">
+<div class="card"><h4>① 高斯引理</h4><div class="rule">整係數能有理分解 ⇒ 能整係數分解</div>
+<div class="eg">本原 × 本原 = 本原<br>所以只要檢查<b>整係數</b>分解 <span class="pill">有理 → 整數</span></div></div>
+<div class="card"><h4>② 艾森斯坦</h4><div class="rule">$p\nmid a_n$，$p\mid$ 其餘，$p^2\nmid a_0$ ⇒ 不可約</div>
+<div class="eg">$x^4+2x^3+2x+2$：$p=2$ ✓<br>$x^5-3x^4+6x^3-3x^2+9x-6$：$p=3$ ✓</div></div>
+<div class="card"><h4>③ 平移後再判斷</h4><div class="rule">$f(x)$ 不可約 ⇔ $f(y+1)$ 不可約</div>
+<div class="eg">$x^4+x^3+x^2+x+1$ 令 $x=y+1$<br>$=y^4+5y^3+10y^2+10y+5$ <span class="pill">p = 5</span></div></div>
+<div class="card"><h4>④ 模 2 看奇偶</h4><div class="rule">$(x+1)^{2^m}\equiv x^{2^m}+1\pmod2$</div>
+<div class="eg">$(x+1)^n$ 的奇係數有 $2^k$ 個<br>$k$ = $n$ 的二進位中 1 的個數</div></div>
+</div>
+<p>艾森斯坦為什麼對？⟦模 p 看｜$f\equiv a_nx^n\pmod p$。若 $f=gh$，模 $p$ 後 $g,h$ 都只剩最高次項，所以兩者常數項都是 $p$ 的倍數，$p^2\mid a_0$，矛盾。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>艾森斯坦條件<b>不成立不代表可約</b>，只是這個方法用不上（試試平移）</li>
+<li>$x^4-10x^2+1$ 沒有有理根，仍要檢查能否分成兩個二次式</li></ul></div>
+<div class="bottomline">判斷有理不可約：先化成整係數，再找一個質數 $p$ 模下去。</div>

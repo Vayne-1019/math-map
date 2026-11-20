@@ -1,0 +1,22 @@
+=== meta
+title: 不解方程，從係數讀出根
+from: gz-L45
+order: 50
+
+=== body
+<div class="hero">根的<b>對稱式</b>都能由係數算出來 → 很多題<b>不必求根</b><br>韋達給 $\sigma_k$，牛頓公式給冪和 $s_m$</div>
+<div class="cards">
+<div class="card"><h4>① 韋達定理</h4><div class="rule">$\sigma_k=(-1)^k\dfrac{a_k}{a_0}$</div>
+<div class="eg">$x^3+ax^2+bx+c$：<br>$\sigma_1=-a,\ \sigma_2=b,\ \sigma_3=-c$</div></div>
+<div class="card"><h4>② 冪和遞推</h4><div class="rule">$s_m=\sigma_1s_{m-1}-\sigma_2s_{m-2}+\sigma_3s_{m-3}$</div>
+<div class="eg">$s_1=3,s_2=5,s_3=7$ ⇒ $\sigma=(3,2,-\frac23)$<br>$s_4=21-10-2=9$ <span class="pill">牛頓公式</span></div></div>
+<div class="card"><h4>③ 換根造新方程</h4><div class="rule">倒數：係數倒寫；平方：$\pm f(x)f(-x)$</div>
+<div class="eg">$(x^3+bx)^2-(ax^2+c)^2$<br>換 $x^2\to x$ 得以 $r^2,s^2,t^2$ 為根的方程</div></div>
+<div class="card"><h4>④ 判斷不全是實根</h4><div class="rule">實根 ⇒ $\sum x_i^2=\sigma_1^2-2\sigma_2\ge0$</div>
+<div class="eg">$\sum\frac1{x_i^2}=1-2=-1\lt0$<br>⇒ 根不全是實數 <span class="pill">平方和為負</span></div></div>
+</div>
+<p>三根成等差的條件怎麼來？⟦中項 = 平均｜$x_2=\frac{\sigma_1}3=-\frac a3$ 必是根，代入得 $2a^3-9ab+27c=0$；再要求另兩根是實數。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>$\sigma_k$ 的正負號：偶數 $k$ 取 $+$，奇數 $k$ 取 $-$</li>
+<li>用 $\sum x_i^2\ge0$ 前要先假設「全是實根」；複數根的平方和可以是負的</li></ul></div>
+<div class="bottomline">看到根的和、積、平方和、冪和：先寫 $\sigma_k$，別急著解方程。</div>
