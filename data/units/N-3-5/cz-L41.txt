@@ -1,0 +1,18 @@
+=== meta
+title: 無窮遞降：解可以一直除以 2？不可能
+from: cz-L41
+order: 20
+
+=== body
+<div class="hero">從一組非零整數解造出<b>更小的一組</b>，可以一直做下去<br>但正整數不能無限變小 → <b>只有零解</b></div>
+<div class="cards">
+<div class="card"><h4>① 看奇偶</h4><div class="rule">$x^3=2y^3+4z^3$ ⟹ $x$ 是偶數</div>
+<div class="eg">令 $x=2x_1$：$y^3=4x_1^3-2z^3$ ⟹ $y$ 偶<br>令 $y=2y_1$：$z^3=2x_1^3-4y_1^3$ ⟹ $z$ 偶</div></div>
+<div class="card"><h4>② 得到更小的解</h4><div class="rule">$(x,y,z)$ 是解 ⟹ $\left(\frac x2,\frac y2,\frac z2\right)$ 也是解</div>
+<div class="eg">一直除下去，$\frac{x}{2^n}$ 永遠是整數<br>但 $x\ne0$ 時 $n$ 夠大就有 $0&lt;\left|\frac x{2^n}\right|&lt;1$ <span class="pill">矛盾</span></div></div>
+</div>
+<p>同一招證 $\sqrt2$ 無理：⟦怎麼做｜若 $a^2=2b^2$（正整數），則 $a$ 偶，$a=2a_1$，$b^2=2a_1^2$，所以 $(b,a_1)$ 是更小的一組解，可以無限遞降，矛盾。⟧ $a^2=2b^2$ 也能一直除以 2。</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>只證了 $x$ 偶就停下：要三個變數都偶，才能整組除以 2</li>
+<li>忘了排除全零解：遞降要從「不全為 0」出發</li></ul></div>
+<div class="bottomline">遞降法的骨架：反設有最小（或非零）解 → 造出更小的解 → 矛盾。</div>

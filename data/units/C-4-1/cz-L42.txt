@@ -1,0 +1,22 @@
+=== meta
+title: 抽屜原則：關鍵是造抽屜
+from: cz-L42
+order: 20
+
+=== body
+<div class="hero">$m$ 個東西放進 $n$ 個抽屜 → 某個抽屜至少 $\left\lceil\frac mn\right\rceil$ 個<br>原則一句話就懂，<b>難的是決定什麼當抽屜</b></div>
+<div class="cards">
+<div class="card"><h4>① 切圖形</h4><div class="rule">每塊的「直徑」要夠小</div>
+<div class="eg">邊長 1 的正方形放 5 點 → 切 4 個小正方形<br>必有 2 點距離 $\le\frac{\sqrt2}2$ <span class="pill">切成細長條就不行</span></div></div>
+<div class="card"><h4>② 按餘數分</h4><div class="rule">除以 $N$ 只有 $N$ 種餘數</div>
+<div class="eg">$2,22,222,\dots$ 取 $N+1$ 個，兩個同餘<br>相減得 $22\cdots200\cdots0$ 是 $N$ 的倍數</div></div>
+<div class="card"><h4>③ 合併抽屜</h4><div class="rule">配對：$\{1,9\},\{2,8\},\{3,7\},\{4,6\},\{0\},\{5\}$</div>
+<div class="eg">7 個整數放 6 個抽屜 → 兩數的和或差是 10 的倍數</div></div>
+<div class="card"><h4>④ 按奇數部分分</h4><div class="rule">$n=\text{奇數}\times2^s$</div>
+<div class="eg">$1\sim100$ 分 50 組，取 51 個<br>→ 有一個整除另一個</div></div>
+</div>
+<p>抽屜不夠用時，排除不可能的抽屜：⟦熟人數的例子｜$n$ 人的熟人數可能是 $0\sim n-1$ 共 $n$ 種，但 $0$ 和 $n-1$ 不會同時出現，實際只有 $n-1$ 種，所以必有兩人熟人數相同。⟧ $n$ 個人的熟人數只有 $n-1$ 種可能。</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>抽屜分得太大：同一抽屜裡的兩點不一定滿足要求，要先檢查「同一塊內任兩點」</li>
+<li>點在分界線上：說好邊界算哪一塊，或用「內部或邊上」</li></ul></div>
+<div class="bottomline">先想「要的結論是哪兩個東西有什麼關係」，再把滿足這個關係的東西放進同一抽屜。</div>

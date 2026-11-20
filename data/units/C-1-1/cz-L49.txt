@@ -1,0 +1,20 @@
+=== meta
+title: 枚舉法：不重不漏地分組再相加
+from: cz-L49
+order: 40
+
+=== body
+<div class="hero">計數 = 把要數的東西<b>不重疊、不遺漏</b>地分組<br>每組好算，<b>各組相加</b>就是答案</div>
+<div class="cards">
+<div class="card"><h4>① 按「最大的那個」分</h4><div class="rule">$1\sim100$ 取兩數，和 $>100$</div>
+<div class="eg">較大數 $100$：$99$ 種；$99$：$97$ 種；…；$51$：$1$ 種<br>$1+3+\dots+99=2500$</div></div>
+<div class="card"><h4>② 按數位分</h4><div class="rule">寫 $1\sim2222$ 共幾個 0</div>
+<div class="eg">個位 $222$ + 十位 $220$ + 百位 $200$ $=642$</div></div>
+<div class="card"><h4>③ 按「最後一步從哪來」分</h4><div class="rule">到 $X$ 的路數 = 所有前一站的路數相加</div>
+<div class="eg">只能向東、向北：每格 = 左 + 下<br>$4\times4$ 方格到對角共 $70$ 條</div></div>
+</div>
+<p>③ 就是遞推：⟦例子｜每城只能到下一城或下下一城，$A_1$ 到各城的路數是 $1,2,3,5,8,13,\dots$，每項是前兩項之和（費氏數列）。⟧ 只能走到下一城或下下一城時，路數是費氏數列。</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>分組重疊：同一個東西在兩組都被數到</li>
+<li>邊界少算：例如最後一段不滿 $10$ 個，但裡面的十位 $0$ 仍然齊全</li></ul></div>
+<div class="bottomline">先決定「按什麼分組」，再檢查有沒有重、有沒有漏。</div>

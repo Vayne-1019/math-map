@@ -1,0 +1,19 @@
+=== meta
+title: 邊的著色：一點出幾條邊就至少幾色
+from: cz-L50
+order: 30
+
+=== body
+<div class="hero">相鄰的邊（有公共頂點）要不同色<br>下界：<b>最大度數</b>（一點連出的邊數）；但有時還要<b>多一色</b></div>
+<div class="cards">
+<div class="card"><h4>① 下界</h4><div class="rule">某點連出 3 條邊 ⟹ 至少 3 色</div>
+<div class="eg">右端點有 $a,b,c$ 三條邊，三色各不同</div></div>
+<div class="card"><h4>② 試 3 色 → 被逼出矛盾</h4><div class="rule">不妨設 $a,b,c$ = ①②③</div>
+<div class="eg">$d$ 只能 ①，$e$ 只能 ③<br>$g$、$f$ 都只能 ② ⟹ 相鄰同色 ✗</div></div>
+<div class="card"><h4>③ 4 色可以</h4><div class="rule">把 $f$ 改成 ④</div>
+<div class="eg">答案：至少 4 色</div></div>
+</div>
+<p>⟦為什麼可以不妨設｜顏色的名字可以互換，第一組互相相鄰的邊用哪三個名字都一樣，所以直接規定 ①②③，推理不失一般性。⟧ 顏色名稱可以互換，所以可以先固定一組。</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>以為「最大度數 = 答案」：本題最大度數 3，卻要 4 色</li></ul></div>
+<div class="bottomline">先用度數定下界，再試著塗；塗不下去的地方就是要多一色的理由。</div>

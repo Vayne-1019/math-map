@@ -1,0 +1,18 @@
+=== meta
+title: 倒推法：從最後狀態往回算
+from: cz-L39
+order: 20
+
+=== body
+<div class="hero">知道<b>最後結果</b>、不知道每步怎麼走 → <b>從結果倒著推</b><br>每倒退一步，可能性常常只剩一種</div>
+<div class="cards">
+<div class="card"><h4>① 倒推判斷方向</h4><div class="rule">調進 7 人的組，事後至少有 7 人</div>
+<div class="eg">最後 甲5、乙13、丙6，第三次只動乙丙<br>丙只有 6 → 一定是丙調給乙<br>之前：甲5、乙6、丙13 <span class="pill">不必分情況</span></div></div>
+<div class="card"><h4>② 加倍題倒推減半</h4><div class="rule">「送你和你一樣多」= 你加倍</div>
+<div class="eg">最後 64,64,64，最後是 C 送 A、B<br>之前 A=32、B=32、C=128<br>再倒兩步得 104, 56, 32</div></div>
+</div>
+<p>為什麼不列方程？⟦正推的麻煩｜第一次是甲給乙還是乙給甲？每一次都有兩種可能，三次就是 8 種情況。倒推時每一步都被「人數不能是負的、不能少於 7」卡死，只剩一種。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>倒推時把「給出」和「收到」的方向弄反</li>
+<li>算完不回頭正推驗算一次</li></ul></div>
+<div class="bottomline">終點已知、過程未知：從終點開始走回去。</div>

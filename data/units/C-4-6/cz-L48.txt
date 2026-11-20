@@ -1,0 +1,20 @@
+=== meta
+title: 構造反例與選擇題的特例排除
+from: cz-L48
+order: 50
+
+=== body
+<div class="hero">否定命題：找一個<b>滿足條件、結論卻不成立</b>的例子<br>選擇題：代一個<b>極端特例</b>，排除錯的選項</div>
+<div class="cards">
+<div class="card"><h4>① 從極端情形找反例</h4><div class="rule">「三邊都大 ⟹ 面積大」？</div>
+<div class="eg">底 100、高 $10^{-4}$ 的等腰三角形，面積 $\frac1{200}$<br>比邊長 1 的正三角形（面積 $\frac{\sqrt3}4$）還小</div></div>
+<div class="card"><h4>② 前幾項對不代表全對</h4><div class="rule">$n^2+n+17$ 都是質數？</div>
+<div class="eg">$n=1\sim15$ 都是質數<br>$n=16$：$16^2+16+17=17^2$ ✗</div></div>
+<div class="card"><h4>③ 選擇題代特例</h4><div class="rule">讓某個量趨近 0 或相等</div>
+<div class="eg">梯形 $AB=a$，$CD=b$；取 $b\to0$（三角形）<br>只有 $\frac{a(a-b)}{a+b}$ 給出正確的 $a$</div></div>
+</div>
+<p>反例常常指出命題缺了哪個條件：⟦例子｜$\log_ab+\log_ba\ge2$ 不成立（取 $a=10,b=\frac1{10}$ 得 $-2$）；加上 $\log_ab>0$ 就成立了，因為 $t+\frac1t\ge2$。⟧ 補上這個條件，命題就成立了。</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>反例沒有滿足全部條件：要逐條檢查</li>
+<li>選擇題代特例只能排除，不能證明；剩下唯一一個才可以選</li></ul></div>
+<div class="bottomline">證明要考慮所有情形，推翻只要一個例子。</div>

@@ -1,0 +1,21 @@
+=== meta
+title: 平行四邊形判定：哪些「一半條件」不夠？
+from: cz-L48
+order: 60
+
+=== body
+<div class="hero">平行四邊形的判定條件<b>不能隨便混搭</b><br>「一組對邊相等 + 一組對角相等」<b>不是</b>平行四邊形</div>
+<div class="cards">
+<div class="card"><h4>✗ 對邊等 + 對角等</h4><div class="rule">反例：等腰三角形翻一半</div>
+<div class="eg">等腰 $\triangle ABE$，底邊上取 $C$，把 $\triangle ACE$ 翻到 $AC$ 另一側<br>$AB=CD$，$\angle B=\angle D$，但 $AD\ne BC$</div></div>
+<div class="card"><h4>✗ 對邊等 + 一條對角線平分另一條</h4><div class="rule">反例：從平行四邊形挪一個頂點</div>
+<div class="eg">平行四邊形 $ABCE$ 的 $E$ 沿 $EO$ 挪到 $D$，保持 $AD=AE$</div></div>
+<div class="card"><h4>✗ 對角等 + 該對角線被平分</h4><div class="rule">反例：箏形</div>
+<div class="eg">$BD\perp AC$，$AO=CO$，$BO\ne DO$<br>$\angle A=\angle C$ 但不是平行四邊形</div></div>
+<div class="card"><h4>✓ 對角等 + 該對角線平分另一條</h4><div class="rule">是平行四邊形</div>
+<div class="eg">$\angle B=\angle D$，$BD$ 過 $AC$ 中點 ⟹ $OB=OD$<br>⟦為什麼｜若 $OD&lt;OB$，取 $OD'=OB$，$ABCD'$ 是平行四邊形，$\angle AD'C=\angle B=\angle D$；但 $D$ 在 $\triangle AD'C$ 內，$\angle ADC>\angle AD'C$，矛盾。⟧</div></div>
+</div>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>「一組對邊平行且相等」才是判定法；只說「一組對邊相等」加別的條件，常常不夠</li>
+<li>判斷命題真假時只畫一般圖：反例常藏在等腰、箏形這些特殊圖形裡</li></ul></div>
+<div class="bottomline">要否定一個命題，一個反例就夠了。</div>

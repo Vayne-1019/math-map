@@ -1,0 +1,138 @@
+=== meta
+title: 構造反例與解選擇題
+author: 嚴鎮軍
+pages: 389-395
+units: C-4-6, G-1-2
+status: 完成
+
+=== text
+<p>一個用命題形式給出的數學問題，要判定它是錯的，只要舉出一個<b>滿足命題條件、但結論不成立</b>的例子，就足以否定這個命題。這樣的例子就是通常所說的<b>反例</b>。舉反例需要逆向思維，也被看作鑑別數學才能的一種手段，這也許是近年競賽中常出現舉反例試題的原因之一。</p>
+
+=== 例 1
+zh: 判斷下面命題的真偽：若 $P,Q$ 是直線 $l$ 同側的兩個不同點，則一定存在兩個不同的圓，都過 $P,Q$ 且和直線 $l$ 相切。
+sol: <b>分析</b>：在題設條件下，$P,Q$ 兩點與直線 $l$ 的位置關係有兩種可能：(1) 直線 $PQ\parallel l$；(2) 直線 $PQ$ 與 $l$ 相交。命題會不會在某個情形下不成立？
+<figure class="bkfig"><svg viewBox="0 0 260 195" width="240" role="img" aria-label="PQ平行於l，圓過P、Q且切l於M">
+  <g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="130" cy="100" r="70"/><line x1="20" y1="170" x2="245" y2="170"/><line x1="30" y1="70" x2="235" y2="70"/></g>
+  <line x1="130" y1="10" x2="130" y2="180" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <g fill="currentColor"><circle cx="66.8" cy="70" r="2.5"/><circle cx="193.2" cy="70" r="2.5"/><circle cx="130" cy="100" r="2.5"/></g>
+  <g fill="currentColor" font-size="14" font-style="italic"><text x="52" y="64">P</text><text x="198" y="64">Q</text><text x="136" y="104">O</text><text x="120" y="188">M</text><text x="236" y="186">l</text><text x="134" y="18">m</text></g>
+</svg><figcaption>虛線 m 是 PQ 的垂直平分線</figcaption></figure>
+<b>解</b>：若直線 $PQ\parallel l$：所求圓的圓心 $O$ 一定在線段 $PQ$ 的垂直平分線 $m$ 上，這時 $m\perp l$，設垂足為 $M$。圓與 $l$ 相切，切點就是圓心到 $l$ 的垂足⟦為什麼切點是 M｜圓心到切線的連線垂直於切線。圓心在 $m$ 上，從 $m$ 上的點作 $l$ 的垂線，垂足都是 $M$。⟧ $M$。所以這個圓過不共線的三點 $P,Q,M$；$M$ 是唯一確定的，所以合要求的圓有且只有一個。這個反例說明命題是假的。
+<br><b>說明</b>：當直線 $PQ$ 與 $l$ 相交時，命題是真的。建議讀者自己證明。⟦提示｜設直線 $PQ$ 交 $l$ 於 $T$，由切割線定理，切點 $X$ 滿足 $TX^2=TP\cdot TQ$，所以 $X$ 在 $T$ 的兩側各有一個，各對應一個圓。⟧
+
+=== 例 2
+zh: 判斷下面命題的真偽：若 $a>0$，$b>0$，且 $a\ne1$，$b\ne1$，則 $\log_ab+\log_ba\ge2$。
+sol: <b>分析</b>：$\log_ab=\dfrac1{\log_ba}$，所以 $\log_ab$ 與 $\log_ba$ 同號。只要選 $a,b$ 使 $\log_ab&lt;0$，反例就造出來了。
+<b>解</b>：任取 $a>1$ 及 $0&lt;b&lt;1$，則 $\log_ab&lt;0$，$\log_ba&lt;0$，$\log_ab+\log_ba&lt;0$。例如 $a=10$，$b=\frac1{10}$，和是 $-2$。所以命題是假的。
+<br><b>說明</b>：例 1、例 2 的命題之所以是假的，是因為缺了某個條件，加上這個條件就成為真命題。例如例 2 加上 $\log_ab>0$，命題就成立（算幾不等式：$t+\frac1t\ge2$，$t>0$）。
+
+=== text
+<p>怎樣構造反例沒有一般的答案。正如構造特例來證明某種對象存在一樣，<b>從滿足條件的特殊情形或極端情形入手</b>，常能找到反例。</p>
+
+=== 例 3
+zh: 舉反例否定命題：設 $\triangle ABC$ 三邊長 $a,b,c$，面積 $S$；$\triangle A_1B_1C_1$ 三邊長 $a_1,b_1,c_1$，面積 $S_1$。若 $a>a_1$，$b>b_1$，$c>c_1$，則 $S>S_1$。
+sol: <b>分析</b>：三角形面積等於一邊乘以該邊上的高的一半。由此想到一個很特殊的等腰三角形：底邊很長（所以腰也很長），但高很小，面積也就很小。
+<b>解</b>：命題不真，反例如下。作等腰 $\triangle ABC$，底邊 $a=100$，$a$ 上的高 $h=10^{-4}$，則兩腰
+$$b=c=\sqrt{50^2+10^{-8}}>50,\qquad S=\tfrac12ah=\tfrac1{200}.$$
+再取正三角形 $A_1B_1C_1$，$a_1=b_1=c_1=1$，$S_1=\dfrac{\sqrt3}4$。這樣 $a>a_1$，$b>b_1$，$c>c_1$，但 $S&lt;S_1$。
+
+=== 例 4
+zh: 命題「覆蓋任意三角形 $ABC$ 的最小圓是它的外接圓」是否正確？
+sol: <figure class="bkfig"><svg viewBox="0 0 200 200" width="180" role="img" aria-label="外接圓上三個很近的點A、C、B，以AB為直徑的小圓">
+  <g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="100" cy="110" r="80"/><polygon points="54.1,44.5 93,30.3 140,40.7"/></g>
+  <circle cx="97" cy="42.6" r="43" fill="none" stroke="#c2562b" stroke-width="1.3" stroke-dasharray="5 4"/>
+  <g fill="currentColor"><circle cx="100" cy="110" r="2.5"/></g>
+  <g fill="currentColor" font-size="14" font-style="italic"><text x="38" y="44">A</text><text x="88" y="24">C</text><text x="144" y="38">B</text><text x="104" y="124">O</text></g>
+</svg><figcaption>紅色虛線：以 AB 為直徑的圓，也蓋住 △ABC，卻比外接圓小得多</figcaption></figure>
+這個命題對直角三角形和銳角三角形成立（證明從略），但對鈍角三角形不成立。用逆向思維構造反例：先作一個圓 $O$，在圓上取很接近的三點 $A,C,B$。圓 $O$ 就是 $\triangle ABC$ 的外接圓，但覆蓋 $\triangle ABC$ 的圓（例如以線段 $AB$ 為直徑的圓）可以比外接圓小得多。
+<br><b>註</b>：一般可以證明，覆蓋鈍角 $\triangle ABC$ 的最小圓是以最大邊 $AB$ 為直徑的圓，它比 $\triangle ABC$ 的外接圓小；當 $\triangle ABC$ 是直角或銳角三角形時，命題是真的。⟦為什麼蓋得住｜$\angle ACB$ 是鈍角，$C$ 看 $AB$ 的角大於 $90^\circ$，所以 $C$ 在以 $AB$ 為直徑的圓內。⟧
+
+=== 例 5
+zh: 命題「對任何自然數 $n$，$n^2+n+17$ 都是質數」是否正確？
+sol: 歷史上曾有人錯誤地認為這個命題是對的。的確，取 $n=1,2,3,4$ 檢驗，$n^2+n+17$ 的值是 $19,23,29,37$，都是質數；甚至 $n=5,6,\dots,15$ 時也都是質數。但當 $n=16$ 時，
+$$16^2+16+17=16^2+2\times16+1=17^2,$$
+不是質數。所以命題不正確。⟦一眼看出 n = 16｜$n^2+n+17$ 當 $n=17$ 時每一項都是 $17$ 的倍數，顯然不是質數；再往前試一步 $n=16$，剛好湊成完全平方。⟧
+<br>從上面幾個例子可見，反例不僅幫助我們對命題有進一步的認識，也是糾正錯誤的一種手段。
+
+=== 例 6
+zh: （選擇題）下面四個命題：
+(1) 一組對邊相等、且一組對角相等的四邊形是平行四邊形；
+(2) 一組對邊相等、且一條對角線平分另一條對角線的四邊形是平行四邊形；
+(3) 一組對角相等、且這組對角的頂點所連的對角線平分另一條對角線的四邊形是平行四邊形；
+(4) 一組對角相等、且這組對角的頂點所連的對角線被另一條對角線平分的四邊形是平行四邊形。
+其中正確的命題個數是（　）。(A) $1$；(B) $2$；(C) $3$；(D) $4$。
+sol: 對 (1)(2)(4) 可以分別舉出反例。
+(1) 作等腰 $\triangle ABE$（$AB=AE$），在底邊 $BE$ 上取一點 $C$（不是中點），把 $\triangle ACE$ 沿 $AC$ 的垂直平分線翻轉到另一側，得 $\triangle CAD$（$\triangle ACD\cong\triangle CAE$）。四邊形 $ABCD$ 中 $AB=AE=CD$，$\angle B=\angle AEC=\angle ADC$，但 $AD=CE\ne BC$，不是平行四邊形。
+<figure class="bkfig"><svg viewBox="0 0 220 190" width="200" role="img" aria-label="反例一：四邊形ABCD與等腰三角形ABE">
+  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="110,35 30,175 140,175 155.6,14.5"/><line x1="140" y1="175" x2="190" y2="175"/><line x1="110" y1="35" x2="190" y2="175"/><line x1="110" y1="35" x2="140" y2="175"/></g>
+  <g fill="currentColor" font-size="14" font-style="italic"><text x="94" y="32">A</text><text x="14" y="188">B</text><text x="134" y="190">C</text><text x="160" y="16">D</text><text x="194" y="188">E</text></g>
+</svg><figcaption>△ACD 與 △CAE 全等；ABCD 一組對邊相等、一組對角相等</figcaption></figure>
+(2) 作等腰 $\triangle ADE$（$AD=AE$），延長底邊 $ED$ 到任一點 $O$，以 $O$ 為對角線交點作平行四邊形 $ABCE$（$O$ 是 $AC$、$BE$ 的中點）。則 $B,O,D,E$ 共線，四邊形 $ABCD$ 滿足 $AD(=AE)=BC$，對角線 $BD$ 過 $AC$ 的中點 $O$，但 $O$ 不是 $BD$ 的中點，不是平行四邊形。
+<figure class="bkfig"><svg viewBox="0 0 340 215" width="320" role="img" aria-label="反例二：平行四邊形ABCE與四邊形ABCD">
+  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="20,170 290,200 320,60 50,30"/><polygon points="20,170 290,200 320,60 142.1,95.3" stroke="#c2562b"/></g>
+  <g fill="none" stroke="currentColor" stroke-width="1.1" stroke-dasharray="5 4"><line x1="20" y1="170" x2="320" y2="60"/><line x1="50" y1="30" x2="290" y2="200"/><line x1="20" y1="170" x2="142.1" y2="95.3"/></g>
+  <g fill="currentColor" font-size="14" font-style="italic"><text x="4" y="182">A</text><text x="292" y="214">B</text><text x="322" y="58">C</text><text x="132" y="88">D</text><text x="38" y="26">E</text><text x="166" y="134">O</text></g>
+</svg><figcaption>黑框：平行四邊形 ABCE；紅框：四邊形 ABCD，AD = AE = BC</figcaption></figure>
+(4) 箏形 $ABCD$：$BD\perp AC$ 於 $O$，$AO=CO$，但 $BO\ne DO$。$\angle A=\angle C$，$AC$ 被 $BD$ 平分，但不是平行四邊形。
+<figure class="bkfig"><svg viewBox="0 0 200 210" width="160" role="img" aria-label="反例四：箏形ABCD"><g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="30,90 100,20 170,90 100,190"/><line x1="30" y1="90" x2="170" y2="90"/><line x1="100" y1="20" x2="100" y2="190"/></g><g fill="currentColor" font-size="14" font-style="italic"><text x="14" y="94">A</text><text x="94" y="14">D</text><text x="174" y="94">C</text><text x="94" y="206">B</text><text x="104" y="106">O</text></g></svg><figcaption>箏形：AO = CO，BO ≠ DO</figcaption></figure>
+命題 (3) 是正確的⟦證明 (3)｜設 $\angle B=\angle D$，$BD$ 過 $AC$ 的中點 $O$。反設 $OB\ne OD$，不妨設 $OD&lt;OB$。在射線 $OD$ 上取 $D'$ 使 $OD'=OB$，則 $ABCD'$ 是平行四邊形，$\angle AD'C=\angle ABC=\angle ADC$。但 $D$ 在 $\triangle AD'C$ 內部（在線段 $OD'$ 上），所以 $\angle ADC>\angle AD'C$，矛盾。所以 $OB=OD$，對角線互相平分，是平行四邊形。⟧，所以應選 (A)。
+<br><b>說明</b>：若選擇題給的幾個選項中<b>有且只有一個是對的</b>（單一選擇題），只要用舉反例或其他方法斷定其餘選項都不對，剩下的那一個一定正確，就解選擇題而言已經不必再證明了。這就是解選擇題的<b>排除法</b>。
+ans: (A)
+
+=== 例 7
+zh: 設 $a,b$ 是兩個不相等的正數。判斷下列兩個不等式中哪一個成立：
+(1) $\left(a+\dfrac1a\right)\left(b+\dfrac1b\right)\ge\left(\dfrac{a+b}2+\dfrac2{a+b}\right)^2$；
+(2) $\left(a+\dfrac1a\right)\left(b+\dfrac1b\right)\le\left(\dfrac{a+b}2+\dfrac2{a+b}\right)^2$。
+sol: <b>分析</b>：先粗略估計。設 $a$ 是很大的正數，$b=1$，則左邊 $\approx2a$，右邊 $>\left(\frac a2\right)^2=\frac14a^2$。$a$ 很大時 $\frac14a^2>2a$，這說明 (1) 不真，具體反例就不難作出了。
+<b>解</b>：令 $a=10$，$b=1$，則
+$$\left(a+\tfrac1a\right)\left(b+\tfrac1b\right)=10.1\times2=20.2,$$
+$$\left(\tfrac{11}2+\tfrac2{11}\right)^2>5.5^2>25>20.2,$$
+所以 (1) 不真。
+令 $a=\dfrac1{10}$，$b=1$，則左邊仍是 $20.2$，而
+$$\left(\tfrac{1.1}2+\tfrac2{1.1}\right)^2&lt;(0.55+1.82)^2&lt;9&lt;20.2,$$
+所以 (2) 也不真。兩個都不成立。
+⟦為什麼左邊沒變｜$a+\frac1a$ 在 $a=10$ 和 $a=\frac1{10}$ 時都是 $10.1$。⟧
+
+=== 例 8
+zh: 如圖，梯形 $ABCD$ 中 $AB\parallel CD$，$AB=a$，$CD=b$（$a>b$），$M$ 是 $DC$ 延長線上一點。如果 $AM$ 把梯形分成面積相等的兩部分，則 $CM$ 的長為（　）。
+(A) $\dfrac{ab}{2(a+b)}$；(B) $\dfrac{a(a-b)}{2(a+b)}$；(C) $\dfrac{ab}{a+b}$；(D) $\dfrac{a(a-b)}{a+b}$。
+sol: <figure class="bkfig"><svg viewBox="0 0 310 170" width="300" role="img" aria-label="梯形ABCD，M在DC延長線上，AM交BC於E">
+  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="20,150 240,150 140,20 100,20"/></g>
+  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="140" y1="20" x2="292.3" y2="20"/><line x1="20" y1="150" x2="292.3" y2="20"/><line x1="180.9" y1="73.2" x2="180.9" y2="150"/></g>
+  <g fill="currentColor" font-size="14" font-style="italic"><text x="6" y="164">A</text><text x="242" y="164">B</text><text x="134" y="14">C</text><text x="90" y="14">D</text><text x="294" y="18">M</text><text x="186" y="72">E</text><text x="176" y="166">F</text></g>
+</svg></figure>
+<b>答</b>：(D)。用特例排除：取 $b$ 很小，例如 $b=10^{-10}$，$a=1$，高 $h=1$。設 $AM$ 交 $BC$ 於 $E$，梯形面積 $S=\frac12(a+b)h\approx\frac12$，$S_{\triangle ABE}=\frac12S\approx\frac14$。作 $EF\perp AB$，$S_{\triangle ABE}=\frac12\cdot1\cdot EF$，所以 $EF\approx\frac12$，$E$ 幾乎是 $BC$ 的中點，$CE\approx BE$。由 $\triangle ABE\sim\triangle MCE$，$CM\approx AB=1$。也就是說，對這個很特殊的梯形，$CM$ 約為 $1$。把 $a=1$，$b\approx0$ 代入 (A)(B)(C)，分別得 $CM$ 約為 $0,\frac12,0$，所以 (A)(B)(C) 都錯，應選 (D)。
+<br><b>說明</b>：如果把三角形也看作梯形（上底 $b=0$，$C$ 與 $D$ 重合），這時 $S_{\triangle ABE}=\frac12S_{\triangle ABD}$，$E$ 是 $BC$ 的中點，$CM=a$。把 $b=0$ 代入 (A)(B)(C) 分別得 $0,\frac a2,0$，只有 (D) 才有 $CM=a$。
+⟦直接算出 (D)｜設 $E$ 在 $BC$ 上、到 $AB$ 的高是 $th$。$S_{\triangle ABE}=\frac12a\cdot th=\frac14(a+b)h$，得 $t=\frac{a+b}{2a}$。$\triangle ABE\sim\triangle MCE$，$\frac{CM}{AB}=\frac{CE}{EB}=\frac{1-t}t=\frac{a-b}{a+b}$，所以 $CM=\frac{a(a-b)}{a+b}$。⟧
+ans: (D)
+
+=== 習題 1
+zh: 判斷下列命題是否正確；若不正確，請舉出反例：
+(1) 設凸 $n$ 邊形的所有對角線都相等，則 $n=4$。
+(2) 在正方形 $ABCD$ 內只有一點 $P$，使 $\triangle PAB$、$\triangle PBC$、$\triangle PCD$、$\triangle PDA$ 都是等腰三角形。
+(3) 若 $p,q$ 是實數，且 $p+q$ 及 $p\cdot q$ 都是整數，則 $p,q$ 是整數。
+(4) 僅當 $p^2-4q\ge0$ 時，方程 $x|x|+px+q=0$ 才有實根。
+(5) 一個平面圖形 $K$ 在任何一條直線上的投影長度都不超過 $1$，則 $K$ 一定可以被直徑為 $1$ 的圓覆蓋。
+(6) 若三角形的內切圓圓心到兩邊中點的距離相等，則這個三角形是等腰三角形。
+(7) 不存在這樣的三角形，它的三條高都小於 $1$ cm，而面積大於 $10000\ \text{cm}^2$。
+sol: 七個命題都不正確，反例如下。
+(1) 正五邊形的五條對角線都相等。
+(2) 正方形的中心滿足要求。另外，以 $A,B$ 為圓心、$AB$ 為半徑畫弧，在正方形內的交點 $Q$ 使 $\triangle QAB$ 是正三角形，$\triangle QBC$、$\triangle QDA$ 是等腰（$QB=BC$，$QA=AD$），$\triangle QCD$ 也是等腰（$QC=QD$，對稱）。每一邊都可作一個這樣的點，正方形內共有 $5$ 點滿足要求。
+(3) $p=2-\sqrt3$，$q=2+\sqrt3$：$p+q=4$，$pq=1$，但 $p,q$ 不是整數。
+(4) $p=1$，$q=1$：$p^2-4q&lt;0$，方程成為 $x|x|+x+1=0$。$x\ge0$ 時是 $x^2+x+1=0$，判別式 $-3&lt;0$，無實根；$x&lt;0$ 時是 $-x^2+x+1=0$，即 $x^2-x-1=0$，得 $x=\frac{1-\sqrt5}2&lt;0$（正根捨去），是原方程的實根。
+(5) $K$ 是邊長 $1$ 的正三角形：它在任何直線上的投影都不超過 $1$，但覆蓋正三角形的最小圓是它的外接圓，直徑 $\frac{2\sqrt3}3>1$。
+(6) 取 $\triangle ABC$，$AB=6$，$BC=4$，$CA=8$。$D,E$ 分別是 $AC,BC$ 的中點，內切圓切 $AC,BC$ 於 $F,G$。設 $BG=x$，$CG=y$，$AF=z$，則 $x+y=4$，$y+z=8$，$z+x=6$，解得 $x=1$，$y=3$，$z=5$。於是 $GE=BE-BG=1$，$DF=AF-AD=1$，所以 $\triangle ODF\cong\triangle OEG$（兩股都是 $r$ 與 $1$），$OD=OE$，但三角形不是等腰的。
+(7) 取矩形 $ABCD$，$AB=1$，$BC=50000$，$O$ 是對角線交點。$S_{\triangle ADO}=\frac{50000}4=12500>10000$；$AD$ 邊上的高是 $\frac12$，另兩條高都等於 $\frac{2\times12500}{AO}$，而 $AO>25000$，所以也小於 $1$。
+
+=== 習題 2
+zh: 已知四邊形 $ABCD$ 內有一點 $E$，連 $AE,BE,CE,DE$，把四邊形分成 $4$ 個面積相等的三角形。則下列結論（　）。
+甲：$ABCD$ 是凸四邊形；乙：$E$ 是對角線 $AC$ 的中點或對角線 $BD$ 的中點；丙：$ABCD$ 是平行四邊形。
+(A) 只有甲正確；(B) 只有乙正確；(C) 甲、乙、丙都正確；(D) 甲、乙、丙都不正確。
+sol: 用排除法。取 $ABCD$ 是以 $AC$ 為對稱軸的凹四邊形，則 $AC$ 的中點有題設中 $E$ 點的性質⟦為什麼｜$E$ 是 $AC$ 中點，$\triangle ABE$ 與 $\triangle CBE$ 等底（$AE=CE$）同高，面積相等；同理 $\triangle ADE=\triangle CDE$；再由對稱，$\triangle ABE=\triangle ADE$。⟧，這時甲、丙都不正確，排除 (A)(C)。取 $ABCD$ 是正方形，$AC$ 的中點也有 $E$ 的性質，這時乙正確，排除 (D)。所以應選 (B)。
+ans: (B)
+
+=== 習題 3
+zh: 梯形 $ABCD$ 中 $AD\parallel BC$，$AD=a$，$BC=b$，$E,F$ 分別是 $AD,BC$ 的中點，$AF$ 與 $BE$ 交於 $G$，$CE$ 與 $DF$ 交於 $H$。則 $GH$ 的長為（　）。(A) $\frac12(a+b)$；(B) $b-a$；(C) $\sqrt{ab}$；(D) $\dfrac{ab}{a+b}$。
+sol: 取一個形狀很接近矩形的等腰梯形（或者把矩形看成梯形的特例），即 $a\approx b$。由對稱性易見 $GH\approx\frac12BC=\frac12b$。但把 $a\approx b$ 代入 (A)(B)(C)，$GH$ 分別約為 $b,0,b$，都不對，應選 (D)。
+⟦直接算｜$\triangle AEG\sim\triangle FBG$，相似比 $AE:FB=\frac a2:\frac b2=a:b$，所以 $EG:GB=a:b$；同理 $EH:HC=a:b$。於是 $GH\parallel BC$，$GH=BC\cdot\frac{EG}{EB}=\frac{ab}{a+b}$。⟧
+ans: (D)

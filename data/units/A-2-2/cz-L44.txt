@@ -1,0 +1,17 @@
+=== meta
+title: 看到 b²−4ac 的樣子，就造一個二次方程
+from: cz-L44
+order: 60
+
+=== body
+<div class="hero">條件長得像判別式 → <b>造一個二次方程</b><br>再找一個<b>明顯的根</b>（常常是 $t=1$），用韋達定理收尾</div>
+<div class="cards">
+<div class="card"><h4>① 判別式 = 0 → 等根</h4><div class="rule">$(z-x)^2-4(x-y)(y-z)=0$</div>
+<div class="eg">造 $(x-y)t^2+(z-x)t+(y-z)=0$<br>係數和 $=0$ ⟹ $t=1$ 是根 ⟹ 兩根都是 1<br>$1+1=-\frac{z-x}{x-y}$ ⟹ $x+z=2y$</div></div>
+<div class="card"><h4>② 有實根 → 判別式 ≥ 0</h4><div class="rule">$ap-2bn+cm=0$</div>
+<div class="eg">⟹ $x=1$ 是 $apx^2-2bnx+cm=0$ 的根<br>⟹ $b^2n^2\ge ac\cdot mp$</div></div>
+</div>
+<p>⟦係數和為 0 的意思｜$At^2+Bt+C=0$ 中若 $A+B+C=0$，代 $t=1$ 就成立，所以 $1$ 是根，另一根是 $\frac CA$。⟧ 係數加起來等於 $0$，$t=1$ 就是一個根。</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>造方程時忘了首項係數可能是 $0$：要先單獨處理 $x=y$ 的情形</li></ul></div>
+<div class="bottomline">「平方 − 4 × 兩項乘積」是判別式的指紋。</div>

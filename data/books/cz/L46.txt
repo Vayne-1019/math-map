@@ -1,0 +1,168 @@
+=== meta
+title: 構造圖形解題
+author: 嚴鎮軍
+pages: 374-380
+units: G-10-1, C-4-5
+status: 完成
+
+=== text
+<p>數與形之間有密切的聯繫。第 36 講說過，許多幾何題可以借助代數方法來解；反過來，解非幾何題時，如果可能，也可以<b>造出一個幾何圖形，把題中的關係（數量關係或其他關係）在圖形上表現出來</b>。在圖形上比較容易看清條件和要討論的對象之間的關係，從而找到解題途徑；有時還能利用已知的幾何定理簡化計算。</p>
+<h3>一、代數題舉例</h3>
+
+=== 例 1
+zh: 已知 $a^2+b^2=1$，$x^2+y^2=1$，$ax+by=0$。求證：$a^2+x^2=1$，$b^2+y^2=1$，$ab+xy=0$。
+sol: <b>分析</b>：條件 $x^2+y^2=1$、$a^2+b^2=1$ 提示可以用斜邊為 $1$ 的直角三角形。
+<figure class="bkfig"><svg viewBox="0 0 240 150" width="230" role="img" aria-label="矩形ABCD與對角線">
+  <g fill="none" stroke="currentColor" stroke-width="1.5"><rect x="40" y="20" width="160" height="110"/><line x1="40" y1="20" x2="200" y2="130"/><line x1="40" y1="130" x2="200" y2="20"/></g>
+  <g fill="currentColor" font-size="13"><text x="112" y="14">|a|</text><text x="112" y="146">|y|</text><text x="10" y="80">|x|</text><text x="206" y="80">|b|</text>
+  <g font-style="italic" font-size="14"><text x="26" y="18">A</text><text x="204" y="18">D</text><text x="26" y="142">B</text><text x="204" y="142">C</text></g></g>
+</svg><figcaption>兩個斜邊為 1 的直角三角形拼成矩形</figcaption></figure>
+<b>證明</b>：若 $a,b,x,y$ 都不為 $0$：因 $x^2+y^2=1$，可作 Rt$\triangle ABC$，$AB=|x|$，$BC=|y|$，$\angle B=90^\circ$，斜邊 $AC=1$。同理在 $AC$ 的另一側作 Rt$\triangle ACD$，$AD=|a|$，$CD=|b|$，$\angle D=90^\circ$。由 $ax+by=0$ 得 $|ax|=|by|$，即
+$$\frac{|b|}{|a|}=\frac{|x|}{|y|},\qquad\frac{CD}{AD}=\frac{AB}{CB}.$$
+所以 Rt$\triangle ABC\sim$Rt$\triangle CDA$⟦對應關係｜兩直角三角形兩股成比例：$AB:CB=CD:AD$，所以 $\triangle ABC\sim\triangle CDA$（$A\leftrightarrow C$，$B\leftrightarrow D$，$C\leftrightarrow A$）。⟧，而斜邊都是 $AC$，所以全等，$ABCD$ 是矩形。於是 $AD=BC$，$AB=CD$，即 $|a|=|y|$，$|x|=|b|$。在 Rt$\triangle ABD$ 中 $AD^2+AB^2=BD^2=1$，即 $a^2+x^2=1$；同理 $b^2+y^2=1$。
+又 $|ab|=|xy|$。由 $ax+by=0$：若 $a,b$ 同號，則 $x,y$ 異號；若 $a,b$ 異號，則 $x,y$ 同號。所以 $ab$ 與 $xy$ 異號，$ab+xy=0$。
+若 $a,b,x,y$ 中有 $0$，例如 $a=0$，則 $b=\pm1$，由 $by=0$ 得 $y=0$，$x=\pm1$，結論直接成立。
+
+=== 例 2
+zh: 已知 $0&lt;a&lt;1$，$0&lt;b&lt;1$。求證
+$$\sqrt{a^2+b^2}+\sqrt{(1-a)^2+b^2}+\sqrt{a^2+(1-b)^2}+\sqrt{(1-a)^2+(1-b)^2}\ge2\sqrt2.$$
+sol: <b>分析</b>：左邊四個根式恰好是四個直角三角形的斜邊，而且 $a+(1-a)=b+(1-b)=1$，會想到用邊長 $1$ 的正方形。
+<figure class="bkfig"><svg viewBox="0 0 220 200" width="210" role="img" aria-label="正方形ABCD內一點O">
+  <g fill="none" stroke="currentColor" stroke-width="1.5"><rect x="30" y="20" width="160" height="160"/><line x1="150" y1="20" x2="150" y2="180"/><line x1="30" y1="76" x2="190" y2="76"/>
+    <line x1="150" y1="76" x2="30" y2="20" stroke="#c2562b"/><line x1="150" y1="76" x2="30" y2="180" stroke="#c2562b"/><line x1="150" y1="76" x2="190" y2="180" stroke="#c2562b"/><line x1="150" y1="76" x2="190" y2="20" stroke="#c2562b"/></g>
+  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="30" y1="20" x2="190" y2="180"/><line x1="30" y1="180" x2="190" y2="20"/></g>
+  <g fill="currentColor" font-size="14" font-style="italic"><text x="14" y="18">A</text><text x="14" y="194">B</text><text x="194" y="194">C</text><text x="194" y="18">D</text><text x="146" y="14">F</text><text x="14" y="80">G</text><text x="194" y="80">E</text><text x="146" y="196">H</text><text x="154" y="92">O</text><text x="86" y="14">b</text><text x="16" y="50">a</text></g>
+</svg><figcaption>紅線是四個根式；虛線是兩條對角線</figcaption></figure>
+<b>證明</b>：作邊長 $1$ 的正方形 $ABCD$，在 $AB$、$AD$ 上取點 $G,F$，使 $AG=a$，$AF=b$。過 $F,G$ 作 $FH\parallel AB$，$GE\parallel AD$，分別交 $BC,CD$ 於 $H,E$，設 $GE$ 與 $FH$ 交於 $O$。由勾股定理，
+$$\begin{aligned}AO&=\sqrt{a^2+b^2},&BO&=\sqrt{(1-a)^2+b^2},\\CO&=\sqrt{(1-a)^2+(1-b)^2},&DO&=\sqrt{a^2+(1-b)^2}.\end{aligned}$$
+⟦例如 BO｜$O$ 到 $AB$ 的距離是 $AF=b$，$O$ 到 $BC$ 的距離是 $BG=1-a$，這兩段是以 $BO$ 為斜邊的直角三角形的兩股。⟧
+而 $AO+CO\ge AC=\sqrt2$，$BO+DO\ge BD=\sqrt2$（兩點之間線段最短），兩式相加即得所證。
+
+=== 例 3
+zh: 正數 $x,y,z$ 滿足方程組
+$$\begin{cases}x^2+xy+\dfrac{y^2}3=25,\\[1mm]\dfrac{y^2}3+z^2=9,\\[1mm]z^2+xz+x^2=16.\end{cases}$$
+求 $xy+2yz+3xz$ 的值。
+sol: <b>分析</b>：第二個方程像勾股定理，第一、三個方程有點像餘弦定理。
+<b>解</b>：把方程組改寫成
+$$\begin{cases}x^2+\left(\dfrac y{\sqrt3}\right)^2-2x\cdot\dfrac y{\sqrt3}\cos150^\circ=25,\\[1mm]\left(\dfrac y{\sqrt3}\right)^2+z^2=9,\\[1mm]z^2+x^2-2xz\cos120^\circ=16.\end{cases}$$
+⟦怎麼改的｜$\cos150^\circ=-\frac{\sqrt3}2$，所以 $-2x\cdot\frac y{\sqrt3}\cdot\left(-\frac{\sqrt3}2\right)=xy$；$\cos120^\circ=-\frac12$，$-2xz\cdot\left(-\frac12\right)=xz$。⟧
+因為 $120^\circ+150^\circ+90^\circ=360^\circ$，可以構造直角 $\triangle ABC$，$AB=5$，$BC=3$，$CA=4$，並在 $\triangle ABC$ 內取一點 $O$，使 $OA=x$，$OB=\dfrac y{\sqrt3}$，$OC=z$，$\angle AOB=150^\circ$，$\angle BOC=90^\circ$，$\angle AOC=120^\circ$。
+<figure class="bkfig"><svg viewBox="0 0 270 180" width="260" role="img" aria-label="直角三角形ABC內一點O">
+  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="20,160 250,160 167.2,49.6"/></g>
+  <g fill="none" stroke="currentColor" stroke-width="1.2"><line x1="144.1" y1="129.4" x2="20" y2="160"/><line x1="144.1" y1="129.4" x2="250" y2="160"/><line x1="144.1" y1="129.4" x2="167.2" y2="49.6"/></g>
+  <g fill="currentColor" font-size="14" font-style="italic"><text x="4" y="174">A</text><text x="252" y="174">B</text><text x="164" y="44">C</text><text x="128" y="124">O</text><text x="80" y="136">x</text><text x="162" y="94">z</text><text x="196" y="138">y/√3</text></g>
+  <g fill="currentColor" font-size="13"><text x="80" y="98">4</text><text x="214" y="98">3</text><text x="130" y="176">5</text></g>
+</svg><figcaption>∠AOB = 150°，∠BOC = 90°，∠COA = 120°</figcaption></figure>
+⟦O 真的存在嗎｜在 $\triangle ABC$ 內，看 $AB$ 成 $150^\circ$ 角的點組成一段圓弧，看 $BC$ 成 $90^\circ$ 的點也是一段圓弧，兩弧在三角形內交於一點 $O$；這時 $\angle AOC=360^\circ-150^\circ-90^\circ=120^\circ$。由餘弦定理，$OA,OB,OC$ 滿足的方程正是上面三式，所以 $(OA,\sqrt3\,OB,OC)$ 就是方程組的正數解。⟧
+三塊面積相加等於整個三角形：$S_{\triangle ABC}=S_{\triangle AOB}+S_{\triangle BOC}+S_{\triangle COA}$，即
+$$\begin{aligned}6&=\tfrac12x\cdot\tfrac y{\sqrt3}\sin150^\circ+\tfrac12\cdot\tfrac y{\sqrt3}\cdot z+\tfrac12zx\sin120^\circ\\&=\frac{xy}{4\sqrt3}+\frac{yz}{2\sqrt3}+\frac{\sqrt3}4zx.\end{aligned}$$
+兩邊乘以 $4\sqrt3$：$24\sqrt3=xy+2yz+3zx$。
+ans: $xy+2yz+3xz=24\sqrt3$
+
+=== text
+<h3>二、雜題舉例</h3>
+
+=== 例 4
+zh: 四個城市舉行足球賽，每個城市派出紅、黃兩隊。規定每兩隊之間至多賽一場，同一城市的兩隊不比賽。比賽進行若干天後統計，發現除 $A$ 市紅隊外，其餘各隊賽過的場次各不相同。問 $A$ 市黃隊已賽過多少場？
+sol: 每隊至多賽 $6$ 場（$8$ 隊中扣掉自己和同城的隊）。除 $A$ 市紅隊外的 $7$ 隊場次各不相同，所以只能是 $0,1,2,3,4,5,6$ 各一隊。
+用點 $M$ 代表 $A$ 市紅隊，$M_i$（$i=0,1,\dots,6$）代表已賽 $i$ 場的那一隊，賽過的兩隊之間連一條線段，從 $M_i$ 出發恰有 $i$ 條線段。
+先看 $M_6$（極端！）：它的 $6$ 條線段連到除了同城隊以外的所有隊。$M_0$ 沒有線段，所以 $M_6$ 唯一沒連到的就是 $M_0$，$M_0$ 和 $M_6$ 是同一城市的兩隊。
+再看 $M_5$：它不連 $M_0$；$M_1$ 的唯一一條線已經連到 $M_6$，所以 $M_5$ 也不連 $M_1$。$M_5$ 有 $5$ 條線，只能連到 $M_2,M_3,M_4,M_6,M$ 這 $5$ 隊，沒連到的 $M_1$ 就是它的同城隊。
+同理，$M_2$ 與 $M_4$ 是同一城市的兩隊⟦為什麼｜$M_6,M_5$ 都連到 $M_2$，所以 $M_2$ 的兩條線已經用完。$M_4$ 的 $4$ 條線不能連 $M_0$（沒有線）、$M_1$（已滿）、$M_2$（已滿），只能連 $M_6,M_5,M_3,M$。它沒連到的是 $M_0,M_1,M_2$，其中 $M_0,M_1$ 已有同城隊，所以 $M_4$ 的同城隊是 $M_2$。⟧。剩下的 $M_3$ 只能和 $M$ 同城，也就是 $A$ 市黃隊。
+ans: $3$ 場
+
+=== 例 5
+zh: 有一串數 $a_1,a_2,\dots,a_n$，其中任何連續 $7$ 個數之和都是負數（$a_1+\dots+a_7&lt;0$，$a_2+\dots+a_8&lt;0$，……），任何連續 $11$ 個數之和都是正數。這串數最多有幾個（即 $n$ 的最大值是多少）？並寫出一個符合要求的數列。
+sol: <b>先證 $n\le16$</b>。反設 $n\ge17$，把前 $17$ 個數排成 $7$ 行 $11$ 列的表，第 $i$ 行第 $j$ 列放 $a_{i+j-1}$：
+$$\begin{matrix}a_1&a_2&\cdots&a_{11}\\a_2&a_3&\cdots&a_{12}\\\vdots&&&\vdots\\a_7&a_8&\cdots&a_{17}\end{matrix}$$
+每一行是連續 $11$ 個數，和為正，所以全表總和為正；每一列是連續 $7$ 個數，和為負，所以全表總和為負，矛盾。所以 $n\le16$。
+⟦原書的做法｜原書用「正負號圖」一段一段推：由前 $11$ 個與前 $7$ 個得 $a_8+\dots+a_{11}>0$，再推出從 $a_{12}$ 起任三個連續數之和為負、從 $a_{15}$ 起都是正數等等，最後說明 $a_{17}$ 不能存在。上面的表格法是同一想法的整理：把「行和」與「列和」兩種算法對比。⟧
+<b>$n=16$ 做得到</b>，例如
+$$5,5,-13,5,5,5,-13,5,5,-13,5,5,5,-13,5,5.$$
+⟦驗證｜$-13$ 在第 $3,7,10,14$ 項。任何連續 $7$ 項恰含兩個 $-13$：和 $=5\times5-26=-1&lt;0$。任何連續 $11$ 項恰含三個 $-13$：和 $=8\times5-39=1>0$。⟧
+ans: $16$
+
+=== 例 6
+zh: 有甲、乙、丙三個工廠，每個廠的工人在其他兩廠中各最多有一個熟人。已知：(1) 甲廠有 $5000$ 人；(2) 乙廠最多有 $1500$ 人在丙廠有熟人；(3) 乙、丙兩廠各至少有一半人在甲廠沒有熟人。求證：在其他兩廠都沒有熟人的工人不少於 $2000$ 人。
+sol: 用三個圓代表三個廠，圓內的點代表工人，兩人認識就在兩點間連一條線。
+設乙、丙兩廠分別有 $x,y$ 人。由條件 (3)，乙廠最多 $\frac x2$ 人在甲廠有熟人，而每人在甲廠最多一個熟人，所以甲、乙之間的連線不多於 $\frac x2$ 條；同理甲、丙之間不多於 $\frac y2$ 條。由條件 (2)，乙、丙之間最多 $1500$ 條。所以圖上至多有 $1500+\frac x2+\frac y2$ 條線。每條線最多使 $2$ 人「在外廠有熟人」，所以在外廠有熟人的工人總數不超過
+$$2\left(1500+\frac x2+\frac y2\right)=3000+x+y.$$
+三廠總人數是 $5000+x+y$，所以在其他兩廠都沒有熟人的工人不少於
+$$(5000+x+y)-(3000+x+y)=2000\ \text{人}.$$
+⟦為什麼乘以 2｜一條線連著兩個工人，這兩人因此「在外廠有熟人」。有些人可能連了兩條線（兩個外廠各一個熟人），被算了兩次，所以實際人數只會更少。⟧
+
+=== text
+<p>下面兩個例子用<b>把圖形染色</b>的方法（染色法）來解。</p>
+
+=== 例 7
+zh: 中國象棋盤上有一隻馬，從某個位置出發，依象棋規則在棋盤上隨意跳動，跳了 $n$ 步後恰好回到原處。問 $n$ 是奇數還是偶數？為什麼？
+sol: <figure class="bkfig"><svg viewBox="0 0 130 130" width="120" role="img" aria-label="格點相間染色與馬的走法">
+  <g fill="none" stroke="currentColor" stroke-width="1.2"><path d="M15,15h100M15,55h100M15,95h40M15,15v80M55,15v80M95,15v40M115,15v40"/></g>
+  <g stroke="currentColor" stroke-width="1.2"><circle cx="15" cy="15" r="5" fill="none"/><circle cx="55" cy="15" r="5" fill="currentColor"/><circle cx="95" cy="15" r="5" fill="none"/><circle cx="15" cy="55" r="5" fill="currentColor"/><circle cx="55" cy="55" r="5" fill="none"/><circle cx="95" cy="55" r="5" fill="currentColor"/><circle cx="15" cy="95" r="5" fill="none"/><circle cx="55" cy="95" r="5" fill="currentColor"/></g>
+  <g stroke="#c2562b" stroke-width="1.5" fill="none"><line x1="15" y1="95" x2="55" y2="15"/><line x1="15" y1="15" x2="95" y2="55"/></g>
+</svg><figcaption>空心點、實心點相間；馬走「日」字，一定換顏色</figcaption></figure>
+把棋盤上縱橫線的交點相間地染成紅、白兩色（相鄰交點顏色不同）。馬走「日」字，橫向和縱向一共移動 $1+2=3$ 格，是奇數，所以每跳一步都換一次顏色⟦為什麼｜沿縱橫線每移一格換一次色；移動 $3$ 格，顏色換了奇數次，結果與原來不同色。⟧。在紅點的馬，跳一步到白點，再一步回紅點……：
+$$\text{紅}\xrightarrow{1}\text{白}\xrightarrow{2}\text{紅}\to\cdots\xrightarrow{n}\text{紅（原處）}.$$
+跳奇數步落在白點、偶數步落在紅點，回到原處（紅點）必須跳偶數步，所以 $n$ 是偶數。
+
+=== 例 8
+zh: 由 $4$ 個 $1\times1$ 的正方形組成的「L 形」（如圖左）。用若干個這種 L 形硬紙片無重疊地拼成一個 $m\times n$ 的矩形。求證：$mn$ 一定是 $8$ 的倍數。
+sol: <figure class="bkfig"><svg viewBox="0 0 300 120" width="300" role="img" aria-label="L形與按列染色的矩形">
+  <g fill="#c2562b" fill-opacity="0.4"><rect x="102" y="10" width="20" height="100"/><rect x="142" y="10" width="20" height="100"/><rect x="182" y="10" width="20" height="100"/><rect x="222" y="10" width="20" height="100"/><rect x="262" y="10" width="20" height="100"/></g>
+  <g fill="none" stroke="currentColor" stroke-width="1.3"><path d="M10,10h25v75h25v25h-50z M10,35h25M10,60h25M10,85h25M35,85v25"/>
+  <rect x="82" y="10" width="200" height="100"/><path d="M82,30h200M82,50h200M82,70h200M82,90h200M102,10v100M122,10v100M142,10v100M162,10v100M182,10v100M202,10v100M222,10v100M242,10v100M262,10v100"/></g>
+</svg><figcaption>左：L 形；右：偶數列塗色（著色的是紅格）</figcaption></figure>
+設用 $k$ 個 L 形拼成 $m\times n$ 的矩形。每個 L 形面積 $4$，所以
+$$mn=4k.\qquad①$$
+於是 $4\mid mn$，只須再證 $k$ 是偶數。
+由①，$m,n$ 中至少有一個偶數⟦為什麼｜若 $m,n$ 都是奇數，$mn$ 是奇數，不可能是 $4k$。⟧，不妨設列數 $n$ 是偶數，$n=2l$。把奇數列（第 $1,3,\dots,2l-1$ 列）染白色、偶數列染紅色。一個 L 形無論怎麼放，它要麼佔 $3$ 個紅格、$1$ 個白格（叫 I 類），要麼佔 $1$ 個紅格、$3$ 個白格（叫 II 類）⟦為什麼只有這兩種｜L 形的長條（3 格）若是直放，三格在同一列，同色；多出的一格在相鄰列，異色：$3+1$。若是橫放，三格分在相鄰三列，顏色是「紅白紅」或「白紅白」，多出的一格與其中一端同列：仍是 $3+1$ 或 $1+3$。⟧。
+設 $k$ 個 L 形中有 $s$ 個 I 類、$t$ 個 II 類，則紅格共 $3s+t$ 個，白格共 $s+3t$ 個。由於列數是偶數，矩形中紅格和白格一樣多：$3s+t=s+3t$，所以 $s=t$，$k=s+t=2s$ 是偶數，$8\mid mn$。
+<br><b>說明</b>：把圖形中的元素（點、線、方格等）染色，實際上就是對元素分類，只是染色看起來更形象。
+
+=== 習題 1
+zh: 設 $a,b,c,d$ 都是正數。求證：$\sqrt{b^2+c^2}+\sqrt{a^2+c^2+d^2+2cd}>\sqrt{a^2+b^2+d^2+2ab}$。
+hint: 構造一個邊長為 $a+b$ 及 $c+d$ 的矩形。
+sol: 改寫成 $\sqrt{b^2+c^2}+\sqrt{a^2+(c+d)^2}>\sqrt{(a+b)^2+d^2}$。在坐標平面上取 $O(0,0)$，$P(b,c)$，$Q(a+b,-d)$，則
+$$OP=\sqrt{b^2+c^2},\quad PQ=\sqrt{a^2+(c+d)^2},\quad OQ=\sqrt{(a+b)^2+d^2}.$$
+$P$ 在 $x$ 軸上方、$Q$ 在下方，$O,P,Q$ 不共線，由三角形不等式 $OP+PQ>OQ$，即所證。（這三點都落在一個邊長 $a+b$、$c+d$ 的矩形的邊框上。）
+
+=== 習題 2
+zh: 設 $0&lt;\theta&lt;90^\circ$。求證：$1&lt;\sin\theta+\cos\theta\le\sqrt2$。
+sol: 左邊：作斜邊為 $1$、一個銳角為 $\theta$ 的直角三角形，兩股是 $\sin\theta$、$\cos\theta$，兩股之和大於斜邊，所以 $\sin\theta+\cos\theta>1$。
+右邊：作直徑 $AC=1$ 的圓，在一側取 $D$ 使 $\angle DAC=\theta$，則 $AD=\cos\theta$，$CD=\sin\theta$；在另一側取弧 $AC$ 的中點 $B$，$AB=BC=\dfrac{\sqrt2}2$。由托勒密定理，
+$$\tfrac{\sqrt2}2\sin\theta+\tfrac{\sqrt2}2\cos\theta=AC\cdot BD=BD\le1,$$
+所以 $\sin\theta+\cos\theta\le\sqrt2$。⟦代數驗證｜$(\sin\theta+\cos\theta)^2=1+2\sin\theta\cos\theta$，而 $2\sin\theta\cos\theta\le\sin^2\theta+\cos^2\theta=1$，所以平方 $\le2$。⟧
+
+=== 習題 3
+zh: 設 $a,b,c$ 是已知正實數，$x,y$ 是正實數且 $x+y=c$。求 $f=\sqrt{a^2+x^2}+\sqrt{b^2+y^2}$ 的最小值。
+sol: 構造圖形：在直線上取 $D,Q,A$，$DQ=x$，$QA=y$，$DA=c$；在 $A$ 處作 $DA$ 的垂線，往上取 $AB=a$，$BC=b$。過 $B$ 作 $DA$ 的平行線，與過 $Q$ 的垂線交於 $P$。則 $PD=\sqrt{a^2+x^2}$，$PC=\sqrt{b^2+y^2}$，
+$$f=PD+PC\ge CD=\sqrt{(a+b)^2+c^2}.$$
+當且僅當 $P$ 在 $CD$ 上時取等號，這時 $\dfrac a{a+b}=\dfrac xc$，即 $x=\dfrac{ac}{a+b}$，$y=\dfrac{bc}{a+b}$，都是正數，可以取到。
+ans: 最小值 $\sqrt{(a+b)^2+c^2}$
+
+=== 習題 4
+zh: 設 $a$ 是實數，$f=\sqrt{a^2+a+1}-\sqrt{a^2-a+1}$。求證：$-1&lt;f&lt;1$。
+sol: 配方：$a^2+a+1=\left(a+\frac12\right)^2+\frac34$，$a^2-a+1=\left(a-\frac12\right)^2+\frac34$。在坐標平面上取 $A\left(-\frac12,\frac{\sqrt3}2\right)$，$D\left(\frac12,\frac{\sqrt3}2\right)$，$P(a,0)$，則
+$$PA=\sqrt{a^2+a+1},\qquad PD=\sqrt{a^2-a+1},\qquad AD=1.$$
+$P$ 不在直線 $AD$ 上，由三角形不等式 $|PA-PD|&lt;AD=1$，即 $-1&lt;f&lt;1$。
+
+=== 習題 5
+zh: $5\times5$ 棋盤的每個小方格內各有一隻甲蟲。某一時刻所有甲蟲都沿水平或豎直方向爬到相鄰的一格。求證：一定至少有一個小方格擠了 $2$ 隻或更多甲蟲。
+sol: 把 $25$ 個方格像西洋棋盤那樣相間染色，黑格 $13$ 個、白格 $12$ 個（四個角同為黑）。每隻甲蟲都爬到相鄰格，顏色必定改變，所以原來在黑格的 $13$ 隻甲蟲都爬進了 $12$ 個白格，由抽屜原則，有一個白格至少擠了 $2$ 隻。（同時也一定有黑格空出來。）
+
+=== 習題 6
+zh: 平面上任給 $10$ 個點，其中任三點不共線。求證：一定可以選出三個點，使以它們為頂點的三角形至少有一個內角不大於 $18^\circ$。
+sol: 取這些點的凸包上一個頂點（例如最低的點）為 $A_1$，其餘 $9$ 個點都在過 $A_1$ 的某條直線的同一側，看出去的方向依次為 $A_2,A_3,\dots,A_{10}$，$\angle A_2A_1A_{10}&lt;180^\circ$。
+(1) 若 $\angle A_2A_1A_{10}\ge144^\circ$，$\triangle A_2A_1A_{10}$ 另兩個角的和 $\le36^\circ$，其中一個 $\le18^\circ$。
+(2) 若 $\angle A_2A_1A_{10}&lt;144^\circ$，它被射線 $A_1A_3,\dots,A_1A_9$ 分成 $8$ 個角，和小於 $144^\circ$，其中至少有一個小於 $18^\circ$，設為 $\angle A_iA_1A_{i+1}$，則 $\triangle A_iA_1A_{i+1}$ 符合要求。
+
+=== 習題 7
+zh: 有 $9$ 名學者，每人至多會講三種不同的語言；任意 $3$ 人中至少有 $2$ 人能通話。求證：其中必有 $3$ 人能用同一種語言通話。
+sol: 用點 $A_1,\dots,A_9$ 表示 $9$ 名學者。兩人能通話就連一條線，並塗上他們共同會的一種語言的顏色。
+(1) 若任兩點都有連線：$A_1$ 出發有 $8$ 條線，而 $A_1$ 至多會 $3$ 種語言，所以這 $8$ 條線至多 $3$ 種顏色，必有兩條同色，設 $A_1A_2$、$A_1A_3$ 同色，那麼 $A_1,A_2,A_3$ 都會這種語言。
+(2) 若有兩點不連線，例如 $A_1,A_2$。由題設，對其餘任一點 $A_k$，三人 $A_1,A_2,A_k$ 中有兩人能通話，而 $A_1,A_2$ 不能，所以 $A_k$ 與 $A_1$ 或 $A_2$ 有連線。這樣從 $A_1$、$A_2$ 共發出至少 $7$ 條線，其中一點至少發出 $4$ 條，設為 $A_1$；$4$ 條線至多 $3$ 種顏色，必有 $2$ 條同色，同 (1) 得到 $3$ 人能用同一種語言通話。
+
+=== 習題 8
+zh: 把上題的 $9$ 名學者改成 $8$ 名學者，結論還成立嗎？為什麼？
+sol: 不成立。反例：把 $8$ 人分成兩組 $\{A_1,A_2,A_3,A_4\}$、$\{A_5,A_6,A_7,A_8\}$。每組內每兩人各共用一種專屬語言（每組 $6$ 對，用 $6$ 種語言，兩組共 $12$ 種），不同組的人不能通話。每人恰好會 $3$ 種語言（與組內另外三人各一種）。任 $3$ 人中必有兩人同組，能通話；但每種語言只有兩人會，沒有 $3$ 人能用同一種語言通話。
+ans: 不成立
