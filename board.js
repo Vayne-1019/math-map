@@ -33,8 +33,10 @@
       <div class="gb-list" hidden></div>`;
     const $ = s => host.querySelector(s);
     const box = $('.gb-box'); box.id = 'gbx' + (++uid);
-    const spec = opt.svg ? parseSVG(opt.svg) : null;
-    const bbox0 = spec ? spec.bbox : [-6, 4.5, 6, -4.5];
+    const geo = opt.geo || null;
+    const spec = !geo && opt.svg ? parseSVG(opt.svg) : null;
+    const gh = geo ? geo.vb[3] * 10 / geo.vb[2] / 2 : 0;
+    const bbox0 = geo ? [-5.8, gh + 0.8, 5.8, -gh - 0.8] : spec ? spec.bbox : [-6, 4.5, 6, -4.5];
     const b = JXG.JSXGraph.initBoard(box.id, {
       boundingbox: bbox0, keepaspectratio: true, axis: false, showCopyright: false, showNavigation: false,
       pan: { enabled: true, needShift: false, needTwoFingers: false },
@@ -210,7 +212,77 @@
     });
 
     showTools(0); setStatus();
-    if (spec) build(spec); else starter();
+    if (geo) buildGeo(geo); else if (spec) build(spec); else starter();
+
+    /* 由作圖步驟（tools/geo.py 產生的 data-geo）重建：自由點可拖，其餘照步驟跟著動 */
+    function buildGeo(g) {
+      const vb = g.vb, sc = 10 / vb[2], X = x => (x - vb[0]) * sc - 5, Y = y => -(y - vb[1]) * sc + vb[3] * sc / 2;
+      const P = {}, O = {}, made = [];
+      const hidden = new Set(), dots = new Set();
+      g.ops.forEach(op => { if (op.op === 'hide') op.args.forEach(a => hidden.add(a)); if (op.op === 'dot') op.args.forEach(a => dots.add(a)); });
+      const named = n => /^[A-Z]/.test(n) && !hidden.has(n);
+      const xy = p => [p.X(), p.Y()];
+      const D = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]);
+      const foot = (p, a, b) => { const dx = b[0] - a[0], dy = b[1] - a[1], t = ((p[0] - a[0]) * dx + (p[1] - a[1]) * dy) / (dx * dx + dy * dy || 1e-12); return [a[0] + t * dx, a[1] + t * dy]; };
+      const cc = (a, b, c) => { const d = 2 * (a[0] * (b[1] - c[1]) + b[0] * (c[1] - a[1]) + c[0] * (a[1] - b[1])) || 1e-12; const A2 = a[0] ** 2 + a[1] ** 2, B2 = b[0] ** 2 + b[1] ** 2, C2 = c[0] ** 2 + c[1] ** 2; return [(A2 * (b[1] - c[1]) + B2 * (c[1] - a[1]) + C2 * (a[1] - b[1])) / d, (A2 * (c[0] - b[0]) + B2 * (a[0] - c[0]) + C2 * (b[0] - a[0])) / d]; };
+      const ll = (a, b, c, d) => { const r = [b[0] - a[0], b[1] - a[1]], s = [d[0] - c[0], d[1] - c[1]], den = r[0] * s[1] - r[1] * s[0] || 1e-12, t = ((c[0] - a[0]) * s[1] - (c[1] - a[1]) * s[0]) / den; return [a[0] + t * r[0], a[1] + t * r[1]]; };
+      const lc = (a, b, o, r) => { const d = [b[0] - a[0], b[1] - a[1]], f = [a[0] - o[0], a[1] - o[1]], A = d[0] * d[0] + d[1] * d[1] || 1e-12, B = 2 * (f[0] * d[0] + f[1] * d[1]), C = f[0] * f[0] + f[1] * f[1] - r * r, q = Math.sqrt(Math.max(B * B - 4 * A * C, 0)); return [[a[0] + d[0] * (-B - q) / (2 * A), a[1] + d[1] * (-B - q) / (2 * A)], [a[0] + d[0] * (-B + q) / (2 * A), a[1] + d[1] * (-B + q) / (2 * A)]]; };
+      const c2 = (o1, r1, o2, r2) => { const d = D(o1, o2) || 1e-12, a = (r1 * r1 - r2 * r2 + d * d) / (2 * d), h = Math.sqrt(Math.max(r1 * r1 - a * a, 0)), m = [o1[0] + (o2[0] - o1[0]) * a / d, o1[1] + (o2[1] - o1[1]) * a / d], u = [(o2[0] - o1[0]) / d, (o2[1] - o1[1]) / d]; return [[m[0] - u[1] * h, m[1] + u[0] * h], [m[0] + u[1] * h, m[1] - u[0] * h]]; };
+      const geom = n => { const o = O[n]; return o.type === 'line' ? ['line', xy(P[o.a]), xy(P[o.b])] : ['circle', o.c(), o.r()]; };
+      const hits = (n1, n2) => { const a = geom(n1), bb = geom(n2); if (a[0] === 'line' && bb[0] === 'line') return [ll(a[1], a[2], bb[1], bb[2])]; if (a[0] === 'line') return lc(a[1], a[2], bb[1], bb[2]); if (bb[0] === 'line') return lc(bb[1], bb[2], a[1], a[2]); return c2(a[1], a[2], bb[1], bb[2]); };
+      /* 有兩個解時，選離上一次位置最近的，拖動時才不會突然跳到另一個交點 */
+      const sticky = (init, all) => { let last = init; return () => { const s = all(); let best = s[0], bd = Infinity; s.forEach(q => { const d = D(q, last); if (isFinite(d) && d < bd) { bd = d; best = q; } }); last = best; return best; }; };
+      const derived = (n, f) => { let cache = null, stamp = -1; const get = () => { const t = b.updateQuality + ':' + (b._gbTick || 0); return f(); }; const o = b.create('point', [() => get()[0], () => get()[1]], Object.assign(PT(named(n) ? n : ''), { fixed: true, visible: !hidden.has(n), withLabel: named(n) && !dots.has(n), size: named(n) || dots.has(n) ? 3 : 0 })); if (!named(n) && !dots.has(n)) o.setAttribute({ visible: false }); return o; };
+      const num = s => String(s).includes('/') ? s.split('/').reduce((a, b2) => a / b2) : parseFloat(s);
+      for (const op of g.ops) {
+        const n = op.name, a = op.args || [];
+        try {
+          if (op.op === 'free') { const o = b.create('point', [X(op.xy[0]), Y(op.xy[1])], Object.assign(PT(named(n) ? n : '', c.accent), { visible: !hidden.has(n), withLabel: named(n) && !dots.has(n) })); P[n] = o; made.push(o); used.add(n); }
+          else if (op.op === 'on') { const host = O[a[0]].el; const o = b.create('glider', [X(op.xy[0]), Y(op.xy[1]), host], Object.assign(PT(named(n) ? n : '', c.accent), { visible: !hidden.has(n), withLabel: named(n) && !dots.has(n) })); P[n] = o; made.push(o); used.add(n); }
+          else if (['mid', 'along', 'circumcenter', 'centroid', 'incenter', 'orthocenter', 'foot', 'inter', 'second', 'meet', 'tangent', 'reflect', 'reflectp', 'rotate', 'scale'].includes(op.op)) {
+            const p = i => xy(P[a[i]]); let f;
+            if (op.op === 'mid') f = () => { const A = p(0), B = p(1); return [(A[0] + B[0]) / 2, (A[1] + B[1]) / 2]; };
+            if (op.op === 'along') { const t = num(a[2]); f = () => { const A = p(0), B = p(1); return [A[0] + t * (B[0] - A[0]), A[1] + t * (B[1] - A[1])]; }; }
+            if (op.op === 'circumcenter') f = () => cc(p(0), p(1), p(2));
+            if (op.op === 'centroid') f = () => [(p(0)[0] + p(1)[0] + p(2)[0]) / 3, (p(0)[1] + p(1)[1] + p(2)[1]) / 3];
+            if (op.op === 'incenter') f = () => { const A = p(0), B = p(1), C = p(2), la = D(B, C), lb = D(C, A), lc2 = D(A, B), s = la + lb + lc2; return [(la * A[0] + lb * B[0] + lc2 * C[0]) / s, (la * A[1] + lb * B[1] + lc2 * C[1]) / s]; };
+            if (op.op === 'orthocenter') f = () => { const A = p(0), B = p(1), C = p(2), Oc = cc(A, B, C); return [A[0] + B[0] + C[0] - 2 * Oc[0], A[1] + B[1] + C[1] - 2 * Oc[1]]; };
+            if (op.op === 'foot') f = () => foot(p(0), p(1), p(2));
+            if (op.op === 'inter') f = () => ll(p(0), p(1), p(2), p(3));
+            if (op.op === 'second') f = () => { const gc = geom(a[0]), A = p(1), two = lc(A, p(2), gc[1], gc[2]); return D(two[0], A) > D(two[1], A) ? two[0] : two[1]; };
+            if (op.op === 'meet') f = sticky([X(num(a[2])), Y(num(a[3]))], () => hits(a[0], a[1]));
+            if (op.op === 'tangent') f = sticky([X(num(a[2])), Y(num(a[3]))], () => { const Pp = p(0), gc = geom(a[1]), m = [(Pp[0] + gc[1][0]) / 2, (Pp[1] + gc[1][1]) / 2]; return c2(gc[1], gc[2], m, D(Pp, gc[1]) / 2); });
+            if (op.op === 'reflect') f = () => { const q = p(0), ft = foot(q, p(1), p(2)); return [2 * ft[0] - q[0], 2 * ft[1] - q[1]]; };
+            if (op.op === 'reflectp') f = () => [2 * p(1)[0] - p(0)[0], 2 * p(1)[1] - p(0)[1]];
+            if (op.op === 'rotate') { const t = num(a[2]) * Math.PI / 180; f = () => { const q = p(0), o = p(1), v = [q[0] - o[0], q[1] - o[1]]; return [o[0] + v[0] * Math.cos(t) - v[1] * Math.sin(t), o[1] + v[0] * Math.sin(t) + v[1] * Math.cos(t)]; }; }
+            if (op.op === 'scale') { const k = num(a[2]); f = () => { const q = p(0), o = p(1); return [o[0] + k * (q[0] - o[0]), o[1] + k * (q[1] - o[1])]; }; }
+            P[n] = derived(n, f); made.push(P[n]); used.add(n);
+          }
+          else if (op.op === 'line') { const el = b.create('line', [P[a[0]], P[a[1]]], Object.assign({}, DERIVED, { visible: false })); O[n] = { type: 'line', a: a[0], b: a[1], el }; made.push(el); }
+          else if (op.op === 'circle' || op.op === 'circle3' || op.op === 'circler') {
+            let el, cf, rf;
+            if (op.op === 'circle') { el = b.create('circle', [P[a[0]], P[a[1]]], Object.assign({}, LINE, { visible: false })); cf = () => xy(P[a[0]]); rf = () => D(xy(P[a[0]]), xy(P[a[1]])); }
+            if (op.op === 'circle3') { cf = () => cc(xy(P[a[0]]), xy(P[a[1]]), xy(P[a[2]])); rf = () => D(cf(), xy(P[a[0]])); el = b.create('circle', [b.create('point', [() => cf()[0], () => cf()[1]], { visible: false, name: '' }), () => rf()], Object.assign({}, LINE, { visible: false })); }
+            if (op.op === 'circler') { const r = num(a[1]) * sc; el = b.create('circle', [P[a[0]], r], Object.assign({}, LINE, { visible: false })); cf = () => xy(P[a[0]]); rf = () => r; }
+            O[n] = { type: 'circle', c: cf, r: rf, el }; made.push(el);
+          }
+          else if (op.op === 'draw') {
+            const kind = a[0], rest = a.slice(1), dash = rest.includes('dash'), acc = rest.includes('accent'), fill = rest.includes('fill');
+            const names = rest.filter(w => !['dash', 'accent', 'fill'].includes(w));
+            const st = Object.assign({}, LINE, dash ? { dash: 2, strokeWidth: 1.5 } : {}, acc ? { strokeColor: c.warm } : {});
+            if (kind === 'seg') for (let i = 1; i < names.length; i++) made.push(b.create('segment', [P[names[i - 1]], P[names[i]]], st));
+            if (kind === 'poly') made.push(b.create('polygon', names.map(x => P[x]), { fillColor: fill ? c.fg : 'none', fillOpacity: fill ? 0.07 : 0, borders: st, vertices: { visible: false }, hasInnerPoints: false }));
+            if (kind === 'line' || kind === 'ray') made.push(b.create('line', [P[names[0]], P[names[1]]], Object.assign({}, st, kind === 'ray' ? { straightFirst: false } : {})));
+            if (kind === 'circle') O[names[0]].el.setAttribute(Object.assign({ visible: true }, st));
+          }
+          else if (op.op === 'right') made.push(b.create('angle', [P[a[0]], P[a[1]], P[a[2]]], { type: 'square', radius: 0.35, withLabel: false, name: '', fillOpacity: 0, strokeColor: c.fg, strokeWidth: 1 }));
+          else if (op.op === 'angle') made.push(b.create('nonreflexangle', [P[a[0]], P[a[1]], P[a[2]]], { radius: 0.45, withLabel: false, name: '', strokeColor: a.includes('accent') ? c.warm : c.fg, fillColor: a.includes('accent') ? c.warm : c.fg, fillOpacity: 0.12 }));
+        } catch (err) { console.warn('作圖步驟失敗', op, err); }
+      }
+      // 自由點畫在最上層，方便拖
+      Object.values(P).forEach(p => { if (p.elType !== 'point' || p.visProp.fixed) return; try { p.setAttribute({ layer: 9 }); } catch (_) {} });
+      hist.push(made);
+    }
 
     function starter() {
       const A = newPoint([-3, -2]), B = newPoint([3, -2]), C = newPoint([0.6, 2.6]);

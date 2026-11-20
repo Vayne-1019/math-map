@@ -10,6 +10,7 @@ import xml.dom.minidom
 
 sys.path.insert(0, os.path.dirname(__file__))
 from build_books import parse, meta_of  # noqa: E402
+from geo import GEO, compile_geo, GeoError  # noqa: E402
 
 OUTLINE = open("math-map.html", encoding="utf-8").read()
 UNITS = set(re.findall(r"^([ANCG]-\d+-\d+) ", OUTLINE.split("const OUTLINE = `")[1].split("`;")[0], re.M))
@@ -27,6 +28,11 @@ def check_text(f, where, s, book):
         return
     if re.search(r"[\x00-\x08\x0b\x0c\x0e-\x1f]", s):
         warn(f, f"{where}: 有控制字元（多半是 \\frac、\\beta 的反斜線被吃掉）")
+    for gm in GEO.finditer(s):
+        try:
+            compile_geo(gm.group(1))
+        except (GeoError, KeyError, ValueError, IndexError, ZeroDivisionError) as e:
+            warn(f, f"{where}: 作圖腳本錯誤：{e}")
     if s.count("⟦") != s.count("⟧"):
         warn(f, f"{where}: ⟦ ⟧ 不成對")
     for m in re.finditer(r"⟦([^⟧]*)⟧", s, re.S):

@@ -16,6 +16,9 @@ inline HTML, <br>, $…$ and $$…$$, but no <p>/<div>/<ul>.
 """
 import glob, json, os, re, sys
 
+sys.path.insert(0, os.path.dirname(__file__))
+from geo import expand as geo_expand  # noqa: E402
+
 RAW = {"text", "body"}
 OB = re.compile(r"⟦([^｜⟦⟧]{1,12})｜(.*?)⟧", re.S)
 
@@ -109,7 +112,7 @@ def build_book(book):
                 continue
             if "zh" in b:
                 b = lift_figure(b)
-            it = {k: (markup(v) if k in ("html", "zh", "sol", "hint", "ans") else v) for k, v in b.items()}
+            it = {k: (markup(geo_expand(v)) if k in ("html", "zh", "sol", "hint", "ans") else v) for k, v in b.items()}
             items.append(it)
         out.append({"no": no, "title": m.get("title", plan["title"]), "author": m.get("author", plan["author"]),
                     "page": plan["page"], "pages": m.get("pages", ""), "status": m.get("status", "草稿"),
@@ -127,7 +130,7 @@ def build_digest():
         unit = os.path.basename(os.path.dirname(f))
         blocks = parse(f)
         m = meta_of(blocks)
-        html = "\n".join(markup(b["html"]) for b in blocks if b["kind"] == "body")
+        html = "\n".join(markup(geo_expand(b["html"])) for b in blocks if b["kind"] == "body")
         dig.setdefault(unit, []).append({"from": m.get("from", os.path.basename(f)[:-4]), "title": m.get("title", ""),
                                          "order": float(m.get("order", 50)), "html": html})
     for v in dig.values():

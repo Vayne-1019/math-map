@@ -106,7 +106,8 @@ details.cls > summary .n { margin-left: auto; color: var(--muted); font-size: .8
 .mfbar { display: flex; flex-wrap: wrap; gap: 6px; }
 .mfbar button { font: inherit; font-size: .85rem; padding: 3px 12px; border-radius: 14px; border: 1px solid var(--line); background: var(--surface); color: var(--fg); cursor: pointer; }
 .mfbar button.on { border-color: var(--accent); background: var(--accent-weak); }
-.mf-in .units li:not(.k-in), .mf-cj .units li:not(.k-cj), .mf-cs .units li:not(.k-cs) { display: none; }
+.mf-in .units li:not(.k-in), .mf-cj .units li:not(.k-cj), .mf-cs .units li:not(.k-cs), .mf-amc .units li:not(.k-amc) { display: none; }
+.tag.amc { border-color: #7a4fb5; color: #7a4fb5; font-weight: 700; }
 .tag { font-size: .72rem; border: 1px solid var(--line); color: var(--muted); border-radius: 4px; padding: 0 5px; line-height: 1.6; }
 .cnt { font-size: .74rem; background: var(--accent-weak); color: var(--accent); border-radius: 10px; padding: 0 7px; }
 
@@ -779,12 +780,13 @@ const TAGNAME = { '國': '國中', '高': '高中', '延': '延伸' };
 const LVNAME = { '國': '國中', '高': '高中', '國高': '國中・高中' };
 const DIFFNAME = { C: '最基礎', B: '偏低', A: '有難度', S: '挑戰' };
 const cur = code => (window.CURRIC || {})[code];
-const curClass = code => { const c = cur(code); return !c ? '' : c.k === '課' ? 'k-in' : c.lv === '國' ? 'k-cj' : 'k-cs'; };
+const curClass = code => { const c = cur(code); return !c ? '' : (c.k === '課' ? 'k-in' : c.lv === '國' ? 'k-cj' : 'k-cs') + (c.amc ? ' k-amc' : ''); };
 function curTags(code, full) {
   const c = cur(code); if (!c) return '';
   const lab = c.k === '課' ? `${LVNAME[c.lv]}課綱` : `競賽・${c.lv === '國' ? '國中' : '高中'}起`;
   const t = `<span class="tag lv ${curClass(code)}">${lab}</span><span class="tag diff d${c.d}" title="難度：${DIFFNAME[c.d]}">${c.d}</span>`;
-  return full ? `${t}${c.codes ? `<span class="note">課綱條目：${esc(c.codes)}</span>` : ''}` : t;
+  const amc = c.amc && c.amc.length ? (full ? `<span class="tag amc">AMC</span><span class="note">AMC 課程：${c.amc.map(n => `<a href="#amc-${n}">第 ${n} 章</a>`).join('、')}</span>` : `<span class="tag amc" title="AMC 課程第 ${c.amc.join('、')} 章">AMC</span>`) : '';
+  return full ? `${t}${amc}${c.codes ? `<span class="note">課綱條目：${esc(c.codes)}</span>` : ''}` : t + amc;
 }
 let mapFilter = '';
 document.addEventListener('click', e => { const b = e.target.closest('[data-mf]'); if (!b) return;
@@ -874,7 +876,7 @@ function viewMap() {
   const open = new Set(['G-3', 'G-4', 'A-2', 'A-4', 'G-8']);
   return `<div><h1>單元地圖</h1><p class="lead">粗體單元已有示範內容，數字是題目數。標籤依 108 課綱：課綱內標「國中課綱」「高中課綱」，超出課綱的一律算競賽，標建議開始的階段；字母是難度（C 最基礎、B 偏低、A 有難度、S 挑戰）。標籤只是參考，不限制學習順序。</p></div>
   ${entries('map')}
-  <div class="mfbar">${[['', '全部'], ['in', '課綱內'], ['cj', '競賽・國中起'], ['cs', '競賽・高中起']].map(([k, n]) => `<button type="button" data-mf="${k}"${k === mapFilter ? ' class="on"' : ''}>${n}</button>`).join('')}</div>
+  <div class="mfbar">${[['', '全部'], ['in', '課綱內'], ['cj', '競賽・國中起'], ['cs', '競賽・高中起'], ['amc', 'AMC 相關']].map(([k, n]) => `<button type="button" data-mf="${k}"${k === mapFilter ? ' class="on"' : ''}>${n}</button>`).join('')}</div>
   <div id="mapwrap" class="${mapFilter ? 'mf-' + mapFilter : ''}">
   ${DOMAINS.map(d => `<section class="domain" style="--dc:var(--d${d.code})">
     <h2><span class="letter">${d.code}</span>${esc(d.name.split(' ')[0] === d.code ? d.name.slice(2) : d.name)}</h2>
@@ -1362,7 +1364,7 @@ let gbPage = [], study = null;
 function addStudyButtons(root) {
   if (!window.GeoBoard || !window.JXG) return;
   root.querySelectorAll('figure.bkfig').forEach(fig => {
-    const svg = fig.querySelector('svg'); if (!svg || fig.querySelector('.tostudy') || !GeoBoard.importable(svg)) return;
+    const svg = fig.querySelector('svg'); if (!svg || fig.querySelector('.tostudy') || !(fig.dataset.geo || GeoBoard.importable(svg))) return;
     const btn = document.createElement('button'); btn.type = 'button'; btn.className = 'tostudy'; btn.textContent = '在畫板研究 ▸';
     btn.addEventListener('click', () => openStudy(fig));
     fig.appendChild(btn);
@@ -1378,7 +1380,8 @@ function openStudy(fig) {
   aside.querySelector('.study-x').addEventListener('click', closeStudy);
   document.querySelectorAll('.studying-src').forEach(x => x.classList.remove('studying-src'));
   if (item) { item.classList.add('studying-src'); }
-  study = GeoBoard.mount(aside.querySelector('.study-body'), { svg: fig.querySelector('svg') });
+  let geo = null; try { geo = fig.dataset.geo ? JSON.parse(fig.dataset.geo) : null; } catch (_) {}
+  study = GeoBoard.mount(aside.querySelector('.study-body'), geo ? { geo } : { svg: fig.querySelector('svg') });
   if (item) setTimeout(() => item.scrollIntoView({ block: 'start' }), 120);
 }
 function closeStudy() {
@@ -1431,7 +1434,11 @@ function fitMath(root) {
   root.querySelectorAll('mjx-container').forEach(m => {
     if (m.offsetParent === null) return;
     const box = m.parentElement.closest('.obx, .eg, .card, .body, details > div, .item, .panel, li, p') || app;
-    if (m.getBoundingClientRect().width > box.clientWidth - 4) m.classList.add('mwide');
+    /* 太寬的式子先等比例縮小，讓讀者一眼看到全貌；縮到 55% 還放不下才改成框內捲動 */
+    const avail = box.clientWidth - 4, w = m.getBoundingClientRect().width;
+    if (w <= avail) return;
+    const r = avail / w;
+    if (r >= 0.55) m.style.fontSize = Math.floor(r * 97) + '%'; else m.classList.add('mwide');
   });
 }
 window.addEventListener('toggle', e => { if (e.target.tagName === 'DETAILS' && e.target.open) fitMath(e.target); }, true);
