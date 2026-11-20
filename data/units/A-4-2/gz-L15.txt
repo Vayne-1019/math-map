@@ -1,0 +1,20 @@
+=== meta
+title: 平均不等式的拆法與湊法
+from: gz-L15
+order: 40
+
+=== body
+<div class="hero"><b>$H_n\le G_n\le A_n\le Q_n$</b>，等號 ⇔ 全部相等<br>難處不在公式，在於<b>把乘積拆成哪幾個因子</b></div>
+<div class="cards">
+<div class="card"><h4>① 湊上因子 1</h4><div class="rule">$\big(1+\frac1n\big)^{-(n+1)}=1\cdot\big(\frac n{n+1}\big)^{n+1}$</div>
+<div class="eg">$n+2$ 個數平均 $=\frac{n+1}{n+2}$<br>⇒ $\big(1+\frac1n\big)^{n+1}>\big(1+\frac1{n+1}\big)^{n+2}$</div></div>
+<div class="card"><h4>② 換一種拆法</h4><div class="rule">$x^2y^2z^2=4\cdot\frac{|xy|}2\cdot\frac{|xy|}2\cdot z^2$</div>
+<div class="eg">拆成 $x^2\cdot y^2\cdot z^2$ 太粗；<br>拆成這樣剛好湊出 $x^2+y^2+z^2$</div></div>
+<div class="card"><h4>③ 重複寫幾次＝加權</h4><div class="rule">$x_i$ 寫 $x_i$ 次</div>
+<div class="eg">$\Big(\frac{\sum x_i^2}{\sum x_i}\Big)^{\sum x_i}\ge\prod x_i^{x_i}$</div></div>
+</div>
+<p>拆得好不好，看<b>等號能不能成立</b>。⟦檢查法｜在 $x+y+z=0$ 時，$x^2=y^2=z^2$ 只有全為 $0$ 才可能，所以拆成 $x^2\cdot y^2\cdot z^2$ 等號取不到，結果太粗（只得到係數 2）。改拆成 $rac{|xy|}2,rac{|xy|}2,z^2$：取 $x=1,y=-2,z=1$，三項都是 $1$，等號取得到，而原式兩邊確實都是 $216$。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>對負數用 $A\ge G$</li>
+<li>拆出的因子在題目條件下<b>不可能相等</b>，得到的界永遠取不到</li></ul></div>
+<div class="bottomline">用 AM-GM 前先猜等號何時成立，讓拆出的每一項在那時都相等。</div>

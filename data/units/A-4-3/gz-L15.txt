@@ -1,0 +1,20 @@
+=== meta
+title: 柯西不等式：選好兩組數
+from: gz-L15
+order: 40
+
+=== body
+<div class="hero"><b>$\big(\sum a_ib_i\big)^2\le\sum a_i^2\cdot\sum b_i^2$</b>，等號 ⇔ $b_i=ka_i$<br>用法：把要估的和寫成 $\sum a_ib_i$，讓 $\sum a_i^2$ 與 $\sum b_i^2$ <b>都好算</b></div>
+<div class="cards">
+<div class="card"><h4>① 一組全是 1</h4><div class="rule">$\big(\sum x_i\big)^2\le n\sum x_i^2$</div>
+<div class="eg">$\sum_{k=1}^n\sqrt{\mathrm C_n^k}\le\sqrt{n(2^n-1)}$</div></div>
+<div class="card"><h4>② 倒數配對</h4><div class="rule">$\sum a_i\cdot\sum\frac1{a_i}\ge n^2$</div>
+<div class="eg">$a_i=\sqrt{a_i}^2$，$\frac1{a_i}=\big(\frac1{\sqrt{a_i}}\big)^2$，乘積為 1</div></div>
+<div class="card"><h4>③ 插入權重</h4><div class="rule">$\sqrt{r_i}=\sqrt{a_ir_i}\cdot\sqrt{1/a_i}$</div>
+<div class="eg">$\sum a_ir_i=2S$ 已知 <span class="pill">湊出已知量</span></div></div>
+</div>
+<p>證明只要一行。⟦標準化｜令 $x_i=\frac{a_i}A,\ y_i=\frac{b_i}B$（$A,B$ 是兩組的長度），要證 $\sum x_iy_i\le1$，即 $\sum(x_i-y_i)^2\ge0$。例：$(1\cdot3+2\cdot4)^2=121\le(1+4)(9+16)=125$。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>平方忘了開：結論是 $|\sum a_ib_i|\le\sqrt{\sum a_i^2}\sqrt{\sum b_i^2}$</li>
+<li>等號條件寫成 $a_i=b_i$，正確是<b>成比例</b></li></ul></div>
+<div class="bottomline">看到「和的平方」或「兩個和相乘」，就想柯西。</div>
