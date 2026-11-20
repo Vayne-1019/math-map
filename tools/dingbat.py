@@ -1,0 +1,11 @@
+import sys
+M = {0x275b:'a',0x275c:'b',0x275d:'c',0x275e:'d',0x2761:'e',0x2762:'f',0x2763:'g',0x2764:'h',0x2710:'i',
+0x2765:'j',0x2766:'k',0x2767:'l',0x2660:'m',0x2665:'n',0x2666:'o',0x2663:'p',0x2709:'u',0x2708:'v',0x2707:'w',
+0x2461:'y',0x2460:'x',0x271c:'fi',0x271b:'ff',0x2731:',',0x2733:'.',0x2732:'-',0x272d:'(',0x272e:')',
+0x274b:'F',0x274f:'J',0x275a:'T',0x2772:'W',0x25bc:'M'}
+for d in range(10): M[0x2735+d]=str(d)
+def dec(s): return ''.join(M.get(ord(c), c if ord(c)<0x2400 or c in '⩽' else f'[{ord(c):x}]') for c in s)
+if __name__=='__main__':
+    for f in sys.argv[1:]:
+        t=dec(open(f,encoding='utf-8').read())
+        open(f,'w',encoding='utf-8').write(t)

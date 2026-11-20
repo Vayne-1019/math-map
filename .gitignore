@@ -1,0 +1,17 @@
+# 使用者提供的掃描書與講義：有著作權，只留在本機
+data/*.pdf
+data/*.zip
+data/縱橫天下/
+data/ocr/
+# 由 AMC10 講義抽出的英文原文（含原書講解），只留在本機
+data/amc_book.json
+# 官方 PDF 原檔：可從 IMO／APMO 官網重新下載
+raw/imo_pdf/
+raw/apmo_pdf/
+# 本機設定與內部交接筆記
+.claude/
+交接.md
+__pycache__/
+# 小叢書解壓縮資料夾等其他掃描書資料夾
+data/*/
+!data/amc_zh/
