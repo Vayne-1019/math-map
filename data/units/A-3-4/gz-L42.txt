@@ -1,0 +1,20 @@
+=== meta
+title: 插值公式與組合數基底
+from: gz-L42
+order: 20
+
+=== body
+<div class="hero">不超過 $n$ 次的多項式，由 <b>$n+1$ 個點</b>的值完全決定<br>想要哪幾點的值，就用<b>「各管一點」</b>的基底拼出來</div>
+<div class="cards">
+<div class="card"><h4>① 拉格朗日插值</h4><div class="rule">$\varphi_i(a_j)=\begin{cases}1&j=i\\0&j\ne i\end{cases}$</div>
+<div class="eg">除以 $(x-a)(x-b)$ 的餘式<br>$=A\dfrac{x-b}{a-b}+B\dfrac{x-a}{b-a}$ <span class="pill">各管一點</span></div></div>
+<div class="card"><h4>② 求餘式</h4><div class="rule">餘式 = 在除式各根上和 $f$ 同值的低次式</div>
+<div class="eg">$x^{81}+x^{49}+x^{25}+x^9+x$ 除以 $x^3-x$：<br>值 $0,5,-5$ ⇒ 餘式 $5x$</div></div>
+<div class="card"><h4>③ 組合數基底</h4><div class="rule">$f=A_0+A_1\binom x1+\cdots+A_n\binom xn$</div>
+<div class="eg">整數點取整數值 ⇔ $A_i$ 全是整數<br>$n^3=\binom n1+6\binom n2+6\binom n3$ <span class="pill">求和好用</span></div></div>
+</div>
+<p>為什麼 $P(10)=10,\ P(20)=20,\ P(30)=40$ 的整係數 $P$ 不存在？⟦餘式不是整係數｜除以首一的 $(x-10)(x-20)(x-30)$，餘式必為整係數；但插值得 $\frac1{20}x^2-\frac12x+10$。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>整數點取整數值的多項式<b>不一定</b>是整係數：$\frac{x(x-1)}2$ 就是反例</li>
+<li>插值式的分母是 $a_i-a_j$，不是 $x-a_j$</li></ul></div>
+<div class="bottomline">要多項式在某幾點取指定值：先寫「各管一點」，再加起來。</div>
