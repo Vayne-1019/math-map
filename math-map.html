@@ -11,6 +11,7 @@ window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] 
 </script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraphcore.js"></script>
+<script src="curric.js"></script>
 <style>
 /* Layout: a narrow reading column under a sticky bar; the map is a stack of four domain blocks. */
 :root {
@@ -95,6 +96,13 @@ details.cls > summary .n { margin-left: auto; color: var(--muted); font-size: .8
 .units .code { font-family: var(--font-mono); font-size: .82rem; color: var(--muted); min-width: 4.6em; }
 .units a.empty { color: var(--fg); opacity: .62; }
 .units a.has { font-weight: 700; }
+.tag.k-in { border-color: var(--accent); color: var(--accent); }
+.tag.k-cj, .tag.k-cs { border-color: #c2562b; color: #c2562b; }
+.tag.diff { font-family: var(--font-mono, monospace); font-weight: 700; }
+.mfbar { display: flex; flex-wrap: wrap; gap: 6px; }
+.mfbar button { font: inherit; font-size: .85rem; padding: 3px 12px; border-radius: 14px; border: 1px solid var(--line); background: var(--surface); color: var(--fg); cursor: pointer; }
+.mfbar button.on { border-color: var(--accent); background: var(--accent-weak); }
+.mf-in .units li:not(.k-in), .mf-cj .units li:not(.k-cj), .mf-cs .units li:not(.k-cs) { display: none; }
 .tag { font-size: .72rem; border: 1px solid var(--line); color: var(--muted); border-radius: 4px; padding: 0 5px; line-height: 1.6; }
 .cnt { font-size: .74rem; background: var(--accent-weak); color: var(--accent); border-radius: 10px; padding: 0 7px; }
 
@@ -184,6 +192,7 @@ table.rate th { color: var(--muted); font-weight: 500; white-space: nowrap; }
 .ob .obx { display: block; margin: 6px 0 8px; padding: 8px 12px; border-left: 3px solid var(--accent); background: var(--accent-weak); border-radius: 0 6px 6px 0; font-size: .95em; }
 .ob .obx[hidden] { display: none; }
 /* 兩個入口 */
+.zhq { margin: .4em 0; line-height: 1.75; }
 .resume { display: flex; flex-direction: column; gap: 4px; padding: 14px 16px; border-radius: 10px; border: 1px solid var(--accent); background: var(--accent-weak); color: var(--fg); }
 .resume:hover { text-decoration: none; }
 .resume .k { font-size: .76rem; letter-spacing: .1em; color: var(--muted); }
@@ -719,6 +728,21 @@ const DOMAINS = [], UNITS = {}, CLASSES = {};
 })();
 const DNAME = { A: '代數', N: '數論', C: '組合', G: '幾何' };
 const TAGNAME = { '國': '國中', '高': '高中', '延': '延伸' };
+/* 課綱對照（data/curriculum.txt）：課綱內標國中／高中；超出課綱一律算競賽，標建議開始的階段；難度 C B A S */
+const LVNAME = { '國': '國中', '高': '高中', '國高': '國中・高中' };
+const DIFFNAME = { C: '最基礎', B: '偏低', A: '有難度', S: '挑戰' };
+const cur = code => (window.CURRIC || {})[code];
+const curClass = code => { const c = cur(code); return !c ? '' : c.k === '課' ? 'k-in' : c.lv === '國' ? 'k-cj' : 'k-cs'; };
+function curTags(code, full) {
+  const c = cur(code); if (!c) return '';
+  const lab = c.k === '課' ? `${LVNAME[c.lv]}課綱` : `競賽・${c.lv === '國' ? '國中' : '高中'}起`;
+  const t = `<span class="tag lv ${curClass(code)}">${lab}</span><span class="tag diff d${c.d}" title="難度：${DIFFNAME[c.d]}">${c.d}</span>`;
+  return full ? `${t}${c.codes ? `<span class="note">課綱條目：${esc(c.codes)}</span>` : ''}` : t;
+}
+let mapFilter = '';
+document.addEventListener('click', e => { const b = e.target.closest('[data-mf]'); if (!b) return;
+  mapFilter = b.dataset.mf; const w = document.getElementById('mapwrap'); if (w) w.className = mapFilter ? 'mf-' + mapFilter : '';
+  document.querySelectorAll('[data-mf]').forEach(x => x.classList.toggle('on', x === b)); });
 
 /* ===================== PROBLEMS ===================== */
 const TIER_ORDER = { C: 0, B: 1, A: 2, S: 3 };
@@ -801,15 +825,17 @@ function viewHome() {
 
 function viewMap() {
   const open = new Set(['G-3', 'G-4', 'A-2', 'A-4', 'G-8']);
-  return `<div><h1>單元地圖</h1><p class="lead">粗體單元已有示範內容，數字是題目數。年級標籤只是參考，不限制學習順序。</p></div>
+  return `<div><h1>單元地圖</h1><p class="lead">粗體單元已有示範內容，數字是題目數。標籤依 108 課綱：課綱內標「國中課綱」「高中課綱」，超出課綱的一律算競賽，標建議開始的階段；字母是難度（C 最基礎、B 偏低、A 有難度、S 挑戰）。標籤只是參考，不限制學習順序。</p></div>
   ${entries('map')}
+  <div class="mfbar">${[['', '全部'], ['in', '課綱內'], ['cj', '競賽・國中起'], ['cs', '競賽・高中起']].map(([k, n]) => `<button type="button" data-mf="${k}"${k === mapFilter ? ' class="on"' : ''}>${n}</button>`).join('')}</div>
+  <div id="mapwrap" class="${mapFilter ? 'mf-' + mapFilter : ''}">
   ${DOMAINS.map(d => `<section class="domain" style="--dc:var(--d${d.code})">
     <h2><span class="letter">${d.code}</span>${esc(d.name.split(' ')[0] === d.code ? d.name.slice(2) : d.name)}</h2>
     ${d.groups.map(g => `${g.label ? `<div class="group-label">${esc(g.label)}</div>` : ''}
       ${g.classes.map(c => `<details class="cls"${open.has(c.code) ? ' open' : ''}><summary><span class="mono">${c.code}</span> ${esc(c.name)}<span class="n">${c.units.length} 單元</span></summary>
         <ul class="units">${c.units.map(u => { const n = problemsForUnit(u.code).length, has = HAS_CONTENT.has(u.code);
-          return `<li><span class="code">${u.code}</span><a class="${has ? 'has' : 'empty'}" href="#u-${u.code}">${esc(u.name)}</a>${u.tags.map(t => `<span class="tag">${TAGNAME[t]}</span>`).join('')}${n ? `<span class="cnt">${n} 題</span>` : ''}</li>`; }).join('')}</ul></details>`).join('')}`).join('')}
-  </section>`).join('')}`;
+          return `<li class="${curClass(u.code)}"><span class="code">${u.code}</span><a class="${has ? 'has' : 'empty'}" href="#u-${u.code}">${esc(u.name)}</a>${cur(u.code) ? curTags(u.code) : u.tags.map(t => `<span class="tag">${TAGNAME[t]}</span>`).join('')}${n ? `<span class="cnt">${n} 題</span>` : ''}</li>`; }).join('')}</ul></details>`).join('')}`).join('')}
+  </section>`).join('')}</div>`;
 }
 
 function viewUnit(code) {
@@ -819,7 +845,7 @@ function viewUnit(code) {
   const body = HAS_CONTENT.has(code) ? tpl('u-' + code) : `<p>這個單元的內容還在撰寫。它在地圖上的位置與底下的題目連結已經可以使用。</p>`;
   return `<div class="crumb"><a href="#map">${u.domain} ${DNAME[u.domain]}</a><span>›</span><span>${c.code} ${esc(c.name)}</span></div>
   <div><h1><span class="mono" style="color:var(--d${u.domain})">${code}</span> ${esc(u.name)}</h1>
-  <div class="chips">${u.tags.map(t => `<span class="chip">${TAGNAME[t]}</span>`).join('')}</div></div>
+  <div class="chips">${cur(code) ? curTags(code, true) : u.tags.map(t => `<span class="chip">${TAGNAME[t]}</span>`).join('')}</div></div>
   ${digestForUnit(code) || `<article class="panel prose">${body}</article>`}
   ${HAS_CONTENT.has(code) && window.UNIT_DIGEST && (window.UNIT_DIGEST[code] || []).length ? `<article class="panel prose">${body}</article>` : ''}
   <section class="panel"><h2>題目</h2>
@@ -907,12 +933,14 @@ function viewBankYear(k, y) {
   const B = bank(), I = BANKINFO[k]; const list = (B[k] || {})[y];
   if (!I || !list) return viewNotFound();
   const ys = Object.keys(B[k]).map(Number).sort((a, b) => a - b), i = ys.indexOf(y);
+  const zhReady = need('bank/zh.js', () => window.BANK_ZH), ZH = zhReady ? (window.BANK_ZH[`${k}-${y}`] || []) : [];
   const links = [[`官方 PDF（英文）`, I.pdf(y)]].concat(I.extra(y)).map(([t, u]) => `<a href="${u}" target="_blank" rel="noopener">${t}</a>`).join(' · ');
   return `<div class="crumb"><a href="#exams">依考卷</a><span>›</span><span>${esc(k)}</span></div>
   <div><h1>${esc(k)} ${y}</h1><p class="lead">${links}</p></div>
-  <section class="panel"><p class="note">以下為自動抽取的原文，尚未人工核對；分式、根號、上下標可能跑掉。題目著作權屬原主辦單位，本站只做索引與引用。</p>
+  <section class="panel"><p class="note">中文題目由本站翻譯，數學式已依官方 PDF 重建；標「待核對」的請以官方 PDF 為準。英文原文為自動抽取，可點開對照。題目著作權屬原主辦單位。</p>
   <ul class="plist">${list.map((s, j) => { const id = `${k.toLowerCase()}${y}-${j + 1}`, mine = PROBLEMS.find(p => p.id === id);
-    return `<li><span class="mono">P${j + 1}</span><div>${mine ? `<a class="t" href="#p-${id}">本站詳解：${esc(mine.title)}</a>` : `<span class="note">尚無詳解</span>`}<p class="raw mathjax_ignore">${esc(s.replace(/\n(?!\(|•|[ivx]+\)|\d+\. )/g, ' '))}</p></div></li>`; }).join('')}</ul></section>
+    return `<li><span class="mono">P${j + 1}</span><div>${mine ? `<a class="t" href="#p-${id}">本站詳解：${esc(mine.title)}</a>` : `<span class="note">尚無詳解</span>`}${ZH[j] ? `<div class="zhq">${ZH[j].zh}</div>${ZH[j].note ? `<p class="note warn">${esc(ZH[j].note)}</p>` : ''}` : ''}
+      <details${ZH[j] ? '' : ' open'}><summary>英文原文（自動抽取）</summary><p class="raw mathjax_ignore">${esc(s.replace(/\n(?!\(|•|[ivx]+\)|\d+\. )/g, ' '))}</p></details></div></li>`; }).join('')}</ul></section>
   <nav class="pager"><span>${i > 0 ? `<a href="#bank-${k}-${ys[i - 1]}">← ${ys[i - 1]}</a>` : ''}</span><span>${i < ys.length - 1 ? `<a href="#bank-${k}-${ys[i + 1]}">${ys[i + 1]} →</a>` : ''}</span></nav>`;
 }
 function viewBankAMC() {
