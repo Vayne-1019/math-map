@@ -4,9 +4,9 @@ from: gz-L16
 order: 20
 
 === body
-<div class="hero">$P$ 在三角形內（或邊上）：<b>到三頂點距離和 ≥ 到三邊距離和的 2 倍</b><br>$PA+PB+PC\ge2(PD+PE+PF)$，正三角形中心取等號</div>
+<div class="hero">$P$ 在三角形內（或邊上）：<b>到三頂點距離和 ≥ 到三邊距離和的 2 倍</b><br>$PA+PB+PC$ $\ge2(PD+PE+PF)$<br>正三角形中心取等號</div>
 <div class="cards">
-<div class="card"><h4>① 關鍵估計</h4><div class="rule">$PC\sin C=DE\ge p\sin B+q\sin A$</div>
+<div class="card"><h4>① 關鍵估計</h4><div class="rule">$PC\sin C=DE$<br>$\ge p\sin B+q\sin A$</div>
 <div class="eg">$P,D,C,E$ 共圓，直徑 $PC$ <span class="pill">投影</span></div></div>
 <div class="card"><h4>② 相加</h4><div class="rule">$p\big(\frac{\sin B}{\sin C}+\frac{\sin C}{\sin B}\big)+\cdots$</div>
 <div class="eg">每個括號 $\ge2$（$x+\frac1x\ge2$）</div></div>

@@ -13,9 +13,9 @@ status: 完成
 <p>(1) $a>b\iff b\lt a$（對稱性）；(2) $a>b\iff a+c>b+c$（加法保序）；(3) $a>b,\ c>0\Rightarrow ac>bc$；$a>b,\ c\lt 0\Rightarrow ac\lt bc$（乘法保序）；(4) $a>b$ 且 $a,b$ 同號 $\Rightarrow\dfrac1a\lt \dfrac1b$；(5) $a>b>0\Rightarrow a^n>b^n,\ \sqrt[n]a>\sqrt[n]b$（$n$ 為正整數）。</p>
 <p>⟦(4) 為什麼要同號｜$\frac1b-\frac1a=\frac{a-b}{ab}$，$a-b>0$，只有 $ab>0$（同號）時才大於 $0$。反例：$2>-1$，但 $\frac12>-1$。⟧</p>
 <p><b>3. 兩個以上不等式的運算</b>：</p>
-<p>(1) $a>b,\ b>c\Rightarrow a>c$（遞移性）；(2) $a>b,\ c>d\Rightarrow a+c>b+d$；(3) $a>b,\ c\lt d\Rightarrow a-c>b-d$；(4) $a>b>0,\ 0\lt c\lt d\Rightarrow\dfrac ac>\dfrac bd,\ ad>bc$。</p>
+<p>(1) $a>b,\ b>c\Rightarrow a>c$（遞移性）；(2) $a>b,\ c>d\Rightarrow a+c>b+d$；(3) $a>b,\ c\lt d\Rightarrow a-c>b-d$；(4) $$a>b>0,\ 0\lt c\lt d\Rightarrow\dfrac ac>\dfrac bd,\ ad>bc$$。</p>
 <p><b>4. 含絕對值的不等式</b>：</p>
-<p>(1) $|x|\le a\iff x^2\le a^2\iff-a\le x\le a$；$|x+b|\le a\iff-a-b\le x\le a-b$。<br>(2) $|x|\ge a\ (a>0)\iff x^2\ge a^2\iff x\ge a$ 或 $x\le-a$。<br>(3) $\big||a|-|b|\big|\le|a+b|\le|a|+|b|$（三角不等式）。<br>(4) $|a_1+a_2+\dots+a_n|\le|a_1|+|a_2|+\dots+|a_n|$。</p>
+<p>(1) $$|x|\le a\iff x^2\le a^2\iff-a\le x\le a$$；$$|x+b|\le a\iff-a-b\le x\le a-b$$。<br>(2) $$|x|\ge a\ (a>0)\iff x^2\ge a^2\iff x\ge a$$ 或 $x\le-a$。<br>(3) $\big||a|-|b|\big|\le|a+b|\le|a|+|b|$（三角不等式）。<br>(4) $$|a_1+a_2+\dots+a_n|\le|a_1|+|a_2|+\dots+|a_n|$$。</p>
 <p>證明不等式沒有固定程序，方法靈活多樣，一題常有多種證法，一種證法裡也可能混用幾種方法。最常用的方法大致有以下幾種。</p>
 <h3>一、比較法</h3>
 <p><b>1. 差值比較</b>：要證 $a>b$，只要證 $a-b>0$。<br><b>2. 商值比較</b>：若 $b>0$，要證 $a>b$，只要證 $\dfrac ab>1$（或 $\dfrac ba\lt 1$）。</p>
@@ -28,7 +28,7 @@ $$\frac{a^ab^bc^c}{(abc)^{\frac{a+b+c}3}}=\Big(\frac ab\Big)^{\frac{a-b}3}\Big(\
 ⟦為什麼每個因子 ≥ 1｜底數 $\ge1$、指數 $\ge0$，冪就 $\ge1$。⟧
 <b>注.</b> (1) 證法很短，但變形很有技巧。(2) 可推廣：若 $a_i>0$（$i=1,\dots,n$），則
 $$a_1^{a_1}a_2^{a_2}\cdots a_n^{a_n}\ge(a_1a_2\cdots a_n)^{\frac{a_1+a_2+\dots+a_n}{n}},\qquad(1)$$
-證法相同。⟦一般情形的拆法｜$\dfrac{\prod a_i^{a_i}}{\prod a_i^{\bar a}}$，其中 $\bar a$ 是平均。把它寫成 $\prod_{i\lt j}\big(\frac{a_i}{a_j}\big)^{\frac{a_i-a_j}{n}}$，每個因子底數與指數「同向」，都 $\ge1$。驗證：$a_k$ 的指數是 $\frac1n\sum_{j\ne k}(a_k-a_j)=\frac{na_k-\sum a_j}{n}=a_k-\bar a$。⟧ (3) 這裡利用對稱性，<b>補上一個排序的假設</b>，帶來很大方便。所謂關於 $a_1,\dots,a_n$ 對稱，是指任意對調兩個字母，不等式不變，例如 (1)。證對稱不等式時，各字母地位相同，可以設 $a_1\ge a_2\ge\dots\ge a_n$。
+證法相同。⟦一般情形的拆法｜$\dfrac{\prod a_i^{a_i}}{\prod a_i^{\bar a}}$，其中 $\bar a$ 是平均。把它寫成 $\prod_{i\lt j}\big(\frac{a_i}{a_j}\big)^{\frac{a_i-a_j}{n}}$，每個因子底數與指數「同向」，都 $\ge1$。驗證：$a_k$ 的指數是 $$\frac1n\sum_{j\ne k}(a_k-a_j)=\frac{na_k-\sum a_j}{n}=a_k-\bar a$$。⟧ (3) 這裡利用對稱性，<b>補上一個排序的假設</b>，帶來很大方便。所謂關於 $a_1,\dots,a_n$ 對稱，是指任意對調兩個字母，不等式不變，例如 (1)。證對稱不等式時，各字母地位相同，可以設 $a_1\ge a_2\ge\dots\ge a_n$。
 
 === 例 2 | 差值化為逐項比較
 zh: 設 $m,n$ 為正整數，$m>n$，證明：$\Big(1+\dfrac1n\Big)^n\lt \Big(1+\dfrac1m\Big)^m$。
@@ -56,7 +56,7 @@ $$\frac{a}{b+c+1}+\frac{b}{c+a+1}+\frac{c}{a+b+1}\le\frac{a+b+c}{a+b+1}.$$
 $$\frac{a+b+c}{a+b+1}+(1-a)(1-b)(1-c)\le1.\qquad(3)$$
 把左邊改寫：
 $$\text{左邊}=1-\frac{1-c}{a+b+1}\Big[1-(1+a+b)(1-a)(1-b)\Big].$$
-⟦改寫的過程｜$\frac{a+b+c}{a+b+1}=1-\frac{1-c}{a+b+1}$；而 $(1-a)(1-b)(1-c)=\frac{1-c}{a+b+1}\cdot(1+a+b)(1-a)(1-b)$。兩者相加，提出 $\frac{1-c}{a+b+1}$ 即得。⟧
+⟦改寫的過程｜$\frac{a+b+c}{a+b+1}=1-\frac{1-c}{a+b+1}$；而 $$(1-a)(1-b)(1-c)=\frac{1-c}{a+b+1}\cdot(1+a+b)(1-a)(1-b)$$。兩者相加，提出 $\frac{1-c}{a+b+1}$ 即得。⟧
 $\frac{1-c}{a+b+1}\ge0$，所以只要中括號 $\ge0$。再放大一次：
 $$\begin{aligned}(1+a+b)(1-a)(1-b)&\le(1+a+b+ab)(1-a)(1-b)\\&=(1-a^2)(1-b^2)\le1.\end{aligned}$$
 ⟦中間的等號｜$1+a+b+ab=(1+a)(1+b)$，再配上 $(1-a)(1-b)$ 用平方差。⟧ 所以 (3) 成立，原式成立。
@@ -71,7 +71,7 @@ zh: 設 $x_1,x_2,\dots,x_n$ 為正數，求證
 $$\frac{x_1^2}{x_2}+\frac{x_2^2}{x_3}+\dots+\frac{x_{n-1}^2}{x_n}+\frac{x_n^2}{x_1}\ge x_1+x_2+\dots+x_n.$$
 sol: 由算幾不等式，
 $$\frac{x_1^2}{x_2}+x_2\ge2x_1.$$
-⟦代入過程｜$\frac{x_1^2}{x_2}+x_2=\Big(\frac{x_1}{\sqrt{x_2}}\Big)^2+(\sqrt{x_2})^2\ge2\cdot\frac{x_1}{\sqrt{x_2}}\cdot\sqrt{x_2}=2x_1$。也可以直接看成 $\frac{x_1^2}{x_2}+x_2-2x_1=\frac{(x_1-x_2)^2}{x_2}\ge0$。⟧
+⟦代入過程｜$$\frac{x_1^2}{x_2}+x_2=\Big(\frac{x_1}{\sqrt{x_2}}\Big)^2+(\sqrt{x_2})^2\ge2\cdot\frac{x_1}{\sqrt{x_2}}\cdot\sqrt{x_2}=2x_1$$。也可以直接看成 $\frac{x_1^2}{x_2}+x_2-2x_1=\frac{(x_1-x_2)^2}{x_2}\ge0$。⟧
 同理 $\dfrac{x_2^2}{x_3}+x_3\ge2x_2$，…，$\dfrac{x_{n-1}^2}{x_n}+x_n\ge2x_{n-1}$，$\dfrac{x_n^2}{x_1}+x_1\ge2x_n$。把這 $n$ 式相加，兩邊各消去一份 $x_1+\dots+x_n$，即得原式。
 <b>注.</b> 用幾個簡單的不等式相加（或相乘），推出一個複雜的不等式，是很常用的技巧。
 
@@ -121,7 +121,7 @@ zh: 設 $\{a_n\}$ 是等差數列，$a_1>1$，公差 $d>0$。求證：數列 $\{
 sol: 要證 $\log_{a_n}(a_n+d)>\log_{a_n+d}(a_n+2d)$。因 $a_1>1,\ d>0$，所以 $a_n>1$，$\log_{a_n}(a_n+d)>0$，兩邊同除以它，等價於
 $$1>\frac{\log_{a_n+d}(a_n+2d)}{\log_{a_n}(a_n+d)}=\log_{a_n+d}a_n\cdot\log_{a_n+d}(a_n+2d).\qquad(4)$$
 ⟦為什麼除法變乘法｜換底：$\frac1{\log_{a_n}(a_n+d)}=\log_{a_n+d}a_n$。⟧
-下面證 (4)。由 $d>0$，$a_n(a_n+2d)=(a_n+d)^2-d^2\lt (a_n+d)^2$，取以 $a_n+d$（$>1$）為底的對數：
+下面證 (4)。由 $d>0$，$$a_n(a_n+2d)=(a_n+d)^2-d^2\lt (a_n+d)^2$$，取以 $a_n+d$（$>1$）為底的對數：
 $$\log_{a_n+d}a_n+\log_{a_n+d}(a_n+2d)\lt \log_{a_n+d}(a_n+d)^2=2,$$
 所以
 $$1>\frac{\log_{a_n+d}a_n+\log_{a_n+d}(a_n+2d)}{2}>0.$$
@@ -189,12 +189,12 @@ $$\sqrt{\lg n\cdot\lg(n+2)}\le\frac{\lg n+\lg(n+2)}2=\frac{\lg\big(n(n+2)\big)}2
 ⟦中間的 <｜$n(n+2)=(n+1)^2-1\lt (n+1)^2$，$\lg$ 遞增。⟧ 兩邊平方即得。
 
 === 習題 6
-zh: $0\lt A,B,C\lt \pi$，求證：$\sin\dfrac{A+B+C}3\ge\dfrac{\sin A+\sin B+\sin C}3$，並說明等號何時成立。
+zh: $0\lt A,B,C\lt \pi$，求證：$$\sin\dfrac{A+B+C}3\ge\dfrac{\sin A+\sin B+\sin C}3$$，並說明等號何時成立。
 hint: 加上第四項 $\sin\frac{A+B+C}3$，兩兩用和差化積。
 ans: 當且僅當 $A=B=C$ 時取等號。
 sol: 記 $M=\frac{A+B+C}3$。由和差化積，
 $$\begin{aligned}&\sin A+\sin B+\sin C+\sin M\\={}&2\sin\frac{A+B}2\cos\frac{A-B}2+2\sin\frac{C+M}2\cos\frac{C-M}2\\ \le{}&2\Big(\sin\frac{A+B}2+\sin\frac{C+M}2\Big)\\={}&4\sin\frac{\frac{A+B}2+\frac{C+M}2}{2}\cos\frac{\frac{A+B}2-\frac{C+M}2}{2}\le4\sin M.\end{aligned}$$
-⟦每一步的細節｜第一個 $\le$：$\frac{A+B}2,\frac{C+M}2\in(0,\pi)$，正弦為正，而餘弦 $\le1$。最後一步：$\frac{C+M}2=\frac{A+B+4C}6$，兩角平均 $=\frac14\big(A+B+\frac{A+B+4C}3\big)=\frac{4(A+B+C)}{12}=M$；餘弦的角是 $\frac{A+B-2C}6$，餘弦 $\le1$，而 $\sin M>0$。⟧
+⟦每一步的細節｜第一個 $\le$：$\frac{A+B}2,\frac{C+M}2\in(0,\pi)$，正弦為正，而餘弦 $\le1$。最後一步：$\frac{C+M}2=\frac{A+B+4C}6$，兩角平均 $$=\frac14\big(A+B+\frac{A+B+4C}3\big)=\frac{4(A+B+C)}{12}=M$$；餘弦的角是 $\frac{A+B-2C}6$，餘弦 $\le1$，而 $\sin M>0$。⟧
 所以 $\sin A+\sin B+\sin C\le3\sin M$。第一個 $\le$ 取等號要 $A=B$ 且 $C=M$（即 $2C=A+B$），第二個要 $A+B-2C=0$，合起來當且僅當 $A=B=C$。
 
 === 習題 7
@@ -202,6 +202,6 @@ zh: 設 $a_1,\dots,a_n,x_1,\dots,x_n$ 都是實數，且 $\displaystyle\sum_{k=1
 hint: 利用 $\sum x_k=0$，把每個 $a_k$ 換成 $a_k-\frac{a_1+a_n}2$。
 sol: 因為 $\sum x_k=0$，$\sum\frac{a_1+a_n}2x_k=0$，所以
 $$\Big|\sum_{k=1}^na_kx_k\Big|=\frac12\Big|\sum_{k=1}^n(2a_k-a_1-a_n)x_k\Big|\le\frac12\sum_{k=1}^n|2a_k-a_1-a_n|\,|x_k|.$$
-而 $|2a_k-a_1-a_n|\le a_1-a_n$⟦為什麼｜等價於 $-(a_1-a_n)\le2a_k-a_1-a_n\le a_1-a_n$，即 $2a_n\le2a_k\le2a_1$，也就是 $a_n\le a_k\le a_1$，由最大、最小的定義成立。⟧，所以
+而 $|2a_k-a_1-a_n|\le a_1-a_n$⟦為什麼｜等價於 $$-(a_1-a_n)\le2a_k-a_1-a_n\le a_1-a_n$$，即 $2a_n\le2a_k\le2a_1$，也就是 $a_n\le a_k\le a_1$，由最大、最小的定義成立。⟧，所以
 $$\Big|\sum a_kx_k\Big|\le\frac12(a_1-a_n)\sum|x_k|=\frac12(a_1-a_n).$$
 （原書題目印作「$\lt $」，但例如 $n=2$、$x_1=\frac12,x_2=-\frac12$ 時取等號，應為「$\le$」。）

@@ -66,7 +66,7 @@ sol: 設底半徑與高分別為 $r,h$，則 $V=\pi r^2h$，$h=\frac V{\pi r^2}$
 (1) 有蓋：用料面積 $S(r)=2\pi r^2+2\pi rh=2\pi r^2+\frac{2V}r$（$r>0$）。把 $\frac{2V}r$ 拆成兩個 $\frac Vr$，乘積就是定值，由 $A_3\ge G_3$：
 $$S(r)=2\pi r^2+\frac Vr+\frac Vr\ge3\sqrt[3]{2\pi r^2\cdot\frac Vr\cdot\frac Vr}=3\sqrt[3]{2\pi V^2},$$
 等號當且僅當 $2\pi r^2=\frac Vr$（即 $r=\sqrt[3]{\frac V{2\pi}}$）時成立，這時 $h=\frac V{\pi r^2}=\frac{2\pi r^3}{\pi r^2}=2r$。所以 $\frac rh=\frac12$ 時用料最少。
-(2) 無蓋：$S(r)=\pi r^2+2\pi rh=\pi r^2+\frac Vr+\frac Vr\ge3\sqrt[3]{\pi V^2}$，等號當且僅當 $\pi r^2=\frac Vr$（即 $r=\sqrt[3]{\frac V\pi}$），這時 $h=\frac V{\pi r^2}=r$。所以 $r=h$ 時用料最少。
+(2) 無蓋：$$S(r)=\pi r^2+2\pi rh=\pi r^2+\frac Vr+\frac Vr\ge3\sqrt[3]{\pi V^2}$$，等號當且僅當 $\pi r^2=\frac Vr$（即 $r=\sqrt[3]{\frac V\pi}$），這時 $h=\frac V{\pi r^2}=r$。所以 $r=h$ 時用料最少。
 ans: 有蓋時 $r:h=1:2$；無蓋時 $r:h=1:1$。
 
 === 例 7 | 平方和的最小值
@@ -79,7 +79,7 @@ $$x_1^2+x_2^2+\dots+x_n^2\ge\frac{(x_1+x_2+\dots+x_n)^2}n=\frac1n,$$
 zh: 已知實數 $a,b,c,d,e$ 滿足 $a+b+c+d+e=8$，$a^2+b^2+c^2+d^2+e^2=16$，確定 $e$ 的最大值。
 sol: 由題設 $a+b+c+d=8-e$，$a^2+b^2+c^2+d^2=16-e^2$。由 $Q_4\ge A_4$（即 $\frac{a^2+b^2+c^2+d^2}4\ge\big(\frac{a+b+c+d}4\big)^2$）：
 $$4(a^2+b^2+c^2+d^2)\ge(a+b+c+d)^2,$$
-即 $4(16-e^2)\ge(8-e)^2$，或 $e(5e-16)\le0$。（3）⟦展開｜$64-4e^2\ge64-16e+e^2\iff0\ge5e^2-16e$。⟧
+即 $4(16-e^2)\ge(8-e)^2$，或 $e(5e-16)\le0$。（3）⟦展開｜$$64-4e^2\ge64-16e+e^2\iff0\ge5e^2-16e$$。⟧
 所以 $0\le e\le\frac{16}5$。等號當且僅當 $a=b=c=d$，所以 $e_{\max}=\frac{16}5$，此時 $a=b=c=d=\frac65$。
 <b>注.</b> (3) 也可由柯西不等式得到。
 ans: $\frac{16}5$
@@ -110,14 +110,14 @@ sol: 把方程改寫成 $(x-1)^2+\dfrac{y^2}{3/2}=1$，這是橢圓，參數方�
 $$x=1+\cos t,\qquad y=\frac{\sqrt6}2\sin t\qquad(0\le t\lt 2\pi).$$
 於是
 $$S(t)=x^2+y^2=(1+\cos t)^2+\frac32\sin^2t=-\frac12(\cos t-2)^2+\frac92.$$
-⟦化簡｜$1+2\cos t+\cos^2t+\frac32-\frac32\cos^2t=\frac52+2\cos t-\frac12\cos^2t$，配方即得。⟧
+⟦化簡｜$$1+2\cos t+\cos^2t+\frac32-\frac32\cos^2t=\frac52+2\cos t-\frac12\cos^2t$$，配方即得。⟧
 因 $|\cos t|\le1$，$S(t)$ 隨 $\cos t$ 增加而增加，所以 $\cos t=-1$（$x=y=0$）時 $(x^2+y^2)_{\min}=0$；$\cos t=1$（$x=2,y=0$）時 $(x^2+y^2)_{\max}=4$。（與第 18 講例 7 是同一題，換了一種方法。）
 
 === text
 <p>利用兩點距離公式及點到直線的距離公式，有時也能順利解決某些最值問題。</p>
 
 === 例 11 | 看成兩段距離之和
-zh: 求函數 $y=\sqrt{x^2-2x+5}+\sqrt{x^2-4x+13}$ 的最小值。
+zh: 求函數 $$y=\sqrt{x^2-2x+5}+\sqrt{x^2-4x+13}$$ 的最小值。
 sol: 配方改寫為
 $$y=\sqrt{(x-1)^2+(0-2)^2}+\sqrt{(x-2)^2+(0-3)^2}.$$
 從幾何上看，就是在 $x$ 軸上求一點 $P(x,0)$，使 $P$ 到 $A(1,2)$ 與 $B(2,3)$ 的距離和最小。取 $A$ 關於 $x$ 軸的對稱點 $A'(1,-2)$，則線段 $A'B$ 的長就是所求的最小值⟦為什麼｜$PA=PA'$，所以 $PA+PB=PA'+PB\ge A'B$，當 $P$ 在線段 $A'B$ 上時取等號；$A'$ 與 $B$ 在 $x$ 軸兩側，線段一定穿過 $x$ 軸。⟧：
@@ -172,7 +172,7 @@ $$x^2+y^2=100,\qquad x\ge6,\quad0\lt y\le6$$
 zh: 設 $x,y,z$ 滿足約束條件 $x+y+z=1$，$0\le x\le1$，$0\le y\le2$，$3y+z\ge2$。（4）求 $F=2x+6y+4z$ 的最值。
 sol: 由 $x+y+z=1$，$z=1-x-y$，從而
 $$F=2y-2x+4,$$
-不等式組 (4) 成為 $0\le x\le1$，$0\le y\le2$，$2y-x\ge1$⟦最後一個｜$3y+(1-x-y)\ge2\iff2y-x\ge1$。⟧。這三個不等式確定的平面區域 $K$，是由直線 $x=0$、$x=1$、$2y-x=1$、$y=2$ 圍成的梯形（含邊界），頂點為 $A\big(0,\frac12\big)$、$B(1,1)$、$C(1,2)$、$D(0,2)$。
+不等式組 (4) 成為 $0\le x\le1$，$0\le y\le2$，$2y-x\ge1$⟦最後一個｜$$3y+(1-x-y)\ge2\iff2y-x\ge1$$。⟧。這三個不等式確定的平面區域 $K$，是由直線 $x=0$、$x=1$、$2y-x=1$、$y=2$ 圍成的梯形（含邊界），頂點為 $A\big(0,\frac12\big)$、$B(1,1)$、$C(1,2)$、$D(0,2)$。
 <figure class="bkfig"><svg viewBox="0 0 240 330" width="240" role="img" aria-label="梯形區域 K，頂點 A(0,1/2)、B(1,1)、C(1,2)、D(0,2)">
   <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="54.3,226.1 155.4,175.6 155.4,74.5 54.3,74.5"/><line x1="24.0" y1="276.6" x2="216.0" y2="276.6"/><line x1="54.3" y1="306.9" x2="54.3" y2="24.0"/></g>
   <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="24.0" y1="241.3" x2="216.0" y2="145.3"/></g>
@@ -201,10 +201,10 @@ $$y^2=\frac12\big(\sin^2\theta\big)\big(\sin^2\theta\big)\big(2\cos^2\theta\big)
 === 習題 3
 zh: 設 $x,y,z\ge0$，$x+y+z=a$。(1) 求 $(xy+yz+zx)_{\max}$；(2) 求 $(x^my^nz^p)_{\max}$（$m,n,p$ 為正整數）。
 ans: (1) $\frac{a^2}3$；(2) $m^mn^np^p\Big(\dfrac a{m+n+p}\Big)^{m+n+p}$。
-sol: (1) $a^2-(x^2+y^2+z^2)=2(xy+yz+zx)$，又 $x^2+y^2+z^2\ge xy+yz+zx$，兩式相加得 $xy+yz+zx\le\frac{a^2}3$，等號當且僅當 $x=y=z=\frac a3$。
+sol: (1) $$a^2-(x^2+y^2+z^2)=2(xy+yz+zx)$$，又 $x^2+y^2+z^2\ge xy+yz+zx$，兩式相加得 $xy+yz+zx\le\frac{a^2}3$，等號當且僅當 $x=y=z=\frac a3$。
 (2) 把 $\frac xm$ 寫 $m$ 次、$\frac yn$ 寫 $n$ 次、$\frac zp$ 寫 $p$ 次，用 $G\le A$：
 $$\frac{x^m}{m^m}\cdot\frac{y^n}{n^n}\cdot\frac{z^p}{p^p}\le\Big(\frac{m\cdot\frac xm+n\cdot\frac yn+p\cdot\frac zp}{m+n+p}\Big)^{m+n+p}=\Big(\frac a{m+n+p}\Big)^{m+n+p},$$
-即 $x^my^nz^p\le m^mn^np^p\big(\frac a{m+n+p}\big)^{m+n+p}$。等號當且僅當 $\frac xm=\frac yn=\frac zp$，即 $x=\frac{ma}{m+n+p},\ y=\frac{na}{m+n+p},\ z=\frac{pa}{m+n+p}$。
+即 $x^my^nz^p\le m^mn^np^p\big(\frac a{m+n+p}\big)^{m+n+p}$。等號當且僅當 $\frac xm=\frac yn=\frac zp$，即 $$x=\frac{ma}{m+n+p},\ y=\frac{na}{m+n+p},\ z=\frac{pa}{m+n+p}$$。
 
 === 習題 4
 zh: 設正 $\triangle ABC$ 的邊長為 $a$，邊 $BC,CA,AB$ 上的點 $P,Q,R$ 在滿足 $BP+CQ+AR=a$ 的條件下移動。求 $P,Q,R$ 在何處時，$\triangle PQR$ 的面積最大。

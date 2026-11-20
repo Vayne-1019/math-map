@@ -13,26 +13,26 @@ $$A\ge B\ge C;\quad h_a\le h_b\le h_c;\quad m_a\le m_b\le m_c;\quad t_a\le t_b\l
 ⟦高為什麼反序｜$h_a=\frac{2\triangle}a$，邊越長高越短。中線：$m_a^2=\frac{2b^2+2c^2-a^2}4$，$m_a^2-m_b^2=\frac34(b^2-a^2)$，$a\ge b$ 時 $m_a\le m_b$。⟧</p>
 
 === 例 1 | 加權平均不等式
-zh: 在 $\triangle ABC$ 中，$a,b,c$ 都是有理數。求證：$\Big(1+\dfrac{b-c}a\Big)^a\Big(1+\dfrac{c-a}b\Big)^b\Big(1+\dfrac{a-b}c\Big)^c\le1$。
+zh: 在 $\triangle ABC$ 中，$a,b,c$ 都是有理數。求證：$$\Big(1+\dfrac{b-c}a\Big)^a\Big(1+\dfrac{c-a}b\Big)^b\Big(1+\dfrac{a-b}c\Big)^c\le1$$。
 sol: 因 $a,b,c$ 是正有理數，存在正整數 $m$ 使 $ma,mb,mc$ 都是正整數。又 $a,b,c$ 是三邊，所以 $1+\frac{b-c}a>0$ 等三數都是正數⟦為什麼｜$1+\frac{b-c}a=\frac{a+b-c}a>0$，因為 $a+b>c$。⟧。把 $1+\frac{b-c}a$ 寫 $ma$ 次、$1+\frac{c-a}b$ 寫 $mb$ 次、$1+\frac{a-b}c$ 寫 $mc$ 次，由 $G_n\le A_n$：
 $$\begin{aligned}&\Big[\Big(1+\frac{b-c}a\Big)^{ma}\Big(1+\frac{c-a}b\Big)^{mb}\Big(1+\frac{a-b}c\Big)^{mc}\Big]^{\frac1{ma+mb+mc}}\\ \le{}&\frac{ma\big(1+\frac{b-c}a\big)+mb\big(1+\frac{c-a}b\big)+mc\big(1+\frac{a-b}c\big)}{ma+mb+mc}=1.\end{aligned}$$
 ⟦分子｜$ma\big(1+\frac{b-c}a\big)=m(a+b-c)$，三項相加 $=m(a+b+c)$，恰等於分母。⟧
 左邊開 $m$ 次方即得原式。
 
 === 例 2 | $r,R$ 與邊長
-zh: 在 $\triangle ABC$ 中，求證：$\dfrac1{2rR}\le\dfrac13\Big(\dfrac1a+\dfrac1b+\dfrac1c\Big)^2\le\dfrac1{a^2}+\dfrac1{b^2}+\dfrac1{c^2}\le\dfrac1{4r^2}$。
+zh: 在 $\triangle ABC$ 中，求證：$$\dfrac1{2rR}\le\dfrac13\Big(\dfrac1a+\dfrac1b+\dfrac1c\Big)^2\le\dfrac1{a^2}+\dfrac1{b^2}+\dfrac1{c^2}\le\dfrac1{4r^2}$$。
 sol: 第二個不等式由 $A_3\le Q_3$ 即得⟦怎麼套｜對 $\frac1a,\frac1b,\frac1c$：$\big(\frac{\sum\frac1a}3\big)^2\le\frac{\sum\frac1{a^2}}3$，乘以 3。⟧。
-<b>第一個.</b> 易證 $xy+yz+zx\le\frac13(x+y+z)^2$⟦為什麼｜$(x+y+z)^2-3(xy+yz+zx)=\frac12\sum(x-y)^2\ge0$。⟧。由 $r=\frac\triangle p$，$R=\frac{abc}{4\triangle}$：
+<b>第一個.</b> 易證 $xy+yz+zx\le\frac13(x+y+z)^2$⟦為什麼｜$$(x+y+z)^2-3(xy+yz+zx)=\frac12\sum(x-y)^2\ge0$$。⟧。由 $r=\frac\triangle p$，$R=\frac{abc}{4\triangle}$：
 $$\frac1{2rR}=\frac1{2\cdot\frac\triangle p\cdot\frac{abc}{4\triangle}}=\frac{2p}{abc}=\frac1{bc}+\frac1{ca}+\frac1{ab}\le\frac13\Big(\frac1a+\frac1b+\frac1c\Big)^2.$$
 <b>第三個.</b> 由海龍公式及 $p=(p-a)+(p-b)+(p-c)$：
 $$\begin{aligned}\frac1{4r^2}&=\frac{p^2}{4\triangle^2}=\frac{p}{4(p-a)(p-b)(p-c)}=\frac{(p-a)+(p-b)+(p-c)}{4(p-a)(p-b)(p-c)}\\&=\frac14\Big[\frac1{(p-b)(p-c)}+\frac1{(p-c)(p-a)}+\frac1{(p-a)(p-b)}\Big].\end{aligned}$$
-而 $4(p-b)(p-c)\le\big[(p-c)+(p-b)\big]^2=a^2$，故 $\dfrac1{a^2}\le\dfrac1{4(p-b)(p-c)}$；同理 $\dfrac1{b^2}\le\dfrac1{4(p-c)(p-a)}$，$\dfrac1{c^2}\le\dfrac1{4(p-a)(p-b)}$。相加得 $\dfrac1{a^2}+\dfrac1{b^2}+\dfrac1{c^2}\le\dfrac1{4r^2}$。
+而 $$4(p-b)(p-c)\le\big[(p-c)+(p-b)\big]^2=a^2$$，故 $\dfrac1{a^2}\le\dfrac1{4(p-b)(p-c)}$；同理 $\dfrac1{b^2}\le\dfrac1{4(p-c)(p-a)}$，$\dfrac1{c^2}\le\dfrac1{4(p-a)(p-b)}$。相加得 $\dfrac1{a^2}+\dfrac1{b^2}+\dfrac1{c^2}\le\dfrac1{4r^2}$。
 
 === 例 3 | 直角三角形的內切圓
 zh: 在 $\triangle ABC$ 中，$\angle C$ 是直角。求證：$r\le\dfrac{c}{2(1+\sqrt2)}$。
 sol: 由 $ab=2\triangle=r(a+b+c)$，$r=\dfrac{ab}{a+b+c}$。又 $a+b\ge2\sqrt{ab}$，$c^2=a^2+b^2\ge2ab$ 即 $c\ge\sqrt{2ab}$，所以
 $$\frac{r^2}{c^2}=\frac{a^2b^2}{(a+b+c)^2c^2}\le\frac{a^2b^2}{(2\sqrt{ab}+\sqrt{2ab})^2\cdot2ab}=\frac1{4(1+\sqrt2)^2},$$
-⟦化簡｜$(2\sqrt{ab}+\sqrt{2ab})^2=ab(2+\sqrt2)^2=2ab(\sqrt2+1)^2$，乘上 $2ab$ 得 $4a^2b^2(1+\sqrt2)^2$。⟧
+⟦化簡｜$$(2\sqrt{ab}+\sqrt{2ab})^2=ab(2+\sqrt2)^2=2ab(\sqrt2+1)^2$$，乘上 $2ab$ 得 $4a^2b^2(1+\sqrt2)^2$。⟧
 即 $r\le\dfrac{c}{2(1+\sqrt2)}$，等號在 $a=b$ 時成立。
 
 === 例 4 | 五條線段
@@ -51,14 +51,14 @@ $$\begin{aligned}\triangle^4&=p^2(p-a)^2(p-b)^2(p-c)^2\\&\ge4^4p_1(p_1-a_1)(p_1-
 即 $\triangle\ge4\sqrt{\triangle_1\triangle_2}$。
 
 === 例 6 | 中線版本
-zh: 在 $\triangle ABC$ 中，求證：$a(m_b+m_c-m_a)+b(m_c+m_a-m_b)+c(m_a+m_b-m_c)\ge6\triangle$。
+zh: 在 $\triangle ABC$ 中，求證：$$a(m_b+m_c-m_a)+b(m_c+m_a-m_b)+c(m_a+m_b-m_c)\ge6\triangle$$。
 sol: 由對稱性，設 $a\ge b\ge c$，則 $m_a\le m_b\le m_c$。由排序不等式（逆序和最小）：
 $$S=am_a+bm_b+cm_c\le cm_a+am_b+bm_c\ (=S_1),\qquad S\le bm_a+cm_b+am_c\ (=S_2).$$
-故 $2S\le S_1+S_2$。原式左邊 $=S_1+S_2-S\ge S=am_a+bm_b+cm_c$⟦左邊為什麼是這個｜$S_1+S_2=(b+c)m_a+(c+a)m_b+(a+b)m_c$，減去 $S$ 正是 $a(m_b+m_c-m_a)+\cdots$ 的展開。⟧。而 $m_a\ge h_a$ 等（中線不短於高），所以左邊 $\ge ah_a+bh_b+ch_c=6\triangle$。
+故 $2S\le S_1+S_2$。原式左邊 $$=S_1+S_2-S\ge S=am_a+bm_b+cm_c$$⟦左邊為什麼是這個｜$$S_1+S_2=(b+c)m_a+(c+a)m_b+(a+b)m_c$$，減去 $S$ 正是 $a(m_b+m_c-m_a)+\cdots$ 的展開。⟧。而 $m_a\ge h_a$ 等（中線不短於高），所以左邊 $\ge ah_a+bh_b+ch_c=6\triangle$。
 <b>注.</b> 把 $m_a,m_b,m_c$ 換成 $t_a,t_b,t_c$ 或 $h_a,h_b,h_c$，結論仍成立（它們也和邊反序，且都 $\ge$ 對應的高）。
 
 === 例 7 | 因式分解
-zh: 在 $\triangle ABC$ 中，求證：$a(b-c)^2+b(c-a)^2+c(a-b)^2+4abc>a^3+b^3+c^3$。
+zh: 在 $\triangle ABC$ 中，求證：$$a(b-c)^2+b(c-a)^2+c(a-b)^2+4abc>a^3+b^3+c^3$$。
 sol: 因 $c(a-b)^2+4abc=c(a+b)^2$，所以
 $$\begin{aligned}\text{左}-\text{右}&=a\big[(b-c)^2-a^2\big]+b\big[(c-a)^2-b^2\big]+c\big[(a+b)^2-c^2\big]\\&=a(b-c-a)(b-c+a)+b(c-a-b)(c-a+b)+c(a+b-c)(a+b+c).\end{aligned}$$
 三項都含因子 $a+b-c$⟦怎麼看出｜第一項的 $b-c+a$ 就是 $a+b-c$；第二項的 $c-a-b=-(a+b-c)$；第三項直接有。⟧，提出 $a+b-c$：
@@ -67,13 +67,13 @@ $$\begin{aligned}\text{左}-\text{右}&=(a+b-c)\big[a(b-c-a)-b(c-a+b)+c(a+b+c)\b
 <b>注.</b> 本題表現了較高的代數變形技巧：因式分解是證不等式的常用手段。由最後一式可見，這個不等式其實是「三個正數 $a,b,c$ 能組成三角形」的充要條件，也看得出這個複雜的不等式是怎麼造出來的。
 
 === 例 8 | 柯西加上第 16 講例 8
-zh: 設 $a_i,b_i,c_i$ 及 $R_i$（$i=1,2$）是 $\triangle A_iB_iC_i$ 的三邊及外接圓半徑。求證：當 $m,n\ge1$ 時，$a_1^ma_2^n+b_1^mb_2^n+c_1^mc_2^n\le9\cdot2^{m+n-2}R_1^mR_2^n$。
+zh: 設 $a_i,b_i,c_i$ 及 $R_i$（$i=1,2$）是 $\triangle A_iB_iC_i$ 的三邊及外接圓半徑。求證：當 $m,n\ge1$ 時，$$a_1^ma_2^n+b_1^mb_2^n+c_1^mc_2^n\le9\cdot2^{m+n-2}R_1^mR_2^n$$。
 sol: 由柯西不等式，
 $$a_1^ma_2^n+b_1^mb_2^n+c_1^mc_2^n\le\big(a_1^{2m}+b_1^{2m}+c_1^{2m}\big)^{1/2}\big(a_2^{2n}+b_2^{2n}+c_2^{2n}\big)^{1/2}.$$
 而
 $$\begin{aligned}a_1^{2m}+b_1^{2m}+c_1^{2m}&=(2R_1)^{2m}\big(\sin^{2m}A_1+\sin^{2m}B_1+\sin^{2m}C_1\big)\\&\le(2R_1)^{2m}\big(\sin^2A_1+\sin^2B_1+\sin^2C_1\big)\le(2R_1)^{2m}\cdot\frac94.\end{aligned}$$
 ⟦兩步｜$0\lt \sin\le1$ 且 $m\ge1$，所以 $\sin^{2m}\le\sin^2$。最後用第 16 講例 8：$\sum\sin^2\le\frac94$。⟧
-同理 $a_2^{2n}+b_2^{2n}+c_2^{2n}\le(2R_2)^{2n}\cdot\frac94$。所以左邊 $\le(2R_1)^m(2R_2)^n\cdot\frac94=9\cdot2^{m+n-2}R_1^mR_2^n$。
+同理 $a_2^{2n}+b_2^{2n}+c_2^{2n}\le(2R_2)^{2n}\cdot\frac94$。所以左邊 $$\le(2R_1)^m(2R_2)^n\cdot\frac94=9\cdot2^{m+n-2}R_1^mR_2^n$$。
 
 === text
 <h3>二、變數代換法（切線長代換）</h3>
@@ -94,10 +94,10 @@ $$\begin{aligned}p&=x+y+z,\qquad\triangle=\sqrt{xyz(x+y+z)},\qquad r=\frac\trian
 這個代換對關於長度、面積及 $\tan\frac A2,\cot\frac A2$ 的不等式特別簡便。由 (1)–(3) 可解得 $x=\frac12(b+c-a)$，$y=\frac12(c+a-b)$，$z=\frac12(a+b-c)$，所以有時也直接用 $x=b+c-a$ 等作代換。</p>
 
 === 例 9 | 魏琴伯克的加強
-zh: 在 $\triangle ABC$ 中，求證：$a^2+b^2+c^2\ge4\sqrt3\triangle+(b-c)^2+(c-a)^2+(a-b)^2$。等號何時成立？
-sol: 作代換 (1)–(3)。因為 $a^2-(b-c)^2=(y+z)^2-(z-y)^2=4yz$，原式依序等價於
+zh: 在 $\triangle ABC$ 中，求證：$$a^2+b^2+c^2\ge4\sqrt3\triangle+(b-c)^2+(c-a)^2+(a-b)^2$$。等號何時成立？
+sol: 作代換 (1)–(3)。因為 $$a^2-(b-c)^2=(y+z)^2-(z-y)^2=4yz$$，原式依序等價於
 $$\begin{aligned}&4(xy+yz+zx)\ge4\sqrt{3xyz(x+y+z)}\\ \iff{}&(xy+yz+zx)^2\ge3xyz(x+y+z)\\ \iff{}&x^2y^2+y^2z^2+z^2x^2\ge x^2yz+y^2zx+z^2xy\\ \iff{}&\tfrac12\big[(xy-yz)^2+(yz-zx)^2+(zx-xy)^2\big]\ge0.\end{aligned}$$
-⟦第三步｜左邊展開 $(xy+yz+zx)^2=\sum x^2y^2+2xyz(x+y+z)$，減去 $3xyz(x+y+z)$。⟧
+⟦第三步｜左邊展開 $$(xy+yz+zx)^2=\sum x^2y^2+2xyz(x+y+z)$$，減去 $3xyz(x+y+z)$。⟧
 最後一式顯然成立，等號當且僅當 $x=y=z$，即 $a=b=c$。
 <b>注.</b> 這是第 16 講例 7 魏琴伯克不等式的加強（稱為 Hadwiger–Finsler 不等式）。
 
@@ -122,15 +122,15 @@ $$\frac rx\cdot\frac ry=\frac1{xy}\cdot\frac{xyz}{x+y+z}=\frac z{x+y+z}\lt \frac
 
 === 例 13 | IMO 1983
 src: 第 24 屆 IMO 第 6 題（1983）
-zh: 設 $a,b,c$ 是三角形的三邊，求證：$a^2b(a-b)+b^2c(b-c)+c^2a(c-a)\ge0$。
+zh: 設 $a,b,c$ 是三角形的三邊，求證：$$a^2b(a-b)+b^2c(b-c)+c^2a(c-a)\ge0$$。
 sol: 作代換 (1)–(3)，展開並化簡得等價不等式
 $$xy^3+yz^3+zx^3-x^2yz-xy^2z-xyz^2\ge0,$$
 ⟦展開｜把 $a=y+z,\ b=z+x,\ c=x+y$ 代入後展開是機械的計算：所有四次項中只剩這六項，其餘兩兩抵消。驗算一例：$x=y=z=1$ 時 $a=b=c$，原式與上式都是 $0$。⟧
-即 $xyz\Big(\dfrac{y^2}z+\dfrac{z^2}x+\dfrac{x^2}y-x-y-z\Big)\ge0$。因 $x,y,z>0$，這等價於
+即 $$xyz\Big(\dfrac{y^2}z+\dfrac{z^2}x+\dfrac{x^2}y-x-y-z\Big)\ge0$$。因 $x,y,z>0$，這等價於
 $$\frac{x^2}y+\frac{y^2}z+\frac{z^2}x\ge x+y+z.\qquad(4)$$
 (4) 已在第 13 講例 4 證過（$n=3$），也可以用柯西不等式直接證：
 $$(x+y+z)^2=\Big(\sqrt y\cdot\frac x{\sqrt y}+\sqrt z\cdot\frac y{\sqrt z}+\sqrt x\cdot\frac z{\sqrt x}\Big)^2\le(y+z+x)\Big(\frac{x^2}y+\frac{y^2}z+\frac{z^2}x\Big),$$
-兩邊除以 $x+y+z$ 即得 (4)。（原書題目印作 $b^2c(b-c)+c^2a(c-a)+a^2b(a-b)\ge0$，與此相同。）
+兩邊除以 $x+y+z$ 即得 (4)。（原書題目印作 $$b^2c(b-c)+c^2a(c-a)+a^2b(a-b)\ge0$$，與此相同。）
 
 === 習題 1
 zh: 設 $a,b,c$ 是一個三角形的三邊。求證：$a'=\sqrt{b^2+c^2}$，$b'=\sqrt{c^2+a^2}$，$c'=\sqrt{a^2+b^2}$ 也是一個三角形的三邊。
@@ -139,20 +139,20 @@ $$(c^2+a^2)+(a^2+b^2)+2\sqrt{(c^2+a^2)(a^2+b^2)}>b^2+c^2=a'^2,$$
 所以 $a'\lt b'+c'$。（其實只要 $a,b,c>0$ 就成立。）
 
 === 習題 2
-zh: 在 $\triangle ABC$ 中，求證：(1) 若 $h_a=12$，$h_b=20$，則 $h_c\lt 30$；(2) $\dfrac1{A^2}+\dfrac1{B^2}+\dfrac1{C^2}\ge\dfrac{27}{\pi^2}$（角用弧度）；(3) $\dfrac{m_a}{h_a}+\dfrac{m_b}{h_b}+\dfrac{m_c}{h_c}\le1+\dfrac Rr$（$\triangle ABC$ 是銳角三角形）；(4) $t_a+t_b+t_c\le\sqrt3\,p$；(5) $a^4+b^4+c^4\ge16\triangle^2+(a-b)^4+(b-c)^4+(c-a)^4$；(6) $\dfrac{aA+bB+cC}{a+b+c}\ge\dfrac\pi3\ge\dfrac{A\cos A+B\cos B+C\cos C}{\cos A+\cos B+\cos C}$；(7) 若 $t_a,t_b,t_c$ 都小於 $1$，則 $\triangle\lt \dfrac1{\sqrt3}$；(8) $\cot^3\dfrac A2+\cot^3\dfrac B2+\cot^3\dfrac C2\ge9\sqrt3$；(9) $\dfrac1{(p-a)^2}+\dfrac1{(p-b)^2}+\dfrac1{(p-c)^2}\ge\dfrac1{r^2}$。
+zh: 在 $\triangle ABC$ 中，求證：(1) 若 $h_a=12$，$h_b=20$，則 $h_c\lt 30$；(2) $\dfrac1{A^2}+\dfrac1{B^2}+\dfrac1{C^2}\ge\dfrac{27}{\pi^2}$（角用弧度）；(3) $\dfrac{m_a}{h_a}+\dfrac{m_b}{h_b}+\dfrac{m_c}{h_c}\le1+\dfrac Rr$（$\triangle ABC$ 是銳角三角形）；(4) $t_a+t_b+t_c\le\sqrt3\,p$；(5) $$a^4+b^4+c^4\ge16\triangle^2+(a-b)^4+(b-c)^4+(c-a)^4$$；(6) $$\dfrac{aA+bB+cC}{a+b+c}\ge\dfrac\pi3\ge\dfrac{A\cos A+B\cos B+C\cos C}{\cos A+\cos B+\cos C}$$；(7) 若 $t_a,t_b,t_c$ 都小於 $1$，則 $\triangle\lt \dfrac1{\sqrt3}$；(8) $\cot^3\dfrac A2+\cot^3\dfrac B2+\cot^3\dfrac C2\ge9\sqrt3$；(9) $$\dfrac1{(p-a)^2}+\dfrac1{(p-b)^2}+\dfrac1{(p-c)^2}\ge\dfrac1{r^2}$$。
 sol: (1) 因 $c>|b-a|$，即 $\dfrac{2\triangle}{h_c}>\Big|\dfrac{2\triangle}{h_b}-\dfrac{2\triangle}{h_a}\Big|$，所以 $h_c\lt \dfrac{h_ah_b}{|h_a-h_b|}=\dfrac{12\times20}8=30$。
-(2) $\dfrac1{A^2}+\dfrac1{B^2}+\dfrac1{C^2}\ge\dfrac1{AB}+\dfrac1{BC}+\dfrac1{CA}=\dfrac{\pi}{ABC}$，又 $ABC\le\big(\frac{A+B+C}3\big)^3=\frac{\pi^3}{27}$。
-(3) 令 $O$ 為外心，$A_1,B_1,C_1$ 為三邊中點。銳角三角形的外心在形內，$m_a=AA_1\le AO+OA_1=R+OA_1$，同理 $m_b\le R+OB_1$，$m_c\le R+OC_1$。於是
+(2) $$\dfrac1{A^2}+\dfrac1{B^2}+\dfrac1{C^2}\ge\dfrac1{AB}+\dfrac1{BC}+\dfrac1{CA}=\dfrac{\pi}{ABC}$$，又 $ABC\le\big(\frac{A+B+C}3\big)^3=\frac{\pi^3}{27}$。
+(3) 令 $O$ 為外心，$A_1,B_1,C_1$ 為三邊中點。銳角三角形的外心在形內，$$m_a=AA_1\le AO+OA_1=R+OA_1$$，同理 $m_b\le R+OB_1$，$m_c\le R+OC_1$。於是
 $$\text{左邊}\le R\Big(\frac1{h_a}+\frac1{h_b}+\frac1{h_c}\Big)+\frac{OA_1}{h_a}+\frac{OB_1}{h_b}+\frac{OC_1}{h_c}.$$
-由 $\frac{2\triangle}r=a+b+c=\frac{2\triangle}{h_a}+\frac{2\triangle}{h_b}+\frac{2\triangle}{h_c}$ 得 $\frac1r=\sum\frac1{h_a}$；又 $2\triangle=a\cdot OA_1+b\cdot OB_1+c\cdot OC_1=\sum\frac{2\triangle}{h_a}OA_1$，得 $\sum\frac{OA_1}{h_a}=1$。⟦第二式｜把三角形從 $O$ 切成三塊，$\triangle OBC$ 的面積是 $\frac12a\cdot OA_1$（$OA_1\perp BC$）。⟧
+由 $\frac{2\triangle}r=a+b+c=\frac{2\triangle}{h_a}+\frac{2\triangle}{h_b}+\frac{2\triangle}{h_c}$ 得 $\frac1r=\sum\frac1{h_a}$；又 $$2\triangle=a\cdot OA_1+b\cdot OB_1+c\cdot OC_1=\sum\frac{2\triangle}{h_a}OA_1$$，得 $\sum\frac{OA_1}{h_a}=1$。⟦第二式｜把三角形從 $O$ 切成三塊，$\triangle OBC$ 的面積是 $\frac12a\cdot OA_1$（$OA_1\perp BC$）。⟧
 (4) 角平分線長 $t_a=\dfrac2{b+c}\sqrt{bc\,p(p-a)}$，由 $\frac{2\sqrt{bc}}{b+c}\le1$ 得 $t_a\le\sqrt{p(p-a)}$。於是由柯西不等式
 $$t_a+t_b+t_c\le\sqrt p\big(\sqrt{p-a}+\sqrt{p-b}+\sqrt{p-c}\big)\le\sqrt p\cdot\sqrt3\cdot\sqrt{(p-a)+(p-b)+(p-c)}=\sqrt3\,p.$$
-(5) （原書提示「用變數代換法」，這裡給一個更直接的證法。）由海龍公式 $16\triangle^2=2(a^2b^2+b^2c^2+c^2a^2)-(a^4+b^4+c^4)$⟦這個形式｜$16\triangle^2=(a+b+c)(-a+b+c)(a-b+c)(a+b-c)$，兩兩配成平方差後展開即得。⟧，原式等價於
+(5) （原書提示「用變數代換法」，這裡給一個更直接的證法。）由海龍公式 $$16\triangle^2=2(a^2b^2+b^2c^2+c^2a^2)-(a^4+b^4+c^4)$$⟦這個形式｜$$16\triangle^2=(a+b+c)(-a+b+c)(a-b+c)(a+b-c)$$，兩兩配成平方差後展開即得。⟧，原式等價於
 $$2(a^4+b^4+c^4)-2(a^2b^2+b^2c^2+c^2a^2)\ge\sum(a-b)^4,$$
-左邊 $=\sum(a^2-b^2)^2=\sum(a-b)^2(a+b)^2\ge\sum(a-b)^2(a-b)^2$，成立。
+左邊 $$=\sum(a^2-b^2)^2=\sum(a-b)^2(a+b)^2\ge\sum(a-b)^2(a-b)^2$$，成立。
 (6) 設 $a\le b\le c$，則 $A\le B\le C$。由排序不等式 $S=aA+bB+cC$ 不小於 $S_1=aB+bC+cA$ 與 $S_2=aC+bA+cB$，所以
 $$3S\ge S+S_1+S_2=(a+b+c)(A+B+C)=\pi(a+b+c),$$
-即第一個不等式。第二個：$\cos A\ge\cos B\ge\cos C$ 與 $A\le B\le C$ 反序，同理 $3\sum A\cos A\le(A+B+C)\sum\cos A=\pi\sum\cos A$，而 $\sum\cos A>0$。⟦另一種寫法｜第一個也可由 $(a-b)(A-B)\ge0$、$(b-c)(B-C)\ge0$、$(c-a)(C-A)\ge0$ 三式相加展開得到。⟧
+即第一個不等式。第二個：$\cos A\ge\cos B\ge\cos C$ 與 $A\le B\le C$ 反序，同理 $$3\sum A\cos A\le(A+B+C)\sum\cos A=\pi\sum\cos A$$，而 $\sum\cos A>0$。⟦另一種寫法｜第一個也可由 $(a-b)(A-B)\ge0$、$(b-c)(B-C)\ge0$、$(c-a)(C-A)\ge0$ 三式相加展開得到。⟧
 (7) 設 $A$ 是最大角。若 $\triangle ABC$ 是銳角三角形，則 $60^\circ\le A\lt 90^\circ$。因 $h_b\le t_b\lt 1$，$h_c\le t_c\lt 1$，
 $$\triangle=\frac12h_c\cdot AB=\frac12h_c\cdot\frac{h_b}{\sin A}\lt \frac1{2\sin A}\le\frac1{2\sin60^\circ}=\frac1{\sqrt3}.$$
 ⟦AB 怎麼換｜$B$ 到 $AC$ 的高 $h_b=AB\sin A$。⟧
@@ -161,10 +161,10 @@ $$\triangle=\frac12h_c\cdot AB=\frac12h_c\cdot\frac{h_b}{\sin A}\lt \frac1{2\sin
 (9) 用代換：$p-a=x$ 等，$\frac1{r^2}=\frac{x+y+z}{xyz}=\frac1{yz}+\frac1{zx}+\frac1{xy}$。而 $\frac1{x^2}+\frac1{y^2}+\frac1{z^2}\ge\frac1{xy}+\frac1{yz}+\frac1{zx}$（即 $u^2+v^2+w^2\ge uv+vw+wu$）。
 
 === 習題 3
-zh: 設四邊形 $ABCD$ 的面積為 $S$，$O$ 為形內一點。求證：$2S=OA^2+OB^2+OC^2+OD^2\iff ABCD$ 是正方形，且 $O$ 是中心。
+zh: 設四邊形 $ABCD$ 的面積為 $S$，$O$ 為形內一點。求證：$$2S=OA^2+OB^2+OC^2+OD^2\iff ABCD$$ 是正方形，且 $O$ 是中心。
 sol: $\Leftarrow$ 易證⟦驗算｜正方形邊長 $s$，中心到頂點距離 $\frac{s}{\sqrt2}$，四個平方和 $=2s^2=2S$。⟧。$\Rightarrow$：
 $$\begin{aligned}2S&=OA^2+OB^2+OC^2+OD^2\ge OA\cdot OB+OB\cdot OC+OC\cdot OD+OD\cdot OA\\&\ge2\big[S_{\triangle OAB}+S_{\triangle OBC}+S_{\triangle OCD}+S_{\triangle ODA}\big]=2S.\end{aligned}$$
-⟦兩個 ≥｜第一個是 $\sum u^2\ge\sum uv$（輪換）；第二個：$S_{\triangle OAB}=\frac12OA\cdot OB\sin\angle AOB\le\frac12OA\cdot OB$。⟧
+⟦兩個 ≥｜第一個是 $\sum u^2\ge\sum uv$（輪換）；第二個：$$S_{\triangle OAB}=\frac12OA\cdot OB\sin\angle AOB\le\frac12OA\cdot OB$$。⟧
 所以兩個不等號都取等號：$OA=OB=OC=OD$，且四個角 $\angle AOB$ 等都是直角，$ABCD$ 是以 $O$ 為中心的正方形。
 
 === 習題 4
@@ -183,7 +183,7 @@ sol: <figure class="bkfig"><svg viewBox="0 0 280 202" width="280" role="img" ari
   <g fill="currentColor" font-size="14" font-style="italic"><text x="10.0" y="192.7">A</text><text x="260.0" y="192.7">B</text><text x="260.0" y="20.0">C</text><text x="10.0" y="22.0">D</text><text x="122.4" y="194.7">B′</text><text x="132.4" y="97.3">C′</text><text x="4.0" y="105.3">D′</text><text x="31.2" y="118.7">P</text><text x="113.1" y="177.2">Q</text><text x="205.9" y="43.2">R</text><text x="33.2" y="177.2">T</text></g>
 </svg><figcaption>以 $PQ$ 為斜邊作直角三角形 $PQT$，兩股平行於矩形的邊</figcaption></figure>
 以 $PQ$ 為斜邊，在 $\triangle PQR$ 外側作直角 $\triangle PQT$，使兩條直角邊分別平行於矩形的兩鄰邊。記 $TQ=\varepsilon$（水平）、$PT=\delta$（垂直），因 $P,Q$ 在小矩形內，$\varepsilon\le\lambda a$，$\delta\le\mu b$。
-(1) 若 $RT$ 與 $PQ$ 相交（如圖），則 $S_{\triangle PQR}=S_{\triangle TQR}+S_{\triangle TPR}-S_{\triangle PQT}$。$R$ 到直線 $TQ$ 的距離 $\le b$，到直線 $TP$ 的距離 $\le a$，所以
+(1) 若 $RT$ 與 $PQ$ 相交（如圖），則 $$S_{\triangle PQR}=S_{\triangle TQR}+S_{\triangle TPR}-S_{\triangle PQT}$$。$R$ 到直線 $TQ$ 的距離 $\le b$，到直線 $TP$ 的距離 $\le a$，所以
 $$\begin{aligned}S_{\triangle PQR}&\le\frac12\varepsilon b+\frac12\delta a-\frac12\varepsilon\delta=\frac12\big[ab-(a-\varepsilon)(b-\delta)\big]\\&\le\frac12\big[ab-(a-\lambda a)(b-\mu b)\big]=\frac12ab(\lambda+\mu-\lambda\mu).\end{aligned}$$
 (2) 若 $PT$ 或 $QT$ 與 $PR$、$QR$ 的相對位置不同，可類似處理（原書從略）。
 （原書解答寫成 $ab(\lambda+\mu-\lambda\mu)$，少了係數 $\frac12$；依推導應與題目一致為 $\frac12ab(\lambda+\mu-\lambda\mu)$。）

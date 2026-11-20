@@ -51,7 +51,7 @@ $$\begin{aligned}\text{左邊}&>\frac{x+a}{x+z+a+b+c+r}+\frac{z+c}{x+z+a+b+c+r}\
 === 例 3 | $P_n(x)=x$ 的根全是相異實根
 zh: 設 $P_1(x)=x^2-2$，$P_n(x)=P_1\big(P_{n-1}(x)\big)$，$n=2,3,\dots$。證明：對任意正整數 $n$，方程 $P_n(x)=x$ 的根全是相異實根。
 sol: <b>第一步：實根都在 $[-2,2]$ 內。</b>只要證：對一切 $|x|>2$，$P_n(x)>|x|$。對 $n$ 用數學歸納法。令 $|x|=2+\alpha$，$\alpha>0$。
-$n=1$：$P_1(x)=(2+\alpha)^2-2=2+4\alpha+\alpha^2>2+\alpha=|x|$。
+$n=1$：$$P_1(x)=(2+\alpha)^2-2=2+4\alpha+\alpha^2>2+\alpha=|x|$$。
 設 $P_k(x)>|x|$，寫成 $P_k(x)=|x|+\beta$，$\beta>0$，則
 $$\begin{aligned}P_{k+1}(x)&=P_k(x)^2-2=(|x|+\beta)^2-2\\&>|x|^2-2>|x|.\end{aligned}$$
 ⟦最後一步｜$|x|^2-2-|x|=(|x|-2)(|x|+1)>0$，因為 $|x|>2$。⟧ 所以 $|x|>2$ 時 $P_n(x)>|x|\ge x$，不是根。
@@ -70,13 +70,13 @@ zh: 若有函數 $g,\varphi,f$ 使 $f(x)=g^{-1}\big(\varphi(g(x))\big)$（簡寫
 $$f^{[n]}=g^{-1}\varphi^{[n]}g,\quad\text{即}\quad f^{[n]}(x)=g^{-1}\big(\varphi^{[n]}(g(x))\big).$$
 sol: 對 $n$ 歸納。$n=1$ 是假設。若 $f^{[k]}=g^{-1}\varphi^{[k]}g$，則
 $$f^{[k+1]}=f\circ f^{[k]}=(g^{-1}\varphi g)(g^{-1}\varphi^{[k]}g)=g^{-1}\varphi\,(g\,g^{-1})\,\varphi^{[k]}g=g^{-1}\varphi^{[k+1]}g.$$
-中間用到 $g(g^{-1}(u))=u$⟦哪一步｜$f^{[k+1]}(x)=f\big(f^{[k]}(x)\big)=g^{-1}\Big(\varphi\big(g(g^{-1}(\varphi^{[k]}(g(x))))\big)\Big)$，最內層的 $g(g^{-1}(\cdot))$ 抵消，剩 $g^{-1}\big(\varphi^{[k+1]}(g(x))\big)$。⟧。<br>意思是：如果 $f$ 「換個坐標」看起來就是簡單的 $\varphi$，那麼迭代 $f$ 就等於換坐標、迭代 $\varphi$、再換回來。
+中間用到 $g(g^{-1}(u))=u$⟦哪一步｜$$f^{[k+1]}(x)=f\big(f^{[k]}(x)\big)=g^{-1}\Big(\varphi\big(g(g^{-1}(\varphi^{[k]}(g(x))))\big)\Big)$$，最內層的 $g(g^{-1}(\cdot))$ 抵消，剩 $g^{-1}\big(\varphi^{[k+1]}(g(x))\big)$。⟧。<br>意思是：如果 $f$ 「換個坐標」看起來就是簡單的 $\varphi$，那麼迭代 $f$ 就等於換坐標、迭代 $\varphi$、再換回來。
 
 === 例 5 | 求 $f^{[n]}$
 zh: 設 $f(x)=\dfrac{x^2}{2(x-1)}$，$x\in(1,+\infty)$，求 $f^{[n]}(x)$。
 sol: <b>解法一（用例 4）.</b> 分子分母同除以 $x^2$，再配方：
 $$f(x)=\frac{2}{\frac{4}{x}-\frac{4}{x^2}}=\frac{2}{1-\left(1-\frac2x\right)^2}.$$
-⟦配方｜$1-\left(1-\frac2x\right)^2=1-1+\frac4x-\frac4{x^2}=\frac4x-\frac4{x^2}$。⟧
+⟦配方｜$$1-\left(1-\frac2x\right)^2=1-1+\frac4x-\frac4{x^2}=\frac4x-\frac4{x^2}$$。⟧
 令 $g(x)=1-\dfrac2x$，$\varphi(x)=x^2$，則 $g^{-1}(x)=\dfrac{2}{1-x}$⟦求反函數｜$u=1-\frac2x\Rightarrow\frac2x=1-u\Rightarrow x=\frac2{1-u}$。⟧，而且 $f(x)=g^{-1}\big(\varphi(g(x))\big)$。因為 $\varphi^{[n]}(x)=x^{2^n}$，由例 4 得
 $$f^{[n]}(x)=\frac{2}{1-\left(1-\frac2x\right)^{2^n}}.$$
 <b>解法二（不知道例 4 也可以：變數代換）.</b> 令 $1-\dfrac2x=\cos\beta$，則 $f(x)=\dfrac{2}{1-\cos^2\beta}$。
@@ -84,7 +84,7 @@ $$\begin{aligned}f^{[2]}(x)&=\frac{\left(\frac{2}{1-\cos^2\beta}\right)^2}{2\lef
 ⟦化簡｜分母 $2\cdot\frac{2-(1-\cos^2\beta)}{1-\cos^2\beta}=\frac{2(1+\cos^2\beta)}{1-\cos^2\beta}$。分子 $\frac{4}{(1-\cos^2\beta)^2}$ 除以它得 $\frac{2}{(1-\cos^2\beta)(1+\cos^2\beta)}$，再用平方差。⟧
 設 $f^{[n]}(x)=\dfrac{2}{1-\cos^{2^n}\beta}$，同樣的計算（把 $\cos^2\beta$ 換成 $\cos^{2^n}\beta$）給出
 $$f^{[n+1]}(x)=\frac{2}{(1-\cos^{2^n}\beta)(1+\cos^{2^n}\beta)}=\frac{2}{1-\cos^{2^{n+1}}\beta}.$$
-由數學歸納法，$f^{[n]}(x)=\dfrac{2}{1-\cos^{2^n}\beta}=\dfrac{2}{1-\left(1-\frac2x\right)^{2^n}}$。
+由數學歸納法，$$f^{[n]}(x)=\dfrac{2}{1-\cos^{2^n}\beta}=\dfrac{2}{1-\left(1-\frac2x\right)^{2^n}}$$。
 ⟦附註｜其實這裡用不到 $\cos$ 的任何性質，只是把 $1-\frac2x$ 當成一個字母 $u$ 來寫；解法二本質上就是解法一。⟧ 變數代換是函數運算中很有效的工具。
 ans: $f^{[n]}(x)=\dfrac{2}{1-\left(1-\frac2x\right)^{2^n}}$
 
@@ -104,13 +104,13 @@ ans: $f(x)=\dfrac{1+\lg x}{1+\lg^2x}$
 zh: 設 $F(x)$ 是對 $x=0,1$ 以外一切實數有定義的實值函數，且
 $$F(x)+F\Big(\frac{x-1}{x}\Big)=1+x.\qquad(1)$$
 求 $F(x)$。
-sol: 關鍵是 $u(x)=\dfrac{x-1}{x}$ 迭代三次會回到 $x$：$x\to\dfrac{x-1}{x}\to\dfrac{1}{1-x}\to x$。⟦驗算｜$u\big(\frac{x-1}x\big)=\dfrac{\frac{x-1}x-1}{\frac{x-1}x}=\dfrac{-1}{x-1}=\dfrac1{1-x}$；$u\big(\frac1{1-x}\big)=\dfrac{\frac1{1-x}-1}{\frac1{1-x}}=1-(1-x)=x$。⟧
+sol: 關鍵是 $u(x)=\dfrac{x-1}{x}$ 迭代三次會回到 $x$：$x\to\dfrac{x-1}{x}\to\dfrac{1}{1-x}\to x$。⟦驗算｜$$u\big(\frac{x-1}x\big)=\dfrac{\frac{x-1}x-1}{\frac{x-1}x}=\dfrac{-1}{x-1}=\dfrac1{1-x}$$；$$u\big(\frac1{1-x}\big)=\dfrac{\frac1{1-x}-1}{\frac1{1-x}}=1-(1-x)=x$$。⟧
 所以在 (1) 中依序把 $x$ 換成 $\dfrac{x-1}x$ 和 $\dfrac1{1-x}$，得
 $$\begin{aligned}F\Big(\frac{x-1}{x}\Big)+F\Big(\frac{1}{1-x}\Big)&=\frac{2x-1}{x},&(2)\\ F\Big(\frac{1}{1-x}\Big)+F(x)&=\frac{2-x}{1-x}.&(3)\end{aligned}$$
 ⟦右邊怎麼算｜(2)：$1+\frac{x-1}x=\frac{2x-1}x$。(3)：$1+\frac1{1-x}=\frac{2-x}{1-x}$。⟧
 (1)$-$(2)$+$(3) 消去另外兩項：
 $$\begin{aligned}2F(x)&=(1+x)-\frac{2x-1}{x}+\frac{2-x}{1-x},\\ F(x)&=\frac{1+x^2-x^3}{2x(1-x)}.\end{aligned}$$
-⟦通分｜公分母 $x(1-x)$。三個分子：$(1+x)\cdot x(1-x)=x(1-x^2)=x-x^3$；$-(2x-1)(1-x)=-(2x-1-2x^2+x)=2x^2-3x+1$；$(2-x)x=2x-x^2$。相加：$x-x^3+2x^2-3x+1+2x-x^2=1+x^2-x^3$。⟧
+⟦通分｜公分母 $x(1-x)$。三個分子：$$(1+x)\cdot x(1-x)=x(1-x^2)=x-x^3$$；$$-(2x-1)(1-x)=-(2x-1-2x^2+x)=2x^2-3x+1$$；$(2-x)x=2x-x^2$。相加：$$x-x^3+2x^2-3x+1+2x-x^2=1+x^2-x^3$$。⟧
 ans: $F(x)=\dfrac{1+x^2-x^3}{2x(1-x)}$
 
 === text
@@ -120,12 +120,12 @@ ans: $F(x)=\dfrac{1+x^2-x^3}{2x(1-x)}$
 zh: 函數 $f(n)$ 對所有正整數有定義，取非負整數值，且對所有正整數 $m,n$ 有 $f(m+n)-f(m)-f(n)=0$ 或 $1$；又 $f(2)=0$，$f(3)>0$，$f(9999)=3333$。求 $f(1982)$。
 sol: （這是 1982 年 IMO 第 1 題。）條件說的是 $f(m+n)\ge f(m)+f(n)$，且最多多 $1$。
 <b>先求小的值.</b> $0=f(2)\ge2f(1)$，所以 $f(1)=0$。$f(3)-f(2)-f(1)=0$ 或 $1$，得 $0\le f(3)\le1$，又 $f(3)>0$，所以 $f(3)=1$。
-<b>證明 $f(3k)=k$（$1\le k\le3333$）.</b> 由 $f(3k)\ge f(3(k-1))+f(3)=f(3(k-1))+1$，歸納得 $f(3k)\ge k$。若某個 $k_0$（$1\le k_0\lt 3333$）使 $f(3k_0)\ge k_0+1$，則
+<b>證明 $f(3k)=k$（$1\le k\le3333$）.</b> 由 $$f(3k)\ge f(3(k-1))+f(3)=f(3(k-1))+1$$，歸納得 $f(3k)\ge k$。若某個 $k_0$（$1\le k_0\lt 3333$）使 $f(3k_0)\ge k_0+1$，則
 $$\begin{aligned}f(9999)&\ge f(9999-3k_0)+f(3k_0)\\&\ge(3333-k_0)+(k_0+1)>3333,\end{aligned}$$
 矛盾。所以 $f(3k)=k$。
-<b>夾出 $f(1982)$.</b> $f(1982)\ge f(1980)+f(2)=660$，且 $661=f(1983)\ge f(1982)+f(1)=f(1982)$，所以 $660\le f(1982)\le661$。若 $f(1982)=661$，則
+<b>夾出 $f(1982)$.</b> $f(1982)\ge f(1980)+f(2)=660$，且 $$661=f(1983)\ge f(1982)+f(1)=f(1982)$$，所以 $660\le f(1982)\le661$。若 $f(1982)=661$，則
 $$\begin{aligned}f(9999)&=f(5\times1982+89)\ge5f(1982)+f(89)\\&\ge5\times661+f(87)=3305+29>3333,\end{aligned}$$
-⟦每一步｜$f(a_1+\dots+a_k)\ge f(a_1)+\dots+f(a_k)$ 由 $f(m+n)\ge f(m)+f(n)$ 重複使用得到；$f(89)\ge f(87)+f(2)=f(87)$；$f(87)=f(3\times29)=29$。⟧
+⟦每一步｜$$f(a_1+\dots+a_k)\ge f(a_1)+\dots+f(a_k)$$ 由 $f(m+n)\ge f(m)+f(n)$ 重複使用得到；$f(89)\ge f(87)+f(2)=f(87)$；$f(87)=f(3\times29)=29$。⟧
 矛盾，所以 $f(1982)=660$。
 ans: $660$
 
@@ -142,7 +142,7 @@ $$\begin{aligned}f(x^{k+1})&=f(x^k)-f\Big(\frac1x\Big)=kf(x)-\big[f(1)-f(x)\big]
 === 習題 1
 zh: 已知函數 $y=\dfrac{ax+b}{cx+d}$ 的圖形與它的反函數的圖形完全重合，其中實數 $a,b,c,d$ 滿足 $(a^2+c^2)(c^2+d^2)\ne0$。這個函數應該具有怎樣的形式？
 ans: $y=x$，或 $y=\dfrac{ax+b}{cx-a}$（即 $d=-a$）。
-sol: 解 $y=\frac{ax+b}{cx+d}$ 得反函數 $y=\dfrac{b-dx}{cx-a}$⟦求反函數｜$y(cx+d)=ax+b\Rightarrow x(cy-a)=b-dy\Rightarrow x=\frac{b-dy}{cy-a}$，再把 $x,y$ 對調。⟧。兩者圖形重合，就是對定義域內每個 $x$ 都有 $\dfrac{ax+b}{cx+d}=\dfrac{b-dx}{cx-a}$，交叉相乘：
+sol: 解 $y=\frac{ax+b}{cx+d}$ 得反函數 $y=\dfrac{b-dx}{cx-a}$⟦求反函數｜$$y(cx+d)=ax+b\Rightarrow x(cy-a)=b-dy\Rightarrow x=\frac{b-dy}{cy-a}$$，再把 $x,y$ 對調。⟧。兩者圖形重合，就是對定義域內每個 $x$ 都有 $\dfrac{ax+b}{cx+d}=\dfrac{b-dx}{cx-a}$，交叉相乘：
 $$(ax+b)(cx-a)=(cx+d)(b-dx),$$
 整理成
 $$c(a+d)x^2-(a^2-d^2)x-b(a+d)\equiv0.$$
@@ -159,7 +159,7 @@ sol: <b>先求 $f(3)$.</b>
 $$\begin{aligned}f(3)f(7)&=f(21)\lt f(22)=f(2)f(11)\\&\lt 2f(14)=2f(2)f(7)=4f(7),\end{aligned}$$
 所以 $f(3)\lt 4$；又 $f(3)>f(2)=2$，故 $f(3)=3$。（另外 $f(2)=f(1)f(2)$ 給出 $f(1)=1$。）
 <b>反證.</b> 設使 $f(n)\ne n$ 的最小正整數為 $n_0\ge4$，則 $f(k)=k$（$k\lt n_0$）。因為 $f(n_0)>f(n_0-1)=n_0-1$ 且 $f(n_0)\ne n_0$，只能 $f(n_0)>n_0$；又 $f$ 嚴格遞增且取整數值，所以 $n\ge n_0$ 時 $f(n)>n$。⟦為什麼｜$f(n)-n$ 每往後一步至少不減（$f(n+1)\ge f(n)+1$），在 $n_0$ 已經 $\ge1$。⟧ (1)
-(i) $n_0$ 是奇數：$2$ 與 $n_0-2$ 互質，$f(2(n_0-2))=f(2)f(n_0-2)=2(n_0-2)$。但 $n_0\ge4$ 時 $2(n_0-2)\ge n_0$，與 (1) 矛盾。
+(i) $n_0$ 是奇數：$2$ 與 $n_0-2$ 互質，$$f(2(n_0-2))=f(2)f(n_0-2)=2(n_0-2)$$。但 $n_0\ge4$ 時 $2(n_0-2)\ge n_0$，與 (1) 矛盾。
 (ii) $n_0$ 是偶數：$2$ 與 $n_0-1$ 互質，$f(2(n_0-1))=2(n_0-1)$，而 $2(n_0-1)>n_0$，與 (1) 矛盾。
 所以 $f(n)=n$ 對一切 $n$ 成立。
 
@@ -167,9 +167,9 @@ $$\begin{aligned}f(3)f(7)&=f(21)\lt f(22)=f(2)f(11)\\&\lt 2f(14)=2f(2)f(7)=4f(7)
 zh: 函數 $f(x,y)$ 對所有非負整數 $x,y$ 滿足：(1) $f(0,y)=y+1$；(2) $f(x+1,0)=f(x,1)$；(3) $f(x+1,y+1)=f\big(x,f(x+1,y)\big)$。試確定 $f(4,1981)$。
 hint: 依序求出 $f(1,n),f(2,n),f(3,n)$ 的公式。
 ans: $f(4,1981)=2^{2^{\cdot^{\cdot^{\cdot^{2}}}}}-3$，其中 $2$ 共有 $1984$ 層。
-sol: $f(1,n)=f\big(0,f(1,n-1)\big)=f(1,n-1)+1$，且 $f(1,0)=f(0,1)=2$，所以 $f(1,n)=n+2$。
-$f(2,n)=f\big(1,f(2,n-1)\big)=f(2,n-1)+2$，$f(2,0)=f(1,1)=3$，所以 $f(2,n)=2n+3$。
-$f(3,n)=f\big(2,f(3,n-1)\big)=2f(3,n-1)+3$，即 $f(3,n)+3=2\big[f(3,n-1)+3\big]$，又 $f(3,0)=f(2,1)=5$，所以 $f(3,n)+3=2^n\cdot8$，$f(3,n)=2^{n+3}-3$。
-$f(4,n)=f\big(3,f(4,n-1)\big)=2^{f(4,n-1)+3}-3$。令 $t_n=f(4,n)+3$，$\varphi(x)=2^x$，則 $t_n=\varphi(t_{n-1})$，所以 $t_n=\varphi^{[n]}(t_0)$。而 $t_0=f(4,0)+3=f(3,1)+3=16=2^{2^2}$，所以
+sol: $$f(1,n)=f\big(0,f(1,n-1)\big)=f(1,n-1)+1$$，且 $f(1,0)=f(0,1)=2$，所以 $f(1,n)=n+2$。
+$$f(2,n)=f\big(1,f(2,n-1)\big)=f(2,n-1)+2$$，$f(2,0)=f(1,1)=3$，所以 $f(2,n)=2n+3$。
+$$f(3,n)=f\big(2,f(3,n-1)\big)=2f(3,n-1)+3$$，即 $f(3,n)+3=2\big[f(3,n-1)+3\big]$，又 $f(3,0)=f(2,1)=5$，所以 $f(3,n)+3=2^n\cdot8$，$f(3,n)=2^{n+3}-3$。
+$$f(4,n)=f\big(3,f(4,n-1)\big)=2^{f(4,n-1)+3}-3$$。令 $t_n=f(4,n)+3$，$\varphi(x)=2^x$，則 $t_n=\varphi(t_{n-1})$，所以 $t_n=\varphi^{[n]}(t_0)$。而 $$t_0=f(4,0)+3=f(3,1)+3=16=2^{2^2}$$，所以
 $$f(4,1981)=\varphi^{[1981]}(16)-3=\underbrace{2^{2^{\cdot^{\cdot^{\cdot^{2}}}}}}_{1984\text{ 個 }2}-3.$$
 ⟦為什麼是 1984 層｜$16=2^{2^2}$ 已經有 3 個 2，每迭代一次 $\varphi$ 多一層，$3+1981=1984$。⟧
