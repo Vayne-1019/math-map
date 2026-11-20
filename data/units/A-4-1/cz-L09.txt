@@ -1,0 +1,21 @@
+=== meta
+title: 比大小的三個基本招
+from: cz-L09
+order: 10
+
+=== body
+<div class="hero">比較 $A$ 和 $B$：<b>作差</b>看正負、<b>作商</b>和 1 比、<b>放縮</b>找中間人<br>作差後的目標：拆成<b>因式</b>或<b>平方和</b></div>
+<div class="cards">
+<div class="card"><h4>① 作差</h4><div class="rule">$A-B$ 分解或配方</div>
+<div class="eg">$A-B=(y-z)(b-c)$<br>兩個負數相乘 $>0$ <span class="pill">分解</span></div></div>
+<div class="card"><h4>② 作商</h4><div class="rule">都是正的時，$\frac AB>1\Rightarrow A>B$</div>
+<div class="eg">$\frac AB=\frac{4m^2+5m+1}{4m^2+4m+1}>1$</div></div>
+<div class="card"><h4>③ 放縮</h4><div class="rule">$A\le C\le B$</div>
+<div class="eg">$\frac1{k^2}\lt\frac1{(k-1)k}=\frac1{k-1}-\frac1k$<br>$\sum\frac1{k^2}\lt 2-\frac1n$ <span class="pill">裂項</span></div></div>
+</div>
+<p>配方是作差的最好朋友：⟦例子｜$x+y=1$ 時要證 $\big(1+\frac1x\big)\big(1+\frac1y\big)\ge9$，去分母後差是 $8x^2-8x+2=2(2x-1)^2\ge0$。等號在 $x=\frac12$。⟧ 看到「$\ge$」先想<b>何時取等號</b>，平方就從那裡配。</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>作商前沒確認分母、比較對象都是正數</li>
+<li>兩邊同乘一個式子時沒檢查它的正負，不等號方向錯</li>
+<li>放縮過頭：$\frac1{k^2}\lt\frac1{k(k-1)}$ 要從 $k=2$ 開始，$k=1$ 那項要單獨留著</li></ul></div>
+<div class="bottomline">比大小先作差，差化成「乘積」或「平方和」就看得出正負。</div>

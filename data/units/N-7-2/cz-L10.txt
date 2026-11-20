@@ -1,0 +1,20 @@
+=== meta
+title: 整除特徵：看數碼就知道
+from: cz-L10
+order: 20
+
+=== body
+<div class="hero">$10\equiv1\pmod 9$ → 看<b>數碼和</b>；$10\equiv-1\pmod{11}$ → 看<b>交錯和</b><br>數碼排列題：排法會變，但數碼和<b>不變</b></div>
+<div class="cards">
+<div class="card"><h4>① 3 與 9</h4><div class="rule">數碼和被 3（9）整除</div>
+<div class="eg">$726381$：$7+2+6+3+8+1=27$<br>⇒ $9\mid726381$</div></div>
+<div class="card"><h4>② 11</h4><div class="rule">交錯和被 11 整除</div>
+<div class="eg">$745921$：$7-4+5-9+2-1=0$<br>⇒ $11\mid745921$</div></div>
+<div class="card"><h4>③ 8（2、4 類推）</h4><div class="rule">只看末三位</div>
+<div class="eg">$\overline{1234xy}$：$123400$ 是 8 的倍數<br>⇒ 只要 $8\mid\overline{4xy}$</div></div>
+</div>
+<p>11 的題常配合<b>估計</b>：⟦例子｜用 $0$ 到 $5$ 各一次組六位數，交錯和介於 $-9$ 與 $9$ 之間，要是 11 的倍數只能是 $0$；但那表示兩組數碼和相等、總和 $15$ 是偶數，矛盾。所以這種六位數不存在。⟧ 交錯和夾在小範圍裡，往往只剩 0 或 ±11。</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>11 的交錯和算到負數就以為不整除：$-11$、$0$ 也是 11 的倍數</li>
+<li>數碼和判斷只對 3 和 9 有效，對 6 還要另外檢查偶數</li></ul></div>
+<div class="bottomline">數碼題先算「排不變的量」：數碼和、交錯和。</div>
