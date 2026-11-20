@@ -27,9 +27,9 @@ $$|\overline A|=|S|-|A|\tag{1}$$
 
 === 定理 1 | 兩個集合的容斥
 zh: 設 $A_1,A_2$ 是 $S$ 的子集，則
-$$|\overline{A_1}\cap\overline{A_2}|=|S|-|A_1|-|A_2|+|A_1\cap A_2|.\tag{2}$$
+$$\begin{aligned}&|\overline{A_1}\cap\overline{A_2}|\\&=|S|-|A_1|-|A_2|\\&\quad+|A_1\cap A_2|.\end{aligned}\tag{2}$$
 sol: 用<b>貢獻法</b>證明。數 $|S|$ 時，$S$ 的每個元素貢獻 1，不在 $S$ 中的貢獻 0，總貢獻就是 $|S|$。要證 (2)，只要檢查 $S$ 的每個元素 $x$ 對左右兩邊的貢獻是否相同。按 $x$ 屬於哪些 $A_i$ 分四種情形：
-<table class="rate"><tr><th>$x$ 在</th><th>左邊</th><th>右邊 $|S|-|A_1|-|A_2|+|A_1\cap A_2|$</th></tr>
+<table class="rate"><tr><th>$x$ 在</th><th>左邊</th><th>右邊</th></tr>
 <tr><td>都不在</td><td>1</td><td>$1-0-0+0=1$</td></tr>
 <tr><td>只在 $A_1$</td><td>0</td><td>$1-1-0+0=0$</td></tr>
 <tr><td>只在 $A_2$</td><td>0</td><td>$1-0-1+0=0$</td></tr>
@@ -41,16 +41,16 @@ sol: 用<b>貢獻法</b>證明。數 $|S|$ 時，$S$ 的每個元素貢獻 1，�
 
 === 定理 2 | 容斥原理
 zh: 設 $A_1,A_2,\dots,A_k$ 是 $S$ 的子集，則
-$$\begin{aligned}|\overline{A_1}\cap\cdots\cap\overline{A_k}|=\;&|S|-\sum_{i}|A_i|+\sum_{i\lt j}|A_i\cap A_j|\\&-\sum_{i\lt j\lt l}|A_i\cap A_j\cap A_l|+\cdots\\&+(-1)^k|A_1\cap A_2\cap\cdots\cap A_k|.\end{aligned}\tag{3}$$
+$$\begin{aligned}&|\overline{A_1}\cap\cdots\cap\overline{A_k}|\qquad(3)\\=\;&|S|-\sum_{i}|A_i|\\&+\sum_{i\lt j}|A_i\cap A_j|\\&-\sum_{i\lt j\lt l}|A_i\cap A_j\cap A_l|+\cdots\\&+(-1)^k|A_1\cap A_2\cap\cdots\cap A_k|.\end{aligned}$$
 其中 $\sum_i|A_i|=|A_1|+\cdots+|A_k|$，$\sum_{i\lt j}|A_i\cap A_j|$ 是所有兩兩交集元素個數的和（共 $\mathrm C_k^2$ 項），依此類推。<br>
 $k=2$ 時 (3) 就是 (2)；$k=3$ 時 (3) 成為
-$$\begin{aligned}|\overline{A_1}\cap\overline{A_2}\cap\overline{A_3}|=\;&|S|-|A_1|-|A_2|-|A_3|\\&+|A_1\cap A_2|+|A_1\cap A_3|+|A_2\cap A_3|\\&-|A_1\cap A_2\cap A_3|.\end{aligned}\tag{4}$$
+$$\begin{aligned}&|\overline{A_1}\cap\overline{A_2}\cap\overline{A_3}|\\=\;&|S|-|A_1|-|A_2|-|A_3|\\&+|A_1\cap A_2|+|A_1\cap A_3|\\&+|A_2\cap A_3|\\&-|A_1\cap A_2\cap A_3|.\end{aligned}\tag{4}$$
 sol: 以 (4) 為例用貢獻法證明，一般的 $k$ 證法相同。設 $x\in S$：
 <ul><li>$x$ 不屬於任何 $A_i$：對左邊貢獻 1；對右邊只有 $|S|$ 貢獻 1，其餘都是 0，共 1。</li>
 <li>$x$ 恰屬於一個，例如只在 $A_1$：左邊 0；右邊 $1-1=0$。</li>
-<li>$x$ 恰屬於兩個，例如在 $A_2,A_3$、不在 $A_1$：左邊 0；右邊 $1-(0+1+1)+(0+0+1)-0=0$。</li>
+<li>$x$ 恰屬於兩個，例如在 $A_2,A_3$、不在 $A_1$：左邊 0；右邊 $1-2+1-0=0$。</li>
 <li>$x$ 屬於全部三個：左邊 0；右邊 $1-3+3-1=0$。</li></ul>
-兩邊貢獻都相同，(4) 成立。⟦一般的 k 為什麼也對｜若 $x$ 恰屬於其中 $m$ 個集合（$m\ge1$），它在右邊被算了 $1-\mathrm C_m^1+\mathrm C_m^2-\cdots+(-1)^m\mathrm C_m^m=(1-1)^m=0$ 次，在左邊也是 0；$m=0$ 時兩邊都是 1。⟧
+兩邊貢獻都相同，(4) 成立。⟦一般的 k 為什麼也對｜若 $x$ 恰屬於其中 $m$ 個集合（$m\ge1$），它在右邊被算了 $$1-\mathrm C_m^1+\mathrm C_m^2-\cdots+(-1)^m\mathrm C_m^m=0$$ 次，在左邊也是 0；$m=0$ 時兩邊都是 1。⟧
 
 === text
 <p>定理 2 通常叫做<b>容斥原理</b>，是計數中極重要、用途極廣的原理。下面舉例說明。</p>
@@ -74,10 +74,10 @@ ans: $265$
 
 === 定理 3 | 錯位數公式
 zh: 對正整數 $n$，
-$$D_n=n!\left(1-\frac1{1!}+\frac1{2!}-\frac1{3!}+\cdots+(-1)^n\frac1{n!}\right).\tag{5}$$
+$$\begin{aligned}D_n=n!\,\Big(&1-\frac1{1!}+\frac1{2!}-\frac1{3!}\\&+\cdots+(-1)^n\frac1{n!}\Big).\end{aligned}\tag{5}$$
 sol: 原書把證明留作習題。仿照例 2：令 $A_i$ 為「$i$ 在第 $i$ 位」的排列集合。任 $j$ 個 $A_i$ 的交集有 $(n-j)!$ 個排列，這樣的交集有 $\mathrm C_n^j$ 個。由容斥原理
 $$D_n=\sum_{j=0}^{n}(-1)^j\mathrm C_n^j(n-j)!=\sum_{j=0}^{n}(-1)^j\frac{n!}{j!},$$
-⟦最後一步｜$\mathrm C_n^j(n-j)!=\dfrac{n!}{j!\,(n-j)!}\cdot(n-j)!=\dfrac{n!}{j!}$。⟧這就是 (5)。例如 $D_6=720\left(1-1+\frac12-\frac16+\frac1{24}-\frac1{120}+\frac1{720}\right)=265$。
+⟦最後一步｜$$\mathrm C_n^j(n-j)!=\frac{n!}{j!\,(n-j)!}\cdot(n-j)!=\frac{n!}{j!}.$$⟧這就是 (5)。例如 $$D_6=720\left(\tfrac12-\tfrac16+\tfrac1{24}-\tfrac1{120}+\tfrac1{720}\right)=265.$$
 
 === 例 3 | 三個數字都出現
 src: 匈牙利數學競賽題
@@ -92,7 +92,7 @@ ans: $3^n-3\cdot2^n+3$
 
 === 定理 4 | 並集形式的容斥原理
 zh: 設 $A_1,\dots,A_k$ 是 $S$ 的子集，則
-$$\begin{aligned}|A_1\cup\cdots\cup A_k|=\;&\sum_i|A_i|-\sum_{i\lt j}|A_i\cap A_j|\\&+\sum_{i\lt j\lt l}|A_i\cap A_j\cap A_l|-\cdots\\&+(-1)^{k-1}|A_1\cap\cdots\cap A_k|.\end{aligned}\tag{6}$$
+$$\begin{aligned}&|A_1\cup\cdots\cup A_k|\qquad(6)\\=\;&\sum_i|A_i|\\&-\sum_{i\lt j}|A_i\cap A_j|\\&+\sum_{i\lt j\lt l}|A_i\cap A_j\cap A_l|-\cdots\\&+(-1)^{k-1}|A_1\cap\cdots\cap A_k|.\end{aligned}$$
 sol: 由 (3)，只要證
 $$|\overline{A_1}\cap\cdots\cap\overline{A_k}|=|S|-|A_1\cup\cdots\cup A_k|.$$
 仍用貢獻法。若 $x$ 不在任何 $A_i$ 中，它在左邊的交集裡，貢獻 1；它不在並集裡，對右邊貢獻 $1-0=1$。若 $x$ 在某些 $A_i$ 中，它不在左邊的交集裡，貢獻 0；它在並集裡，右邊貢獻 $1-1=0$。兩邊相同。⟦其實就是｜「一個都不屬於」與「至少屬於一個」互為補集，這正是式 (1)。⟧
@@ -110,7 +110,7 @@ sol: 設集合為 $A_1,\dots,A_{1978}$，$|A_i|=40$，$|A_i\cap A_j|=1$（$i\ne 
 <b>第二步：$a$ 屬於每一個集合。</b>設 $B$ 是 $A_{52},\dots,A_{1978}$ 中的任一個，假設 $a\notin B$。$B$ 和 $A_1,\dots,A_{51}$ 各有一個公共元素，這些元素都不是 $a$；又 $A_1,\dots,A_{51}$ 兩兩只共有 $a$，所以這 51 個公共元素兩兩不同，⟦為什麼兩兩不同｜若 $B$ 與 $A_i$、$A_j$ 的公共元素是同一個 $b$，則 $b\in A_i\cap A_j=\{a\}$，$b=a$，但 $a\notin B$，矛盾。⟧於是 $|B|\ge51$，與 $|B|=40$ 矛盾。所以 $a$ 是全部 1978 個集合的公共元素。<br>
 <b>第三步：計算。</b>任兩個集合的公共元素恰好一個，就是 $a$，所以任意 $m$ 個（$m\ge2$）集合的交集都恰是 $\{a\}$。由 (6)：
 $$\begin{aligned}|A_1\cup\cdots\cup A_{1978}|&=40\,\mathrm C_{1978}^1-\mathrm C_{1978}^2+\mathrm C_{1978}^3-\cdots-\mathrm C_{1978}^{1978}\\&=39\times1978+\left[\mathrm C_{1978}^1-\mathrm C_{1978}^2+\cdots-\mathrm C_{1978}^{1978}\right]\\&=39\times1978+1=77143.\end{aligned}$$
-⟦方括號為什麼是 1｜$(1-1)^{1978}=1-\mathrm C_{1978}^1+\mathrm C_{1978}^2-\cdots+\mathrm C_{1978}^{1978}=0$，所以 $\mathrm C_{1978}^1-\mathrm C_{1978}^2+\cdots-\mathrm C_{1978}^{1978}=1$。⟧<br>
+⟦方括號為什麼是 1｜$(1-1)^{1978}=0$，展開即 $1-\mathrm C_{1978}^1+\cdots+\mathrm C_{1978}^{1978}=0$，所以 $\mathrm C_{1978}^1-\mathrm C_{1978}^2+\cdots-\mathrm C_{1978}^{1978}=1$。⟧<br>
 也可以直接數：每個集合除了 $a$ 以外的 39 個元素互不重複，再加上 $a$，共 $39\times1978+1$ 個。
 ans: $77143$
 

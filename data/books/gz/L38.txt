@@ -101,12 +101,12 @@ $$\begin{aligned}3&=33-2\times15=33-2\times(147-4\times33)=9\times33-2\times147\
 ans: $(327,180)=3=20\times180-11\times327$
 
 === text
-<p>定理 4 的 2° 叫做<b>貝祖（Bézout）定理</b>，在初等數論中應用很廣。若 $ax_0+by_0=c$，則 $x=x_0+bt$，$y=y_0-at$ 也滿足 $ax+by=c$，⟦驗算｜$a(x_0+bt)+b(y_0-at)=ax_0+by_0+abt-abt=c$。⟧所以滿足 $ax+by=(a,b)$ 的 $x,y$ 有無窮多組。</p>
+<p>定理 4 的 2° 叫做<b>貝祖（Bézout）定理</b>，在初等數論中應用很廣。若 $ax_0+by_0=c$，則 $x=x_0+bt$，$y=y_0-at$ 也滿足 $ax+by=c$，⟦驗算｜$a(x_0+bt)+b(y_0-at)$ 展開後 $abt$ 一加一減抵消，剩 $ax_0+by_0=c$。⟧所以滿足 $ax+by=(a,b)$ 的 $x,y$ 有無窮多組。</p>
 <p>關於多個整數的最大公因數，有下面兩個定理。</p>
 
 === 定理 5
 zh: $(a_1,a_2,\dots,a_n)=\big((a_1,\dots,a_{n-1}),a_n\big)$。
-sol: 設質數 $p$ 在 $a_1,\dots,a_n$ 的分解式中的次數各為 $\alpha_1,\dots,\alpha_n$。$p$ 在左邊的次數是 $\min(\alpha_1,\dots,\alpha_n)$；在 $(a_1,\dots,a_{n-1})$ 中是 $\min(\alpha_1,\dots,\alpha_{n-1})$，所以在右邊是 $\min\big(\min(\alpha_1,\dots,\alpha_{n-1}),\alpha_n\big)=\min(\alpha_1,\dots,\alpha_n)$。每個質數在兩邊的次數都相同，所以兩邊相等。
+sol: 設質數 $p$ 在 $a_1,\dots,a_n$ 的分解式中的次數各為 $\alpha_1,\dots,\alpha_n$。$p$ 在左邊的次數是 $\min(\alpha_1,\dots,\alpha_n)$；在 $(a_1,\dots,a_{n-1})$ 中是 $\min(\alpha_1,\dots,\alpha_{n-1})$，所以在右邊是 $$\min\big(\min(\alpha_1,\dots,\alpha_{n-1}),\alpha_n\big)=\min(\alpha_1,\dots,\alpha_n).$$每個質數在兩邊的次數都相同，所以兩邊相等。
 
 === 定理 6
 zh: 設 $a_1,\dots,a_n$ 不全為零，則存在整數 $x_1,\dots,x_n$ 使
@@ -125,17 +125,17 @@ $$\binom xr=(-1)^r\frac{(-x)(-x+1)\cdots(-x+r-1)}{r!}=(-1)^r\mathrm C_{r-x-1}^r,
 
 === 定理 7
 zh: 多項式 $P(x)$ 是整值多項式的充要條件是：存在整數 $a_k,a_{k-1},\dots,a_0$，使
-$$P(x)=a_k\binom xk+a_{k-1}\binom x{k-1}+\cdots+a_1\binom x1+a_0\binom x0.\tag{3}$$
+$$\begin{aligned}P(x)=\;&a_k\binom xk+a_{k-1}\binom x{k-1}+\cdots\\&+a_1\binom x1+a_0\binom x0.\qquad(3)\end{aligned}$$
 sol: 充分性顯然（每個 $\binom xr$ 都是整值的）。下面對次數 $k$ 用歸納法證必要性。$k=0$ 時顯然。<br>
 任一個 $n$ 次多項式 $Q(x)$ 都可唯一地寫成
 $$Q(x)=\alpha_n\binom xn+\alpha_{n-1}\binom x{n-1}+\cdots+\alpha_1\binom x1+\alpha_0,\quad\alpha_i\in\mathbb R,$$
 ⟦為什麼可以、而且唯一｜依次代 $x=0,1,\dots,n$：$x=0$ 時只剩 $\alpha_0$；$x=1$ 時只剩 $\alpha_1+\alpha_0$；……每代一次只多出一個新的未知數，所以 $\alpha_0,\alpha_1,\dots,\alpha_n$ 逐個確定。兩邊都是 $n$ 次多項式、在 $n+1$ 個點相等，就恆等。⟧<br>
 設 $P(x)$ 是 $k+1$ 次整值多項式，寫成
-$$P(x)=a_{k+1}\binom x{k+1}+a_k\binom xk+\cdots+a_1\binom x1+a_0,\quad a_i\in\mathbb R.\tag{4}$$
+$$\begin{aligned}P(x)=\;&a_{k+1}\binom x{k+1}+a_k\binom xk+\cdots\\&+a_1\binom x1+a_0\quad(a_i\in\mathbb R).\quad(4)\end{aligned}$$
 $P(x+1)$ 也是整值的，所以 $Q(x)=P(x+1)-P(x)$ 是整值多項式。當 $r\ge1$ 時
 $$\binom{x+1}r-\binom xr=\frac{x(x-1)\cdots(x-r+2)}{r!}\big[(x+1)-(x-r+1)\big]=\binom x{r-1},$$
 ⟦提出公因式｜兩項都含 $x(x-1)\cdots(x-r+2)$，第一項多一個 $(x+1)$，第二項多一個 $(x-r+1)$，相減得 $r$，與分母的 $r!$ 約成 $(r-1)!$。⟧所以
-$$Q(x)=a_{k+1}\binom xk+a_k\binom x{k-1}+\cdots+a_2\binom x1+a_1.$$
+$$\begin{aligned}Q(x)=\;&a_{k+1}\binom xk+a_k\binom x{k-1}+\cdots\\&+a_2\binom x1+a_1.\end{aligned}$$
 $Q$ 是 $k$ 次整值多項式，由歸納假設和表示法的唯一性，$a_1,\dots,a_{k+1}$ 都是整數。又 $a_0=P(0)$ 也是整數。所以 (4) 的係數都是整數。
 
 === text
@@ -163,7 +163,7 @@ sol: 若 $n=p^2$，因 $n>9$ 是奇數，$p\ge5$，$n-1\ge4p$。⟦為什麼｜$
 
 === 習題 3
 zh: 證明 $\left(2^m-1,\ 2^n-1\right)=2^{(m,n)}-1$。
-sol: 設 $d=(m,n)$。顯然 $2^d-1$ 整除 $2^m-1$ 和 $2^n-1$。⟦為什麼｜$m=dk$，$2^m-1=(2^d)^k-1=(2^d-1)\big((2^d)^{k-1}+\cdots+1\big)$。⟧反過來，設 $D$ 是 $2^m-1$ 和 $2^n-1$ 的公因數。取正整數 $x,y$ 使 $mx-ny=d$（由貝祖定理，可調整成 $x,y>0$）。則 $D\mid2^{mx}-1$，$D\mid2^{ny}-1$，所以
+sol: 設 $d=(m,n)$。顯然 $2^d-1$ 整除 $2^m-1$ 和 $2^n-1$。⟦為什麼｜$m=dk$，$2^m-1=(2^d)^k-1$ 含因式 $2^d-1$。⟧反過來，設 $D$ 是 $2^m-1$ 和 $2^n-1$ 的公因數。取正整數 $x,y$ 使 $mx-ny=d$（由貝祖定理，可調整成 $x,y>0$）。則 $D\mid2^{mx}-1$，$D\mid2^{ny}-1$，所以
 $$D\mid(2^{mx}-1)-(2^{ny}-1)=2^{ny}(2^d-1).$$
 $D$ 是奇數，所以 $D\mid2^d-1$。因此 $2^d-1$ 就是最大公因數。
 
@@ -196,12 +196,12 @@ hint: 對 $a,b$ 中較小者用歸納法（或無窮遞降）。
 sol: 設 $\dfrac{a^2+b^2}{ab+1}=k$，假設 $k$ 不是完全平方數。在所有滿足 $a^2+b^2=k(ab+1)$ 的正整數對中，取 $a+b$ 最小的一對，不妨 $a\ge b$。把它看成 $a$ 的二次方程
 $$a^2-kb\,a+(b^2-k)=0.$$
 它的另一根 $a'=kb-a=\dfrac{b^2-k}a$ 是整數。⟦兩個式子｜由韋達定理，兩根之和 $kb$、之積 $b^2-k$。第一式說明 $a'$ 是整數。⟧<br>
-若 $a'\lt 0$，則 $a'^2-kba'+b^2-k\ge a'^2+k+b^2-k>0$，⟦為什麼｜$a'\le-1$ 時 $-kba'\ge kb\ge k$。⟧不可能等於 0。若 $a'=0$，則 $b^2=k$，與 $k$ 不是平方數矛盾。所以 $a'>0$，$(a',b)$ 也是一組正整數解。但 $a'=\dfrac{b^2-k}a\lt \dfrac{b^2}a\le a$，所以 $a'+b\lt a+b$，與最小性矛盾。故 $k$ 是完全平方數。<br>
+若 $a'\lt 0$，則 $$a'^2-kba'+b^2-k\ge a'^2+k+b^2-k>0,$$⟦為什麼｜$a'\le-1$ 時 $-kba'\ge kb\ge k$。⟧不可能等於 0。若 $a'=0$，則 $b^2=k$，與 $k$ 不是平方數矛盾。所以 $a'>0$，$(a',b)$ 也是一組正整數解。但 $a'=\dfrac{b^2-k}a\lt \dfrac{b^2}a\le a$，所以 $a'+b\lt a+b$，與最小性矛盾。故 $k$ 是完全平方數。<br>
 例如 $(a,b)=(8,2)$：$\frac{68}{17}=4$；$(30,8)$：$\frac{964}{241}=4$。
 
 === 習題 9
 src: 第 10 屆國際數學奧林匹亞，1968 年
-zh: 設 $n$ 為正整數，求 $M=\left[\dfrac{n+1}2\right]+\left[\dfrac{n+2}{2^2}\right]+\cdots+\left[\dfrac{n+2^{k-1}}{2^k}\right]+\cdots$。
+zh: 設 $n$ 為正整數，求 $$M=\left[\frac{n+1}2\right]+\left[\frac{n+2}{2^2}\right]+\cdots+\left[\frac{n+2^{k-1}}{2^k}\right]+\cdots$$
 hint: 對 $n$ 用歸納法，或用恆等式 $\left[x+\frac12\right]=[2x]-[x]$。
 sol: 對任何實數 $x$，$\left[x+\frac12\right]=[2x]-[x]$。⟦驗證｜設 $x=m+\theta$，$0\le\theta\lt 1$。$\theta\lt \frac12$ 時兩邊都是 $m$；$\theta\ge\frac12$ 時兩邊都是 $m+1$。⟧取 $x=\frac n{2^k}$：
 $$\left[\frac{n+2^{k-1}}{2^k}\right]=\left[\frac n{2^k}+\frac12\right]=\left[\frac n{2^{k-1}}\right]-\left[\frac n{2^k}\right].$$

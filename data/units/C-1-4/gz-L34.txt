@@ -15,7 +15,7 @@ order: 40
 <div class="card"><h4>④ 造遞推</h4><div class="rule">用 $\mathrm C_n^k=\mathrm C_{n-1}^k+\mathrm C_{n-1}^{k-1}$ 拆，找 $f_n$ 與 $f_{n-1}$ 的關係</div>
 <div class="eg">$\sum(-1)^{k+1}\frac1k\mathrm C_n^k=f_{n-1}+\frac1n$<br>$\Rightarrow 1+\frac12+\cdots+\frac1n$</div></div>
 </div>
-<p>$k^2$ 怎麼辦？⟦拆成 k(k−1)+k｜$k^2\mathrm C_n^k=k(k-1)\mathrm C_n^k+k\,\mathrm C_n^k=n(n-1)\mathrm C_{n-2}^{k-2}+n\,\mathrm C_{n-1}^{k-1}$，所以 $\sum k^2\mathrm C_n^k=n(n-1)2^{n-2}+n2^{n-1}=n(n+1)2^{n-2}$。⟧</p>
+<p>$k^2$ 怎麼辦？⟦拆成 k(k−1)+k｜$$\begin{aligned}k^2\mathrm C_n^k&=k(k-1)\mathrm C_n^k+k\,\mathrm C_n^k\\&=n(n-1)\mathrm C_{n-2}^{k-2}+n\,\mathrm C_{n-1}^{k-1},\end{aligned}$$所以 $$\sum k^2\mathrm C_n^k=n(n+1)2^{n-2}.$$⟧</p>
 <div class="pitfall"><h4>⚠ 最常錯</h4><ul>
 <li>換指標忘了改上下限：$k$ 從 1 開始的和換成 $\mathrm C_{n-1}^{k-1}$ 後，變成從 0 到 $n-1$</li>
 <li>$\frac1k\mathrm C_n^k$ 不能直接吸收（會吸收的是 $\frac1k\mathrm C_{n-1}^{k-1}$），要先用 (ii) 拆</li></ul></div>

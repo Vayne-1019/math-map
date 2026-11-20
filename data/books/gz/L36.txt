@@ -18,15 +18,15 @@ $$a_n=2a_{n-1}-a_{n-2},\tag{1}$$
 <p>用 $a_n$ 記第 $n$ 個月初兔房裡的兔子對數，$a_1=1,a_2=2,a_3=3,a_4=5,a_5=8$。看起來每個數是前兩個數的和。一般地，第 $n$ 個月初的兔子分兩部分：一部分是第 $n-1$ 個月初就在的，共 $a_{n-1}$ 對；另一部分是第 $n$ 個月初新出生的，共 $a_{n-2}$ 對，⟦為什麼是 aₙ₋₂｜第 $n-2$ 個月初就在兔房的每對兔子（不論當時大小），到第 $n$ 個月初都至少兩個月大，都能生一對；而在第 $n-2$ 個月之後才出生的還不能生。⟧所以
 $$a_n=a_{n-1}+a_{n-2}.$$
 規定 $a_0=1$（則 $a_2=2=a_0+a_1$ 也符合），滿足
-$$a_n=a_{n-1}+a_{n-2}\ (n\ge2),\qquad a_0=a_1=1\tag{2}$$
+$$\begin{aligned}&a_n=a_{n-1}+a_{n-2}\ (n\ge2),\\&a_0=a_1=1\end{aligned}\tag{2}$$
 的數列叫做<b>費波那契數列</b>。由 (2) 不難算出 $a_{13}=377$，即第二年初兔房有 377 對兔子。問題是：怎樣由遞推關係和初始條件求出 $a_n$ 的一般表達式？</p>
 <p>一般地，若數列 $\{a_n\}$ 滿足
-$$a_n=c_1a_{n-1}+c_2a_{n-2}+\cdots+c_ka_{n-k}\quad(n=k,k+1,\dots),\tag{3}$$
+$$\begin{aligned}a_n=\;&c_1a_{n-1}+c_2a_{n-2}+\cdots+c_ka_{n-k}\\&(n=k,k+1,\dots),\qquad(3)\end{aligned}$$
 其中 $c_k\ne0$，就稱 $\{a_n\}$ 為 <b>$k$ 階線性遞迴數列</b>。「線性」是因為每個 $a_i$ 都以一次的形式出現。費波那契數列是二階的。</p>
 <p>$k$ 階遞迴數列由遞推關係 (3) 和 $k$ 個初始值 $a_0,\dots,a_{k-1}$ 唯一確定：知道 $a_0,\dots,a_{k-1}$，由 (3) 算出 $a_k$；再由 $a_1,\dots,a_k$ 算出 $a_{k+1}$……</p>
 <h3>二階線性遞迴</h3>
 <p>設
-$$a_n=c_1a_{n-1}+c_2a_{n-2},\quad n=2,3,\dots,\quad c_2\ne0.\tag{4}$$
+$$a_n=c_1a_{n-1}+c_2a_{n-2},\tag{4}$$其中 $c_2\ne0$。
 二次方程
 $$x^2=c_1x+c_2\tag{5}$$
 叫做 (4) 的<b>特徵方程</b>。分兩種情況。</p>
@@ -35,7 +35,7 @@ $$a_n-x_1a_{n-1}=x_2(a_{n-1}-x_1a_{n-2}),\qquad a_n-x_2a_{n-1}=x_1(a_{n-1}-x_2a_
 記 $p_n=a_n-x_1a_{n-1}$，$q_n=a_n-x_2a_{n-1}$，則 $p_n=x_2p_{n-1}$，$q_n=x_1q_{n-1}$，都是等比數列，所以 $p_{n+1}=x_2^np_1$，$q_{n+1}=x_1^nq_1$，即
 $$a_{n+1}-x_1a_n=x_2^np_1,\qquad a_{n+1}-x_2a_n=x_1^nq_1.$$
 兩式相減消去 $a_{n+1}$：$(x_1-x_2)a_n=x_1^nq_1-x_2^np_1$，所以
-$$a_n=\alpha_1x_1^n+\alpha_2x_2^n,\qquad \alpha_1=\frac{q_1}{x_1-x_2},\ \alpha_2=\frac{-p_1}{x_1-x_2}.\tag{6}$$
+$$a_n=\alpha_1x_1^n+\alpha_2x_2^n,\tag{6}$$其中 $\alpha_1=\dfrac{q_1}{x_1-x_2}$，$\alpha_2=\dfrac{-p_1}{x_1-x_2}$。
 $\alpha_1,\alpha_2$ 是由初始值 $a_0,a_1$ 確定的常數。反過來，對任意常數 $\alpha_1,\alpha_2$，(6) 都滿足 (4)：
 $$\begin{aligned}a_n-c_1a_{n-1}-c_2a_{n-2}&=\alpha_1x_1^{n-2}(x_1^2-c_1x_1-c_2)+\alpha_2x_2^{n-2}(x_2^2-c_1x_2-c_2)\\&=0,\end{aligned}$$
 因為 $x_1,x_2$ 是特徵方程的根。</p>
@@ -45,7 +45,7 @@ $$\begin{aligned}a_n-x_1a_{n-1}&=x_1^{n-1}p_1,\\x_1a_{n-1}-x_1^2a_{n-2}&=x_1^{n-
 $$a_n=x_1^na_0+nx_1^{n-1}p_1.\tag{7}$$
 因為 $c_2\ne0$，$x_1\ne0$。記 $\beta_1=a_0$，$\beta_2=\frac{p_1}{x_1}$，(7) 成為
 $$a_n=(\beta_1+\beta_2n)x_1^n.\tag{8}$$
-反過來，對任意 $\beta_1,\beta_2$，(8) 都滿足 (4)。⟦驗證｜$x_1$ 是 $x^2-c_1x-c_2=0$ 的重根，所以 $x_1=\frac{c_1}2$，即 $c_1-2x_1=0$。代入：<br>$a_n-c_1a_{n-1}-c_2a_{n-2}=\beta_1x_1^{n-2}(x_1^2-c_1x_1-c_2)+\beta_2nx_1^{n-2}(x_1^2-c_1x_1-c_2)+\beta_2x_1^{n-1}(c_1-2x_1)=0$。⟧</p>
+反過來，對任意 $\beta_1,\beta_2$，(8) 都滿足 (4)。⟦驗證｜$x_1$ 是 $x^2-c_1x-c_2=0$ 的重根，所以 $x_1=\frac{c_1}2$，即 $c_1-2x_1=0$。代入：$$\begin{aligned}&a_n-c_1a_{n-1}-c_2a_{n-2}\\&=\beta_1x_1^{n-2}(x_1^2-c_1x_1-c_2)\\&\quad+\beta_2nx_1^{n-2}(x_1^2-c_1x_1-c_2)\\&\quad+\beta_2x_1^{n-1}(c_1-2x_1)=0.\end{aligned}$$⟧</p>
 
 === 定理 1 | 二階線性遞迴的通項
 zh: 設 $x_1,x_2$ 是遞推關係 $a_n=c_1a_{n-1}+c_2a_{n-2}$ 的特徵方程 $x^2=c_1x+c_2$ 的兩根。<br>(i) 當 $x_1\ne x_2$ 時，$a_n=\alpha_1x_1^n+\alpha_2x_2^n$；<br>(ii) 當 $x_1=x_2$ 時，$a_n=(\beta_1+\beta_2n)x_1^n$。<br>其中 $\alpha_1,\alpha_2,\beta_1,\beta_2$ 都是由初始值確定的常數。
@@ -59,7 +59,7 @@ zh: 設 $x_1,x_2$ 是遞推關係 $a_n=c_1a_{n-1}+c_2a_{n-2}$ 的特徵方程 $x
 <p><b>費波那契數列的通項。</b>特徵方程 $x^2-x-1=0$ 的兩根是 $x_1=\frac{1+\sqrt5}2$，$x_2=\frac{1-\sqrt5}2$。設 $a_n=\alpha_1x_1^n+\alpha_2x_2^n$，由 $a_0=a_1=1$：
 $$\alpha_1+\alpha_2=1,\qquad\alpha_1x_1+\alpha_2x_2=1,$$
 解得 $\alpha_1=\dfrac{x_1}{\sqrt5}$，$\alpha_2=\dfrac{-x_2}{\sqrt5}$。⟦解聯立｜由第一式 $\alpha_2=1-\alpha_1$，代入第二式：$\alpha_1(x_1-x_2)=1-x_2=x_1$（因為 $x_1+x_2=1$），而 $x_1-x_2=\sqrt5$。⟧所以
-$$a_n=\frac1{\sqrt5}\left(x_1^{n+1}-x_2^{n+1}\right)=\frac1{\sqrt5}\left[\left(\frac{1+\sqrt5}2\right)^{n+1}-\left(\frac{1-\sqrt5}2\right)^{n+1}\right].\tag{9}$$
+$$\begin{aligned}a_n&=\frac1{\sqrt5}\left(x_1^{n+1}-x_2^{n+1}\right)\\&=\frac1{\sqrt5}\left[\left(\frac{1+\sqrt5}2\right)^{n+1}\right.\\&\qquad\left.-\left(\frac{1-\sqrt5}2\right)^{n+1}\right].\qquad(9)\end{aligned}$$
 實際計算時，因為 $|x_2|=\frac{\sqrt5-1}2\lt 1$，第二項很小：
 $$a_n=\begin{cases}\left[\dfrac1{\sqrt5}\left(\dfrac{1+\sqrt5}2\right)^{n+1}\right],&n\text{ 為奇數},\\[2ex]\left[\dfrac1{\sqrt5}\left(\dfrac{1+\sqrt5}2\right)^{n+1}\right]+1,&n\text{ 為偶數}.\end{cases}$$
 這裡 $[x]$ 是 $x$ 的整數部分。⟦奇偶為什麼不同｜$x_2\lt 0$。$n$ 為奇數時 $x_2^{n+1}>0$，$a_n$ 比 $\frac{x_1^{n+1}}{\sqrt5}$ 小一點點（小於 1），所以 $a_n$ 是它的整數部分；$n$ 為偶數時 $x_2^{n+1}\lt 0$，$a_n$ 比它大一點點，所以要加 1。⟧</p>
@@ -72,15 +72,15 @@ $$a_n=2a_{n-1}+2a_{n-2}.$$
 $$\alpha_1+\alpha_2=1,\qquad(1+\sqrt3)\alpha_1+(1-\sqrt3)\alpha_2=3,$$
 解得 $\alpha_1=\dfrac{2+\sqrt3}{2\sqrt3}$，$\alpha_2=\dfrac{\sqrt3-2}{2\sqrt3}$。所以
 $$a_n=\frac{2+\sqrt3}{2\sqrt3}(1+\sqrt3)^n+\frac{\sqrt3-2}{2\sqrt3}(1-\sqrt3)^n.$$
-⟦驗算 n=2｜$a_2=2\cdot3+2\cdot1=8$ ✓。用公式：$(1\pm\sqrt3)^2=4\pm2\sqrt3$，代入得 $\frac{(2+\sqrt3)(4+2\sqrt3)+(\sqrt3-2)(4-2\sqrt3)}{2\sqrt3}=\frac{(14+8\sqrt3)+(8\sqrt3-14)}{2\sqrt3}=8$ ✓。⟧
-ans: $a_n=\dfrac{2+\sqrt3}{2\sqrt3}(1+\sqrt3)^n+\dfrac{\sqrt3-2}{2\sqrt3}(1-\sqrt3)^n$
+⟦驗算 n=2｜$a_2=2\cdot3+2\cdot1=8$ ✓。用公式：$(1\pm\sqrt3)^2=4\pm2\sqrt3$，代入得 $$\frac{(2+\sqrt3)(4+2\sqrt3)+(\sqrt3-2)(4-2\sqrt3)}{2\sqrt3}=\frac{16\sqrt3}{2\sqrt3}=8\ ✓.$$⟧
+ans: $$\begin{aligned}a_n=\;&\frac{2+\sqrt3}{2\sqrt3}(1+\sqrt3)^n\\&+\frac{\sqrt3-2}{2\sqrt3}(1-\sqrt3)^n\end{aligned}$$
 
 === text
 <h3>$k$ 階線性遞迴</h3>
 <p>對一般的 $k$ 階遞推關係
-$$a_n=c_1a_{n-1}+c_2a_{n-2}+\cdots+c_ka_{n-k},\quad c_k\ne0,\tag{10}$$
+$$\begin{aligned}a_n=\;&c_1a_{n-1}+c_2a_{n-2}+\cdots\\&+c_ka_{n-k}\quad(c_k\ne0),\end{aligned}\tag{10}$$
 特徵方程定義為
-$$x^k=c_1x^{k-1}+c_2x^{k-2}+\cdots+c_k.\tag{11}$$</p>
+$$x^k=c_1x^{k-1}+\cdots+c_k.\tag{11}$$</p>
 
 === 定理 2
 zh: 若 (10) 的特徵方程有 $k$ 個不同的根 $x_1,\dots,x_k$，則 $a_n=\alpha_1x_1^n+\alpha_2x_2^n+\cdots+\alpha_kx_k^n$，其中 $\alpha_1,\dots,\alpha_k$ 由初始值 $a_0,\dots,a_{k-1}$ 確定。
@@ -112,7 +112,7 @@ ans: $a_n=5\cdot2^n-4\cdot3^n$
 
 === 習題 2
 zh: 已知 $a_n=a_{n-1}+9a_{n-2}-9a_{n-3}$，$a_0=0,a_1=1,a_2=2$，求 $a_n$。
-sol: 特徵方程 $x^3-x^2-9x+9=(x-1)(x-3)(x+3)=0$。設 $a_n=A+B\cdot3^n+C(-3)^n$：
+sol: 特徵方程 $x^3-x^2-9x+9=0$，即 $(x-1)(x-3)(x+3)=0$。設 $a_n=A+B\cdot3^n+C(-3)^n$：
 $$A+B+C=0,\quad A+3B-3C=1,\quad A+9B+9C=2.$$
 第三式減第一式得 $B+C=\frac14$，所以 $A=-\frac14$；再由第二式 $B-C=\frac5{12}$，得 $B=\frac13$，$C=-\frac1{12}$。
 ans: $a_n=\dfrac1{12}\left[-3+4\cdot3^n-(-1)^n3^n\right]$
@@ -129,7 +129,7 @@ zh: 有排成一列的 $n$ 個方格，用紅、白兩色給方格染色，每�
 hint: 仿例 1 得 $a_n=a_{n-1}+a_{n-2}$，$a_1=2,a_2=3$。
 sol: 設有 $a_n$ 種。第一格塗白，其餘 $n-1$ 格任意合格：$a_{n-1}$ 種；第一格塗紅，第二格必須白，其餘 $n-2$ 格任意合格：$a_{n-2}$ 種。所以 $a_n=a_{n-1}+a_{n-2}$，$a_1=2,a_2=3$。令 $a_0=1$ 也滿足此關係。這正是費波那契數列往後移兩項，⟦對照｜費波那契數列 $F_0=F_1=1,F_2=2,F_3=3,\dots$，這裡 $a_0=1=F_1$，$a_1=2=F_2$，所以 $a_n=F_{n+1}$，代入 (9) 得右邊答案。⟧所以
 $$a_n=\frac1{\sqrt5}\left[\left(\frac{1+\sqrt5}2\right)^{n+2}-\left(\frac{1-\sqrt5}2\right)^{n+2}\right].$$
-ans: $\dfrac1{\sqrt5}\left[\left(\dfrac{1+\sqrt5}2\right)^{n+2}-\left(\dfrac{1-\sqrt5}2\right)^{n+2}\right]$
+ans: $F_{n+1}$，即 $$\frac1{\sqrt5}\left[\left(\frac{1+\sqrt5}2\right)^{n+2}-\left(\frac{1-\sqrt5}2\right)^{n+2}\right]$$
 
 === 習題 5 | 河內塔
 zh: 有甲、乙、丙三個小圓桌，甲桌上有 $n$ 個大小不同的盤子依大小次序疊在一起，最大的在底下、最小的在頂上。要把這疊盤子照原次序移到另一張桌上，規定每次只能移動最上面的一個盤子，且不允許大盤子放在小盤子上。至少要移動多少次？

@@ -6,13 +6,13 @@ order: 20
 === body
 <div class="hero">$a_n=c_1a_{n-1}+c_2a_{n-2}$ → 把 $a_n$ 換成 $x^n$ → <b>特徵方程 $x^2=c_1x+c_2$</b><br>兩相異根：$a_n=\alpha x_1^n+\beta x_2^n$；重根：$a_n=(\alpha+\beta n)x_1^n$<br>常數用<b>初始值</b>解</div>
 <div class="cards">
-<div class="card"><h4>① 相異根</h4><div class="rule">$a_n=\alpha x_1^n+\alpha_2x_2^n$</div>
+<div class="card"><h4>① 相異根</h4><div class="rule">$a_n=\alpha_1x_1^n+\alpha_2x_2^n$</div>
 <div class="eg">$a_n=5a_{n-1}-6a_{n-2}$，$a_0=1,a_1=-2$<br>根 2、3 ⇒ $a_n=5\cdot2^n-4\cdot3^n$</div></div>
 <div class="card"><h4>② 重根</h4><div class="rule">乘上 $n$：$(\beta_1+\beta_2n)x_1^n$</div>
 <div class="eg">$x^3-3x+2=(x-1)^2(x+2)$<br>$a_n=A+Bn+C(-2)^n$ <span class="pill">重幾次乘幾次多項式</span></div></div>
 <div class="card"><h4>③ 先列遞迴再解</h4><div class="rule">按「第一格是什麼」分類</div>
 <div class="eg">相鄰不都紅：首格白 $a_{n-1}$、首格紅 $a_{n-2}$<br>$a_n=a_{n-1}+a_{n-2}$ <span class="pill">費波那契</span></div></div>
-<div class="card"><h4>④ 加常數變等比</h4><div class="rule">$a_n=2a_{n-1}+1\Rightarrow a_n+1=2(a_{n-1}+1)$</div>
+<div class="card"><h4>④ 加常數變等比</h4><div class="rule">$a_n=2a_{n-1}+1$<br>⇒ $a_n+1=2(a_{n-1}+1)$</div>
 <div class="eg">河內塔 $a_n=2^n-1$<br>$n=3$：7 步</div></div>
 </div>
 <p>為什麼通解長這樣？⟦兩個等比數列｜若 $x$ 是特徵根，$a_n=x^n$ 代進去正好成立：$x^n=c_1x^{n-1}+c_2x^{n-2}$ 就是特徵方程乘 $x^{n-2}$。遞推是線性的，兩個解的組合仍是解，再用兩個初始值定出係數。⟧</p>

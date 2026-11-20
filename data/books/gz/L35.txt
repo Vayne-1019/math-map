@@ -33,12 +33,12 @@ ans: $\mathrm C_{2n-1}^{n-1}$
 === 例 3
 src: 美國第 26 屆普特南數學競賽，1965 年
 zh: 對任何正整數 $n$，證明
-$$\sum_{k=0}^{\left[\frac{n-1}2\right]}\left\{\left(1-\frac{2k}n\right)\mathrm C_n^k\right\}^2=\frac1n\mathrm C_{2n-2}^{n-1}.\tag{3}$$
+$$\begin{aligned}&\sum_{k=0}^{\left[\frac{n-1}2\right]}\left\{\left(1-\frac{2k}n\right)\mathrm C_n^k\right\}^2\\&=\frac1n\mathrm C_{2n-2}^{n-1}.\end{aligned}\tag{3}$$
 這裡 $\left[\frac{n-1}2\right]$ 表示 $\frac{n-1}2$ 的整數部分。
 sol: <b>第一步：把半個和變成全和。</b>先證
-$$\sum_{k=0}^n\left(\frac{n-2k}n\mathrm C_n^k\right)^2=2\sum_{k=0}^{\left[\frac{n-1}2\right]}\left(\frac{n-2k}n\mathrm C_n^k\right)^2.\tag{4}$$
+$$\begin{aligned}&\sum_{k=0}^n\left(\frac{n-2k}n\mathrm C_n^k\right)^2\\&=2\sum_{k=0}^{\left[\frac{n-1}2\right]}\left(\frac{n-2k}n\mathrm C_n^k\right)^2.\end{aligned}\tag{4}$$
 對右邊的和作指標變換 $l=n-k$，並用 $\mathrm C_n^{n-l}=\mathrm C_n^l$ 及 $(2l-n)^2=(n-2l)^2$，得
-$$\sum_{k=0}^{\left[\frac{n-1}2\right]}\left(\frac{n-2k}n\mathrm C_n^k\right)^2=\sum_{l=n-\left[\frac{n-1}2\right]}^{n}\left(\frac{n-2l}n\mathrm C_n^l\right)^2.\tag{5}$$
+$$\begin{aligned}&\sum_{k=0}^{\left[\frac{n-1}2\right]}\left(\frac{n-2k}n\mathrm C_n^k\right)^2\\&=\sum_{l=n-\left[\frac{n-1}2\right]}^{n}\left(\frac{n-2l}n\mathrm C_n^l\right)^2.\end{aligned}\tag{5}$$
 也就是說，楊輝三角形第 $n$ 列<b>左邊一截的和等於右邊對稱一截的和</b>。
 <ul><li>$n$ 為奇數：$\left[\frac{n-1}2\right]=\frac{n-1}2$，右邊一截從 $\frac{n+1}2$ 起，左右兩截正好拼成 $0$ 到 $n$ 的全部，(4) 成立。</li>
 <li>$n$ 為偶數：$\left[\frac{n-1}2\right]=\frac{n-2}2$，右邊一截從 $\frac{n+2}2$ 起，左右兩截只漏掉中間的 $k=\frac n2$；但這一項 $\frac{n-2k}n\mathrm C_n^k=0$，所以 (4) 仍成立。</li></ul>
@@ -49,7 +49,7 @@ $$a_3=\frac4{n^2}\cdot n^2\sum_{k=1}^n\left(\mathrm C_{n-1}^{k-1}\right)^2=4\,\m
 $$a_2=-\frac4n\sum_{k=1}^n n\,\mathrm C_{n-1}^{k-1}\mathrm C_n^k=-4\,\mathrm C_{2n-1}^{n-1},$$
 （$a_3$ 用了例 1，$a_2$ 用了 (2)。）相加：
 $$\begin{aligned}\sum_{k=0}^n\left(\frac{n-2k}n\mathrm C_n^k\right)^2&=\mathrm C_{2n}^n-4\,\mathrm C_{2n-1}^{n-1}+4\,\mathrm C_{2n-2}^{n-1}=\mathrm C_{2n}^n-4\,\mathrm C_{2n-2}^{n-2}\\&=\frac{(2n)!}{n!\,n!}-\frac{4\,(2n-2)!}{(n-2)!\,n!}\\&=\frac{(2n-2)!}{(n-1)!\,(n-1)!}\left(\frac{2n(2n-1)}{n^2}-\frac{4(n-1)}n\right)=\frac2n\mathrm C_{2n-2}^{n-1}.\end{aligned}$$
-⟦第一行第二個等號｜由 (ii)，$\mathrm C_{2n-1}^{n-1}=\mathrm C_{2n-2}^{n-1}+\mathrm C_{2n-2}^{n-2}$，所以 $-4\mathrm C_{2n-1}^{n-1}+4\mathrm C_{2n-2}^{n-1}=-4\mathrm C_{2n-2}^{n-2}$。⟧⟦括號裡的化簡｜$\dfrac{2n(2n-1)}{n^2}-\dfrac{4(n-1)}{n}=\dfrac{2(2n-1)-4(n-1)}{n}=\dfrac2n$。⟧<br>
+⟦第一行第二個等號｜由 (ii)，$\mathrm C_{2n-1}^{n-1}=\mathrm C_{2n-2}^{n-1}+\mathrm C_{2n-2}^{n-2}$，所以 $-4\mathrm C_{2n-1}^{n-1}+4\mathrm C_{2n-2}^{n-1}=-4\mathrm C_{2n-2}^{n-2}$。⟧⟦括號裡的化簡｜$$\frac{2n(2n-1)}{n^2}-\frac{4(n-1)}{n}=\frac{2(2n-1)-4(n-1)}{n}=\frac2n.$$⟧<br>
 由 (4)，左邊的一半就是 $\frac1n\mathrm C_{2n-2}^{n-1}$，即 (3)。<br>
 這題有一定難度，但對熟悉組合數運算的人來說，並沒有什麼特殊技巧。
 
@@ -64,7 +64,7 @@ $$\sum_{k=0}^{\left[\frac{n-r}m\right]}\mathrm C_n^{r+km},\tag{8}$$
 <p>主要工具是複數中的單位根。方程 $z^m=1$ 有 $m$ 個根
 $$\omega_k=\cos\frac{2k\pi}m+i\sin\frac{2k\pi}m=e^{\frac{2k\pi}mi},\quad k=0,1,\dots,m-1,$$
 叫做 $m$ 次單位根。它們有下面的重要性質：
-$$\sum_{k=0}^{m-1}\omega_k^s=\begin{cases}m,&s\text{ 是 }m\text{ 的倍數},\\0,&s\text{ 不是 }m\text{ 的倍數}.\end{cases}\tag{9}$$
+$$\sum_{k=0}^{m-1}\omega_k^s=\begin{cases}m,&m\mid s,\\0,&m\nmid s.\end{cases}\tag{9}$$
 事實上，若 $s=qm$（$q$ 是整數），則 $\omega_k^s=e^{2kq\pi i}=\cos2kq\pi+i\sin2kq\pi=1$，和為 $m$。若 $s$ 不是 $m$ 的倍數，令 $\omega=e^{\frac{2s\pi}mi}\ne1$，則 $\omega_k^s=\omega^k$，這是等比數列的和：
 $$\sum_{k=0}^{m-1}\omega_k^s=\sum_{k=0}^{m-1}\omega^k=\frac{1-\omega^m}{1-\omega}=\frac{1-e^{2s\pi i}}{1-\omega}=0.$$</p>
 <figure class="bkfig"><svg viewBox="0 0 200 200" width="200" role="img" aria-label="三次單位根在單位圓上">
@@ -76,16 +76,16 @@ $$\sum_{k=0}^{m-1}\omega_k^s=\sum_{k=0}^{m-1}\omega^k=\frac{1-\omega^m}{1-\omega
 
 === 例 4 | 單位根濾波公式
 zh: 設 $\omega_k=e^{\frac{2k\pi}mi}$，$r,m$ 為非負整數，$0\le r\lt m$。證明
-$$\sum_{k=0}^{\left[\frac{n-r}m\right]}\mathrm C_n^{r+km}x^{r+km}=\frac1m\sum_{k=0}^{m-1}\omega_k^{-r}\left(1+x\omega_k\right)^n.\tag{10}$$
+$$\begin{aligned}&\sum_{k=0}^{\left[\frac{n-r}m\right]}\mathrm C_n^{r+km}x^{r+km}\qquad(10)\\&=\frac1m\sum_{k=0}^{m-1}\omega_k^{-r}\left(1+x\omega_k\right)^n.\end{aligned}$$
 sol: 由二項式定理，$(1+x\omega_k)^n=\sum_{l=0}^n\mathrm C_n^lx^l\omega_k^l$，所以右邊為
 $$\frac1m\sum_{k=0}^{m-1}\omega_k^{-r}\sum_{l=0}^n\mathrm C_n^lx^l\omega_k^l=\frac1m\sum_{l=0}^n\mathrm C_n^lx^l\sum_{k=0}^{m-1}\omega_k^{l-r}.$$
 ⟦交換求和次序｜兩個有限和可以先對 $k$ 加或先對 $l$ 加，結果一樣；$\omega_k^{-r}\omega_k^{l}=\omega_k^{l-r}$。⟧由 (9)，$l-r$ 是 $m$ 的倍數時內層和為 $m$，否則為 $0$。所以只有 $l=r+qm$ 的項留下。$0\le l\le n$ 且 $0\le r\lt m$，所以 $q$ 從 $0$ 變到 $\left[\frac{n-r}m\right]$，⟦q 為什麼不能是負的｜$q\le-1$ 時 $l=r+qm\le r-m\lt 0$，不在 $0$ 到 $n$ 之間。這就是為什麼要 $r\lt m$。⟧於是右邊等於 $\sum_{q=0}^{[(n-r)/m]}\mathrm C_n^{r+qm}x^{r+qm}$，即 (10)。
 
 === 例 5
 zh: 證明當 $0\le r\lt m$ 時，
-$$\sum_{k=0}^{\left[\frac{n-r}m\right]}\mathrm C_n^{r+km}=\frac1m\sum_{k=0}^{m-1}\left(2\cos\frac{k\pi}m\right)^n\cos\frac{(n-2r)k\pi}m.\tag{11}$$
+$$\begin{aligned}&\sum_{k=0}^{\left[\frac{n-r}m\right]}\mathrm C_n^{r+km}\qquad(11)\\&=\frac1m\sum_{k=0}^{m-1}\left(2\cos\frac{k\pi}m\right)^n\\&\qquad\cdot\cos\frac{(n-2r)k\pi}m.\end{aligned}$$
 sol: 在 (10) 中取 $x=1$：
-$$\sum_{k=0}^{\left[\frac{n-r}m\right]}\mathrm C_n^{r+km}=\frac1m\sum_{k=0}^{m-1}\omega_k^{-r}\left(1+\omega_k\right)^n.\tag{12}$$
+$$\begin{aligned}&\sum_{k=0}^{\left[\frac{n-r}m\right]}\mathrm C_n^{r+km}\\&=\frac1m\sum_{k=0}^{m-1}\omega_k^{-r}\left(1+\omega_k\right)^n.\end{aligned}\tag{12}$$
 把 $1+\omega_k$ 提出「半個角」：
 $$\begin{aligned}\omega_k^{-r}(1+\omega_k)^n&=e^{-\frac{2rk\pi}mi}\,e^{\frac{nk\pi}mi}\left(e^{-\frac{k\pi}mi}+e^{\frac{k\pi}mi}\right)^n\\&=e^{\frac{(n-2r)k\pi}mi}\left(2\cos\frac{k\pi}m\right)^n\\&=\left(2\cos\frac{k\pi}m\right)^n\left(\cos\frac{(n-2r)k\pi}m+i\sin\frac{(n-2r)k\pi}m\right).\end{aligned}$$
 ⟦提半角的兩個事實｜$1+e^{i\theta}=e^{\frac{i\theta}2}\left(e^{-\frac{i\theta}2}+e^{\frac{i\theta}2}\right)$，而 $e^{-i\varphi}+e^{i\varphi}=2\cos\varphi$。這裡 $\theta=\frac{2k\pi}m$。⟧(12) 的左邊是實數，兩邊取實部即得 (11)。
@@ -95,8 +95,8 @@ $$\begin{aligned}\omega_k^{-r}(1+\omega_k)^n&=e^{-\frac{2rk\pi}mi}\,e^{\frac{nk\
 <ul><li>$r=0,m=2$：$\mathrm C_n^0+\mathrm C_n^2+\mathrm C_n^4+\cdots=2^{n-1}$。⟦驗算｜$k=0$ 項是 $2^n$；$k=1$ 項是 $(2\cos\frac\pi2)^n\cdot\cos\frac{n\pi}2=0$（$n\ge1$）。所以和為 $\frac12\cdot2^n$。⟧</li>
 <li>$r=0,m=3$：$\displaystyle\sum_{k=0}^{[n/3]}\mathrm C_n^{3k}=\frac13\left(2^n+2\cos\frac{n\pi}3\right)$。</li>
 <li>$r=0,m=4$：$\displaystyle\sum_{k=0}^{[n/4]}\mathrm C_n^{4k}=\frac14\left(2^n+2(\sqrt2)^n\cos\frac{n\pi}4\right)$。</li>
-<li>$r=1,m=3$：$\displaystyle\sum_{k}\mathrm C_n^{1+3k}=\frac13\left(2^n+2\cos\frac{(n-2)\pi}3\right)$。</li>
-<li>$r=2,m=3$：$\displaystyle\sum_{k}\mathrm C_n^{2+3k}=\frac13\left(2^n+2\cos\frac{(n-4)\pi}3\right)$。</li></ul>
+<li>$r=1,m=3$：$\sum_{k}\mathrm C_n^{1+3k}=\frac13\left(2^n+2\cos\frac{(n-2)\pi}3\right)$。</li>
+<li>$r=2,m=3$：$\sum_{k}\mathrm C_n^{2+3k}=\frac13\left(2^n+2\cos\frac{(n-4)\pi}3\right)$。</li></ul>
 <p>例如 $n=6$：$\mathrm C_6^0+\mathrm C_6^3+\mathrm C_6^6=1+20+1=22$，公式給 $\frac13(64+2\cos2\pi)=22$。</p>
 <h3>三、與組合數有關的問題</h3>
 
@@ -108,7 +108,7 @@ $$a_{m,n}=\frac{(2m)!\,(2n)!}{m!\,n!\,(m+n)!}$$
 sol: <b>分析。</b>表面上和組合數無關，但 $n=0$ 時 $a_{m,0}=\dfrac{(2m)!}{m!\,m!}=\mathrm C_{2m}^m$ 是組合數，當然是整數。這啟發我們：能不能把 $a_{m,n}$ 寫成若干個組合數的整係數線性組合？<br>
 <b>證明。</b>直接驗證可得遞推公式
 $$a_{m,n}=4a_{m,n-1}-a_{m+1,n-1}.\tag{13}$$
-⟦驗證 (13)｜$\dfrac{a_{m,n}}{a_{m,n-1}}=\dfrac{2n(2n-1)}{n(m+n)}=\dfrac{2(2n-1)}{m+n}$，$\dfrac{a_{m+1,n-1}}{a_{m,n-1}}=\dfrac{(2m+2)(2m+1)}{(m+1)(m+n)}=\dfrac{2(2m+1)}{m+n}$。<br>而 $4-\dfrac{2(2m+1)}{m+n}=\dfrac{4n-2}{m+n}=\dfrac{2(2n-1)}{m+n}$，兩邊同乘 $a_{m,n-1}$ 即得。⟧(13) 說明 $a_{m,n}$ 可由 $a_{m,n-1}$ 與 $a_{m+1,n-1}$ 的整係數線性組合表示：$m$ 的指標雖然增大了，但 $n$ 的指標下降了。同樣，$a_{m,n-1}$、$a_{m+1,n-1}$ 又可由 $a_{m,n-2},a_{m+1,n-2},a_{m+2,n-2}$ 的整係數線性組合表示。每遞推一次 $n$ 就降 1，最後得到
+⟦驗證 (13)｜$\dfrac{a_{m,n}}{a_{m,n-1}}=\dfrac{2n(2n-1)}{n(m+n)}=\dfrac{2(2n-1)}{m+n}$，$$\frac{a_{m+1,n-1}}{a_{m,n-1}}=\frac{(2m+2)(2m+1)}{(m+1)(m+n)}=\frac{2(2m+1)}{m+n}.$$<br>而 $4-\dfrac{2(2m+1)}{m+n}=\dfrac{4n-2}{m+n}=\dfrac{2(2n-1)}{m+n}$，兩邊同乘 $a_{m,n-1}$ 即得。⟧(13) 說明 $a_{m,n}$ 可由 $a_{m,n-1}$ 與 $a_{m+1,n-1}$ 的整係數線性組合表示：$m$ 的指標雖然增大了，但 $n$ 的指標下降了。同樣，$a_{m,n-1}$、$a_{m+1,n-1}$ 又可由 $a_{m,n-2},a_{m+1,n-2},a_{m+2,n-2}$ 的整係數線性組合表示。每遞推一次 $n$ 就降 1，最後得到
 $$a_{m,n}=\sum_{k=0}^n\lambda_ka_{m+k,0},$$
 $\lambda_k$ 是確定的整數。而 $a_{m+k,0}=\mathrm C_{2(m+k)}^{m+k}$ 是整數，所以 $a_{m,n}$ 是整數。<br>
 例如 $a_{1,1}=4a_{1,0}-a_{2,0}=4\cdot2-6=2$，直接算 $\frac{2!\,2!}{1!\,1!\,2!}=2$。
@@ -122,7 +122,7 @@ $$\sqrt8\,a_n+b_n=\sum_{k=0}^n\mathrm C_{2n+1}^{2k+1}(\sqrt8)^{2k+1}+\sum_{k=0}^
 ⟦奇數項和偶數項｜$(\sqrt8+1)^{2n+1}$ 展開後，$(\sqrt8)$ 的奇次方項合起來是 $\sqrt8a_n$，偶次方項合起來是 $b_n$。⟧但式中有無理數 $\sqrt8$，不便討論。自然會想到另一半：
 $$\sqrt8\,a_n-b_n=(\sqrt8-1)^{2n+1}.$$
 ⟦為什麼｜把 $\sqrt8$ 換成 $-\sqrt8$：$(-\sqrt8+1)^{2n+1}=-\sqrt8a_n+b_n$，兩邊乘 $-1$ 即得。⟧兩式相乘：
-$$8a_n^2-b_n^2=7^{2n+1},\qquad\text{即}\qquad 8a_n^2=b_n^2+7^{2n+1}.\tag{14}$$
+$$8a_n^2-b_n^2=7^{2n+1},$$即$$8a_n^2=b_n^2+7^{2n+1}.\tag{14}$$
 若 $5\mid a_n$，則 $5\mid b_n^2+7^{2n+1}$。但
 $$7^{2n}=49^n=(50-1)^n=5q+(-1)^n,$$
 （二項式展開後除了最後一項 $(-1)^n$，其餘都是 5 的倍數），所以
@@ -139,7 +139,7 @@ $$7^{2n+1}=(5+2)\left(5q+(-1)^n\right)=5q'+2(-1)^n,$$
 === 習題 1
 zh: 用比較係數法證明 $\displaystyle\sum_{k=1}^n\mathrm C_n^{k-1}\mathrm C_n^k=\mathrm C_{2n}^{n-1}$。
 hint: 比較 $(1+x)^{2n}=(1+x)^n(1+x)^n$ 兩邊 $x^{n-1}$ 的係數。
-sol: 右邊 $x^{n-1}$ 的係數是 $\mathrm C_n^0\mathrm C_n^{n-1}+\mathrm C_n^1\mathrm C_n^{n-2}+\cdots+\mathrm C_n^{n-1}\mathrm C_n^0=\sum_{k=1}^n\mathrm C_n^{k-1}\mathrm C_n^{n-k}=\sum_{k=1}^n\mathrm C_n^{k-1}\mathrm C_n^{k}$；左邊是 $\mathrm C_{2n}^{n-1}$。
+sol: 右邊 $x^{n-1}$ 的係數是 $$\begin{aligned}&\mathrm C_n^0\mathrm C_n^{n-1}+\mathrm C_n^1\mathrm C_n^{n-2}+\cdots+\mathrm C_n^{n-1}\mathrm C_n^0\\&=\sum_{k=1}^n\mathrm C_n^{k-1}\mathrm C_n^{n-k}=\sum_{k=1}^n\mathrm C_n^{k-1}\mathrm C_n^{k};\end{aligned}$$左邊是 $\mathrm C_{2n}^{n-1}$。
 
 === 習題 2
 zh: 用比較係數法證明 $\displaystyle\sum_{k=0}^{2n}(-1)^k\mathrm C_m^k\mathrm C_m^{2n-k}=(-1)^n\mathrm C_m^n$。
@@ -162,12 +162,12 @@ $$(1-x^2)^n=(1-x)^n(1+x)^n=\left(\sum_{k=0}^n(-1)^k\mathrm C_n^kx^k\right)\left(
 === 習題 5
 zh: 利用公式 (11) 證明 $\displaystyle\sum_{k=0}^{[n/3]}\mathrm C_n^{3k}=\frac13\left(2^n+2\cos\frac{n\pi}3\right)$。
 hint: 在 (11) 中取 $r=0$，$m=3$。
-sol: $k=0$ 項 $2^n$。$k=1$：$\left(2\cos\frac\pi3\right)^n\cos\frac{n\pi}3=\cos\frac{n\pi}3$。$k=2$：$\left(2\cos\frac{2\pi}3\right)^n\cos\frac{2n\pi}3=(-1)^n\cos\frac{2n\pi}3=\cos\frac{n\pi}3$。⟦最後這個等號｜$\cos\frac{2n\pi}3=\cos\left(n\pi-\frac{n\pi}3\right)=(-1)^n\cos\frac{n\pi}3$，再乘 $(-1)^n$。⟧相加後除以 3 即得。
+sol: $k=0$ 項 $2^n$。$k=1$：$\left(2\cos\frac\pi3\right)^n\cos\frac{n\pi}3=\cos\frac{n\pi}3$。$k=2$：$\left(2\cos\frac{2\pi}3\right)^n\cos\frac{2n\pi}3$ 等於 $(-1)^n\cos\frac{2n\pi}3=\cos\frac{n\pi}3$。⟦最後這個等號｜$$\cos\frac{2n\pi}3=\cos\left(n\pi-\frac{n\pi}3\right)=(-1)^n\cos\frac{n\pi}3,$$再乘 $(-1)^n$。⟧相加後除以 3 即得。
 
 === 習題 6
 zh: 利用公式 (11) 證明 $\displaystyle\sum_{k=0}^{[n/4]}\mathrm C_n^{4k}=\frac14\left(2^n+2(\sqrt2)^n\cos\frac{n\pi}4\right)$。
 hint: 在 (11) 中取 $r=0$，$m=4$。
-sol: $k=0$ 項 $2^n$；$k=2$ 項 $\left(2\cos\frac\pi2\right)^n\cdot\cos n\pi=0$；$k=1$ 與 $k=3$ 項分別是 $(\sqrt2)^n\cos\frac{n\pi}4$ 與 $(-\sqrt2)^n\cos\frac{3n\pi}4=(\sqrt2)^n\cos\frac{n\pi}4$。⟦k=3 那項｜$2\cos\frac{3\pi}4=-\sqrt2$；$\cos\frac{3n\pi}4=\cos\left(n\pi-\frac{n\pi}4\right)=(-1)^n\cos\frac{n\pi}4$，兩個 $(-1)^n$ 相乘為 1。⟧
+sol: $k=0$ 項 $2^n$；$k=2$ 項 $\left(2\cos\frac\pi2\right)^n\cdot\cos n\pi=0$；$k=1$ 與 $k=3$ 項分別是 $(\sqrt2)^n\cos\frac{n\pi}4$ 與 $(-\sqrt2)^n\cos\frac{3n\pi}4=(\sqrt2)^n\cos\frac{n\pi}4$。⟦k=3 那項｜$2\cos\frac{3\pi}4=-\sqrt2$；$$\cos\frac{3n\pi}4=\cos\left(n\pi-\frac{n\pi}4\right)=(-1)^n\cos\frac{n\pi}4,$$兩個 $(-1)^n$ 相乘為 1。⟧
 
 === 習題 7
 zh: 證明 $\displaystyle\sum_{k=0}^n\mathrm C_{4n}^{4k}=\frac14\left(2^{4n}+(-1)^n2^{2n+1}\right)$。
@@ -185,4 +185,4 @@ hint: 在 (11) 中取 $r=2$，$m=3$。
 === 習題 10
 zh: 證明 $\displaystyle\sum_{k=0}^{n-1}(-1)^k\left(\cos\frac{k\pi}n\right)^n=\frac n{2^{n-1}}$。
 hint: 在 (11) 中取 $r=0$，$m=n$。
-sol: 左邊 (11) 的和是 $\mathrm C_n^0+\mathrm C_n^n=2$；右邊是 $\frac1n\sum_{k=0}^{n-1}2^n\left(\cos\frac{k\pi}n\right)^n\cos k\pi=\frac{2^n}n\sum_{k=0}^{n-1}(-1)^k\left(\cos\frac{k\pi}n\right)^n$。所以所求和為 $\frac{2n}{2^n}=\frac n{2^{n-1}}$。
+sol: 左邊 (11) 的和是 $\mathrm C_n^0+\mathrm C_n^n=2$；右邊是 $$\frac1n\sum_{k=0}^{n-1}2^n\left(\cos\frac{k\pi}n\right)^n\cos k\pi=\frac{2^n}n\sum_{k=0}^{n-1}(-1)^k\left(\cos\frac{k\pi}n\right)^n.$$所以所求和為 $\frac{2n}{2^n}=\frac n{2^{n-1}}$。

@@ -32,9 +32,9 @@ sol: 由性質 5 反覆相乘，$a^k\equiv b^k$；再乘以整係數、相加，
 
 === 例 2 | 棄九法
 zh: 一個十進位數與它的各位數字之和關於模 9 同餘。特別地，一個數是 9 的倍數的充要條件是它的各位數字之和是 9 的倍數。
-sol: 設 $n=a_k\cdot10^k+a_{k-1}\cdot10^{k-1}+\cdots+a_1\cdot10+a_0$（$0\le a_i\le9$）。因為 $10\equiv1\pmod9$，所以 $10^i\equiv1\pmod9$，於是
+sol: 設 $$n=a_k\cdot10^k+a_{k-1}\cdot10^{k-1}+\cdots+a_1\cdot10+a_0$$（$0\le a_i\le9$）。因為 $10\equiv1\pmod9$，所以 $10^i\equiv1\pmod9$，於是
 $$a_k\cdot10^k+\cdots+a_1\cdot10+a_0\equiv a_k+\cdots+a_1+a_0\pmod9.$$
-例如 $1989\equiv1+9+8+9=27\equiv0\pmod9$。
+例如 $1989\equiv1+9+8+9=27$，而 $27\equiv0\pmod9$。
 
 === 例 3
 zh: 設 $n$ 是奇數，則 $n^2\equiv1\pmod8$。
@@ -109,7 +109,7 @@ zh: 若 $a_1,\dots,a_{\varphi(n)}$ 對模 $n$ 兩兩不同餘，且都與 $n$ �
 <li>$p$ 是質數、$l\ge1$ 時，從 $1,2,\dots,p^l$ 中去掉 $p^{l-1}$ 個 $p$ 的倍數 $p,2p,\dots,p^{l-1}\cdot p$，就得到模 $p^l$ 的縮系，所以 $\varphi(p^l)=p^l-p^{l-1}$。</li>
 <li>一般地，若 $n=p_1^{\alpha_1}\cdots p_s^{\alpha_s}$，則
 $$\varphi(n)=(p_1^{\alpha_1}-p_1^{\alpha_1-1})\cdots(p_s^{\alpha_s}-p_s^{\alpha_s-1})=n\prod_{p\mid n}\left(1-\frac1p\right).$$
-限於篇幅，原書不證這個公式。⟦用容斥原理可證｜$1,\dots,n$ 中不被 $p_1,\dots,p_s$ 任何一個整除的數，由第 33 講的容斥原理有 $n-\sum\frac n{p_i}+\sum\frac n{p_ip_j}-\cdots=n\prod\left(1-\frac1{p_i}\right)$ 個。⟧例如 $\varphi(12)=12\cdot\frac12\cdot\frac23=4$（即 $1,5,7,11$）。</li></ul>
+限於篇幅，原書不證這個公式。⟦用容斥原理可證｜$1,\dots,n$ 中不被 $p_1,\dots,p_s$ 任何一個整除的數，由第 33 講的容斥原理有 $$n-\sum\frac n{p_i}+\sum\frac n{p_ip_j}-\cdots=n\prod\left(1-\frac1{p_i}\right)$$個。⟧例如 $\varphi(12)=12\cdot\frac12\cdot\frac23=4$（即 $1,5,7,11$）。</li></ul>
 
 === 定理 4
 zh: 若 $(a,n)=1$，$a_1,\dots,a_{\varphi(n)}$ 是模 $n$ 的縮系，則 $aa_1,\dots,aa_{\varphi(n)}$ 也是模 $n$ 的縮系。
@@ -156,7 +156,7 @@ zh: 設 $(m,n)=1$，則方程組 $x\equiv a\pmod m$，$x\equiv b\pmod n$ 對模 
 sol: 令 $x=a+mt$，第二式變成 $a+mt\equiv b\pmod n$。取 $t=\bar m(b-a)$（$m\bar m\equiv1\pmod n$），則 $x_0=a+m\bar m(b-a)$ 是方程組的一個解。⟦驗算｜$x_0\equiv a\pmod m$ 顯然；模 $n$ 時 $m\bar m\equiv1$，$x_0\equiv a+(b-a)=b$。⟧若 $x_1\equiv x_0\pmod{mn}$，則 $x_1\equiv x_0$ 模 $m$、模 $n$ 都成立，所以也是解。反過來若 $x_1$ 是解，則 $m\mid x_1-x_0$，$n\mid x_1-x_0$，又 $(m,n)=1$，所以 $mn\mid x_1-x_0$。
 
 === 定理 9 | 孫子定理（中國剩餘定理）
-zh: 設 $m_1,\dots,m_n$ 兩兩互質，則方程組 $x\equiv a_1\pmod{m_1},\ \dots,\ x\equiv a_n\pmod{m_n}$ 有解，且解對模 $m_1m_2\cdots m_n$ 唯一。
+zh: 設 $m_1,\dots,m_n$ 兩兩互質，則方程組 $$x\equiv a_1\pmod{m_1},\ \dots,\ x\equiv a_n\pmod{m_n}$$有解，且解對模 $m_1m_2\cdots m_n$ 唯一。
 sol: 對 $n$ 用歸納法：前 $n-1$ 個方程由歸納假設等價於 $x\equiv c\pmod{m_1\cdots m_{n-1}}$，再和最後一個方程用定理 8（$m_1\cdots m_{n-1}$ 與 $m_n$ 互質）。
 
 === 例 10 | 團體操
@@ -205,7 +205,7 @@ $$3=(n+4)-(n+1)=4v^2-u^2=(2v-u)(2v+u),$$
 只能 $2v+u=3$，$2v-u=1$，$u=v=1$，$n=0$，不是正整數。矛盾。
 
 === 習題 7
-zh: 設 $n_1\mid2^{n_2}-1,\ n_2\mid2^{n_3}-1,\ \dots,\ n_{k-1}\mid2^{n_k}-1,\ n_k\mid2^{n_1}-1$。證明 $n_1=n_2=\cdots=n_k=1$。
+zh: 設 $n_1\mid2^{n_2}-1$，$n_2\mid2^{n_3}-1$，…，$n_{k-1}\mid2^{n_k}-1$，$n_k\mid2^{n_1}-1$。證明 $n_1=n_2=\cdots=n_k=1$。
 hint: 用 $p(n)$ 表示 $n$ 的最小質因數，證明 $p(n_1)\lt p(n_k)\lt \cdots\lt p(n_2)\lt p(n_1)$。
 sol: 先證：若質數 $p\mid2^n-1$，則 $n$ 的最小質因數 $p(n)\lt p$。設 $r$ 是使 $2^r\equiv1\pmod p$ 的最小正整數，由例 6，$r\mid n$；又由費馬小定理，$r\mid p-1$。$r>1$，所以 $p(n)\le p(r)\le r\le p-1\lt p$。<br>
 若某個 $n_i>1$，則由整除關係，$n_{i-1}\mid2^{n_i}-1$，… 依次可知所有 $n_j>1$。⟦為什麼｜$n_j\mid2^{n_{j+1}}-1$：若 $n_{j+1}=1$，則 $n_j\mid1$，$n_j=1$。所以只要有一個 $=1$，往前推全都 $=1$；反之有一個 $>1$，全都 $>1$。⟧在上面的結論中取 $p=p(n_1)$（整除 $2^{n_2}-1$），得 $p(n_2)\lt p(n_1)$；同理 $p(n_3)\lt p(n_2)$，……，$p(n_1)\lt p(n_k)$。連起來得 $p(n_1)\lt p(n_1)$，矛盾。
