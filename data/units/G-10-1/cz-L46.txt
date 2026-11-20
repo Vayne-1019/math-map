@@ -1,0 +1,20 @@
+=== meta
+title: 把 √(a²+b²) 畫成線段：構造圖形證不等式
+from: cz-L46
+order: 40
+
+=== body
+<div class="hero">$\sqrt{a^2+b^2}$ = 兩股為 $a,b$ 的<b>斜邊</b><br>根式的和 → 一條<b>折線</b>，折線 ≥ 兩端點的<b>直線距離</b></div>
+<div class="cards">
+<div class="card"><h4>① 正方形裡一點</h4><div class="rule">四個根式 = 一點到四頂點</div>
+<div class="eg">$\sqrt{a^2+b^2}+\sqrt{(1-a)^2+(1-b)^2}\ge\sqrt2$<br>$AO+OC\ge AC$ <span class="pill">對角線</span></div></div>
+<div class="card"><h4>② 求最小值</h4><div class="rule">兩段拼成折線，拉直最短</div>
+<div class="eg">$x+y=c$ 時<br>$\sqrt{a^2+x^2}+\sqrt{b^2+y^2}\ge\sqrt{(a+b)^2+c^2}$</div></div>
+<div class="card"><h4>③ 差的範圍</h4><div class="rule">$|PA-PD|&lt;AD$</div>
+<div class="eg">$\sqrt{a^2+a+1}-\sqrt{a^2-a+1}$<br>配方成 $\left(a\pm\frac12\right)^2+\left(\frac{\sqrt3}2\right)^2$<br>⟹ 介於 $-1$ 和 $1$ 之間</div></div>
+</div>
+<p>方程組也能畫：⟦像餘弦定理的方程組｜$x^2+xz+z^2=16$ 就是 $x^2+z^2-2xz\cos120^\circ=4^2$：夾角 $120^\circ$、兩邊 $x,z$ 的三角形，第三邊是 $4$。三個這樣的方程，夾角加起來 $360^\circ$，就拼成一個大三角形內的一點。⟧ $x^2+xz+z^2=16$ 就是夾角 $120^\circ$ 的餘弦定理。</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>等號條件：最小值要確認「拉直」時的點真的取得到（$x,y$ 要是正數）</li>
+<li>三角不等式取嚴格時，要說明三點不共線</li></ul></div>
+<div class="bottomline">看到「平方和開根號」，就畫一個直角三角形。</div>

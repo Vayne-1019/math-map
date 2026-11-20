@@ -49,7 +49,7 @@ sol: 條件和結論之間的關係看不太出來，用分析法往回找：
 (2) 只須證 $a^2+b^2+c^2=a^2+b^2+c^2-2ab-2ac+2bc$，
 (3) 只須證 $ab+ac=bc$，
 (4) 只須證 $a(b+c)=bc$，
-(5) 只須證 $\dfrac1b+\dfrac1c=\dfrac1a$。⟦怎麼從 (4) 變 (5)｜(4) 兩邊同除以 $abc$：$\dfrac{b+c}{bc}=\dfrac1a$，左邊就是 $\dfrac1b+\dfrac1c$。題目給的式子中有 $\dfrac1a,\dfrac1b,\dfrac1c$，所以 $abc\ne0$，可以除。⟧
+(5) 只須證 $\dfrac1b+\dfrac1c=\dfrac1a$。⟦(4) 怎麼變 (5)｜(4) 兩邊同除以 $abc$：$\dfrac{b+c}{bc}=\dfrac1a$，左邊就是 $\dfrac1b+\dfrac1c$。題目給的式子中有 $\dfrac1a,\dfrac1b,\dfrac1c$，所以 $abc\ne0$，可以除。⟧
 最後一式就是已知條件，所以結論成立。
 <br>這裡每一步都可以倒回去推（每一步都是等價的），所以也可以寫成一串 $\Leftrightarrow$：
 $$\begin{aligned}&a^2+b^2+c^2=(a-b-c)^2\\ \Leftrightarrow\ &ab+ac=bc\\ \Leftrightarrow\ &a(b+c)=bc\\ \Leftrightarrow\ &\tfrac1b+\tfrac1c=\tfrac1a.\end{aligned}$$
@@ -60,7 +60,7 @@ zh: 設 $a,b,c$ 都是正數，且 $a+b>c$。證明 $\sqrt a+\sqrt b>\sqrt c$。
 sol: (1) $\sqrt a+\sqrt b$ 和 $\sqrt c$ 都是正數，兩邊平方不改變大小關係，所以要證 $\sqrt a+\sqrt b>\sqrt c$，
 (2) 只須證 $(\sqrt a+\sqrt b)^2>(\sqrt c)^2$，
 (3) 只須證 $a+b+2\sqrt{ab}>c$，
-(4) 只須證 $a+b>c$。⟦為什麼 (4) 推得出 (3)｜$2\sqrt{ab}>0$，所以 $a+b+2\sqrt{ab}>a+b>c$。⟧
+(4) 只須證 $a+b>c$。⟦為何 (4)⇒(3)｜$2\sqrt{ab}>0$，所以 $a+b+2\sqrt{ab}>a+b>c$。⟧
 最後一式是已知條件，所以結論成立。
 <br>注意 (4) 能推出 (3)，但 (3) 推不出 (4)，例如 $a=b=1$，$c=3$：$1+1+2=4>3$，但 $1+1=2&lt;3$。用分析法時要分清因果：<b>後一步是因，前一步是果</b>，不能寫反。
 

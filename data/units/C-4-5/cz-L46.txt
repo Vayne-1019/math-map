@@ -1,0 +1,20 @@
+=== meta
+title: 染色法：塗兩種顏色看奇偶
+from: cz-L46
+order: 20
+
+=== body
+<div class="hero">染色 = <b>分類</b>，只是畫出來更好看<br>每一步都<b>換顏色</b>，或每一塊佔的<b>顏色數固定</b> → 數一數就有矛盾</div>
+<div class="cards">
+<div class="card"><h4>① 每步換色 → 步數奇偶</h4><div class="rule">馬走「日」：每步一定換色</div>
+<div class="eg">紅 → 白 → 紅 → …<br>回到原處（同色）要跳<b>偶數</b>步</div></div>
+<div class="card"><h4>② 黑白數量不同 → 擠在一起</h4><div class="rule">$5\times5$：黑 13、白 12</div>
+<div class="eg">每隻甲蟲都爬到相鄰格（換色）<br>13 隻黑格甲蟲擠進 12 個白格 <span class="pill">抽屜</span></div></div>
+<div class="card"><h4>③ 按列染色 → 拼圖計數</h4><div class="rule">L 形佔 3 紅 1 白 或 1 紅 3 白</div>
+<div class="eg">紅白各半 ⟹ 兩類 L 形一樣多<br>⟹ 片數是偶數 ⟹ $8\mid mn$</div></div>
+</div>
+<p>怎麼選染法？⟦選法｜讓「每一個操作」或「每一塊拼圖」對顏色的影響固定。跳躍題用相間染色；長條拼圖常用按行（列）染色；必要時用三色、四色。⟧ 讓每一步、每一塊對顏色的影響是固定的。</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>以為馬只能跳到「白」就證完：還要說明回到原處必須同色</li>
+<li>L 形橫放時忘了討論：橫放也是 $3+1$</li></ul></div>
+<div class="bottomline">找不到不變量時，試著把格子塗成兩種顏色。</div>

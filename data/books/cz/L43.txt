@@ -21,7 +21,7 @@ sol: <b>分析</b>：有一個很特殊的情形：$7$ 條直線交於同一點�
   <g fill="currentColor"><circle cx="110" cy="100" r="2.5"/></g>
   <g fill="currentColor" font-size="14" font-style="italic"><text x="96" y="120">A</text></g>
 </svg><figcaption>7 條直線過同一點，把周角分成 14 個角</figcaption></figure>
-<b>證明</b>：先看特殊情形：$7$ 條直線 $l_1,\dots,l_7$ 交於一點 $A$。它們在 $A$ 處形成 $14$ 個以 $A$ 為頂點的角，$\angle1+\angle2+\dots+\angle14=360^\circ$。$360^\circ\div14=\left(25\frac57\right)^\circ$，由抽屜原則（平均值的說法），這 $14$ 個角中至少有一個不超過 $\left(25\frac57\right)^\circ$，小於 $26^\circ$。⟦這個角就是兩條直線的交角嗎｜$14$ 個角中每一個都夾在相鄰的兩條直線之間；它小於 $90^\circ$，所以正是這兩條直線的交角。⟧ 特殊情形成立。
+<b>證明</b>：先看特殊情形：$7$ 條直線 $l_1,\dots,l_7$ 交於一點 $A$。它們在 $A$ 處形成 $14$ 個以 $A$ 為頂點的角，$\angle1+\angle2+\dots+\angle14=360^\circ$。$360^\circ\div14=\left(25\frac57\right)^\circ$，由抽屜原則（平均值的說法），這 $14$ 個角中至少有一個不超過 $\left(25\frac57\right)^\circ$，小於 $26^\circ$。⟦它就是交角嗎｜$14$ 個角中每一個都夾在相鄰的兩條直線之間；它小於 $90^\circ$，所以正是這兩條直線的交角。⟧ 特殊情形成立。
 一般情形：任給 $7$ 條直線 $m_1,\dots,m_7$（任兩條不平行）。任取一點 $A$，過 $A$ 作 $l_i\parallel m_i$（$i=1,\dots,7$）。兩條直線 $m_i,m_j$ 的交角等於 $l_i,l_j$ 的交角（平行線的同位角相等），這就化歸成剛才的特殊情形，命題得證。
 
 === 例 2

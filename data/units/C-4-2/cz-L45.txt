@@ -1,0 +1,22 @@
+=== meta
+title: 排序與極端：先排好，再看最大和最小
+from: cz-L45
+order: 20
+
+=== body
+<div class="hero">地位對稱的對象 → <b>不妨排好順序</b>，等於多一個條件<br>存在性問題 → 要找的東西常在<b>極端位置</b>：最大、最小、最遠、最近</div>
+<div class="cards">
+<div class="card"><h4>① 排序</h4><div class="rule">不妨設 $x&lt;y&lt;z$</div>
+<div class="eg">任兩數之和被第三數整除：$x+y&lt;2z$ ⟹ $z=x+y$<br>再得 $x+z=2y$ ⟹ $1,2,3$</div></div>
+<div class="card"><h4>② 取最大</h4><div class="rule">最長的線段、最大的三角形</div>
+<div class="eg">任三點成鈍角三角形：取最遠的 $A,B$，其餘點都在以 $AB$ 為直徑的圓內</div></div>
+<div class="card"><h4>③ 取最小</h4><div class="rule">最小的總長、最近的點</div>
+<div class="eg">紅白點配對不相交：取總長最短的配法，相交就交換 → 更短 <span class="pill">矛盾</span></div></div>
+<div class="card"><h4>④ 取中間</h4><div class="rule">排序後選正中間</div>
+<div class="eg">$2n+3$ 點，按看 $AB$ 的張角排序，取第 $n+1$ 個 → 圓內外各 $n$ 點</div></div>
+</div>
+<p>為什麼極端元素好用？⟦理由｜極端元素自帶一個不等式：「其他都不比它大」。用反證法時，只要造出比它更大（更小）的，就立刻矛盾。⟧ 因為它自帶「其他都不比它大」這個不等式。</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>無限多個時最大值不一定存在：用極端原則前先確認是有限集（或另證存在）</li>
+<li>「不妨設」必須真的對稱：條件不對稱時不能隨便排序</li></ul></div>
+<div class="bottomline">先排序，再盯著兩端看。</div>
