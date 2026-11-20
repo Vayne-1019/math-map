@@ -1,0 +1,20 @@
+=== meta
+title: 迭代：換坐標再迭代
+from: gz-L12
+order: 30
+
+=== body
+<div class="hero">$f$ 很難迭代？找 $g$ 把它變成簡單的 $\varphi$：<b>$f=g^{-1}\varphi g$</b><br>那麼 <b>$f^{[n]}=g^{-1}\varphi^{[n]}g$</b>：換過去、迭代、換回來</div>
+<div class="cards">
+<div class="card"><h4>① 共軛公式</h4><div class="rule">$f^{[n]}(x)=g^{-1}\big(\varphi^{[n]}(g(x))\big)$</div>
+<div class="eg">中間的 $g\,g^{-1}$ 兩兩抵消 <span class="pill">歸納法</span></div></div>
+<div class="card"><h4>② 常用的簡單 $\varphi$</h4><div class="rule">$x+b,\ \ ax,\ \ x^2,\ \ 2^x$</div>
+<div class="eg">$\varphi^{[n]}$：$x+nb,\ a^nx,\ x^{2^n}$</div></div>
+<div class="card"><h4>③ 例</h4><div class="rule">$f(x)=\dfrac{x^2}{2(x-1)}=\dfrac{2}{1-\left(1-\frac2x\right)^2}$</div>
+<div class="eg">$g=1-\frac2x,\ \varphi=x^2$<br>$f^{[n]}=\dfrac{2}{1-\left(1-\frac2x\right)^{2^n}}$</div></div>
+</div>
+<p>$x^2-2$ 的迭代怎麼辦？⟦三角代換｜令 $x=2\cos t$，則 $x^2-2=2\cos2t$，所以 $P_n(x)=2\cos2^nt$：這裡 $g$ 是「$x\mapsto t$」，$\varphi$ 是「角度乘 2」。⟧ 一次函數的迭代？⟦找不動點｜$f(x)=ax+b$ 的不動點 $c=\frac{b}{1-a}$，則 $f(x)-c=a(x-c)$，所以 $f^{[n]}(x)=c+a^n(x-c)$。例：$f=2x+1$，$c=-1$，$f^{[3]}=-1+8(x+1)=8x+7$。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>$f^{[2]}(x)=f(f(x))$，<b>不是</b> $f(x)^2$，也不是 $f(2x)$</li>
+<li>代換後要確認定義域對得上（例：$x>1$ 時 $1-\frac2x\in(-1,1)$）</li></ul></div>
+<div class="bottomline">迭代先找「換一個變數就變簡單」的寫法：平方、倍角、平移、伸縮。</div>
