@@ -1,0 +1,178 @@
+=== meta
+title: 相似三角形及其應用
+author: 嚴鎮軍
+pages: 159-166
+units: G-1-3
+status: 完成
+
+=== text
+<p>相似三角形是平面幾何最基本的工具之一。兩個三角形相似，對應角相等、對應邊<b>成比例</b>。所以構造相似三角形，可以證線段相等、角相等、垂直或平行；許多幾何計算題更是離不開它。下面舉例說明。</p>
+
+=== 例 1
+zh: 設 $AD$ 是銳角 $\triangle ABC$ 的高，$O$ 是 $AD$ 上任一點，連 $BO$、$CO$ 並延長，分別交 $AC$、$AB$ 於 $E$、$F$。求證：$\angle EDO=\angle FDO$。
+sol: <p><b>分析</b>　假設結論成立，$DO$ 平分 $\angle EDF$，又 $DO\perp BC$。自然想到過 $O$ 作 $BC$ 的平行線，它與 $DO$ 垂直，只要證它被 $DF$、$DE$ 截出的兩段 $OP=OQ$。</p>
+<figure class="bkfig"><svg viewBox="0 0 300 228" width="300" role="img" aria-label="銳角三角形的高 AD 與其上一點 O">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="155.1,22 22,206.3 278,206.3"/><line x1="155.1" y1="22" x2="155.1" y2="206.3"/><line x1="22" y1="206.3" x2="206.5" y2="99"/><line x1="278" y1="206.3" x2="102.1" y2="95.5"/><line x1="155.1" y1="206.3" x2="102.1" y2="95.5"/><line x1="155.1" y1="206.3" x2="206.5" y2="99"/><line x1="77.9" y1="128.9" x2="226.4" y2="128.9" stroke-dasharray="5 4"/><polyline points="155.1,200.3 161.1,200.3 161.1,206.3" stroke-width="1"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="155.1" y="15.9" text-anchor="middle">A</text><text x="14.2" y="219" text-anchor="middle">B</text><text x="285.8" y="219" text-anchor="middle">C</text><text x="155.1" y="222.2" text-anchor="middle">D</text><text x="162.9" y="126" text-anchor="middle">O</text><text x="214.3" y="96.2" text-anchor="middle">E</text><text x="94.3" y="92.6" text-anchor="middle">F</text><text x="66.9" y="133.8" text-anchor="middle">R</text><text x="237.4" y="133.8" text-anchor="middle">S</text><text x="118.1" y="144.8" text-anchor="middle">P</text><text x="192.2" y="144.8" text-anchor="middle">Q</text></g>
+</svg><figcaption>過 $O$ 作 $RS\parallel BC$（虛線），交 $DF$、$DE$ 於 $P$、$Q$</figcaption></figure>
+<p><b>證</b>　作 $RS\parallel BC$，分別交 $AB$、$AC$、$FD$、$ED$ 於 $R$、$S$、$P$、$Q$。由 $RS\parallel BC$，$\triangle FPO\sim\triangle FDC$，$\triangle FRP\sim\triangle FBD$，所以</p>
+$$\frac{OP}{CD}=\frac{FP}{FD}=\frac{RP}{BD}.$$
+<p>由等比性質⟦等比性質｜若 $\frac ab=\frac cd=k$，則 $a+c=k(b+d)$，所以 $\frac{a+c}{b+d}=k$。⟧，$\dfrac{OP+RP}{CD+BD}=\dfrac{OR}{BC}=\dfrac{OP}{CD}$，即 $\dfrac{OP}{OR}=\dfrac{CD}{BC}$。⟦同理｜用 $\triangle EQO\sim\triangle EDB$、$\triangle ESQ\sim\triangle ECD$，得 $\frac{OQ}{BD}=\frac{SQ}{CD}=\frac{OS}{BC}$。⟧，$\dfrac{OS}{OQ}=\dfrac{BC}{BD}$。又 $RS\parallel BC$，以 $A$ 為中心看，$\dfrac{OR}{OS}=\dfrac{BD}{CD}$。三式相乘：</p>
+$$\frac{OP}{OR}\cdot\frac{OS}{OQ}\cdot\frac{OR}{OS}=\frac{CD}{BC}\cdot\frac{BC}{BD}\cdot\frac{BD}{CD}=1,$$
+<p>即 $OP=OQ$。$\triangle DPQ$ 是等腰三角形，而 $OD\perp PQ$，所以 $DO$ 平分 $\angle PDQ$，$\angle EDO=\angle FDO$。</p>
+=== 例 2
+zh: 在 $\triangle ABC$ 中，$AB=425$，$BC=450$，$CA=510$。$P$ 是三角形內一點，過 $P$ 的線段 $DE$、$FG$、$HI$ 長度都是 $d$，且分別平行於 $AB$、$BC$、$CA$（端點都在三角形的邊上）。求 $d$。
+sol: <figure class="bkfig"><svg viewBox="0 0 252 230" width="252" role="img" aria-label="三角形內三條平行於各邊的等長線段">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="166.8,22 230,208 22,208"/><line x1="126.3" y1="74.1" x2="171.8" y2="208"/><line x1="68.3" y1="148.5" x2="209.8" y2="148.5"/><line x1="105.2" y1="208" x2="192.1" y2="96.4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="166.8" y="15.9" text-anchor="middle">A</text><text x="237.8" y="220.7" text-anchor="middle">B</text><text x="14.2" y="220.7" text-anchor="middle">C</text><text x="118.5" y="71.2" text-anchor="middle">D</text><text x="171.8" y="223.9" text-anchor="middle">E</text><text x="57.3" y="153.4" text-anchor="middle">G</text><text x="220.8" y="153.4" text-anchor="middle">F</text><text x="105.2" y="223.9" text-anchor="middle">H</text><text x="199.9" y="93.5" text-anchor="middle">I</text><text x="159.3" y="161.2" text-anchor="middle">P</text></g>
+</svg><figcaption>三條線段都過 $P$、長度都是 $d$，分別平行於 $AB$、$BC$、$CA$（按真實比例畫，$d=306$）</figcaption></figure>
+<p><b>解</b>　$BEPF$、$CHPG$ 都是平行四邊形，所以 $BE=FP$，$CH=GP$。於是</p>
+$$EH=BC-(BE+CH)=BC-(FP+GP)=450-d.$$
+<p>⟦同理｜在 $CA$ 上：$GD=CA-(CG+AD)$，而 $CG=HP$、$AD=IP$，$HP+IP=d$；在 $AB$ 上：$IF=AB-(AI+BF)=425-(DP+EP)$。⟧，$GD=510-d$，$IF=425-d$。</p>
+<p>由 $\triangle DPG\sim\triangle ABC$，$\dfrac{DP}{GD}=\dfrac{AB}{CA}$，</p>
+$$DP=\frac{425}{510}(510-d)=425-\frac56d.\quad\text{①}$$
+<p>由 $\triangle PEH\sim\triangle ABC$，</p>
+$$PE=\frac{425}{450}(450-d)=425-\frac{17}{18}d.\quad\text{②}$$
+<p>因為 $d=DP+PE$，①＋② 得 $d=850-\frac{16}9d$，解得 $d=306$。</p>
+ans: $d=306$
+
+=== 例 3
+zh: 設 $\square ABCD$ 的面積為 $1$，$E$、$F$ 分別是 $AD$、$DC$ 的中點，連 $EB$、$EC$，分別交 $AF$ 於 $P$、$Q$。求 $\triangle EPQ$ 的面積。
+sol: <p><b>分析</b>　$\triangle AEP$、$\triangle AEQ$ 都以 $AE$ 為底，比 $\triangle EPQ$ 好算，然後用 $S_{\triangle EPQ}=S_{\triangle AEQ}-S_{\triangle AEP}$。</p>
+<figure class="bkfig"><svg viewBox="0 0 320 136" width="320" role="img" aria-label="平行四邊形 ABCD 與中點 E、F">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="77.2,22 22,114 160,114 215.2,22"/><line x1="146.2" y1="22" x2="22" y2="114"/><line x1="146.2" y1="22" x2="160" y2="114"/><line x1="77.2" y1="22" x2="187.6" y2="68"/><line x1="187.6" y1="68" x2="298" y2="114" stroke-dasharray="5 4"/><line x1="160" y1="114" x2="298" y2="114" stroke-dasharray="5 4"/><line x1="77.2" y1="22" x2="77.2" y2="114" stroke-dasharray="5 4"/><line x1="121.4" y1="40.4" x2="121.4" y2="22" stroke-dasharray="5 4"/><line x1="150.8" y1="52.7" x2="150.8" y2="22" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="69.4" y="19.1" text-anchor="middle">A</text><text x="14.2" y="126.7" text-anchor="middle">B</text><text x="160" y="129.9" text-anchor="middle">C</text><text x="223" y="19.1" text-anchor="middle">D</text><text x="146.2" y="15.9" text-anchor="middle">E</text><text x="198.6" y="72.9" text-anchor="middle">F</text><text x="305.8" y="126.7" text-anchor="middle">M</text><text x="110.4" y="45.3" text-anchor="middle">P</text><text x="150.8" y="68.6" text-anchor="middle">Q</text><text x="77.2" y="129.9" text-anchor="middle">H</text><text x="121.4" y="15.9" text-anchor="middle">G</text><text x="150.8" y="15.9" text-anchor="middle">I</text></g>
+</svg><figcaption>延長 $AF$ 交 $BC$ 的延長線於 $M$；$AH$、$PG$、$QI$ 是高（虛線）</figcaption></figure>
+<p><b>解</b>　作 $AH\perp BC$、$PG\perp AD$、$QI\perp AD$，記 $AH=h$，$QI=h_1$，$PG=h_2$，$BC=a$，則 $ah=1$。延長 $AF$ 交 $BC$ 的延長線於 $M$，⟦易知｜$\triangle ADF\cong\triangle MCF$（$DF=FC$，對頂角、內錯角），所以 $CM=AD$。⟧$CM=AD=a=2AE$。</p>
+<p>因為 $AE\parallel CM$，$\triangle AEQ\sim\triangle MCQ$，對應高是 $h_1$ 與 $h-h_1$：</p>
+$$\frac{AE}{h_1}=\frac{MC}{h-h_1}=\frac{2AE}{h-h_1}\ \Rightarrow\ h_1=\frac13h.$$
+<p>⟦同理｜$\triangle APE\sim\triangle MPB$，$BM=2a=4AE$，所以 $\frac{h_2}{h-h_2}=\frac{AE}{BM}=\frac14$。⟧，$h_2=\frac15h$。所以</p>
+$$S_{\triangle AQE}=\tfrac12\cdot\tfrac a2\cdot\tfrac h3=\tfrac1{12},\qquad S_{\triangle AEP}=\tfrac12\cdot\tfrac a2\cdot\tfrac h5=\tfrac1{20},$$
+$$S_{\triangle EPQ}=\tfrac1{12}-\tfrac1{20}=\tfrac1{30}.$$
+ans: $\frac1{30}$
+
+=== 例 4
+zh: 以四邊形 $ABCD$ 的各邊為底，作四個相似三角形 $\triangle PAD\sim\triangle QAB\sim\triangle RCB\sim\triangle SCD$，其中 $Q$、$S$ 在四邊形內，$P$、$R$ 在四邊形外。求證：$PQ\parallel RS$。
+sol: <figure class="bkfig"><svg viewBox="0 0 191 240" width="191" role="img" aria-label="四邊形各邊上的四個相似三角形">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="44.7,60.2 22,122.6 141.1,190.7 169.4,105.6" stroke-width="2"/><polygon points="44.7,60.2 110.9,22 169.4,105.6"/><polygon points="44.7,60.2 63.8,93.3 22,122.6"/><polygon points="141.1,190.7 67,218 22,122.6"/><polygon points="141.1,190.7 114.1,146.7 169.4,105.6"/><polygon points="110.9,22 63.8,93.3 67,218 114.1,146.7" stroke="#c2562b" stroke-width="2"/><line x1="22" y1="122.6" x2="169.4" y2="105.6" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="36.9" y="57.4" text-anchor="middle">A</text><text x="11" y="127.5" text-anchor="middle">B</text><text x="141.1" y="206.6" text-anchor="middle">C</text><text x="180.4" y="110.5" text-anchor="middle">D</text><text x="110.9" y="15.9" text-anchor="middle">P</text><text x="63.8" y="109.2" text-anchor="middle">Q</text><text x="59.2" y="230.7" text-anchor="middle">R</text><text x="103.1" y="151.6" text-anchor="middle">S</text></g>
+</svg><figcaption>四個相似三角形：$\triangle PAD$、$\triangle QAB$、$\triangle RCB$、$\triangle SCD$；紅色的 $PQRS$ 是平行四邊形；虛線是輔助的 $BD$</figcaption></figure>
+<p><b>證</b>　由 $\triangle PAD\sim\triangle QAB$，$\angle PAD=\angle QAB$，所以</p>
+$$\angle PAQ=\angle PAD+\angle DAQ=\angle QAB+\angle DAQ=\angle DAB.$$
+<p>連 $BD$。又 $\frac{PA}{AD}=\frac{QA}{AB}$，即 $\frac{PA}{QA}=\frac{AD}{AB}$，所以 $\triangle PAQ\sim\triangle DAB$，</p>
+$$\frac{PQ}{DB}=\frac{PA}{DA}.\quad\text{①}$$
+<p>⟦同理｜$\angle RCS=\angle BCD$，$\frac{RC}{SC}=\frac{BC}{DC}$，所以 $\triangle RCS\sim\triangle BCD$。⟧，$\triangle RCS\sim\triangle BCD$，$\dfrac{RS}{BD}=\dfrac{RC}{BC}$。② 又 $\triangle PAD\sim\triangle RCB$，$\dfrac{PA}{DA}=\dfrac{RC}{BC}$。③</p>
+<p>由 ①②③ 得 $\frac{PQ}{DB}=\frac{RS}{BD}$，$PQ=RS$。仿上可證 $PS=QR$，所以 $PQRS$ 是平行四邊形，$PQ\parallel RS$。</p>
+=== 例 5
+zh: $ABCD$ 是平行四邊形，過對角線 $AC$ 上任一點 $P$ 任作兩直線，一條交 $AB$、$CD$ 於 $E$、$G$，另一條交 $BC$、$DA$ 於 $F$、$H$。求證：$EH\parallel FG$。
+sol: <figure class="bkfig"><svg viewBox="0 0 300 146" width="300" role="img" aria-label="平行四邊形對角線上一點">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="73.2,22 22,124.4 226.8,124.4 278,22"/><line x1="73.2" y1="22" x2="226.8" y2="124.4"/><line x1="52.7" y1="63" x2="242.9" y2="92.2"/><line x1="114.2" y1="124.4" x2="216.6" y2="22"/><line x1="52.7" y1="63" x2="216.6" y2="22" stroke="#c2562b" stroke-width="2"/><line x1="114.2" y1="124.4" x2="242.9" y2="92.2" stroke="#c2562b" stroke-width="2"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="65.4" y="19.1" text-anchor="middle">A</text><text x="14.2" y="137.1" text-anchor="middle">B</text><text x="234.6" y="137.1" text-anchor="middle">C</text><text x="285.8" y="19.1" text-anchor="middle">D</text><text x="159.2" y="73.2" text-anchor="middle">P</text><text x="41.7" y="67.9" text-anchor="middle">E</text><text x="253.9" y="97.1" text-anchor="middle">G</text><text x="114.2" y="140.3" text-anchor="middle">F</text><text x="216.6" y="15.9" text-anchor="middle">H</text></g>
+</svg><figcaption>過對角線上一點 $P$ 的兩條直線；要證兩條紅線平行</figcaption></figure>
+<p><b>證</b>　$AH\parallel FC$，所以 $\triangle PAH\sim\triangle PCF$，$\dfrac{PC}{PA}=\dfrac{PF}{PH}$。又 $AE\parallel CG$，$\triangle PAE\sim\triangle PCG$，$\dfrac{PC}{PA}=\dfrac{PG}{PE}$。所以 $\dfrac{PF}{PH}=\dfrac{PG}{PE}$，再加上對頂角 $\angle EPH=\angle GPF$，得 $\triangle PEH\sim\triangle PGF$，$\angle PEH=\angle PGF$，$EH\parallel FG$。</p>
+=== 例 6
+zh: 在任意 $\triangle ABC$ 的外部作 $\triangle BPC$、$\triangle CQA$、$\triangle ARB$，使 $\angle PBC=\angle CAQ=45^\circ$，$\angle BCP=\angle QCA=30^\circ$，$\angle ABR=\angle BAR=15^\circ$。求證：(1) $\angle QRP=90^\circ$；(2) $QR=RP$。
+sol: <figure class="bkfig"><svg viewBox="0 0 217 280" width="217" role="img" aria-label="三角形外側的三個三角形">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="181.9,136.2 41.3,136.2 102.8,22" stroke-width="2"/><polygon points="41.3,136.2 22,71.9 102.8,22"/><polygon points="102.8,22 194.8,65.5 181.9,136.2"/><polygon points="181.9,136.2 111.6,155.1 41.3,136.2"/><polygon points="22,71.9 111.6,155.1 194.8,65.5" stroke="#c2562b" stroke-width="2"/><line x1="41.3" y1="136.2" x2="111.6" y2="258" stroke-dasharray="5 4"/><line x1="181.9" y1="136.2" x2="111.6" y2="258" stroke-dasharray="5 4"/><line x1="111.6" y1="155.1" x2="111.6" y2="258" stroke-dasharray="5 4"/><line x1="102.8" y1="22" x2="111.6" y2="258" stroke-dasharray="5 4"/><polyline points="106.5,150.3 111.2,145.2 116.4,149.9" stroke-width="1"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="192.9" y="141.1" text-anchor="middle">A</text><text x="30.3" y="141.1" text-anchor="middle">B</text><text x="102.8" y="15.9" text-anchor="middle">C</text><text x="11" y="76.8" text-anchor="middle">P</text><text x="205.8" y="70.4" text-anchor="middle">Q</text><text x="119.4" y="152.2" text-anchor="middle">R</text><text x="111.6" y="273.9" text-anchor="middle">S</text></g>
+</svg><figcaption>$\angle PBC=\angle CAQ=45^\circ$，$\angle BCP=\angle QCA=30^\circ$，$\angle ABR=\angle BAR=15^\circ$；向外作正 $\triangle BAS$，連 $RS$、$CS$（虛線）</figcaption></figure>
+<p><b>證</b>　以 $BA$ 為一邊向 $\triangle ABC$ 外作正 $\triangle BAS$，連 $RS$、$CS$。則</p>
+$$\angle SBR=60^\circ-15^\circ=45^\circ=\angle CBP,\qquad \angle BSR=30^\circ=\angle BCP,$$
+<p>⟦為什麼 ∠BSR=30°｜$RA=RB$、$SA=SB$，所以 $SR$ 是 $AB$ 的中垂線，平分 $\angle BSA=60^\circ$。⟧所以 $\triangle CBP\sim\triangle SBR$，$\dfrac{BS}{BC}=\dfrac{BR}{BP}$，即 $\dfrac{BS}{BR}=\dfrac{BC}{BP}$。又</p>
+$$\angle CBS=\angle CBA+60^\circ=\angle PBR,$$
+<p>⟦為什麼｜$\angle PBR=\angle PBC+\angle CBA+\angle ABR=45^\circ+\angle CBA+15^\circ$。⟧所以 $\triangle CBS\sim\triangle PBR$，得 $\angle CSB=\angle PRB$，且 $\dfrac{BR}{PR}=\dfrac{BS}{CS}$。①</p>
+<p>⟦同理｜右側 $\angle SAR=45^\circ=\angle CAQ$，$\angle ASR=30^\circ=\angle ACQ$，所以 $\triangle CAQ\sim\triangle SAR$，再得 $\triangle CAS\sim\triangle QAR$。⟧，由 $\triangle CAS\sim\triangle QAR$ 得 $\angle CSA=\angle QRA$，且 $\dfrac{AR}{QR}=\dfrac{AS}{CS}$。②</p>
+<p>因為 $BS=AS$、$BR=AR$，由 ①② 得 $PR=RQ$。又 $\angle BRA=180^\circ-15^\circ-15^\circ=150^\circ$，所以</p>
+$$\angle PRQ=150^\circ-(\angle PRB+\angle QRA)=150^\circ-(\angle CSB+\angle CSA)=150^\circ-60^\circ=90^\circ.$$
+=== 例 7
+zh: $\triangle PQR$ 與 $\triangle P_1Q_1R_1$ 是兩個全等的正三角形，交疊出六邊形 $ABCDEF$，邊長依序記為 $AB=a_1$，$BC=b_1$，$CD=a_2$，$DE=b_2$，$EF=a_3$，$FA=b_3$。求證：$a_1^2+a_2^2+a_3^2=b_1^2+b_2^2+b_3^2$。
+sol: <figure class="bkfig"><svg viewBox="0 0 244 250" width="244" role="img" aria-label="兩個全等正三角形交疊">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="112.1,22 22,178.1 202.2,178.1"/><polygon points="221.9,112.1 52.5,50.5 83.8,228"/><polygon points="148.8,85.6 88.2,63.5 62.6,107.8 75,178.1 143.3,178.1 183,144.8" stroke="#c2562b" stroke-width="2"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="118" y="90.7" font-size="12" text-anchor="middle">a₁</text><text x="86.1" y="98.2" font-size="12" text-anchor="middle">b₁</text><text x="83" y="143.2" font-size="12" text-anchor="middle">a₂</text><text x="111.3" y="170.4" font-size="12" text-anchor="middle">b₂</text><text x="151.2" y="158.4" font-size="12" text-anchor="middle">a₃</text><text x="151.3" y="122" font-size="12" text-anchor="middle">b₃</text><text x="112.1" y="15.9" text-anchor="middle">P</text><text x="14.2" y="190.8" text-anchor="middle">Q</text><text x="210" y="190.8" text-anchor="middle">R</text><text x="236.4" y="117" text-anchor="middle">P<tspan font-size="10">1</tspan></text><text x="42.3" y="47.6" text-anchor="middle">Q<tspan font-size="10">1</tspan></text><text x="83.8" y="243.9" text-anchor="middle">R<tspan font-size="10">1</tspan></text><text x="156.6" y="82.7" text-anchor="middle">A</text><text x="80.4" y="60.6" text-anchor="middle">B</text><text x="51.6" y="112.7" text-anchor="middle">C</text><text x="67.2" y="190.8" text-anchor="middle">D</text><text x="143.3" y="194" text-anchor="middle">E</text><text x="194" y="149.7" text-anchor="middle">F</text></g>
+</svg><figcaption>兩個全等正三角形疊成六角星，中間的六邊形（紅）邊長依序為 $a_1,b_1,a_2,b_2,a_3,b_3$</figcaption></figure>
+<p><b>證</b>　六個角上的小三角形</p>
+$$\triangle PAB\sim\triangle Q_1CB\sim\triangle QCD\sim\triangle R_1ED\sim\triangle REF\sim\triangle P_1AF,$$
+<p>⟦為什麼都相似｜每個小三角形都有一個 $60^\circ$ 角（正三角形的頂角）；另外兩個角是兩組平行方向的直線交出來的角，相鄰兩個小三角形共用一個對頂角，一路傳下去，六個三角形的角都一樣。⟧而且 $a_1,b_1,a_2,b_2,a_3,b_3$ 正好依序是它們 $60^\circ$ 角的對邊。依序記它們的面積為 $S_1,S_1',S_2,S_2',S_3,S_3'$。相似三角形面積比等於對應邊比的平方：</p>
+$$\frac{b_1^2}{a_1^2}=\frac{S_1'}{S_1},\quad \frac{b_2^2}{a_1^2}=\frac{S_2'}{S_1},\quad \frac{b_3^2}{a_1^2}=\frac{S_3'}{S_1},$$
+<p>相加後取倒數得 $\dfrac{a_1^2}{b_1^2+b_2^2+b_3^2}=\dfrac{S_1}{S_1'+S_2'+S_3'}$。⟦同理｜把 $a_1$、$S_1$ 換成 $a_2$、$S_2$ 或 $a_3$、$S_3$，同樣成立。⟧，對 $a_2$、$a_3$ 也有同樣的式子，三式相加：</p>
+$$\frac{a_1^2+a_2^2+a_3^2}{b_1^2+b_2^2+b_3^2}=\frac{S_1+S_2+S_3}{S_1'+S_2'+S_3'}.$$
+<p>而由圖，$S_1+S_2+S_3=S_{\triangle PQR}-S_{ABCDEF}=S_{\triangle P_1Q_1R_1}-S_{ABCDEF}=S_1'+S_2'+S_3'$，所以右邊是 $1$，得證。</p>
+=== 例 8
+zh: 在銳角 $\triangle ABC$ 的邊 $BC$、$CA$、$AB$ 上分別取點 $A_1$、$B_1$、$C_1$，使線段 $AA_1$、$BB_1$、$CC_1$ 交於一點 $O$，並且 $\angle AA_1C=\angle BB_1A=\angle CC_1B$。求證：$AA_1$、$BB_1$、$CC_1$ 是 $\triangle ABC$ 的三條高。
+sol: <figure class="bkfig"><svg viewBox="0 0 250 214" width="250" role="img" aria-label="銳角三角形的三條線交於 O">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,191.9 228,191.9 94.1,22"/><line x1="22" y1="191.9" x2="149.1" y2="91.8"/><line x1="228" y1="191.9" x2="53.4" y2="117.9"/><line x1="94.1" y1="22" x2="94.1" y2="191.9"/><line x1="149.1" y1="91.8" x2="94.1" y2="191.9" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="204.6" text-anchor="middle">A</text><text x="235.8" y="204.6" text-anchor="middle">B</text><text x="94.1" y="15.9" text-anchor="middle">C</text><text x="159.4" y="88.9" text-anchor="middle">A<tspan font-size="10">1</tspan></text><text x="43.2" y="115" text-anchor="middle">B<tspan font-size="10">1</tspan></text><text x="94.1" y="207.8" text-anchor="middle">C<tspan font-size="10">1</tspan></text><text x="105.1" y="140" text-anchor="middle">O</text></g>
+</svg><figcaption>結論是三條線其實就是高；證明中要連 $A_1C_1$（虛線）</figcaption></figure>
+<p><b>證</b>　看四邊形 $AC_1OB_1$ 與 $CB_1OA_1$。因為 $\angle AB_1O=\angle BB_1A=\angle CC_1B=\angle BC_1O$，</p>
+$$\angle AC_1O+\angle AB_1O=\angle AC_1O+\angle BC_1O=180^\circ;$$
+<p>同樣 $\angle CA_1O=\angle AA_1C=\angle BB_1A=\angle AB_1O$，</p>
+$$\angle CB_1O+\angle CA_1O=\angle CB_1O+\angle AB_1O=180^\circ.$$
+<p>所以這兩個四邊形都內接於圓。由割線定理（第 25 講），從 $B$ 看這兩個圓：</p>
+$$BA\cdot BC_1=BB_1\cdot BO=BC\cdot BA_1,$$
+<p>所以 $\dfrac{BC}{BA}=\dfrac{BC_1}{BA_1}$，又 $\angle ABC=\angle A_1BC_1$，得 $\triangle ABC\sim\triangle A_1BC_1$，$\angle BAC=\angle BA_1C_1$。於是 $\angle BAC+\angle C_1A_1C=\angle BA_1C_1+\angle C_1A_1C=180^\circ$，四邊形 $AC_1A_1C$ 內接於圓，$\angle AA_1C=\angle AC_1C$（同對弧 $AC$）。</p>
+<p>再由 $\angle CC_1B=\angle AA_1C=\angle AC_1C$，</p>
+$$2\angle CC_1B=\angle CC_1B+\angle AC_1C=180^\circ,$$
+<p>$\angle CC_1B=90^\circ$。從而 $\angle AA_1C=\angle BB_1A=90^\circ$，三條線都是高。</p>
+=== 習題 1
+zh: 在直角梯形 $ABCD$ 中，$\angle A=\angle B=90^\circ$，$AB=7$，$AD=2$，$BC=3$。$P$ 是 $AB$ 邊上一點。如果以 $P$、$A$、$D$ 為頂點的三角形與以 $P$、$B$、$C$ 為頂點的三角形相似，這樣的 $P$ 點有幾個？
+hint: $\angle A=\angle B=90^\circ$，所以 $A$、$B$ 一定是對應點，剩下兩種對應方式。設 $AP=x$。
+sol: <figure class="bkfig"><svg viewBox="0 0 124 230" width="124" role="img" aria-label="直角梯形與邊上的點 P">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,22 22,208 101.7,208 75.1,22"/><polyline points="22,27 27,27 27,22" stroke-width="1"/><polyline points="27,208 27,203 22,203" stroke-width="1"/><line x1="22" y1="96.4" x2="75.1" y2="22"/><line x1="22" y1="96.4" x2="101.7" y2="208"/></g>
+<g fill="currentColor"><circle cx="22" cy="48.6" r="2.4"/><circle cx="22" cy="181.4" r="2.4"/><circle cx="22" cy="96.4" r="2.4"/></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="19.1" text-anchor="middle">A</text><text x="14.2" y="220.7" text-anchor="middle">B</text><text x="109.5" y="220.7" text-anchor="middle">C</text><text x="82.9" y="19.1" text-anchor="middle">D</text><text x="11" y="101.3" text-anchor="middle">P</text></g>
+</svg><figcaption>$AB=7$、$AD=2$、$BC=3$；圖中畫的是 $AP=\frac{14}5$ 那一個，另兩點在 $AP=1$、$AP=6$</figcaption></figure>
+<p>(1) 若 $\triangle PAD\sim\triangle PBC$：$\frac x{7-x}=\frac23$，$x=\frac{14}5<7$，可以。</p>
+<p>(2) 若 $\triangle PAD\sim\triangle CBP$：$\frac x3=\frac2{7-x}$，$x(7-x)=6$，$x=1$ 或 $6$，都可以。</p>
+ans: 3 個
+
+=== 習題 2
+zh: 已知 $\square ABCD$ 中，$AC=\sqrt2\,AB$，$M$ 是 $AC$、$BD$ 的交點。求證：$\angle CMB=\angle DAB$。
+hint: 證 $\triangle MAB\sim\triangle BAC$。
+sol: <p>$\frac{AC}{AB}=\frac{2AM}{AB}=\sqrt2$，所以 $\frac{AB}{AM}=\sqrt2=\frac{AC}{AB}$，又 $\angle MAB=\angle BAC$，得 $\triangle MAB\sim\triangle BAC$，$\angle AMB=\angle ABC$，所以 $\angle CMB=180^\circ-\angle ABC=\angle DAB$。</p>
+=== 習題 3
+zh: 在 $\triangle ABC$ 中，$AC=2AB$，$AD$ 是 $\angle A$ 的平分線，$DE\parallel AC$，$DF\parallel AB$（$E$、$F$ 分別在 $AB$、$AC$ 上），$FE$ 與 $CB$ 的延長線交於 $G$。求證：$EF=EG$。
+sol: <figure class="bkfig"><svg viewBox="0 0 300 156" width="300" role="img" aria-label="角平分線與兩條平行線">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="114.1,22 86,134.4 278,134.4"/><line x1="114.1" y1="22" x2="150" y2="134.4"/><line x1="150" y1="134.4" x2="95.4" y2="96.9"/><line x1="150" y1="134.4" x2="168.7" y2="59.5"/><line x1="22" y1="134.4" x2="168.7" y2="59.5"/><line x1="22" y1="134.4" x2="86" y2="134.4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="114.1" y="15.9" text-anchor="middle">A</text><text x="86" y="150.3" text-anchor="middle">B</text><text x="285.8" y="147.1" text-anchor="middle">C</text><text x="150" y="150.3" text-anchor="middle">D</text><text x="84.4" y="101.8" text-anchor="middle">E</text><text x="176.5" y="56.6" text-anchor="middle">F</text><text x="11" y="139.3" text-anchor="middle">G</text></g>
+</svg><figcaption>$AC=2AB$，$AD$ 平分 $\angle A$，$DE\parallel AC$，$DF\parallel AB$</figcaption></figure>
+<p>由角平分線定理 $\frac{BD}{DC}=\frac{AB}{AC}=\frac12$。$\triangle BED\sim\triangle DFC$，所以 $\frac{DE}{CF}=\frac{BD}{DC}=\frac12$。又 $DE\parallel CF$，$\frac{GE}{GF}=\frac{DE}{CF}=\frac12$，$GF=2GE$，即 $GE=EF$。</p>
+=== 習題 4
+zh: 設有兩個正三角形 $ABC$ 和 $A_1B_1C_1$（頂點都依順時針方向排列），且兩邊 $BC$ 和 $B_1C_1$ 的中點重合。求證：$AA_1=\sqrt3\,BB_1$。
+sol: <figure class="bkfig"><svg viewBox="0 0 194 210" width="194" role="img" aria-label="兩個正三角形共用邊的中點">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="97,22 171.9,151.9 22,151.9"/><polygon points="34.4,77.2 140,115.7 53.9,188"/><line x1="97" y1="22" x2="34.4" y2="77.2" stroke="#c2562b" stroke-width="2"/><line x1="171.9" y1="151.9" x2="140" y2="115.7" stroke="#c2562b" stroke-width="2"/><line x1="97" y1="22" x2="97" y2="151.9" stroke-dasharray="5 4"/><line x1="34.4" y1="77.2" x2="97" y2="151.9" stroke-dasharray="5 4"/><line x1="97" y1="151.9" x2="140" y2="115.7" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="97" y="15.9" text-anchor="middle">A</text><text x="182.9" y="156.8" text-anchor="middle">B</text><text x="11" y="156.8" text-anchor="middle">C</text><text x="97" y="167.8" text-anchor="middle">O</text><text x="19.9" y="82.1" text-anchor="middle">A<tspan font-size="10">1</tspan></text><text x="150.3" y="112.8" text-anchor="middle">B<tspan font-size="10">1</tspan></text><text x="53.9" y="203.9" text-anchor="middle">C<tspan font-size="10">1</tspan></text></g>
+</svg><figcaption>$O$ 是 $BC$ 與 $B_1C_1$ 共同的中點；連 $AO$、$A_1O$（虛線）</figcaption></figure>
+<p>設 $O$ 是共同的中點，連 $AO$、$A_1O$。$\triangle AOB\sim\triangle A_1OB_1$（都是 $30^\circ$-$60^\circ$-$90^\circ$），$\frac{AO}{BO}=\frac{A_1O}{B_1O}=\sqrt3$。又 $\angle AOA_1=90^\circ-\angle A_1OB=\angle BOB_1$，所以 $\triangle AOA_1\sim\triangle BOB_1$，$\frac{AA_1}{BB_1}=\frac{AO}{BO}=\sqrt3$。</p>
+=== 習題 5
+zh: $P$ 是 $\triangle ABC$ 內一點，過 $P$ 分別作直線平行於 $\triangle ABC$ 的各邊，得到三個小三角形 $t_1$、$t_2$、$t_3$，面積分別為 $4$、$9$、$49$。求 $\triangle ABC$ 的面積。
+sol: <figure class="bkfig"><svg viewBox="0 0 279 220" width="279" role="img" aria-label="過三角形內一點作三邊的平行線">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,198 256.7,198 100.2,22"/><line x1="67.6" y1="95.3" x2="165.4" y2="95.3"/><line x1="80.7" y1="198" x2="87.2" y2="51.3"/><line x1="217.6" y1="198" x2="139.3" y2="66"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="141.5" y="169.6" font-style="normal" font-size="12" text-anchor="middle">t₃</text><text x="93.7" y="85.6" font-style="normal" font-size="11" text-anchor="middle">t₂</text><text x="143.7" y="89.5" font-style="normal" font-size="11" text-anchor="middle">t₁</text><text x="14.2" y="210.7" text-anchor="middle">A</text><text x="264.4" y="210.7" text-anchor="middle">B</text><text x="100.2" y="15.9" text-anchor="middle">C</text><text x="56.6" y="100.2" text-anchor="middle">M</text><text x="176.4" y="100.2" text-anchor="middle">N</text><text x="126.3" y="89.2" text-anchor="middle">P</text><text x="80.7" y="213.9" text-anchor="middle">R</text><text x="217.6" y="213.9" text-anchor="middle">T</text></g>
+</svg><figcaption>三個小三角形都與 $\triangle ABC$ 相似（按 $4:9:49$ 的真實比例畫）</figcaption></figure>
+<p>設 $PN=q$、$MP=p$、$RT=r$，$AB=c$，$\triangle ABC$ 的面積為 $S$。三個小三角形都與 $\triangle ABC$ 相似，面積的平方根之比等於對應邊之比：</p>
+$$\frac{2}{\sqrt S}=\frac qc,\quad\frac3{\sqrt S}=\frac pc,\quad\frac7{\sqrt S}=\frac rc.$$
+<p>又 $p+q+r=AR+TB+RT=c$⟦為什麼｜$AMPR$、$PNBT$ 是平行四邊形，$MP=AR$、$PN=TB$。⟧，三式相加得 $\frac{12}{\sqrt S}=1$，$S=144$。</p>
+ans: $144$
+
+=== 習題 6
+zh: 設點 $M$、$K$ 分別在 $\triangle ABC$ 的邊 $AB$、$BC$ 上，線段 $AK$、$CM$ 交於 $P$。已知 $AP:PK=CP:PM=2:1$。求證：$AK$、$CM$ 都是 $\triangle ABC$ 的中線。
+sol: <p>$\frac{AP}{PK}=\frac{CP}{PM}=2$，$\angle APC=\angle KPM$，所以 $\triangle APC\sim\triangle KPM$，$MK=\frac12AC$ 且 $MK\parallel AC$。所以 $MK$ 是 $\triangle ABC$ 的中位線，$M$、$K$ 是中點。</p>
+=== 習題 7
+zh: 在 $\triangle ABC$ 中，$\angle A=90^\circ$，分別以 $AB$、$AC$ 為一邊向形外作正方形 $ABDE$ 和 $ACFG$，$CD$ 交 $AB$ 於 $K$，$BF$ 交 $AC$ 於 $L$。求證：$AK=AL$。
+sol: <figure class="bkfig"><svg viewBox="0 0 220 220" width="220" role="img" aria-label="直角三角形兩股上的正方形">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="92.4,92.4 198,92.4 92.4,22"/><polygon points="92.4,92.4 198,92.4 198,198 92.4,198"/><polygon points="92.4,92.4 92.4,22 22,22 22,92.4"/><line x1="92.4" y1="22" x2="198" y2="198"/><line x1="198" y1="92.4" x2="22" y2="22"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="84.6" y="105.1" text-anchor="middle">A</text><text x="209" y="97.3" text-anchor="middle">B</text><text x="92.4" y="15.9" text-anchor="middle">C</text><text x="205.8" y="210.7" text-anchor="middle">D</text><text x="84.6" y="210.7" text-anchor="middle">E</text><text x="14.2" y="19.1" text-anchor="middle">F</text><text x="11" y="97.3" text-anchor="middle">G</text><text x="134.6" y="86.3" text-anchor="middle">K</text><text x="103.4" y="55.1" text-anchor="middle">L</text></g>
+</svg><figcaption>$E$ 在 $CA$ 的延長線上、$G$ 在 $BA$ 的延長線上</figcaption></figure>
+<p>$AB\parallel ED$，所以 $AK:ED=CA:CE$，即 $AK:AB=AC:(AB+AC)$。⟦同理｜$AC\parallel GF$，$AL:GF=BA:BG$，即 $AL:AC=AB:(AB+AC)$。⟧，$AL:AC=AB:(AB+AC)$。兩式都給出 $\dfrac{AB\cdot AC}{AB+AC}$，所以 $AK=AL$。</p>
