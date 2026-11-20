@@ -1,0 +1,20 @@
+=== meta
+title: 拆項與添項
+from: cz-L01
+order: 20
+
+=== body
+<div class="hero">因式分解 = 乘法展開的<b>反方向</b><br>展開時同類項被合併了 → 分解時把它<b>拆回來</b>或<b>補回來</b><br>先猜公因式，再看缺什麼補什麼</div>
+<div class="cards">
+<div class="card"><h4>① 拆項</h4><div class="rule">一項拆成幾項</div>
+<div class="eg">$x^3+9x^2+26x+24$<br>$=(x^3+2x^2)+(7x^2+14x)+(12x+24)$<br>每組都有 $x+2$ <span class="pill">湊公因式</span></div></div>
+<div class="card"><h4>② 添項</h4><div class="rule">加一項，再減同一項</div>
+<div class="eg">$x^5+x+1=(x^5-x^2)+(x^2+x+1)$<br>兩組都含 $x^2+x+1$ <span class="pill">缺什麼補什麼</span></div></div>
+<div class="card"><h4>③ 補成平方差</h4><div class="rule">$A^2+B^2$ 缺 $2AB$ 就補上</div>
+<div class="eg">$A^2+B^2-C^2=(A+B)^2-2AB-C^2$<br>若 $2AB+C^2$ 是平方 <span class="pill">平方差</span></div></div>
+</div>
+<p>怎麼知道該湊 $x+2$？⟦代數字找因式｜代 $x=-2$ 得 $-8+36-52+24=0$，由因式定理 $x+2$ 是因式。先試常數項的因數 $\pm1,\pm2,\pm3,\dots$。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>添了項卻忘記減回去 → 前後不相等</li>
+<li>$n^4+k^4=(n^2+k^2)^2-(\sqrt2\,nk)^2$ 只在實數範圍成立，<b>不算</b>有理數範圍的因式分解</li></ul></div>
+<div class="bottomline">不知道怎麼拆？先代數字找出一個因式，再倒推要怎麼分組。</div>

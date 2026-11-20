@@ -15,3 +15,5 @@ __pycache__/
 # 小叢書解壓縮資料夾等其他掃描書資料夾
 data/*/
 !data/amc_zh/
+!data/books/
+!data/units/
