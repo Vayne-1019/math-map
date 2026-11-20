@@ -1,0 +1,223 @@
+=== meta
+title: 幾何不等式的證法（一）
+author: 嚴鎮軍
+pages: 124-133
+units: G-10-6, G-10-4
+status: 完成
+
+=== text
+<p>幾何問題中出現的不等式稱為<b>幾何不等式</b>。這裡較多討論三角形中的不等式，約定以下習慣記號：在 $\triangle ABC$ 中，$a,b,c$ 是三邊長，$A,B,C$ 是對應角；$p=\frac12(a+b+c)$ 是半周長；$\triangle$ 表示面積；$h_a,h_b,h_c$ 是對應邊上的高；$m_a,m_b,m_c$ 是對應邊上的中線；$R,r$ 分別是外接圓與內切圓半徑。</p>
+<p>依論證中主要用到哪種知識，證法大致分三種：<b>幾何方法、三角方法、代數方法</b>，不過三者很難截然分開。</p>
+<h3>一、幾何方法</h3>
+
+=== 例 1 | 中線和與周長
+zh: 在 $\triangle ABC$ 中，求證：$\dfrac34(a+b+c)\lt m_a+m_b+m_c\lt a+b+c$。
+sol: <figure class="bkfig"><svg viewBox="0 0 260 350" width="260" role="img" aria-label="三角形 ABC 的三條中線交於重心 O，中線 AD 延長一倍到 A₁">
+  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="120.9,24.0 24.0,175.4 236.0,175.4"/></g>
+  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="120.9" y1="24.0" x2="139.1" y2="326.9"/><line x1="24.0" y1="175.4" x2="178.5" y2="99.7"/><line x1="236.0" y1="175.4" x2="72.5" y2="99.7"/></g>
+  <g fill="none" stroke="#c2562b" stroke-width="1.5" stroke-dasharray="5 4"><line x1="24.0" y1="175.4" x2="139.1" y2="326.9"/></g>
+  <g fill="currentColor"><circle cx="127.0" cy="125.0" r="2.6"/></g>
+  <g fill="currentColor" font-size="14" font-style="italic"><text x="116.9" y="16.0">A</text><text x="8.0" y="179.4">B</text><text x="242.0" y="179.4">C</text><text x="134.0" y="191.4">D</text><text x="145.1" y="332.9">A₁</text><text x="133.0" y="121.0">O</text></g>
+</svg><figcaption>把中線 $AD$ 延長一倍到 $A_1$；$O$ 是重心</figcaption></figure>
+<b>右邊.</b> 把 $BC$ 上的中線 $AD$ 延長到 $A_1$，使 $A_1D=AD=m_a$。$ABA_1C$ 是平行四邊形⟦為什麼｜對角線 $AA_1$ 與 $BC$ 互相平分（$D$ 是兩者的中點），所以是平行四邊形，$BA_1=AC=b$。⟧，所以在 $\triangle ABA_1$ 中 $AB+BA_1>AA_1$，即 $c+b>2m_a$。同理 $c+a>2m_b$，$a+b>2m_c$。三式相加除以 2 得 $m_a+m_b+m_c\lt a+b+c$。
+<b>左邊.</b> 設 $O$ 為重心，則 $AO=\frac23m_a$，$BO=\frac23m_b$。在 $\triangle ABO$ 中 $AO+BO>AB$，即 $\frac23m_a+\frac23m_b>c$。同理 $\frac23m_b+\frac23m_c>a$，$\frac23m_c+\frac23m_a>b$。三式相加再除以 $\frac43$，得 $m_a+m_b+m_c>\frac34(a+b+c)$。
+
+=== 例 2 | 凸四邊形
+zh: 在凸四邊形 $ABCD$ 中，已知 $AB+BD\le AC+CD$。求證：$AB\lt AC$。
+sol: <figure class="bkfig"><svg viewBox="0 0 240 170" width="240" role="img" aria-label="凸四邊形 ABCD，對角線交於 O">
+  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="24.0,146.2 198.5,146.2 216.0,24.0 38.5,58.9"/><line x1="24.0" y1="146.2" x2="216.0" y2="24.0"/><line x1="198.5" y1="146.2" x2="38.5" y2="58.9"/></g>
+  <g fill="currentColor" font-size="14" font-style="italic"><text x="10.0" y="160.2">A</text><text x="202.5" y="160.2">B</text><text x="222.0" y="24.0">C</text><text x="22.5" y="58.9">D</text><text x="100.6" y="86.9">O</text></g>
+</svg><figcaption>凸四邊形的兩條對角線交於 $O$</figcaption></figure>
+<b>證法一.</b> 凸四邊形的對角線交於 $O$，則
+$$\begin{aligned}AC+BD&=(AO+OC)+(BO+OD)\\&=(AO+OB)+(CO+OD)>AB+CD.\end{aligned}$$
+⟦最後一步｜$\triangle AOB$ 中 $AO+OB>AB$；$\triangle COD$ 中 $CO+OD>CD$。⟧
+把它與題設 $AB+BD\le AC+CD$ 相加，得 $2AB\lt 2AC$，即 $AB\lt AC$。
+<b>證法二.</b> 反設 $AB\ge AC$，則 $\angle ACB\ge\angle ABC$（大邊對大角）。對角線 $AC$ 在四邊形內，所以 $\angle BCD>\angle ACB\ge\angle ABC>\angle DBC$⟦為什麼這樣夾｜$\angle BCD=\angle BCA+\angle ACD>\angle ACB$；同樣 $BD$ 在形內，$\angle ABC=\angle ABD+\angle DBC>\angle DBC$。⟧，在 $\triangle BCD$ 中大角對大邊，$BD>DC$，於是 $AB+BD>AC+DC$，與題設矛盾。
+
+=== 例 3 | 周長三等分點
+src: 1988 年全國高中數學聯賽
+zh: 在 $\triangle ABC$ 中，$P,Q,R$ 把它的周長三等分，且 $P,Q$ 在 $AB$ 邊上。求證：$\dfrac{S_{\triangle PQR}}{S_{\triangle ABC}}>\dfrac29$。
+sol: <figure class="bkfig"><svg viewBox="0 0 320 120" width="320" role="img" aria-label="三角形 ABC，P、Q 在 AB 上，R 在 CA 上，三點把周長三等分；Q′ 使 AQ′=PQ">
+  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="24.0,96.3 296.0,96.3 214.7,24.0"/><line x1="51.2" y1="96.3" x2="180.8" y2="36.9"/><line x1="246.1" y1="96.3" x2="180.8" y2="36.9"/></g>
+  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="180.8" y1="36.9" x2="218.9" y2="96.3"/></g>
+  <g fill="currentColor" font-size="14" font-style="italic"><text x="10.0" y="110.3">A</text><text x="300.0" y="110.3">B</text><text x="218.7" y="18.0">C</text><text x="47.2" y="112.3">P</text><text x="242.1" y="112.3">Q</text><text x="166.8" y="30.9">R</text><text x="210.9" y="112.3">Q′</text></g>
+</svg><figcaption>$P,Q,R$ 把周長三等分；虛線 $RQ'$ 中 $AQ'=PQ$</figcaption></figure>
+設 $R$ 在 $CA$ 上（$Q$ 與 $B$ 之間、$B$ 到 $C$、$C$ 到 $R$ 合起來是三分之一周長）。在 $AB$ 上取 $Q'$，使 $AQ'=PQ$，則
+$$AQ'=PQ=\frac13(AB+BC+CA)>\frac13(AB+AB)=\frac23AB,$$
+⟦為什麼｜$BC+CA>AB$（三角形不等式）。⟧ 且 $AP\lt \frac13AB$⟦為什麼｜$AP+PQ\le AB$，所以 $AP\le AB-PQ\lt AB-\frac23AB$。⟧，於是
+$$AR=(AP+AR)-AP=\frac13(AB+BC+CA)-AP>\frac13(AB+BC+CA)-\frac13AB>\frac13AC.$$
+$\triangle PQR$ 與 $\triangle AQ'R$ 底邊等長、在同一直線上、頂點同為 $R$，面積相等，所以
+$$\frac{S_{\triangle PQR}}{S_{\triangle ABC}}=\frac{S_{\triangle AQ'R}}{S_{\triangle ABC}}=\frac{\frac12AR\cdot AQ'\sin A}{\frac12AB\cdot AC\sin A}>\frac{\frac23AB\cdot\frac13AC}{AB\cdot AC}=\frac29.$$
+<b>注.</b> $\frac29$ 是最佳的。例如取周長為 $1$ 的 $\triangle ABC$，$AB=AC$，令 $Q$ 與 $B$ 重合。當 $BC\to0$ 時，$AB=AC\to\frac12$，$BP=\frac13$，$AP\to\frac16$，$AR\to\frac16$⟦怎麼算｜$BP=PQ=\frac13$，$AP=AB-\frac13\to\frac16$；$R$ 離 $B$ 沿 $B\to C\to A$ 走 $\frac13$，$BC\to0$ 時 $CR\to\frac13$，$AR\to\frac12-\frac13=\frac16$。⟧，所以
+$$\frac{S_{\triangle PQR}}{S_{\triangle ABC}}=\frac{S_{\triangle ABR}-S_{\triangle APR}}{S_{\triangle ABC}}\to\frac{\frac12\cdot\frac16-\frac16\cdot\frac16}{\frac12\cdot\frac12}=\frac29.$$
+
+=== 例 4 | 兩個全等矩形的公共部分
+zh: 兩個全等矩形的邊有 8 個交點，即它們的公共部分是一個八邊形。求證：$S_{\text{八邊形}}>\dfrac12S_{\text{矩形}}$。
+sol: <figure class="bkfig"><svg viewBox="0 0 320 277" width="320" role="img" aria-label="兩個全等矩形 PQRS 與 P₁Q₁R₁S₁ 交成八邊形 A₁…A₈，虛線 A₁A₅ 與 A₃A₇ 互相垂直">
+  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="31.8,65.8 31.8,199.9 268.5,199.9 268.5,65.8"/><polygon points="24.0,135.1 87.0,253.6 296.0,142.4 233.0,24.0"/></g>
+  <g fill="none" stroke="#c2562b" stroke-width="1.5" stroke-dasharray="5 4"><line x1="154.4" y1="65.8" x2="187.9" y2="199.9"/><line x1="31.8" y1="149.8" x2="268.5" y2="90.7"/></g>
+  <g fill="currentColor" font-size="14" font-style="italic"><text x="17.8" y="61.8">P</text><text x="17.8" y="211.9">Q</text><text x="272.5" y="211.9">R</text><text x="272.5" y="61.8">S</text><text x="6.0" y="135.1">P₁</text><text x="81.0" y="269.6">Q₁</text><text x="302.0" y="148.4">R₁</text><text x="237.0" y="20.0">S₁</text><text x="148.3" y="56.8">A₁</text><text x="11.8" y="135.5">A₂</text><text x="11.9" y="156.3">A₃</text><text x="40.8" y="212.7">A₄</text><text x="188.2" y="217.4">A₅</text><text x="276.3" y="164.6">A₆</text><text x="275.5" y="90.6">A₇</text><text x="260.7" y="62.8">A₈</text></g>
+</svg><figcaption>兩個全等矩形交出八邊形；紅虛線 $A_1A_5\perp A_3A_7$</figcaption></figure>
+設全等矩形 $PQRS$ 與 $P_1Q_1R_1S_1$ 的邊長為 $a$（$PS$ 方向）和 $b$（$PQ$ 方向），有 8 個交點 $A_1,\dots,A_8$（必然是每邊都與另一矩形的兩邊相交）。如圖，$A_1$ 是 $PS$ 與 $P_1S_1$ 的交點，$A_5$ 是 $QR$ 與 $Q_1R_1$ 的交點。
+$A_5$ 在 $QR$ 上，到對邊 $PS$ 的距離是 $b$；$A_5$ 也在 $Q_1R_1$ 上，到對邊 $P_1S_1$ 的距離也是 $b$。到兩條直線距離相等的點在它們交角的平分線上，所以 $A_1A_5$ 是 $PS$ 與 $P_1S_1$ 交角的平分線。⟦細節｜作 $A_5N\perp PS$、$A_5M\perp P_1S_1$，則 $A_5N=A_5M=b$，直角三角形 $A_5A_1N\cong A_5A_1M$（斜邊、一股），所以 $\angle A_5A_1N=\angle A_5A_1M$。⟧
+同理，$A_3A_7$ 是 $PQ$（或 $RS$）與 $P_1Q_1$（或 $R_1S_1$）交角的平分線。因為 $PS\perp PQ$、$P_1S_1\perp P_1Q_1$，兩條平分線的方向也相差 $90^\circ$⟦為什麼｜把 $PS$ 與 $P_1S_1$ 同時轉 $90^\circ$ 就得到 $PQ$ 與 $P_1Q_1$ 的方向，它們交角的平分線也跟著轉 $90^\circ$。⟧，所以 $A_1A_5\perp A_3A_7$ 或 $A_1A_5\parallel A_3A_7$；但兩者是凸八邊形中的兩條對角線，必相交，只能 $A_1A_5\perp A_3A_7$。
+又 $A_1A_5\ge b$（$A_1,A_5$ 分別在相距 $b$ 的平行線 $PS,QR$ 上），$A_3A_7\ge a$。所以
+$$S_{A_1A_2\cdots A_8}>S_{A_1A_3A_5A_7}=\frac12A_1A_5\cdot A_3A_7\ge\frac12ab=\frac12S_{\text{矩形}}.$$
+⟦對角線垂直的四邊形面積｜對角線互相垂直時，四邊形面積是兩條對角線乘積的一半（切成四個直角三角形相加）。⟧
+
+=== 例 5 | 直角三角形中的兩個內心
+src: 第 29 屆 IMO 第 5 題（1988）
+zh: 在直角三角形 $ABC$ 中，$\angle A=90^\circ$，$AD$ 是斜邊上的高，$M,N$ 分別是 $\triangle ABD$ 與 $\triangle ACD$ 的內心，連 $MN$ 並延長分別交 $AB,AC$ 於 $K,L$。求證：$S_{\triangle ABC}\ge2S_{\triangle AKL}$。
+sol: （原書題目印作「Rt△ABD」，依題意應為 Rt△ABC。）<figure class="bkfig"><svg viewBox="0 0 280 226" width="280" role="img" aria-label="直角三角形 ABC，AD 是斜邊上的高，M、N 是兩個小三角形的內心，直線 MN 交 AB、AC 於 K、L">
+  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="24.0,202.5 24.0,24.0 256.0,202.5"/><line x1="24.0" y1="202.5" x2="110.2" y2="90.3"/><line x1="24.0" y1="61.0" x2="165.5" y2="202.5"/></g>
+  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="24.0" y1="202.5" x2="59.9" y2="96.9"/><line x1="24.0" y1="202.5" x2="118.8" y2="155.8"/><line x1="110.2" y1="90.3" x2="59.9" y2="96.9"/><line x1="110.2" y1="90.3" x2="118.8" y2="155.8"/></g>
+  <g fill="currentColor"><circle cx="59.9" cy="96.9" r="2.6"/><circle cx="118.8" cy="155.8" r="2.6"/></g>
+  <g fill="currentColor" font-size="14" font-style="italic"><text x="10.0" y="216.5">A</text><text x="10.0" y="24.0">B</text><text x="260.0" y="216.5">C</text><text x="114.2" y="84.3">D</text><text x="45.9" y="92.9">M</text><text x="120.8" y="171.8">N</text><text x="8.0" y="65.0">K</text><text x="161.5" y="218.5">L</text></g>
+</svg><figcaption>虛線連 $AM,AN,DM,DN$</figcaption></figure>
+連 $AM,AN,DM,DN$。$\triangle ADB\sim\triangle CDA$⟦為什麼相似｜兩者在 $D$ 都是直角，且 $\angle B=90^\circ-\angle BAD=\angle DAC$。⟧，而 $DM,DN$ 是這兩個相似三角形中對應角（$D$ 處的直角）的平分線，$M,N$ 又分別是它們的內心，所以
+$$\frac{DM}{DN}=\frac{BD}{AD}\quad(\text{相似比}).$$
+又 $\angle MDN=45^\circ+45^\circ=90^\circ$，所以 $\triangle MDN\sim\triangle BDA$（$M\leftrightarrow B$，$N\leftrightarrow A$）。兩個三角形的對應邊夾角相等：$DM$ 由 $DB$ 轉 $45^\circ$ 而來，所以 $MN$ 與 $AB$ 的交角也是 $45^\circ$，即 $\angle LKA=45^\circ$⟦更仔細｜$\triangle MDN$ 可看成 $\triangle BDA$ 繞 $D$ 轉 $45^\circ$ 再縮放，對應邊 $MN$ 與 $BA$ 的夾角就等於旋轉角 $45^\circ$。⟧，$\triangle AKL$ 是等腰直角三角形。
+又 $\angle MKA=45^\circ=\angle MDA$，$\angle MAK=\angle MAD$（$M$ 是內心），$AM$ 公用，所以 $\triangle AMK\cong\triangle AMD$，$AK=AD$；同理 $AL=AD$。於是
+$$\begin{aligned}S_{\triangle ABC}&=\frac12AB\cdot AC,\\ S_{\triangle AKL}&=\frac12AD^2=\frac12\cdot\frac{AB^2\cdot AC^2}{BC^2}=\frac12AB\cdot AC\cdot\frac{AB\cdot AC}{AB^2+AC^2}\le\frac14AB\cdot AC.\end{aligned}$$
+⟦兩步｜$AD\cdot BC=AB\cdot AC$（兩種算面積），所以 $AD=\frac{AB\cdot AC}{BC}$，$BC^2=AB^2+AC^2$。最後用 $AB^2+AC^2\ge2AB\cdot AC$。⟧
+所以 $S_{\triangle ABC}\ge2S_{\triangle AKL}$。
+<b>注.</b> 這個證法出自我國一位得金牌的選手，比競賽委員會公布的解答簡單得多。妙處有兩點：(1) 利用兩個相似三角形中對應線段的比等於相似比；(2) 利用對應邊夾角的關係。
+
+=== text
+<h3>二、三角方法</h3>
+<p>這一小節透過三角形中的不等式，說明三角知識的應用。最常用的有兩種：</p>
+<p><b>1. 三角恆等變形</b>：用和差角、倍角、半角公式，積化和差、和差化積等，造出便於套用已知不等式的形式。</p>
+<p><b>2. 邊角互換</b>：用三角函數定義、正弦定理、餘弦定理等，把關於角的不等式換成關於邊（或其他元素）的不等式，或反過來；也可以只換其中一部分，造出便於處理的形式。</p>
+
+=== 例 6 | 邊加高
+zh: 證明：在 $\triangle ABC$ 中，$c\ge b\iff c+h_c\ge b+h_b$。
+sol: <figure class="bkfig"><svg viewBox="0 0 240 192" width="240" role="img" aria-label="三角形 ABC 中 B、C 兩點的高 h_b、h_c">
+  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="216.0,168.0 94.4,24.0 24.0,168.0"/></g>
+  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="94.4" y1="24.0" x2="94.4" y2="168.0"/><line x1="24.0" y1="168.0" x2="136.1" y2="73.4"/></g>
+  <g fill="currentColor" font-size="14" font-style="italic"><text x="222.0" y="174.0">A</text><text x="90.4" y="16.0">B</text><text x="10.0" y="174.0">C</text><text x="98.4" y="138.0">h<tspan font-size="10">b</tspan></text><text x="106.1" y="77.4">h<tspan font-size="10">c</tspan></text></g>
+</svg><figcaption>虛線是 $B$、$C$ 兩點的高</figcaption></figure>
+把 $h_b,h_c$ 都用 $\sin A$ 表示：$h_c=b\sin A$，$h_b=c\sin A$⟦為什麼｜$C$ 到 $AB$ 的高是 $AC\cdot\sin A=b\sin A$；$B$ 到 $AC$ 的高是 $AB\sin A=c\sin A$。⟧，得
+$$c+h_c-(b+h_b)=c+b\sin A-b-c\sin A=(c-b)(1-\sin A).$$
+當 $A\ne90^\circ$ 時 $1-\sin A>0$，所以 $c\ge b\iff c+h_c\ge b+h_b$。（原書未提 $A=90^\circ$ 的情形：這時 $c+h_c=b+h_b$ 恆成立，「$\Leftarrow$」不必成立，所以要排除直角。）
+
+=== 例 7 | 魏琴伯克（Weitzenböck）不等式
+zh: 證明：在 $\triangle ABC$ 中，$a^2+b^2+c^2\ge4\sqrt3\,\triangle$。問等號何時成立。
+sol: <b>證法一.</b> 由餘弦定理及面積公式：
+$$\begin{aligned}a^2+b^2+c^2-4\sqrt3\triangle&=a^2+b^2+(a^2+b^2-2ab\cos C)-2\sqrt3ab\sin C\\&=2\big[a^2+b^2-2ab\sin(C+30^\circ)\big]\ge2(a^2+b^2-2ab)\ge0.\end{aligned}$$
+⟦疊合｜$\frac12\cos C+\frac{\sqrt3}2\sin C=\sin30^\circ\cos C+\cos30^\circ\sin C=\sin(C+30^\circ)$，所以 $2ab\cos C+2\sqrt3ab\sin C=4ab\sin(C+30^\circ)$。⟧
+等號成立的充要條件是 $C+30^\circ=90^\circ$ 且 $a=b$，即 $\triangle ABC$ 是正三角形。
+<b>證法二.</b> 由正弦定理 $a=2R\sin A$ 等，$\triangle=\frac12ab\sin C=2R^2\sin A\sin B\sin C$，所以
+$$\frac{a^2+b^2+c^2}{\triangle}=\frac{4\sin^2A+4\sin^2B+4\sin^2C}{2\sin A\sin B\sin C}\ge6\sqrt[3]{\frac{\sin^2A\sin^2B\sin^2C}{\sin^3A\sin^3B\sin^3C}}=\frac{6}{\sqrt[3]{\sin A\sin B\sin C}}.\qquad(1)$$
+⟦AM-GM｜分子 $4(\sin^2A+\sin^2B+\sin^2C)\ge4\cdot3\sqrt[3]{\sin^2A\sin^2B\sin^2C}$，除以 $2\sin A\sin B\sin C$ 得 $6\sqrt[3]{\cdots}$。⟧
+利用積化和差可證 $\sin A\sin B\sin C\le\dfrac{3\sqrt3}8$（2），等號當且僅當 $A=B=C=\frac\pi3$（見例 8 後的注 (6)）。把 (2) 代入 (1)：
+$$\frac{a^2+b^2+c^2}{\triangle}\ge\frac6{\sqrt[3]{3\sqrt3/8}}=\frac{6}{\sqrt3/2}=4\sqrt3.$$
+⟦開立方｜$\frac{3\sqrt3}8=\big(\frac{\sqrt3}2\big)^3$。⟧
+
+=== 例 8 | 正弦平方和
+zh: 在 $\triangle ABC$ 中，求證：$\sin^2A+\sin^2B+\sin^2C\le\dfrac94$，等號當且僅當 $A=B=C=\dfrac\pi3$ 時成立。（3）
+sol: 作三角恆等變形：
+$$\begin{aligned}\sin^2A+\sin^2B+\sin^2C&=\frac{1-\cos2A}2+\frac{1-\cos2B}2+(1-\cos^2C)\\&=2-\cos(A+B)\cos(A-B)-\cos^2C\\&=2+\cos C\cos(A-B)-\cos^2C\\&\le2+|\cos C|-\cos^2C=-\Big(|\cos C|-\frac12\Big)^2+\frac94\le\frac94.\end{aligned}$$
+⟦第二、三行｜和差化積 $\cos2A+\cos2B=2\cos(A+B)\cos(A-B)$；又 $A+B=\pi-C$，$\cos(A+B)=-\cos C$。⟧
+等號要 $|\cos C|=\frac12$ 且 $\cos C\cos(A-B)=|\cos C|$，只能 $\cos C=\frac12$、$A=B$，即 $A=B=C=\frac\pi3$。
+
+=== text
+<p><b>注 (1).</b> 由 (3) 及習題 13 第 6 題的不等式
+$$3\sin\frac{\alpha+\beta+\gamma}3\ge\sin\alpha+\sin\beta+\sin\gamma\quad(0\lt \alpha,\beta,\gamma\lt \pi)\qquad(4)$$
+可以得到許多三角形不等式，例如在 $\triangle ABC$ 中：</p>
+<p>$$\begin{aligned}&\sin A+\sin B+\sin C\le\tfrac32\sqrt3;&&(5)\\ &\sin A\sin B\sin C\le\tfrac38\sqrt3;&&(6)\\ &\cos A+\cos B+\cos C\le\tfrac32;&&(7)\\ &\cos A\cos B\cos C\le\tfrac18;&&(8)\\ &\sin\tfrac A2+\sin\tfrac B2+\sin\tfrac C2\le\tfrac32;&&(9)\\ &\sin\tfrac A2\sin\tfrac B2\sin\tfrac C2\le\tfrac18;&&(10)\\ &\cos\tfrac A2+\cos\tfrac B2+\cos\tfrac C2\le\tfrac32\sqrt3;&&(11)\\ &\cos\tfrac A2\cos\tfrac B2\cos\tfrac C2\le\tfrac38\sqrt3;&&(12)\\ &\cos2A+\cos2B+\cos2C\ge-\tfrac32;&&(13)\\ &\cos^2A+\cos^2B+\cos^2C\ge\tfrac34,&&(14)\end{aligned}$$
+(5)–(14) 都是當且僅當 $A=B=C=\frac\pi3$ 時取等號。</p>
+<p>在 (4) 中令 $\alpha+\beta+\gamma=\pi$ 即得 (5)；(6) 由 (5) 及 $G_3\le A_3$ 得到；(7)(9)(11) 都可由 (4) 得到；(8)(10)(12) 分別由 (7)(9)(11) 得到；(13)(14) 與 (3) 等價。⟦舉兩個例子｜(7)：$\cos A=\sin\big(\frac\pi2-A\big)$，三個角 $\frac\pi2-A$ 等未必在 $(0,\pi)$ 內，可改用 $\cos A+\cos B=2\cos\frac{A+B}2\cos\frac{A-B}2\le2\sin\frac C2$，化成 (9) 的形式。(14)：$\cos^2=1-\sin^2$，所以 $\sum\cos^2=3-\sum\sin^2\ge3-\frac94$。⟧</p>
+<p><b>注 (2).</b> 用正弦定理或餘弦定理，可以把 (3) 及 (5)–(14) 轉換成關於邊的不等式。例如由餘弦定理，
+$$\begin{aligned}\cos A+\cos B+\cos C&=\frac{b^2+c^2-a^2}{2bc}+\frac{c^2+a^2-b^2}{2ca}+\frac{a^2+b^2-c^2}{2ab}\\&=\frac1{2abc}\big[a^2(b+c-a)+b^2(c+a-b)+c^2(a+b-c)\big]\le\frac32,\end{aligned}$$
+即 $a^2(b+c-a)+b^2(c+a-b)+c^2(a+b-c)\le3abc$，這曾是第 6 屆 IMO 第 2 題。⟦中間那步｜通分後分子是 $a(b^2+c^2-a^2)+b(c^2+a^2-b^2)+c(a^2+b^2-c^2)$，把含 $a^2$ 的項收集：$-a^3+a^2b+a^2c=a^2(b+c-a)$，其餘同理。⟧</p>
+
+=== 定理 1 | 埃爾德什－莫德爾（Erdős–Mordell）不等式
+zh: 設 $P$ 為 $\triangle ABC$ 內部或邊上一點，$P$ 到三邊的距離為 $PD,PE,PF$，則
+$$PA+PB+PC\ge2(PD+PE+PF),$$
+當且僅當 $\triangle ABC$ 是正三角形且 $P$ 為中心時等號成立。
+sol: <figure class="bkfig"><svg viewBox="0 0 280 236" width="280" role="img" aria-label="三角形 ABC 內一點 P，PD、PE、PF 垂直於三邊，虛線連 PA、PB、PC">
+  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="118.2,24.0 24.0,212.5 256.0,212.5"/><line x1="129.1" y1="147.2" x2="129.1" y2="212.5"/><line x1="129.1" y1="147.2" x2="180.7" y2="109.5"/><line x1="129.1" y1="147.2" x2="71.1" y2="118.2"/></g>
+  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="129.1" y1="147.2" x2="118.2" y2="24.0"/><line x1="129.1" y1="147.2" x2="24.0" y2="212.5"/><line x1="129.1" y1="147.2" x2="256.0" y2="212.5"/></g>
+  <g fill="currentColor"><circle cx="129.1" cy="147.2" r="2.6"/></g>
+  <g fill="currentColor" font-size="14" font-style="italic"><text x="114.2" y="16.0">A</text><text x="10.0" y="218.5">B</text><text x="262.0" y="218.5">C</text><text x="113.1" y="151.2">P</text><text x="125.1" y="228.5">D</text><text x="186.7" y="109.5">E</text><text x="55.1" y="118.2">F</text></g>
+</svg><figcaption>$PD,PE,PF$ 垂直於三邊；虛線是 $PA,PB,PC$</figcaption></figure>
+記 $PD=p,\ PE=q,\ PF=r$。四邊形 $PDCE$ 在 $D,E$ 是直角，所以 $\angle DPE=180^\circ-\angle C=A+B$，
+$$\begin{aligned}DE&=\sqrt{p^2+q^2-2pq\cos(A+B)}\\&=\sqrt{(p\sin B+q\sin A)^2+(p\cos B-q\cos A)^2}\ge p\sin B+q\sin A.\end{aligned}$$
+⟦第二個等號｜展開 $(p\sin B+q\sin A)^2+(p\cos B-q\cos A)^2=p^2+q^2+2pq(\sin A\sin B-\cos A\cos B)=p^2+q^2-2pq\cos(A+B)$。⟧
+$P,D,C,E$ 四點共圓，$CP$ 是此圓直徑，所以 $DE=CP\sin C$⟦為什麼｜$\angle PDC=\angle PEC=90^\circ$，所以 $D,E$ 在以 $CP$ 為直徑的圓上；弦 $DE$ 所對的圓周角是 $C$，由正弦定理 $DE=CP\sin C$。⟧。於是
+$$PC=\frac{DE}{\sin C}\ge\frac{p\sin B+q\sin A}{\sin C}.$$
+同理 $PA\ge\dfrac{q\sin C+r\sin B}{\sin A}$，$PB\ge\dfrac{r\sin A+p\sin C}{\sin B}$。所以
+$$\begin{aligned}PA+PB+PC&\ge p\Big(\frac{\sin B}{\sin C}+\frac{\sin C}{\sin B}\Big)+q\Big(\frac{\sin C}{\sin A}+\frac{\sin A}{\sin C}\Big)+r\Big(\frac{\sin A}{\sin B}+\frac{\sin B}{\sin A}\Big)\\&\ge2(p+q+r)=2(PD+PE+PF).\end{aligned}$$
+⟦等號條件｜最後一步要 $\sin A=\sin B=\sin C$，即正三角形；前面 $DE\ge p\sin B+q\sin A$ 取等號要 $p\cos B=q\cos A$，正三角形時就是 $p=q$，同理 $p=q=r$，$P$ 是中心。⟧
+埃爾德什－莫德爾不等式很強，有許多推論與應用（見習題 6）。
+
+=== 例 9 | 佩多（Pedoe）不等式
+zh: 設 $\triangle ABC$ 及 $\triangle A_1B_1C_1$ 的邊長分別為 $a,b,c$ 及 $a_1,b_1,c_1$，面積分別為 $\triangle$ 及 $\triangle_1$。求證
+$$a^2(b_1^2+c_1^2-a_1^2)+b^2(c_1^2+a_1^2-b_1^2)+c^2(a_1^2+b_1^2-c_1^2)\ge16\triangle\triangle_1,\qquad(15)$$
+並問等號何時成立。
+sol: <figure class="bkfig"><svg viewBox="0 0 240 155" width="240" role="img" aria-label="以 BC 為一邊，在 A 的同側作與 △A₁B₁C₁ 相似的 △A′BC，α 是 ∠ACB 與 ∠A′CB 的差">
+  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="161.6,35.2 24.0,131.2 216.0,131.2"/></g>
+  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="81.0" y1="24.0" x2="24.0" y2="131.2"/><line x1="81.0" y1="24.0" x2="216.0" y2="131.2"/><line x1="161.6" y1="35.2" x2="81.0" y2="24.0"/></g>
+  <g fill="currentColor" font-size="14" font-style="italic"><text x="167.6" y="35.2">A</text><text x="10.0" y="137.2">B</text><text x="222.0" y="137.2">C</text><text x="75.0" y="16.0">A′</text></g>
+</svg><figcaption>$\triangle A'BC\sim\triangle A_1B_1C_1$，$A'$ 與 $A$ 在 $BC$ 同側</figcaption></figure>
+以 $BC$ 為一邊，在 $A$ 的同側作 $\triangle A'BC\sim\triangle A_1B_1C_1$，則 $A'C=\dfrac{ab_1}{a_1}$。不妨設 $\angle C\ge\angle C_1$，令 $\alpha=\angle C-\angle C_1$（即 $\angle ACA'$）。在 $\triangle AA'C$ 用餘弦定理：
+$$AA'^2=b^2+\Big(\frac{ab_1}{a_1}\Big)^2-2b\cdot\frac{ab_1}{a_1}\cos\alpha\ge0,$$
+乘以 $a_1^2$：
+$$a_1^2b^2+a^2b_1^2-2aba_1b_1(\cos C\cos C_1+\sin C\sin C_1)\ge0.$$
+再把 $\cos C=\dfrac{a^2+b^2-c^2}{2ab}$，$\cos C_1=\dfrac{a_1^2+b_1^2-c_1^2}{2a_1b_1}$，$ab\sin C=2\triangle$，$a_1b_1\sin C_1=2\triangle_1$ 代入化簡，即得 (15)。⟦化簡過程｜$2aba_1b_1\cos C\cos C_1=\frac12(a^2+b^2-c^2)(a_1^2+b_1^2-c_1^2)$，$2aba_1b_1\sin C\sin C_1=8\triangle\triangle_1$。兩邊乘 2 得 $2a_1^2b^2+2a^2b_1^2-(a^2+b^2-c^2)(a_1^2+b_1^2-c_1^2)\ge16\triangle\triangle_1$，把乘積展開，左邊恰好整理成 (15) 的左邊。⟧
+當且僅當 $A$ 與 $A'$ 重合，即 $\triangle ABC\sim\triangle A_1B_1C_1$ 時等號成立。
+
+=== 習題 1
+zh: 在 $\triangle ABC$ 中，$AD,BE,CF$ 為角平分線。求證：$S_{\triangle DEF}\le\dfrac14S_{\triangle ABC}$。等號何時成立？
+ans: 當且僅當 $a=b=c$ 時取等號。
+sol: 由角平分線性質（$F$ 在 $AB$ 上，$AF:FB=b:a$），$\dfrac{AF}{AB}=\dfrac b{a+b}$，$\dfrac{AE}{AC}=\dfrac c{a+c}$，所以
+$$\frac{S_{\triangle AEF}}{S_{\triangle ABC}}=\frac{bc}{(a+b)(a+c)},$$
+同理 $\dfrac{S_{\triangle BDF}}{S_{\triangle ABC}}=\dfrac{ca}{(b+c)(b+a)}$，$\dfrac{S_{\triangle CED}}{S_{\triangle ABC}}=\dfrac{ab}{(c+a)(c+b)}$。要證的不等式等價於這三個比之和 $\ge\frac34$，通分後等價於
+$$a^2b+b^2a+a^2c+c^2a+b^2c+c^2b\ge6abc,$$
+⟦通分｜三個分數的公分母是 $(a+b)(b+c)(c+a)=\sum_{\text{sym}}a^2b+2abc$，分子和是 $bc(b+c)+ca(c+a)+ab(a+b)=\sum_{\text{sym}}a^2b$。不等式化為 $4\sum_{\text{sym}}a^2b\ge3\sum_{\text{sym}}a^2b+6abc$。⟧
+由 AM-GM（六項乘積是 $a^6b^6c^6$）即得，等號當且僅當 $a=b=c$。
+
+=== 習題 2
+zh: 設 $D$ 是 $\triangle ABC$ 內一點，$AB=AC$，$\angle ADC>\angle ADB$。求證：$DB>DC$。
+sol: 兩個三角形內角和都是 $180^\circ$，而 $\angle ADC>\angle ADB$，所以 $\angle BAD+\angle ABD>\angle CAD+\angle ACD$，於是 $\angle BAD>\angle CAD$ 或 $\angle ABD>\angle ACD$ 至少一個成立。
+若 $\angle BAD>\angle CAD$：$AB=AC$，$AD$ 公用，夾角較大的對邊較大，$BD>CD$。⟦這是什麼定理｜兩個三角形有兩邊分別相等，夾角大的那個第三邊大（可用餘弦定理看出）。⟧
+若 $\angle ABD>\angle ACD$：因 $\angle ABC=\angle ACB$，所以 $\angle DBC\lt \angle DCB$，在 $\triangle DBC$ 中大角對大邊，$BD>CD$。
+
+=== 習題 3
+zh: 直線 $l$ 上依次有四點 $A,B,C,D$。求證：對 $l$ 外任一點 $E$，$AE+ED+|AB-CD|>BE+CE$。
+sol: <figure class="bkfig"><svg viewBox="0 0 300 200" width="300" role="img" aria-label="直線上依序 A A′ B C D，E 在上方，F 是 E 關於 A′D 中點的對稱點">
+  <g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="10" y1="100" x2="290" y2="100"/><line x1="30" y1="100" x2="190" y2="20"/><line x1="190" y1="20" x2="260" y2="100"/><line x1="190" y1="20" x2="120" y2="100"/><line x1="190" y1="20" x2="200" y2="100"/></g>
+  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="60" y1="100" x2="190" y2="20"/><line x1="60" y1="100" x2="130" y2="180"/><line x1="130" y1="180" x2="120" y2="100"/><line x1="130" y1="180" x2="260" y2="100"/></g>
+  <g fill="currentColor" font-size="14" font-style="italic"><text x="22" y="118">A</text><text x="52" y="118">A′</text><text x="108" y="118">B</text><text x="200" y="118">C</text><text x="262" y="118">D</text><text x="186" y="14">E</text><text x="134" y="194">F</text><text x="280" y="92">l</text></g>
+</svg><figcaption>$A'B=CD$；$F$ 是 $E$ 關於 $A'D$（也是 $BC$）中點的對稱點</figcaption></figure>
+不妨設 $AB\ge CD$（否則把 $A,B$ 與 $D,C$ 對調）。原不等式等價於 $AE+ED+AB-CD>BE+CE$。在 $AB$ 上取 $A'$ 使 $A'B=CD$。由 $AE+AA'\ge A'E$ 得 $AE+AB\ge A'E+A'B$，於是
+$$\text{左邊}\ge A'E+ED+A'B-CD=A'E+ED.$$
+設 $F$ 是 $E$ 關於線段 $A'D$ 中點的對稱點，則 $A'F=ED$。又因為 $A'B=CD$，$A'D$ 的中點也是 $BC$ 的中點，所以 $BF=CE$⟦為什麼｜$E,F$ 關於這個中點對稱，$B,C$ 也關於它對稱，所以 $BF$ 是 $CE$ 的對稱像。⟧。$B$ 在 $\triangle A'EF$ 內部（在中線上），所以
+$$A'E+ED=A'E+A'F>BE+BF=BE+CE.$$
+⟦三角形內一點的性質｜若 $B$ 在 $\triangle A'EF$ 內，延長 $EB$ 交 $A'F$ 於 $G$：$A'E+A'G>EG=EB+BG$，$BG+GF>BF$，相加得 $A'E+A'F>BE+BF$。⟧
+
+=== 習題 4
+zh: 平面上給定半徑為 $1$ 的圓及 $n$ 個點 $A_1,\dots,A_n$。求證：必可在圓上找到點 $M$，使 $MA_1+MA_2+\dots+MA_n\ge n$。
+sol: 取圓的一條直徑 $PQ$，則 $PA_k+QA_k\ge PQ=2$（$k=1,\dots,n$）。相加得
+$$(PA_1+\dots+PA_n)+(QA_1+\dots+QA_n)\ge2n,$$
+所以兩個括號至少有一個 $\ge n$，$P,Q$ 中至少一點就是所求的 $M$。
+
+=== 習題 5
+zh: 在 $\triangle ABC$ 中，求證：(1) $p\sin^2A+q\sin^2B>pq\sin^2C$（$p,q>0$ 且 $p+q=1$）；(2) $x^2+y^2+z^2\ge2yz\cos A+2zx\cos B+2xy\cos C$，問等號何時成立；(3) $\triangle\le\dfrac{3abc}{4\sqrt{a^2+b^2+c^2}}\le\dfrac{3\sqrt3}4\cdot\dfrac{abc}{a+b+c}$；(4) $\dfrac{\sin B\sin C}{\sin A}\le\dfrac12\cot\dfrac A2$；(5) $\sin A\sin\dfrac A2+\sin B\sin\dfrac B2+\sin C\sin\dfrac C2\le\dfrac4{\sqrt3}$。
+sol: (1) 由正弦定理，左$-$右 $=\dfrac1{4R^2}(pa^2+qb^2-pqc^2)$，而 $c\lt a+b$，
+$$pa^2+qb^2-pqc^2>pa^2+qb^2-pq(a+b)^2=(pa-qb)^2\ge0.$$
+⟦最後的等號｜用 $p+q=1$：$pa^2-pqa^2=p(1-q)a^2=p^2a^2$，同樣 $qb^2-pqb^2=q^2b^2$，再減 $2pqab$。⟧
+(2) 配方：
+$$\text{左}-\text{右}=(x-y\cos C-z\cos B)^2+(y\sin C-z\sin B)^2\ge0.$$
+⟦展開核對｜$(x-y\cos C-z\cos B)^2$ 展開後，剩下 $y^2\sin^2C+z^2\sin^2B-2yz(\cos B\cos C+\cos A)$；而 $\cos A=-\cos(B+C)=\sin B\sin C-\cos B\cos C$，所以括號是 $\sin B\sin C$，正好湊成 $(y\sin C-z\sin B)^2$。⟧
+等號當且僅當 $x=y\cos C+z\cos B$ 且 $y\sin C=z\sin B$，即 $x:y:z=\sin A:\sin B:\sin C$。
+(3) $\triangle=\frac{abc}{4R}$，第一個不等式 $\iff\sqrt{a^2+b^2+c^2}\le3R\iff\sin^2A+\sin^2B+\sin^2C\le\frac94$（例 8）。第二個由 $A_3\le Q_3$：$a+b+c\le\sqrt3\sqrt{a^2+b^2+c^2}$。
+(4) $\sin B\sin C=\frac12[\cos(B-C)-\cos(B+C)]\le\frac12(1+\cos A)=\cos^2\frac A2$，又 $\sin A=2\sin\frac A2\cos\frac A2$，所以 左邊 $\le\dfrac{\cos^2\frac A2}{2\sin\frac A2\cos\frac A2}=\dfrac12\cot\dfrac A2$。
+(5) 令 $y=\sin A\sin\frac A2=2\sin^2\frac A2\cos\frac A2$，則
+$$y^2=2\Big[\sin^2\frac A2\cdot\sin^2\frac A2\cdot2\cos^2\frac A2\Big]\le2\Big(\frac{2\sin^2\frac A2+2\cos^2\frac A2}3\Big)^3=\frac{16}{27},$$
+所以 $y\le\frac4{3\sqrt3}$，三項相加 $\le\frac4{\sqrt3}$。
+
+=== 習題 6
+zh: (1) 在 $\triangle ABC$ 中，$AB=AC$，$D$ 是 $BC$ 上一點，$D$ 到兩腰的距離為 $DE$ 及 $DF$。求證：$\frac12(AD+BC)\ge DE+DF$。(2) 設 $I$ 是 $\triangle ABC$ 的內心，求證：$AI+BI+CI\ge6r$。
+sol: (1) 這是埃爾德什－莫德爾不等式中 $P$ 在邊上的情形：$P=D$ 時 $PD=0$，$DA+DB+DC\ge2(DE+DF)$，而 $DB+DC=BC$。
+(2) 在埃爾德什－莫德爾不等式中取 $P=I$，三個距離都是 $r$。
