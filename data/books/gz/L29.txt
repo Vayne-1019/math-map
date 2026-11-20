@@ -23,7 +23,7 @@ $$\begin{aligned}&amp;(\sin\alpha_1+\sin\alpha_2)-2\sin\frac{\alpha_1+\alpha_2}2
 $$\begin{aligned}&amp;\frac1{k+1}(\sin\alpha_1+\cdots+\sin\alpha_{k+1})\\&amp;=\frac12\Big[\frac1m(\sin\alpha_1+\cdots+\sin\alpha_m)+\frac1m(\sin\alpha_{m+1}+\cdots+\sin\alpha_{2m})\Big]\\&amp;\le\frac12\Big[\sin\frac{\alpha_1+\cdots+\alpha_m}m+\sin\frac{\alpha_{m+1}+\cdots+\alpha_{2m}}m\Big].\end{aligned}$$
 再由 $n=2$ 的結果⟦能用 n = 2 嗎｜兩個角 $\frac{\alpha_1+\cdots+\alpha_m}m$ 與 $\frac{\alpha_{m+1}+\cdots+\alpha_{2m}}m$ 之和是 $\frac{\alpha_1+\cdots+\alpha_{2m}}m\le\frac\pi m\le\pi$。⟧，上式
 $$\le\sin\frac12\Big(\frac{\alpha_1+\cdots+\alpha_m}m+\frac{\alpha_{m+1}+\cdots+\alpha_{2m}}m\Big)=\sin\frac{\alpha_1+\cdots+\alpha_{k+1}}{k+1}.$$
-(2) $k+1=2m+1$ 為奇數。記 $\beta=\frac{\alpha_1+\cdots+\alpha_{k+1}}{k+1}$，把它當作第 $2m+2$ 個角補進去，湊成偶數個。$\alpha_1+\cdots+\alpha_{2m+1}\le\pi$，所以前 $m$ 個之和或後 $m+1$ 個之和至少有一個不超過 $\frac\pi2$，不妨設 $\alpha_{m+1}+\cdots+\alpha_{2m+1}\le\frac\pi2$⟦為什麼可以「不妨設」｜命題對角的順序是對稱的，可以重新編號。若前 $m$ 個之和 $\le\frac\pi2$，把它們和後面的角對調位置即可。⟧。於是 $\alpha_1+\cdots+\alpha_{m+1}\le\pi$，並且
+(2) $k+1=2m+1$ 為奇數。記 $\beta=\frac{\alpha_1+\cdots+\alpha_{k+1}}{k+1}$，把它當作第 $2m+2$ 個角補進去，湊成偶數個。$\alpha_1+\cdots+\alpha_{2m+1}\le\pi$，所以前 $m$ 個之和或後 $m+1$ 個之和至少有一個不超過 $\frac\pi2$，不妨設 $\alpha_{m+1}+\cdots+\alpha_{2m+1}\le\frac\pi2$⟦為什麼可以不妨設｜命題對角的順序是對稱的，可以重新編號。若前 $m$ 個之和 $\le\frac\pi2$，把它們和後面的角對調位置即可。⟧。於是 $\alpha_1+\cdots+\alpha_{m+1}\le\pi$，並且
 $$\alpha_{m+2}+\cdots+\alpha_{2m+1}+\beta\le\frac\pi2+\frac{\pi}{2m+1}\le\pi.$$
 兩組各 $m+1$ 個角（$m+1\le k$），由歸納假設和 $n=2$ 的結果，
 $$\begin{aligned}&amp;\frac1{k+2}\big(\sin\alpha_1+\cdots+\sin\alpha_{k+1}+\sin\beta\big)\\&amp;=\frac12\Big[\frac1{m+1}(\sin\alpha_1+\cdots+\sin\alpha_{m+1})\\&amp;\qquad+\frac1{m+1}(\sin\alpha_{m+2}+\cdots+\sin\alpha_{2m+1}+\sin\beta)\Big]\\&amp;\le\frac12\Big[\sin\frac{\alpha_1+\cdots+\alpha_{m+1}}{m+1}+\sin\frac{\alpha_{m+2}+\cdots+\alpha_{2m+1}+\beta}{m+1}\Big]\\&amp;\le\sin\frac{(\alpha_1+\cdots+\alpha_{2m+1})+\beta}{2m+2}=\sin\beta.\end{aligned}$$
@@ -68,12 +68,12 @@ sol: 局面和例 3 類似：可以假設「$a_k$、$a_{k+1}$ 都是整數」，
 <br>觀察前幾項：$a_1=1$，$a_2=1$，$a_3=3$，$a_4=11$，$a_5=41$，$a_6=153$，……。這次運氣不如上次：各項都是整數，卻看不出明顯的規律。怎麼辦？
 <br>細細分析目標：如果遞推關係不僅能寫成原來的樣子，還能寫成 $a_{n+2}=\alpha a_{n+1}+\beta a_n$，而且 $\alpha,\beta$ 都是整數，命題不就顯然了嗎？目前這只是一種「奢望」，但有奢望總比沒有好，奢望往往能導致有益的發現。用待定係數法試試：代入 $a_1,a_2,a_3$ 得 $\alpha+\beta=3$；代入 $a_2,a_3,a_4$ 得 $3\alpha+\beta=11$。解得 $\alpha=4$、$\beta=-1$。那麼是否對一切 $n$ 都有 $a_{n+2}=4a_{n+1}-a_n$？用歸納法證明：
 <br>$n=1$ 時 $a_3=4a_2-a_1$。假設 $n=k$ 時 $a_{k+2}=4a_{k+1}-a_k$，即
-$$a_{k+2}+a_k=4a_{k+1}.\tag{1}$$
+$$a_{k+2}+a_k=4a_{k+1}.\qquad(1)$$
 要證 $a_{k+3}=4a_{k+2}-a_{k+1}$。由定義
-$$a_{k+2}=\frac{a_{k+1}^2+2}{a_k},\tag{2}$$
-$$a_{k+3}=\frac{a_{k+2}^2+2}{a_{k+1}}.\tag{3}$$
+$$a_{k+2}=\frac{a_{k+1}^2+2}{a_k},\qquad(2)$$
+$$a_{k+3}=\frac{a_{k+2}^2+2}{a_{k+1}}.\qquad(3)$$
 由 (2) 得
-$$2=a_{k+2}a_k-a_{k+1}^2.\tag{4}$$
+$$2=a_{k+2}a_k-a_{k+1}^2.\qquad(4)$$
 把 (4)、(1) 代入 (3)：
 $$\begin{aligned}a_{k+3}&amp;=\frac{a_{k+2}^2+a_{k+2}a_k-a_{k+1}^2}{a_{k+1}}=\frac{a_{k+2}(a_{k+2}+a_k)-a_{k+1}^2}{a_{k+1}}\\&amp;=\frac{4a_{k+1}a_{k+2}-a_{k+1}^2}{a_{k+1}}=4a_{k+2}-a_{k+1}.\end{aligned}$$
 猜測對 $n=k+1$ 也成立，所以對一切 $n$，$a_{n+2}=4a_{n+1}-a_n$。利用這個遞推式再用一次歸納法，就不難證得對一切 $n$，$a_n$ 都是整數⟦第二次歸納｜$a_1,a_2$ 是整數；若 $a_k,a_{k+1}$ 是整數，則 $a_{k+2}=4a_{k+1}-a_k$ 也是整數。⟧。

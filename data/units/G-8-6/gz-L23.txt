@@ -15,7 +15,7 @@ order: 20
 <div class="card"><h4>④ 旋轉 60°</h4><div class="rule">$u=e^{i\pi/3}$，$u^2-u+1=0$</div>
 <div class="eg">$(P-R)u=Q-R$<br>⇔ $\triangle PQR$ 是正三角形</div></div>
 </div>
-<p>圓 $|z-z_0|=r$；$|z-z_0|=|z|$ 是 $O$、$z_0$ 的中垂線。⟦$u^2-u+1=0$ 從哪來｜$u^3=e^{i\pi}=-1$，$u^3+1=(u+1)(u^2-u+1)=0$，而 $u\ne-1$。⟧</p>
+<p>圓 $|z-z_0|=r$；$|z-z_0|=|z|$ 是 $O$、$z_0$ 的中垂線。⟦u²−u+1=0 由來｜$u^3=e^{i\pi}=-1$，$u^3+1=(u+1)(u^2-u+1)=0$，而 $u\ne-1$。⟧</p>
 <div class="pitfall"><h4>⚠ 最常錯</h4><ul>
 <li>乘 $e^{i\theta}$ 是<b>逆時針</b>轉；順時針要乘 $e^{-i\theta}$</li>
 <li>繞的是 $P$ 不是原點時，要先減掉 $p$：$(q-p)e^{i\theta}$，不是 $qe^{i\theta}$</li></ul></div>

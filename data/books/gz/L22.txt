@@ -9,21 +9,21 @@ status: 完成
 <p>直線束與二次曲線束是解析幾何的重要工具。這一講介紹直線束與圓束，用它們處理平面幾何問題，常常可以<b>不求交點</b>就寫出所要的直線或圓。</p>
 <h3>一、直線束</h3>
 <p>設直線 $l_1:\ a_1x+b_1y+c_1=0$ 與 $l_2:\ a_2x+b_2y+c_2=0$ 交於點 $S$，則線性組合</p>
-$$\alpha(a_1x+b_1y+c_1)+\beta(a_2x+b_2y+c_2)=0\tag{3}$$
+$$\alpha(a_1x+b_1y+c_1)+\beta(a_2x+b_2y+c_2)=0\qquad(3)$$
 <p>（$\alpha,\beta$ 是不全為 0 的實數）表示過 $S$ 的所有直線，稱為<b>過 $S$ 的直線束</b>。這句話有兩層意思：</p>
 <p>(i) 對任意不全為 0 的 $\alpha,\beta$，(3) 都是過 $S$ 的直線⟦為什麼｜要說明兩件事。一是 $x,y$ 的係數 $\alpha a_1+\beta a_2$、$\alpha b_1+\beta b_2$ 不全為 0：否則向量 $(a_1,b_1)$ 與 $(a_2,b_2)$ 成比例，$l_1\parallel l_2$ 或重合，與相交矛盾。二是把 $S$ 代入，兩個括號都是 0，所以 (3) 成立。⟧；(ii) 反過來，任何過 $S$ 的直線，都能找到適當的 $\alpha,\beta$ 寫成 (3) 的形式⟦為什麼｜過 $S$ 的直線由它的方向決定。(3) 的法向量是 $\alpha(a_1,b_1)+\beta(a_2,b_2)$；因為 $(a_1,b_1)$、$(a_2,b_2)$ 不平行，平面上任何向量都能這樣組合出來，所以每個方向都取得到。⟧。</p>
 <p>特別地，$\alpha=0$ 時 (3) 就是 $l_2$，$\beta=0$ 時就是 $l_1$。若不需要 $l_2$ 本身，可設 $\alpha\ne0$、$\lambda=\beta/\alpha$，寫成</p>
-$$a_1x+b_1y+c_1+\lambda(a_2x+b_2y+c_2)=0,\tag{4}$$
+$$a_1x+b_1y+c_1+\lambda(a_2x+b_2y+c_2)=0,\qquad(4)$$
 <p>它表示過 $S$ 除了 $l_2$ 以外的全部直線，實用上更方便。</p>
 
 === 例 1
 zh: 已知兩直線 $2x+3y-5=0$、$7x+15y+1=0$ 相交於點 $S$。求過 $S$ 且垂直於直線 $12x-5y-1=0$ 的直線方程。
 sol: 兩直線確實相交，因為 $\frac27\ne\frac3{15}$。寫出過 $S$ 的直線束：
-$$2x+3y-5+\lambda(7x+15y+1)=0,\tag{5}$$
+$$2x+3y-5+\lambda(7x+15y+1)=0,\qquad(5)$$
 即 $(2+7\lambda)x+(3+15\lambda)y+(\lambda-5)=0$，斜率 $k=-\dfrac{2+7\lambda}{3+15\lambda}$。直線 $12x-5y-1=0$ 的斜率是 $\frac{12}5$。垂直的條件是斜率相乘為 $-1$：
 $$-\frac{2+7\lambda}{3+15\lambda}\cdot\frac{12}{5}=-1,$$
 即 $24+84\lambda=15+75\lambda$，得 $\lambda=-1$。代回 (5)：$-5x-12y-6=0$，所求直線為 $5x+12y+6=0$。
-<br>⟦為什麼不用擔心漏掉 l₂｜(4) 的形式缺 $l_2$ 本身。$l_2:\ 7x+15y+1=0$ 的斜率 $-\frac7{15}$，與 $\frac{12}5$ 相乘不是 $-1$，所以 $l_2$ 本來就不是答案。⟧
+<br>⟦會不會漏掉 l₂｜(4) 的形式缺 $l_2$ 本身。$l_2:\ 7x+15y+1=0$ 的斜率 $-\frac7{15}$，與 $\frac{12}5$ 相乘不是 $-1$，所以 $l_2$ 本來就不是答案。⟧
 ans: $5x+12y+6=0$
 
 === text
@@ -37,15 +37,15 @@ sol: <figure class="bkfig"><svg viewBox="0 0 250 295" width="250" role="img" ari
 <g fill="currentColor" font-size="15" font-style="italic"><text x="227" y="271.2">x</text><text x="126" y="23">y</text><text x="28.2" y="102.8">A</text><text x="28.2" y="269.2">B</text><text x="202.7" y="269.2">C</text><text x="205.7" y="109.8">D</text><text x="108" y="101.8">M</text><text x="105" y="272.2">N</text><text x="205.7" y="37.2">P</text><text x="64.8" y="146.9">Q</text></g>
 </svg><figcaption>N 為原點、NM 為 y 軸；紅線 NP、NQ 對稱於 y 軸</figcaption></figure>
 如圖建立坐標系，以 $N$ 為原點、$NM$ 為 $y$ 軸。設 $C(a,0)$、$M(0,b)$，則 $A(-a,b)$、$D(a,b)$。設直線 $PM$ 的斜率為 $k$，則
-$$PQ:\ kx-y+b=0,\tag{6}$$
-$$CD:\ x-a=0.\tag{7}$$
+$$PQ:\ kx-y+b=0,\qquad(6)$$
+$$CD:\ x-a=0.\qquad(7)$$
 以 $a$ 乘 (6)、$b$ 乘 (7) 再相加：
-$$(ak+b)x-ay=0.\tag{8}$$
+$$(ak+b)x-ay=0.\qquad(8)$$
 (8) 是 (6)、(7) 的組合，所以經過它們的交點 $P$；又沒有常數項，所以經過原點 $N$。因此 (8) 就是直線 $PN$。
 <br>同樣的手法求 $QN$。直線 $AC$ 過 $(-a,b)$ 與 $(a,0)$，方程為⟦求法｜斜率 $\frac{0-b}{a-(-a)}=-\frac b{2a}$，$y=-\frac b{2a}(x-a)$，整理得 $bx+2ay-ab=0$。⟧
-$$bx+2ay-ab=0.\tag{9}$$
+$$bx+2ay-ab=0.\qquad(9)$$
 $a\times(6)+(9)$ 消去常數項：
-$$(ak+b)x+ay=0.\tag{10}$$
+$$(ak+b)x+ay=0.\qquad(10)$$
 它過 $PQ$ 與 $AC$ 的交點 $Q$，也過原點 $N$，所以是直線 $QN$。比較 (8)、(10)，兩直線斜率 $\frac{ak+b}{a}$ 與 $-\frac{ak+b}{a}$ 互為相反數，所以 $NP$、$NQ$ 對 $y$ 軸（直線 $NM$）對稱，$\angle QNM=\angle MNP$。
 <br><b>注</b>　以 $N$ 為原點，方便比較兩條過 $N$ 的直線的斜率。$PN$、$QN$ 的方程都是用直線束「湊」出來的（消去常數項），完全不必求 $P$、$Q$ 的坐標。
 
@@ -57,14 +57,14 @@ sol: <figure class="bkfig"><svg viewBox="0 0 300 202" width="300" role="img" ari
 <g fill="currentColor" font-size="15" font-style="italic"><text x="277" y="174.4">x</text><text x="141.9" y="23">y</text><text x="75.7" y="175.4">A</text><text x="225.7" y="175.4">B</text><text x="136.9" y="40.1">C</text><text x="138.9" y="175.4">H</text><text x="255.3" y="72.9">P</text><text x="30.5" y="120.5">K</text></g>
 </svg><figcaption>H 為原點、CH 為 y 軸；虛線 AE、BE′ 是另兩條高，紅線 KP 經過它們的垂足</figcaption></figure>
 以 $H$ 為原點、$AB$ 為 $x$ 軸、$HC$ 為 $y$ 軸，設 $A(a,0)$、$B(b,0)$、$C(0,c)$。$BC$ 的方程是
-$$cx+by-bc=0.\tag{12}$$
+$$cx+by-bc=0.\qquad(12)$$
 $H$ 對 $BC$ 的對稱點是⟦求對稱點｜從原點到 $BC$ 的垂足在法向量 $(c,b)$ 方向上，設為 $t(c,b)$，代入 (12)：$t(c^2+b^2)=bc$，$t=\frac{bc}{b^2+c^2}$。對稱點是垂足的兩倍。⟧
 $$P\Big(\frac{2bc^2}{b^2+c^2},\ \frac{2b^2c}{b^2+c^2}\Big),$$
 把 $a,b$ 互換就得到 $K\Big(\dfrac{2ac^2}{a^2+c^2},\ \dfrac{2a^2c}{a^2+c^2}\Big)$。於是直線 $KP$ 的方程是
-$$c(a+b)x+(ab-c^2)y-2abc=0.\tag{11}$$
-⟦驗證 P 在 (11) 上｜代入 $P$ 並乘以 $\frac{b^2+c^2}{2bc}$：$(a+b)c^2+(ab-c^2)b-a(b^2+c^2)=ac^2+bc^2+ab^2-bc^2-ab^2-ac^2=0$。(11) 對 $a,b$ 對稱，所以 $K$ 也在上面。⟧
+$$c(a+b)x+(ab-c^2)y-2abc=0.\qquad(11)$$
+⟦驗證 P 在線上｜代入 $P$ 並乘以 $\frac{b^2+c^2}{2bc}$：$(a+b)c^2+(ab-c^2)b-a(b^2+c^2)=ac^2+bc^2+ab^2-bc^2-ab^2-ac^2=0$。(11) 對 $a,b$ 對稱，所以 $K$ 也在上面。⟧
 另一方面，$BC$ 邊上的高過 $A(a,0)$、方向為 $BC$ 的法向量 $(c,b)$，方程是
-$$bx-cy-ab=0.\tag{13}$$
+$$bx-cy-ab=0.\qquad(13)$$
 (12) 乘以 $a$、(13) 乘以 $c$ 再相加，恰好得到 (11)⟦展開｜$a(cx+by-bc)+c(bx-cy-ab)=(ac+bc)x+(ab-c^2)y-2abc$。⟧。所以 $KP$ 經過 (12)、(13) 的交點，也就是 $BC$ 上的高的垂足。因為 (11) 對 $a,b$ 對稱，同理 $KP$ 也經過 $AC$ 上的高的垂足。
 
 === text
@@ -87,7 +87,7 @@ $$\begin{aligned}&amp;(y_A-y_{B_1})x+(x_{B_1}-x_A)y+x_Ay_{B_1}-y_Ax_{B_1}=0,\\&a
 === text
 <h3>二、圓束</h3>
 <p>設圓 $C_1:\ f_1(x,y)=x^2+y^2+a_1x+b_1y+c_1=0$ 與圓 $C_2:\ f_2(x,y)=x^2+y^2+a_2x+b_2y+c_2=0$ 交於兩點，則</p>
-$$f_1(x,y)+\alpha\, f_2(x,y)=0\tag{3}$$
+$$f_1(x,y)+\alpha\, f_2(x,y)=0\qquad(3)$$
 <p>表示過 $C_1$、$C_2$ 兩個交點的所有圓（除了 $C_2$），稱為<b>過這兩交點的圓束</b>。$\alpha$ 是任意實數；$\alpha=0$ 時就是 $C_1$。</p>
 <p>當 $\alpha=-1$ 時，$x^2,y^2$ 項消去，(3) 變成一條直線，它就是 $C_1$、$C_2$ 的<b>公共弦</b>所在直線（可以看成圓的極限情形）。這點特別有用，也能直接看出來：$f_1-f_2$ 是 $x,y$ 的一次式，表示一條直線；兩圓的交點同時使 $f_1=0$、$f_2=0$，當然也滿足 $f_1-f_2=0$，所以這條直線就是公共弦所在直線。</p>
 
@@ -158,7 +158,7 @@ $$ax-cy+\frac{c^2}2-\frac{a^2}2=0,\qquad x=\frac{a+b}2,$$
 所以外心 $O\Big(\dfrac{a+b}2,\ \dfrac{ab+c^2}{2c}\Big)$，$AO$ 的斜率為 $\dfrac{ab+c^2}{(b-a)c}$。
 <br>又 $AC:\ cx+ay-ac=0$；$BB_1$ 過 $B$ 且垂直於 $AC$：$ax-cy-ab=0$。以 $b$ 乘前式、$-c$ 乘後式再相加，常數項消去：
 $$(bc-ac)x+(ab+c^2)y=0.$$
-它過 $AC$ 與 $BB_1$ 的交點 $B_1$，也過原點 $C_1$，所以是直線 $B_1C_1$，斜率 $\dfrac{c(a-b)}{ab+c^2}$。兩斜率相乘得 $-1$，所以 $AO\perp B_1C_1$。⟦為什麼 ab + c² ≠ 0｜$\overrightarrow{CA}\cdot\overrightarrow{CB}=ab+c^2$，而 $\angle C$ 是銳角，所以它大於 0，斜率的分母不為 0。⟧
+它過 $AC$ 與 $BB_1$ 的交點 $B_1$，也過原點 $C_1$，所以是直線 $B_1C_1$，斜率 $\dfrac{c(a-b)}{ab+c^2}$。兩斜率相乘得 $-1$，所以 $AO\perp B_1C_1$。⟦為何 ab+c²≠0｜$\overrightarrow{CA}\cdot\overrightarrow{CB}=ab+c^2$，而 $\angle C$ 是銳角，所以它大於 0，斜率的分母不為 0。⟧
 
 === 習題 3
 zh: 求經過兩圓 $x^2+y^2-4x-3=0$ 與 $x^2+y^2-4y-3=0$ 的交點，並且圓心在直線 $x-y-4=0$ 上的圓的方程。
@@ -177,10 +177,10 @@ sol: <figure class="bkfig"><svg viewBox="0 0 280 290" width="280" role="img" ari
 設 $B(a,0)$、$M(t,0)$，$0&lt;t&lt;a$。則 $C(t,t)$、$D(0,t)$、$E(a,a-t)$、$F(t,a-t)$。兩個正方形的外接圓分別是
 $$x^2+y^2-tx-ty=0,\qquad x^2+y^2-(a+t)x-(a-t)y+at=0.$$
 相減得公共弦 $MN$ 的方程
-$$ax+(a-2t)y-at=0.\tag{4}$$
+$$ax+(a-2t)y-at=0.\qquad(4)$$
 又
-$$AF:\ (a-t)x-ty=0,\tag{5}$$
-$$BC:\ tx+(a-t)y-at=0.\tag{6}$$
+$$AF:\ (a-t)x-ty=0,\qquad(5)$$
+$$BC:\ tx+(a-t)y-at=0.\qquad(6)$$
 (1) (5)+(6) 正好是 (4)，所以 $AF$ 與 $BC$ 的交點 $X$ 在直線 $MN$ 上。再看 $X$ 在兩個圓上：$AF$ 的方向 $(t,a-t)$ 與 $BC$ 的方向 $(t-a,t)$ 內積為 0，所以 $AF\perp BC$。於是 $\angle AXC=90^\circ$，而 $AC$ 是正方形 $AMCD$ 外接圓的直徑，$X$ 在這個圓上；同理 $\angle FXB=90^\circ$，$FB$ 是另一個外接圓的直徑，$X$ 也在那個圓上。$X$ 是兩圓的公共點且不是 $M$⟦為什麼 X ≠ M｜$M(t,0)$ 代入 (5) 得 $(a-t)t\ne0$，$M$ 不在 $AF$ 上。⟧，所以 $X=N$，即 $AF$、$BC$ 都經過 $N$。
 <br>(2) 把 (4) 改寫成 $(-2y-a)t+(ax+ay)=0$。令
 $$-2y-a=0,\qquad ax+ay=0,$$

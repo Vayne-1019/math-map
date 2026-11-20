@@ -61,7 +61,7 @@ sol: <figure class="bkfig"><svg viewBox="0 0 300 188" width="300" role="img" ari
 $$\begin{aligned}&\begin{vmatrix}1&amp;x_A&amp;y_A\\1&amp;x_{B'}&amp;y_B\\1&amp;x_{C'}&amp;y_C\end{vmatrix}+\begin{vmatrix}1&amp;x_{A'}&amp;y_A\\1&amp;x_B&amp;y_B\\1&amp;x_{C'}&amp;y_C\end{vmatrix}+\begin{vmatrix}1&amp;x_{A'}&amp;y_A\\1&amp;x_{B'}&amp;y_B\\1&amp;x_C&amp;y_C\end{vmatrix}\\&+\begin{vmatrix}1&amp;x_{A'}&amp;y_A\\1&amp;x_B&amp;y_B\\1&amp;x_C&amp;y_C\end{vmatrix}+\begin{vmatrix}1&amp;x_A&amp;y_A\\1&amp;x_{B'}&amp;y_B\\1&amp;x_C&amp;y_C\end{vmatrix}+\begin{vmatrix}1&amp;x_A&amp;y_A\\1&amp;x_B&amp;y_B\\1&amp;x_{C'}&amp;y_C\end{vmatrix}.\end{aligned}$$
 行列式對單一行是線性的，六個行列式只有第 2 行不同，可以把第 2 行加起來合成一個：
 $$=\begin{vmatrix}1&amp;3x_A+3x_{A'}&amp;y_A\\1&amp;3x_B+3x_{B'}&amp;y_B\\1&amp;3x_C+3x_{C'}&amp;y_C\end{vmatrix}$$
-⟦第 2 行為什麼是 3x+3x′｜數一數第 1 列：$x_A$ 出現在第 1、5、6 個行列式，$x_{A'}$ 出現在第 2、3、4 個，各 3 次。第 2、3 列同理。⟧
+⟦為什麼是 3x+3x′｜數一數第 1 列：$x_A$ 出現在第 1、5、6 個行列式，$x_{A'}$ 出現在第 2、3、4 個，各 3 次。第 2、3 列同理。⟧
 $$\begin{aligned}&=3\begin{vmatrix}1&amp;x_A&amp;y_A\\1&amp;x_B&amp;y_B\\1&amp;x_C&amp;y_C\end{vmatrix}+3\begin{vmatrix}1&amp;x_{A'}&amp;y_A\\1&amp;x_{B'}&amp;y_B\\1&amp;x_{C'}&amp;y_C\end{vmatrix}\\&=2\cdot3\big(S_{\triangle ABC}+S_{\triangle A'B'C'}\big).\end{aligned}$$
 兩邊除以 2 即得結論。<br>
 <b>注</b>　關鍵是一開始利用 $S_{\triangle BC'A'}=S_{\triangle A'BC'}$ 這類輪換，讓各行列式有兩行相同、便於相加；同時把坐標取成最一般的形式，式子才保持對稱。
@@ -112,7 +112,7 @@ sol: <figure class="bkfig"><svg viewBox="0 0 300 345" width="300" role="img" ari
 <br>把 $AB$ 的方程 $y=k\big(x-\frac p2\big)$ 與 $y^2=2px$ 聯立，消去 $x$⟦消去 x｜由直線得 $x=\frac yk+\frac p2$，代入 $y^2=2px$：$y^2=\frac{2p}k y+p^2$。⟧得
 $$y^2-\frac{2p}{k}y-p^2=0,$$
 由韋達定理
-$$y_1y_2=-p^2,\qquad y_1+y_2=\frac{2p}{k}.\tag{1}$$
+$$y_1y_2=-p^2,\qquad y_1+y_2=\frac{2p}{k}.\qquad(1)$$
 直線 $AO$ 是 $y=\frac{y_1}{x_1}x=\frac{2p}{y_1}x$，與準線 $x=-\frac p2$ 交於
 $$B'\Big(-\frac p2,\ -\frac{p^2}{y_1}\Big)=\Big(-\frac p2,\ y_2\Big),$$
 最後一步用了 (1) 的 $y_1y_2=-p^2$。所以 $B$ 與 $B'$ 縱坐標相等，$BB'\parallel x$ 軸。$A$、$B$ 地位對等，同理 $AA'\parallel x$ 軸。於是 $AA'B'B$ 是直角梯形，兩底 $AA'$、$BB'$ 都垂直於準線。由拋物線的定義 $|AA'|=|AF|$、$|BB'|=|BF|$，所以面積
@@ -147,7 +147,7 @@ sol: <figure class="bkfig"><svg viewBox="0 0 220 198" width="220" role="img" ari
 <g fill="currentColor" font-size="15" font-style="italic"><text x="197" y="176.7">x</text><text x="42.2" y="23">y</text><text x="25.2" y="174.7">A</text><text x="179.8" y="177.7">B</text><text x="115" y="38.8">C</text><text x="61.1" y="137.4">P</text></g>
 </svg><figcaption>A 為原點、AB 在 x 軸上</figcaption></figure>
 $B(2,0)$、$C(1,\sqrt3)$，內心 $\big(1,\frac{\sqrt3}3\big)$，內切圓半徑 $\frac{\sqrt3}3$，方程
-$$(x-1)^2+\Big(y-\frac{\sqrt3}3\Big)^2=\frac13,\ \text{即}\ x^2+y^2-2x-\frac{2\sqrt3}3y=-1.\tag{1}$$
+$$(x-1)^2+\Big(y-\frac{\sqrt3}3\Big)^2=\frac13,\ \text{即}\ x^2+y^2-2x-\frac{2\sqrt3}3y=-1.\qquad(1)$$
 設 $P(x_0,y_0)$ 在內切圓上，則
 $$\begin{aligned}&amp;PA^2+PB^2+PC^2\\&amp;=(x_0^2+y_0^2)+\big[(x_0-2)^2+y_0^2\big]+\big[(x_0-1)^2+(y_0-\sqrt3)^2\big]\\&amp;=3\Big(x_0^2+y_0^2-2x_0-\frac{2\sqrt3}3y_0\Big)+8.\end{aligned}$$
 由 (1)，括號內等於 $-1$，所以和為 $-3+8=5$，與 $P$ 無關。

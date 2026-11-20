@@ -11,7 +11,7 @@ status: 完成
 <h3>一、複數的三種表示法</h3>
 <p>這部分是課本內容，為了完整起見簡單複習。形如 $z=x+iy$（$x,y$ 為實數，$i^2=-1$）的數稱為複數，$x$ 是實部，記作 $\operatorname{Re}z$；$y$ 是虛部，記作 $\operatorname{Im}z$。在直角坐標系中用點 $(x,y)$ 代表 $x+iy$，複數就和平面上的點一一對應：原點代表 0，橫軸上的點對應實數，所以橫軸叫<b>實軸</b>、縱軸叫<b>虛軸</b>，這個坐標系叫<b>複數平面</b>。</p>
 <p>$z=x+iy$ 的<b>共軛複數</b>是 $\bar z=x-iy$，兩者在複數平面上對實軸對稱。注意</p>
-$$z\bar z=x^2+y^2=|z|^2,\tag{1}$$
+$$z\bar z=x^2+y^2=|z|^2,\qquad(1)$$
 <p>其中 $|z|=\sqrt{x^2+y^2}$ 是點 $z$ 到原點的距離。$z=x+iy$ 稱為複數的<b>代數形式</b>。</p>
 <figure class="bkfig"><svg viewBox="0 0 230 220" width="230" role="img" aria-label="複數 z 與共軛 z̄ 對實軸對稱，|z| 是到原點的距離，θ 是輻角"><defs><marker id="arL23_1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="currentColor" stroke-width="1.5"/></marker></defs>
 <g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18.8" y1="115" x2="216" y2="115" stroke-width="1" marker-end="url(#arL23_1)"/><line x1="62.1" y1="201.6" x2="62.1" y2="14" stroke-width="1" marker-end="url(#arL23_1)"/><line x1="62.1" y1="115" x2="167.9" y2="47.7" stroke="#c2562b"/><line x1="62.1" y1="115" x2="167.9" y2="182.3" stroke-dasharray="5 4"/><line x1="167.9" y1="47.7" x2="167.9" y2="182.3" stroke-dasharray="5 4" stroke-width="1"/><polyline points="91,115 90.9,114.6 90.9,114.2 90.9,113.8 90.9,113.4 90.9,113 90.8,112.5 90.8,112.1 90.8,111.7 90.7,111.3 90.7,110.9 90.6,110.5 90.5,110.1 90.5,109.7 90.4,109.3 90.3,108.9 90.2,108.5 90.1,108.1 90,107.7 89.9,107.3 89.8,106.9 89.7,106.5 89.6,106.2 89.4,105.8 89.3,105.4 89.2,105 89,104.6 88.9,104.2 88.7,103.8 88.6,103.5 88.4,103.1 88.2,102.7 88,102.4 87.9,102 87.7,101.6 87.5,101.3 87.3,100.9 87.1,100.6 86.9,100.2 86.7,99.9 86.4,99.5" stroke-width="1"/></g>
@@ -25,13 +25,13 @@ $$z\bar z=x^2+y^2=|z|^2,\tag{1}$$
 <g fill="currentColor" font-size="15" font-style="italic"><text x="197" y="144.2">x</text><text x="44" y="23">y</text><text x="25" y="143.2">O</text><text x="155.2" y="118.2">z<tspan font-size="11" dy="3">1</tspan></text><text x="57.4" y="50.4">z<tspan font-size="11" dy="3">2</tspan></text><text x="142.6" y="33.4">z<tspan font-size="11" dy="3">1</tspan><tspan dy="-3">+z</tspan><tspan font-size="11" dy="3">2</tspan></text></g>
 </svg><figcaption>加法 = 向量相加（平行四邊形法則）</figcaption></figure>
 <p>從正實軸逆時針轉到向量 $\overrightarrow{OZ}$ 所轉的角 $\theta$ 稱為 $z$ 的<b>輻角</b>，記作 $\arg z$（只有 0 沒有輻角）。由 $x=|z|\cos\theta$、$y=|z|\sin\theta$ 得</p>
-$$z=|z|(\cos\theta+i\sin\theta),\tag{3}$$
+$$z=|z|(\cos\theta+i\sin\theta),\qquad(3)$$
 <p>這是<b>極式</b>。記 $e^{i\theta}=\cos\theta+i\sin\theta$，(3) 可以簡寫成</p>
-$$z=|z|e^{i\theta},\tag{4}$$
+$$z=|z|e^{i\theta},\qquad(4)$$
 <p>稱為<b>指數形式</b>。所以真正重要的表示法只有兩種：代數形式與指數形式，各有所長。代數形式適合做加法，體現了複數的向量性質；指數形式中，$|z|$ 是向量 $\overrightarrow{OZ}$ 的長，模為 1 的 $e^{i\theta}$ 指出它的方向，而且對乘法特別方便：若 $z=|z|e^{i\theta}$、$w=|w|e^{i\varphi}$，則</p>
-$$zw=|z||w|e^{i(\theta+\varphi)}.\tag{5}$$
+$$zw=|z||w|e^{i(\theta+\varphi)}.\qquad(5)$$
 <p>即 $|zw|=|z||w|$，而 $zw$ 的輻角是兩者輻角之和⟦為什麼｜這就是三角函數的和角公式：<br>$(\cos\theta+i\sin\theta)(\cos\varphi+i\sin\varphi)$<br>$=(\cos\theta\cos\varphi-\sin\theta\sin\varphi)+i(\sin\theta\cos\varphi+\cos\theta\sin\varphi)$<br>$=\cos(\theta+\varphi)+i\sin(\theta+\varphi)$。⟧。特別地，當 $|w|=1$：</p>
-$$z\,e^{i\varphi}=|z|e^{i(\theta+\varphi)}.\tag{6}$$
+$$z\,e^{i\varphi}=|z|e^{i(\theta+\varphi)}.\qquad(6)$$
 <p><b>用 $e^{i\varphi}$ 乘 $z$，不改變模長，只把向量 $\overrightarrow{OZ}$ 繞原點旋轉 $\varphi$ 角。</b>這個認識是用複數解幾何題的關鍵。</p>
 <h3>二、兩點間的距離</h3>
 <p>設 $z_1=x_1+iy_1$、$z_2=x_2+iy_2$，則 $z_2-z_1=z_2+(-z_1)$ 代表向量 $\overrightarrow{Z_1Z_2}$。所以 $Z_1,Z_2$ 兩點的距離是 $|z_2-z_1|$，用實部虛部寫出來就是 $\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$，正是解析幾何的距離公式。</p>
@@ -41,7 +41,7 @@ $$z\,e^{i\varphi}=|z|e^{i(\theta+\varphi)}.\tag{6}$$
 <g fill="currentColor" font-size="15" font-style="italic"><text x="232.7" y="110.6">x</text><text x="105.9" y="23">y</text><text x="86.9" y="109.6">O</text><text x="27.2" y="112.6">Z<tspan font-size="11" dy="3">1</tspan></text><text x="138.9" y="33.8">Z<tspan font-size="11" dy="3">2</tspan></text><text x="215.6" y="44.8">z<tspan font-size="11" dy="3">2</tspan><tspan dy="-3">−z</tspan><tspan font-size="11" dy="3">1</tspan></text></g>
 </svg><figcaption>紅色向量 $\overrightarrow{Z_1Z_2}$ 平移到原點，就是 $z_2-z_1$</figcaption></figure>
 <p>滿足 $|z|=1$ 的點全體，是以 $O$ 為圓心、1 為半徑的<b>單位圓</b>。$|z|=1$ 也可寫成 $z\bar z=1$，用實部虛部表示就是 $x^2+y^2=1$，與解析幾何一致。一般地，以 $z_0$ 為圓心、$r$ 為半徑的圓是</p>
-$$|z-z_0|=r.\tag{7}$$
+$$|z-z_0|=r.\qquad(7)$$
 
 === 例 1 | 和為零的三個單位向量
 zh: 三個複數 $z_1,z_2,z_3$ 滿足 $z_1+z_2+z_3=0$，$|z_1|=|z_2|=|z_3|$。在複數平面上 $\overrightarrow{OZ_1}$、$\overrightarrow{OZ_2}$、$\overrightarrow{OZ_3}$ 分別表示 $z_1,z_2,z_3$。證明 $\triangle Z_1Z_2Z_3$ 是正三角形。
@@ -75,7 +75,7 @@ ans: 以 $-\frac1{z_0}$ 為圓心、$\frac1{|z_0|}$ 為半徑的圓，除去原�
 === text
 <h3>三、中點公式</h3>
 <p>設 $Z_1,Z_2$ 是平面上兩點，線段 $Z_1Z_2$ 的中點 $M$ 可以用複數</p>
-$$m=\frac{z_1+z_2}2\tag{8}$$
+$$m=\frac{z_1+z_2}2\qquad(8)$$
 <p>表示，這就是中點公式。公式雖然簡單，卻能幫我們做一些幾何題。</p>
 
 === 例 3 | 平行四邊形
@@ -86,7 +86,7 @@ sol: <figure class="bkfig"><svg viewBox="0 0 200 134" width="200" role="img" ari
 <g fill="currentColor" font-size="15" font-style="italic"><text x="39.9" y="24.3">A</text><text x="15.3" y="121.2">B</text><text x="151.1" y="121.2">C</text><text x="174.7" y="24.3">D</text></g>
 </svg><figcaption>$a+c=b+d$：兩條對角線的中點重合</figcaption></figure>
 設四邊形的四個頂點 $A,B,C,D$ 依次表示複數 $a,b,c,d$。四邊形是平行四邊形的充要條件是 $\overrightarrow{AD}$ 與 $\overrightarrow{BC}$ 平行且等長，即 $d-a=c-b$，也就是
-$$a+c=b+d.\tag{9}$$
+$$a+c=b+d.\qquad(9)$$
 它表示：<b>對頂點的複數之和相等</b>，這是 $ABCD$ 為平行四邊形的充要條件。由中點公式，對角線 $AC$ 的中點是 $\frac{a+c}2$，$BD$ 的中點是 $\frac{b+d}2$，由 (9) 兩者相等，所以兩條對角線互相平分。反過來，由同樣的推理，對角線互相平分的四邊形一定是平行四邊形。
 
 === 例 4 | 中點四邊形
@@ -137,7 +137,7 @@ $$2P=B+C=uA+C,\quad 2Q=D+E=uC+E,\quad 2R=F+A=uE+A.$$
 由此
 $$\begin{aligned}2(P-R)u&amp;=\big[(u-1)A+C-uE\big]u\\&amp;=(u^2-u)A+Cu-u^2E.\end{aligned}$$
 因為 $u^3=e^{i\pi}=-1$，即 $u^3+1=(u+1)(u^2-u+1)=0$，而 $u\ne-1$，所以
-$$u^2-u+1=0.\tag{10}$$
+$$u^2-u+1=0.\qquad(10)$$
 用 (10) 把 $u^2-u$ 換成 $-1$、$u^2$ 換成 $u-1$：
 $$\begin{aligned}2(P-R)u&amp;=-A+Cu-(u-1)E\\&amp;=(uC+E)-(uE+A)\\&amp;=2Q-2R.\end{aligned}$$
 即 $(P-R)u=Q-R$。這表示向量 $\overrightarrow{RP}$ 繞 $R$ 逆時針轉 $60^\circ$ 得到 $\overrightarrow{RQ}$，所以 $RP=RQ$ 且夾角 $60^\circ$，$\triangle PQR$ 是正三角形。

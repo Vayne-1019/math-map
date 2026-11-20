@@ -18,9 +18,9 @@ sol: 雖然 $\frac mn=\underbrace{\frac1n+\cdots+\frac1n}_{m\text{ 項}}$，但�
 <br>因為 $0&lt;k+1&lt;n$ 且 $(k+1,n)=1$，可以寫 $n=q(k+1)+r$，其中 $q,r$ 是正整數，$0&lt;r&lt;k+1$⟦為什麼 q、r 都是正的｜$n&gt;k+1$，所以商 $q\ge1$；若 $r=0$，則 $k+1\mid n$，與 $(k+1,n)=1$ 且 $k+1&gt;1$ 矛盾。⟧。於是
 $$\frac{k+1}n-\frac1{q+1}=\frac{(k+1)(q+1)-n}{n(q+1)}=\frac{k+1-r}{n(q+1)}.$$
 因為 $0&lt;k+1-r\le k$，把 $\frac{k+1-r}{n(q+1)}$ 約成最簡分數後，分子仍不超過 $k$，由歸納假設可以寫成不同正整數 $s_1,\dots,s_v$ 的倒數之和，從而
-$$\frac{k+1}n=\frac1{q+1}+\frac{k+1-r}{n(q+1)}=\frac1{q+1}+\frac1{s_1}+\cdots+\frac1{s_v}.\tag{1}$$
+$$\frac{k+1}n=\frac1{q+1}+\frac{k+1-r}{n(q+1)}=\frac1{q+1}+\frac1{s_1}+\cdots+\frac1{s_v}.\qquad(1)$$
 剩下只要證 $q+1\notin\{s_1,\dots,s_v\}$，命題對 $m=k+1$ 就成立了。用反證法：若 $q+1$ 是某個 $s_i$，則
-$$\begin{aligned}\frac1{q+1}+\frac1{s_1}+\cdots+\frac1{s_v}&amp;\ge\frac2{q+1}=\frac{2n}{(q+1)(k+1)}\cdot\frac{k+1}n\\&amp;=\Big(\frac{2q}{q+1}+\frac{2r}{(q+1)(k+1)}\Big)\cdot\frac{k+1}n&gt;\frac{k+1}n,\end{aligned}\tag{2}$$
+$$\begin{aligned}\frac1{q+1}+\frac1{s_1}+\cdots+\frac1{s_v}&amp;\ge\frac2{q+1}=\frac{2n}{(q+1)(k+1)}\cdot\frac{k+1}n\\&amp;=\Big(\frac{2q}{q+1}+\frac{2r}{(q+1)(k+1)}\Big)\cdot\frac{k+1}n&gt;\frac{k+1}n,\end{aligned}\qquad(2)$$
 ⟦最後的不等號｜$q\ge1$ 所以 $\frac{2q}{q+1}\ge1$，又 $r&gt;0$，括號大於 1。⟧
 與 (1) 矛盾。所以命題對分子為 $k+1$ 的真分數成立，從而對一切正的真分數成立。
 <br>$r$ 是 $n$ 除以 $k+1$ 的餘數，只知 $r&lt;k+1$，又因 $(k+1,n)=1$ 知 $r&gt;0$，於是 $0&lt;k+1-r\le k$。因為假設了「命題對 $m\le k$ 成立」，才能對 $\frac{k+1-r}{n(q+1)}$ 用上歸納假設；若照搬基本形式只假設 $n=k$，這裡就會陷入被動。可見選擇合適的假設形式多麼重要。
