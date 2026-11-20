@@ -1,0 +1,25 @@
+=== meta
+title: 勾股定理：直角三角形到處都是
+from: cz-L23
+order: 20
+
+=== body
+<div class="hero">直角三角形：$a^2+b^2=c^2$<br>看到垂線 → 立刻有<b>兩個勾股式</b>，相減可以消掉公共的高<br>斜邊上的高：<b>射影定理</b> $AC^2=AH\cdot AB$</div>
+<figure class="bkfig"><svg viewBox="0 0 265 190" width="265" role="img" aria-label="角平分線與對稱點">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="199,22 22,168 243.2,168"/><line x1="199" y1="22" x2="110.3" y2="168"/><line x1="199" y1="22" x2="154.9" y2="168"/><line x1="199" y1="22" x2="199" y2="168" stroke-dasharray="5 4"/><polyline points="199,163 204,163 204,168" stroke-width="1"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="199" y="15.9" text-anchor="middle">A</text><text x="11" y="172.9" text-anchor="middle">B</text><text x="254.2" y="172.9" text-anchor="middle">C</text><text x="110.3" y="183.9" text-anchor="middle">S</text><text x="154.9" y="183.9" text-anchor="middle">T</text><text x="199" y="183.9" text-anchor="middle">H</text></g>
+</svg><figcaption>$AT$ 平分 $\angle A$，$BS=TC$；作高 $AH$（虛線）</figcaption></figure>
+<div class="cards">
+<div class="card"><h4>① 共用一條高，相減</h4><div class="rule">$AS^2-AT^2=SH^2-TH^2$</div>
+<div class="eg">$AB^2-AC^2=BH^2-CH^2$：$AH^2$ 消掉了 <span class="pill">消公共邊</span></div></div>
+<div class="card"><h4>② 射影定理</h4><div class="rule">$\angle C=90^\circ$，$CH\perp AB$：<br>$AC^2=AH\cdot AB$，$CH^2=AH\cdot HB$</div>
+<div class="eg">$AH=4$、$HB=9$ ⇒ $CH=6$、$AC=\sqrt{52}$ <span class="pill">高的平方</span></div></div>
+<div class="card"><h4>③ 海龍公式</h4><div class="rule">$S=\sqrt{p(p-a)(p-b)(p-c)}$</div>
+<div class="eg">$13,14,15$：$p=21$，$S=\sqrt{21\cdot8\cdot7\cdot6}=84$ <span class="pill">三邊求面積</span></div></div>
+</div>
+<p>勾股定理推廣（餘弦定理）：$b^2=a^2+c^2\mp2cq$，$q$ 是 $a$ 在 $c$ 上的射影。⟦怎麼記｜$\angle B$ 是銳角用減號、鈍角用加號、直角時 $q=0$ 就回到勾股定理。⟧</p>
+<div class="pitfall"><h4>⚠ 最常錯</h4><ul>
+<li>垂足可能落在<b>邊的延長線上</b>（鈍角三角形），要分情形</li>
+<li>矩形內一點 $P$：$PA^2+PC^2=PB^2+PD^2$，不是 $PA+PC=PB+PD$</li></ul></div>
+<div class="bottomline">有垂直就有勾股；兩個勾股式相減，常常就是答案。</div>

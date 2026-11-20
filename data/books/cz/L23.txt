@@ -1,0 +1,205 @@
+=== meta
+title: 勾股定理
+author: 嚴鎮軍
+pages: 176-185
+units: G-1-4
+status: 完成
+
+=== 定理 1 | 勾股定理（畢氏定理）
+zh: 直角三角形中，兩直角邊的平方和等於斜邊的平方：$a^2+b^2=c^2$。
+sol: <p>這條定理被稱為「幾何學的基石」，它的發現與證明都和面積有關，據說有人收集了三百多種證法。這裡介紹兩種。</p>
+<p><b>證法一（加菲爾德）</b>　美國第 20 任總統加菲爾德給過這樣的證明：把兩個 $a\times b$ 的矩形一橫一豎排在一起。</p>
+<figure class="bkfig"><svg viewBox="0 0 278 190" width="278" role="img" aria-label="加菲爾德的證法">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,168 168,168 168,80.4 22,80.4"/><polygon points="168,168 255.6,168 255.6,22 168,22"/><line x1="22" y1="80.4" x2="168" y2="168" stroke-dasharray="5 4"/><line x1="168" y1="168" x2="255.6" y2="22" stroke-dasharray="5 4"/><line x1="22" y1="80.4" x2="255.6" y2="22" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="180.7" text-anchor="middle">A</text><text x="168" y="183.9" text-anchor="middle">B</text><text x="263.4" y="180.7" text-anchor="middle">C</text><text x="263.4" y="19.1" text-anchor="middle">D</text><text x="160.2" y="19.1" text-anchor="middle">E</text><text x="175.8" y="77.5" text-anchor="middle">F</text><text x="11" y="85.3" text-anchor="middle">G</text><text x="95" y="183.9" text-anchor="middle">a</text><text x="211.8" y="183.9" text-anchor="middle">b</text><text x="11" y="129.1" text-anchor="middle">b</text><text x="266.6" y="99.9" text-anchor="middle">a</text><text x="100.7" y="123.4" text-anchor="middle">c</text><text x="206.1" y="94.2" text-anchor="middle">c</text></g>
+</svg><figcaption>兩個 $a\times b$ 的矩形一橫一豎；梯形 $ACDG$ 被虛線分成三個直角三角形</figcaption></figure>
+<p>梯形 $ACDG$ 的面積，一方面是 $\frac12(AG+CD)\cdot AC=\frac12(a+b)^2$；另一方面它分成三個三角形 $\triangle ABG$、$\triangle BCD$、$\triangle GBD$，面積分別是 $\frac12ab$、$\frac12ab$、$\frac12c^2$⟦為什麼 △GBD 是等腰直角｜$GB=BD=c$；又 $\angle ABG+\angle CBD=\angle ABG+\angle AGB=90^\circ$，所以 $\angle GBD=90^\circ$。⟧。所以 $\frac12(a+b)^2=ab+\frac12c^2$，整理得 $a^2+b^2=c^2$。</p>
+<p><b>證法二（歐幾里得）</b>　現存最早的證明在歐幾里得《幾何原本》中，敘述成面積的形式：以直角三角形三邊為邊向外作正方形，斜邊上正方形的面積等於兩直角邊上正方形面積的和。</p>
+<figure class="bkfig"><svg viewBox="0 0 230 245" width="230" role="img" aria-label="歐幾里得的證法">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="67.6,128.3 162.4,128.3 101.7,82.7" stroke-width="2"/><polygon points="67.6,128.3 162.4,128.3 162.4,223.2 67.6,223.2"/><polygon points="162.4,128.3 101.7,82.7 147.3,22 208,67.6"/><polygon points="67.6,128.3 101.7,82.7 56.2,48.6 22,94.1"/><line x1="101.7" y1="82.7" x2="101.7" y2="223.2"/><line x1="67.6" y1="128.3" x2="208" y2="67.6" stroke-dasharray="5 4"/><line x1="101.7" y1="82.7" x2="162.4" y2="223.2" stroke-dasharray="5 4"/><polyline points="98.1,87.5 102.9,91.1 106.5,86.3" stroke-width="1"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="56.6" y="133.2" text-anchor="middle">A</text><text x="173.4" y="133.2" text-anchor="middle">B</text><text x="101.7" y="76.6" text-anchor="middle">C</text><text x="147.3" y="15.9" text-anchor="middle">D</text><text x="219" y="72.5" text-anchor="middle">E</text><text x="56.2" y="42.5" text-anchor="middle">F</text><text x="11" y="99" text-anchor="middle">G</text><text x="93.9" y="141" text-anchor="middle">H</text><text x="101.7" y="239.1" text-anchor="middle">I</text><text x="170.2" y="235.9" text-anchor="middle">J</text><text x="59.8" y="235.9" text-anchor="middle">K</text></g>
+</svg><figcaption>三邊上的正方形；$CH\perp AB$ 延長到 $I$，連 $AE$、$CJ$（虛線）</figcaption></figure>
+<p>設 $\angle C=90^\circ$，$ACFG$、$BCDE$、$ABJK$ 是三個正方形。由 $C$ 作 $AB$ 的垂線，交 $AB$ 於 $H$、交 $KJ$ 於 $I$，連 $AE$、$CJ$。</p>
+<p>$\triangle ABE$ 與正方形 $BCDE$ 同底 $BE$、等高 $BC$⟦為什麼等高｜$A$、$C$、$D$ 共線（$\angle ACB+\angle BCD=180^\circ$），而 $CD\parallel BE$，所以 $A$ 到 $BE$ 的距離等於 $CB$。⟧，所以 $S_{BCDE}=2S_{\triangle ABE}$。又 $AB=JB$，$BE=BC$，$\angle ABE=90^\circ+\angle ABC=\angle JBC$，所以 $\triangle ABE\cong\triangle JBC$。而 $\triangle JBC$ 與矩形 $IJBH$ 同底 $BJ$、等高，所以</p>
+$$S_{IJBH}=2S_{\triangle JBC}=2S_{\triangle ABE}=S_{BCDE}.$$
+<p>同理 $S_{ACFG}=S_{AKIH}$，相加得 $S_{AKJB}=S_{ACFG}+S_{BCDE}$。</p>
+=== 定理 2 | 射影定理
+zh: <p>在 $\triangle ABC$ 中，$\angle C=90^\circ$，$CH$ 是斜邊 $AB$ 上的高，則 $AC^2=AH\cdot AB$，$BC^2=BH\cdot AB$。</p>
+<figure class="bkfig"><svg viewBox="0 0 160 189" width="160" role="img" aria-label="射影定理">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,22 138,167 22,167"/><line x1="22" y1="167" x2="92.7" y2="110.4"/><polyline points="28,167 28,161 22,161" stroke-width="1"/><polyline points="88.8,113.5 92,117.4 95.9,114.3" stroke-width="1"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="22" y="15.9" text-anchor="middle">A</text><text x="149" y="171.9" text-anchor="middle">B</text><text x="14.2" y="179.7" text-anchor="middle">C</text><text x="100.5" y="107.5" text-anchor="middle">H</text></g>
+</svg><figcaption>$\angle C=90^\circ$，$CH$ 是斜邊上的高</figcaption></figure>
+sol: <p>上面歐幾里得的證明中已有 $S_{ACFG}=S_{AKIH}$，即 $AC^2=AH\cdot AB$；同理 $BC^2=BH\cdot AB$。（也可以由 $\triangle ACH\sim\triangle ABC$ 直接得到。）</p>
+=== 定理 3 | 勾股定理的逆定理
+zh: 在 $\triangle ABC$ 中，$AB=c$，$BC=a$，$CA=b$，若 $a^2+b^2=c^2$，則 $\angle C$ 是直角。
+sol: <p>作一個直角三角形 $A'B'C'$，兩股為 $a$、$b$，由勾股定理斜邊 $=\sqrt{a^2+b^2}=c$。兩個三角形三邊對應相等（SSS），所以 $\angle C=\angle C'=90^\circ$。</p>
+=== 例 1
+zh: 在 $\triangle ABC$ 中，$AB=AC=1$，$P_1,P_2,\dots,P_{100}$ 是 $BC$ 邊上的 100 個點。令 $m_i=AP_i^2+P_iB\cdot P_iC$（$i=1,2,\dots,100$），求 $m_1+m_2+\cdots+m_{100}$。
+sol: <figure class="bkfig"><svg viewBox="0 0 260 135" width="260" role="img" aria-label="等腰三角形底邊上的點">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="130,22 22,113.4 238,113.4"/><line x1="130" y1="22" x2="84.3" y2="113.4"/><line x1="130" y1="22" x2="130" y2="113.4" stroke-dasharray="5 4"/><polyline points="130,108.4 135,108.4 135,113.4" stroke-width="1"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="130" y="15.9" text-anchor="middle">A</text><text x="11" y="118.3" text-anchor="middle">B</text><text x="249" y="118.3" text-anchor="middle">C</text><text x="130" y="129.3" text-anchor="middle">D</text><text x="84.3" y="129.3" text-anchor="middle">P<tspan font-size="10">i</tspan></text></g>
+</svg><figcaption>作底邊上的高 $AD$（虛線）</figcaption></figure>
+<p><b>解</b>　設 $P_i$ 是 $BC$ 上任一點，作高 $AD$。不妨設 $P_i$ 在 $BD$ 上，因為 $BD=CD$，</p>
+$$m_i=AP_i^2+(BD-P_iD)(CD+P_iD)=AP_i^2+BD^2-P_iD^2.$$
+<p>對直角 $\triangle AP_iD$ 和 $\triangle ABD$ 用勾股定理，$AP_i^2-P_iD^2=AD^2$，所以</p>
+$$m_i=AD^2+BD^2=AB^2=1.$$
+<p>每個 $m_i$ 都是 $1$，所以總和是 $100$。</p>
+ans: $100$
+
+=== 例 2
+zh: 設 $M$ 是 $\triangle ABC$ 內任一點，$MD\perp AB$，$ME\perp BC$，$MF\perp CA$，又 $BD=BE$，$CE=CF$。求證：$AD=AF$。
+sol: <figure class="bkfig"><svg viewBox="0 0 233 260" width="233" role="img" aria-label="三角形內一點與三條垂線">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="116.4,22 37.8,169.3 204.7,169.3" stroke-width="2"/><line x1="121.3" y1="115.3" x2="22" y2="62.3"/><line x1="121.3" y1="115.3" x2="121.3" y2="238"/><line x1="121.3" y1="115.3" x2="211.1" y2="61.4"/><polygon points="116.4,22 22,62.3 37.8,169.3 121.3,238 204.7,169.3 211.1,61.4"/><line x1="116.4" y1="22" x2="121.3" y2="115.3" stroke-dasharray="5 4"/><line x1="37.8" y1="169.3" x2="121.3" y2="115.3" stroke-dasharray="5 4"/><line x1="204.7" y1="169.3" x2="121.3" y2="115.3" stroke-dasharray="5 4"/><polyline points="83.1,94.9 85.5,90.5 81.1,88.2" stroke-width="1"/><polyline points="121.3,164.3 126.3,164.3 126.3,169.3" stroke-width="1"/><polyline points="154.5,95.3 157.1,99.6 161.4,97" stroke-width="1"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="116.4" y="15.9" text-anchor="middle">A</text><text x="26.8" y="174.2" text-anchor="middle">B</text><text x="215.7" y="174.2" text-anchor="middle">C</text><text x="132.3" y="120.2" text-anchor="middle">M</text><text x="14.2" y="59.4" text-anchor="middle">D</text><text x="121.3" y="253.9" text-anchor="middle">E</text><text x="218.9" y="58.5" text-anchor="middle">F</text><text x="89" y="89.7" text-anchor="middle">D<tspan font-size="10">1</tspan></text><text x="131.5" y="166.4" text-anchor="middle">E<tspan font-size="10">1</tspan></text><text x="148.6" y="89.9" text-anchor="middle">F<tspan font-size="10">1</tspan></text></g>
+</svg><figcaption>$MD\perp AB$、$ME\perp BC$、$MF\perp CA$，$BD=BE$、$CE=CF$；連 $AM$、$BM$、$CM$（虛線）</figcaption></figure>
+<p><b>證</b>　設 $MD$ 交 $AB$ 於 $D_1$，$ME$ 交 $BC$ 於 $E_1$，$MF$ 交 $AC$ 於 $F_1$，連 $AM$、$BM$、$CM$。圖中有許多直角三角形，從直角 $\triangle ADD_1$ 開始，依次對各直角三角形用勾股定理：</p>
+$$\begin{aligned}AD^2&=DD_1^2+AD_1^2\\&=(BD^2-BD_1^2)+(AM^2-MD_1^2)\\&=AM^2+BE^2-(BD_1^2+MD_1^2)\\&=AM^2+BE^2-BM^2\\&=AM^2+BE^2-(ME_1^2+BE_1^2)\\&=AM^2-ME_1^2+EE_1^2.\end{aligned}$$
+<p>⟦第三行到第四行｜用了 $BD=BE$；而 $BD_1^2+MD_1^2=BM^2$（直角 $\triangle BD_1M$）。最後一行用 $BE^2-BE_1^2=EE_1^2$（直角 $\triangle BE_1E$）。⟧</p>
+<p>⟦同理｜從 $\triangle AFF_1$ 出發，經過 $C$ 與 $CE=CF$，得 $AF^2=AM^2+CE^2-CM^2=AM^2-ME_1^2+EE_1^2$。⟧，$AF^2=AM^2-ME_1^2+EE_1^2$，所以 $AD=AF$。</p>
+<p><b>說明</b>　本題可以推廣到多邊形：設 $M$ 是多邊形 $A_1A_2\cdots A_n$ 內一點，$MB_1\perp A_1A_2$，$MB_2\perp A_2A_3$，…，$MB_n\perp A_nA_1$（$B_i$ 在垂線上），且 $B_1A_2=A_2B_2$，$B_2A_3=A_3B_3$，…，$B_{n-1}A_n=A_nB_n$，則 $B_1A_1=A_1B_n$。證法相同。</p>
+=== 例 3
+zh: 設在 $\triangle ABC$ 中，$AB>AC$，$AT$ 平分 $\angle A$ 交 $BC$ 於 $T$，$S$ 是 $BC$ 上一點，使 $BS=TC$。求證：$AS^2-AT^2=(AB-AC)^2$。
+sol: <figure class="bkfig"><svg viewBox="0 0 265 190" width="265" role="img" aria-label="角平分線與對稱點">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="199,22 22,168 243.2,168"/><line x1="199" y1="22" x2="110.3" y2="168"/><line x1="199" y1="22" x2="154.9" y2="168"/><line x1="199" y1="22" x2="199" y2="168" stroke-dasharray="5 4"/><polyline points="199,163 204,163 204,168" stroke-width="1"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="199" y="15.9" text-anchor="middle">A</text><text x="11" y="172.9" text-anchor="middle">B</text><text x="254.2" y="172.9" text-anchor="middle">C</text><text x="110.3" y="183.9" text-anchor="middle">S</text><text x="154.9" y="183.9" text-anchor="middle">T</text><text x="199" y="183.9" text-anchor="middle">H</text></g>
+</svg><figcaption>$AT$ 平分 $\angle A$，$BS=TC$；作高 $AH$（虛線）</figcaption></figure>
+<p><b>證</b>　作 $BC$ 邊上的高 $AH$。則</p>
+$$\begin{aligned}AS^2-AT^2&=(AH^2+SH^2)-(AH^2+TH^2)=SH^2-TH^2\\&=(SH-TH)(SH+TH)\\&=ST\,(BH-BS+TC-HC)\\&=ST\,(BH-HC)\\&=(BT-TC)(BH-HC).\quad\text{①}\end{aligned}$$
+<p>⟦這幾步｜$S$、$T$ 都在 $H$ 的左側時 $SH-TH=ST$；$SH+TH=(BH-BS)+(HC-TC)$ 再用 $BS=TC$；最後 $ST=BT-BS=BT-TC$。⟧</p>
+<p>由角平分線定理，</p>
+$$\frac{BT}{AB}=\frac{TC}{AC}=\frac{BT-TC}{AB-AC}=\frac{BT+TC}{AB+AC}=\frac{BC}{AB+AC},$$
+<p>所以 $BT-TC=\dfrac{BC}{AB+AC}(AB-AC)$。② 代入 ①：</p>
+$$AS^2-AT^2=\frac{(BH-HC)(BH+HC)}{AB+AC}(AB-AC)=\frac{BH^2-HC^2}{AB+AC}(AB-AC).\quad\text{③}$$
+<p>又 $AB^2-AC^2=(AH^2+BH^2)-(AH^2+CH^2)=BH^2-CH^2$，④ 代入 ③：</p>
+$$AS^2-AT^2=\frac{AB^2-AC^2}{AB+AC}(AB-AC)=(AB-AC)^2.$$
+=== 例 4
+zh: 已知 $\triangle ABC$ 中，$AB=c$，$BC=a$，$CA=b$。求 $AB$ 邊上的高 $h_c$。
+sol: <p><b>解</b>　分兩種情形。</p>
+<p>1. 高 $CD$ 在三角形內。記 $AD=q_1$，$BD=q$。</p>
+<figure class="bkfig"><svg viewBox="0 0 237 160" width="237" role="img" aria-label="高在三角形內">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,138 215.3,138 157.3,22"/><line x1="157.3" y1="22" x2="157.3" y2="138"/><polyline points="157.3,133 162.3,133 162.3,138" stroke-width="1"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="11" y="142.9" text-anchor="middle">A</text><text x="226.3" y="142.9" text-anchor="middle">B</text><text x="157.3" y="15.9" text-anchor="middle">C</text><text x="157.3" y="153.9" text-anchor="middle">D</text><text x="81.9" y="77.1" text-anchor="middle">b</text><text x="194.1" y="77.1" text-anchor="middle">a</text><text x="118.7" y="158.9" text-anchor="middle">c</text></g>
+</svg><figcaption>情形 1：垂足 $D$ 在 $AB$ 上</figcaption></figure>
+<p>由勾股定理</p>
+$$b^2=h_c^2+q_1^2=a^2-q^2+(c-q)^2=a^2+c^2-2cq,\quad\text{①}$$
+<p>所以 $q=\dfrac{a^2+c^2-b^2}{2c}$，</p>
+$$\begin{aligned}h_c^2&=a^2-q^2=\frac1{4c^2}\big[(2ac)^2-(a^2+c^2-b^2)^2\big]\\&=\frac1{4c^2}(2ac+a^2+c^2-b^2)(2ac-a^2-c^2+b^2)\\&=\frac1{4c^2}(a+c+b)(a+c-b)(b+a-c)(b-a+c).\quad\text{②}\end{aligned}$$
+<p>⟦最後一步｜$2ac+a^2+c^2-b^2=(a+c)^2-b^2$，$2ac-a^2-c^2+b^2=b^2-(a-c)^2$，各自用平方差分解。⟧</p>
+<p>2. 高 $CD$ 在三角形外。記 $BD=q$。</p>
+<figure class="bkfig"><svg viewBox="0 0 250 147" width="250" role="img" aria-label="高在三角形外">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,125 152.1,125 228,22"/><line x1="152.1" y1="125" x2="228" y2="125" stroke-dasharray="5 4"/><line x1="228" y1="22" x2="228" y2="125" stroke-dasharray="5 4"/><polyline points="228,120 223,120 223,125" stroke-width="1"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="11" y="129.9" text-anchor="middle">A</text><text x="152.1" y="140.9" text-anchor="middle">B</text><text x="228" y="15.9" text-anchor="middle">C</text><text x="235.8" y="137.7" text-anchor="middle">D</text><text x="117.2" y="70.6" text-anchor="middle">b</text><text x="201.1" y="78.4" text-anchor="middle">a</text><text x="87.1" y="140.9" text-anchor="middle">c</text></g>
+</svg><figcaption>情形 2：垂足 $D$ 在 $AB$ 的延長線上</figcaption></figure>
+$$b^2=h_c^2+AD^2=a^2-q^2+(c+q)^2=a^2+c^2+2cq,\quad\text{③}$$
+<p>$q=\dfrac{b^2-a^2-c^2}{2c}$，$q^2$ 與情形 1 相同，由 $h_c^2=a^2-q^2$ 得到同樣的 ②。</p>
+<p>習慣上令半周長 $p=\frac12(a+b+c)$，則 $a+c-b=2(p-b)$、$a+b-c=2(p-c)$、$b+c-a=2(p-a)$，② 成為</p>
+$$h_c^2=\frac4{c^2}p(p-a)(p-b)(p-c),\qquad h_c=\frac2c\sqrt{p(p-a)(p-b)(p-c)}.$$
+<p><b>說明</b>　1. 同理 $h_a=\frac2a\sqrt{p(p-a)(p-b)(p-c)}$、$h_b=\frac2b\sqrt{\cdots}$，由此得到三角形面積的<b>海龍公式</b></p>
+$$S=\tfrac12ch_c=\sqrt{p(p-a)(p-b)(p-c)}.$$
+<p>2. ① 與 ③ 其實證明了勾股定理的推廣（見下面的定理），在三角學中就是餘弦定理；用它還可以算中線、角平分線的長，見第 37 講。</p>
+ans: $h_c=\dfrac2c\sqrt{p(p-a)(p-b)(p-c)}$，其中 $p=\frac12(a+b+c)$
+
+=== 定理 4 | 勾股定理的推廣
+zh: 在任一三角形中：(1) 銳角所對邊的平方，等於另兩邊的平方和，減去其中一邊與另一邊在這邊上射影的乘積的兩倍；(2) 鈍角所對邊的平方，等於另兩邊的平方和，加上其中一邊與另一邊在這邊上射影的乘積的兩倍。
+sol: <p>就是例 4 的 ①（$\angle B$ 是銳角：$b^2=a^2+c^2-2c\cdot q$，$q$ 是 $a$ 在 $c$ 上的射影）與 ③（$\angle B$ 是鈍角：$b^2=a^2+c^2+2c\cdot q$）。</p>
+=== 例 5
+zh: 在直角 $\triangle ABC$ 中，$\angle C=90^\circ$，$O$ 是三角形內一點，使 $\triangle OAB$、$\triangle OBC$、$\triangle OCA$ 的面積相等。求證：$OA^2+OB^2=5OC^2$。
+sol: <figure class="bkfig"><svg viewBox="0 0 260 148" width="260" role="img" aria-label="直角三角形內等分面積的點">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,122.4 238,125.6 165.5,22"/><line x1="141.8" y1="90" x2="22" y2="122.4"/><line x1="141.8" y1="90" x2="238" y2="125.6"/><line x1="141.8" y1="90" x2="165.5" y2="22"/><line x1="141.8" y1="90" x2="189.6" y2="56.5" stroke-dasharray="5 4"/><line x1="141.8" y1="90" x2="117.6" y2="55.5" stroke-dasharray="5 4"/><polyline points="160.5,25.4 164,30.4 168.9,26.9" stroke-width="1"/><polyline points="120.5,59.6 124.6,56.7 121.7,52.6" stroke-width="1"/><polyline points="185.5,59.4 182.7,55.3 186.8,52.4" stroke-width="1"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="11" y="127.3" text-anchor="middle">A</text><text x="249" y="130.5" text-anchor="middle">B</text><text x="165.5" y="15.9" text-anchor="middle">C</text><text x="141.8" y="105.9" text-anchor="middle">O</text><text x="109.9" y="52.6" text-anchor="middle">M</text><text x="197.4" y="53.7" text-anchor="middle">N</text></g>
+</svg><figcaption>$ON\perp BC$、$OM\perp CA$（虛線），$CMON$ 是矩形</figcaption></figure>
+<p><b>證</b>　作 $ON\perp BC$，$OM\perp CA$。由勾股定理</p>
+$$OA^2+OB^2=(OM^2+MA^2)+(ON^2+NB^2).\quad\text{①}$$
+<p>由 $S_{\triangle ABC}=3S_{\triangle OBC}$，得 $AC\cdot BC=3ON\cdot BC$，$AC=3ON$。$CMON$ 是矩形，$CM=ON$，所以 $AM=AC-CM=2ON$；同理 $BN=2OM$。代入 ①：</p>
+$$OA^2+OB^2=OM^2+ON^2+4ON^2+4OM^2=5(OM^2+ON^2)=5OC^2.$$
+=== 例 6
+zh: 設 $\triangle ABC$ 的三邊長為連續整數，且面積也是整數。證明：必有一條高把 $\triangle ABC$ 分成兩個勾股三角形（三邊都是整數的直角三角形），且這條高把底邊分成長度相差 $4$ 的兩段。
+sol: <p><b>證</b>　設 $AC=n+1$，$BC=n$，$AB=n-1$（$n>1$ 為整數），半周長 $p=\frac{3n}2$。由海龍公式</p>
+$$S=\sqrt{\tfrac32n\big(\tfrac32n-n+1\big)\big(\tfrac32n-n\big)\big(\tfrac32n-n-1\big)}=\tfrac14n\sqrt{3(n^2-4)},\quad\text{①}$$
+<p>即 $3n^2(n^2-4)=16S^2$。② $S$ 是整數，$3$ 是質數且 $3\nmid16$，所以 $3\mid S^2$，$3\mid S$。令 $S=3m$，代入 ② 得 $n^2(n^2-4)=48m^2$，即</p>
+$$(n^2-2)^2=4(12m^2+1).$$
+<p>所以 $(n^2-2)^2$ 是 $4$ 的倍數，$n^2-2$ 是偶數，$n$ 是偶數。設 $n=2k$，代入 ① 得 $S=k\sqrt{3(k^2-1)}$。$S$ 是整數，所以 $\sqrt{3(k^2-1)}$ 是有理數，因而是整數⟦為什麼｜整數的平方根若是有理數，必為整數。⟧。作 $BC$ 邊上的高 $AD$：</p>
+<figure class="bkfig"><svg viewBox="0 0 238 210" width="238" role="img" aria-label="三邊為連續整數的三角形">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="146.5,22 215.7,188 22,188"/><line x1="146.5" y1="22" x2="146.5" y2="188" stroke-dasharray="5 4"/><polyline points="146.5,182 152.5,182 152.5,188" stroke-width="1"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="146.5" y="15.9" text-anchor="middle">A</text><text x="226.7" y="192.9" text-anchor="middle">B</text><text x="11" y="192.9" text-anchor="middle">C</text><text x="146.5" y="203.9" text-anchor="middle">D</text><text x="72.2" y="101.4" font-style="normal" font-size="12" text-anchor="middle">n+1</text><text x="193.1" y="101.4" font-style="normal" font-size="12" text-anchor="middle">n−1</text><text x="84.2" y="203.2" font-size="12" text-anchor="middle">n</text></g>
+</svg><figcaption>以 $13,14,15$ 為例：高 $AD=12$，$BD=5$、$CD=9$，相差 $4$</figcaption></figure>
+$$AD=\frac{2S}{BC}=\frac{2k\sqrt{3(k^2-1)}}{2k}=\sqrt{3(k^2-1)}$$
+<p>是整數，而</p>
+$$\begin{aligned}BD&=\sqrt{(2k-1)^2-3(k^2-1)}=\sqrt{k^2-4k+4}=k-2,\\CD&=\sqrt{(2k+1)^2-3(k^2-1)}=\sqrt{k^2+4k+4}=k+2,\end{aligned}$$
+<p>都是整數。所以 $\triangle ABD$、$\triangle ACD$ 都是勾股三角形，且 $CD-BD=4$。</p>
+=== 習題 1
+zh: <p>在 $\triangle ABC$ 中，$\angle C$ 是直角。試證明：(1) 以 $AB$、$BC$、$CA$ 為直徑作三個半圓（如圖），兩個月牙形的面積和等於 $\triangle ABC$ 的面積（希波克拉底月牙問題）；(2) 以斜邊 $AB$ 上的高 $CD$ 為直徑的圓面積，等於以 $AB$ 為直徑的半圓扣掉以 $AD$、$BD$ 為直徑的兩個半圓後剩下的面積。</p>
+<figure class="bkfig"><svg viewBox="0 0 260 163" width="260" role="img" aria-label="波克拉底月牙形">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M229.5 141.4A92.4 92.4 0 0 0 44.7 141.4" stroke-dasharray="5 4"/><path d="M81.7 67.5A41.3 41.3 0 0 0 44.7 141.4" stroke="#c2562b" stroke-width="2"/><path d="M229.5 141.4A82.6 82.6 0 0 0 81.7 67.5" stroke="#c2562b" stroke-width="2"/><polygon points="44.7,141.4 229.5,141.4 81.7,67.5"/><polyline points="79,72.8 84.4,75.5 87,70.1" stroke-width="1"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="37" y="154" text-anchor="middle">A</text><text x="237.3" y="154" text-anchor="middle">B</text><text x="81.7" y="61.4" text-anchor="middle">C</text></g>
+</svg><figcaption>紅色兩個半圓與虛線大半圓之間的兩塊月牙形</figcaption></figure>
+<figure class="bkfig"><svg viewBox="0 0 260 152" width="260" role="img" aria-label="直角三角形斜邊上的高">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M238 130A108 108 0 0 0 22 130"/><path d="M99.8 130A38.9 38.9 0 0 0 22 130" stroke="#c2562b" stroke-width="2"/><path d="M238 130A69.1 69.1 0 0 0 99.8 130" stroke="#c2562b" stroke-width="2"/><polygon points="22,130 238,130 99.8,26.3"/><line x1="99.8" y1="26.3" x2="99.8" y2="130"/><polyline points="99.8,125 104.8,125 104.8,130" stroke-width="1"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="142.7" text-anchor="middle">A</text><text x="245.8" y="142.7" text-anchor="middle">B</text><text x="99.8" y="20.2" text-anchor="middle">C</text><text x="99.8" y="145.9" text-anchor="middle">D</text></g>
+</svg><figcaption>大半圓扣掉兩個紅色小半圓剩下的部分</figcaption></figure>
+sol: <p>(1) 令 $AB=c$、$BC=a$、$CA=b$，三個半圓面積 $S_c,S_a,S_b$，月牙面積和 $S$。則 $S+S_c=S_a+S_b+S_{\triangle ABC}$，所以</p>
+$$S=\tfrac\pi8a^2+\tfrac\pi8b^2+S_{\triangle ABC}-\tfrac\pi8c^2=S_{\triangle ABC}.$$
+<p>(2) 令 $CD=h$、$AD=p$、$BD=q$，則 $pq=h^2$、$c=p+q$，所以 $2h^2=2pq=c^2-p^2-q^2$，</p>
+$$\tfrac\pi4h^2=\tfrac\pi8c^2-\tfrac\pi8p^2-\tfrac\pi8q^2.$$
+=== 習題 2
+zh: 設 $P$ 是矩形 $ABCD$ 內一點，已知 $PA=3$，$PB=4$，$PC=5$，求 $PD$。
+sol: <figure class="bkfig"><svg viewBox="0 0 230 150" width="230" role="img" aria-label="矩形內一點">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,22 22,128.3 208,128.3 208,22"/><line x1="22" y1="64.5" x2="208" y2="64.5" stroke-dasharray="5 4"/><line x1="96.4" y1="64.5" x2="22" y2="22"/><line x1="96.4" y1="64.5" x2="22" y2="128.3"/><line x1="96.4" y1="64.5" x2="208" y2="128.3"/><line x1="96.4" y1="64.5" x2="208" y2="22"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="19.1" text-anchor="middle">A</text><text x="14.2" y="141" text-anchor="middle">B</text><text x="215.8" y="141" text-anchor="middle">C</text><text x="215.8" y="19.1" text-anchor="middle">D</text><text x="96.4" y="80.4" text-anchor="middle">P</text><text x="11" y="69.4" text-anchor="middle">E</text><text x="219" y="69.4" text-anchor="middle">F</text></g>
+</svg><figcaption>過 $P$ 作 $EF\parallel BC$（虛線）</figcaption></figure>
+<p>過 $P$ 作 $EF\parallel BC$。$PA^2=AE^2+EP^2$，$PB^2=BE^2+EP^2$，$PC^2=CF^2+FP^2$，且 $AE=DF$、$BE=CF$。所以</p>
+$$PD^2=DF^2+PF^2=(PA^2-EP^2)+(PC^2-CF^2)=PA^2+PC^2-PB^2=9+25-16=18.$$
+ans: $PD=3\sqrt2$
+
+=== 習題 3
+zh: 設點 $A_1$、$B_1$、$C_1$ 分別在 $\triangle ABC$ 的邊 $BC$、$CA$、$AB$ 上，過它們分別作 $BC$、$CA$、$AB$ 的垂線，這三條垂線交於一點 $M$。求證：$A_1B^2+B_1C^2+C_1A^2=A_1C^2+B_1A^2+C_1B^2$。
+sol: <figure class="bkfig"><svg viewBox="0 0 240 171" width="240" role="img" aria-label="三邊的垂線共點">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="80.8,22 22,149.4 218,149.4"/><line x1="120" y1="105.3" x2="120" y2="149.4"/><line x1="120" y1="105.3" x2="143.4" y2="80.1"/><line x1="120" y1="105.3" x2="56" y2="75.8"/><polyline points="120,144.4 125,144.4 125,149.4" stroke-width="1"/><polyline points="140,83.8 136.3,80.4 139.7,76.7" stroke-width="1"/><polyline points="60.5,77.9 62.6,73.3 58.1,71.2" stroke-width="1"/><line x1="120" y1="105.3" x2="80.8" y2="22" stroke-dasharray="5 4"/><line x1="120" y1="105.3" x2="22" y2="149.4" stroke-dasharray="5 4"/><line x1="120" y1="105.3" x2="218" y2="149.4" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="80.8" y="15.9" text-anchor="middle">A</text><text x="11" y="154.3" text-anchor="middle">B</text><text x="229" y="154.3" text-anchor="middle">C</text><text x="109" y="110.2" text-anchor="middle">M</text><text x="120" y="165.3" text-anchor="middle">A<tspan font-size="10">1</tspan></text><text x="153.6" y="77.2" text-anchor="middle">B<tspan font-size="10">1</tspan></text><text x="45.7" y="72.9" text-anchor="middle">C<tspan font-size="10">1</tspan></text></g>
+</svg><figcaption>三條垂線交於 $M$；連 $MA$、$MB$、$MC$（虛線）</figcaption></figure>
+<p>由勾股定理 $MA^2-B_1A^2=B_1M^2=MC^2-B_1C^2$，即 $B_1A^2-B_1C^2=MA^2-MC^2$。同理 $C_1B^2-C_1A^2=MB^2-MA^2$，$A_1C^2-A_1B^2=MC^2-MB^2$。三式相加右邊為 $0$，移項即得。</p>
+=== 習題 4
+zh: 在 $\triangle ABC$ 中，$BC=a$，$CA=b$，$AB=c$。求證：$a$ 邊上的高 $h_a\le\sqrt{p(p-a)}$，其中 $p=\frac12(a+b+c)$。
+hint: 過 $A$ 作 $l\parallel BC$，取 $B$ 關於 $l$ 的對稱點 $B_1$。
+sol: <figure class="bkfig"><svg viewBox="0 0 250 156" width="250" role="img" aria-label="用對稱求高的上界">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="90.6,78 38.9,134 211.1,134"/><line x1="22" y1="78" x2="228" y2="78"/><line x1="38.9" y1="134" x2="38.9" y2="22" stroke-dasharray="5 4"/><line x1="211.1" y1="134" x2="211.1" y2="22" stroke-dasharray="5 4"/><line x1="38.9" y1="22" x2="211.1" y2="22" stroke-dasharray="5 4"/><line x1="90.6" y1="78" x2="38.9" y2="22" stroke-dasharray="5 4"/><line x1="211.1" y1="134" x2="38.9" y2="22" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="90.6" y="71.9" text-anchor="middle">A</text><text x="31.1" y="146.6" text-anchor="middle">B</text><text x="218.9" y="146.6" text-anchor="middle">C</text><text x="28.6" y="19.1" text-anchor="middle">B<tspan font-size="10">1</tspan></text><text x="221.4" y="19.1" text-anchor="middle">C<tspan font-size="10">1</tspan></text><text x="235" y="82.9" text-anchor="middle">l</text></g>
+</svg><figcaption>$l\parallel BC$ 過 $A$；$B_1$、$C_1$ 是 $B$、$C$ 關於 $l$ 的對稱點</figcaption></figure>
+<p>$AB_1=AB$，$BB_1=2h_a$，$\angle B_1BC=90^\circ$。所以</p>
+$$b+c=CA+AB_1\ge CB_1=\sqrt{a^2+4h_a^2},$$
+<p>$h_a^2\le\frac14\big[(b+c)^2-a^2\big]=\frac14(b+c+a)(b+c-a)=p(p-a)$。</p>
+=== 習題 5
+zh: $l$ 是正方形 $ABCD$ 外的一條直線，$M$、$N$、$P$、$Q$ 分別是 $A$、$B$、$C$、$D$ 在 $l$ 上的射影（如圖，$A$ 離 $l$ 最近）。求證：$S_{ABCD}=BN^2+DQ^2-2AM\cdot CP$。
+sol: <figure class="bkfig"><svg viewBox="0 0 230 230" width="230" role="img" aria-label="正方形在直線上的投影">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="91,154.9 48.5,64.5 138.9,22 181.4,112.3"/><line x1="22" y1="208" x2="207.9" y2="208"/><line x1="48.5" y1="64.5" x2="48.5" y2="208"/><line x1="91" y1="154.9" x2="91" y2="208"/><line x1="138.9" y1="22" x2="138.9" y2="208"/><line x1="181.4" y1="112.3" x2="181.4" y2="208"/><line x1="48.5" y1="154.9" x2="181.4" y2="154.9" stroke-dasharray="5 4"/><line x1="91" y1="154.9" x2="138.9" y2="22" stroke-dasharray="5 4"/><line x1="48.5" y1="64.5" x2="181.4" y2="112.3" stroke-dasharray="5 4"/><line x1="114.9" y1="88.4" x2="114.9" y2="208" stroke-dasharray="5 4"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="91" y="170.8" text-anchor="middle">A</text><text x="40.7" y="61.6" text-anchor="middle">B</text><text x="138.9" y="15.9" text-anchor="middle">C</text><text x="192.4" y="117.2" text-anchor="middle">D</text><text x="48.5" y="223.9" text-anchor="middle">N</text><text x="91" y="223.9" text-anchor="middle">M</text><text x="138.9" y="223.9" text-anchor="middle">P</text><text x="181.4" y="223.9" text-anchor="middle">Q</text><text x="103.9" y="93.3" text-anchor="middle">O</text><text x="114.9" y="223.9" text-anchor="middle">R</text><text x="37.5" y="159.8" text-anchor="middle">E</text><text x="192.4" y="159.8" text-anchor="middle">F</text><text x="221.6" y="212.9" text-anchor="middle">l</text></g>
+</svg><figcaption>過 $A$ 作 $EF\parallel l$；對角線交於 $O$，$OR\perp l$（虛線）</figcaption></figure>
+<p>過 $A$ 作 $EF\parallel l$，交 $BN$ 於 $E$、$DQ$ 於 $F$。⟦易知｜$AB=DA$，$\angle BAE=90^\circ-\angle DAF=\angle ADF$，兩個直角三角形全等。⟧$\triangle ABE\cong\triangle DAF$，所以 $EA=DF$。記 $S=S_{ABCD}$，則</p>
+$$\begin{aligned}S&=BA^2=BE^2+EA^2=BE^2+DF^2\\&=(BN-AM)^2+(DQ-AM)^2\\&=BN^2+DQ^2-2AM(BN+DQ-AM).\end{aligned}$$
+<p>連 $AC$、$BD$ 交於 $O$，$OR\perp l$。$OR$ 同時是梯形 $NQDB$ 與梯形 $MPCA$ 的中位線，所以 $BN+DQ=2OR=AM+CP$，代入得 $S=BN^2+DQ^2-2AM\cdot CP$。</p>
+=== 習題 6
+zh: 設 $AD$ 是直角 $\triangle ABC$ 斜邊 $BC$ 上的高，$E$、$F$ 是 $D$ 在 $AB$、$AC$ 上的射影。求證：$AD^3=BC\cdot BE\cdot CF$。
+sol: <figure class="bkfig"><svg viewBox="0 0 250 143" width="250" role="img" aria-label="直角三角形斜邊上的高與投影">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="96.2,22 22,120.9 228,120.9"/><line x1="96.2" y1="22" x2="96.2" y2="120.9"/><line x1="96.2" y1="120.9" x2="48.7" y2="85.3"/><line x1="96.2" y1="120.9" x2="143.6" y2="57.6"/><polyline points="96.2,115.9 101.2,115.9 101.2,120.9" stroke-width="1"/><polyline points="51.9,87.7 54.3,84.5 51.1,82.1" stroke-width="1"/><polyline points="141.2,60.8 138,58.4 140.4,55.2" stroke-width="1"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="96.2" y="15.9" text-anchor="middle">A</text><text x="11" y="125.8" text-anchor="middle">B</text><text x="239" y="125.8" text-anchor="middle">C</text><text x="96.2" y="136.8" text-anchor="middle">D</text><text x="40.9" y="82.4" text-anchor="middle">E</text><text x="151.4" y="54.7" text-anchor="middle">F</text></g>
+</svg><figcaption>$AD\perp BC$，$DE\perp AB$，$DF\perp AC$</figcaption></figure>
+<p>在直角 $\triangle ADB$ 中由射影定理 $BD^2=BE\cdot AB$；同理 $CD^2=CF\cdot AC$。所以</p>
+$$BE\cdot CF=\frac{BD^2\cdot CD^2}{AB\cdot AC}=\frac{AD^4}{AB\cdot AC}.$$
+<p>⟦為什麼｜在直角 $\triangle ABC$ 中由射影定理 $AD^2=BD\cdot CD$。⟧又 $AB\cdot AC=AD\cdot BC$（兩種方法算 $\triangle ABC$ 面積的兩倍），所以 $BC\cdot BE\cdot CF=BC\cdot\dfrac{AD^4}{AD\cdot BC}=AD^3$。</p>
