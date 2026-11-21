@@ -13,43 +13,119 @@ zh: 平面上兩圓相交，$A$ 是其中一個交點。兩個點同時從 $A$ �
 sol: <p><b>證</b>　設 $\odot O_1$、$\odot O_2$ 交於 $A$、$B$，$Q_1$、$Q_2$ 分別是兩圓上的動點。先證 $Q_1$、$B$、$Q_2$ 三點共線。由已知 $\angle AO_1Q_1=\angle AO_2Q_2$，而</p>
 $$\angle ABQ_1=\tfrac12\angle AO_1Q_1,\qquad \angle ABQ_2=180^\circ-\tfrac12\angle AO_2Q_2,$$
 <p>⟦第二式｜在 $\odot O_2$ 中，$B$ 與弧 $AQ_2$（$\angle AO_2Q_2$ 所對的那段）在弦 $AQ_2$ 的同側時，$\angle ABQ_2$ 對的是另一段弧，所以是 $180^\circ$ 減去圓心角的一半。⟧所以 $\angle ABQ_1+\angle ABQ_2=180^\circ$，$Q_1$、$B$、$Q_2$ 共線。</p>
-<figure class="bkfig"><svg viewBox="0 0 300 205" width="300" role="img" aria-label="兩圓上同步轉動的兩點">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="88.1" cy="102.5" r="66.1"/><circle cx="197.5" cy="102.5" r="80.5"/><line x1="22.5" y1="110.5" x2="215.8" y2="180.9"/><line x1="43" y1="54.2" x2="261.9" y2="54.2"/><line x1="133.1" y1="54.2" x2="133.1" y2="150.8"/><line x1="43" y1="54.2" x2="22.5" y2="110.5"/><line x1="261.9" y1="54.2" x2="215.8" y2="180.9"/><line x1="88.1" y1="102.5" x2="133.1" y2="54.2" stroke-dasharray="5 4"/><line x1="88.1" y1="102.5" x2="22.5" y2="110.5" stroke-dasharray="5 4"/><line x1="197.5" y1="102.5" x2="133.1" y2="54.2" stroke-dasharray="5 4"/><line x1="197.5" y1="102.5" x2="215.8" y2="180.9" stroke-dasharray="5 4"/><line x1="152.4" y1="54.2" x2="22.5" y2="110.5" stroke="#c2562b" stroke-width="2"/><line x1="152.4" y1="54.2" x2="215.8" y2="180.9" stroke="#c2562b" stroke-width="2"/></g>
-<g fill="currentColor"><circle cx="88.1" cy="102.5" r="2.4"/><circle cx="197.5" cy="102.5" r="2.4"/><circle cx="152.4" cy="54.2" r="2.4"/></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="133.1" y="48.1" text-anchor="middle">A</text><text x="133.1" y="166.7" text-anchor="middle">B</text><text x="35.2" y="51.3" text-anchor="middle">M</text><text x="269.7" y="51.3" text-anchor="middle">N</text><text x="152.4" y="48.1" text-anchor="middle">P</text><text x="8" y="115.4" text-anchor="middle">Q<tspan font-size="10">1</tspan></text><text x="215.8" y="196.8" text-anchor="middle">Q<tspan font-size="10">2</tspan></text><text x="88.1" y="118.4" text-anchor="middle">O<tspan font-size="10">1</tspan></text><text x="197.5" y="118.4" text-anchor="middle">O<tspan font-size="10">2</tspan></text></g>
-</svg><figcaption>$\angle AO_1Q_1=\angle AO_2Q_2$（虛線）；$Q_1,B,Q_2$ 共線、$M,A,N$ 共線；$P$ 是 $MN$ 中點，紅線 $PQ_1=PQ_2$</figcaption></figure>
+<figure class="bkfig"><pre class="geo">O1 = (88.1, 102.5)
+O2 = (197.5, 102.5)
+dot O1
+dot O2
+k1 = circler(O1, 66.1)
+k2 = circler(O2, 80.5)
+A = meet(k1, k2, 133.1, 54.2)
+B = meet(k1, k2, 133.1, 150.8)
+M = reflectp(B, O1)
+N = reflectp(B, O2)
+Q1 = on(k1, 22.5, 110.5)
+Q2 = second(k2, B, Q1)
+P = mid(M, N)
+draw circle k1
+draw circle k2
+draw seg A B
+draw seg M N
+draw seg Q1 Q2
+draw seg M Q1
+draw seg N Q2
+draw seg O1 A dash
+draw seg O1 Q1 dash
+draw seg O2 A dash
+draw seg O2 Q2 dash
+draw seg P Q1 accent
+draw seg P Q2 accent
+</pre><figcaption>$\angle AO_1Q_1=\angle AO_2Q_2$（虛線）；$Q_1,B,Q_2$ 共線、$M,A,N$ 共線；$P$ 是 $MN$ 中點，紅線 $PQ_1=PQ_2$</figcaption></figure>
 <p>設 $BM$、$BN$ 分別是 $\odot O_1$、$\odot O_2$ 的直徑。由 $\angle BAM=\angle BAN=90^\circ$，$M$、$A$、$N$ 共線。連 $MQ_1$、$NQ_2$，由 $\angle BQ_1M=\angle BQ_2N=90^\circ$，$MQ_1\parallel NQ_2$（都垂直於 $Q_1Q_2$）。所以梯形 $MQ_1Q_2N$ 的中位線就是 $Q_1Q_2$ 的中垂線，固定線段 $MN$ 的中點 $P$ 在 $Q_1Q_2$ 的中垂線上，$PQ_1=PQ_2$。</p>
 <p><b>註</b>　(1) 證 $Q_1,B,Q_2$ 共線與 $M,A,N$ 共線是解法的關鍵：揭示這些共線關係後，已知條件才用得上。</p>
 <p>(2) 題中證共線的方法最常見：要證 $X,Y,Z$ 共線，過 $X$ 取一條直線 $PQ$（$P$、$Q$ 在 $X$ 兩側），連 $XY$、$XZ$。若 $Y$、$Z$ 在 $PQ$ 兩側，證 $\angle QXY=\angle PXZ$（對頂角形式）或 $\angle PXY+\angle PXZ=180^\circ$；若 $Y$、$Z$ 在 $PQ$ 同側，證 $\angle PXY=\angle PXZ$。</p>
 === 例 2
 zh: 過 $\triangle ABC$ 的頂點 $A$ 向 $\angle B$ 的內、外角平分線作垂線，垂足分別為 $M$、$N$；過 $A$ 向 $\angle C$ 的內、外角平分線作垂線，垂足分別為 $P$、$Q$。證明 $M$、$N$、$P$、$Q$ 四點共線。
-sol: <figure class="bkfig"><svg viewBox="0 0 320 212" width="320" role="img" aria-label="四個垂足共線">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="135.3,72.7 87.4,189.7 268.3,157.8" stroke-width="2"/><line x1="87.4" y1="189.7" x2="295.5" y2="22"/><line x1="268.3" y1="157.8" x2="295.5" y2="22"/><line x1="268.3" y1="157.8" x2="22" y2="108.6"/><line x1="87.4" y1="189.7" x2="22" y2="108.6"/><line x1="295.5" y1="22" x2="22" y2="108.6" stroke-dasharray="5 4"/><line x1="135.3" y1="72.7" x2="173.6" y2="120.2"/><line x1="135.3" y1="72.7" x2="49.1" y2="142.2"/><line x1="135.3" y1="72.7" x2="124.1" y2="129"/><line x1="135.3" y1="72.7" x2="279.6" y2="101.5"/><line x1="30.7" y1="145.5" x2="298" y2="98.3" stroke="#c2562b" stroke-width="2"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="135.3" y="66.6" text-anchor="middle">A</text><text x="87.4" y="205.6" text-anchor="middle">B</text><text x="276.1" y="170.5" text-anchor="middle">C</text><text x="173.6" y="136.1" text-anchor="middle">M</text><text x="38.1" y="147.1" text-anchor="middle">N</text><text x="124.1" y="144.9" text-anchor="middle">P</text><text x="290.6" y="106.4" text-anchor="middle">Q</text><text x="303.2" y="19.1" text-anchor="middle">X</text><text x="11" y="113.5" text-anchor="middle">Y</text></g>
-</svg><figcaption>$BM,BN$ 是 $\angle B$ 的內、外角平分線，$CP,CQ$ 是 $\angle C$ 的；四個垂足在紅線上，紅線平行於 $BC$；$X$、$A$、$Y$ 在 $\angle A$ 的外角平分線上（虛線）</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (135.3, 72.7)
+B = (87.4, 189.7)
+C = (268.3, 157.8)
+i = incenter(A, B, C)
+eb = rotate(i, B, 90)
+ec = rotate(i, C, 90)
+M = foot(A, B, i)
+N = foot(A, B, eb)
+P = foot(A, C, i)
+Q = foot(A, C, ec)
+X = inter(B, i, C, ec)
+Y = inter(B, eb, C, i)
+hide i
+hide eb
+hide ec
+draw poly A B C
+draw seg B X
+draw seg C X
+draw seg C Y
+draw seg B Y
+draw seg A M
+draw seg A N
+draw seg A P
+draw seg A Q
+draw line X Y dash
+draw line N Q accent
+</pre><figcaption>$BM,BN$ 是 $\angle B$ 的內、外角平分線，$CP,CQ$ 是 $\angle C$ 的；四個垂足在紅線上，紅線平行於 $BC$；$X$、$A$、$Y$ 在 $\angle A$ 的外角平分線上（虛線）</figcaption></figure>
 <p><b>證</b>　設 $BM$ 與 $CQ$ 交於 $X$，$CP$ 與 $BN$ 交於 $Y$。$X$ 在 $\angle B$ 的內角平分線與 $\angle C$ 的外角平分線上，到 $BC$、$CA$、$AB$ 的距離相等，且在 $\angle BAC$ 的外部，所以 $X$ 在 $\angle A$ 的外角平分線上。⟦同理｜$Y$ 在 $\angle C$ 的內角平分線與 $\angle B$ 的外角平分線上，也到三邊等距且在 $\angle BAC$ 外部。⟧，$Y$ 也在 $\angle A$ 的外角平分線上，即 $X$、$A$、$Y$ 共線。</p>
 <p>由 $AQ\perp CQ$、$CP\perp CQ$（同一角的內外角平分線互相垂直），$AQ\parallel CY$，所以 $\frac{XQ}{XC}=\frac{XA}{XY}$；同理 $AM\parallel BY$，$\frac{XM}{XB}=\frac{XA}{XY}$。從而 $\frac{XQ}{XC}=\frac{XM}{XB}$，$MQ\parallel BC$。</p>
 <p>又 $CP\perp CQ$、$AQ\perp CQ$、$AP\perp CP$，四邊形 $AQCP$ 是矩形，$\angle QPC=\angle ACP=\angle BCP$，所以 $PQ\parallel BC$，即 $P$ 在過 $Q$ 而平行於 $BC$ 的直線 $MQ$ 上。同理可證 $P$、$M$、$N$ 共線，四點共線。</p>
 <p>指定一條直線，證明各點都在它上面（如 $X$、$Y$ 在 $\angle A$ 的外角平分線上，$P$、$N$ 在過 $Q$ 平行於 $BC$ 的直線上），也是證共線的方法，特點是直截了當。</p>
 === 例 3
 zh: 證明 $\triangle ABC$ 的垂心 $H$、重心 $G$、外心 $O$ 共線，並且 $G$ 分線段 $HO$ 為 $2:1$。
-sol: <figure class="bkfig"><svg viewBox="0 0 250 250" width="250" role="img" aria-label="垂心、重心、外心共線">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="125" cy="125" r="103"/><polygon points="116,22.4 40.6,184.1 214.2,176.5"/><line x1="116" y1="22.4" x2="122.9" y2="180.5"/><line x1="40.6" y1="184.1" x2="167.5" y2="103.2"/><line x1="116" y1="22.4" x2="127.4" y2="180.3"/><line x1="214.2" y1="176.5" x2="35.8" y2="73.5"/><line x1="116" y1="22.4" x2="35.8" y2="73.5"/><line x1="40.6" y1="184.1" x2="35.8" y2="73.5"/><line x1="125" y1="125" x2="120.9" y2="133" stroke="#c2562b" stroke-width="2"/><line x1="125" y1="125" x2="127.4" y2="180.3" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="116" y="16.3" text-anchor="middle">A</text><text x="32.8" y="196.8" text-anchor="middle">B</text><text x="222" y="189.2" text-anchor="middle">C</text><text x="122.9" y="196.4" text-anchor="middle">D</text><text x="178.5" y="108.1" text-anchor="middle">E</text><text x="28" y="70.6" text-anchor="middle">P</text><text x="114" y="129.9" text-anchor="middle">O</text><text x="112.6" y="132.6" text-anchor="middle">G</text><text x="131.9" y="137.9" text-anchor="middle">H</text><text x="127.4" y="196.2" text-anchor="middle">A<tspan font-size="10">1</tspan></text></g>
-</svg><figcaption>$AD,BE$ 是高，$AA_1$ 是中線，延長 $CO$ 交圓於 $P$；紅線是歐拉線 $OGH$</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (116, 22.4)
+B = (40.6, 184.1)
+C = (214.2, 176.5)
+O = circumcenter(A, B, C)
+k = circle(O, A)
+H = orthocenter(A, B, C)
+G = centroid(A, B, C)
+D = foot(A, B, C)
+E = foot(B, A, C)
+A1 = mid(B, C)
+P = reflectp(C, O)
+draw poly A B C
+draw circle k
+draw seg A D
+draw seg B E
+draw seg A A1
+draw seg C P
+draw seg A P
+draw seg B P
+draw seg O A1 dash
+draw seg O H accent
+</pre><figcaption>$AD,BE$ 是高，$AA_1$ 是中線，延長 $CO$ 交圓於 $P$；紅線是歐拉線 $OGH$</figcaption></figure>
 <p><b>證</b>　設 $AD$、$BE$ 是高，$AA_1$ 是中線，$G$ 在 $AA_1$ 上且 $GA=2GA_1$。連 $OG$、$GH$、$OA_1$，延長 $CO$ 交外接圓於 $P$，連 $AP$、$BP$。</p>
 <p>$CP$ 是直徑，$BP\perp BC$；又 $AD\perp BC$，所以 $BP\parallel AH$。同理 $AP\parallel BH$⟦為什麼｜$\angle CAP=90^\circ$ 給 $AP\perp AC$，而 $BE\perp AC$。⟧。所以 $APBH$ 是平行四邊形，$BP=AH$。</p>
 <p>在 $\triangle BCP$ 中，$O$、$A_1$ 是 $CP$、$CB$ 的中點，$OA_1=\frac12BP=\frac12AH$。又 $AD\parallel OA_1$，$\angle GAH=\angle GA_1O$，且 $GA_1=\frac12GA$，所以 $\triangle OA_1G\sim\triangle HAG$（SAS），$\angle AGH=\angle A_1GO$。$O$、$H$ 在直線 $AA_1$ 的兩側，所以 $O$、$G$、$H$ 共線（對頂角形式），而且 $OG=\frac12GH$。</p>
 <p>直線 $OGH$ 叫做 $\triangle ABC$ 的<b>歐拉線</b>。</p>
 === 例 4
 zh: 過 $\triangle ABC$ 外接圓上任一點 $P$ 向三邊 $BC$、$CA$、$AB$（可在延長線上）作垂線，垂足分別是 $X$、$Y$、$Z$。證明 $X$、$Y$、$Z$ 共線。
-sol: <figure class="bkfig"><svg viewBox="0 0 250 242" width="250" role="img" aria-label="西摩松線">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="129.2" cy="120.8" r="98.8"/><polygon points="34.3,148 224.2,148 112.1,23.5"/><line x1="34.3" y1="148" x2="22" y2="167.7" stroke-dasharray="5 4"/><line x1="95.5" y1="213.6" x2="199.2" y2="120.2"/><line x1="95.5" y1="213.6" x2="22" y2="167.7"/><line x1="95.5" y1="213.6" x2="95.5" y2="148"/><line x1="95.5" y1="213.6" x2="34.3" y2="148"/><line x1="95.5" y1="213.6" x2="224.2" y2="148"/><line x1="22" y1="167.7" x2="199.2" y2="120.2" stroke="#c2562b" stroke-width="2"/><polyline points="195.4,123.5 192.1,119.8 195.8,116.5" stroke-width="1"/><polyline points="26.2,170.3 28.9,166.1 24.6,163.4" stroke-width="1"/><polyline points="95.5,153 100.5,153 100.5,148" stroke-width="1"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="23.3" y="152.9" text-anchor="middle">A</text><text x="235.2" y="152.9" text-anchor="middle">B</text><text x="112.1" y="17.4" text-anchor="middle">C</text><text x="95.5" y="229.5" text-anchor="middle">P</text><text x="210.2" y="125.1" text-anchor="middle">X</text><text x="11" y="172.6" text-anchor="middle">Y</text><text x="95.5" y="141.9" text-anchor="middle">Z</text></g>
-</svg><figcaption>$P$ 在外接圓上，$X,Y,Z$ 是垂足（$Y$ 在 $CA$ 的延長線上）；紅線是西摩松線</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (34.3, 148)
+B = (224.2, 148)
+C = (112.1, 23.5)
+k = circle3(A, B, C)
+P = on(k, 95.5, 213.6)
+X = foot(P, B, C)
+Y = foot(P, C, A)
+Z = foot(P, A, B)
+draw poly A B C
+draw circle k
+draw seg P X
+draw seg P Y
+draw seg P Z
+draw seg P A
+draw seg P B
+draw seg A Y dash
+draw line Y X accent
+right P X B
+right P Z B
+</pre><figcaption>$P$ 在外接圓上，$X,Y,Z$ 是垂足（$Y$ 在 $CA$ 的延長線上）；紅線是西摩松線</figcaption></figure>
 <p><b>證法一</b>　不妨設 $P$ 在弧 $AB$（不含 $C$）上，連 $XZ$、$YZ$、$PA$、$PB$。因為 $\angle PXB=\angle PZB=90^\circ$，$P,X,B,Z$ 四點共圓，所以 $\angle XZB=\angle XPB$。⟦同理｜$\angle PYA=\angle PZA=90^\circ$，$P,Y,A,Z$ 共圓，$\angle AZY=\angle APY$；又圓內接四邊形 $APBC$ 的外角 $\angle PAY=\angle PBC$。⟧，$\angle AZY=\angle APY$，$\angle PAY=\angle PBX$。於是</p>
 $$\angle XZB=\angle XPB=90^\circ-\angle PBX=90^\circ-\angle PAY=\angle APY=\angle AZY,$$
 <p>這是對頂角形式，所以 $X$、$Y$、$Z$ 共線。</p>
@@ -60,11 +136,22 @@ $$YZ=\frac{PA\cdot BC}{2R},\qquad XY=\frac{PC\cdot AB}{2R}.$$
 === 例 5 | 孟氏定理
 zh: <p>在 $\triangle ABC$ 的三邊 $BC$、$CA$、$AB$ 或其延長線上各有一點 $D$、$E$、$F$。證明 $D$、$E$、$F$ 共線的充分必要條件是</p>
 $$\frac{BD}{DC}\cdot\frac{CE}{EA}\cdot\frac{AF}{FB}=1.$$
-sol: <figure class="bkfig"><svg viewBox="0 0 280 187" width="280" role="img" aria-label="孟氏定理">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="109.8,22 22,164.7 186.7,164.7"/><line x1="186.7" y1="164.7" x2="258" y2="164.7"/><line x1="258" y1="164.7" x2="79.1" y2="71.9"/><line x1="186.7" y1="164.7" x2="61.8" y2="100" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="109.8" y="15.9" text-anchor="middle">A</text><text x="14.2" y="177.4" text-anchor="middle">B</text><text x="186.7" y="180.6" text-anchor="middle">C</text><text x="265.8" y="177.4" text-anchor="middle">D</text><text x="166.8" y="110.5" text-anchor="middle">E</text><text x="71.3" y="69.1" text-anchor="middle">F</text><text x="50.8" y="104.9" text-anchor="middle">G</text></g>
-</svg><figcaption>直線 $DEF$ 截 $\triangle ABC$；作 $CG\parallel DF$（虛線）</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (109.8, 22)
+B = (22, 164.7)
+C = (186.7, 164.7)
+D = along(B, C, 1.4329)
+F = along(A, B, 0.3496)
+E = inter(D, F, A, C)
+m1 = mid(C, F)
+x = reflectp(D, m1)
+hide m1
+hide x
+G = inter(A, B, C, x)
+draw poly A B C
+draw seg B D
+draw seg D F
+draw seg C G dash
+</pre><figcaption>直線 $DEF$ 截 $\triangle ABC$；作 $CG\parallel DF$（虛線）</figcaption></figure>
 <p><b>證</b>　必要性：過 $C$ 作 $CG\parallel DF$ 交 $AB$ 於 $G$，由平行線截比例線段</p>
 $$\frac{BD}{DC}=\frac{BF}{FG},\qquad\frac{CE}{EA}=\frac{GF}{FA},$$
 <p>所以三個比的乘積 $=\frac{BF}{FG}\cdot\frac{GF}{FA}\cdot\frac{AF}{FB}=1$。</p>
@@ -72,31 +159,72 @@ $$\frac{BD}{DC}=\frac{BF}{FG},\qquad\frac{CE}{EA}=\frac{GF}{FA},$$
 <p><b>註</b>　必要性就是<b>孟氏（Menelaus）定理</b>，充分性是它的逆定理，是證三點共線的另一常用方法。</p>
 === 例 6
 zh: 利用孟氏定理的逆定理證明例 4（西摩松線）。
-sol: <figure class="bkfig"><svg viewBox="0 0 233 230" width="233" role="img" aria-label="西摩松線的另一證法">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="159.3,22 22,159.3 201.5,143.4"/><line x1="106.8" y1="208" x2="101.9" y2="152.2"/><line x1="106.8" y1="208" x2="211.3" y2="171.7"/><line x1="106.8" y1="208" x2="40.1" y2="141.2"/><line x1="201.5" y1="143.4" x2="211.3" y2="171.7" stroke-dasharray="5 4"/><line x1="22" y1="159.3" x2="40.1" y2="141.2" stroke-dasharray="5 4"/><line x1="40.1" y1="141.2" x2="211.3" y2="171.7" stroke="#c2562b" stroke-width="2"/><line x1="106.8" y1="208" x2="159.3" y2="22" stroke-width="1"/><line x1="106.8" y1="208" x2="22" y2="159.3" stroke-width="1"/><line x1="106.8" y1="208" x2="201.5" y2="143.4" stroke-width="1"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="159.3" y="15.9" text-anchor="middle">A</text><text x="11" y="164.2" text-anchor="middle">B</text><text x="209.3" y="140.5" text-anchor="middle">C</text><text x="106.8" y="223.9" text-anchor="middle">P</text><text x="101.9" y="146.1" text-anchor="middle">X</text><text x="222.3" y="176.6" text-anchor="middle">Y</text><text x="29.1" y="146.1" text-anchor="middle">Z</text></g>
-</svg><figcaption>同例 4（$P$ 在外接圓上，未畫出圓）；用孟氏定理的逆定理證 $X,Y,Z$ 共線</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (159.3, 22)
+B = (22, 159.3)
+C = (201.5, 143.4)
+k = circle3(A, B, C)
+P = on(k, 106.8, 208)
+X = foot(P, B, C)
+Y = foot(P, C, A)
+Z = foot(P, A, B)
+draw poly A B C
+draw seg P A
+draw seg P B
+draw seg P C
+draw seg P X
+draw seg P Y
+draw seg P Z
+draw seg C Y dash
+draw seg B Z dash
+draw line Z Y accent
+</pre><figcaption>同例 4（$P$ 在外接圓上，未畫出圓）；用孟氏定理的逆定理證 $X,Y,Z$ 共線</figcaption></figure>
 <p><b>證</b>　在直角三角形中，</p>
 $$\frac{BX}{XC}=\frac{PB\,|\cos\angle PBC|}{PC\,|\cos\angle PCX|},\quad\frac{CY}{YA}=\frac{PC\,|\cos\angle PCA|}{PA\,|\cos\angle PAY|},\quad\frac{AZ}{ZB}=\frac{PA\,|\cos\angle PAB|}{PB\,|\cos\angle PBZ|}.$$
 <p>又 $\angle PBC=\angle PAY$，$\angle PCA=180^\circ-\angle PBZ$，$\angle PAB=\angle PCX$（都由圓內接四邊形的角關係得到），所以三式相乘的餘弦全部約掉，$\frac{BX}{XC}\cdot\frac{CY}{YA}\cdot\frac{AZ}{ZB}=1$。由孟氏定理的逆定理，$X,Y,Z$ 共線。</p>
 === 例 7
 zh: 一條直線與 $\triangle ABC$ 的三邊 $BC$、$CA$、$AB$ 或其延長線交於 $D$、$E$、$F$。證明：線段 $AD$、$BE$、$CF$ 的中點 $X$、$Y$、$Z$ 共線。
-sol: <figure class="bkfig"><svg viewBox="0 0 280 205" width="280" role="img" aria-label="高斯線">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="75.6,22 22,182.9 182.9,182.9"/><line x1="182.9" y1="182.9" x2="258" y2="182.9"/><line x1="258" y1="182.9" x2="62.2" y2="62.2"/><line x1="75.6" y1="22" x2="258" y2="182.9"/><line x1="22" y1="182.9" x2="130.5" y2="104.3"/><line x1="182.9" y1="182.9" x2="62.2" y2="62.2"/><polygon points="102.5,182.9 129.3,102.5 48.8,102.5" stroke-dasharray="5 4"/><line x1="129.3" y1="102.5" x2="166.8" y2="102.5" stroke-dasharray="5 4"/><line x1="175.9" y1="98.3" x2="67.2" y2="147.7" stroke="#c2562b" stroke-width="2"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="75.6" y="15.9" text-anchor="middle">A</text><text x="14.2" y="195.6" text-anchor="middle">B</text><text x="182.9" y="198.8" text-anchor="middle">C</text><text x="265.8" y="195.6" text-anchor="middle">D</text><text x="141.5" y="109.2" text-anchor="middle">E</text><text x="51.2" y="67.1" text-anchor="middle">F</text><text x="174.6" y="99.6" text-anchor="middle">X</text><text x="76.3" y="159.5" text-anchor="middle">Y</text><text x="114.8" y="119.7" text-anchor="middle">Z</text><text x="102.5" y="198.8" text-anchor="middle">A<tspan font-size="10">1</tspan></text><text x="139.5" y="99.6" text-anchor="middle">B<tspan font-size="10">1</tspan></text><text x="34.3" y="107.4" text-anchor="middle">C<tspan font-size="10">1</tspan></text></g>
-</svg><figcaption>$X,Y,Z$ 是 $AD,BE,CF$ 的中點；中點三角形 $A_1B_1C_1$（虛線）；紅線是高斯線</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (75.6, 22)
+B = (22, 182.9)
+C = (182.9, 182.9)
+D = along(B, C, 1.4671)
+F = along(A, B, 0.25)
+E = inter(D, F, A, C)
+X = mid(A, D)
+Y = mid(B, E)
+Z = mid(C, F)
+A1 = mid(B, C)
+B1 = mid(A, C)
+C1 = mid(A, B)
+draw poly A B C
+draw seg A D
+draw seg B D
+draw seg B E
+draw seg C F
+draw seg D F
+draw poly A1 B1 C1 dash
+draw seg B1 X dash
+draw line X Y accent
+</pre><figcaption>$X,Y,Z$ 是 $AD,BE,CF$ 的中點；中點三角形 $A_1B_1C_1$（虛線）；紅線是高斯線</figcaption></figure>
 <p><b>證</b>　設 $BC$、$CA$、$AB$ 的中點分別為 $A_1$、$B_1$、$C_1$，則 $B_1C_1\parallel BC$，且 $B_1$、$C_1$、$X$ 共線⟦為什麼｜$C_1B_1$ 是 $\triangle ABC$ 的中位線；它平分從 $A$ 出發到 $BC$ 上任一點的線段，所以過 $AD$ 的中點 $X$。⟧，因此 $\frac{BD}{DC}=\frac{C_1X}{XB_1}$。同理 $\frac{CE}{EA}=\frac{A_1Y}{YC_1}$，$\frac{AF}{FB}=\frac{B_1Z}{ZA_1}$。對 $\triangle ABC$ 與直線 $DEF$ 用孟氏定理，</p>
 $$\frac{C_1X}{XB_1}\cdot\frac{B_1Z}{ZA_1}\cdot\frac{A_1Y}{YC_1}=1.$$
 <p>對 $\triangle A_1B_1C_1$ 與點 $X,Y,Z$ 用孟氏定理的逆定理，得 $X,Y,Z$ 共線。這條直線稱為<b>高斯線</b>。</p>
 === 例 8
 zh: $\triangle ABC$ 的 $AC$ 邊上有一點 $L$，中線 $BM$ 上有一點 $N$，已知 $S_{\triangle ANL}=S_{\triangle BNC}$。求證：線段 $BL$ 的中點 $P$ 與點 $A$、$N$ 共線。
-sol: <figure class="bkfig"><svg viewBox="0 0 265 210" width="265" role="img" aria-label="中線上一點與面積條件">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="199.1,22 22,188 243.3,188"/><line x1="22" y1="188" x2="221.2" y2="105"/><line x1="199.1" y1="22" x2="141.5" y2="138.2"/><line x1="141.5" y1="138.2" x2="232.3" y2="146.5"/><line x1="22" y1="188" x2="232.3" y2="146.5"/><line x1="141.5" y1="138.2" x2="243.3" y2="188"/><line x1="141.5" y1="138.2" x2="127.1" y2="167.2" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="199.1" y="15.9" text-anchor="middle">A</text><text x="14.2" y="200.7" text-anchor="middle">B</text><text x="251.1" y="200.7" text-anchor="middle">C</text><text x="229" y="102.1" text-anchor="middle">M</text><text x="133.7" y="135.3" text-anchor="middle">N</text><text x="243.3" y="151.4" text-anchor="middle">L</text><text x="127.1" y="183.2" text-anchor="middle">P</text></g>
-</svg><figcaption>$BM$ 是中線，$S_{\triangle ANL}=S_{\triangle BNC}$，$P$ 是 $BL$ 中點</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (199.1, 22)
+B = (22, 188)
+C = (243.3, 188)
+M = mid(A, C)
+L = along(A, C, 0.751)
+N = along(M, B, 0.4)
+P = mid(B, L)
+draw poly A B C
+draw seg B M
+draw seg A N
+draw seg N P dash
+draw seg N C
+draw seg N L
+draw seg B L
+</pre><figcaption>$BM$ 是中線，$S_{\triangle ANL}=S_{\triangle BNC}$，$P$ 是 $BL$ 中點</figcaption></figure>
 <p><b>證</b>　設直線 $AC$ 與 $BM$ 的交角為 $\varphi$，則</p>
 $$S_{\triangle ANL}=\tfrac12LA\cdot MN\sin\varphi,\qquad S_{\triangle BNC}=\tfrac12NB\cdot CM\sin\varphi=\tfrac12NB\cdot AM\sin\varphi.$$
 <p>⟦為什麼｜$\triangle ANL$ 以 $LA$ 為底，$N$ 到 $AC$ 的距離是 $MN\sin\varphi$；$\triangle BNC$ 以 $NB$ 為底，$C$ 到 $BM$ 的距離是 $CM\sin\varphi$；而 $CM=AM$。⟧由面積相等，$LA\cdot MN=NB\cdot AM$，即 $\frac{LA}{AM}\cdot\frac{MN}{NB}=1$。又 $P$ 是 $BL$ 中點，$\frac{BP}{PL}=1$，所以在 $\triangle BLM$ 中</p>
@@ -104,11 +232,32 @@ $$\frac{BP}{PL}\cdot\frac{LA}{AM}\cdot\frac{MN}{NB}=1.$$
 <p>由孟氏定理的逆定理，$P$、$A$、$N$ 共線。（原書最後一句誤植為「$L,M,N$ 共線」。）</p>
 === 例 9 | 戴沙格定理
 zh: 在 $\triangle ABC$ 與 $\triangle A_1B_1C_1$ 中，若 $AA_1$、$BB_1$、$CC_1$ 交於一點 $O$，則 $BC$ 與 $B_1C_1$ 的交點 $L$、$CA$ 與 $C_1A_1$ 的交點 $M$、$AB$ 與 $A_1B_1$ 的交點 $N$ 共線。
-sol: <figure class="bkfig"><svg viewBox="0 0 320 193" width="320" role="img" aria-label="戴沙格定理">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><line x1="192.1" y1="22" x2="156.9" y2="120.8"/><line x1="192.1" y1="22" x2="209.8" y2="139.6"/><line x1="192.1" y1="22" x2="258" y2="125.5"/><polygon points="172.5,76.9 203.9,100.4 219.6,65.1"/><polygon points="156.9,120.8 209.8,139.6 258,125.5"/><line x1="203.9" y1="100.4" x2="183" y2="147.5" stroke-dasharray="5 4"/><line x1="219.6" y1="65.1" x2="183" y2="147.5" stroke-dasharray="5 4"/><line x1="209.8" y1="139.6" x2="183" y2="147.5" stroke-dasharray="5 4"/><line x1="258" y1="125.5" x2="183" y2="147.5" stroke-dasharray="5 4"/><line x1="219.6" y1="65.1" x2="22" y2="114.5" stroke-dasharray="5 4"/><line x1="172.5" y1="76.9" x2="22" y2="114.5" stroke-dasharray="5 4"/><line x1="258" y1="125.5" x2="22" y2="114.5" stroke-dasharray="5 4"/><line x1="156.9" y1="120.8" x2="22" y2="114.5" stroke-dasharray="5 4"/><line x1="172.5" y1="76.9" x2="298" y2="171" stroke-dasharray="5 4"/><line x1="203.9" y1="100.4" x2="298" y2="171" stroke-dasharray="5 4"/><line x1="156.9" y1="120.8" x2="298" y2="171" stroke-dasharray="5 4"/><line x1="209.8" y1="139.6" x2="298" y2="171" stroke-dasharray="5 4"/><line x1="22" y1="114.5" x2="298" y2="171" stroke="#c2562b" stroke-width="2"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="192.1" y="15.9" text-anchor="middle">O</text><text x="161.5" y="81.8" text-anchor="middle">A</text><text x="214.9" y="105.3" text-anchor="middle">B</text><text x="227.4" y="62.2" text-anchor="middle">C</text><text x="142.4" y="125.7" text-anchor="middle">A<tspan font-size="10">1</tspan></text><text x="220" y="152.3" text-anchor="middle">B<tspan font-size="10">1</tspan></text><text x="272.5" y="130.4" text-anchor="middle">C<tspan font-size="10">1</tspan></text><text x="183" y="163.4" text-anchor="middle">L</text><text x="11" y="119.4" text-anchor="middle">M</text><text x="309" y="175.9" text-anchor="middle">N</text></g>
-</svg><figcaption>$AA_1,BB_1,CC_1$ 交於 $O$；對應邊的交點 $L,M,N$ 在紅線上</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">O = (192.1, 22)
+A = (172.5, 76.9)
+B = (203.9, 100.4)
+C = (219.6, 65.1)
+A1 = along(O, A, 1.8)
+B1 = along(O, B, 1.5)
+C1 = along(O, C, 2.4)
+L = inter(B, C, B1, C1)
+M = inter(C, A, C1, A1)
+N = inter(A, B, A1, B1)
+draw poly A B C
+draw poly A1 B1 C1
+draw seg O A1
+draw seg O B1
+draw seg O C1
+draw seg C L dash
+draw seg B1 L dash
+draw seg C1 L dash
+draw seg C M dash
+draw seg A1 M dash
+draw seg C1 M dash
+draw seg A N dash
+draw seg A1 N dash
+draw seg B1 N dash
+draw line M N accent
+<figcaption>$AA_1,BB_1,CC_1$ 交於 $O$；對應邊的交點 $L,M,N$ 在紅線上</figcaption></figure>
 <p><b>證</b>　直線 $LB_1C_1$ 截 $\triangle OBC$，由孟氏定理 $\frac{BL}{LC}\cdot\frac{CC_1}{C_1O}\cdot\frac{OB_1}{B_1B}=1$。同理直線 $MA_1C_1$、$NB_1A_1$ 分別截 $\triangle OCA$、$\triangle OAB$：</p>
 $$\frac{CM}{MA}\cdot\frac{AA_1}{A_1O}\cdot\frac{OC_1}{C_1C}=1,\qquad\frac{AN}{NB}\cdot\frac{BB_1}{B_1O}\cdot\frac{OA_1}{A_1A}=1.$$
 <p>三式相乘，含 $O$ 的比全部約掉，得 $\frac{BL}{LC}\cdot\frac{CM}{MA}\cdot\frac{AN}{NB}=1$，由孟氏定理的逆定理，$L,M,N$ 共線。</p>
@@ -133,11 +282,28 @@ $$\angle A'OD+\angle COD+\angle B'OC=180^\circ-\tfrac{\alpha+\beta}2+60^\circ=18
 <p>$A',O,B'$ 共線。（原書寫成 $90^\circ-\angle A$、$90^\circ-\angle B$，應是 $90^\circ-\frac12\angle A$、$90^\circ-\frac12\angle B$；其實 $BC=\frac R2$ 這個條件用不到。）</p>
 === 習題 3
 zh: 證明：梯形上下底的中點、兩對角線的交點、兩腰（所在直線）的交點，這四點共線。
-sol: <figure class="bkfig"><svg viewBox="0 0 200 186" width="200" role="img" aria-label="梯形中的四點共線">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="65.3,77.2 126,77.2 178,163.8 22,163.8"/><line x1="65.3" y1="77.2" x2="178" y2="163.8"/><line x1="126" y1="77.2" x2="22" y2="163.8"/><line x1="65.3" y1="77.2" x2="92.9" y2="22"/><line x1="126" y1="77.2" x2="92.9" y2="22"/><line x1="92.9" y1="22" x2="100" y2="163.8" stroke="#c2562b" stroke-width="2"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="54.3" y="82.1" text-anchor="middle">A</text><text x="137" y="82.1" text-anchor="middle">B</text><text x="185.8" y="176.5" text-anchor="middle">C</text><text x="14.2" y="176.5" text-anchor="middle">D</text><text x="103.4" y="74.3" text-anchor="middle">M</text><text x="100" y="179.7" text-anchor="middle">N</text><text x="107.9" y="106.3" text-anchor="middle">P</text><text x="92.9" y="15.9" text-anchor="middle">Q</text></g>
-</svg><figcaption>兩底中點 $M,N$、對角線交點 $P$、兩腰交點 $Q$ 在紅線上</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (65.3, 77.2)
+D = (22, 163.8)
+C = (178, 163.8)
+m0 = mid(A, C)
+Qp = reflectp(D, m0)
+hide Qp
+hide m0
+Bx = (126, 77.2)
+hide Bx
+l = line(A, Qp)
+B = on(l, 126, 77.2)
+Q = inter(A, D, B, C)
+N = mid(C, D)
+M = mid(A, B)
+P = inter(A, C, B, D)
+draw poly A B C D
+draw seg A C
+draw seg B D
+draw seg Q A
+draw seg Q B
+draw seg Q N accent
+</pre><figcaption>兩底中點 $M,N$、對角線交點 $P$、兩腰交點 $Q$ 在紅線上</figcaption></figure>
 <p>設 $AB$、$CD$ 是上、下底，$M$、$N$ 是中點，$P$、$Q$ 分別是 $AC,BD$ 及 $AD,BC$ 的交點。由 $\triangle ABP\sim\triangle CDP$，$\frac{AP}{PC}=\frac{AB}{CD}$；由 $\triangle ABQ\sim\triangle DCQ$，$\frac{DQ}{QA}=\frac{CD}{AB}$。對 $\triangle ACD$，</p>
 $$\frac{AP}{PC}\cdot\frac{CN}{ND}\cdot\frac{DQ}{QA}=\frac{AB}{CD}\cdot1\cdot\frac{CD}{AB}=1,$$
 <p>由孟氏定理的逆定理 $P,Q,N$ 共線。同理 $P,Q,M$ 共線，所以四點共線。</p>

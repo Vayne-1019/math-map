@@ -5,11 +5,18 @@ order: 20
 
 === body
 <div class="hero">$AD,BE,CF$ 共點 ⇔ $\dfrac{BD}{DC}\cdot\dfrac{CE}{EA}\cdot\dfrac{AF}{FB}=1$<br>和孟氏定理長得一樣，差在<b>分點都在邊上</b>（或恰兩個在延長線上）</div>
-<figure class="bkfig"><svg viewBox="0 0 262 200" width="262" role="img" aria-label="西瓦定理">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="115.6,22 22,178 240.4,178"/><line x1="115.6" y1="22" x2="100.7" y2="178"/><line x1="22" y1="178" x2="172.6" y2="93.3"/><line x1="240.4" y1="178" x2="59.6" y2="115.4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="115.6" y="15.9" text-anchor="middle">A</text><text x="14.2" y="190.7" text-anchor="middle">B</text><text x="248.2" y="190.7" text-anchor="middle">C</text><text x="100.7" y="193.9" text-anchor="middle">D</text><text x="180.4" y="90.4" text-anchor="middle">E</text><text x="51.8" y="112.5" text-anchor="middle">F</text><text x="97.4" y="128.3" text-anchor="middle">P</text></g>
-</svg><figcaption>$AD,BE,CF$ 交於 $P$</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A = (115.6, 22)
+B = (22, 178)
+C = (240.4, 178)
+D = along(B, C, 0.3604)
+E = along(C, A, 0.543)
+P = inter(A, D, B, E)
+F = inter(C, P, A, B)
+draw poly A B C
+draw seg A D
+draw seg B E
+draw seg C F
+</pre><figcaption>$AD,BE,CF$ 交於 $P$</figcaption></figure>
 <div class="cards">
 <div class="card"><h4>① 證法：兩次孟氏</h4><div class="rule">$\triangle ADC$ 截線 $BPE$<br>$\triangle ADB$ 截線 $CPF$</div>
 <div class="eg">兩式相除，$\frac{AP}{PD}$ 消掉 <span class="pill">相除</span></div></div>
