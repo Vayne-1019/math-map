@@ -873,7 +873,7 @@ function viewHome() {
 }
 
 function viewMap() {
-  const open = new Set(['G-3', 'G-4', 'A-2', 'A-4', 'G-8']);
+  const open = new Set();  // 使用者指定：所有可展開的區塊預設關閉
   return `<div><h1>單元地圖</h1><p class="lead">粗體單元已有示範內容，數字是題目數。標籤依 108 課綱：課綱內標「國中課綱」「高中課綱」，超出課綱的一律算競賽，標建議開始的階段；字母是難度（C 最基礎、B 偏低、A 有難度、S 挑戰）。標籤只是參考，不限制學習順序。</p></div>
   ${entries('map')}
   <div class="mfbar">${[['', '全部'], ['in', '課綱內'], ['cj', '競賽・國中起'], ['cs', '競賽・高中起'], ['amc', 'AMC 相關']].map(([k, n]) => `<button type="button" data-mf="${k}"${k === mapFilter ? ' class="on"' : ''}>${n}</button>`).join('')}</div>
@@ -989,7 +989,7 @@ function viewBankYear(k, y) {
   <section class="panel"><p class="note">中文題目由本站翻譯，數學式已依官方 PDF 重建；標「待核對」的請以官方 PDF 為準。英文原文為自動抽取，可點開對照。題目著作權屬原主辦單位。</p>
   <ul class="plist">${list.map((s, j) => { const id = `${k.toLowerCase()}${y}-${j + 1}`, mine = PROBLEMS.find(p => p.id === id);
     return `<li><span class="mono">P${j + 1}</span><div>${mine ? `<a class="t" href="#p-${id}">本站詳解：${esc(mine.title)}</a>` : `<span class="note">尚無詳解</span>`}${ZH[j] ? `<div class="zhq">${ZH[j].zh}</div>${ZH[j].note ? `<p class="note warn">${esc(ZH[j].note)}</p>` : ''}` : ''}
-      <details${ZH[j] ? '' : ' open'}><summary>英文原文（自動抽取）</summary><p class="raw mathjax_ignore">${esc(s.replace(/\n(?!\(|•|[ivx]+\)|\d+\. )/g, ' '))}</p></details></div></li>`; }).join('')}</ul></section>
+      <details><summary>英文原文（自動抽取）</summary><p class="raw mathjax_ignore">${esc(s.replace(/\n(?!\(|•|[ivx]+\)|\d+\. )/g, ' '))}</p></details></div></li>`; }).join('')}</ul></section>
   <nav class="pager"><span>${i > 0 ? `<a href="#bank-${k}-${ys[i - 1]}">← ${ys[i - 1]}</a>` : ''}</span><span>${i < ys.length - 1 ? `<a href="#bank-${k}-${ys[i + 1]}">${ys[i + 1]} →</a>` : ''}</span></nav>`;
 }
 function viewBankAMC() {
