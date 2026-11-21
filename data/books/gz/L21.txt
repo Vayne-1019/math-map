@@ -12,11 +12,17 @@ status: 完成
 
 === 例 1 | 四邊形的平方和
 zh: 證明：任意四邊形四條邊的平方和，等於兩條對角線的平方和，再加上兩條對角線中點連線平方的 4 倍。
-sol: <figure class="bkfig"><svg viewBox="0 0 300 218" width="300" role="img" aria-label="四邊形 A1A2A3A4，兩條對角線的中點 M、N">
-<g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="27,182.4 242.8,182.4 199.7,52.9 48.5,87.4"/><line x1="27" y1="182.4" x2="199.7" y2="52.9" stroke-dasharray="5 4"/><line x1="242.8" y1="182.4" x2="48.5" y2="87.4" stroke-dasharray="5 4"/><line x1="113.3" y1="117.6" x2="145.7" y2="134.9" stroke="#c2562b" stroke-width="2"/></g>
-<g fill="currentColor"><circle cx="113.3" cy="117.6" r="2.6"/><circle cx="145.7" cy="134.9" r="2.6"/></g>
-<g fill="currentColor" font-size="15" font-style="italic"><text x="6" y="197.4">A<tspan font-size="11" dy="3">1</tspan></text><text x="246.8" y="197.4">A<tspan font-size="11" dy="3">2</tspan></text><text x="202.7" y="48.9">A<tspan font-size="11" dy="3">3</tspan></text><text x="27.5" y="83.4">A<tspan font-size="11" dy="3">4</tspan></text><text x="109.3" y="110.6">M</text><text x="148.7" y="148.9">N</text></g>
-</svg><figcaption>虛線是對角線，紅線連接兩對角線的中點</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A1 = (27, 182.4)
+A2 = (242.8, 182.4)
+A3 = (199.7, 52.9)
+A4 = (48.5, 87.4)
+M = mid(A1, A3)
+N = mid(A2, A4)
+draw poly A1 A2 A3 A4
+draw seg A1 A3 dash
+draw seg A2 A4 dash
+draw seg M N accent
+</pre><figcaption>虛線是對角線，紅線連接兩對角線的中點</figcaption></figure>
 設四個頂點為 $A_i(x_i,y_i)$，$i=1,2,3,4$，對角線 $A_1A_3$、$A_2A_4$ 的中點分別是
 $$M\Big(\tfrac{x_1+x_3}{2},\tfrac{y_1+y_3}{2}\Big),\quad N\Big(\tfrac{x_2+x_4}{2},\tfrac{y_2+y_4}{2}\Big).$$
 先只看橫坐標。要證的式子拆成橫、縱兩部分，橫坐標部分是
@@ -29,11 +35,21 @@ $$|A_1A_2|^2+|A_2A_3|^2+|A_3A_4|^2+|A_4A_1|^2=|A_1A_3|^2+|A_2A_4|^2+4|MN|^2.$$
 
 === 例 2 | 高上任一點
 zh: 給定銳角 $\triangle ABC$ 及高 $AH$。在 $AH$ 上任取一點 $D$，連 $BD$ 並延長交 $AC$ 於 $E$，連 $CD$ 並延長交 $AB$ 於 $F$。證明 $\angle AHE=\angle AHF$。
-sol: <figure class="bkfig"><svg viewBox="0 0 300 272" width="300" role="img" aria-label="銳角三角形 ABC，高 AH 在 y 軸上，H 為原點"><defs><marker id="arL21_2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="currentColor" stroke-width="1.5"/></marker></defs>
-<g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18.6" y1="226.1" x2="286" y2="226.1" stroke-width="1" marker-end="url(#arL21_2)"/><line x1="180" y1="253.7" x2="180" y2="14" stroke-width="1" marker-end="url(#arL21_2)"/><polygon points="180,41.7 41.7,226.1 249.1,226.1"/><line x1="41.7" y1="226.1" x2="222.1" y2="153.9"/><line x1="249.1" y1="226.1" x2="119.5" y2="122.3"/><line x1="180" y1="226.1" x2="222.1" y2="153.9" stroke="#c2562b" stroke-width="1.8"/><line x1="180" y1="226.1" x2="119.5" y2="122.3" stroke="#c2562b" stroke-width="1.8"/></g>
-<g fill="currentColor"><circle cx="180" cy="41.7" r="2.6"/><circle cx="41.7" cy="226.1" r="2.6"/><circle cx="249.1" cy="226.1" r="2.6"/><circle cx="180" cy="170.7" r="2.6"/><circle cx="222.1" cy="153.9" r="2.6"/><circle cx="119.5" cy="122.3" r="2.6"/></g>
-<g fill="currentColor" font-size="15" font-style="italic"><text x="277" y="241.1">x</text><text x="186" y="23">y</text><text x="185" y="46.7">A</text><text x="37.7" y="242.1">B</text><text x="245.1" y="242.1">C</text><text x="165" y="242.1">H</text><text x="168" y="167.7">D</text><text x="227.1" y="158.9">E</text><text x="105.5" y="127.3">F</text></g>
-</svg><figcaption>以 BC 為 x 軸、高 AH 為 y 軸；紅線 HE、HF 對稱於 y 軸</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (180, 41.7)
+B = (41.7, 226.1)
+C = (249.1, 226.1)
+H = foot(A, B, C)
+AH = line(A, H)
+D = on(AH, 180, 170.7)
+E = inter(B, D, A, C)
+F = inter(C, D, A, B)
+draw poly A B C
+draw seg A H dash
+draw seg B E
+draw seg C F
+draw seg H E accent
+draw seg H F accent
+</pre><figcaption>以 BC 為 x 軸、高 AH 為 y 軸；紅線 HE、HF 對稱於 y 軸</figcaption></figure>
 以 $BC$ 為 $x$ 軸、$AH$ 為 $y$ 軸（$H$ 為原點），設 $A(0,a)$、$B(b,0)$、$C(c,0)$、$D(0,d)$，其中 $b&lt;0&lt;c$，$0&lt;d&lt;a$。用截距式，$BD$ 與 $AC$ 的方程是
 $$\frac xb+\frac yd=1,\qquad \frac xc+\frac ya=1.$$
 解這兩式得交點⟦E 的坐標｜用克拉瑪公式：係數行列式 $\frac1{ab}-\frac1{cd}=\frac{cd-ab}{abcd}$，<br>$x=\dfrac{\frac1a-\frac1d}{\frac{cd-ab}{abcd}}=\dfrac{bc(d-a)}{cd-ab}$，$y=\dfrac{\frac1b-\frac1c}{\frac{cd-ab}{abcd}}=\dfrac{ad(c-b)}{cd-ab}$。⟧
@@ -52,10 +68,18 @@ $$S_{\triangle ABC}=\frac12\begin{vmatrix}1&amp;x_A&amp;y_A\\1&amp;x_B&amp;y_B\\
 zh: 設 $\triangle ABC$ 與 $\triangle A'B'C'$ 在同一平面上，且 $AA'\parallel BB'\parallel CC'$。證明
 $$\begin{aligned}&3\big(S_{\triangle ABC}+S_{\triangle A'B'C'}\big)\\&=S_{\triangle AB'C'}+S_{\triangle BC'A'}+S_{\triangle CA'B'}\\&\quad+S_{\triangle A'BC}+S_{\triangle B'CA}+S_{\triangle C'AB}.\end{aligned}$$
 這裡的面積都是有向面積。
-sol: <figure class="bkfig"><svg viewBox="0 0 300 188" width="300" role="img" aria-label="兩個三角形 ABC、A′B′C′，AA′、BB′、CC′ 互相平行">
-<g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="74.4,35.6 31.3,87.4 91.7,152.2"/><polygon points="229.9,35.6 264.4,87.4 173.7,152.2" stroke="#c2562b"/><line x1="74.4" y1="35.6" x2="229.9" y2="35.6" stroke-dasharray="5 4"/><line x1="31.3" y1="87.4" x2="264.4" y2="87.4" stroke-dasharray="5 4"/><line x1="91.7" y1="152.2" x2="173.7" y2="152.2" stroke-dasharray="5 4"/></g>
-<g fill="currentColor" font-size="15" font-style="italic"><text x="70.4" y="30.6">A</text><text x="225.9" y="30.6">A′</text><text x="17.3" y="92.4">B</text><text x="269.4" y="92.4">B′</text><text x="87.7" y="168.2">C</text><text x="169.7" y="168.2">C′</text></g>
-</svg><figcaption>虛線 AA′、BB′、CC′ 互相平行，取它們的方向為 x 軸</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (74.4, 35.6)
+B = (31.3, 87.4)
+C = (91.7, 152.2)
+A' = (229.9, 35.6)
+B' = (264.4, 87.4)
+C' = (173.7, 152.2)
+draw poly A B C
+draw poly A' B' C' accent
+draw seg A A' dash
+draw seg B B' dash
+draw seg C C' dash
+</pre><figcaption>虛線 AA′、BB′、CC′ 互相平行，取它們的方向為 x 軸</figcaption></figure>
 取與 $AA'$ 平行的直線為 $x$ 軸，則 $A$ 與 $A'$、$B$ 與 $B'$、$C$ 與 $C'$ 的縱坐標分別相同：$y_{A'}=y_A$，$y_{B'}=y_B$，$y_{C'}=y_C$。
 <br>右邊六項中，每個三角形都恰有一個頂點來自 $\{A,A'\}$、一個來自 $\{B,B'\}$、一個來自 $\{C,C'\}$。先用輪換把它們都排成「$A$ 類、$B$ 類、$C$ 類」的順序⟦例如｜$S_{\triangle BC'A'}=S_{\triangle A'BC'}$，$S_{\triangle CA'B'}=S_{\triangle A'B'C}$，$S_{\triangle B'CA}=S_{\triangle AB'C}$，$S_{\triangle C'AB}=S_{\triangle ABC'}$。循環輪換不改變有向面積。⟧，那麼六個行列式的第 1 行都是 $1$，第 3 行都是 $(y_A,y_B,y_C)$，只有第 2 行不同。所以右邊的兩倍為
 $$\begin{aligned}&\begin{vmatrix}1&amp;x_A&amp;y_A\\1&amp;x_{B'}&amp;y_B\\1&amp;x_{C'}&amp;y_C\end{vmatrix}+\begin{vmatrix}1&amp;x_{A'}&amp;y_A\\1&amp;x_B&amp;y_B\\1&amp;x_{C'}&amp;y_C\end{vmatrix}+\begin{vmatrix}1&amp;x_{A'}&amp;y_A\\1&amp;x_{B'}&amp;y_B\\1&amp;x_C&amp;y_C\end{vmatrix}\\&+\begin{vmatrix}1&amp;x_{A'}&amp;y_A\\1&amp;x_B&amp;y_B\\1&amp;x_C&amp;y_C\end{vmatrix}+\begin{vmatrix}1&amp;x_A&amp;y_A\\1&amp;x_{B'}&amp;y_B\\1&amp;x_C&amp;y_C\end{vmatrix}+\begin{vmatrix}1&amp;x_A&amp;y_A\\1&amp;x_B&amp;y_B\\1&amp;x_{C'}&amp;y_C\end{vmatrix}.\end{aligned}$$
@@ -72,11 +96,20 @@ $$\begin{aligned}&=3\begin{vmatrix}1&amp;x_A&amp;y_A\\1&amp;x_B&amp;y_B\\1&amp;x
 
 === 例 4 | 直線與圓
 zh: 求直線 $ax+by+c=0$（$a,b$ 不全為 0）與圓 $x^2+y^2=r^2$（$r&gt;0$）相交的充要條件，並求相交時直線被圓截得的弦長。
-sol: <figure class="bkfig"><svg viewBox="0 0 280 230" width="280" role="img" aria-label="圓 x²+y²=r² 與直線交於 A、B，OP 垂直於 AB"><defs><marker id="arL21_4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="currentColor" stroke-width="1.5"/></marker></defs>
-<g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18.2" y1="114.8" x2="261.8" y2="114.8" stroke-width="1" marker-end="url(#arL21_4)"/><line x1="123.2" y1="211.4" x2="123.2" y2="14" stroke-width="1" marker-end="url(#arL21_4)"/><circle cx="123.2" cy="114.8" r="84"/><line x1="35.6" y1="20.6" x2="251.1" y2="128.4" stroke="#c2562b"/><line x1="123.2" y1="114.8" x2="143.4" y2="74.5" stroke-dasharray="5 4"/><line x1="123.2" y1="114.8" x2="80" y2="42.8" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"><circle cx="80" cy="42.8" r="2.6"/><circle cx="206.8" cy="106.2" r="2.6"/><circle cx="143.4" cy="74.5" r="2.6"/></g>
-<g fill="currentColor" font-size="15" font-style="italic"><text x="252.8" y="129.8">x</text><text x="129.2" y="23">y</text><text x="110.2" y="128.8">O</text><text x="67" y="38.8">A</text><text x="210.8" y="121.2">B</text><text x="146.4" y="70.5">P</text></g>
-</svg><figcaption>OP 是圓心到直線的垂線，P 是弦 AB 的中點</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">O = (123.2, 114.8)
+r0 = (207.2, 114.8)
+k = circle(O, r0)
+P0 = (35.6, 20.6)
+Q0 = (251.1, 128.4)
+l = line(P0, Q0)
+A = meet(l, k, 80, 42.8)
+B = meet(l, k, 206.8, 106.2)
+P = foot(O, P0, Q0)
+draw circle k
+draw line A B accent
+draw seg O P dash
+draw seg O A dash
+</pre><figcaption>OP 是圓心到直線的垂線，P 是弦 AB 的中點</figcaption></figure>
 用幾何的想法：直線與圓相交於兩點，充要條件是圓心到直線的距離小於半徑，寫成式子就是
 $$\frac{|c|}{\sqrt{a^2+b^2}}&lt;r,\quad\text{即}\quad c^2&lt;r^2(a^2+b^2).$$
 條件成立時，設直線交圓於 $A,B$，從圓心 $O$ 作直線的垂線，垂足為 $P$，則 $P$ 平分弦 $AB$⟦為什麼｜$OA=OB$，$\triangle OAB$ 是等腰三角形，底邊上的高也是中線。⟧。由畢氏定理，
@@ -141,11 +174,19 @@ ans: 同心時是半徑 $\frac{r_1+r_2}2$ 的同心圓；不同心時是以 $O_1
 zh: $P$ 是正三角形 $ABC$ 內切圓上任意一點，證明 $PA^2+PB^2+PC^2$ 是常數。
 hint: 這其實是計算題。以 $A$ 為原點、$AB$ 為 $x$ 軸，設邊長為 2。
 ans: 邊長為 2 時恆等於 5（一般邊長 $a$ 時為 $\frac54a^2$）。
-sol: <figure class="bkfig"><svg viewBox="0 0 220 198" width="220" role="img" aria-label="邊長 2 的正三角形與內切圓上的點 P"><defs><marker id="arL21_8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="currentColor" stroke-width="1.5"/></marker></defs>
-<g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="17.7" y1="161.7" x2="206" y2="161.7" stroke-width="1" marker-end="url(#arL21_8)"/><line x1="36.2" y1="180.2" x2="36.2" y2="14" stroke-width="1" marker-end="url(#arL21_8)"/><polygon points="36.2,161.7 183.8,161.7 110,33.8"/><circle cx="110" cy="119.1" r="42.6" stroke="#c2562b"/><line x1="73.1" y1="140.4" x2="36.2" y2="161.7" stroke-dasharray="5 4"/><line x1="73.1" y1="140.4" x2="183.8" y2="161.7" stroke-dasharray="5 4"/><line x1="73.1" y1="140.4" x2="110" y2="33.8" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"><circle cx="73.1" cy="140.4" r="2.6"/></g>
-<g fill="currentColor" font-size="15" font-style="italic"><text x="197" y="176.7">x</text><text x="42.2" y="23">y</text><text x="25.2" y="174.7">A</text><text x="179.8" y="177.7">B</text><text x="115" y="38.8">C</text><text x="61.1" y="137.4">P</text></g>
-</svg><figcaption>A 為原點、AB 在 x 軸上</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (36.2, 161.7)
+B = (183.8, 161.7)
+C = (110, 33.8)
+I = incenter(A, B, C)
+T = foot(I, A, B)
+k = circle(I, T)
+P = on(k, 73.1, 140.4)
+draw poly A B C
+draw circle k accent
+draw seg P A dash
+draw seg P B dash
+draw seg P C dash
+</pre><figcaption>A 為原點、AB 在 x 軸上</figcaption></figure>
 $B(2,0)$、$C(1,\sqrt3)$，內心 $\big(1,\frac{\sqrt3}3\big)$，內切圓半徑 $\frac{\sqrt3}3$，方程
 $$(x-1)^2+\Big(y-\frac{\sqrt3}3\Big)^2=\frac13,\ \text{即}\ x^2+y^2-2x-\frac{2\sqrt3}3y=-1.\qquad(1)$$
 設 $P(x_0,y_0)$ 在內切圓上，則

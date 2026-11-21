@@ -31,11 +31,23 @@ ans: $5x+12y+6=0$
 
 === 例 2 | 矩形中的等角
 zh: 在矩形 $ABCD$ 中，$M$ 是邊 $AD$ 的中點，$N$ 是邊 $BC$ 的中點。在 $CD$ 的延長線上取點 $P$，$Q$ 為直線 $PM$ 與 $AC$ 的交點。證明 $\angle QNM=\angle MNP$。
-sol: <figure class="bkfig"><svg viewBox="0 0 250 295" width="250" role="img" aria-label="矩形 ABCD，N 為原點，M 在 y 軸上，P 在 CD 延長線上"><defs><marker id="arL22_1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="currentColor" stroke-width="1.5"/></marker></defs>
-<g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="19" y1="256.2" x2="236" y2="256.2" stroke-width="1" marker-end="url(#arL22_1)"/><line x1="120" y1="276.4" x2="120" y2="14" stroke-width="1" marker-end="url(#arL22_1)"/><polygon points="39.2,104.8 39.2,256.2 200.7,256.2 200.7,104.8"/><line x1="200.7" y1="104.8" x2="200.7" y2="32.2" stroke-dasharray="5 4"/><line x1="39.2" y1="104.8" x2="200.7" y2="256.2"/><line x1="78.8" y1="141.9" x2="200.7" y2="32.2"/><line x1="120" y1="256.2" x2="200.7" y2="32.2" stroke="#c2562b" stroke-width="1.8"/><line x1="120" y1="256.2" x2="78.8" y2="141.9" stroke="#c2562b" stroke-width="1.8"/></g>
-<g fill="currentColor"><circle cx="39.2" cy="104.8" r="2.6"/><circle cx="39.2" cy="256.2" r="2.6"/><circle cx="200.7" cy="256.2" r="2.6"/><circle cx="200.7" cy="104.8" r="2.6"/><circle cx="120" cy="104.8" r="2.6"/><circle cx="120" cy="256.2" r="2.6"/><circle cx="200.7" cy="32.2" r="2.6"/><circle cx="78.8" cy="141.9" r="2.6"/></g>
-<g fill="currentColor" font-size="15" font-style="italic"><text x="227" y="271.2">x</text><text x="126" y="23">y</text><text x="28.2" y="102.8">A</text><text x="28.2" y="269.2">B</text><text x="202.7" y="269.2">C</text><text x="205.7" y="109.8">D</text><text x="108" y="101.8">M</text><text x="105" y="272.2">N</text><text x="205.7" y="37.2">P</text><text x="64.8" y="146.9">Q</text></g>
-</svg><figcaption>N 為原點、NM 為 y 軸；紅線 NP、NQ 對稱於 y 軸</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (39.2, 104.8)
+B = (39.2, 256.2)
+C = (200.7, 256.2)
+o = mid(A, C)
+D = reflectp(B, o)
+M = mid(A, D)
+N = mid(B, C)
+CD = line(C, D)
+P = on(CD, 200.7, 32.2)
+Q = inter(P, M, A, C)
+draw poly A B C D
+draw seg D P dash
+draw seg A C
+draw seg P Q
+draw seg N P accent
+draw seg N Q accent
+</pre><figcaption>N 為原點、NM 為 y 軸；紅線 NP、NQ 對稱於 y 軸</figcaption></figure>
 如圖建立坐標系，以 $N$ 為原點、$NM$ 為 $y$ 軸。設 $C(a,0)$、$M(0,b)$，則 $A(-a,b)$、$D(a,b)$。設直線 $PM$ 的斜率為 $k$，則
 $$PQ:\ kx-y+b=0,\qquad(6)$$
 $$CD:\ x-a=0.\qquad(7)$$
@@ -51,11 +63,22 @@ $$(ak+b)x+ay=0.\qquad(10)$$
 
 === 例 3 | 對稱點與垂足
 zh: $CH$ 是 $\triangle ABC$ 中 $AB$ 邊上的高，$H$ 是垂足；點 $K$、$P$ 分別是 $H$ 關於邊 $AC$ 和 $BC$ 的對稱點。證明：線段 $KP$ 與 $AC$、$BC$（或它們的延長線）的交點，是 $\triangle ABC$ 的高的垂足。
-sol: <figure class="bkfig"><svg viewBox="0 0 300 202" width="300" role="img" aria-label="三角形 ABC，高 CH，H 對 AC、BC 的對稱點 K、P"><defs><marker id="arL22_2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="currentColor" stroke-width="1.5"/></marker></defs>
-<g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18.7" y1="159.4" x2="286" y2="159.4" stroke-width="1" marker-end="url(#arL22_2)"/><line x1="135.9" y1="182.8" x2="135.9" y2="14" stroke-width="1" marker-end="url(#arL22_2)"/><polygon points="79.7,159.4 229.7,159.4 135.9,42.1"/><line x1="135.9" y1="42.1" x2="135.9" y2="159.4" stroke-dasharray="5 4"/><line x1="135.9" y1="159.4" x2="250.3" y2="67.9" stroke-dasharray="5 4"/><line x1="135.9" y1="159.4" x2="44.5" y2="115.5" stroke-dasharray="5 4"/><line x1="44.5" y1="115.5" x2="250.3" y2="67.9" stroke="#c2562b"/><line x1="79.7" y1="159.4" x2="171.2" y2="86.2" stroke-dasharray="5 4"/><line x1="229.7" y1="159.4" x2="107.8" y2="100.8" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"><circle cx="79.7" cy="159.4" r="2.6"/><circle cx="229.7" cy="159.4" r="2.6"/><circle cx="135.9" cy="42.1" r="2.6"/><circle cx="135.9" cy="159.4" r="2.6"/><circle cx="250.3" cy="67.9" r="2.6"/><circle cx="44.5" cy="115.5" r="2.6"/><circle cx="171.2" cy="86.2" r="2.6"/><circle cx="107.8" cy="100.8" r="2.6"/></g>
-<g fill="currentColor" font-size="15" font-style="italic"><text x="277" y="174.4">x</text><text x="141.9" y="23">y</text><text x="75.7" y="175.4">A</text><text x="225.7" y="175.4">B</text><text x="136.9" y="40.1">C</text><text x="138.9" y="175.4">H</text><text x="255.3" y="72.9">P</text><text x="30.5" y="120.5">K</text></g>
-</svg><figcaption>H 為原點、CH 為 y 軸；虛線 AE、BE′ 是另兩條高，紅線 KP 經過它們的垂足</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (79.7, 159.4)
+B = (229.7, 159.4)
+C = (135.9, 42.1)
+H = foot(C, A, B)
+K = reflect(H, A, C)
+P = reflect(H, B, C)
+e = foot(A, B, C)
+f = foot(B, A, C)
+draw poly A B C
+draw seg C H dash
+draw seg H P dash
+draw seg H K dash
+draw seg K P accent
+draw seg A e dash
+draw seg B f dash
+</pre><figcaption>H 為原點、CH 為 y 軸；虛線 AE、BE′ 是另兩條高，紅線 KP 經過它們的垂足</figcaption></figure>
 以 $H$ 為原點、$AB$ 為 $x$ 軸、$HC$ 為 $y$ 軸，設 $A(a,0)$、$B(b,0)$、$C(0,c)$。$BC$ 的方程是
 $$cx+by-bc=0.\qquad(12)$$
 $H$ 對 $BC$ 的對稱點是⟦求對稱點｜從原點到 $BC$ 的垂足在法向量 $(c,b)$ 方向上，設為 $t(c,b)$，代入 (12)：$t(c^2+b^2)=bc$，$t=\frac{bc}{b^2+c^2}$。對稱點是垂足的兩倍。⟧
@@ -72,11 +95,20 @@ $$bx-cy-ab=0.\qquad(13)$$
 
 === 例 4 | 三線共點
 zh: 在 $\triangle ABC$ 的外側作正方形 $ACA_1A_2$ 與 $BCB_1B_2$。證明直線 $A_1B$、$A_2B_2$、$AB_1$ 交於一點。
-sol: <figure class="bkfig"><svg viewBox="0 0 320 203" width="320" role="img" aria-label="三角形 ABC 外側的兩個正方形與三條共點的直線">
-<g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="101.6,171.7 218.4,171.7 145.4,98.7"/><polygon points="218.4,171.7 145.4,98.7 218.4,25.7 291.4,98.7"/><polygon points="145.4,98.7 101.6,171.7 28.6,127.9 72.4,54.9"/><line x1="72.4" y1="54.9" x2="218.4" y2="171.7" stroke="#c2562b"/><line x1="28.6" y1="127.9" x2="291.4" y2="98.7" stroke="#c2562b"/><line x1="101.6" y1="171.7" x2="218.4" y2="25.7" stroke="#c2562b"/></g>
-<g fill="currentColor"><circle cx="147.2" cy="114.7" r="2.6"/></g>
-<g fill="currentColor" font-size="15" font-style="italic"><text x="97.6" y="187.7">A</text><text x="214.4" y="187.7">B</text><text x="141.4" y="92.7">C</text><text x="219.4" y="23.7">B<tspan font-size="11" dy="3">1</tspan></text><text x="296.4" y="103.7">B<tspan font-size="11" dy="3">2</tspan></text><text x="53.4" y="52.9">A<tspan font-size="11" dy="3">1</tspan></text><text x="5.6" y="132.9">A<tspan font-size="11" dy="3">2</tspan></text></g>
-</svg><figcaption>紅色三線 A₁B、A₂B₂、AB₁ 交於一點</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (101.6, 171.7)
+B = (218.4, 171.7)
+C = (145.4, 98.7)
+B1 = rotate(B, C, 90)
+B2 = rotate(C, B, -90)
+A1 = rotate(A, C, -90)
+A2 = rotate(C, A, 90)
+draw poly A B C
+draw poly B C B1 B2
+draw poly C A A2 A1
+draw seg A1 B accent
+draw seg A2 B2 accent
+draw seg A B1 accent
+</pre><figcaption>紅色三線 A₁B、A₂B₂、AB₁ 交於一點</figcaption></figure>
 設 $A(x_A,y_A)$、$B(x_B,y_B)$、$C(x_C,y_C)$，且 $A,B,C$ 依逆時針排列，則 $BCB_1B_2$、$CAA_2A_1$ 依順時針排列。把向量轉 $90^\circ$ 可以寫出四個新頂點⟦怎麼求｜例如 $\overrightarrow{CB_1}$ 是 $\overrightarrow{CB}=(x_B-x_C,\ y_B-y_C)$ 逆時針轉 $90^\circ$，得 $(-(y_B-y_C),\ x_B-x_C)$，所以 $B_1=(x_C-y_B+y_C,\ y_C+x_B-x_C)$。其餘三點同樣作法。⟧：
 $$\begin{aligned}B_1&amp;:\ x_{B_1}=x_C-y_B+y_C,\ \ y_{B_1}=y_C-x_C+x_B,\\B_2&amp;:\ x_{B_2}=x_B-y_B+y_C,\ \ y_{B_2}=y_B-x_C+x_B,\\A_1&amp;:\ x_{A_1}=x_C+y_A-y_C,\ \ y_{A_1}=y_C+x_C-x_A,\\A_2&amp;:\ x_{A_2}=x_A+y_A-y_C,\ \ y_{A_2}=y_A+x_C-x_A.\end{aligned}$$
 用兩點式，三條直線 $AB_1$、$BA_1$、$A_2B_2$ 的方程依次是
@@ -93,11 +125,18 @@ $$f_1(x,y)+\alpha\, f_2(x,y)=0\qquad(3)$$
 
 === 例 5
 zh: 求經過圓 $x^2+y^2-2x+3y-7=0$ 與 $x^2+y^2+3y-4=0$ 的交點、又經過點 $(-2,1)$ 的圓的方程。
-sol: <figure class="bkfig"><svg viewBox="0 0 320 221" width="320" role="img" aria-label="兩個已知圓與所求的圓"><defs><marker id="arL22_4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="currentColor" stroke-width="1.5"/></marker></defs>
-<g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="16.4" y1="86.4" x2="306" y2="86.4" stroke-width="1" marker-end="url(#arL22_4)"/><line x1="195" y1="204.6" x2="195" y2="14" stroke-width="1" marker-end="url(#arL22_4)"/><circle cx="219.1" cy="122.6" r="77.3"/><circle cx="195" cy="122.6" r="60.3"/><circle cx="98.5" cy="122.6" r="77.3" stroke="#c2562b"/></g>
-<g fill="currentColor"><circle cx="146.7" cy="62.3" r="2.6"/></g>
-<g fill="currentColor" font-size="15" font-style="italic"><text x="297" y="101.4">x</text><text x="201" y="23">y</text><text x="182" y="100.4">O</text><text x="142.7" y="56.3">(−2, 1)</text></g>
-</svg><figcaption>紅色是所求的圓 $x^2+y^2+8x+3y+8=0$，它通過兩已知圓的兩個交點</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">c1 = (219.1, 122.6)
+O = (195, 122.6)
+c3 = (98.5, 122.6)
+k1 = circler(c1, 77.3)
+k2 = circler(O, 60.3)
+k3 = circler(c3, 77.3)
+p = (146.7, 62.3)
+draw circle k1
+draw circle k2
+draw circle k3 accent
+dot p
+</pre><figcaption>紅色是所求的圓 $x^2+y^2+8x+3y+8=0$，它通過兩已知圓的兩個交點</figcaption></figure>
 兩圓圓心 $(1,-\frac32)$、$(0,-\frac32)$，半徑 $\frac{\sqrt{41}}2\approx3.2$、$\frac52$。圓心距 1 介於半徑差與半徑和之間⟦為什麼這樣就相交｜半徑差約 $0.7$、半徑和約 $5.7$，而 $0.7&lt;1&lt;5.7$，所以兩圓交於兩點。⟧，兩圓確實相交。又 $x^2+y^2+3y-4=0$ 不經過 $(-2,1)$（代入得 $4\ne0$），所以可設所求的圓為
 $$x^2+y^2-2x+3y-7+\alpha(x^2+y^2+3y-4)=0,$$
 即
@@ -112,11 +151,22 @@ ans: $x^2+y^2+8x+3y+8=0$
 
 === 例 6 | 切點弦
 zh: 過圓 $x^2+y^2+a_1x+b_1y+c_1=0$ 外一點 $P(a,b)$ 作圓的兩條切線，求兩個切點所確定的直線方程。
-sol: <figure class="bkfig"><svg viewBox="0 0 300 236" width="300" role="img" aria-label="圓外一點 P 作兩切線，切點 A、B；以 PQ 為直徑的圓">
-<g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="94" cy="134" r="64"/><circle cx="178" cy="110" r="87.4" stroke-dasharray="5 4"/><line x1="262" y1="86" x2="100.2" y2="70.3"/><line x1="262" y1="86" x2="132.9" y2="184.8"/><line x1="94" y1="134" x2="100.2" y2="70.3" stroke-dasharray="5 4"/><line x1="94" y1="134" x2="132.9" y2="184.8" stroke-dasharray="5 4"/><line x1="94" y1="134" x2="262" y2="86" stroke-dasharray="5 4"/><line x1="90.4" y1="35.9" x2="142.7" y2="219.2" stroke="#c2562b" stroke-width="1.8"/></g>
-<g fill="currentColor"><circle cx="94" cy="134" r="2.6"/><circle cx="262" cy="86" r="2.6"/><circle cx="100.2" cy="70.3" r="2.6"/><circle cx="132.9" cy="184.8" r="2.6"/></g>
-<g fill="currentColor" font-size="15" font-style="italic"><text x="83" y="147">Q</text><text x="267" y="91">P</text><text x="96.2" y="64.3">A</text><text x="128.9" y="201.8">B</text></g>
-</svg><figcaption>虛線圓以 PQ 為直徑，經過 A、B；紅線是切點弦 AB</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">Q = (94, 134)
+P = (262, 86)
+k = circler(Q, 64)
+A = tangent(P, k, 100.2, 70.3)
+B = tangent(P, k, 132.9, 184.8)
+m = mid(P, Q)
+k2 = circle(m, P)
+draw circle k
+draw circle k2 dash
+draw seg P A
+draw seg P B
+draw seg Q A dash
+draw seg Q B dash
+draw seg Q P dash
+draw seg A B accent
+</pre><figcaption>虛線圓以 PQ 為直徑，經過 A、B；紅線是切點弦 AB</figcaption></figure>
 設圓心為 $Q$，兩個切點為 $A$、$B$。因為 $QA\perp PA$、$QB\perp PB$，$A$、$B$ 都在以 $PQ$ 為直徑的圓上⟦為什麼｜直徑所對的圓周角是直角；反過來，$\angle PAQ=90^\circ$ 表示 $A$ 在以 $PQ$ 為直徑的圓上。⟧，也就是 $P,A,Q,B$ 四點共圓。所以直線 $AB$ 是「以 $PQ$ 為直徑的圓」與已知圓的公共弦。
 <br>$Q=\big(-\frac{a_1}2,-\frac{b_1}2\big)$，以 $PQ$ 為直徑的圓是 $(x-a)\big(x+\frac{a_1}2\big)+(y-b)\big(y+\frac{b_1}2\big)=0$⟦為什麼是這個式子｜點 $(x,y)$ 在以 $PQ$ 為直徑的圓上，等價於它與 $P$、$Q$ 的連線互相垂直，即兩個向量的內積為 0。⟧，展開為
 $$x^2+y^2+\Big(\frac{a_1}2-a\Big)x+\Big(\frac{b_1}2-b\Big)y-\frac{aa_1}2-\frac{bb_1}2=0.$$
@@ -128,10 +178,25 @@ ans: $\big(a+\frac{a_1}2\big)x+\big(b+\frac{b_1}2\big)y+\frac{aa_1+bb_1}2+c_1=0$
 
 === 例 7 | 三條公共弦
 zh: 已知三個圓兩兩相交。證明：所得的三條公共弦所在直線，或者交於一點，或者兩兩平行。
-sol: <figure class="bkfig"><svg viewBox="0 0 280 269" width="280" role="img" aria-label="三個兩兩相交的圓與三條公共弦所在直線">
-<g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="98" cy="171" r="73"/><circle cx="193" cy="156.4" r="62.1"/><circle cx="134.5" cy="83.4" r="58.4"/><line x1="142.3" y1="92.6" x2="163.9" y2="232.5" stroke="#c2562b"/><line x1="117.8" y1="153.7" x2="206.7" y2="82.5" stroke="#c2562b"/><line x1="182.4" y1="143.8" x2="57.9" y2="92" stroke="#c2562b"/></g>
-<g fill="currentColor" font-size="15" font-style="italic"></g>
-</svg><figcaption>三條紅線（公共弦所在直線）交於一點</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">O1 = (98, 171)
+O2 = (193, 156.4)
+O3 = (134.5, 83.4)
+k1 = circler(O1, 73)
+k2 = circler(O2, 62.1)
+k3 = circler(O3, 58.4)
+a1 = meet(k1, k2, 142.3, 92.6)
+b1 = meet(k1, k2, 163.9, 232.5)
+a2 = meet(k2, k3, 117.8, 153.7)
+b2 = meet(k2, k3, 206.7, 82.5)
+a3 = meet(k1, k3, 182.4, 143.8)
+b3 = meet(k1, k3, 57.9, 92)
+draw circle k1
+draw circle k2
+draw circle k3
+draw line a1 b1 accent
+draw line a2 b2 accent
+draw line a3 b3 accent
+</pre><figcaption>三條紅線（公共弦所在直線）交於一點</figcaption></figure>
 設三個圓的方程是 $x^2+y^2+a_ix+b_iy+c_i=0$（$i=1,2,3$），兩兩相減得到三條公共弦所在直線：
 $$\begin{aligned}(a_1-a_2)x+(b_1-b_2)y+(c_1-c_2)&amp;=0,\quad(4)\\(a_2-a_3)x+(b_2-b_3)y+(c_2-c_3)&amp;=0,\quad(5)\\(a_3-a_1)x+(b_3-b_1)y+(c_3-c_1)&amp;=0.\quad(6)\end{aligned}$$
 若直線 (4)、(5) 有交點：三式相加得恆等式 $0=0$，即 (6) = $-$[(4)+(5)]，所以 (6) 經過 (4)、(5) 的交點，三線共點。
@@ -169,11 +234,29 @@ sol: 設所求圓為 $x^2+y^2-4x-3+a(x^2+y^2-4y-3)=0$（第二個圓的圓心 $(
 zh: 在直線 $AB$ 上，點 $M$ 介於 $A,B$ 之間。在 $AB$ 的同一側，分別以 $AM$、$MB$ 為邊作正方形 $AMCD$ 與 $MBEF$，這兩個正方形的外接圓除 $M$ 外還交於一點 $N$。證明：(1) 直線 $AF$ 與 $BC$ 都經過 $N$；(2) 不論 $M$ 的位置如何，直線 $MN$ 總通過一個定點。
 hint: 以 $A$ 為原點、$AB$ 為 $x$ 軸，設 $B(a,0)$、$M(t,0)$。兩外接圓相減得 $MN$。
 ans: (2) 定點是 $\big(\frac a2,-\frac a2\big)$，即在 $AB$ 另一側、以 $AB$ 為邊的正方形的中心。
-sol: <figure class="bkfig"><svg viewBox="0 0 280 290" width="280" role="img" aria-label="AB 同側的兩個正方形 AMCD、MBEF 與外接圓交點 N">
-<g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18.8" y1="159.4" x2="261.2" y2="159.4"/><polygon points="43.1,159.4 115.8,159.4 115.8,86.7 43.1,86.7"/><polygon points="115.8,159.4 236.9,159.4 236.9,38.2 115.8,38.2"/><circle cx="79.4" cy="123" r="51.4" stroke-dasharray="5 4"/><circle cx="176.3" cy="98.8" r="85.7" stroke-dasharray="5 4"/><line x1="43.1" y1="159.4" x2="94.4" y2="73.9" stroke="#c2562b"/><line x1="236.9" y1="159.4" x2="94.4" y2="73.9" stroke="#c2562b"/><line x1="94" y1="72.2" x2="142.4" y2="266" stroke="#c2562b" stroke-width="1"/></g>
-<g fill="currentColor"><circle cx="43.1" cy="159.4" r="2.6"/><circle cx="236.9" cy="159.4" r="2.6"/><circle cx="115.8" cy="159.4" r="2.6"/><circle cx="115.8" cy="86.7" r="2.6"/><circle cx="43.1" cy="86.7" r="2.6"/><circle cx="236.9" cy="38.2" r="2.6"/><circle cx="115.8" cy="38.2" r="2.6"/><circle cx="94.4" cy="73.9" r="2.6"/><circle cx="140" cy="256.3" r="2.6"/></g>
-<g fill="currentColor" font-size="15" font-style="italic"><text x="32.1" y="172.4">A</text><text x="238.9" y="172.4">B</text><text x="111.8" y="176.4">M</text><text x="116.8" y="84.7">C</text><text x="32.1" y="84.7">D</text><text x="237.9" y="36.2">E</text><text x="104.8" y="36.2">F</text><text x="90.4" y="66.9">N</text><text x="148" y="261.3" font-style="normal" font-size="12">定點</text></g>
-</svg><figcaption>AF、BC 交於 N；直線 MN 恆過 AB 下方的定點（以 AB 為邊的正方形中心）</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (43.1, 159.4)
+B = (236.9, 159.4)
+AB = line(A, B)
+M = on(AB, 115.8, 159.4)
+C = rotate(A, M, -90)
+D = rotate(M, A, 90)
+F = rotate(B, M, 90)
+E = rotate(M, B, -90)
+k1 = circle3(A, M, C)
+k2 = circle3(M, B, E)
+N = meet(k1, k2, 94.4, 73.9)
+bd = rotate(A, B, 90)
+z = mid(A, bd)
+draw seg A B
+draw poly A M C D
+draw poly M B E F
+draw circle k1 dash
+draw circle k2 dash
+draw seg A N accent
+draw seg B N accent
+draw seg N z accent
+dot z
+</pre><figcaption>AF、BC 交於 N；直線 MN 恆過 AB 下方的定點（以 AB 為邊的正方形中心）</figcaption></figure>
 設 $B(a,0)$、$M(t,0)$，$0&lt;t&lt;a$。則 $C(t,t)$、$D(0,t)$、$E(a,a-t)$、$F(t,a-t)$。兩個正方形的外接圓分別是
 $$x^2+y^2-tx-ty=0,\qquad x^2+y^2-(a+t)x-(a-t)y+at=0.$$
 相減得公共弦 $MN$ 的方程
