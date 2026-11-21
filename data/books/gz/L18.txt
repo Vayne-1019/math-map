@@ -113,13 +113,19 @@ ans: $a\ge\sqrt2b$ 時為 $\dfrac{a^2}{\sqrt{a^2-b^2}}$；$a\lt \sqrt2b$ 時為 
 
 === 例 10 | 內接等腰三角形
 zh: 在已知圓內作內接等腰三角形，使這個三角形的底與底上的高之和最大。
-sol: <figure class="bkfig"><svg viewBox="0 0 220 220" width="220" role="img" aria-label="圓 O 的內接等腰三角形 ABC，AH 是底邊上的高，∠OBH = x">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="110.0,24.0 34.1,150.4 185.9,150.4"/><line x1="110.0" y1="24.0" x2="110.0" y2="150.4"/></g>
-  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="110.0" y1="110.0" x2="34.1" y2="150.4"/></g>
-  <g fill="currentColor"><circle cx="110.0" cy="110.0" r="2.6"/></g>
-  <circle cx="110.0" cy="110.0" r="86.0" fill="none" stroke="currentColor" stroke-width="1.3"/>
-  <g fill="currentColor" font-size="14" font-style="italic"><text x="106.0" y="16.0">A</text><text x="18.1" y="156.4">B</text><text x="191.9" y="156.4">C</text><text x="106.0" y="168.4">H</text><text x="116.0" y="106.0">O</text><text x="24.0" y="196.0"></text></g>
-<text x="60" y="148" font-size="13" font-style="italic" fill="currentColor">x</text></svg><figcaption>$\angle OBH=x$；虛線是半徑 $OB$</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">
+A = (110,24)
+B = (34.1,150.4)
+C = (185.9,150.4)
+O = circumcenter(A,B,C)
+H = foot(A,B,C)
+k = circle(O, A)
+draw poly A B C
+draw seg A H
+draw seg O B dash
+draw circle k
+angle H B O
+</pre><figcaption>$\angle OBH=x$；虛線是半徑 $OB$</figcaption></figure>
 設 $\odot O$ 的半徑為 $r$，$\triangle ABC$ 是內接等腰三角形，$AH$ 是底邊 $BC$ 上的高，$OA=OB=r$。令 $\angle OBH=x$，則 $OH=r\sin x$，$BH=r\cos x$⟦若 O 在三角形外｜這時 $H$ 在 $O$ 的另一側，可把 $x$ 看成負角，$AH=r+r\sin x$ 仍成立。⟧，
 $$AH+BC=r+r\sin x+2r\cos x=r+\sqrt5\,r\sin(x+\theta)\qquad(\theta=\arctan2).$$
 ⟦疊合｜$$\sin x+2\cos x=\sqrt5\big(\frac1{\sqrt5}\sin x+\frac2{\sqrt5}\cos x\big)=\sqrt5\sin(x+\theta)$$，其中 $\cos\theta=\frac1{\sqrt5},\ \sin\theta=\frac2{\sqrt5}$，$\tan\theta=2$。⟧

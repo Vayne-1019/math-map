@@ -80,13 +80,19 @@ $$\begin{aligned}a_1^{2m}+b_1^{2m}+c_1^{2m}&=(2R_1)^{2m}\big(\sin^{2m}A_1+\sin^{
 <p>設 $\triangle ABC$ 的內切圓分別切 $BC,CA,AB$ 於 $D,E,F$，記 $AE=AF=x$，$BD=BF=y$，$CD=CE=z$，則
 $$a=y+z,\qquad b=z+x,\qquad c=x+y,\qquad(1)\text{–}(3)$$
 且 $x,y,z>0$。</p>
-<figure class="bkfig"><svg viewBox="0 0 300 177" width="300" role="img" aria-label="三角形 ABC 的內切圓切三邊於 D、E、F，切線長分別記為 x、y、z">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="117.6,24.0 24.0,153.6 276.0,153.6"/></g>
-  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="127.6" y1="100.6" x2="127.6" y2="153.6"/></g>
-  <g fill="currentColor"><circle cx="127.6" cy="153.6" r="2.6"/><circle cx="161.1" cy="59.6" r="2.6"/><circle cx="84.7" cy="69.6" r="2.6"/></g>
-  <circle cx="127.6" cy="100.6" r="53.0" fill="none" stroke="currentColor" stroke-width="1.3"/>
-  <g fill="currentColor" font-size="14" font-style="italic"><text x="113.6" y="16.0">A</text><text x="10.0" y="159.6">B</text><text x="282.0" y="159.6">C</text><text x="123.6" y="171.6">D</text><text x="167.1" y="57.6">E</text><text x="68.7" y="67.6">F</text><text x="87.1" y="46.8">x</text><text x="143.4" y="39.8">x</text><text x="40.3" y="111.6">y</text><text x="71.8" y="169.6">y</text><text x="197.8" y="169.6">z</text><text x="222.6" y="104.6">z</text><text x="131.6" y="124.6">r</text></g>
-</svg><figcaption>從同一頂點出發的兩條切線等長</figcaption></figure>
+<figure class="bkfig"><pre class="geo">
+A = (117.6,24)
+B = (24,153.6)
+C = (276,153.6)
+o = incenter(A,B,C)
+D = foot(o,B,C)
+E = foot(o,C,A)
+F = foot(o,A,B)
+k = circle(o, D)
+draw poly A B C
+draw seg o D dash
+draw circle k
+</pre><figcaption>從同一頂點出發的兩條切線等長</figcaption></figure>
 <p>反過來，若三個正數 $a,b,c$ 能寫成 (1)–(3) 的形式，則 $a+b=x+y+2z>x+y=c$，同理 $b+c>a$，$c+a>b$，所以 $a,b,c$ 是三角形的三邊。換句話說，(1)–(3) 是 $a,b,c$ 為三角形三邊的充要條件。</p>
 <p>所以要證關於三角形三邊的不等式，可用 (1)–(3) 化成三個<b>任意正數</b> $x,y,z$ 的代數不等式。三角形的各元素都能用 $x,y,z$ 表示：
 $$\begin{aligned}p&=x+y+z,\qquad\triangle=\sqrt{xyz(x+y+z)},\qquad r=\frac\triangle p=\sqrt{\frac{xyz}{x+y+z}},\\ R&=\frac{abc}{4\triangle}=\frac{(x+y)(y+z)(z+x)}{4\sqrt{xyz(x+y+z)}},\qquad\tan\frac A2=\frac rx,\ \tan\frac B2=\frac ry,\ \tan\frac C2=\frac rz.\end{aligned}$$
@@ -176,12 +182,27 @@ $$\frac2\pi T=S=S_1+S_2+\dots+S_n\le\frac2\pi(T_1+T_2+\dots+T_n).$$
 
 === 習題 5
 zh: 有大小兩個矩形紙片 $ABCD$ 和 $AB'C'D'$ 如圖固定，設 $AB=a$，$AD=b$，$AB'=\lambda a$，$AD'=\mu b$。$P,Q$ 是小矩形內任意兩點，$R$ 是大矩形內任一點。求證：$S_{\triangle PQR}\le\dfrac12ab(\lambda+\mu-\lambda\mu)$。
-sol: <figure class="bkfig"><svg viewBox="0 0 280 202" width="280" role="img" aria-label="大矩形 ABCD 與小矩形 AB′C′D′，P、Q 在小矩形內，R 在大矩形內；虛線作直角三角形 PQT">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="24.0,178.7 256.0,178.7 256.0,24.0 24.0,24.0"/><polygon points="24.0,178.7 128.4,178.7 128.4,101.3 24.0,101.3"/><polygon points="47.2,120.7 109.1,163.2 201.9,47.2"/></g>
-  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="47.2" y1="120.7" x2="47.2" y2="163.2"/><line x1="47.2" y1="163.2" x2="109.1" y2="163.2"/><line x1="47.2" y1="163.2" x2="201.9" y2="47.2"/></g>
-  <g fill="currentColor"><circle cx="47.2" cy="120.7" r="2.6"/><circle cx="109.1" cy="163.2" r="2.6"/><circle cx="201.9" cy="47.2" r="2.6"/></g>
-  <g fill="currentColor" font-size="14" font-style="italic"><text x="10.0" y="192.7">A</text><text x="260.0" y="192.7">B</text><text x="260.0" y="20.0">C</text><text x="10.0" y="22.0">D</text><text x="122.4" y="194.7">B′</text><text x="132.4" y="97.3">C′</text><text x="4.0" y="105.3">D′</text><text x="31.2" y="118.7">P</text><text x="113.1" y="177.2">Q</text><text x="205.9" y="43.2">R</text><text x="33.2" y="177.2">T</text></g>
-</svg><figcaption>以 $PQ$ 為斜邊作直角三角形 $PQT$，兩股平行於矩形的邊</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">
+A = (24,178.7)
+B = (256,178.7)
+C = (256,24)
+m1 = mid(A,C)
+D = reflectp(B, m1)
+B2 = (128.4,178.7)
+C2 = (128.4,101.3)
+m2 = mid(A,C2)
+D2 = reflectp(B2, m2)
+P = (47.2,120.7)
+Q = (109.1,163.2)
+R = (201.9,47.2)
+T = (47.2,163.2)
+draw poly A B C D
+draw poly A B2 C2 D2
+draw poly P Q R
+draw seg P T dash
+draw seg T Q dash
+draw seg T R dash
+</pre><figcaption>以 $PQ$ 為斜邊作直角三角形 $PQT$，兩股平行於矩形的邊</figcaption></figure>
 以 $PQ$ 為斜邊，在 $\triangle PQR$ 外側作直角 $\triangle PQT$，使兩條直角邊分別平行於矩形的兩鄰邊。記 $TQ=\varepsilon$（水平）、$PT=\delta$（垂直），因 $P,Q$ 在小矩形內，$\varepsilon\le\lambda a$，$\delta\le\mu b$。
 (1) 若 $RT$ 與 $PQ$ 相交（如圖），則 $$S_{\triangle PQR}=S_{\triangle TQR}+S_{\triangle TPR}-S_{\triangle PQT}$$。$R$ 到直線 $TQ$ 的距離 $\le b$，到直線 $TP$ 的距離 $\le a$，所以
 $$\begin{aligned}S_{\triangle PQR}&\le\frac12\varepsilon b+\frac12\delta a-\frac12\varepsilon\delta=\frac12\big[ab-(a-\varepsilon)(b-\delta)\big]\\&\le\frac12\big[ab-(a-\lambda a)(b-\mu b)\big]=\frac12ab(\lambda+\mu-\lambda\mu).\end{aligned}$$

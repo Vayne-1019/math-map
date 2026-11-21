@@ -151,17 +151,22 @@ $$\begin{aligned}\text{左邊}&=\Big[\sum(a_ib_i)(c_id_i)\Big]^4\le\Big[\sum(a_i
 
 === 例 10 | 到三邊距離
 zh: 設 $P$ 是 $\triangle ABC$ 內一點，$r_1,r_2,r_3$ 是 $P$ 到三邊 $a_1,a_2,a_3$ 的距離，$R$ 是外接圓半徑。求證 $$\sqrt{r_1}+\sqrt{r_2}+\sqrt{r_3}\le\dfrac1{\sqrt{2R}}\big(a_1^2+a_2^2+a_3^2\big)^{1/2}$$，並分析等號何時成立。
-sol: <figure class="bkfig"><svg viewBox="0 0 320 220" width="300" role="img" aria-label="三角形 ABC 內一點 P 到三邊的垂線段 r1 r2 r3">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="120,20 20,200 300,200"/></g>
-  <g fill="none" stroke="#c2562b" stroke-width="1.5" stroke-dasharray="5 3">
-    <line x1="150" y1="130" x2="150" y2="200"/><line x1="150" y1="130" x2="190" y2="90"/><line x1="150" y1="130" x2="80.4" y2="91.3"/>
-  </g>
-  <circle cx="150" cy="130" r="2.8" fill="currentColor"/>
-  <g fill="currentColor" font-size="15" font-style="italic">
-    <text x="114" y="14">A</text><text x="6" y="214">B</text><text x="302" y="214">C</text><text x="156" y="136">P</text>
-  </g>
-  <g fill="currentColor" font-size="13" font-style="italic"><text x="155" y="172">r₁</text><text x="172" y="122">r₂</text><text x="104" y="104">r₃</text><text x="160" y="216">a₁</text><text x="236" y="112">a₂</text><text x="50" y="110">a₃</text></g>
-</svg><figcaption>虛線是 $P$ 到三邊的垂線段</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">
+A = (120,20)
+B = (20,200)
+C = (300,200)
+P = (150,130)
+D1 = foot(P, B, C)
+D2 = foot(P, C, A)
+D3 = foot(P, A, B)
+draw poly A B C
+draw seg P D1 dash
+draw seg P D2 dash
+draw seg P D3 dash
+hide D1
+hide D2
+hide D3
+</pre><figcaption>虛線是 $P$ 到三邊的垂線段</figcaption></figure>
 由柯西不等式，
 $$\begin{aligned}\sqrt{r_1}+\sqrt{r_2}+\sqrt{r_3}&=\sqrt{a_1r_1}\sqrt{\tfrac1{a_1}}+\sqrt{a_2r_2}\sqrt{\tfrac1{a_2}}+\sqrt{a_3r_3}\sqrt{\tfrac1{a_3}}\\&\le(a_1r_1+a_2r_2+a_3r_3)^{1/2}\Big(\frac1{a_1}+\frac1{a_2}+\frac1{a_3}\Big)^{1/2}.\end{aligned}$$
 記 $S$ 為 $\triangle ABC$ 的面積，則
