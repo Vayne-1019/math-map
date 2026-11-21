@@ -14,20 +14,27 @@ status: 完成
 zh: 平面上任意給定 $7$ 條直線，其中任兩條都不平行。求證：一定能找出兩條直線，它們的交角（指不超過 $90^\circ$ 的那個角）小於 $26^\circ$。
 sol: <b>分析</b>：有一個很特殊的情形：$7$ 條直線交於同一點。而一般情形可以用平移化歸成這個特殊情形。
 <figure class="bkfig"><pre class="geo">A = (110, 100)
-X = (200, 100)
-t1 = rotate(X, A, 25.7)
-t2 = rotate(X, A, 51.4)
-t3 = rotate(X, A, 77.1)
-t4 = rotate(X, A, 102.9)
-t5 = rotate(X, A, 128.6)
-t6 = rotate(X, A, 154.3)
-draw line A X
-draw line A t1
-draw line A t2
-draw line A t3
-draw line A t4
-draw line A t5
-draw line A t6
+x = (260, 100)
+w = rotate(x, A, 180)
+draw line w x
+t1 = rotate(x, A, 25.7)
+s1 = rotate(w, A, 25.7)
+t2 = rotate(x, A, 51.4)
+s2 = rotate(w, A, 51.4)
+t3 = rotate(x, A, 77.1)
+s3 = rotate(w, A, 77.1)
+t4 = rotate(x, A, 102.9)
+s4 = rotate(w, A, 102.9)
+t5 = rotate(x, A, 128.6)
+s5 = rotate(w, A, 128.6)
+t6 = rotate(x, A, 154.3)
+s6 = rotate(w, A, 154.3)
+draw line s1 t1
+draw line s2 t2
+draw line s3 t3
+draw line s4 t4
+draw line s5 t5
+draw line s6 t6
 </pre><figcaption>7 條直線過同一點，把周角分成 14 個角</figcaption></figure>
 <b>證明</b>：先看特殊情形：$7$ 條直線 $l_1,\dots,l_7$ 交於一點 $A$。它們在 $A$ 處形成 $14$ 個以 $A$ 為頂點的角，$\angle1+\angle2+\dots+\angle14=360^\circ$。$360^\circ\div14=\left(25\frac57\right)^\circ$，由抽屜原則（平均值的說法），這 $14$ 個角中至少有一個不超過 $\left(25\frac57\right)^\circ$，小於 $26^\circ$。⟦它就是交角嗎｜$14$ 個角中每一個都夾在相鄰的兩條直線之間；它小於 $90^\circ$，所以正是這兩條直線的交角。⟧ 特殊情形成立。
 一般情形：任給 $7$ 條直線 $m_1,\dots,m_7$（任兩條不平行）。任取一點 $A$，過 $A$ 作 $l_i\parallel m_i$（$i=1,\dots,7$）。兩條直線 $m_i,m_j$ 的交角等於 $l_i,l_j$ 的交角（平行線的同位角相等），這就化歸成剛才的特殊情形，命題得證。
