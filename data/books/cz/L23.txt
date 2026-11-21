@@ -74,9 +74,9 @@ B = (22, 113.4)
 C = (238, 113.4)
 D = foot(A, B, C)
 bc = line(B, C)
-P1 = on(bc, 84.3, 113.4)
+Pi = on(bc, 84.3, 113.4)
 draw poly A B C
-draw seg A P1
+draw seg A Pi
 draw seg A D dash
 right A D C
 </pre><figcaption>作底邊上的高 $AD$（虛線）</figcaption></figure>
@@ -126,8 +126,8 @@ zh: 設在 $\triangle ABC$ 中，$AB\gt AC$，$AT$ 平分 $\angle A$ 交 $BC$ �
 sol: <figure class="bkfig"><pre class="geo">A = (199, 22)
 B = (22, 168)
 C = (243.2, 168)
-I = incenter(A, B, C)
-T = inter(A, I, B, C)
+i0 = incenter(A, B, C)
+T = inter(A, i0, B, C)
 mbc = mid(B, C)
 S = reflectp(T, mbc)
 H = foot(A, B, C)
