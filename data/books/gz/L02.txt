@@ -66,7 +66,14 @@ $$S_1S_2S_3S_4\ge3^4\,S_1S_2S_3S_4\,K^{2/3}.$$
 <p>這個證明和例 1 的證法二如出一轍。更高維的單形也有同樣的性質，用相同的方法可以證明，只是要先建立對應的射影定理，這已超出高中範圍。對簡單的題目深入了解、抓住本質，就可能得到更一般的結果；數學的美妙與發展大多在此。</p>
 <h3>二、勾股定理也靠射影定理</h3>
 <p>勾股定理的證法很多，其中一個本質的證法正是靠射影定理。</p>
-<figure class="bkfig"><svg viewBox="0 0 240 138" width="240" role="img" aria-label="直角三角形 ABC，∠C＝90°，CD 為斜邊上的高"><g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="22.0,116.1 218.0,116.1 92.6,22.0"/><line x1="92.6" y1="22.0" x2="92.6" y2="116.1" stroke-dasharray="5 4"/></g><path d="M100.6,116.1 v-8 h-8" fill="none" stroke="currentColor"/><g fill="currentColor" font-size="15" font-style="italic"><text x="8.0" y="130.1">A</text><text x="222.0" y="130.1">B</text><text x="87.6" y="14.0">C</text><text x="88.6" y="133.1">D</text></g></svg><figcaption>∠C＝90°，CD ⊥ AB</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A = (22, 116.1)
+B = (218, 116.1)
+C = (92.6, 22)
+D = foot(C, A, B)
+draw poly A B C
+draw seg C D dash
+right C D B
+</pre><figcaption>∠C＝90°，CD ⊥ AB</figcaption></figure>
 <p>在 $\triangle ABC$ 中 $\angle C=90^\circ$，則 $c=a\cos B+b\cos A$，而 $a=c\cos B$、$b=c\cos A$，代入得 $c=c(\cos^2A+\cos^2B)$，即 $\cos^2A+\cos^2B=1$，所以</p>
 $$a^2+b^2=c^2(\cos^2A+\cos^2B)=c^2.$$
 <p><b>三維空間的勾股定理</b>：設四面體 $A_1A_2A_3A_4$ 中，$A_1$ 處的三面角是直三面角（三條稜兩兩垂直），$S_i$ 是 $A_i$ 所對面的面積，則 $S_1^2=S_2^2+S_3^2+S_4^2$。</p>

@@ -13,7 +13,23 @@ status: 完成
 === 例 1 | 平行四邊形內的點
 same: cz-L30 例 4
 zh: 設 $P$ 是平行四邊形 $ABCD$ 內一點，使 $\angle PAB=\angle PCB$。證明 $\angle PBA=\angle PDA$。
-sol: <figure class="bkfig"><svg viewBox="0 0 280 160" width="280" role="img" aria-label="平行四邊形 ABCD 內一點 P 與平移後的 P′"><g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="64.3,22.0 22.0,138.4 212.5,138.4 254.8,22.0"/><line x1="64.3" y1="22.0" x2="67.5" y2="74.9"/><line x1="22.0" y1="138.4" x2="67.5" y2="74.9"/><line x1="212.5" y1="138.4" x2="67.5" y2="74.9"/><line x1="254.8" y1="22.0" x2="67.5" y2="74.9"/><line x1="67.5" y1="74.9" x2="258.0" y2="74.9" stroke-dasharray="5 4"/><line x1="254.8" y1="22.0" x2="258.0" y2="74.9" stroke-dasharray="5 4"/><line x1="212.5" y1="138.4" x2="258.0" y2="74.9" stroke-dasharray="5 4"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="58.3" y="16.0">A</text><text x="10.0" y="152.4">B</text><text x="214.5" y="152.4">C</text><text x="256.8" y="16.0">D</text><text x="53.5" y="78.9">P</text><text x="264.0" y="78.9">P′</text></g></svg><figcaption>把 AP 平移到 DP′（虛線）；P、D、P′、C 四點共圓</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (64.3, 22)
+B = (22, 138.4)
+D = (254.8, 22)
+mbd = mid(B, D)
+C = reflectp(A, mbd)
+P = (67.5, 74.9)
+mdp = mid(D, P)
+P' = reflectp(A, mdp)
+draw poly A B C D
+draw seg P A
+draw seg P B
+draw seg P C
+draw seg P D
+draw seg P P' dash
+draw seg D P' dash
+draw seg C P' dash
+</pre><figcaption>把 AP 平移到 DP′（虛線）；P、D、P′、C 四點共圓</figcaption></figure>
 把 $AP$ 平移到 $DP'$（平移向量 $\overrightarrow{AD}$）。平移把 $A,B,P$ 變到 $D,C,P'$，所以 $\triangle ABP\cong\triangle DCP'$：
 $$\angle BAP=\angle CDP',\qquad\angle PBA=\angle P'CD.$$
 又 $PP'\parallel AD\parallel BC$，所以 $\angle P'PC=\angle BCP$（內錯角）。由已知 $\angle PAB=\angle PCB$，得 $\angle P'PC=\angle CDP'$，於是 $P,D,P',C$ 四點共圓⟦為什麼共圓｜$P$ 和 $D$ 在直線 $P'C$ 的同側，對線段 $P'C$ 張相等的角。⟧。
@@ -26,7 +42,23 @@ $$\angle PBA=\angle P'CD=\angle P'PD=\angle PDA.$$
 === 例 2 | 構造對角線互相垂直的四邊形
 zh: 在矩形 $ABCD$ 中有任意一點 $M$。證明：存在一個凸四邊形，它的對角線互相垂直，長度分別等於 $AB$ 和 $BC$，而它的邊長分別等於 $AM,BM,CM,DM$。
 sol: 這是「存在性」命題，我們用構造性的論證：直接作出符合要求的四邊形。利用平移，在原圖上作圖就行。
-<figure class="bkfig"><svg viewBox="0 0 240 191" width="240" role="img" aria-label="矩形 ABCD 內一點 M 與平移後的 M′"><g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="22.0,22.0 22.0,130.9 218.0,130.9 218.0,22.0"/><line x1="81.9" y1="60.1" x2="22.0" y2="22.0"/><line x1="81.9" y1="60.1" x2="22.0" y2="130.9"/><line x1="81.9" y1="60.1" x2="218.0" y2="130.9"/><line x1="81.9" y1="60.1" x2="218.0" y2="22.0"/><line x1="81.9" y1="60.1" x2="81.9" y2="169.0" stroke-dasharray="5 4"/><line x1="22.0" y1="130.9" x2="81.9" y2="169.0" stroke-dasharray="5 4"/><line x1="218.0" y1="130.9" x2="81.9" y2="169.0" stroke-dasharray="5 4"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="10.0" y="18.0">A</text><text x="8.0" y="140.9">B</text><text x="222.0" y="140.9">C</text><text x="222.0" y="18.0">D</text><text x="77.9" y="52.1">M</text><text x="75.9" y="185.0">M′</text></g></svg><figcaption>把 AM 平移到 BM′；四邊形 BMCM′ 的對角線 MM′⊥BC</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A = (22, 22)
+B = (22, 130.9)
+C = (218, 130.9)
+mac = mid(A, C)
+D = reflectp(B, mac)
+M = (81.9, 60.1)
+mbm = mid(B, M)
+M' = reflectp(A, mbm)
+draw poly A B C D
+draw seg M A
+draw seg M B
+draw seg M C
+draw seg M D
+draw seg M M' dash
+draw seg B M' dash
+draw seg C M' dash
+</pre><figcaption>把 AM 平移到 BM′；四邊形 BMCM′ 的對角線 MM′⊥BC</figcaption></figure>
 把 $AM$ 平移到 $BM'$（平移向量 $\overrightarrow{AB}$），則 $AMM'B$ 是平行四邊形：$MM'=AB$，$BM'=AM$，$MM'\parallel AB$，所以 $MM'\perp BC$。又 $MM'$ 平行且等於 $DC$，$DMM'C$ 也是平行四邊形，所以 $M'C=DM$。
 <p>於是四邊形 $BMCM'$ 的四邊是 $BM,MC,CM'=DM,M'B=AM$，對角線 $MM'=AB$、$BC$ 互相垂直。$M$ 在矩形內，線段 $MM'$ 和 $BC$ 交於兩者的內部，所以 $BMCM'$ 是凸四邊形。</p>
 
@@ -73,7 +105,22 @@ sol: 這題有多種解法，用旋轉可以看清問題的實質。
 
 === 例 7 | 三條線段構成三角形
 zh: 正三角形 $ABC$ 內接於半徑為 $r_1$ 的圓，圓心為 $O$；圓外一點 $P$，$PO=r_2$（$r_2&gt;r_1$）。證明線段 $PA,PB,PC$ 能構成三角形，並計算它的面積。
-sol: <figure class="bkfig"><svg viewBox="0 0 240 212" width="240" role="img" aria-label="正三角形 ABC 內接於圓 O，圓外一點 P"><g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="156.9,22.0 103.9,113.7 209.8,113.7"/><line x1="178.3" y1="190.1" x2="156.9" y2="22.0"/><line x1="178.3" y1="190.1" x2="103.9" y2="113.7"/><line x1="178.3" y1="190.1" x2="209.8" y2="113.7"/><line x1="156.9" y1="22.0" x2="22.0" y2="124.6"/><line x1="103.9" y1="113.7" x2="22.0" y2="124.6"/><line x1="178.3" y1="190.1" x2="22.0" y2="124.6" stroke-dasharray="5 4"/><circle cx="156.9" cy="83.1" r="61.1" stroke-dasharray="3 3"/></g><g fill="currentColor"><circle cx="156.9" cy="83.1" r="2.5"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="152.9" y="14.0">A</text><text x="89.9" y="111.7">B</text><text x="215.8" y="117.7">C</text><text x="182.3" y="204.1">P</text><text x="4.0" y="128.6">P′</text><text x="160.9" y="79.1">O</text></g></svg><figcaption>把 △ACP 繞 A 轉 60° 得 △ABP′；△PBP′ 的三邊就是 PA、PB、PC</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (156.9, 22)
+O = (156.9, 83.1)
+k = circle(O, A)
+B = rotate(A, O, 120)
+C = rotate(A, O, -120)
+P = (178.3, 190.1)
+P' = rotate(P, A, -60)
+draw poly A B C
+draw seg P A
+draw seg P B
+draw seg P C
+draw seg A P'
+draw seg B P'
+draw seg P P' dash
+draw circle k dash
+</pre><figcaption>把 △ACP 繞 A 轉 60° 得 △ABP′；△PBP′ 的三邊就是 PA、PB、PC</figcaption></figure>
 直接構造出所要的三角形。把 $\triangle ACP$ 繞 $A$ 旋轉 $60^\circ$，使 $C$ 到 $B$，得 $\triangle ABP'$，則 $AP'=AP$，$BP'=PC$，$\angle ACP=\angle ABP'$，而且 $\triangle APP'$ 是正三角形，$PP'=PA$。
 <p>因為 $P$ 在圓外，$P,C,A,B$ 四點不共圓，所以 $\angle ABP+\angle ABP'=\angle ABP+\angle ACP\ne180^\circ$⟦為什麼｜四邊形 $ABPC$（或 $ACBP$）的一組對角互補若且唯若四點共圓。⟧，即 $P',B,P$ 不共線。所以 $BP'=PC$、$BP$、$PP'=PA$ 能構成三角形（不會退化成線段），即 $PA,PB,PC$ 能構成三角形。</p>
 <p><b>面積</b>（以圖中 $P$ 在 $BC$ 外側為例）：設 $\angle POC=\alpha$，則 $\angle BOP=120^\circ-\alpha$，$\angle AOP=120^\circ+\alpha$。</p>
@@ -101,14 +148,41 @@ sol: <figure class="bkfig"><svg viewBox="0 0 240 222" width="240" role="img" ari
 
 === 例 9 | 四邊形面積的上界
 zh: 證明：任意凸四邊形的面積不大於兩組對邊乘積之和的一半。
-sol: <figure class="bkfig"><svg viewBox="0 0 220 273" width="220" role="img" aria-label="凸四邊形 ABCD 與 D 關於 AC 中垂線的對稱點 D′"><g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="22.0,180.4 133.5,39.6 198.0,180.4 74.8,233.2"/><line x1="22.0" y1="180.4" x2="198.0" y2="180.4"/><line x1="22.0" y1="180.4" x2="145.2" y2="233.2" stroke-dasharray="5 4"/><line x1="198.0" y1="180.4" x2="145.2" y2="233.2" stroke-dasharray="5 4"/><line x1="110.0" y1="22.0" x2="110.0" y2="250.8" stroke-dasharray="5 4"/><line x1="133.5" y1="39.6" x2="145.2" y2="233.2" stroke-dasharray="5 4"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="8.0" y="184.4">A</text><text x="137.5" y="35.6">B</text><text x="202.0" y="184.4">C</text><text x="68.8" y="249.2">D</text><text x="147.2" y="249.2">D′</text></g></svg><figcaption>直立虛線是 AC 的中垂線；△ADC≅△CD′A</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (22, 180.4)
+C = (198, 180.4)
+B = (133.5, 39.6)
+D = (74.8, 233.2)
+m = mid(A, C)
+q = (110, 22)
+D' = reflect(D, m, q)
+draw poly A B C D
+draw seg A C
+draw seg A D' dash
+draw seg C D' dash
+draw seg B D' dash
+draw line m q dash
+</pre><figcaption>直立虛線是 AC 的中垂線；△ADC≅△CD′A</figcaption></figure>
 設凸四邊形 $ABCD$，要證它的面積不超過 $\frac12(AB\cdot CD+BC\cdot AD)$。作 $D$ 關於線段 $AC$ 中垂線的對稱點 $D'$，則 $\triangle ADC\cong\triangle CD'A$，$AD'=CD$，$CD'=AD$。所以
 $$\begin{aligned}\text{四邊形 }ABCD\text{ 的面積}&=\text{四邊形 }ABCD'\text{ 的面積}\\&=\triangle BAD'+\triangle BD'C\\&\le\tfrac12AB\cdot AD'+\tfrac12BC\cdot CD'\\&=\tfrac12(AB\cdot CD+BC\cdot AD).\end{aligned}$$
 ⟦不等號｜$\triangle BAD'=\frac12AB\cdot AD'\sin\angle BAD'\le\frac12AB\cdot AD'$，另一個同理。⟧
 
 === 例 10 | 高的上界
 zh: 證明：在邊長為 $a,b,c$ 的任意三角形中，高 $h_a\le\sqrt{p(p-a)}$，其中 $p=\dfrac{a+b+c}2$。
-sol: <figure class="bkfig"><svg viewBox="0 0 200 200" width="200" role="img" aria-label="三角形 ABC 與 B、C 關於直線 l 的對稱點"><g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="33.1,178.0 166.9,178.0 166.9,22.0 33.1,22.0"/><line x1="83.3" y1="100.0" x2="33.1" y2="178.0"/><line x1="83.3" y1="100.0" x2="166.9" y2="178.0"/><line x1="22.0" y1="100.0" x2="178.0" y2="100.0" stroke-dasharray="5 4"/><line x1="83.3" y1="100.0" x2="33.1" y2="22.0" stroke-dasharray="5 4"/><line x1="166.9" y1="178.0" x2="33.1" y2="22.0" stroke-dasharray="5 4"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="79.3" y="92.0">A</text><text x="19.1" y="192.0">B</text><text x="170.9" y="192.0">C</text><text x="17.1" y="22.0">B′</text><text x="170.9" y="22.0">C′</text></g></svg><figcaption>l 過 A 且平行 BC；AB＝AB′，所以 b＋c ≥ CB′</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">B = (33.1, 178)
+C = (166.9, 178)
+L1 = (22, 100)
+L2 = (178, 100)
+l = line(L1, L2)
+A = on(l, 83.3, 100)
+B' = reflect(B, L1, L2)
+C' = reflect(C, L1, L2)
+draw poly B C C' B'
+draw seg A B
+draw seg A C
+draw seg A B' dash
+draw seg C B' dash
+draw line L1 L2 dash
+</pre><figcaption>l 過 A 且平行 BC；AB＝AB′，所以 b＋c ≥ CB′</figcaption></figure>
 過 $A$ 作 $BC$ 的平行線 $l$，作 $B,C$ 關於 $l$ 的對稱點 $B',C'$，則 $BB'=2h_a$，$AB'=AB$。所以
 $$b+c=CA+AB'\ge CB'=\sqrt{BC^2+BB'^2},$$
 即 $b+c\ge\sqrt{a^2+(2h_a)^2}$，從而
