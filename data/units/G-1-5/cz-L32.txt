@@ -5,11 +5,21 @@ order: 20
 
 === body
 <div class="hero">同一塊面積用<b>兩種方法</b>算 → 得到一個等式<br>分割、同底等高、相似比平方，把面積「翻譯」回長度</div>
-<figure class="bkfig"><svg viewBox="0 0 260 179" width="260" role="img" aria-label="三角形內一點到三邊的距離">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="189.4,22 22,157 238,157"/><line x1="151.6" y1="108.4" x2="151.6" y2="157"/><line x1="151.6" y1="108.4" x2="212.6" y2="86.4"/><line x1="151.6" y1="108.4" x2="124.3" y2="74.5"/><polyline points="151.6,153 155.6,153 155.6,157" stroke-width="1"/><polyline points="208.8,87.8 210.2,91.6 214,90.2" stroke-width="1"/><polyline points="126.8,77.6 129.9,75.1 127.4,72" stroke-width="1"/><line x1="151.6" y1="108.4" x2="189.4" y2="22" stroke-dasharray="5 4"/><line x1="151.6" y1="108.4" x2="22" y2="157" stroke-dasharray="5 4"/><line x1="151.6" y1="108.4" x2="238" y2="157" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="189.4" y="15.9" text-anchor="middle">A</text><text x="11" y="161.9" text-anchor="middle">B</text><text x="249" y="161.9" text-anchor="middle">C</text><text x="162.6" y="113.3" text-anchor="middle">P</text><text x="159.7" y="132.7" font-style="normal" font-size="11" text-anchor="middle">x₁</text><text x="182.1" y="90.9" font-style="normal" font-size="11" text-anchor="middle">x₂</text><text x="137.9" y="83.4" font-style="normal" font-size="11" text-anchor="middle">x₃</text></g>
-</svg><figcaption>$P$ 到三邊的距離 $x_1,x_2,x_3$；連 $PA,PB,PC$ 把三角形分成三塊（虛線）</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A = (189.4, 22)
+B = (22, 157)
+C = (238, 157)
+P = (151.6, 108.4)
+d1 = foot(P, B, C)
+d2 = foot(P, C, A)
+d3 = foot(P, A, B)
+draw poly A B C
+draw seg P d1
+draw seg P d2
+draw seg P d3
+draw seg P A dash
+draw seg P B dash
+draw seg P C dash
+</pre><figcaption>$P$ 到三邊的距離 $x_1,x_2,x_3$；連 $PA,PB,PC$ 把三角形分成三塊（虛線）</figcaption></figure>
 <div class="cards">
 <div class="card"><h4>① 拆成小塊</h4><div class="rule">$S=S_{BPC}+S_{CPA}+S_{APB}$</div>
 <div class="eg">除以 $S$：$\frac{x_1}{h_1}+\frac{x_2}{h_2}+\frac{x_3}{h_3}=1$ <span class="pill">分割</span></div></div>

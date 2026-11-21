@@ -5,11 +5,28 @@ order: 20
 
 === body
 <div class="hero">$DA+DB+DC$ 最小 → 把 $\triangle CDA$ 繞 $C$ 轉 $60^\circ$<br>三段變成<b>一條折線</b> $A'D'+D'D+DB$，拉直就是 $A'B$</div>
-<figure class="bkfig"><svg viewBox="0 0 280 135" width="280" role="img" aria-label="直角三角形的費馬點">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="100.7,22 258,112.8 100.7,112.8" stroke-width="2"/><line x1="123.1" y1="86.9" x2="100.7" y2="22"/><line x1="123.1" y1="86.9" x2="258" y2="112.8"/><line x1="123.1" y1="86.9" x2="100.7" y2="112.8"/><line x1="22" y1="67.4" x2="258" y2="112.8" stroke-dasharray="5 4"/><line x1="100.7" y1="112.8" x2="22" y2="67.4" stroke-dasharray="5 4"/><line x1="22" y1="67.4" x2="89.4" y2="80.4" stroke-dasharray="5 4"/><line x1="100.7" y1="112.8" x2="89.4" y2="80.4" stroke-dasharray="5 4"/><line x1="22" y1="67.4" x2="22" y2="112.8" stroke-dasharray="5 4"/><line x1="22" y1="112.8" x2="100.7" y2="112.8" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="100.7" y="15.9" text-anchor="middle">A</text><text x="269" y="117.7" text-anchor="middle">B</text><text x="100.7" y="128.7" text-anchor="middle">C</text><text x="130.9" y="84" text-anchor="middle">D</text><text x="7.5" y="72.3" text-anchor="middle">A′</text><text x="89.4" y="74.3" text-anchor="middle">D′</text><text x="22" y="128.7" text-anchor="middle">E</text></g>
-</svg><figcaption>把 $\triangle CDA$ 繞 $C$ 轉 $60^\circ$ 到 $\triangle CD'A'$；$DA+DB+DC=A'D'+D'D+DB\ge A'B$（虛線）</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A = (100.7, 22)
+B = (258, 112.8)
+m = mid(A, B)
+kM = circle(m, A)
+C = on(kM, 100.7, 112.8)
+A' = rotate(A, C, 60)
+kc = circle3(A, A', C)
+A'B = line(A', B)
+D = meet(kc, A'B, 123.1, 86.9)
+D' = rotate(D, C, 60)
+E = foot(A', C, B)
+draw poly A B C
+draw seg D A
+draw seg D B
+draw seg D C
+draw seg A' B dash
+draw seg C A' dash
+draw seg A' D' dash
+draw seg C D' dash
+draw seg A' E dash
+draw seg E C dash
+</pre><figcaption>把 $\triangle CDA$ 繞 $C$ 轉 $60^\circ$ 到 $\triangle CD'A'$；$DA+DB+DC=A'D'+D'D+DB\ge A'B$（虛線）</figcaption></figure>
 <div class="cards">
 <div class="card"><h4>① 轉 60°</h4><div class="rule">$\triangle CDD'$ 正三角形</div>
 <div class="eg">$DC=DD'$、$DA=D'A'$ <span class="pill">換線段</span></div></div>

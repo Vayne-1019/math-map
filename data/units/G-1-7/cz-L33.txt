@@ -5,11 +5,20 @@ order: 50
 
 === body
 <div class="hero">動點在動，某個量卻不變 → 先把動點放到<b>特殊位置</b>，算出那個定值<br>再把「是定值」改寫成「等於這個值」來證</div>
-<figure class="bkfig"><svg viewBox="0 0 250 177" width="250" role="img" aria-label="正方形中周長為 2 的三角形">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,22 22,154.9 154.9,154.9 154.9,22"/><polygon points="22,81.8 116.3,22 154.9,154.9"/><line x1="154.9" y1="22" x2="228" y2="22" stroke-dasharray="5 4"/><line x1="154.9" y1="154.9" x2="228" y2="22" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="19.1" text-anchor="middle">A</text><text x="14.2" y="167.6" text-anchor="middle">B</text><text x="162.7" y="167.6" text-anchor="middle">C</text><text x="154.9" y="15.9" text-anchor="middle">D</text><text x="11" y="86.7" text-anchor="middle">P</text><text x="116.3" y="15.9" text-anchor="middle">Q</text><text x="235.8" y="19.1" text-anchor="middle">E</text></g>
-</svg><figcaption>證法一：延長 $AD$ 到 $E$ 使 $DE=PB$，連 $CE$（虛線）</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A = (22, 22)
+B = (22, 154.9)
+C = rotate(A, B, -90)
+D = rotate(B, A, 90)
+AB = line(A, B)
+AD = line(A, D)
+P = on(AB, 22, 81.8)
+Q = on(AD, 116.3, 22)
+E = on(AD, 228, 22)
+draw poly A B C D
+draw poly P Q C
+draw seg D E dash
+draw seg C E dash
+</pre><figcaption>證法一：延長 $AD$ 到 $E$ 使 $DE=PB$，連 $CE$（虛線）</figcaption></figure>
 <div class="cards">
 <div class="card"><h4>① 推到端點</h4><div class="rule">$P$ 移到 $A$，$Q$ 跟著到 $D$</div>
 <div class="eg">$\angle PCQ$ 變成 $\angle ACD=45^\circ$，於是證 $\angle PCQ=45^\circ$ <span class="pill">猜定值</span></div></div>

@@ -12,32 +12,64 @@ status: 完成
 === 例 1
 zh: 從定弧 $\overset\frown{AB}$ 上一點 $P$ 作 $PQ\perp OA$ 於 $Q$，$PR\perp OB$ 於 $R$，這裡 $O$ 是圓心。求證：$QR$ 為定長。
 sol: <p><b>分析</b>　$P$ 在弧上移動，一個特殊情形是 $P$ 位於 $A$：過 $A$ 作 $AC\perp OB$ 於 $C$，這時 $Q$ 與 $A$ 重合、$R$ 是 $C$。$AC$ 是定長，所以問題轉化為證 $QR=AC$。</p>
-<figure class="bkfig"><svg viewBox="0 0 210 189" width="210" role="img" aria-label="定弧上一點的兩條垂線">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M188 55.7A145.3 145.3 0 0 0 22 41.1"/><line x1="94.6" y1="166.9" x2="22" y2="41.1"/><line x1="94.6" y1="166.9" x2="188" y2="55.7"/><line x1="114.8" y1="23.1" x2="37.4" y2="67.8"/><line x1="114.8" y1="23.1" x2="173.8" y2="72.6"/><line x1="37.4" y1="67.8" x2="173.8" y2="72.6" stroke="#c2562b" stroke-width="2"/><line x1="22" y1="41.1" x2="126.6" y2="128.9" stroke-dasharray="5 4"/><line x1="94.6" y1="166.9" x2="114.8" y2="23.1" stroke-dasharray="5 4"/><polyline points="41.7,65.3 44.2,69.6 39.9,72.1" stroke-width="1"/><polyline points="170,69.4 166.8,73.2 170.6,76.4" stroke-width="1"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="94.6" y="182.8" text-anchor="middle">O</text><text x="11" y="46" text-anchor="middle">A</text><text x="199" y="60.6" text-anchor="middle">B</text><text x="114.8" y="17" text-anchor="middle">P</text><text x="26.4" y="72.7" text-anchor="middle">Q</text><text x="184.8" y="77.5" text-anchor="middle">R</text><text x="137.6" y="133.8" text-anchor="middle">C</text></g>
-</svg><figcaption>$PQ\perp OA$、$PR\perp OB$；$P$ 移到 $A$ 時 $QR$ 變成 $AC$（$AC\perp OB$，虛線）</figcaption></figure>
+<figure class="bkfig"><pre class="geo">O = (94.6, 166.9)
+A = (22, 41.1)
+kO = circle(O, A)
+B = on(kO, 188, 55.7)
+P = on(kO, 114.8, 23.1)
+Q = foot(P, O, A)
+R = foot(P, O, B)
+C = foot(A, O, B)
+draw circle kO
+draw seg O A
+draw seg O B
+draw seg P O dash
+draw seg P Q
+draw seg P R
+draw seg Q R accent
+draw seg A C dash
+right P Q O
+right P R O
+</pre><figcaption>$PQ\perp OA$、$PR\perp OB$；$P$ 移到 $A$ 時 $QR$ 變成 $AC$（$AC\perp OB$，虛線）</figcaption></figure>
 <p><b>證</b>　過 $A$ 作 $AC\perp OB$ 於 $C$，連 $PO$。$\angle PQO+\angle PRO=180^\circ$，所以 $P,Q,O,R$ 四點共圓（記為 $\odot O_1$），$\angle PQO=90^\circ$，$\odot O_1$ 的直徑是 $PO$。又 $\angle ACO=90^\circ$，過 $A,C,O$ 的圓 $\odot O_2$ 直徑是 $AO$。$AO=PO$，所以 $\odot O_1$ 與 $\odot O_2$ 是等圓，而 $QR$、$AC$ 分別是等圓中定角 $\angle AOB$ 所對的弦，所以 $QR=AC$ 是定長⟦也可以直接算｜在 $\odot O_1$ 中由正弦定理，$QR=PO\sin\angle QOR=R\sin\angle AOB$。⟧。</p>
 <p><b>說明</b>　用幾何方法解定值問題，應盡可能先透過分析確定定值。這不僅給論證提供方向，常常也由此確定如何添輔助線。</p>
 === 例 2
 zh: 已知正方形 $ABCD$ 的邊長為 $1$，$P$ 是 $AB$ 上任一點，$AD$ 上的點 $Q$ 滿足 $AP+AQ+PQ=2$。求證：$\angle PCQ$ 為定角。
 sol: <p><b>分析</b>　$P$、$Q$ 是動點，$Q$ 的位置依賴於 $P$。明顯的特殊位置是 $P$ 與 $A$ 重合，這時 $Q$ 與 $D$ 重合，$\angle PCQ$ 成了 $\angle ACD=45^\circ$，這就是要求的定值。要證 $\angle PCQ=45^\circ$，只需證 $\angle1+\angle2=\angle PCQ$（$\angle1=\angle BCP$，$\angle2=\angle QCD$）。有兩種途徑：用輔助線把 $\angle1$、$\angle2$ 集中起來；或把 $\angle PCQ$ 分成兩個角。</p>
 <p><b>證法一</b>　延長 $AD$ 到 $E$，使 $DE=PB$，連 $CE$。</p>
-<figure class="bkfig"><svg viewBox="0 0 250 177" width="250" role="img" aria-label="正方形中周長為 2 的三角形">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,22 22,154.9 154.9,154.9 154.9,22"/><polygon points="22,81.8 116.3,22 154.9,154.9"/><line x1="154.9" y1="22" x2="228" y2="22" stroke-dasharray="5 4"/><line x1="154.9" y1="154.9" x2="228" y2="22" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="19.1" text-anchor="middle">A</text><text x="14.2" y="167.6" text-anchor="middle">B</text><text x="162.7" y="167.6" text-anchor="middle">C</text><text x="154.9" y="15.9" text-anchor="middle">D</text><text x="11" y="86.7" text-anchor="middle">P</text><text x="116.3" y="15.9" text-anchor="middle">Q</text><text x="235.8" y="19.1" text-anchor="middle">E</text></g>
-</svg><figcaption>證法一：延長 $AD$ 到 $E$ 使 $DE=PB$，連 $CE$（虛線）</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A = (22, 22)
+B = (22, 154.9)
+C = rotate(A, B, -90)
+D = rotate(B, A, 90)
+AB = line(A, B)
+AD = line(A, D)
+P = on(AB, 22, 81.8)
+Q = on(AD, 116.3, 22)
+E = on(AD, 228, 22)
+draw poly A B C D
+draw poly P Q C
+draw seg D E dash
+draw seg C E dash
+</pre><figcaption>證法一：延長 $AD$ 到 $E$ 使 $DE=PB$，連 $CE$（虛線）</figcaption></figure>
 <p>易知直角 $\triangle PBC\cong\triangle EDC$，所以 $\angle1=\angle ECD$，$PC=EC$。又</p>
 $$PQ=2-AP-AQ=(1-AP)+(1-AQ)=PB+QD=QE,$$
 <p>$QC$ 公用，所以 $\triangle PQC\cong\triangle EQC$（SSS），$\angle PCQ=\angle ECQ=\angle1+\angle2$。而 $\angle PCQ+\angle1+\angle2=90^\circ$，所以 $\angle PCQ=45^\circ$。</p>
 <p><b>分析</b>　直接把 $\angle PCQ$ 分成兩個角，證全等有困難。但如果結論成立，我們會猜到 $PC$ 平分 $\angle BPQ$。所以用同一法：先作 $PQ_1$ 使 $PC$ 平分 $\angle BPQ_1$，再用條件證 $Q$ 與 $Q_1$ 重合。</p>
 <p><b>證法二</b>　過 $P$ 作 $PQ_1$ 交 $AD$ 於 $Q_1$，使 $\angle BPC=\angle CPQ_1$，作 $CH\perp PQ_1$ 於 $H$。</p>
-<figure class="bkfig"><svg viewBox="0 0 180 180" width="180" role="img" aria-label="同一法">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,22 22,158 158,158 158,22"/><polygon points="22,83.2 118.5,22 158,158"/><line x1="158" y1="158" x2="85.2" y2="43.1" stroke-dasharray="5 4"/><polyline points="87.3,46.5 90.7,44.4 88.5,41" stroke-width="1"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="19.1" text-anchor="middle">A</text><text x="14.2" y="170.7" text-anchor="middle">B</text><text x="165.8" y="170.7" text-anchor="middle">C</text><text x="165.8" y="19.1" text-anchor="middle">D</text><text x="11" y="88.1" text-anchor="middle">P</text><text x="118.5" y="15.9" text-anchor="middle">Q</text><text x="77.4" y="40.3" text-anchor="middle">H</text></g>
-</svg><figcaption>證法二：作 $PQ_1$ 使 $\angle BPC=\angle CPQ_1$，$CH\perp PQ_1$（虛線）；最後證明 $Q_1$ 就是 $Q$</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A = (22, 22)
+B = (22, 158)
+C = rotate(A, B, -90)
+D = rotate(B, A, 90)
+AD = line(A, D)
+AB = line(A, B)
+P = on(AB, 22, 83.2)
+Q = on(AD, 118.5, 22)
+H = foot(C, P, Q)
+draw poly A B C D
+draw poly P Q C
+draw seg C H dash
+right C H P
+</pre><figcaption>證法二：作 $PQ_1$ 使 $\angle BPC=\angle CPQ_1$，$CH\perp PQ_1$（虛線）；最後證明 $Q_1$ 就是 $Q$</figcaption></figure>
 <p>直角 $\triangle PBC\cong\triangle PHC$，所以 $BC=HC$，$PB=PH$，$\angle PCB=\angle PCH$。又 $HC=DC$，$Q_1C$ 公用，直角 $\triangle Q_1HC\cong\triangle Q_1DC$，$HQ_1=Q_1D$，$\angle HCQ_1=\angle DCQ_1$。於是</p>
 $$AP+AQ_1+PQ_1=AP+AQ_1+PH+HQ_1=AP+PB+AQ_1+Q_1D=2.$$
 <p>又 $AP+AQ+PQ=2$，所以 $AQ_1+PQ_1=AQ+PQ$，$Q$ 與 $Q_1$ 重合⟦為什麼｜當 $Q$ 沿 $AD$ 從 $A$ 往 $D$ 移動時，$AQ+PQ$ 嚴格遞增，所以這個和確定唯一的點。⟧。所以 $\angle PCQ=\angle PCH+\angle HCQ=\angle PCB+\angle DCQ$，$\angle PCQ=45^\circ$。</p>
@@ -45,11 +77,30 @@ $$AP+AQ_1+PQ_1=AP+AQ_1+PH+HQ_1=AP+PB+AQ_1+Q_1D=2.$$
 === 例 3
 zh: $AD$、$BE$、$CF$ 是 $\triangle ABC$ 三邊上的高，$P$ 是形內任一點，$PD_1$、$PE_1$、$PF_1$ 是 $P$ 到三邊的距離。求證：$\dfrac{PD_1}{AD}+\dfrac{PE_1}{BE}+\dfrac{PF_1}{CF}$ 為定值。
 sol: <p><b>分析</b>　把 $P$ 放在重心、內心、外心、垂心等特殊點，都難看出定值。如果設想 $P$ 在 $AD$ 上而且很靠近 $A$，則 $PD_1$ 接近 $AD$，$PE_1$、$PF_1$ 接近 $0$，由此猜到定值是 $1$。另一個確定定值的方法是把整個固定圖形特殊化：題目對三角形沒有限制，可以先設 $\triangle ABC$ 是正三角形，取 $P$ 為中心，三個比都是 $\frac13$，和為 $1$。</p>
-<figure class="bkfig"><svg viewBox="0 0 248 190" width="248" role="img" aria-label="三角形內一點到三邊的距離">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="114.5,22 22,168 226.4,168"/><line x1="114.5" y1="22" x2="114.5" y2="168"/><line x1="22" y1="168" x2="150.7" y2="69.3"/><line x1="226.4" y1="168" x2="80.5" y2="75.6"/><line x1="99.9" y1="119.3" x2="99.9" y2="168"/><line x1="99.9" y1="119.3" x2="156.1" y2="76.3"/><line x1="99.9" y1="119.3" x2="66.3" y2="98.1"/><line x1="99.9" y1="119.3" x2="114.5" y2="22" stroke-dasharray="5 4"/><line x1="99.9" y1="119.3" x2="22" y2="168" stroke-dasharray="5 4"/><line x1="99.9" y1="119.3" x2="226.4" y2="168" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="114.5" y="15.9" text-anchor="middle">A</text><text x="14.2" y="180.7" text-anchor="middle">B</text><text x="234.2" y="180.7" text-anchor="middle">C</text><text x="114.5" y="183.9" text-anchor="middle">D</text><text x="158.5" y="66.4" text-anchor="middle">E</text><text x="72.7" y="72.7" text-anchor="middle">F</text><text x="88.9" y="124.2" text-anchor="middle">P</text><text x="99.9" y="183.9" text-anchor="middle">D<tspan font-size="10">1</tspan></text><text x="166.3" y="73.4" text-anchor="middle">E<tspan font-size="10">1</tspan></text><text x="56" y="95.2" text-anchor="middle">F<tspan font-size="10">1</tspan></text></g>
-</svg><figcaption>$AD,BE,CF$ 是高，$PD_1,PE_1,PF_1$ 是 $P$ 到三邊的距離；連 $PA,PB,PC$（虛線）</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A = (114.5, 22)
+B = (22, 168)
+C = (226.4, 168)
+BC = line(B, C)
+CA = line(C, A)
+AB = line(A, B)
+D = foot(A, B, C)
+E = foot(B, C, A)
+F = foot(C, A, B)
+P = (99.9, 119.3)
+D1 = foot(P, B, C)
+E1 = foot(P, C, A)
+F1 = foot(P, A, B)
+draw poly A B C
+draw seg A D
+draw seg B E
+draw seg C F
+draw seg P D1
+draw seg P E1
+draw seg P F1
+draw seg A P dash
+draw seg B P dash
+draw seg C P dash
+</pre><figcaption>$AD,BE,CF$ 是高，$PD_1,PE_1,PF_1$ 是 $P$ 到三邊的距離；連 $PA,PB,PC$（虛線）</figcaption></figure>
 <p><b>證</b>　連 $PA,PB,PC$，則</p>
 $$\frac{PD_1}{AD}+\frac{PE_1}{BE}+\frac{PF_1}{CF}=\frac{S_{\triangle BPC}}{S_{\triangle ABC}}+\frac{S_{\triangle PAC}}{S_{\triangle ABC}}+\frac{S_{\triangle APB}}{S_{\triangle ABC}}=1.$$
 <p>（參見第 32 講例 2。）</p>
@@ -60,44 +111,105 @@ zh: 兩圓相交於 $P$、$Q$，過 $P$ 任作兩條直線，一條交一圓於 
 sol: <p><b>分析</b>　設想 $B$ 很靠近 $A$，這時弦 $AB$ 與過 $A$ 的切線夾角很小；$B$ 與 $A$ 重合時，直線 $AB$ 就是過 $A$ 的切線，$A_1B_1$ 也是。也就是說，兩條動直線重合時，$C$ 是兩條切線的交點。由弦切角等於圓周角，這時</p>
 $$\angle C=180^\circ-\angle AQA_1=\angle PAQ+\angle PA_1Q,$$
 <p>⟦為什麼｜由弦切角定理，切線 $CA$ 與弦 $AP$ 的夾角等於 $\angle AQP$，切線 $CA_1$ 與弦 $A_1P$ 的夾角等於 $\angle A_1QP$。在 $\triangle CAA_1$ 中，$\angle C=180^\circ-(\angle AQP+\angle A_1QP)=180^\circ-\angle AQA_1$；再由 $\triangle AQA_1$ 的內角和得 $=\angle QAA_1+\angle QA_1A$。⟧而 $\angle PAQ$、$\angle PA_1Q$ 是兩圓中定弦 $PQ$ 所對的圓周角，都是定值，所以 $\angle C$ 是定值。</p>
-<figure class="bkfig"><svg viewBox="0 0 270 234" width="270" role="img" aria-label="兩圓相交與定角">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="92.6" cy="92.6" r="70.6"/><circle cx="188" cy="82" r="60"/><line x1="95.4" y1="163.2" x2="247.6" y2="75.3"/><line x1="24.8" y1="112.4" x2="208.9" y2="138.3"/><line x1="24.8" y1="112.4" x2="163.5" y2="212.1"/><line x1="247.6" y1="75.3" x2="163.5" y2="212.1"/><line x1="152.3" y1="130.3" x2="142.6" y2="42.7" stroke-dasharray="5 4"/><line x1="24.8" y1="112.4" x2="142.6" y2="42.7" stroke-dasharray="5 4"/><line x1="208.9" y1="138.3" x2="142.6" y2="42.7" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="152.3" y="146.2" text-anchor="middle">P</text><text x="142.6" y="36.6" text-anchor="middle">Q</text><text x="87.7" y="175.9" text-anchor="middle">A</text><text x="13.8" y="117.3" text-anchor="middle">B</text><text x="257.9" y="72.4" text-anchor="middle">A<tspan font-size="10">1</tspan></text><text x="223.4" y="143.2" text-anchor="middle">B<tspan font-size="10">1</tspan></text><text x="163.5" y="228" text-anchor="middle">C</text></g>
-</svg><figcaption>過 $P$ 的兩條直線；$AB$ 與 $A_1B_1$ 交於 $C$；連 $PQ,BQ,B_1Q$（虛線）</figcaption></figure>
+<figure class="bkfig"><pre class="geo">o1 = (92.6, 92.6)
+o2 = (188, 82)
+k1 = circler(o1, 70.6)
+k2 = circler(o2, 60)
+P = meet(k1, k2, 152.3, 130.3)
+Q = meet(k1, k2, 142.6, 42.7)
+A = on(k1, 95.4, 163.2)
+B = on(k1, 24.8, 112.4)
+APl = line(A, P)
+BPl = line(B, P)
+A1 = meet(k2, APl, 247.6, 75.3)
+B1 = meet(k2, BPl, 208.9, 138.3)
+C = inter(A, B, A1, B1)
+draw circle k1
+draw circle k2
+draw seg A A1
+draw seg B B1
+draw seg B C
+draw seg A1 C
+draw seg P Q dash
+draw seg B Q dash
+draw seg B1 Q dash
+</pre><figcaption>過 $P$ 的兩條直線；$AB$ 與 $A_1B_1$ 交於 $C$；連 $PQ,BQ,B_1Q$（虛線）</figcaption></figure>
 <p><b>證</b>　連 $PQ,BQ,B_1Q$。由 $A,B,Q,P$ 四點共圓，$\angle CAA_1=\angle BQP$（圓內接四邊形的外角等於內對角）。又 $\angle A_1=\angle B_1QP$（同對弧 $PB_1$）。所以</p>
 $$\angle C=180^\circ-\angle CAA_1-\angle A_1=180^\circ-\angle BQP-\angle B_1QP=180^\circ-\angle BQB_1=\angle PBQ+\angle PB_1Q.$$
 <p>$\angle PBQ$、$\angle PB_1Q$ 都是定角（兩圓中定弦 $PQ$ 所對的圓周角），所以 $\angle C$ 是定角。</p>
 === 例 5
 zh: $l$ 是定圓 $\odot O$ 外的一條定直線，過 $l$ 上任一點 $A$ 作圓的兩條切線，切點分別為 $E$、$F$。求證：直線 $EF$ 過定點。
 sol: <p><b>分析</b>　$OA\perp l$ 是 $A$ 的一個特殊位置。作 $OC\perp l$ 於 $C$，由對稱性，定點應在 $OC$ 上，而且就是 $OC$ 與 $EF$ 的交點 $P$。要說明 $P$ 是定點，只要說明 $OP$ 是定長。</p>
-<figure class="bkfig"><svg viewBox="0 0 248 220" width="248" role="img" aria-label="切點弦過定點">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="92.4" cy="127.6" r="70.4"/><line x1="226.2" y1="191" x2="226.2" y2="22"/><line x1="226.2" y1="36.1" x2="81.8" y2="58"/><line x1="226.2" y1="36.1" x2="153.4" y2="162.7"/><line x1="81.8" y1="58" x2="153.4" y2="162.7"/><line x1="226.2" y1="36.1" x2="92.4" y2="127.6" stroke-dasharray="5 4"/><line x1="92.4" y1="127.6" x2="226.2" y2="127.6" stroke-dasharray="5 4"/><line x1="92.4" y1="127.6" x2="81.8" y2="58" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"><circle cx="92.4" cy="127.6" r="2.4"/></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="81.4" y="132.5" text-anchor="middle">O</text><text x="237.2" y="41" text-anchor="middle">A</text><text x="74.1" y="55.1" text-anchor="middle">E</text><text x="153.4" y="178.6" text-anchor="middle">F</text><text x="237.2" y="132.5" text-anchor="middle">C</text><text x="117.6" y="104.2" text-anchor="middle">B</text><text x="137.2" y="140.3" text-anchor="middle">P</text><text x="237.2" y="195.9" text-anchor="middle">l</text></g>
-</svg><figcaption>$A$ 在定直線 $l$ 上移動；$OC\perp l$；切點弦 $EF$ 總過 $OC$ 上的定點 $P$</figcaption></figure>
+<figure class="bkfig"><pre class="geo">O = (92.4, 127.6)
+kO = circler(O, 70.4)
+l1 = (226.2, 191)
+l2 = (226.2, 22)
+lin = line(l1, l2)
+A = on(lin, 226.2, 36.1)
+E = tangent(A, kO, 81.8, 58)
+F = tangent(A, kO, 153.4, 162.7)
+C = foot(O, l1, l2)
+B = inter(A, O, E, F)
+P = inter(O, C, E, F)
+draw circle kO
+draw seg l1 l2
+draw seg A E
+draw seg A F
+draw seg E F
+draw seg A O dash
+draw seg O C dash
+draw seg O E dash
+</pre><figcaption>$A$ 在定直線 $l$ 上移動；$OC\perp l$；切點弦 $EF$ 總過 $OC$ 上的定點 $P$</figcaption></figure>
 <p><b>證</b>　連 $AO$ 交 $EF$ 於 $B$，連 $OE$。$AO\perp EF$ 且 $\angle OEA=90^\circ$，所以由射影定理 $OE^2=OA\cdot OB$（定值！）。又 $\angle ABP=\angle ACP=90^\circ$，$A,B,P,C$ 四點共圓，$OB\cdot OA=OP\cdot OC$。所以</p>
 $$OP=\frac{OA\cdot OB}{OC}=\frac{OE^2}{OC}$$
 <p>是定長，$P$ 是定點。</p>
 === 例 6
 zh: 以定圓 $\odot O$ 上的定點 $C$ 為圓心、任意長（小於 $\odot O$ 的直徑）為半徑作 $\odot C$。再在 $\odot O$ 上任取一點 $P$（不在 $\odot C$ 上及其內部），過 $P$ 引 $\odot C$ 的兩條切線，分別交 $\odot O$ 於 $A$、$B$。求證：直線 $AB$ 有定向。
 sol: <p><b>分析</b>　「有定向」是指運動過程中始終平行（或垂直）於某條固定直線。$P$ 的一個特殊位置是直線 $CO$ 與 $\odot O$ 的另一交點 $P_1$。設兩圓交於 $A_1,B_1$，易知 $P_1A_1$、$P_1B_1$ 是 $\odot C$ 的切線⟦為什麼｜$CP_1$ 是 $\odot O$ 的直徑，所以 $\angle CA_1P_1=90^\circ$，$P_1A_1\perp CA_1$，而 $CA_1$ 是 $\odot C$ 的半徑。⟧，這時動直線就是公共弦 $A_1B_1$，顯然垂直於定直線 $CP_1$。</p>
-<figure class="bkfig"><svg viewBox="0 0 200 260" width="200" role="img" aria-label="切線弦的定向">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="100" cy="160" r="78"/><circle cx="100" cy="82" r="60"/><line x1="42" y1="212.2" x2="40.4" y2="109.7"/><line x1="42" y1="212.2" x2="159.6" y2="109.7"/><line x1="40.4" y1="109.7" x2="159.6" y2="109.7" stroke="#c2562b" stroke-width="2"/><line x1="100" y1="82" x2="100" y2="238"/><line x1="100" y1="82" x2="40.4" y2="109.7" stroke-dasharray="5 4"/><line x1="100" y1="82" x2="159.6" y2="109.7" stroke-dasharray="5 4"/><line x1="100" y1="82" x2="40" y2="82.9" stroke-dasharray="5 4"/><line x1="100" y1="82" x2="139.4" y2="127.2" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"><circle cx="100" cy="160" r="2.4"/></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="111" y="164.9" text-anchor="middle">O</text><text x="100" y="75.9" text-anchor="middle">C</text><text x="34.3" y="224.9" text-anchor="middle">P</text><text x="29.4" y="114.6" text-anchor="middle">A</text><text x="170.6" y="114.6" text-anchor="middle">B</text><text x="29" y="87.8" text-anchor="middle">S</text><text x="147.2" y="139.9" text-anchor="middle">T</text><text x="100" y="253.9" text-anchor="middle">P<tspan font-size="10">1</tspan></text></g>
-</svg><figcaption>$PS,PT$ 切 $\odot C$，再交 $\odot O$ 於 $A,B$；紅線 $AB$ 總垂直於 $CP_1$</figcaption></figure>
+<figure class="bkfig"><pre class="geo">O = (100, 160)
+C = (100, 82)
+kBig = circle(O, C)
+P = on(kBig, 42, 212.2)
+kS = circler(C, 60)
+S = tangent(P, kS, 40, 82.9)
+T = tangent(P, kS, 139.4, 127.2)
+A = second(kBig, P, S)
+B = second(kBig, P, T)
+P1 = second(kBig, C, O)
+draw circle kBig
+draw circle kS
+draw seg P A
+draw seg P B
+draw seg A B accent
+draw seg C P1
+draw seg C S dash
+draw seg C A dash
+draw seg C B dash
+draw seg C T dash
+</pre><figcaption>$PS,PT$ 切 $\odot C$，再交 $\odot O$ 於 $A,B$；紅線 $AB$ 總垂直於 $CP_1$</figcaption></figure>
 <p><b>證</b>　設過 $P$ 的兩條切線切 $\odot C$ 於 $S$、$T$，連 $CA,CB,CS,CT$。由 $A,C,B,P$ 四點共圓，$\angle CBT=\angle CAS$⟦為什麼｜如圖，$A$ 在 $P$、$S$ 之間，$T$ 在 $P$、$B$ 之間，所以 $\angle CAS=180^\circ-\angle CAP$、$\angle CBT=\angle CBP$；而圓內接四邊形 $PACB$ 的對角 $\angle CAP+\angle CBP=180^\circ$。⟧。又 $CT=CS$，$\angle CTB=\angle CSA=90^\circ$，所以 $\triangle CAS\cong\triangle CBT$，$CA=CB$。於是 $C$ 是弧 $\overset\frown{AB}$ 的中點，$AB\perp CP_1$。$CP_1$ 是定直線，所以 $AB$ 有定向。</p>
 === text
 <p>許多定值問題可以用三角或代數方法透過計算解決：先選定適當的參數（線段或角），把要證的量用參數表示，再透過代數變形或三角恆等變形把參數消去，使表達式完全用常量表示。這種方法最適用於元素之間的關係便於用數量表示的情形，常有簡潔、方便的特點。</p>
 
 === 例 7
 zh: 兩圓 $\odot O_1$、$\odot O_2$ 外切於 $A$，在 $\odot O_2$ 上任取一點 $P$（不與 $A$ 重合），作 $\odot O_1$ 的切線 $PT$，$T$ 為切點。求證：$PA:PT$ 為定值。
-sol: <figure class="bkfig"><svg viewBox="0 0 270 163" width="270" role="img" aria-label="外切兩圓與切線長">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="81.5" cy="81.5" r="59.5"/><circle cx="194.5" cy="81.5" r="53.5"/><line x1="177.9" y1="30.6" x2="86.9" y2="22.2"/><line x1="177.9" y1="30.6" x2="140.9" y2="81.5"/><line x1="81.5" y1="81.5" x2="86.9" y2="22.2" stroke-dasharray="5 4"/><line x1="81.5" y1="81.5" x2="177.9" y2="30.6" stroke-dasharray="5 4"/><line x1="81.5" y1="81.5" x2="248" y2="81.5" stroke-dasharray="5 4"/><line x1="177.9" y1="30.6" x2="248" y2="81.5" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"><circle cx="81.5" cy="81.5" r="2.4"/><circle cx="194.5" cy="81.5" r="2.4"/></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="140.9" y="97.4" text-anchor="middle">A</text><text x="259" y="86.4" text-anchor="middle">B</text><text x="177.9" y="24.5" text-anchor="middle">P</text><text x="86.9" y="16.1" text-anchor="middle">T</text><text x="81.5" y="97.4" text-anchor="middle">O<tspan font-size="10">1</tspan></text><text x="194.5" y="97.4" text-anchor="middle">O<tspan font-size="10">2</tspan></text></g>
-</svg><figcaption>兩圓外切於 $A$；$PT$ 切 $\odot O_1$；連 $TO_1,PO_1$ 與直徑 $AB$（虛線）</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">O1 = (81.5, 81.5)
+O2 = (194.5, 81.5)
+A = (141, 81.5)
+k1 = circle(O1, A)
+k2 = circle(O2, A)
+B = reflectp(A, O2)
+P = on(k2, 177.9, 30.6)
+T = tangent(P, k1, 86.9, 22.2)
+draw circle k1
+draw circle k2
+draw seg P T
+draw seg P A
+draw seg P B dash
+draw seg O1 T dash
+draw seg O1 P dash
+draw seg O1 B dash
+</pre><figcaption>兩圓外切於 $A$；$PT$ 切 $\odot O_1$；連 $TO_1,PO_1$ 與直徑 $AB$（虛線）</figcaption></figure>
 <p><b>證</b>　連 $TO_1,PO_1$，連 $O_1O_2$ 並延長交 $\odot O_2$ 於 $B$，連 $PB$。當 $P$ 不與 $B$ 重合時，令 $\angle PBA=\theta$（參數，$0\lt \theta\lt 90^\circ$），以 $R$、$r$ 表示 $\odot O_1$、$\odot O_2$ 的半徑（常量）。$\angle APB=90^\circ$，所以 $PA=2r\sin\theta$。在 $\triangle PO_1A$ 中由餘弦定理（$\angle PAO_1=90^\circ+\theta$⟦為什麼｜$\angle PAB=90^\circ-\theta$，它的鄰補角 $\angle PAO_1=90^\circ+\theta$。⟧）：</p>
 $$O_1P^2=R^2+4r^2\sin^2\theta-2R\cdot2r\sin\theta\cos(90^\circ+\theta)=R^2+4r^2\sin^2\theta+4Rr\sin^2\theta.$$
 <p>在直角 $\triangle PTO_1$ 中，$PT^2=O_1P^2-O_1T^2=4(r^2+Rr)\sin^2\theta$，$PT=2\sqrt{r^2+Rr}\sin\theta$。所以</p>
@@ -108,11 +220,20 @@ ans: $\sqrt{\dfrac r{R+r}}$
 === 例 8
 zh: 設 $\triangle ABC$ 中 $AB=AC$，$D$、$E$ 分別是 $AB$、$AC$ 的中點，$P$ 是 $DE$ 上任一點，連 $BP$、$CP$ 並延長，分別交 $AC$、$AB$ 於 $G$、$F$。求證：$\dfrac1{BF}+\dfrac1{CG}$ 為定值。
 sol: <p><b>分析</b>　$DE\parallel BC$，取 $PD$、$PE$ 為參數，用相似三角形可求出 $BF$ 和 $CG$。</p>
-<figure class="bkfig"><svg viewBox="0 0 210 210" width="210" role="img" aria-label="等腰三角形中位線上一點">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="105,22 22,188 188,188"/><line x1="63.5" y1="105" x2="146.5" y2="105"/><line x1="22" y1="188" x2="126.5" y2="65"/><line x1="188" y1="188" x2="72.3" y2="87.4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="105" y="15.9" text-anchor="middle">A</text><text x="14.2" y="200.7" text-anchor="middle">B</text><text x="195.8" y="200.7" text-anchor="middle">C</text><text x="52.5" y="109.9" text-anchor="middle">D</text><text x="157.5" y="109.9" text-anchor="middle">E</text><text x="92.5" y="120.9" text-anchor="middle">P</text><text x="64.5" y="84.5" text-anchor="middle">F</text><text x="134.3" y="62.2" text-anchor="middle">G</text></g>
-</svg><figcaption>$DE$ 是中位線，$P$ 在 $DE$ 上</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A = (105, 22)
+B = (22, 188)
+C = (188, 188)
+D = mid(A, B)
+E = mid(A, C)
+DE = line(D, E)
+P = on(DE, 92.5, 105)
+F = inter(C, P, A, B)
+G = inter(B, P, A, C)
+draw poly A B C
+draw seg D E
+draw seg B G
+draw seg C F
+</pre><figcaption>$DE$ 是中位線，$P$ 在 $DE$ 上</figcaption></figure>
 <p><b>證</b>　令 $PD=x$，$PE=y$，記 $CE=BD=m$，$BC=a$（$m,a$ 為常量），則 $x+y=DE=\frac a2$。由 $\triangle FDP\sim\triangle FBC$，</p>
 $$\frac{FD}{FB}=\frac{BF-m}{BF}=\frac xa,\qquad\frac1{BF}=\frac{a-x}{am}.$$
 <p>由 $\triangle GPE\sim\triangle GBC$，同理 $\frac1{CG}=\frac{a-y}{am}$。所以</p>
@@ -121,11 +242,23 @@ ans: $\dfrac3{2m}$（$m=\frac12AB$）
 
 === 習題 1
 zh: $AB$ 是 $\odot O$ 的一條定弦，$C$ 是 $AB$ 上一定點，過 $C$ 任作一弦 $XY$，$M$、$N$ 分別是 $AB$、$XY$ 的中點。求證：$\angle MNX$ 為定角。
-sol: <figure class="bkfig"><svg viewBox="0 0 200 200" width="200" role="img" aria-label="過定點的弦">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="100" cy="100" r="78"/><line x1="30.3" y1="135.1" x2="169.7" y2="135.1"/><line x1="104.8" y1="22.2" x2="143.1" y2="165"/><line x1="100" y1="135.1" x2="124" y2="93.6" stroke="#c2562b" stroke-width="2"/><line x1="100" y1="100" x2="100" y2="135.1" stroke-dasharray="5 4"/><line x1="100" y1="100" x2="124" y2="93.6" stroke-dasharray="5 4"/><line x1="100" y1="100" x2="135.1" y2="135.1" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"><circle cx="100" cy="100" r="2.4"/></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="19.3" y="140" text-anchor="middle">A</text><text x="180.7" y="140" text-anchor="middle">B</text><text x="142.9" y="147.8" text-anchor="middle">C</text><text x="100" y="151" text-anchor="middle">M</text><text x="135" y="98.5" text-anchor="middle">N</text><text x="104.8" y="16.1" text-anchor="middle">X</text><text x="143.1" y="180.9" text-anchor="middle">Y</text><text x="89" y="104.9" text-anchor="middle">O</text></g>
-</svg><figcaption>$O,M,C,N$ 在以 $OC$ 為直徑的圓上（$\angle OMC=\angle ONC=90^\circ$）</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">O = (100, 100)
+kO = circler(O, 78)
+A = on(kO, 30.3, 135.1)
+B = on(kO, 169.7, 135.1)
+X = on(kO, 104.8, 22.2)
+Y = on(kO, 143.1, 165)
+C = inter(A, B, X, Y)
+M = mid(A, B)
+N = mid(X, Y)
+draw circle kO
+draw seg A B
+draw seg X Y
+draw seg M N accent
+draw seg O M dash
+draw seg O N dash
+draw seg O C dash
+</pre><figcaption>$O,M,C,N$ 在以 $OC$ 為直徑的圓上（$\angle OMC=\angle ONC=90^\circ$）</figcaption></figure>
 <p>連 $OM,ON$。$\angle OMC=\angle ONC=90^\circ$，所以 $O,M,C,N$ 四點共圓（以 $OC$ 為直徑）。於是 $\angle MNC$ 與 $\angle MOC$ 對同一弧 $MC$，相等或互補；而 $\angle MNX$ 是 $\angle MNC$ 或其鄰補角。$O,M,C$ 都是定點，所以 $\angle MNX$ 是定角（原書寫成 $\angle MNX=\angle MOE$，$E$ 是 $CO$ 延長線與圓的交點）。</p>
 === 習題 2
 zh: $AB$ 是 $\odot O$ 的定弦，在 $AB$ 的兩側作弦 $AP$、$AQ$，使 $\angle PAB=\angle QAB$。求證：$PQ$ 有定向。
@@ -133,21 +266,45 @@ hint: $PQ$ 平行於過 $B$ 的切線。
 sol: <p>$AB$ 平分 $\angle PAQ$，所以 $B$ 是弧 $PQ$（不含 $A$）的中點，$OB\perp PQ$，即 $PQ$ 平行於過 $B$ 的切線，方向固定。</p>
 === 習題 3
 zh: 以等腰 $\triangle ABC$ 的底邊 $AC$ 的中點 $O$ 為圓心作半圓，與兩腰相切。在半圓上任作一條切線，與 $AB$、$BC$ 分別交於 $M$、$N$。求證：$AM\cdot CN$ 為定值。
-sol: <figure class="bkfig"><svg viewBox="0 0 250 157" width="250" role="img" aria-label="等腰三角形中的半圓">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,135.3 125,22 228,135.3"/><path d="M201.2 135.3A76.2 76.2 0 0 0 48.8 135.3"/><line x1="103" y1="46.2" x2="168.7" y2="70.1"/><line x1="125" y1="135.3" x2="103" y2="46.2" stroke-dasharray="5 4"/><line x1="125" y1="135.3" x2="168.7" y2="70.1" stroke-dasharray="5 4"/><line x1="125" y1="135.3" x2="151.1" y2="63.7" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="148" text-anchor="middle">A</text><text x="125" y="15.9" text-anchor="middle">B</text><text x="235.8" y="148" text-anchor="middle">C</text><text x="125" y="151.2" text-anchor="middle">O</text><text x="92" y="51.1" text-anchor="middle">M</text><text x="179.7" y="75" text-anchor="middle">N</text></g>
-</svg><figcaption>半圓與兩腰相切；$MN$ 是半圓的切線</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (22, 135.3)
+B = (125, 22)
+C = (228, 135.3)
+O = mid(A, C)
+kO = circler(O, 76.2)
+e = on(kO, 151.1, 63.7)
+q = rotate(O, e, 90)
+M = inter(e, q, A, B)
+N = inter(e, q, B, C)
+draw poly A B C
+draw circle kO
+draw seg M N
+draw seg O M dash
+draw seg O N dash
+draw seg O e dash
+</pre><figcaption>半圓與兩腰相切；$MN$ 是半圓的切線</figcaption></figure>
 <p>設半圓切 $AB,MN,BC$ 於 $D,E,F$，連 $OD,OM,OE,ON,OF$。由切線性質，$OM$ 平分 $\angle DOE$、$ON$ 平分 $\angle EOF$；又 $\angle AOD=90^\circ-\angle A=90^\circ-\angle C=\angle COF$。記 $\angle DOM=\angle MOE=\angle1$、$\angle EON=\angle NOF=\angle2$、$\angle AOD=\angle COF=\angle3$，則 $2\angle1+2\angle2+2\angle3=180^\circ$。於是 $\angle AOM=\angle3+\angle1=90^\circ-\angle2$，而直角 $\triangle OFN$ 中 $\angle CNO=\angle ONF=90^\circ-\angle2$，所以 $\angle AOM=\angle CNO$。又 $\angle A=\angle C$，$\triangle AMO\sim\triangle CON$，$\frac{AM}{CO}=\frac{AO}{CN}$，$AM\cdot CN=AO\cdot CO=\frac14AC^2$（定值）。</p>
 ans: $AM\cdot CN=\frac14AC^2$
 
 === 習題 4
 zh: 兩同心圓的圓心為 $O$，過小圓上一定點 $P$ 作小圓的弦 $PA$、大圓的弦 $BC$，使 $PA\perp BC$ 於 $P$。求證：$AB^2+BC^2+CA^2$ 為定值。
-sol: <figure class="bkfig"><svg viewBox="0 0 210 210" width="210" role="img" aria-label="同心圓中互相垂直的弦">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="105" cy="105" r="83"/><circle cx="105" cy="105" r="54"/><polygon points="158.1,95.6 22.1,109.1 181.5,137.2"/><line x1="158.1" y1="95.6" x2="151.7" y2="132"/><line x1="105" y1="105" x2="101.8" y2="123.2" stroke-dasharray="5 4"/><line x1="105" y1="105" x2="151.7" y2="132" stroke-dasharray="5 4"/><polyline points="152.6,127.1 157.5,127.9 156.6,132.8" stroke-width="1"/></g>
-<g fill="currentColor"><circle cx="105" cy="105" r="2.4"/></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="105" y="98.9" text-anchor="middle">O</text><text x="151.7" y="147.9" text-anchor="middle">P</text><text x="158.1" y="89.5" text-anchor="middle">A</text><text x="11.1" y="114" text-anchor="middle">B</text><text x="192.5" y="142.1" text-anchor="middle">C</text><text x="101.8" y="139.1" text-anchor="middle">M</text></g>
-</svg><figcaption>$PA\perp BC$ 於 $P$；$OM\perp BC$（虛線）</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">O = (105, 105)
+kBig = circler(O, 83)
+kS = circler(O, 54)
+P = on(kS, 151.7, 132)
+A = on(kS, 158.1, 95.6)
+q = rotate(A, P, 90)
+PBC = line(P, q)
+B = meet(kBig, PBC, 22.1, 109.1)
+C = meet(kBig, PBC, 181.5, 137.2)
+M = foot(O, B, C)
+draw circle kBig
+draw circle kS
+draw poly A B C
+draw seg A P
+right A P B
+draw seg O M dash
+draw seg O P dash
+</pre><figcaption>$PA\perp BC$ 於 $P$；$OM\perp BC$（虛線）</figcaption></figure>
 <p>作 $OM\perp BC$ 於 $M$。記大圓半徑 $R$、小圓半徑 $r$，令 $AP=2x$，則 $OM=\frac12AP=x$⟦為什麼｜$O$ 到弦 $PA$ 的距離等於 $PM$，$O$ 到 $BC$ 的距離等於 $PA$ 的一半（$O$ 在 $PA$ 的中垂線上，且 $PA\perp BC$）。⟧。於是 $BC=2BM=2\sqrt{R^2-x^2}$，$PM^2=r^2-x^2$，</p>
 $$BP^2+CP^2=(BM-PM)^2+(BM+PM)^2=2(BM^2+PM^2)=2(R^2+r^2)-4x^2.$$
 <p>所以</p>
@@ -156,11 +313,25 @@ ans: $6R^2+2r^2$
 
 === 習題 5
 zh: 以定線段 $BC$ 為一邊作任意銳角 $\triangle ABC$，在 $BC$ 的同側作等腰直角三角形 $ABP$、$ACQ$，其中 $\angle ABP=\angle ACQ=90^\circ$。求證：$PQ$ 的中點 $S$ 為定點。
-sol: <figure class="bkfig"><svg viewBox="0 0 260 104" width="260" role="img" aria-label="中點為定點">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="142.7,31.5 82.5,82.2 177.5,82.2"/><polygon points="142.7,31.5 82.5,82.2 31.8,22"/><polygon points="142.7,31.5 177.5,82.2 228.2,47.3"/><line x1="31.8" y1="22" x2="228.2" y2="47.3"/><line x1="130" y1="34.7" x2="130" y2="82.2" stroke-dasharray="5 4"/><line x1="31.8" y1="22" x2="31.8" y2="82.2" stroke-dasharray="5 4"/><line x1="228.2" y1="47.3" x2="228.2" y2="82.2" stroke-dasharray="5 4"/><line x1="22" y1="82.2" x2="238" y2="82.2" stroke-dasharray="5 4"/><polyline points="79.3,78.4 83.1,75.1 86.3,79" stroke-width="1"/><polyline points="174.7,78.1 178.8,75.2 181.6,79.3" stroke-width="1"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="142.7" y="25.4" text-anchor="middle">A</text><text x="82.5" y="98.1" text-anchor="middle">B</text><text x="177.5" y="98.1" text-anchor="middle">C</text><text x="24" y="19.1" text-anchor="middle">P</text><text x="236" y="44.5" text-anchor="middle">Q</text><text x="130" y="28.6" text-anchor="middle">S</text><text x="130" y="98.1" text-anchor="middle">D</text><text x="31.8" y="98.1" text-anchor="middle">E</text><text x="228.2" y="98.1" text-anchor="middle">F</text></g>
-</svg><figcaption>$\triangle ABP$、$\triangle ACQ$ 是等腰直角三角形；$SD,PE,QF$ 垂直 $BC$（虛線）</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (142.7, 31.5)
+B = (82.5, 82.2)
+C = (177.5, 82.2)
+P = rotate(A, B, 90)
+Q = rotate(A, C, -90)
+S = mid(P, Q)
+D = foot(S, B, C)
+E = foot(P, B, C)
+F = foot(Q, B, C)
+draw poly A B C
+draw poly A B P
+draw poly A C Q
+draw seg P Q
+draw seg S D dash
+draw seg P E dash
+draw seg Q F dash
+draw seg E B dash
+draw seg C F dash
+</pre><figcaption>$\triangle ABP$、$\triangle ACQ$ 是等腰直角三角形；$SD,PE,QF$ 垂直 $BC$（虛線）</figcaption></figure>
 <p>作 $SD\perp BC$ 於 $D$，$PE\perp BC$ 於 $E$，$QF\perp BC$ 於 $F$。則</p>
 $$CF=CQ\cos\angle FCQ=AC\sin\angle ACB=AB\sin\angle ABC=PB\cos\angle PBE=BE.$$
 <p>⟦這串等號｜$\angle QCF+\angle ACB=90^\circ$，所以 $\cos\angle FCQ=\sin\angle ACB$；中間一步是正弦定理（$A$ 到 $BC$ 的高）；最後同理。⟧$SD$ 是梯形 $PEFQ$ 的中位線，$D$ 是 $EF$ 的中點，也就是 $BC$ 的中點。又 $PE=AB\cos\angle ABC$，$QF=AC\cos\angle ACB$，所以 $QF+PE=BC$，$SD=\frac12(QF+PE)=\frac12BC$（定長）。所以 $S$ 是定點（$BC$ 中垂線上、距 $BC$ 為 $\frac12BC$ 的點）。</p>
