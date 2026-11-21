@@ -132,8 +132,8 @@ C = (101.7, 22)
 D = foot(C, A, B)
 E = foot(D, A, C)
 F = foot(D, B, C)
-O = mid(C, D)
-k = circle(O, C)
+o0 = mid(C, D)
+k = circle(o0, C)
 draw poly A B C
 draw poly C E D F
 draw seg C D dash
