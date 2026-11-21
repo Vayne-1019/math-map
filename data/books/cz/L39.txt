@@ -85,6 +85,21 @@ draw seg B M
 draw seg B E
 draw seg C F
 draw circle k
+n1 = (114,48)
+n2 = (126,212)
+n3 = (190,152)
+n4 = (244,214)
+n5 = (208,168)
+hide n1
+hide n2
+hide n3
+hide n4
+hide n5
+text n1 c 1
+text n2 c 2
+text n3 c 3
+text n4 c 4
+text n5 c 5
 </pre><figcaption>∠1 = ∠BAE，∠2 = ∠CBE，∠3 = ∠BEC，∠5 = ∠CED，∠4 = ∠EDC</figcaption></figure>
 (1) $CB$、$CE$ 是從 $C$ 到圓的兩條切線，所以 $BC=CE$。⟦顯然｜從圓外一點到圓的兩條切線段等長（切線長定理）。⟧ 因此要證 $BC=CD$，
 (2) 只須證 $CE=CD$，

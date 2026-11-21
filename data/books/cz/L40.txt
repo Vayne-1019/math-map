@@ -46,6 +46,12 @@ draw seg A C
 draw seg B D
 angle A C B accent
 angle A B C accent
+u1 = (274,40)
+u2 = (52,78)
+hide u1
+hide u2
+text u1 c 1
+text u2 c 2
 </pre><figcaption>∠1 = ∠ACB，∠2 = ∠ABC</figcaption></figure>
 反設 $AB\ge AC$。在 $\triangle ABC$ 中大邊對大角，所以 $\angle1\ge\angle2$。
 四邊形是凸的，$CA$ 在 $\angle BCD$ 內部、$BD$ 在 $\angle ABC$ 內部，所以 $\angle BCD>\angle1$，$\angle2>\angle CBD$。連起來：
@@ -84,6 +90,52 @@ draw poly a2 c2 d2
 draw seg b2 a2
 draw seg b2 c2
 draw seg b2 d2
+l1 = (62,44)
+l2 = (44,58)
+l3 = (32,150)
+l4 = (46,170)
+l5 = (142,172)
+l6 = (150,158)
+l7 = (140,42)
+l8 = (124,30)
+q1 = (226,122)
+q2 = (226,106)
+q3 = (304,48)
+q4 = (314,56)
+q5 = (314,166)
+q6 = (302,172)
+hide l1
+hide l2
+hide l3
+hide l4
+hide l5
+hide l6
+hide l7
+hide l8
+hide q1
+hide q2
+hide q3
+hide q4
+hide q5
+hide q6
+text l1 c 1
+text l2 c 2
+text l3 c 3
+text l4 c 4
+text l5 c 5
+text l6 c 6
+text l7 c 7
+text l8 c 8
+text q1 c 1
+text q2 c 2
+text q3 c 3
+text q4 c 4
+text q5 c 5
+text q6 c 6
+text a2 e A
+text c2 w C
+text d2 e D
+text b2 n B
 </pre><figcaption>左：凸四邊形，兩條對角線把四個頂角分成 8 個角。右：凹的情形，B 在 △ACD 內部，6 個角都是 △ACD 頂角的一部分。</figcaption></figure>
 (1) $A,B,C,D$ 構成凸四邊形。對角線把四個頂角分成 $\angle1,\dots,\angle8$，每一個都是某個「三點三角形」的內角⟦為什麼｜例如 $\angle1=\angle CAD$ 是 $\triangle ACD$ 的內角，$\angle2=\angle BAC$ 是 $\triangle ABC$ 的內角，其餘類推。⟧，依反設都大於 $45^\circ$，所以
 $$\angle ABC+\angle BCD+\angle CDA+\angle DAB=\angle1+\dots+\angle8>8\times45^\circ=360^\circ,$$
@@ -108,14 +160,20 @@ An1 = on(k, 223.7,249.8)
 An = on(k, 188.8,165.4)
 M = on(k, 140,150)
 C = foot(A1, An, M)
-A1p = reflect(A1, An, M)
+A1' = reflect(A1, An, M)
 draw circle k
 draw poly An1 An2 A2 A1 An
 draw seg A1 M An1 accent
-draw seg A1 A1p dash
-draw seg An A1p dash
-draw seg M A1p dash
+draw seg A1 A1' dash
+draw seg An A1' dash
+draw seg M A1' dash
 draw seg An C dash
+hide An
+hide An1
+hide An2
+text An e Aₙ
+text An1 e Aₙ₋₁
+text An2 s Aₙ₋₂
 </pre><figcaption>紅線：用 M 取代 Aₙ。虛線：把 A₁ 對直線 AₙM 作鏡射得 A₁′，A₁′、Aₙ、Aₙ₋₁ 共線</figcaption></figure>
 <b>證明</b>：反設 $A_1A_2\cdots A_n$ 是所有圓內接 $n$ 邊形中周長最大的，但它不是正 $n$ 邊形。⟦最大的一定存在嗎｜原書直接假定周長最大的內接 $n$ 邊形存在。這是對的（頂點在圓上連續移動，周長是連續函數，在這種「封閉有界」的範圍內一定取得到最大值），但嚴格證明要用到高中以後的分析工具。⟧ 內接多邊形若各邊都相等就是正多邊形，所以至少有一對鄰邊不相等，不妨設 $A_{n-1}A_n\ne A_nA_1$。
 取 $\overset{\frown}{A_1A_nA_{n-1}}$（經過 $A_n$ 的那段弧）的中點 $M$，則 $M\ne A_n$。我們證明：用 $M$ 取代 $A_n$，周長會變大，也就是

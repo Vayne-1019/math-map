@@ -9,10 +9,26 @@ order: 30
 B = (198,119.3)
 M = (51.3,22)
 N = (152.8,28.3)
-S = (90.4,86.9)
-T = (134,56.5)
 draw poly A B N M
 draw seg M B
+m5a = mid(A, M)
+m5b = mid(M, N)
+m5c = mid(N, B)
+m5d = mid(A, B)
+hide m5a
+hide m5b
+hide m5c
+hide m5d
+text m5a w 1
+text m5b n 1
+text m5c e 1
+text m5d s √3
+sS = (90.4,86.9)
+tT = (134,56.5)
+hide sS
+hide tT
+text sS c S
+text tT c T
 </pre><figcaption>$AB=\sqrt3$，$AM=MN=NB=1$；圖是 $\cos A=\frac{\sqrt3}6$、$S^2+T^2$ 取最大值的位置</figcaption></figure>
 <div class="cards">
 <div class="card"><h4>① 正弦換邊</h4><div class="rule">$\sin A:\sin B:\sin C=a:b:c$</div>
