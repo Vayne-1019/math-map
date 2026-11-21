@@ -107,6 +107,7 @@ draw seg A A1 dash
 draw seg B B1 dash
 draw seg C C1 dash
 draw seg B M accent
+text t nw 紙帶寬
 </pre><figcaption>B 的投影 $B_1$ 夾在 $A_1$、$C_1$ 之間；紅色 $BM$ 不超過紙帶寬，而三角形的高不超過 $BM$</figcaption></figure>
 這也是以問句出現的題目，需要對紙帶寬度給出估計，可以先從特殊的三角形看起，這正好為使用反證法提供基礎。
 <br>面積為 1 的正三角形，邊長 $a=\dfrac2{\sqrt[4]3}$，高 $h=\sqrt[4]3$⟦計算｜$\frac{\sqrt3}4a^2=1$ 得 $a^2=\frac4{\sqrt3}$，$a=\frac2{\sqrt[4]3}$；$h=\frac{\sqrt3}2a=\frac{\sqrt3}{\sqrt[4]3}=\sqrt[4]3$。⟧。所以猜測紙寬至少應為 $\sqrt[4]3$。
