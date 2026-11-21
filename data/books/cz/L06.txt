@@ -101,12 +101,22 @@ $$4x^2+4x-3\lt 0,\qquad(2x-1)(2x+3)\lt 0,\qquad-\frac32\lt x\lt\frac12.$$
 === 例 7
 same: cz-L37 例 6
 zh: 已知邊長為 $4$ 的正方形 $CDEF$ 截去一角成五邊形 $ABCDE$（如圖），且 $AF=2$，$BF=1$。試在 $AB$ 上求一點 $P$，使矩形 $PNDM$ 有最大面積。
-<figure class="bkfig"><svg viewBox="0 0 280 270" width="280" role="img" aria-label="正方形 CDEF 截去角 F 成五邊形，P 在 AB 上，矩形 PNDM">
-<g fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="140,40 40,40 40,240 240,240 240,90"/><line x1="140" y1="40" x2="240" y2="90"/></g>
-<g fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="4 3"><polyline points="140,40 240,40 240,90"/><line x1="200" y1="40" x2="200" y2="70"/></g>
-<rect x="40" y="70" width="160" height="170" fill="#c2562b" fill-opacity="0.15" stroke="#c2562b" stroke-width="1.5"/>
-<g fill="currentColor" font-size="15" font-style="italic"><text x="22" y="40">E</text><text x="134" y="32">A</text><text x="196" y="32">Q</text><text x="244" y="36">F</text><text x="244" y="96">B</text><text x="184" y="66">P</text><text x="22" y="76">M</text><text x="22" y="256">D</text><text x="196" y="258">N</text><text x="244" y="256">C</text></g>
-</svg><figcaption>虛線是截去的角 $F$；著色的是矩形 $PNDM$</figcaption></figure>
+<figure class="bkfig"><pre class="geo">
+E = (40, 40)
+D = (40, 240)
+C = (240, 240)
+B = (240, 90)
+A = (140, 40)
+F = inter(E, A, B, C)
+P = along(A, B, 0.44)
+Q = foot(P, E, A)
+M = foot(P, E, D)
+N = foot(P, D, C)
+draw poly A E D C B
+draw seg A F B dash
+draw seg P Q dash
+draw poly P N D M fill
+</pre><figcaption>虛線是截去的角 $F$；著色的是矩形 $PNDM$</figcaption></figure>
 sol: 設 $PN=x$，則 $PQ=4-x$（$Q$ 是 $P$ 在 $EF$ 上的垂足）。$\triangle AQP\sim\triangle AFB$，所以
 $$\frac{PQ}{BF}=\frac{AQ}{AF},\qquad AQ=2PQ=8-2x.$$
 於是 $FQ=AF-AQ=2x-6$，$PM=4-FQ=10-2x$。矩形 $PNDM$ 的面積是

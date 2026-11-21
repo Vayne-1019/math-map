@@ -5,11 +5,25 @@ order: 20
 
 === body
 <div class="hero">同弧所對的圓周角<b>相等</b>；同一弦在兩側的圓周角<b>互補</b><br>弦切角 = 它夾的弧所對的<b>圓周角</b></div>
-<figure class="bkfig"><svg viewBox="0 0 250 256" width="250" role="img" aria-label="兩圓相交與切線">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="179.2" cy="89.3" r="48.8"/><circle cx="89.3" cy="89.3" r="67.3"/><line x1="40.7" y1="135.9" x2="218.7" y2="118.1"/><line x1="218.7" y1="118.1" x2="134.3" y2="233.9"/><line x1="40.7" y1="135.9" x2="134.3" y2="233.9"/><line x1="146.3" y1="53.4" x2="146.3" y2="125.3" stroke-dasharray="5 4"/><line x1="146.3" y1="53.4" x2="218.7" y2="118.1" stroke-dasharray="5 4"/><line x1="146.3" y1="53.4" x2="40.7" y2="135.9" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"><circle cx="179.2" cy="89.3" r="2.4"/><circle cx="89.3" cy="89.3" r="2.4"/></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="146.3" y="141.2" text-anchor="middle">A</text><text x="229.7" y="123" text-anchor="middle">B</text><text x="29.7" y="140.8" text-anchor="middle">C</text><text x="134.3" y="249.8" text-anchor="middle">D</text><text x="146.3" y="47.3" text-anchor="middle">E</text><text x="189.5" y="86.5" text-anchor="middle">O<tspan font-size="10">1</tspan></text><text x="79.1" y="86.5" text-anchor="middle">O<tspan font-size="10">2</tspan></text></g>
-</svg><figcaption>過 $A$ 的直線交兩圓於 $B$、$C$，兩條切線交於 $D$；$E$ 是兩圓的另一個交點（虛線）</figcaption></figure>
+<figure class="bkfig"><pre class="geo">O1 = (179.2, 89.3)
+O2 = (89.3, 89.3)
+A = (146.3, 125.3)
+k1 = circle(O1, A)
+k2 = circle(O2, A)
+E = meet(k1, k2, 146.3, 53.4)
+C = on(k2, 40.7, 135.9)
+B = second(k1, A, C)
+x = rotate(O1, B, 90)
+y = rotate(O2, C, 90)
+D = inter(B, x, C, y)
+draw seg C A B
+draw seg B D C
+draw seg E A dash
+draw seg E B dash
+draw seg E C dash
+draw circle k1
+draw circle k2
+</pre><figcaption>過 $A$ 的直線交兩圓於 $B$、$C$，兩條切線交於 $D$；$E$ 是兩圓的另一個交點（虛線）</figcaption></figure>
 <div class="cards">
 <div class="card"><h4>① 同弧等角</h4><div class="rule">$\angle CDA=\angle CBA$（同對弧 $AC$）</div>
 <div class="eg">外心與高：$\angle BAH=\angle OAC$，都等於 $90^\circ-\angle B$ <span class="pill">換到同一段弧</span></div></div>

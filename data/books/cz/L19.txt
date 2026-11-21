@@ -13,11 +13,18 @@ status: 完成
 === 例 1
 zh: 在 $\triangle ABC$ 與 $\triangle DEF$ 中，$\angle A=\angle E$，$\angle B=\angle F$，$AB=DE$，$AC=EF$。求證：$\triangle ABC$ 與 $\triangle DEF$ 都是等腰三角形。
 sol: <p><b>分析</b>　兩個三角形有兩邊兩角分別相等，但要先弄清楚<b>誰對應誰</b>。讓 $A\leftrightarrow E$：夾 $\angle A$ 的兩邊是 $BA$、$AC$，夾 $\angle E$ 的兩邊是 $DE$、$EF$，而已知 $BA=DE$、$AC=EF$，所以是「兩邊夾一角」對應相等。</p>
-<figure class="bkfig"><svg viewBox="0 0 222 200" width="222" role="img" aria-label="兩個三角形 ABC 與 EDF">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="88.9,22 22,75.5 200.3,75.5"/><polygon points="88.9,124.5 22,178 200.3,178"/><path d="M79.5 29.5A12 12 0 0 0 99.7 27.2" stroke-width="1"/><path d="M79.5 132A12 12 0 0 0 99.7 129.7" stroke-width="1"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="88.9" y="15.9" text-anchor="middle">A</text><text x="11" y="80.4" text-anchor="middle">B</text><text x="211.3" y="80.4" text-anchor="middle">C</text><text x="88.9" y="118.4" text-anchor="middle">E</text><text x="11" y="182.9" text-anchor="middle">D</text><text x="211.3" y="182.9" text-anchor="middle">F</text></g>
-</svg><figcaption>$\angle A=\angle E$，夾這兩角的邊對應相等：$BA=DE$、$AC=EF$</figcaption></figure>
+<figure class="bkfig"><pre class="geo">
+A = (88.9, 22)
+B = (22, 75.5)
+C = (200.3, 75.5)
+E = (88.9, 124.5)
+D = (22, 178)
+F = (200.3, 178)
+draw poly A B C
+draw poly E D F
+angle B A C
+angle D E F
+</pre><figcaption>$\angle A=\angle E$，夾這兩角的邊對應相等：$BA=DE$、$AC=EF$</figcaption></figure>
 <p><b>證</b>　在 $\triangle ABC$ 與 $\triangle EDF$ 中，$BA=DE$，$\angle A=\angle E$，$AC=EF$，所以 $\triangle ABC\cong\triangle EDF$（SAS）。於是對應角 $\angle B=\angle D$，$\angle C=\angle F$。</p>
 <p>又已知 $\angle B=\angle F$，所以 $\angle B=\angle C$⟦等量代換｜$\angle B=\angle F$（已知），$\angle F=\angle C$（剛證的對應角），所以 $\angle B=\angle C$。⟧，得 $AB=AC$（等角對等邊）。同時 $\angle D=\angle B=\angle F$，得 $ED=EF$。所以兩個三角形都是等腰三角形。</p>
 <p><b>注</b>　寫全等式時，字母順序必須是對應的順序。若對應關係是 $A\leftrightarrow C_1$、$B\leftrightarrow A_1$、$C\leftrightarrow B_1$，就要寫 $\triangle ABC\cong\triangle C_1A_1B_1$，不能隨手寫成 $\triangle ABC\cong\triangle A_1B_1C_1$。本題寫成 $\triangle ABC\cong\triangle EDF$ 而不是 $\triangle DEF$，就是這個原因。</p>
@@ -25,51 +32,96 @@ sol: <p><b>分析</b>　兩個三角形有兩邊兩角分別相等，但要先�
 zh: 已知 $\triangle ABC$ 是正三角形。延長 $BC$ 到 $D$，延長 $BA$ 到 $E$，使 $AE=BD$，連 $CE$、$DE$。求證：$CE=DE$。
 sol: <p><b>分析</b>　想造出以 $CE$、$DE$ 為對應邊的全等三角形。因為 $\angle B=60^\circ$，可以把 $BD$ 再延長，補成一個大正三角形，圖形變得對稱，全等三角形就看得出來了。</p>
 <p><b>證法一（補成對稱圖形）</b>　延長 $BD$ 到 $F$，使 $BF=BE$，連 $EF$。$\triangle BEF$ 是頂角 $60^\circ$ 的等腰三角形，所以是正三角形，$\angle B=\angle F=60^\circ$，$BE=FE$。</p>
-<figure class="bkfig"><svg viewBox="0 0 230 205" width="230" role="img" aria-label="正三角形 ABC 與延長線上的點 D、E">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,183.1 136.5,183.1 115,22"/><line x1="57.8" y1="121.1" x2="93.5" y2="183.1"/><line x1="93.5" y1="183.1" x2="115" y2="22"/><line x1="136.5" y1="183.1" x2="208" y2="183.1" stroke-dasharray="5 4"/><line x1="115" y1="22" x2="208" y2="183.1" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="195.8" text-anchor="middle">B</text><text x="93.5" y="199" text-anchor="middle">C</text><text x="136.5" y="199" text-anchor="middle">D</text><text x="46.8" y="126" text-anchor="middle">A</text><text x="115" y="15.9" text-anchor="middle">E</text><text x="208" y="199" text-anchor="middle">F</text></g>
-</svg><figcaption>證法一：延長 $BD$ 到 $F$ 使 $BF=BE$（虛線），$\triangle BEF$ 是正三角形</figcaption></figure>
+<figure class="bkfig"><pre class="geo">
+B = (22, 183.1)
+D = (136.5, 183.1)
+E = (115, 22)
+A = along(B, E, 0.385)
+C = along(B, D, 0.625)
+F = (208, 183.1)
+draw poly B D E
+draw seg A C
+draw seg C E
+draw seg D F dash
+draw seg E F dash
+</pre><figcaption>證法一：延長 $BD$ 到 $F$ 使 $BF=BE$（虛線），$\triangle BEF$ 是正三角形</figcaption></figure>
 <p>又因為 $BD=AE$，</p>
 $$BC=BA=BE-AE=BF-BD=FD.$$
 <p>所以 $\triangle BCE\cong\triangle FDE$（SAS：$BC=FD$，$\angle B=\angle F$，$BE=FE$），得 $CE=DE$。</p>
 <p>把不規則的圖形補成對稱圖形，讓隱藏的關係浮現，是添輔助線的重要想法。</p>
 <p><b>證法二（截取）</b>　在 $AE$ 上取 $AH=CD$，則 $BH=BA+AH=BC+CD=BD$。又 $\angle B=60^\circ$，所以 $\triangle BHD$ 是正三角形。</p>
-<figure class="bkfig"><svg viewBox="0 0 190 250" width="190" role="img" aria-label="正三角形 ABC 與延長線上的點 D、E">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,228 168.4,228 140.9,22"/><line x1="67.7" y1="148.8" x2="113.5" y2="228"/><line x1="113.5" y1="228" x2="140.9" y2="22"/><line x1="95.2" y1="101.2" x2="168.4" y2="228" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="240.7" text-anchor="middle">B</text><text x="113.5" y="243.9" text-anchor="middle">C</text><text x="168.4" y="243.9" text-anchor="middle">D</text><text x="56.7" y="153.7" text-anchor="middle">A</text><text x="140.9" y="15.9" text-anchor="middle">E</text><text x="84.2" y="106.1" text-anchor="middle">H</text></g>
-</svg><figcaption>證法二：在 $AE$ 上取 $AH=CD$，連 $HD$（虛線）</figcaption></figure>
+<figure class="bkfig"><pre class="geo">
+B = (22, 228)
+C = (113.5, 228)
+D = (168.4, 228)
+E = (140.9, 22)
+A = along(B, E, 0.384)
+H = along(A, E, 0.46)
+draw poly B D E
+draw seg A C
+draw seg C E
+draw seg H D dash
+</pre><figcaption>證法二：在 $AE$ 上取 $AH=CD$，連 $HD$（虛線）</figcaption></figure>
 <p>在 $\triangle EAC$ 與 $\triangle DHE$ 中：$DH=BD=EA$；$HE=AE-AH=BD-CD=BC=AC$；而 $\angle EAC=\angle DHE=120^\circ$⟦為什麼都是 120°｜$\angle EAC$ 是正三角形內角 $\angle BAC=60^\circ$ 的鄰補角；$\angle DHE$ 是正三角形 $BHD$ 內角 $\angle BHD=60^\circ$ 的鄰補角。⟧。所以 $\triangle EAC\cong\triangle DHE$（SAS），$EC=DE$。</p>
 <p><b>證法三（等腰三角形）</b>　只要證 $\triangle ECD$ 是等腰三角形，也就是證 $E$ 在 $CD$ 的中垂線上。作 $EF\perp BD$，垂足 $F$。設 $BC=a$，$CD=b$，則 $AE=BD=a+b$，$BE=2a+b$。在直角 $\triangle BEF$ 中 $\angle B=60^\circ$，所以 $BF$ 是斜邊 $BE$ 的一半⟦為什麼是一半｜$\angle B=60^\circ$、$\angle BFE=90^\circ$，所以 $\angle BEF=30^\circ$；$30^\circ$ 角所對的直角邊 $BF$ 是斜邊 $BE$ 的一半。⟧：</p>
 $$BF=\tfrac12BE=a+\tfrac b2.$$
-<figure class="bkfig"><svg viewBox="0 0 190 250" width="190" role="img" aria-label="正三角形 ABC 與延長線上的點 D、E">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,228 168.4,228 140.9,22"/><line x1="67.7" y1="148.8" x2="113.5" y2="228"/><line x1="113.5" y1="228" x2="140.9" y2="22"/><line x1="140.9" y1="22" x2="140.9" y2="228" stroke-dasharray="5 4"/><polyline points="147.9,228 147.9,221 140.9,221" stroke-width="1"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="240.7" text-anchor="middle">B</text><text x="113.5" y="243.9" text-anchor="middle">C</text><text x="168.4" y="243.9" text-anchor="middle">D</text><text x="56.7" y="153.7" text-anchor="middle">A</text><text x="140.9" y="15.9" text-anchor="middle">E</text><text x="140.9" y="243.9" text-anchor="middle">F</text></g>
-</svg><figcaption>證法三：作 $EF\perp BD$（虛線），$F$ 正好是 $CD$ 的中點</figcaption></figure>
+<figure class="bkfig"><pre class="geo">
+B = (22, 228)
+C = (113.5, 228)
+D = (168.4, 228)
+E = (140.9, 22)
+A = along(B, E, 0.384)
+F = foot(E, B, D)
+draw poly B D E
+draw seg A C
+draw seg C E
+draw seg E F dash
+right E F D
+</pre><figcaption>證法三：作 $EF\perp BD$（虛線），$F$ 正好是 $CD$ 的中點</figcaption></figure>
 <p>因為 $a\lt a+\frac b2\lt a+b$，即 $BC\lt BF\lt BD$，所以 $F$ 落在 $CD$ 上，而且</p>
 $$CF=BF-BC=\tfrac b2,\qquad FD=CD-CF=\tfrac b2.$$
 <p>$F$ 是 $CD$ 的中點，$EF$ 是 $CD$ 的中垂線，所以 $EC=ED$。</p>
 === 例 3
 zh: 正方形 $ABCD$ 中，$M$ 是 $AB$ 的中點，$E$ 是 $AB$ 延長線上一點，$MN\perp MD$，且 $BN$ 平分 $\angle CBE$。求證：$MD=MN$。
 sol: <p><b>分析</b>　$MD$、$MN$ 分別是 $\triangle AMD$ 與 $\triangle BMN$ 的邊，可是這兩個三角形大小不同。要在較大的那一邊造出一個和 $\triangle BMN$ 全等的三角形。</p>
-<figure class="bkfig"><svg viewBox="0 0 300 182" width="300" role="img" aria-label="正方形 ABCD，M 為 AB 中點，MN 垂直 MD">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,160.4 160.4,160.4 160.4,22 22,22"/><line x1="160.4" y1="160.4" x2="278" y2="160.4"/><line x1="91.2" y1="160.4" x2="22" y2="22"/><line x1="91.2" y1="160.4" x2="229.6" y2="91.2"/><line x1="160.4" y1="160.4" x2="229.6" y2="91.2"/><line x1="22" y1="91.2" x2="91.2" y2="160.4" stroke-dasharray="5 4"/><polyline points="88.1,154.1 94.3,151 97.5,157.2" stroke-width="1"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="173.1" text-anchor="middle">A</text><text x="160.4" y="176.3" text-anchor="middle">B</text><text x="168.2" y="19.1" text-anchor="middle">C</text><text x="14.2" y="19.1" text-anchor="middle">D</text><text x="91.2" y="176.3" text-anchor="middle">M</text><text x="240.6" y="96.1" text-anchor="middle">N</text><text x="11" y="96.1" text-anchor="middle">P</text><text x="278" y="176.3" text-anchor="middle">E</text></g>
-</svg><figcaption>取 $AD$ 的中點 $P$，連 $PM$（虛線），造出與 $\triangle MBN$ 全等的 $\triangle DPM$</figcaption></figure>
+<figure class="bkfig"><pre class="geo">
+A = (22, 160.4)
+B = (160.4, 160.4)
+C = (160.4, 22)
+D = (22, 22)
+M = mid(A, B)
+E = (278, 160.4)
+N = (229.6, 91.2)
+P = mid(A, D)
+draw poly A B C D
+draw seg B E
+draw seg M N
+draw seg D M
+draw seg B N
+draw seg P M dash
+right D M N
+</pre><figcaption>取 $AD$ 的中點 $P$，連 $PM$（虛線），造出與 $\triangle MBN$ 全等的 $\triangle DPM$</figcaption></figure>
 <p><b>證</b>　取 $AD$ 的中點 $P$，連 $PM$，則 $DP=\frac12DA=\frac12AB=MB$。</p>
 <p>因為 $DM\perp MN$、$DA\perp AB$，所以 $\angle PDM=\angle BMN$⟦為什麼｜在直角 $\triangle AMD$ 中 $\angle ADM=90^\circ-\angle AMD$；而 $\angle AMD+\angle DMN+\angle BMN=180^\circ$，$\angle DMN=90^\circ$，所以 $\angle BMN=90^\circ-\angle AMD$。兩者都等於 $90^\circ-\angle AMD$。⟧。</p>
 <p>$BN$ 平分外角 $\angle CBE=90^\circ$，所以 $\angle MBN=90^\circ+45^\circ=135^\circ$。另一方面 $AP=AM$，$\triangle PAM$ 是等腰直角三角形，$\angle APM=45^\circ$，所以 $\angle DPM=180^\circ-45^\circ=135^\circ$。於是 $\angle MBN=\angle DPM$。</p>
 <p>再加上 $DP=MB$，得 $\triangle DPM\cong\triangle MBN$（ASA），所以 $DM=MN$。</p>
 === 例 4
 zh: 已知正 $\triangle ABC$。在 $AC$ 的延長線上作線段 $CE$，並以 $CE$ 為邊作正 $\triangle CDE$，它與 $\triangle ABC$ 在直線 $AE$ 的同一側。$M$、$N$ 分別是線段 $AD$、$BE$ 的中點。求證：$\triangle CMN$ 是正三角形。
-sol: <figure class="bkfig"><svg viewBox="0 0 320 187" width="320" role="img" aria-label="兩個正三角形 ABC、CDE 與中點 M、N">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><line x1="22" y1="165.4" x2="298" y2="165.4"/><polygon points="22,165.4 77.2,69.8 132.4,165.4"/><polygon points="132.4,165.4 215.2,22 298,165.4"/><line x1="22" y1="165.4" x2="215.2" y2="22"/><line x1="77.2" y1="69.8" x2="298" y2="165.4"/><polygon points="132.4,165.4 118.6,93.7 187.6,117.6" stroke="#c2562b" stroke-width="2"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="178.1" text-anchor="middle">A</text><text x="69.4" y="66.9" text-anchor="middle">B</text><text x="132.4" y="181.3" text-anchor="middle">C</text><text x="215.2" y="15.9" text-anchor="middle">D</text><text x="305.8" y="178.1" text-anchor="middle">E</text><text x="118.6" y="87.6" text-anchor="middle">M</text><text x="198.6" y="122.5" text-anchor="middle">N</text></g>
-</svg><figcaption>$\triangle ACD\cong\triangle BCE$（繞 $C$ 轉 $60^\circ$），中點 $M$、$N$ 也跟著對應</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">
+A = (22, 165.4)
+C = (132.4, 165.4)
+E = (298, 165.4)
+B = (77.2, 69.8)
+D = (215.2, 22)
+M = mid(A, D)
+N = mid(B, E)
+draw seg A E
+draw poly A B C
+draw poly C D E
+draw seg A D
+draw seg B E
+draw poly C M N fill
+</pre><figcaption>$\triangle ACD\cong\triangle BCE$（繞 $C$ 轉 $60^\circ$），中點 $M$、$N$ 也跟著對應</figcaption></figure>
 <p><b>證</b>　$AC=BC$，$CD=CE$，而</p>
 $$\angle ACD=\angle ACB+\angle BCD=\angle DCE+\angle BCD=\angle BCE,$$
 <p>所以 $\triangle ACD\cong\triangle BCE$（SAS）。得 $AD=BE$，從而 $MA=\frac12AD=\frac12BE=NB$，並且 $\angle MAC=\angle NBC$（對應角 $\angle DAC=\angle EBC$）。</p>
@@ -78,11 +130,20 @@ $$\angle MCN=\angle BCN-\angle BCM=\angle ACM-\angle BCM=\angle ACB=60^\circ.$$
 <p>頂角 $60^\circ$ 的等腰三角形是正三角形，所以 $\triangle CMN$ 是正三角形。</p>
 === 例 5
 zh: 在 $\triangle ABC$ 中，$\angle BAC=\angle ACB=50^\circ$，$M$ 是三角形內一點，使 $\angle MAC=10^\circ$，$\angle MCA=30^\circ$。求 $\angle BMC$。
-sol: <figure class="bkfig"><svg viewBox="0 0 300 197" width="300" role="img" aria-label="三角形 ABC 內一點 M">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,174.5 150,22 278,174.5"/><line x1="22" y1="174.5" x2="218.1" y2="140"/><line x1="278" y1="174.5" x2="218.1" y2="140"/><line x1="150" y1="22" x2="218.1" y2="140"/><line x1="218.1" y1="140" x2="150" y2="100.6" stroke-dasharray="5 4"/><line x1="22" y1="174.5" x2="150" y2="100.6" stroke-dasharray="5 4"/><line x1="150" y1="22" x2="150" y2="100.6" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="187.2" text-anchor="middle">A</text><text x="150" y="15.9" text-anchor="middle">B</text><text x="285.8" y="187.2" text-anchor="middle">C</text><text x="218.1" y="155.9" text-anchor="middle">M</text><text x="139" y="105.5" text-anchor="middle">D</text></g>
-</svg><figcaption>$AD$ 平分 $\angle MAB$，交 $CM$ 的延長線於 $D$；連 $BD$。虛線都是輔助線</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">
+A = (22, 174.5)
+B = (150, 22)
+C = (278, 174.5)
+M = (218.1, 140)
+D = (150, 100.6)
+draw poly A B C
+draw seg A M
+draw seg B M
+draw seg C M
+draw seg M D dash
+draw seg A D dash
+draw seg B D dash
+</pre><figcaption>$AD$ 平分 $\angle MAB$，交 $CM$ 的延長線於 $D$；連 $BD$。虛線都是輔助線</figcaption></figure>
 <p><b>解</b>　作 $\angle MAB$ 的平分線，交 $CM$ 的延長線於 $D$，連 $BD$。$\angle MAB=50^\circ-10^\circ=40^\circ$，所以 $\angle DAM=20^\circ$，</p>
 $$\angle DAC=\angle DAM+\angle MAC=20^\circ+10^\circ=30^\circ=\angle DCA,$$
 <p>得 $AD=CD$。又 $AB=CB$（$\angle A=\angle C$），$BD$ 公用，所以 $\triangle ABD\cong\triangle CBD$（SSS），</p>
@@ -95,11 +156,28 @@ ans: $\angle BMC=150^\circ$
 === 例 6
 zh: 在 $\triangle ABC$ 內取一點 $P$，使 $\angle PAC=\angle PBC$。由 $P$ 向 $BC$、$CA$ 作垂線 $PM$、$PK$，$M$、$K$ 為垂足。設 $D$ 是 $AB$ 的中點，求證：$DK=DM$。
 sol: <p><b>分析</b>　取 $AP$、$BP$ 的中點 $E$、$F$，只要證 $\triangle KED\cong\triangle DFM$。</p>
-<figure class="bkfig"><svg viewBox="0 0 318 230" width="318" role="img" aria-label="三角形內一點 P 與垂足 K、M">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,208 295.5,208 251.8,22"/><line x1="22" y1="208" x2="243" y2="114.2"/><line x1="295.5" y1="208" x2="243" y2="114.2"/><line x1="243" y1="114.2" x2="271.9" y2="107.4"/><line x1="243" y1="114.2" x2="201.4" y2="62.8"/><line x1="158.8" y1="208" x2="201.4" y2="62.8" stroke="#c2562b" stroke-width="2"/><line x1="158.8" y1="208" x2="271.9" y2="107.4" stroke="#c2562b" stroke-width="2"/><line x1="201.4" y1="62.8" x2="132.5" y2="161.1" stroke-dasharray="5 4"/><line x1="132.5" y1="161.1" x2="158.8" y2="208" stroke-dasharray="5 4"/><line x1="158.8" y1="208" x2="269.3" y2="161.1" stroke-dasharray="5 4"/><line x1="269.3" y1="161.1" x2="271.9" y2="107.4" stroke-dasharray="5 4"/><polyline points="266,108.8 267.4,114.6 273.2,113.3" stroke-width="1"/><polyline points="205.2,67.4 200.5,71.2 196.7,66.6" stroke-width="1"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="220.7" text-anchor="middle">A</text><text x="303.3" y="220.7" text-anchor="middle">B</text><text x="251.8" y="15.9" text-anchor="middle">C</text><text x="243" y="108.1" text-anchor="middle">P</text><text x="282.9" y="112.3" text-anchor="middle">M</text><text x="193.6" y="59.9" text-anchor="middle">K</text><text x="158.8" y="223.9" text-anchor="middle">D</text><text x="121.5" y="166" text-anchor="middle">E</text><text x="280.3" y="166" text-anchor="middle">F</text></g>
-</svg><figcaption>$E$、$F$ 是 $AP$、$BP$ 的中點；虛線 $KE$、$ED$、$DF$、$FM$ 是輔助線，要證兩條紅線相等</figcaption></figure>
+<figure class="bkfig"><pre class="geo">
+A = (22, 208)
+B = (295.5, 208)
+C = (251.8, 22)
+P = (243, 114.2)
+D = mid(A, B)
+M = foot(P, B, C)
+K = foot(P, C, A)
+E = mid(A, P)
+F = mid(B, P)
+draw poly A B C
+draw seg A P
+draw seg B P
+draw seg P M
+draw seg P K
+draw seg D K accent
+draw seg D M accent
+draw seg K E dash
+draw seg E D dash
+draw seg D F dash
+draw seg F M dash
+</pre><figcaption>$E$、$F$ 是 $AP$、$BP$ 的中點；虛線 $KE$、$ED$、$DF$、$FM$ 是輔助線，要證兩條紅線相等</figcaption></figure>
 <p><b>證</b>　由中位線定理，$DF\parallel AP$ 且 $DF=\frac12AP$，$DE\parallel BP$ 且 $DE=\frac12BP$，所以 $DEPF$ 是平行四邊形，$\angle DEP=\angle PFD$。</p>
 <p>記 $\alpha=\angle PAC=\angle PBC$。$\triangle AKP$ 是直角三角形，$E$ 是斜邊中點，所以 $KE=AE=EP$，且 $\angle KEP=2\alpha$⟦為什麼是 2α｜$EA=EK$，所以 $\angle EKA=\angle EAK=\alpha$；$\angle KEP$ 是 $\triangle AEK$ 的外角，等於 $\alpha+\alpha$。⟧。⟦同理｜$\triangle BMP$ 是直角三角形，$F$ 是斜邊 $BP$ 的中點，所以 $MF=PF=BF$，外角 $\angle MFP=2\angle PBM=2\alpha$。⟧，$MF=PF=BF$，$\angle MFP=2\alpha$。所以</p>
 $$\angle KED=\angle KEP+\angle PED=\angle MFP+\angle PFD=\angle DFM.$$
@@ -107,11 +185,17 @@ $$\angle KED=\angle KEP+\angle PED=\angle MFP+\angle PFD=\angle DFM.$$
 === 例 7
 zh: 在梯形 $ABCD$ 中，$AD\parallel BC$，$AD+BC=AB$，$F$ 是 $CD$ 的中點。求證：$\angle A$ 與 $\angle B$ 的平分線都通過 $F$。
 sol: <p><b>分析</b>　$\angle A$ 的平分線只有一條。如果能證明 $AF$ 就是 $\angle A$ 的平分線，也就證明了 $\angle A$ 的平分線通過 $F$。</p>
-<figure class="bkfig"><svg viewBox="0 0 255 250" width="255" role="img" aria-label="梯形 ABCD，F 為 CD 中點">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="67.8,22 22,228 159.3,228 141.5,22"/><line x1="67.8" y1="22" x2="233" y2="228" stroke-dasharray="5 4"/><line x1="159.3" y1="228" x2="233" y2="228" stroke-dasharray="5 4"/><line x1="22" y1="228" x2="150.4" y2="125" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="60" y="19.1" text-anchor="middle">A</text><text x="14.2" y="240.7" text-anchor="middle">B</text><text x="159.3" y="243.9" text-anchor="middle">C</text><text x="149.2" y="19.1" text-anchor="middle">D</text><text x="161.4" y="129.9" text-anchor="middle">F</text><text x="240.8" y="240.7" text-anchor="middle">E</text></g>
-</svg><figcaption>延長 $AF$ 與 $BC$ 交於 $E$；連 $BF$（虛線都是輔助線）</figcaption></figure>
+<figure class="bkfig"><pre class="geo">
+A = (67.8, 22)
+B = (22, 228)
+C = (159.3, 228)
+D = (141.5, 22)
+F = mid(C, D)
+E = inter(A, F, B, C)
+draw poly A B C D
+draw seg A E dash
+draw seg B F dash
+</pre><figcaption>延長 $AF$ 與 $BC$ 交於 $E$；連 $BF$（虛線都是輔助線）</figcaption></figure>
 <p><b>證</b>　連 $AF$、$BF$，延長 $BC$ 與 $AF$ 交於 $E$。因為 $AD\parallel BE$，所以 $\angle DAF=\angle E$，$\angle D=\angle ECF$；又 $DF=FC$，所以 $\triangle ADF\cong\triangle ECF$（AAS），$AD=CE$。於是</p>
 $$AB=BC+AD=BC+CE=BE,$$
 <p>$\triangle ABE$ 是等腰三角形，$\angle BAF=\angle E=\angle DAF$，即 $AF$ 平分 $\angle A$。因為角平分線唯一，$\angle A$ 的平分線通過 $F$。</p>
@@ -119,11 +203,21 @@ $$AB=BC+AD=BC+CE=BE,$$
 <p><b>說明</b>　這種證法叫<b>同一法</b>：要證「某個圖形 $A$ 具有性質 $B$」，先造一個具有性質 $B$ 的圖形 $A_1$，再證 $A_1$ 就是 $A$。本題先證 $AF$ 是角平分線，再用角平分線的唯一性下結論。邏輯上它是透過證明逆命題「$B\Rightarrow A$」來證原命題，所以只有在「具有性質 $B$ 的圖形只有 $A$ 一個」時才能用。</p>
 === 例 8
 zh: 已知凸五邊形 $ABCDE$ 中，$\angle BAE=3\alpha$，$BC=CD=DE$，且 $\angle BCD=\angle CDE=180^\circ-2\alpha$。求證：$\angle BAC=\angle CAD=\angle DAE$。
-sol: <figure class="bkfig"><svg viewBox="0 0 240 240" width="240" role="img" aria-label="凸五邊形 ABCDE 與外接圓">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="120" cy="120" r="98" stroke-dasharray="5 4"/><polygon points="83.3,29.1 27.9,153.5 86.5,212.1 169,204.9 216.5,137"/><line x1="83.3" y1="29.1" x2="86.5" y2="212.1"/><line x1="83.3" y1="29.1" x2="169" y2="204.9"/><line x1="27.9" y1="153.5" x2="169" y2="204.9" stroke-dasharray="5 4"/><line x1="86.5" y1="212.1" x2="216.5" y2="137" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="83.3" y="23" text-anchor="middle">A</text><text x="16.9" y="158.4" text-anchor="middle">B</text><text x="78.7" y="224.8" text-anchor="middle">C</text><text x="176.8" y="217.5" text-anchor="middle">D</text><text x="227.5" y="141.9" text-anchor="middle">E</text></g>
-</svg><figcaption>連 $BD$、$CE$（虛線）；五點其實在同一個圓上</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">
+A = (83.3, 29.1)
+B = (27.9, 153.5)
+C = (86.5, 212.1)
+O = circumcenter(A, B, C)
+k = circle(O, A)
+D = on(k, 169, 204.9)
+E = on(k, 216.5, 137)
+draw poly A B C D E
+draw seg A C
+draw seg A D
+draw seg B D dash
+draw seg C E dash
+draw circle k dash
+</pre><figcaption>連 $BD$、$CE$（虛線）；五點其實在同一個圓上</figcaption></figure>
 <p><b>證</b>　連 $BD$、$CE$。由 $BC=CD=DE$、$\angle BCD=\angle CDE$，得 $\triangle BCD\cong\triangle CDE$（SAS）。兩個都是等腰三角形，頂角 $180^\circ-2\alpha$，所以底角</p>
 $$\angle CBD=\angle CDB=\angle DCE=\angle DEC=\alpha.$$
 <p>於是 $\angle BCE=(180^\circ-2\alpha)-\alpha=180^\circ-3\alpha$。又 $\angle BAE=3\alpha$，兩者互補，所以 $A$、$B$、$C$、$E$ 四點共圓⟦為什麼共圓｜$\angle BAE$ 與 $\angle BCE$ 都對著線段 $BE$，而且 $A$、$C$ 在 $BE$ 的兩側；對角互補的四邊形 $ABCE$ 有外接圓（見第 24 講）。⟧。⟦同理｜$\angle BDE=(180^\circ-2\alpha)-\alpha=180^\circ-3\alpha$，與 $\angle BAE$ 互補，所以 $A$、$B$、$D$、$E$ 也共圓。⟧，$A$、$B$、$D$、$E$ 四點共圓。兩個圓都過不共線的三點 $A$、$B$、$E$，所以是同一個圓，$A$、$B$、$C$、$D$、$E$ 五點共圓。</p>
@@ -139,11 +233,24 @@ sol: <p>$EG$ 是正三角形 $ABE$ 的高，$EG=\frac{\sqrt3}{2}AB$；又直角 
 === 習題 3
 zh: 設 $P$ 是正方形 $ABCD$ 的對角線 $BD$ 上任一點，$PF\perp CD$，$PE\perp BC$（$F$、$E$ 為垂足）。求證：$AP\perp EF$。
 hint: 延長 $FP$ 交 $AB$ 於 $G$，延長 $AP$ 交 $EF$ 於 $H$。
-sol: <figure class="bkfig"><svg viewBox="0 0 200 200" width="200" role="img" aria-label="正方形與對角線上的點 P">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,22 22,178 178,178 178,22"/><line x1="22" y1="178" x2="178" y2="22"/><line x1="22" y1="22" x2="129.2" y2="129.2"/><line x1="80.5" y1="80.5" x2="80.5" y2="178"/><line x1="80.5" y1="80.5" x2="178" y2="80.5"/><line x1="80.5" y1="178" x2="178" y2="80.5"/><line x1="22" y1="80.5" x2="80.5" y2="80.5" stroke-dasharray="5 4"/><polyline points="125.7,125.7 129.2,122.2 132.8,125.7" stroke-width="1"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="19.1" text-anchor="middle">A</text><text x="14.2" y="190.7" text-anchor="middle">B</text><text x="185.8" y="190.7" text-anchor="middle">C</text><text x="185.8" y="19.1" text-anchor="middle">D</text><text x="80.5" y="74.4" text-anchor="middle">P</text><text x="80.5" y="193.9" text-anchor="middle">E</text><text x="189" y="85.4" text-anchor="middle">F</text><text x="11" y="85.4" text-anchor="middle">G</text><text x="129.2" y="145.2" text-anchor="middle">H</text></g>
-</svg><figcaption>延長 $FP$ 交 $AB$ 於 $G$（虛線）</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">
+A = (22, 22)
+B = (22, 178)
+C = (178, 178)
+D = (178, 22)
+P = (80.5, 80.5)
+E = (80.5, 178)
+F = (178, 80.5)
+G = (22, 80.5)
+H = inter(E, F, A, C)
+draw poly A B C D
+draw seg B D
+draw seg A H
+draw seg E F
+draw seg P E
+draw seg P F
+draw seg G P dash
+</pre><figcaption>延長 $FP$ 交 $AB$ 於 $G$（虛線）</figcaption></figure>
 <p>$GP=GB=PE$（$\triangle GBP$ 是等腰直角三角形，$GBEP$ 是正方形），$AG=DF=PF$，又 $\angle AGP=\angle FPE=90^\circ$，所以 $\triangle AGP\cong\triangle FPE$，$\angle APG=\angle FEP$。而 $\angle APG=\angle FPH$（對頂角），所以 $\angle FPH+\angle PFE=\angle FEP+\angle PFE=90^\circ$，$\angle PHF=90^\circ$，即 $AP\perp EF$。</p>
 === 習題 4
 zh: 在銳角 $\triangle ABC$ 中，$CF$、$BE$ 分別是 $AB$、$AC$ 上的高，$D$ 是 $BC$ 的中點。求證：$\angle DEF=\angle A$。
@@ -152,19 +259,39 @@ sol: <p>$DF=DB=DC=DE=\frac12BC$。由 $DB=DF$，$\angle FDC=2\angle ABC$；同�
 === 習題 5
 zh: 正方形 $ABCD$ 中，$E$ 是邊 $CD$ 的中點，$F$ 是 $DA$ 的中點，$BE$ 與 $CF$ 交於 $P$。求證：$AP=AB$。
 hint: 連 $BF$，證 $A$、$B$、$P$、$F$ 四點共圓。
-sol: <figure class="bkfig"><svg viewBox="0 0 200 200" width="200" role="img" aria-label="正方形 ABCD 中 BE 與 CF 交於 P">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,178 178,178 178,22 22,22"/><line x1="178" y1="178" x2="100" y2="22"/><line x1="178" y1="22" x2="22" y2="100"/><line x1="22" y1="178" x2="115.6" y2="53.2" stroke="#c2562b" stroke-width="2"/><line x1="22" y1="100" x2="178" y2="178" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="190.7" text-anchor="middle">A</text><text x="185.8" y="190.7" text-anchor="middle">B</text><text x="185.8" y="19.1" text-anchor="middle">C</text><text x="14.2" y="19.1" text-anchor="middle">D</text><text x="100" y="15.9" text-anchor="middle">E</text><text x="11" y="104.9" text-anchor="middle">F</text><text x="123.4" y="50.3" text-anchor="middle">P</text></g>
-</svg><figcaption>連 $BF$（虛線）；$A$、$B$、$P$、$F$ 共圓</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">
+A = (22, 178)
+B = (178, 178)
+C = (178, 22)
+D = (22, 22)
+E = (100, 22)
+F = (22, 100)
+P = inter(B, E, C, F)
+draw poly A B C D
+draw seg B E
+draw seg C F
+draw seg A P accent
+draw seg F B dash
+</pre><figcaption>連 $BF$（虛線）；$A$、$B$、$P$、$F$ 共圓</figcaption></figure>
 <p>$\triangle BCE\cong\triangle CDF\cong\triangle BAF$（兩股分別相等），所以 $\angle CEB=\angle DFC=\angle AFB$，且 $\angle CBE=\angle DCF$，因此 $\angle PBC+\angle PCB=\angle DCF+\angle PCB=90^\circ$，$BE\perp CF$。於是 $\angle BPF=\angle BAF=90^\circ$，$A$、$B$、$P$、$F$ 在以 $BF$ 為直徑的圓上，$\angle APB=\angle AFB$。而 $\angle AFB=\angle CEB=\angle ABE$（$AB\parallel CD$ 的內錯角），所以 $\angle APB=\angle ABP$，$AP=AB$。</p>
 === 習題 6
 zh: 在 $\triangle ABC$ 中，$AB=BC$，$\angle B=20^\circ$。在 $AB$ 上取點 $M$ 使 $\angle MCA=60^\circ$，在 $BC$ 上取點 $N$ 使 $\angle NAC=50^\circ$。求 $\angle NMC$。
 hint: 作 $MK\parallel AC$ 交 $BC$ 於 $K$，連 $AK$ 交 $MC$ 於 $L$。
-sol: <figure class="bkfig"><svg viewBox="0 0 127 280" width="127" role="img" aria-label="頂角 20° 的等腰三角形">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,258 63.6,22 105.2,258"/><line x1="41.5" y1="147.6" x2="105.2" y2="258"/><line x1="22" y1="258" x2="90.8" y2="176"/><line x1="41.5" y1="147.6" x2="90.8" y2="176" stroke="#c2562b" stroke-width="2"/><line x1="41.5" y1="147.6" x2="85.8" y2="147.6" stroke-dasharray="5 4"/><line x1="22" y1="258" x2="85.8" y2="147.6" stroke-dasharray="5 4"/><line x1="63.6" y1="185.9" x2="90.8" y2="176" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="270.7" text-anchor="middle">A</text><text x="63.6" y="15.9" text-anchor="middle">B</text><text x="113" y="270.7" text-anchor="middle">C</text><text x="30.5" y="152.5" text-anchor="middle">M</text><text x="101.8" y="180.9" text-anchor="middle">N</text><text x="96.8" y="152.5" text-anchor="middle">K</text><text x="52.6" y="190.8" text-anchor="middle">L</text></g>
-</svg><figcaption>$MK\parallel AC$，$AK$ 交 $MC$ 於 $L$，連 $LN$（虛線）</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">
+A = (22, 258)
+B = (63.6, 22)
+C = (105.2, 258)
+M = along(A, B, 0.468)
+K = along(B, C, 0.532)
+N = along(B, C, 0.6525)
+L = inter(A, K, M, C)
+draw poly A B C
+draw seg A N
+draw seg M C
+draw seg M N accent
+draw seg M K dash
+draw seg A K dash
+draw seg L N dash
+</pre><figcaption>$MK\parallel AC$，$AK$ 交 $MC$ 於 $L$，連 $LN$（虛線）</figcaption></figure>
 <p>由對稱，$\angle KAC=\angle MCA=60^\circ$，所以 $\triangle ALC$ 是正三角形，$\triangle MKL$ 也是正三角形。又 $\angle ANC=180^\circ-50^\circ-80^\circ=50^\circ=\angle NAC$，所以 $NC=AC=LC$。$\triangle CLN$ 中 $\angle LCN=80^\circ-60^\circ=20^\circ$，所以 $\angle NLC=80^\circ$，$\angle KLN=180^\circ-60^\circ-80^\circ=40^\circ$；而 ⟦∠NKL 也是 40°｜$\angle MKC=180^\circ-\angle ACB=100^\circ$，$\angle MKL=60^\circ$，所以 $\angle LKN=100^\circ-60^\circ=40^\circ$。⟧，所以 $KN=LN$。又 $ML=MK$，$MN$ 公用，$\triangle MKN\cong\triangle MLN$，$\angle LMN=\angle KMN=\frac12\cdot60^\circ=30^\circ$，即 $\angle NMC=30^\circ$。</p>
 ans: $\angle NMC=30^\circ$

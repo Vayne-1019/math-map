@@ -71,14 +71,46 @@ $$42+8x+9y=77+70-10x+84-12y,\quad\text{即}\quad6x+7y=63,\quad y=9-\frac67x.$$
 
 === 例 7
 zh: 用大小不等的 9 塊正方形水泥塊 $A,B,C,D,E,F,G,H,I$ 鋪成矩形地板（如下圖），已知 $E$ 的邊長為 $7$，求其餘各邊長。
-<figure class="bkfig"><svg viewBox="0 0 310 300" width="310" role="img" aria-label="九塊大小不等的正方形拼成的矩形">
-<g fill="none" stroke="currentColor" stroke-width="1.5">
-<rect x="5" y="5" width="162" height="162"/><rect x="167" y="5" width="135" height="135"/><rect x="5" y="167" width="126" height="126"/>
-<rect x="131" y="167" width="36" height="36"/><rect x="167" y="140" width="63" height="63"/><rect x="230" y="140" width="72" height="72"/>
-<rect x="131" y="203" width="90" height="90"/><rect x="221" y="203" width="9" height="9"/><rect x="221" y="212" width="81" height="81"/></g>
-<g fill="currentColor" font-size="15" font-style="italic" text-anchor="middle">
-<text x="86" y="90">A</text><text x="234" y="76">B</text><text x="68" y="234">C</text><text x="149" y="190">D</text><text x="198" y="176">E</text><text x="266" y="180">F</text><text x="176" y="252">G</text><text x="212" y="226" font-size="12">H</text><text x="261" y="256">I</text></g>
-</svg><figcaption>依解出的邊長按比例重畫：$A=18,B=15,C=14,D=4,E=7,F=8,G=10,H=1,I=9$</figcaption></figure>
+<figure class="bkfig"><pre class="geo">
+p1 = (5, 5)
+p2 = (167, 5)
+p3 = (167, 167)
+p4 = (5, 167)
+p5 = (302, 5)
+p6 = (302, 140)
+p7 = (167, 140)
+p8 = (131, 167)
+p9 = (131, 293)
+p10 = (5, 293)
+p11 = (167, 203)
+p12 = (131, 203)
+p13 = (230, 140)
+p14 = (230, 203)
+p15 = (302, 212)
+p16 = (230, 212)
+p17 = (221, 203)
+p18 = (221, 293)
+p19 = (221, 212)
+p20 = (302, 293)
+A = (86, 86)
+B = (234, 73)
+C = (68, 230)
+D = (149, 185)
+E = (198, 171)
+F = (266, 176)
+G = (176, 248)
+H = (225, 207)
+I = (261, 252)
+draw poly p1 p2 p3 p4
+draw poly p2 p5 p6 p7
+draw poly p4 p8 p9 p10
+draw poly p8 p3 p11 p12
+draw poly p7 p13 p14 p11
+draw poly p13 p6 p15 p16
+draw poly p12 p17 p18 p9
+draw poly p17 p14 p16 p19
+draw poly p19 p15 p20 p18
+</pre><figcaption>依解出的邊長按比例重畫：$A=18,B=15,C=14,D=4,E=7,F=8,G=10,H=1,I=9$</figcaption></figure>
 sol: 用小寫字母 $a,b,c,\dots,i$ 分別代表各正方形的邊長（已知 $e=7$）。由圖可以列出許多方程，如 $e+f=b$，$a+b=c+g+i$，$e+b=a+d$，$a+c=b+f+i$，等等。從這些方程中選出 8 個獨立方程，解出 8 個未知數 $a,b,\dots,i$，顯然太複雜。比較方便的方法是：<b>先設最小的正方形邊長為 $1$（即 $h=1$）</b>，看看能否算出其他各邊長；如果需要，再用比例方法調整。
 設 $h=1$，由圖可見
 $$e+1=f,\quad f+1=i,\quad i+1=g,\quad g+1=d+e,\qquad①$$
@@ -100,12 +132,19 @@ $$20v_2=(20+5)v_3=25v_3\ ①,\qquad50v_1=(50+10+5)v_3=65v_3\ ②,\qquad(10+t)v_2
 
 === 習題 2
 zh: 如下圖，有矩形地 $ABCD$ 一塊，要在中央修建一矩形花圃 $EFGH$，使其面積為這塊地面積的一半，且花圃四周的道路寬相等。現無測量工具，只有一條無刻度的足夠長的繩子。試問如何量出道路的寬度？
-<figure class="bkfig"><svg viewBox="0 0 320 175" width="320" role="img" aria-label="矩形 ABCD 中央的矩形花圃 EFGH">
-<rect x="48" y="38" width="224" height="94" fill="#c2562b" fill-opacity="0.2" stroke="currentColor" stroke-width="1.2"/>
-<rect x="20" y="10" width="280" height="150" fill="none" stroke="currentColor" stroke-width="1.5"/>
-<line x1="20" y1="160" x2="300" y2="10" stroke="currentColor" stroke-width="1" stroke-dasharray="5 4"/>
-<g fill="currentColor" font-size="14" font-style="italic"><text x="6" y="172">A</text><text x="302" y="172">B</text><text x="302" y="12">C</text><text x="6" y="12">D</text><text x="52" y="128">E</text><text x="258" y="128">F</text><text x="258" y="52">G</text><text x="52" y="52">H</text></g>
-</svg><figcaption>虛線是對角線 $BD$（解答會用到）</figcaption></figure>
+<figure class="bkfig"><pre class="geo">
+A = (20, 160)
+B = (300, 160)
+C = (300, 10)
+D = (20, 10)
+E = (48, 132)
+F = (272, 132)
+G = (272, 38)
+H = (48, 38)
+draw poly A B C D
+draw poly E F G H fill
+draw seg A C dash
+</pre><figcaption>虛線是對角線 $BD$（解答會用到）</figcaption></figure>
 ans: 道路寬 $=\frac14(AB+AD-BD)$。
 sol: 設道路寬為 $x$，$AB=a$，$AD=b$，則
 $$(a-2x)(b-2x)=\frac12ab,\qquad x=\frac14\Big[(a+b)\pm\sqrt{a^2+b^2}\Big].$$
@@ -138,11 +177,24 @@ $$\Big(\frac l{x-y}+\frac l{x+y}\Big)y=4l.$$
 
 === 習題 6
 zh: 某人說他能把一個正方形分割成 5 個小正方形（如下圖），請你證明他的分割是不可能的。
-<figure class="bkfig"><svg viewBox="0 0 150 150" width="150" role="img" aria-label="四個正方形圍著中間一個小正方形的示意圖">
-<g fill="none" stroke="currentColor" stroke-width="1.5"><rect x="10" y="10" width="130" height="130"/>
-<line x1="66" y1="10" x2="66" y2="70"/><line x1="10" y1="70" x2="72" y2="70"/><line x1="72" y1="66" x2="72" y2="140"/><line x1="66" y1="66" x2="140" y2="66"/></g>
-<g fill="currentColor" font-size="11" text-anchor="middle"><text x="38" y="44">2x+y</text><text x="103" y="42">x+y</text><text x="41" y="108">3x+y</text><text x="106" y="106">y</text></g>
-</svg><figcaption>示意圖：中間小正方形邊長 $x$，右下角 $y$</figcaption></figure>
+<figure class="bkfig"><pre class="geo">
+a = (10, 10)
+b = (140, 10)
+c = (140, 140)
+d = (10, 140)
+draw poly a b c d
+e = (66, 10)
+f = (66, 70)
+g = (10, 70)
+h = (72, 70)
+i = (72, 140)
+j = (72, 66)
+k = (140, 66)
+draw seg e f
+draw seg g h
+draw seg j i
+draw seg j k
+</pre><figcaption>示意圖：中間小正方形邊長 $x$，右下角 $y$</figcaption></figure>
 sol: 設中間一塊的邊長為 $x$，右下角一塊的邊長為 $y$，則其他各塊的邊長如圖：右上角是 $x+y$（它的下緣蓋住中間塊和右下角塊），左上角是 $2x+y$，左下角是 $3x+y$。⟦怎麼推｜右上角正方形的寬 $=$ 中間塊寬 $x$ $+$ 右下角塊寬 $y$；左上角正方形的高 $=$ 右上角的高 $x+y$ $+$ 中間塊高 $x$；左下角正方形的寬 $=$ 左上角的寬 $2x+y$ $+$ 中間塊寬 $x$。⟧比較左、右兩邊的高度：左邊 $(2x+y)+(3x+y)=5x+2y$，右邊 $(x+y)+y=x+2y$，所以
 $$5x+2y=x+2y,\qquad x=0.$$
 中間那塊不存在，所以這樣的分割不可能。

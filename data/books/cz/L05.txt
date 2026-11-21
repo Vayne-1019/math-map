@@ -172,11 +172,17 @@ sol: 反證法。設 $b^2-4ac=1986$，則 $b^2$ 是偶數，$b$ 是偶數，令 
 
 === 習題 8
 zh: 已知 $\triangle ABC$ 和平行於 $BC$ 的直線 $DE$（$D$ 在 $AB$ 上，$E$ 在 $AC$ 上，如圖），且 $S_{\triangle BDE}=k^2$（定值），這裡 $S_{\triangle BDE}$ 是 $\triangle BDE$ 的面積。問 $k^2$ 與 $S_{\triangle ABC}$ 之間滿足什麼關係時，問題有解？有多少解？
-<figure class="bkfig"><svg viewBox="0 0 320 200" width="320" role="img" aria-label="三角形 ABC，DE 平行 BC，連 BE">
-<polygon points="158,84 250,20 188,180" fill="#c2562b" fill-opacity="0.18"/>
-<g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="20,180 250,20 300,180"/><line x1="158" y1="84" x2="188" y2="180"/><line x1="250" y1="20" x2="188" y2="180"/></g>
-<g fill="currentColor" font-size="15" font-style="italic"><text x="6" y="190">A</text><text x="252" y="16">B</text><text x="302" y="194">C</text><text x="140" y="80">D</text><text x="182" y="196">E</text></g>
-</svg><figcaption>著色部分是 △BDE</figcaption></figure>
+<figure class="bkfig"><pre class="geo">
+A = (20, 180)
+B = (250, 20)
+C = (300, 180)
+D = along(A, B, 0.6)
+E = along(A, C, 0.6)
+draw poly A B C
+draw seg B E
+draw seg D E
+draw poly D B E fill
+</pre><figcaption>著色部分是 △BDE</figcaption></figure>
 ans: $S_{\triangle ABC}>4k^2$ 時有兩解；$S_{\triangle ABC}=4k^2$ 時一解；$S_{\triangle ABC}\lt 4k^2$ 時無解。
 sol: 設 $\frac{AD}{AB}=x$（$0\lt x\lt 1$），$S_{\triangle ABC}=S$。$\triangle ADE\sim\triangle ABC$，所以 $S_{\triangle ADE}=x^2S$；又 $\frac{AE}{AC}=x$，$\triangle ABE$ 與 $\triangle ABC$ 同高，$S_{\triangle ABE}=xS$。所以
 $$S_{\triangle BDE}=S_{\triangle ABE}-S_{\triangle ADE}=xS-x^2S=k^2,\quad\text{即}\quad Sx^2-Sx+k^2=0.$$
