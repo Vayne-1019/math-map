@@ -207,8 +207,8 @@ sol: <figure class="bkfig"><pre class="geo">
 A = (83.3, 29.1)
 B = (27.9, 153.5)
 C = (86.5, 212.1)
-O = circumcenter(A, B, C)
-k = circle(O, A)
+o = circumcenter(A, B, C)
+k = circle(o, A)
 D = on(k, 169, 204.9)
 E = on(k, 216.5, 137)
 draw poly A B C D E
