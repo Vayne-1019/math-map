@@ -11,6 +11,14 @@ C = (228, 145.6)
 D = along(B, C, 0.3748)
 draw poly A B C
 draw seg A D
+mab = mid(A, B)
+mac = mid(A, C)
+mbd = mid(B, D)
+mdc = mid(D, C)
+text mab w c
+text mac e b
+text mbd s q₁
+text mdc s q₂
 </pre><figcaption>$D$ 把 $BC$ 分成 $q_1,q_2$</figcaption></figure>
 <div class="cards">
 <div class="card"><h4>① 中線</h4><div class="rule">$m_a=\frac12\sqrt{2b^2+2c^2-a^2}$</div>
