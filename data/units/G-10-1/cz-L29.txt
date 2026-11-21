@@ -5,11 +5,46 @@ order: 20
 
 === body
 <div class="hero">折線長 ≥ 兩端點的直線距離<br>折線不直？<b>反射</b>一段，讓它變成直線來比</div>
-<figure class="bkfig"><svg viewBox="0 0 320 112" width="320" role="img" aria-label="正三角形的反射展開">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="61.4,22 22,90.3 100.9,90.3" stroke-width="2"/><polygon points="45.7,90.3 85.1,63 47.6,45.9"/><polygon points="61.4,22 140.3,22 100.9,90.3" stroke-width="1"/><polygon points="179.7,90.3 140.3,22 100.9,90.3" stroke-width="1"/><polygon points="179.7,90.3 140.3,22 219.1,22" stroke-width="1"/><polygon points="179.7,90.3 258.6,90.3 219.1,22" stroke-width="1"/><polygon points="298,22 258.6,90.3 219.1,22" stroke-width="1"/><polyline points="47.6,45.9 85.1,63 128.5,42.5 165.9,66.4 203.4,49.3 246.7,69.8 284.2,45.9" stroke="#c2562b" stroke-width="2"/><line x1="47.6" y1="45.9" x2="284.2" y2="45.9" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="61.4" y="15.9" text-anchor="middle">A</text><text x="11" y="95.2" text-anchor="middle">B</text><text x="100.9" y="106.2" text-anchor="middle">C</text><text x="45.7" y="106.2" text-anchor="middle">D</text><text x="92.9" y="60.1" text-anchor="middle">E</text><text x="36.6" y="50.8" text-anchor="middle">F</text><text x="298.7" y="50.8" text-anchor="middle">F<tspan font-size="10">4</tspan></text></g>
-</svg><figcaption>把 $\triangle ABC$ 連續反射五次；紅色折線長是 $\triangle DEF$ 周長的 2 倍，虛線 $FF_4$ 等於 $\triangle ABC$ 的周長</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A = (61.4,22)
+B = (22,90.3)
+C = (100.9,90.3)
+lbc = line(B, C)
+lca = line(C, A)
+lab = line(A, B)
+D = on(lbc, 45.7, 90.3)
+E = on(lca, 85.1, 63)
+F = on(lab, 47.6, 45.9)
+b1 = reflect(B, A, C)
+x1 = reflect(A, C, b1)
+y1 = reflect(C, b1, x1)
+z1 = reflect(b1, x1, y1)
+w1 = reflect(x1, y1, z1)
+D1 = reflect(D, A, C)
+F2 = reflect(F, C, b1)
+E2 = reflect(E, C, b1)
+lyz = line(y1, z1)
+D3 = on(lyz, 246.7, 69.8)
+lzw = line(z1, w1)
+F4 = on(lzw, 284.2, 45.9)
+draw poly A B C
+draw poly A C b1
+draw poly C b1 x1
+draw poly b1 x1 y1
+draw poly x1 y1 z1
+draw poly y1 z1 w1
+draw poly D E F
+draw seg F E D1 F2 E2 D3 F4 accent
+draw seg F F4 dash
+hide b1
+hide x1
+hide y1
+hide z1
+hide w1
+hide D1
+hide F2
+hide E2
+hide D3
+</pre><figcaption>把 $\triangle ABC$ 連續反射五次；紅色折線長是 $\triangle DEF$ 周長的 2 倍，虛線 $FF_4$ 等於 $\triangle ABC$ 的周長</figcaption></figure>
 <div class="cards">
 <div class="card"><h4>① 將軍飲馬</h4><div class="rule">$l$ 同側兩點 $A,B$：$A\to A'$</div>
 <div class="eg">$PA+PB=PA'+PB\ge A'B$，交點就是最小 <span class="pill">一次反射</span></div></div>
