@@ -13,11 +13,11 @@ Z2 = (129.1, 123.8)
 Z3 = rotate(Z2, Z1, 60)
 draw poly Z1 Z2 Z3
 angle Z2 Z1 Z3
-Y1 = (170.9, 123.8)
-Y3 = (275.5, 123.8)
-Y2 = rotate(Y3, Y1, 60)
-draw poly Y1 Y3 Y2 accent
-angle Y3 Y1 Y2 accent
+y1 = (170.9, 123.8)
+y3 = (275.5, 123.8)
+y2 = rotate(y3, y1, 60)
+draw poly y1 y3 y2 accent
+angle y3 y1 y2 accent
 </pre>
 <figcaption>左：$Z_1\to Z_2\to Z_3$ 逆時針（正向）；右：順時針（負向）</figcaption></figure>
 <p>看左邊的正三角形：把 $\overrightarrow{Z_1Z_2}$ 逆時針轉 $60^\circ$ 就與 $\overrightarrow{Z_1Z_3}$ 重合。令 $u=e^{i\pi/3}$，則 $(z_2-z_1)u=z_3-z_1$，移項整理得 $(1-u)z_1+uz_2-z_3=0$。因為</p>
