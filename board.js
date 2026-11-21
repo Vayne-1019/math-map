@@ -274,6 +274,13 @@
             if (kind === 'poly') made.push(b.create('polygon', names.map(x => P[x]), { fillColor: fill ? c.fg : 'none', fillOpacity: fill ? 0.07 : 0, borders: st, vertices: { visible: false }, hasInnerPoints: false }));
             if (kind === 'line' || kind === 'ray') made.push(b.create('line', [P[names[0]], P[names[1]]], Object.assign({}, st, kind === 'ray' ? { straightFirst: false } : {})));
             if (kind === 'circle') O[names[0]].el.setAttribute(Object.assign({ visible: true }, st));
+            if (kind === 'arrow') made.push(b.create('segment', [P[names[0]], P[names[1]]], Object.assign({}, st, { lastArrow: { type: 2, size: 6 } })));
+          }
+          else if (op.op === 'text') {
+            /* 任意文字（邊長、面積、z = x + iy…），跟著錨點走 */
+            const DIRS = { n: [0, -1], ne: [0.75, -0.75], e: [1, 0], se: [0.75, 0.75], s: [0, 1], sw: [-0.75, 0.75], w: [-1, 0], nw: [-0.75, -0.75], c: [0, 0] };
+            const d = DIRS[a[1]] || [0, 0], q = P[a[0]], off = 13 * sc;
+            made.push(b.create('text', [() => q.X() + d[0] * off, () => q.Y() - d[1] * off, a[2]], { anchorX: 'middle', anchorY: 'middle', fixed: true, fontSize: 15, strokeColor: c.fg, cssStyle: /[　-鿿]/.test(a[2]) ? '' : 'font-style:italic;font-family:"Times New Roman",serif', highlight: false }));
           }
           else if (op.op === 'right') made.push(b.create('angle', [P[a[0]], P[a[1]], P[a[2]]], { type: 'square', radius: 0.35, withLabel: false, name: '', fillOpacity: 0, strokeColor: c.fg, strokeWidth: 1 }));
           else if (op.op === 'angle') made.push(b.create('nonreflexangle', [P[a[0]], P[a[1]], P[a[2]]], { radius: 0.45, withLabel: false, name: '', strokeColor: a.includes('accent') ? c.warm : c.fg, fillColor: a.includes('accent') ? c.warm : c.fg, fillOpacity: 0.12 }));

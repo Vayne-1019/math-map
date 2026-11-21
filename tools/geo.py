@@ -48,6 +48,10 @@ right B H A
   label A ne                名稱擺放方向 n ne e se s sw w nw（不寫就自動擺在離圖中心遠的一側）
   hide A                    只當輔助點，不畫點也不標名稱
   dot A                     點只畫圓點不標名稱
+  text P ne 文字…           在點 P 旁（方向同 label，c 表示正中）標任意文字，不畫點：
+                            邊長 1、√3、面積 S₁、z = x + iy、實軸、直線名 ℓ 等都用這個；
+                            P 通常是 hide 的輔助點，拖動時文字跟著 P 走
+  draw arrow A B            帶箭頭的線段（座標軸、向量）
 """
 import html, json, math, re
 
@@ -131,6 +135,8 @@ def parse(text):
         w = line.split()
         if w[0] in ("draw", "right", "angle", "label", "hide", "dot", "size"):
             ops.append({"op": w[0], "args": w[1:]}); continue
+        if w[0] == "text" and len(w) >= 4 and (w[2] in DIRS or w[2] == "c"):
+            ops.append({"op": "text", "args": [w[1], w[2], " ".join(w[3:])]}); continue
         raise GeoError(f"看不懂這一行：{raw}")
     return ops
 
@@ -169,6 +175,8 @@ def evaluate(ops):
         k, n, a = op["op"], op.get("name"), op.get("args", [])
         if k in ("draw", "right", "angle", "label", "hide", "dot", "size"):
             continue
+        if k == "text":
+            pt(a[0]); continue
         if k == "free":
             P[n] = tuple(op["xy"])
         elif k == "on":
@@ -256,6 +264,12 @@ def render(ops, P, OBJ):
                 shapes.append(f'<polygon points="{ptxt}"{fill}{style(opts)}/>')
             else:
                 shapes.append(f'<polyline points="{ptxt}"{style(opts)}/>')
+        elif kind == "arrow":
+            A, B = P[names[0]], P[names[1]]; used.update(names[:2]); ext(A); ext(B)
+            d = sub(B, A); L = math.hypot(*d) or 1; u = mul(d, 1 / L); nv = (-u[1], u[0])
+            h1 = add(sub(B, mul(u, 9)), mul(nv, 4)); h2 = sub(sub(B, mul(u, 9)), mul(nv, 4))
+            shapes.append(f'<line x1="{A[0]:.1f}" y1="{A[1]:.1f}" x2="{B[0]:.1f}" y2="{B[1]:.1f}"{style(opts)}/>')
+            shapes.append(f'<polygon points="{B[0]:.1f},{B[1]:.1f} {h1[0]:.1f},{h1[1]:.1f} {h2[0]:.1f},{h2[1]:.1f}" fill="currentColor" stroke="none"/>')
         elif kind in ("line", "ray"):
             A, B = P[names[0]], P[names[1]]; used.update(names[:2]); d = sub(B, A); L = math.hypot(*d) or 1; u = mul(d, 1 / L)
             s0 = A if kind == "ray" else add(A, mul(u, -60)); s1 = add(B, mul(u, 60))
@@ -301,6 +315,15 @@ def render(ops, P, OBJ):
         labels.append(f'<text x="{lx:.1f}" y="{ly:.1f}" text-anchor="middle">{txt}{prime}</text>')
         ext((lx, ly - 5), 9)
         dotsvg.append(f'<circle cx="{p[0]:.1f}" cy="{p[1]:.1f}" r="2.2"/>')
+    for op in ops:
+        if op["op"] != "text":
+            continue
+        n, dname, txt = op["args"]; p = P[n]; d = (0, 0) if dname == "c" else DIRS[dname]
+        lx, ly = p[0] + d[0] * 13, p[1] + d[1] * 13 + 5
+        cjk = re.search("[　-鿿]", txt)
+        st = ' font-style="normal" font-size="13"' if cjk else ""
+        labels.append(f'<text x="{lx:.1f}" y="{ly:.1f}" text-anchor="middle"{st}>{html.escape(txt)}</text>')
+        ext((lx, ly - 5), 4 + 4 * len(txt))
     for n in dots:
         if n in P and n not in named:
             dotsvg.append(f'<circle cx="{P[n][0]:.1f}" cy="{P[n][1]:.1f}" r="2.2"/>')
