@@ -67,8 +67,8 @@ $$c^2-2(\cos A)c+(1-4\sin^2A)\le0,$$
 zh: $AE$ 是半圓的直徑，且 $AE=2$，$B,C,D$ 在半圓上，又 $AB=a$，$BC=b$，$CD=c$，$DE=d$。求證：$a^2+b^2+c^2+d^2+abc+bcd\lt 4$。
 sol: <figure class="bkfig"><pre class="geo">A = (22,125)
 E = (228,125)
-O = mid(A, E)
-k = circle(O, A)
+o = mid(A, E)
+k = circle(o, A)
 B = on(k, 46.1,58.8)
 C = on(k, 116,22.4)
 D = on(k, 203.9,58.8)
@@ -88,6 +88,8 @@ sol: <figure class="bkfig"><pre class="geo">A = (22,119.3)
 B = (198,119.3)
 M = (51.3,22)
 N = (152.8,28.3)
+S = (90.4,86.9)
+T = (134,56.5)
 draw poly A B N M
 draw seg M B
 </pre><figcaption>$AB=\sqrt3$，$AM=MN=NB=1$；圖是 $\cos A=\frac{\sqrt3}6$、$S^2+T^2$ 取最大值的位置</figcaption></figure>

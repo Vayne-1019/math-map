@@ -235,16 +235,16 @@ zh: 以 $\triangle ABC$ 的邊 $BC$、$CA$、$AB$ 為邊向外作正三角形 $B
 sol: <figure class="bkfig"><pre class="geo">A = (112.7,51.4)
 B = (70.6,131.9)
 C = (193.1,131.9)
-A1 = rotate(C, B, -60)
-B1 = rotate(A, C, -60)
-C1 = rotate(B, A, -60)
-O1 = centroid(B, A1, C)
-O2 = centroid(C, B1, A)
-O3 = centroid(A, C1, B)
+a1 = rotate(C, B, -60)
+b1 = rotate(A, C, -60)
+c1 = rotate(B, A, -60)
+O1 = centroid(B, a1, C)
+O2 = centroid(C, b1, A)
+O3 = centroid(A, c1, B)
 draw poly A B C accent
-draw poly B A1 C
-draw poly C B1 A
-draw poly A C1 B
+draw poly B a1 C
+draw poly C b1 A
+draw poly A c1 B
 draw poly O1 O2 O3 accent
 </pre><figcaption>三個外側正三角形的中心連成正三角形（紅）</figcaption></figure>
 <p>由費馬問題的引理 2，$\triangle BA_1C$、$\triangle CB_1A$、$\triangle AC_1B$ 的外接圓（圓心 $O_1,O_2,O_3$）共點 $P$。過 $A$ 作割線 $RT\parallel O_2O_3$（$R$、$T$ 分別在 $\odot O_3$、$\odot O_2$ 上），再作割線 $RB$ 與 $\odot O_1$ 交於 $S$。因為 $\angle CTR=\angle ARB=\angle BSC=60^\circ$，所以 $\angle TCS=360^\circ-3\times60^\circ=180^\circ$⟦為什麼｜看四邊形 $RTCS$：$\angle R=\angle ARB$、$\angle T=\angle RTC$、$\angle S=\angle RSC$ 都是 $60^\circ$（各圓中對著 $60^\circ$ 圓周角的弦），內角和 $360^\circ$ 使 $\angle TCS=180^\circ$。⟧，即 $T,C,S$ 共線，$\triangle RST$ 是正三角形。又 $RT\perp AP$⟦為什麼｜$AP$ 是 $\odot O_2$ 與 $\odot O_3$ 的公共弦，垂直於連心線 $O_2O_3$，而 $RT\parallel O_2O_3$。⟧，$RP$ 過 $O_3$、$TP$ 過 $O_2$（$RP$、$TP$ 是直徑），所以 $O_3O_2$ 是 $\triangle PRT$ 的中位線，$O_3O_2=\frac12RT$。同理 $O_1O_3=\frac12RS$、$O_1O_2=\frac12ST$，所以 $\triangle O_1O_2O_3$ 是正三角形。</p>

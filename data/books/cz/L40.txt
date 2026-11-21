@@ -76,14 +76,14 @@ D = (150,20)
 draw poly A B C D
 draw seg A C
 draw seg B D
-A2 = (320,20)
-B2 = (285,110)
-C2 = (205,110)
-D2 = (320,190)
-draw poly A2 C2 D2
-draw seg B2 A2
-draw seg B2 C2
-draw seg B2 D2
+a2 = (320,20)
+b2 = (285,110)
+c2 = (205,110)
+d2 = (320,190)
+draw poly a2 c2 d2
+draw seg b2 a2
+draw seg b2 c2
+draw seg b2 d2
 </pre><figcaption>左：凸四邊形，兩條對角線把四個頂角分成 8 個角。右：凹的情形，B 在 △ACD 內部，6 個角都是 △ACD 頂角的一部分。</figcaption></figure>
 (1) $A,B,C,D$ 構成凸四邊形。對角線把四個頂角分成 $\angle1,\dots,\angle8$，每一個都是某個「三點三角形」的內角⟦為什麼｜例如 $\angle1=\angle CAD$ 是 $\triangle ACD$ 的內角，$\angle2=\angle BAC$ 是 $\triangle ABC$ 的內角，其餘類推。⟧，依反設都大於 $45^\circ$，所以
 $$\angle ABC+\angle BCD+\angle CDA+\angle DAB=\angle1+\dots+\angle8>8\times45^\circ=360^\circ,$$
@@ -184,16 +184,16 @@ sol: 反設 $c$ 與 $d$ 不相交，即 $c\parallel d$。因為 $a\perp c$，所
 === 習題 3
 zh: 從半圓直徑 $AB$ 的兩端點作弦 $AC$ 與 $BD$，兩弦交於 $E$；過 $C,D$ 作切線 $CP$、$DP$，交於 $P$。求證：$PE\perp AB$。
 hint: 原書用反證法：設直線 $PE$ 交 $AB$ 於 $H$，若 $\angle PHB$ 不是直角，比較角度得出 $PD\ne PC$，與切線長相等矛盾。下面給一個直接證法。
-sol: <figure class="bkfig"><pre class="geo">O = (160,248)
-k = circler(O, 90)
+sol: <figure class="bkfig"><pre class="geo">o = (160,248)
+k = circler(o, 90)
 A = on(k, 70,248)
 B = on(k, 250,248)
 C = on(k, 211.6,174.3)
 D = on(k, 91.1,190.1)
 E = inter(A, C, B, D)
 F = inter(A, D, B, C)
-qC = rotate(O, C, 90)
-qD = rotate(O, D, 90)
+qC = rotate(o, C, 90)
+qD = rotate(o, D, 90)
 P = inter(C, qC, D, qD)
 H = foot(F, A, B)
 draw circle k
