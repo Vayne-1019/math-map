@@ -8,10 +8,18 @@ status: 完成
 === text
 <h3>一、正三角形</h3>
 <p>$\triangle Z_1Z_2Z_3$ 是正三角形的充要條件是 $|z_1-z_2|=|z_2-z_3|=|z_3-z_1|$。這其實是兩個等式，用起來不太方便。利用旋轉，可以得到另一些充要條件，用起來方便得多。</p>
-<figure class="bkfig"><svg viewBox="0 0 300 164" width="300" role="img" aria-label="左：Z1Z2Z3 逆時針排列的正三角形；右：順時針排列">
-<g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="24.5,123.8 129.1,123.8 76.8,33.2"/><polygon points="170.9,123.8 275.5,123.8 223.2,33.2" stroke="#c2562b"/><polyline points="42.8,123.8 42.8,123.4 42.7,122.9 42.7,122.4 42.7,121.9 42.6,121.5 42.5,121 42.5,120.5 42.4,120 42.3,119.6 42.1,119.1 42,118.6 41.9,118.2 41.7,117.7 41.6,117.3 41.4,116.8 41.2,116.4 41,116 40.8,115.5 40.6,115.1 40.3,114.7 40.1,114.3 39.8,113.9 39.5,113.5 39.3,113.1 39,112.7 38.7,112.3 38.4,112 38.1,111.6 37.7,111.2 37.4,110.9 37.1,110.6 36.7,110.2 36.4,109.9 36,109.6 35.6,109.3 35.2,109 34.8,108.8 34.4,108.5 34,108.2 33.6,108" stroke-width="1"/><polyline points="189.2,123.8 189.2,123.4 189.2,122.9 189.2,122.4 189.1,121.9 189.1,121.5 189,121 188.9,120.5 188.8,120 188.7,119.6 188.6,119.1 188.5,118.6 188.3,118.2 188.2,117.7 188,117.3 187.8,116.8 187.6,116.4 187.4,116 187.2,115.5 187,115.1 186.8,114.7 186.5,114.3 186.3,113.9 186,113.5 185.7,113.1 185.4,112.7 185.2,112.3 184.8,112 184.5,111.6 184.2,111.2 183.9,110.9 183.5,110.6 183.2,110.2 182.8,109.9 182.4,109.6 182.1,109.3 181.7,109 181.3,108.8 180.9,108.5 180.5,108.2 180.1,108" stroke="#c2562b" stroke-width="1"/></g>
-<g fill="currentColor" font-size="15" font-style="italic"><text x="6.5" y="135.8">Z<tspan font-size="11" dy="3">1</tspan></text><text x="130.1" y="135.8">Z<tspan font-size="11" dy="3">2</tspan></text><text x="72.8" y="27.2">Z<tspan font-size="11" dy="3">3</tspan></text><text x="152.9" y="135.8">Z<tspan font-size="11" dy="3">1</tspan></text><text x="276.5" y="135.8">Z<tspan font-size="11" dy="3">3</tspan></text><text x="219.2" y="27.2">Z<tspan font-size="11" dy="3">2</tspan></text></g>
-</svg><figcaption>左：$Z_1\to Z_2\to Z_3$ 逆時針（正向）；右：順時針（負向）</figcaption></figure>
+<figure class="bkfig"><pre class="geo">Z1 = (24.5, 123.8)
+Z2 = (129.1, 123.8)
+Z3 = rotate(Z2, Z1, 60)
+draw poly Z1 Z2 Z3
+angle Z2 Z1 Z3
+Y1 = (170.9, 123.8)
+Y3 = (275.5, 123.8)
+Y2 = rotate(Y3, Y1, 60)
+draw poly Y1 Y3 Y2 accent
+angle Y3 Y1 Y2 accent
+</pre>
+<figcaption>左：$Z_1\to Z_2\to Z_3$ 逆時針（正向）；右：順時針（負向）</figcaption></figure>
 <p>看左邊的正三角形：把 $\overrightarrow{Z_1Z_2}$ 逆時針轉 $60^\circ$ 就與 $\overrightarrow{Z_1Z_3}$ 重合。令 $u=e^{i\pi/3}$，則 $(z_2-z_1)u=z_3-z_1$，移項整理得 $(1-u)z_1+uz_2-z_3=0$。因為</p>
 $$u^2-u+1=0,\qquad(1)$$
 <p>⟦(1) 的由來｜$u^3=e^{i\pi}=-1$，$u^3+1=(u+1)(u^2-u+1)=0$，而 $u\ne-1$。⟧所以 $1-u=-u^2$，上式乘以 $-1$ 得</p>
@@ -22,11 +30,21 @@ $$u^2z_1-uz_3+z_2=0.\qquad(3)$$
 
 === 例 1 | 拿破崙定理
 zh: 設 $\triangle Z_1Z_2Z_3$ 是任意給定的正向三角形（不必是正三角形）。以邊 $Z_1Z_2$ 為底，向外作一個頂角為 $120^\circ$ 的等腰三角形，頂點記為 $W_3$，稱為自由頂點；在邊 $Z_2Z_3$、$Z_3Z_1$ 上也這樣做，得到的自由頂點分別記為 $W_1$、$W_2$。證明 $\triangle W_1W_2W_3$ 是正向正三角形。（這個結論在幾何中稱為拿破崙定理。）
-sol: <figure class="bkfig"><svg viewBox="0 0 300 255" width="300" role="img" aria-label="拿破崙定理：三邊外側頂角 120° 的等腰三角形頂點構成正三角形">
-<g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="63.5,170.6 236.5,170.6 117,63.5"/><polygon points="63.5,170.6 150,220.6 236.5,170.6" stroke-dasharray="5 4" stroke-width="1"/><polygon points="236.5,170.6 207.7,82.5 117,63.5" stroke-dasharray="5 4" stroke-width="1"/><polygon points="117,63.5 59.3,101.6 63.5,170.6" stroke-dasharray="5 4" stroke-width="1"/><polygon points="207.7,82.5 59.3,101.6 150,220.6" stroke="#c2562b" stroke-width="2"/></g>
-<g fill="currentColor"><circle cx="207.7" cy="82.5" r="2.6"/><circle cx="59.3" cy="101.6" r="2.6"/><circle cx="150" cy="220.6" r="2.6"/></g>
-<g fill="currentColor" font-size="15" font-style="italic"><text x="45.5" y="182.6">Z<tspan font-size="11" dy="3">1</tspan></text><text x="237.5" y="182.6">Z<tspan font-size="11" dy="3">2</tspan></text><text x="113" y="57.5">Z<tspan font-size="11" dy="3">3</tspan></text><text x="212.7" y="87.5">W<tspan font-size="11" dy="3">1</tspan></text><text x="36.3" y="106.6">W<tspan font-size="11" dy="3">2</tspan></text><text x="146" y="236.6">W<tspan font-size="11" dy="3">3</tspan></text></g>
-</svg><figcaption>虛線是三個頂角 120° 的等腰三角形；紅色 △W₁W₂W₃ 是正三角形</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">Z1 = (63.5, 170.6)
+Z2 = (236.5, 170.6)
+Z3 = (117, 63.5)
+r3 = rotate(Z2, Z1, -30)
+W3 = scale(r3, Z1, 0.57735)
+r1 = rotate(Z3, Z2, -30)
+W1 = scale(r1, Z2, 0.57735)
+r2 = rotate(Z1, Z3, -30)
+W2 = scale(r2, Z3, 0.57735)
+draw poly Z1 Z2 Z3
+draw poly Z1 W3 Z2 dash
+draw poly Z2 W1 Z3 dash
+draw poly Z3 W2 Z1 dash
+draw poly W1 W2 W3 accent
+</pre><figcaption>虛線是三個頂角 120° 的等腰三角形；紅色 △W₁W₂W₃ 是正三角形</figcaption></figure>
 先用 $z_1,z_2$ 表示自由頂點 $w_3$。$\overrightarrow{W_3Z_2}$ 繞 $W_3$ 逆時針轉 $120^\circ$ 就到達 $\overrightarrow{W_3Z_1}$，而轉 $120^\circ$ 是乘 $u^2$，所以
 $$(z_2-w_3)u^2=z_1-w_3.$$
 同樣
@@ -41,11 +59,18 @@ $$\begin{aligned}&amp;(1-u^2)(u^2w_1-uw_2+w_3)\\&amp;=(1+u^3)z_1+z_2(u^2-u^2)+z_
 
 === 例 2 | 繞三點回到原處
 zh: 設 $A,B,C$ 是平面上的三點。有一個人從平面上另一點 $P_0$ 出發，朝 $A$ 直線前進；到達 $A$ 後，向左轉 $60^\circ$ 再直線前進到 $P_1$，且 $P_0A=AP_1$。接著從 $P_1$ 出發往 $B$ 直線前進，到 $B$ 後左轉 $60^\circ$ 繼續直線前進到 $P_2$，且 $P_1B=BP_2$。對 $C$ 再做一次同樣的動作到達 $P_3$。這時他發現自己回到了出發點 $P_0$。證明 $\triangle ABC$ 是正三角形。（可與第 23 講習題 4、第 27 屆國際數學奧林匹亞第 2 題對照。）
-sol: <figure class="bkfig"><svg viewBox="0 0 260 223" width="260" role="img" aria-label="從 P0 出發，經 A、B、C 各左轉 60°，回到原點">
-<g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="87,155.4 168.9,155.4 128,84.4" stroke="#c2562b"/><polygon points="128,192.3 34.5,172.4 221.4,30.4" stroke-dasharray="5 4" stroke-width="1"/><line x1="128" y1="192.3" x2="34.5" y2="172.4"/><line x1="34.5" y1="172.4" x2="221.4" y2="30.4"/><line x1="221.4" y1="30.4" x2="128" y2="192.3"/></g>
-<g fill="currentColor"><circle cx="87" cy="155.4" r="2.6" fill="#c2562b"/><circle cx="168.9" cy="155.4" r="2.6" fill="#c2562b"/><circle cx="128" cy="84.4" r="2.6" fill="#c2562b"/><circle cx="128" cy="192.3" r="2.6"/><circle cx="34.5" cy="172.4" r="2.6"/><circle cx="221.4" cy="30.4" r="2.6"/></g>
-<g fill="currentColor" font-size="15" font-style="italic"><text x="88" y="153.4">A</text><text x="169.9" y="153.4">B</text><text x="129" y="82.4">C</text><text x="68" y="206.3">P₀ = P₃</text><text x="38.5" y="177.4">P₁</text><text x="225.4" y="35.4">P₂</text></g>
-</svg><figcaption>實線是走過的路線（終點 $P_3$ 與 $P_0$ 重合）；$A,B,C$ 是虛線 △$P_0P_1P_2$ 的外拿破崙三角形頂點</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">P0 = (128, 192.3)
+P1 = (34.5, 172.4)
+P2 = (221.4, 30.4)
+r1 = rotate(P1, P0, -30)
+A = scale(r1, P0, 0.57735)
+r2 = rotate(P2, P1, -30)
+B = scale(r2, P1, 0.57735)
+r3 = rotate(P0, P2, -30)
+C = scale(r3, P2, 0.57735)
+draw poly P0 P1 P2 dash
+draw poly A B C accent
+</pre><figcaption>實線是走過的路線（終點 $P_3$ 與 $P_0$ 重合）；$A,B,C$ 是虛線 △$P_0P_1P_2$ 的外拿破崙三角形頂點</figcaption></figure>
 由題設，在 $A$ 處前進方向左轉 $60^\circ$，所以 $\angle P_0AP_1=180^\circ-60^\circ=120^\circ$，同理
 $$\angle P_0AP_1=\angle P_1BP_2=\angle P_2CP_0=120^\circ,$$
 而且 $P_0A=AP_1$、$P_1B=BP_2$、$P_2C=CP_0$。所以 $A,B,C$ 正是在 $\triangle P_0P_1P_2$ 三邊上作頂角 $120^\circ$ 等腰三角形的自由頂點⟦向外還是向內｜依照走法定出的方向，這三個等腰三角形都在同一側（都向外或都向內），恰好符合例 1 的作法。⟧，即 $\triangle ABC$ 是 $\triangle P_0P_1P_2$ 的拿破崙三角形。由例 1，$\triangle ABC$ 是正三角形。
@@ -62,10 +87,15 @@ $$\arg\frac{z_3-z_1}{z_2-z_1}=\arg\frac{w_3-w_1}{w_2-w_1}.\qquad(6)$$
 === 例 3 | 中點三角形
 zh: 設 $\triangle ABC$ 是任意給定的三角形，$BC$、$CA$、$AB$ 的中點分別為 $A',B',C'$。證明
 $$\triangle A'C'B\sim\triangle CB'A'\sim\triangle B'AC'\sim\triangle C'A'B'\sim\triangle CAB.$$
-sol: <figure class="bkfig"><svg viewBox="0 0 240 189" width="240" role="img" aria-label="三角形 ABC 與中點三角形 A′B′C′">
-<g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="27.8,156.9 212.2,156.9 83.1,27.8"/><polygon points="147.7,92.3 55.5,92.3 120,156.9" stroke="#c2562b"/></g>
-<g fill="currentColor" font-size="15" font-style="italic"><text x="17.8" y="168.9">A</text><text x="213.2" y="168.9">B</text><text x="79.1" y="21.8">C</text><text x="152.7" y="97.3">A′</text><text x="32.5" y="97.3">B′</text><text x="116" y="173.9">C′</text></g>
-</svg><figcaption>四個小三角形都與 △CAB 直接相似</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (27.8, 156.9)
+B = (212.2, 156.9)
+C = (83.1, 27.8)
+A' = mid(B, C)
+B' = mid(C, A)
+C' = mid(A, B)
+draw poly A B C
+draw poly A' B' C' accent
+</pre><figcaption>四個小三角形都與 △CAB 直接相似</figcaption></figure>
 設各點表示複數 $a,b,c,a',b',c'$，由中點公式
 $$a'=\frac{b+c}2,\quad b'=\frac{c+a}2,\quad c'=\frac{a+b}2.$$
 以第三個頂點為基準比較：
@@ -77,11 +107,16 @@ $$\frac{c'-a'}{b'-a'}=\frac{\frac{a+b}2-\frac{b+c}2}{\frac{c+a}2-\frac{b+c}2}=\f
 
 === 例 4 | 五個點
 zh: 平面上有 5 個點 $A,B,C,U,V$，分別表示複數 $a,b,c,u,v$。如果 $\triangle AUV$、$\triangle VBU$、$\triangle UVC$ 彼此直接相似，證明 $\triangle ABC$ 也與它們直接相似。
-sol: <figure class="bkfig"><svg viewBox="0 0 280 261" width="280" role="img" aria-label="三個彼此直接相似的三角形 AUV、VBU、UVC，以及三角形 ABC">
-<g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="48.8,170.4 222.6,144.3 127,48.8" fill="#c2562b" fill-opacity="0.12" stroke-width="1"/><polygon points="127,48.8 116.3,212.7 222.6,144.3" fill="#c2562b" fill-opacity="0.12" stroke-width="1"/><polygon points="222.6,144.3 127,48.8 111.5,151.6" fill="#c2562b" fill-opacity="0.12" stroke-width="1"/><polygon points="48.8,170.4 116.3,212.7 111.5,151.6" stroke="#c2562b" stroke-width="2"/></g>
-<g fill="currentColor"><circle cx="48.8" cy="170.4" r="2.6"/><circle cx="222.6" cy="144.3" r="2.6"/><circle cx="127" cy="48.8" r="2.6"/><circle cx="116.3" cy="212.7" r="2.6"/><circle cx="111.5" cy="151.6" r="2.6"/></g>
-<g fill="currentColor" font-size="15" font-style="italic"><text x="36.8" y="184.4">A</text><text x="226.6" y="149.3">U</text><text x="114" y="53.8">V</text><text x="119.3" y="226.7">B</text><text x="107.5" y="147.6">C</text></g>
-</svg><figcaption>三個淺色三角形彼此直接相似；紅色 △ABC 也與它們直接相似</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (48.8, 170.4)
+U = (222.6, 144.3)
+V = (127, 48.8)
+B = (116.3, 212.7)
+C = (111.5, 151.6)
+draw poly A U V fill
+draw poly V B U fill
+draw poly U V C fill
+draw poly A B C accent
+</pre><figcaption>三個淺色三角形彼此直接相似；紅色 △ABC 也與它們直接相似</figcaption></figure>
 由題設可以寫出
 $$\frac{v-a}{u-a}=\frac{u-v}{b-v}=\frac{c-u}{v-u}.$$
 由加比定理（分子相加、分母相加，比值不變）：
@@ -94,11 +129,16 @@ $$\frac{v-a}{u-a}=\frac{(v-a)+(u-v)+(c-u)}{(u-a)+(b-v)+(v-u)}=\frac{c-a}{b-a},$$
 <h3>三、點到直線的垂足</h3>
 <p>設 $Z_1,Z_2$ 是複數平面上相異兩點，$Z$ 是另一點。求 $Z$ 到直線 $Z_1Z_2$ 的垂足 $M$，各點表示複數 $z_1,z_2,z,m$。</p>
 <p>若 $Z$ 不在直線上，延長 $ZM$ 到 $Z'$ 使 $MZ'=ZM$，即 $Z'$ 是 $Z$ 對直線的鏡射，$M$ 是 $ZZ'$ 的中點。所以只要求出 $z'$，就容易得到 $m$。</p>
-<figure class="bkfig"><svg viewBox="0 0 240 260" width="240" role="img" aria-label="Z 對直線 Z1Z2 的對稱點 Z′ 與垂足 M">
-<g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="17" y1="157" x2="218.1" y2="97.8"/><line x1="83" y1="33.7" x2="139.2" y2="224.8" stroke-dasharray="5 4"/><line x1="33.7" y1="152" x2="83" y2="33.7" stroke-width="1"/><line x1="33.7" y1="152" x2="139.2" y2="224.8" stroke-width="1"/></g>
-<g fill="currentColor"><circle cx="33.7" cy="152" r="2.6"/><circle cx="201.3" cy="102.7" r="2.6"/><circle cx="83" cy="33.7" r="2.6"/><circle cx="111.1" cy="129.3" r="2.6"/><circle cx="139.2" cy="224.8" r="2.6"/></g>
-<g fill="currentColor" font-size="15" font-style="italic"><text x="15.7" y="164">Z<tspan font-size="11" dy="3">1</tspan></text><text x="202.3" y="114.7">Z<tspan font-size="11" dy="3">2</tspan></text><text x="79" y="27.7">Z</text><text x="115.1" y="134.3">M</text><text x="143.2" y="229.8">Z′</text></g>
-</svg><figcaption>$Z'$ 是 $Z$ 對直線 $Z_1Z_2$ 的鏡射，$M$ 是 $ZZ'$ 的中點</figcaption></figure>
+<figure class="bkfig"><pre class="geo">Z1 = (33.7, 152)
+Z2 = (201.3, 102.7)
+Z = (83, 33.7)
+M = foot(Z, Z1, Z2)
+Z' = reflect(Z, Z1, Z2)
+draw line Z1 Z2
+draw seg Z Z' dash
+draw seg Z1 Z
+draw seg Z1 Z'
+</pre><figcaption>$Z'$ 是 $Z$ 對直線 $Z_1Z_2$ 的鏡射，$M$ 是 $ZZ'$ 的中點</figcaption></figure>
 <p>$\triangle Z_1Z_2Z$ 與 $\triangle Z_1Z_2Z'$ 並不直接相似，它們的定向正好相反。也就是說，兩個複數 $\frac{z-z_1}{z_2-z_1}$ 與 $\frac{z'-z_1}{z_2-z_1}$ 的模相等、輻角互為相反數，因此互為共軛：</p>
 $$\frac{z'-z_1}{z_2-z_1}=\overline{\Big(\frac{z-z_1}{z_2-z_1}\Big)}.$$
 <p>移項得 $z'=z_1+\dfrac{z_2-z_1}{\bar z_2-\bar z_1}(\bar z-\bar z_1)$。由 $m=\frac{z+z'}2$ 得<b>垂足公式</b>：</p>
@@ -107,11 +147,21 @@ $$m=\frac12\Big[z+z_1+\frac{z_2-z_1}{\bar z_2-\bar z_1}(\bar z-\bar z_1)\Big].\q
 
 === 例 5 | 西姆松定理
 zh: 從 $\triangle ABC$ 外接圓上任一點 $P$，向三邊 $BC$、$CA$、$AB$（或其延長線）引垂線，垂足分別為 $D,E,F$。證明這三點在同一直線上。
-sol: <figure class="bkfig"><svg viewBox="0 0 270 227" width="270" role="img" aria-label="西姆松定理：外接圓上 P 到三邊的垂足 D、E、F 共線">
-<g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="149.2" cy="127.9" r="71.2" stroke-dasharray="5 4"/><polygon points="82.4,152.2 216.1,152.2 167.7,59.1"/><line x1="171.9" y1="54.5" x2="78.1" y2="156.9"/><line x1="94.7" y1="82.1" x2="161.5" y2="47.4" stroke-dasharray="5 4" stroke-width="1"/><line x1="216.1" y1="152.2" x2="161.5" y2="47.4" stroke-width="1"/><line x1="94.7" y1="82.1" x2="122.9" y2="108" stroke-dasharray="5 4" stroke-width="1"/><line x1="167.7" y1="59.1" x2="122.9" y2="108" stroke-width="1"/><line x1="94.7" y1="82.1" x2="94.7" y2="152.2" stroke-dasharray="5 4" stroke-width="1"/><line x1="82.4" y1="152.2" x2="94.7" y2="152.2" stroke-width="1"/><line x1="86.7" y1="164.8" x2="169.5" y2="34.8" stroke="#c2562b" stroke-width="2"/></g>
-<g fill="currentColor"><circle cx="161.5" cy="47.4" r="2.6"/><circle cx="122.9" cy="108" r="2.6"/><circle cx="94.7" cy="152.2" r="2.6"/><circle cx="94.7" cy="82.1" r="2.6"/></g>
-<g fill="currentColor" font-size="15" font-style="italic"><text x="71.4" y="165.2">A</text><text x="218.1" y="165.2">B</text><text x="163.7" y="53.1">C</text><text x="95.7" y="80.1">P</text><text x="163.5" y="44.4">D</text><text x="109.9" y="113">E</text><text x="90.7" y="169.2">F</text></g>
-</svg><figcaption>虛線是 $P$ 到三邊（或延長線）的垂線；紅線是西姆松線</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (82.4, 152.2)
+B = (216.1, 152.2)
+C = (167.7, 59.1)
+k = circle3(A, B, C)
+P = on(k, 94.7, 82.1)
+D = foot(P, B, C)
+E = foot(P, C, A)
+F = foot(P, A, B)
+draw circle k dash
+draw poly A B C
+draw seg P D dash
+draw seg P E dash
+draw seg P F dash
+draw line D F accent
+</pre><figcaption>虛線是 $P$ 到三邊（或延長線）的垂線；紅線是西姆松線</figcaption></figure>
 設外接圓是單位圓，$A,B,C,P$ 分別表示 $z_1,z_2,z_3,z$，於是
 $$z_1\bar z_1=z_2\bar z_2=z_3\bar z_3=z\bar z=1.$$
 $P$ 到 $AB$ 的垂足 $F$ 用 $m$ 表示，由 (7) 並代入 $\bar z_1=\frac1{z_1}$、$\bar z_2=\frac1{z_2}$、$\bar z=\frac1z$，化簡得⟦化簡｜$\bar z_2-\bar z_1=\frac1{z_2}-\frac1{z_1}=\frac{z_1-z_2}{z_1z_2}$，所以 $\frac{z_2-z_1}{\bar z_2-\bar z_1}=-z_1z_2$；再乘以 $\bar z-\bar z_1=\frac1z-\frac1{z_1}$ 得 $-\frac{z_1z_2}z+z_2$。⟧
@@ -166,10 +216,17 @@ sol: 與上題相同：三個三角形都滿足線性關係 (2)，例如 $u^2a-u
 
 === 習題 6
 zh: 如圖，$A,B,C,D$ 四點分別表示 $a,b,c,d$。如果 $A,B,C,D$ 四點共圓，證明 $\arg\Big(\dfrac{d-a}{b-a}\Big)+\arg\Big(\dfrac{b-c}{d-c}\Big)=\pi$。
-sol: <figure class="bkfig"><svg viewBox="0 0 200 200" width="200" role="img" aria-label="圓內接四邊形 ABCD">
-<g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="100" cy="100" r="68.8"/><polygon points="55.8,47.3 47.3,144.2 144.2,152.7 144.2,47.3"/><line x1="55.8" y1="47.3" x2="144.2" y2="152.7" stroke-dasharray="5 4" stroke-width="1"/><line x1="47.3" y1="144.2" x2="144.2" y2="47.3" stroke-dasharray="5 4" stroke-width="1"/></g>
-<g fill="currentColor" font-size="15" font-style="italic"><text x="44.8" y="45.3">A</text><text x="36.3" y="157.2">B</text><text x="146.2" y="165.7">C</text><text x="145.2" y="45.3">D</text></g>
-</svg><figcaption>$A,B,C,D$ 依逆時針排列在圓上</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">o = (100, 100)
+k = circler(o, 68.8)
+A = on(k, 55.8, 47.3)
+B = on(k, 47.3, 144.2)
+C = on(k, 144.2, 152.7)
+D = on(k, 144.2, 47.3)
+draw circle k
+draw poly A B C D
+draw seg A C dash
+draw seg B D dash
+</pre><figcaption>$A,B,C,D$ 依逆時針排列在圓上</figcaption></figure>
 $\arg\frac{d-a}{b-a}$ 是從 $\overrightarrow{AB}$ 逆時針轉到 $\overrightarrow{AD}$ 的角，即四邊形的內角 $\angle A$；$\arg\frac{b-c}{d-c}$ 是從 $\overrightarrow{CD}$ 逆時針轉到 $\overrightarrow{CB}$ 的角，即內角 $\angle C$。圓內接四邊形對角互補，所以和為 $\pi$。（$A,B,C,D$ 依逆時針排列時，兩個轉角都正好是內角。）
 
 === 習題 7
