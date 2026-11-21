@@ -170,18 +170,18 @@ $$\begin{aligned}\text{四邊形 }ABCD\text{ 的面積}&=\text{四邊形 }ABCD'\
 zh: 證明：在邊長為 $a,b,c$ 的任意三角形中，高 $h_a\le\sqrt{p(p-a)}$，其中 $p=\dfrac{a+b+c}2$。
 sol: <figure class="bkfig"><pre class="geo">B = (33.1, 178)
 C = (166.9, 178)
-L1 = (22, 100)
-L2 = (178, 100)
-l = line(L1, L2)
+l1 = (22, 100)
+l2 = (178, 100)
+l = line(l1, l2)
 A = on(l, 83.3, 100)
-B' = reflect(B, L1, L2)
-C' = reflect(C, L1, L2)
+B' = reflect(B, l1, l2)
+C' = reflect(C, l1, l2)
 draw poly B C C' B'
 draw seg A B
 draw seg A C
 draw seg A B' dash
 draw seg C B' dash
-draw line L1 L2 dash
+draw line l1 l2 dash
 </pre><figcaption>l 過 A 且平行 BC；AB＝AB′，所以 b＋c ≥ CB′</figcaption></figure>
 過 $A$ 作 $BC$ 的平行線 $l$，作 $B,C$ 關於 $l$ 的對稱點 $B',C'$，則 $BB'=2h_a$，$AB'=AB$。所以
 $$b+c=CA+AB'\ge CB'=\sqrt{BC^2+BB'^2},$$
