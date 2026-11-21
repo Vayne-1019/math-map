@@ -5,11 +5,21 @@ order: 40
 
 === body
 <div class="hero">$ab=cd$ → 改寫成 $\frac ac=\frac db$ → 找一對<b>相似三角形</b><br>四條線段不在一對三角形裡 → 引進<b>待定線段 $x$</b> 當橋樑</div>
-<figure class="bkfig"><svg viewBox="0 0 230 230" width="230" role="img" aria-label="角平分線延長到外接圓">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="115" cy="115" r="93" stroke-dasharray="5 4"/><polygon points="84.6,27.1 28.3,148.5 201.7,148.5"/><line x1="84.6" y1="27.1" x2="105" y2="148.5"/><line x1="105" y1="148.5" x2="115" y2="208" stroke-dasharray="5 4"/><line x1="28.3" y1="148.5" x2="115" y2="208" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="84.6" y="21" text-anchor="middle">A</text><text x="17.3" y="153.4" text-anchor="middle">B</text><text x="212.7" y="153.4" text-anchor="middle">C</text><text x="112.8" y="145.7" text-anchor="middle">D</text><text x="115" y="223.9" text-anchor="middle">P</text></g>
-</svg><figcaption>作外接圓（虛線），延長角平分線 $AD$ 交圓於 $P$，連 $BP$</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A = (84.6, 27.1)
+B = (28.3, 148.5)
+C = (201.7, 148.5)
+kc = circle3(A, B, C)
+pm = mid(B, C)
+pq = rotate(B, pm, 90)
+pl = line(pm, pq)
+P = meet(pl, kc, 115, 208)
+D = inter(A, P, B, C)
+draw poly A B C
+draw seg A D
+draw seg D P dash
+draw seg B P dash
+draw circle kc dash
+</pre><figcaption>作外接圓（虛線），延長角平分線 $AD$ 交圓於 $P$，連 $BP$</figcaption></figure>
 <div class="cards">
 <div class="card"><h4>① 單純比例</h4><div class="rule">$\frac ab=\frac cd$：$a,b,c,d$ 兩兩在一對相似三角形</div>
 <div class="eg">$OP\cdot OQ=OA^2$ ⇔ $\triangle OPA\sim\triangle OAQ$ <span class="pill">等積改比例</span></div></div>
