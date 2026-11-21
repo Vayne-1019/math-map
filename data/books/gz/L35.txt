@@ -67,12 +67,30 @@ $$\omega_k=\cos\frac{2k\pi}m+i\sin\frac{2k\pi}m=e^{\frac{2k\pi}mi},\quad k=0,1,\
 $$\sum_{k=0}^{m-1}\omega_k^s=\begin{cases}m,&m\mid s,\\0,&m\nmid s.\end{cases}\tag{9}$$
 事實上，若 $s=qm$（$q$ 是整數），則 $\omega_k^s=e^{2kq\pi i}=\cos2kq\pi+i\sin2kq\pi=1$，和為 $m$。若 $s$ 不是 $m$ 的倍數，令 $\omega=e^{\frac{2s\pi}mi}\ne1$，則 $\omega_k^s=\omega^k$，這是等比數列的和：
 $$\sum_{k=0}^{m-1}\omega_k^s=\sum_{k=0}^{m-1}\omega^k=\frac{1-\omega^m}{1-\omega}=\frac{1-e^{2s\pi i}}{1-\omega}=0.$$</p>
-<figure class="bkfig"><svg viewBox="0 0 200 200" width="200" role="img" aria-label="三次單位根在單位圓上">
-<g stroke="currentColor" stroke-width="1" fill="none"><line x1="10" y1="100" x2="190" y2="100"/><line x1="100" y1="190" x2="100" y2="10"/><circle cx="100" cy="100" r="70"/></g>
-<g stroke="#c2562b" stroke-width="2"><line x1="100" y1="100" x2="170" y2="100"/><line x1="100" y1="100" x2="65" y2="39.4"/><line x1="100" y1="100" x2="65" y2="160.6"/></g>
-<g fill="#c2562b"><circle cx="170" cy="100" r="4"/><circle cx="65" cy="39.4" r="4"/><circle cx="65" cy="160.6" r="4"/></g>
-<g fill="currentColor" font-size="13" font-style="italic"><text x="172" y="92">ω₀=1</text><text x="30" y="34">ω₁</text><text x="30" y="176">ω₂</text></g>
-</svg><figcaption>$m=3$：三個單位根平均分布在圓上，向量和為 0</figcaption></figure>
+<figure class="bkfig"><pre class="geo">O = (100,100)
+ω₀ = (170,100)
+ω₁ = rotate(ω₀, O, 120)
+ω₂ = rotate(ω₀, O, 240)
+k = circle(O, ω₀)
+h1 = (10,100)
+h2 = (190,100)
+v1 = (100,190)
+v2 = (100,10)
+hide O
+hide h1
+hide h2
+hide v1
+hide v2
+draw line h1 h2
+draw line v1 v2
+draw circle k
+draw seg O ω₀ accent
+draw seg O ω₁ accent
+draw seg O ω₂ accent
+label ω₀ e
+label ω₁ nw
+label ω₂ sw
+</pre><figcaption>$m=3$：三個單位根平均分布在圓上，向量和為 0</figcaption></figure>
 
 === 例 4 | 單位根濾波公式
 zh: 設 $\omega_k=e^{\frac{2k\pi}mi}$，$r,m$ 為非負整數，$0\le r\lt m$。證明
