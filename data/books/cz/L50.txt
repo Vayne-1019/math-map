@@ -133,13 +133,13 @@ dot r
 dot bt
 dot l
 dot o0
-label a ne
-label b n
-label c se
-label d w
-label e w
-label f sw
-label g nw
+text a ne a
+text b n b
+text c se c
+text d w d
+text e w e
+text f sw f
+text g nw g
 </pre></figure>
 sol: $a,b,c$ 是交於同一頂點（右端）的三條邊，需要三種不同的顏色，設分別是 ①②③。下面證明 $3$ 種顏色不夠。若只用 ①②③ 三色就能正常著色：$a$ 塗 ①，$b$ 塗 ②，$c$ 塗 ③。$d$ 與 $b,c$ 相鄰，只能塗 ①。$e$ 與 $a,b,d$ 相鄰，只能塗 ③。$g$ 與 $a,e$ 相鄰，只能塗 ②；$f$ 與 $c,d$ 相鄰，只能塗 ②。但 $f,g$ 相鄰（交於左端頂點），同色，不是正常著色。所以至少要 $4$ 種顏色。用 $4$ 種顏色可以：在上面的塗法中把 $f$ 改塗 ④ 即可。
 ⟦「不妨設」為什麼可以｜三種顏色的名稱可以任意互換，所以可以直接規定 $a,b,c$ 分別是 ①②③，不失一般性。⟧

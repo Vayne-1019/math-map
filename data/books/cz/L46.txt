@@ -17,6 +17,14 @@ B = (40, 130)
 D = (200, 20)
 m = mid(B, D)
 C = reflectp(A, m)
+mAD = mid(A, D)
+mBC = mid(B, C)
+mAB = mid(A, B)
+mDC = mid(D, C)
+text mAD n |a|
+text mBC s |y|
+text mAB w |x|
+text mDC e |b|
 draw poly A D C B
 draw seg A C
 draw seg B D
@@ -41,6 +49,10 @@ F = along(A, D, 0.75)
 E = along(D, C, 0.35)
 H = along(B, C, 0.75)
 O = inter(G, E, F, H)
+mAG = mid(A, G)
+mAF = mid(A, F)
+text mAG w a
+text mAF n b
 draw poly A B C D
 draw seg F H
 draw seg G E
@@ -69,6 +81,18 @@ $$\begin{cases}x^2+\left(\dfrac y{\sqrt3}\right)^2-2x\cdot\dfrac y{\sqrt3}\cos15
 B = (250, 160)
 C = (167.2, 49.6)
 O = (144.1, 129.4)
+mAC = mid(A, C)
+mBC = mid(B, C)
+mAB = mid(A, B)
+mOA = mid(O, A)
+mOC = mid(O, C)
+mOB = mid(O, B)
+text mAC w 4
+text mBC e 3
+text mAB s 5
+text mOA nw x
+text mOC e z
+text mOB n y/√3
 draw poly A B C
 draw seg O A
 draw seg O B

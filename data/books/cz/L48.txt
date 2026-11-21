@@ -12,16 +12,18 @@ status: 完成
 zh: 判斷下面命題的真偽：若 $P,Q$ 是直線 $l$ 同側的兩個不同點，則一定存在兩個不同的圓，都過 $P,Q$ 且和直線 $l$ 相切。
 sol: <b>分析</b>：在題設條件下，$P,Q$ 兩點與直線 $l$ 的位置關係有兩種可能：(1) 直線 $PQ\parallel l$；(2) 直線 $PQ$ 與 $l$ 相交。命題會不會在某個情形下不成立？
 <figure class="bkfig"><pre class="geo">O = (130, 100)
-L1 = (20, 170)
-L2 = (245, 170)
-M = foot(O, L1, L2)
+l1 = (20, 170)
+l2 = (245, 170)
+M = foot(O, l1, l2)
 k = circle(O, M)
 P = on(k, 66.8, 70)
 v = (130, 10)
 Q = reflect(P, O, v)
-draw line L1 L2
+draw line l1 l2
+text l2 s l
 draw line P Q
 draw line O v dash
+text v e m
 draw circle k
 </pre><figcaption>虛線 m 是 PQ 的垂直平分線</figcaption></figure>
 <b>解</b>：若直線 $PQ\parallel l$：所求圓的圓心 $O$ 一定在線段 $PQ$ 的垂直平分線 $m$ 上，這時 $m\perp l$，設垂足為 $M$。圓與 $l$ 相切，切點就是圓心到 $l$ 的垂足⟦為什麼切點是 M｜圓心到切線的連線垂直於切線。圓心在 $m$ 上，從 $m$ 上的點作 $l$ 的垂線，垂足都是 $M$。⟧ $M$。所以這個圓過不共線的三點 $P,Q,M$；$M$ 是唯一確定的，所以合要求的圓有且只有一個。這個反例說明命題是假的。

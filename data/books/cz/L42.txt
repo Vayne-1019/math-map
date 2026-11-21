@@ -158,6 +158,8 @@ M = on(AB, 86.25, 190)
 P = along(F, E, 0.4)
 Q = along(F, E, 0.6)
 N = inter(M, P, C, D)
+ll = along(M, N, -0.1)
+text ll c l
 draw poly A B C D
 draw line M N accent
 draw seg F E dash

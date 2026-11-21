@@ -110,6 +110,14 @@ D = (105, 30)
 E = (45, 115)
 cd = line(C, D)
 M = on(cd, 145, 37.5)
+mAB = mid(A, B)
+mCD = mid(C, D)
+mAE = mid(A, E)
+mED = mid(E, D)
+text mAB n a
+text mCD s b
+text mAE w u
+text mED w v
 draw poly A B C D E
 </pre><figcaption>示意圖（只畫出五個頂點，頂點位置為近似）：AB 是最大邊（記為 a），M 是其餘各邊連起來的中點（M 在 CD 上為近似位置）；b、u、v 為其他各段的長度</figcaption></figure>
 <b>證明</b>：問題等於證明：可以找到三個頂點，把它們之間的折線（一條或幾條邊）拉直後，三條線段能構成三角形。設 $AB=a$ 是最大邊；除 $AB$ 外其餘 $n-1$ 條邊連成的折線，拉直後的中點記為 $M$。設這條折線總長 $2s$，則 $a&lt;2s$（多邊形一邊小於其餘各邊之和）。
