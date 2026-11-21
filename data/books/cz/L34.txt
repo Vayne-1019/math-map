@@ -59,8 +59,8 @@ zh: 在 $\triangle ABC$ 中，$\angle A$、$\angle B$、$\angle C$ 的平分線�
 sol: <figure class="bkfig"><pre class="geo">A = (133.4, 27)
 B = (27, 133.4)
 C = (176.9, 146.5)
-O = circumcenter(A, B, C)
-k = circle(O, A)
+o = circumcenter(A, B, C)
+k = circle(o, A)
 I = incenter(A, B, C)
 P = second(k, A, I)
 Q = second(k, B, I)
@@ -182,6 +182,10 @@ B = (22, 167.4)
 C = (228, 167.4)
 D = (203.8, 22)
 O = inter(A, C, B, D)
+S1 = centroid(A, B, O)
+S2 = centroid(B, C, O)
+S3 = centroid(C, D, O)
+S4 = centroid(D, A, O)
 draw poly A B C D
 draw seg A C
 draw seg B D
