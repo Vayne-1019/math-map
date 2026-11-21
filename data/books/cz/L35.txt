@@ -229,8 +229,8 @@ B = (22, 148)
 C = (157, 148)
 m = mid(B, C)
 z1 = reflectp(A, B)
-Z = reflectp(z1, m)
-lA = line(A, Z)
+z = reflectp(z1, m)
+lA = line(A, z)
 A1 = on(lA, 139, 85)
 C1 = along(B, A, 2)
 draw poly A B C
@@ -248,11 +248,11 @@ N = (189.3, 178)
 mxy = mid(M, N)
 K = along(A, mxy, 1.1035)
 O = (120.4, 84.6)
-F0 = foot(O, A, mxy)
-B = inter(O, F0, A, M)
-C = inter(O, F0, A, N)
-Q = rotate(A, B, 90)
-P = inter(A, mxy, B, Q)
+f0 = foot(O, A, mxy)
+B = inter(O, f0, A, M)
+C = inter(O, f0, A, N)
+q = rotate(A, B, 90)
+P = inter(A, mxy, B, q)
 kP = circle(P, B)
 draw ray A M
 draw ray A N
@@ -262,15 +262,15 @@ draw circle kP dash
 </pre><figcaption>(1) $BC\perp AK$（$AK$ 是角平分線）時 $BO\cdot CO$ 最小；虛線圓切兩邊於 $B,C$</figcaption></figure>
 <p>(1) 作 $\angle MAN$ 的平分線 $AK$，過 $O$ 作 $BC\perp AK$，交 $AM,AN$ 於 $B,C$。再過 $O$ 任作另一直線交 $AM,AN$ 於 $B_1,C_1$。作 $PC\perp AN$ 交 $AK$ 於 $P$，以 $P$ 為圓心、$PC$ 為半徑作圓，$AM,AN$ 分別切此圓於 $B,C$。設 $B_1C_1$ 交圓於 $E,F$，由相交弦定理 $BO\cdot CO=EO\cdot FO\lt B_1O\cdot C_1O$⟦為什麼｜$E,F$ 在圓上，而 $B_1,C_1$ 在圓外（兩邊是切線），所以 $EO\lt B_1O$、$FO\lt C_1O$。⟧。所以 $BC\perp AK$ 時乘積最小。</p>
 <figure class="bkfig"><pre class="geo">A = (22, 100)
-M = (189.3, 22)
-N = (189.3, 178)
+m = (189.3, 22)
+n = (189.3, 178)
 O = (104, 87.2)
-lam = line(A, M)
+lam = line(A, m)
 B = on(lam, 131.5, 48.9)
-C = inter(B, O, A, N)
+C = inter(B, O, A, n)
 A1 = reflectp(A, O)
-draw ray A M
-draw ray A N
+draw ray A m
+draw ray A n
 draw seg B C
 draw poly A B A1 C dash
 </pre><figcaption>(2) $O$ 是 $BC$ 中點時 $\triangle ABC$ 面積最小；$ACA_1B$ 是平行四邊形（虛線）</figcaption></figure>
