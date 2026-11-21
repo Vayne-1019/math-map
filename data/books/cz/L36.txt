@@ -44,6 +44,14 @@ C = (228, 145.6)
 D = along(B, C, 0.3748)
 draw poly A B C
 draw seg A D
+mab = mid(A, B)
+mac = mid(A, C)
+mbd = mid(B, D)
+mdc = mid(D, C)
+text mab w c
+text mac e b
+text mbd s q₁
+text mdc s q₂
 </pre><figcaption>$D$ 把 $BC$ 分成 $q_1,q_2$</figcaption></figure>
 <p><b>證</b>　在 $\triangle ABD$ 中用餘弦定理：$AD^2=c^2+q_1^2-2cq_1\cos B$。② 設 $BC=a$，由餘弦定理 $\cos B=\frac{a^2+c^2-b^2}{2ac}$，代入 ②，並用 $a=q_1+q_2$ 整理⟦整理｜$AD^2=c^2+q_1^2-\frac{q_1}a(a^2+c^2-b^2)=\frac{c^2(a-q_1)+b^2q_1}a+q_1^2-q_1a=\frac{c^2q_2+b^2q_1}{q_1+q_2}-q_1q_2$。⟧得 ①。</p>
 <p><b>說明</b>　由這個定理可以得到三角形中特殊線段的計算公式（用三邊表示）：</p>
@@ -77,6 +85,8 @@ draw seg B Q dash
 draw seg C D dash
 draw seg O M dash
 right P B A
+text n e 北
+text t n 東
 </pre><figcaption>$\angle POQ=90^\circ$ 的圓是危險區邊界；船從 $A$ 向東，$B$ 在 $P$ 的正南（按真實比例畫）</figcaption></figure>
 <p><b>解</b>　設 $\odot O$ 是含弦 $PQ$ 的圓，$\angle POQ=90^\circ$⟦為什麼｜圓周角 $45^\circ$ 對應圓心角 $90^\circ$。⟧。開始時在 $A$，正東方向為 $AT$，$\angle PAT=30^\circ$。$B$ 在 $AT$ 上、在 $P$ 的正南（$PB\perp AT$），$\angle PBQ=m^\circ$。作 $OC\perp PQ$（$C$ 是垂足），交 $AT$ 於 $D$；作 $OM\perp AT$（$M$ 是垂足）。</p>
 <p>令 $AP=2a$，$PQ=2b$，則 $PB=a$，$PC=CQ=CO=b$。在 $\triangle PQB$ 中 $\angle BPQ=120^\circ$，由餘弦定理及正弦定理</p>

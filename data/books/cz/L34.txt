@@ -166,6 +166,14 @@ draw seg B hb dash
 draw seg C hc dash
 right A hb B
 right A hc C
+mtb = mid(B, tb)
+mtc = mid(C, tc)
+mhb = mid(B, hb)
+mhc = mid(C, hc)
+text mtb s tb
+text mtc s tc
+text mhb n hb
+text mhc n hc
 </pre><figcaption>$t_b,t_c$ 是角平分線（實線），$h_b,h_c$ 是高（虛線）；高不超過同一頂點的角平分線</figcaption></figure>
 <p><b>證</b>　設 $A$ 是最大角，分兩種情形。</p>
 <p>1. 若 $\triangle ABC$ 是銳角三角形，則 $60^\circ\le A\lt 90^\circ$，$\sin A\ge\sin60^\circ=\frac{\sqrt3}2$。設 $h_b,t_b$ 是 $AC$ 邊上的高與 $\angle B$ 的平分線長，$h_c,t_c$ 是 $AB$ 邊上的高與 $\angle C$ 的平分線長，則 $h_b\le t_b\le1$，$h_c\le t_c\le1$（垂線段最短），所以</p>
@@ -259,14 +267,16 @@ sol: <p>為了造出 $\frac12\angle A$，延長 $BA$ 到 $D$ 使 $AD=AC$，則 $
 === 習題 3
 zh: 平面上有 $n+2$ 個點 $A_1,A_2,\dots,A_n$；$P,Q$，且 $A_1,\dots,A_n$ 不在直線 $PQ$ 上。令 $PA_1+\cdots+PA_n+QA_1+\cdots+QA_n=S$。若 $M$ 是線段 $PQ$ 的中點，求證：$MA_1+MA_2+\cdots+MA_n\lt \dfrac S2$。
 sol: <figure class="bkfig"><pre class="geo">P = (22, 90)
-Ak = (115.5, 22)
+ak = (115.5, 22)
 Q = (149.5, 90)
 M = mid(P, Q)
-Ak2 = reflectp(Ak, M)
-draw poly P Ak Q
-draw seg Ak Ak2 dash
-draw seg P Ak2 dash
-draw seg Q Ak2 dash
+ak2 = reflectp(ak, M)
+draw poly P ak Q
+draw seg ak ak2 dash
+draw seg P ak2 dash
+draw seg Q ak2 dash
+text ak n Ak
+text ak2 sw A′k
 </pre><figcaption>延長 $A_kM$ 到 $A_k'$，$PA_kQA_k'$ 是平行四邊形（虛線）</figcaption></figure>
 <p>先看一點 $A_k$：延長 $A_kM$ 到 $A_k'$ 使 $MA_k'=A_kM$，則 $PA_kQA_k'$ 是平行四邊形，$PA_k+PA_k'\gt A_kA_k'=2A_kM$，即 $MA_k\lt \frac12(PA_k+QA_k)$（$PA_k'=QA_k$）。把這 $n$ 個不等式相加即得。</p>
 === 習題 4
