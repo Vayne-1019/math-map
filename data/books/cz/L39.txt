@@ -66,23 +66,26 @@ sol: (1) $\sqrt a+\sqrt b$ 和 $\sqrt c$ 都是正數，兩邊平方不改變大
 
 === 例 6
 zh: 如圖，$AB$ 是圓 $O$ 的直徑，$BM$ 是圓在 $B$ 點的切線。$CF$ 是圓在 $E$ 點的切線，與 $BM$ 交於 $C$；延長弦 $AE$ 與 $BM$ 交於 $D$。證明 $BC=CD$。
-sol: <figure class="bkfig"><svg viewBox="0 0 330 245" width="320" role="img" aria-label="圓O，直徑AB，B點切線BM，E點切線交BM於C，AE延長交BM於D">
-  <g fill="none" stroke="currentColor" stroke-width="1.5">
-    <circle cx="110" cy="120" r="100"/>
-    <line x1="110" y1="20" x2="110" y2="220"/>
-    <line x1="80" y1="220" x2="315" y2="220"/>
-    <line x1="110" y1="20" x2="263.4" y2="220"/>
-    <line x1="186.7" y1="220" x2="222" y2="88"/>
-    <line x1="110" y1="220" x2="206.6" y2="145.9"/>
-  </g>
-  <g fill="currentColor"><circle cx="110" cy="120" r="2.5"/></g>
-  <g fill="currentColor" font-size="15" font-style="italic">
-    <text x="104" y="15">A</text><text x="104" y="238">B</text><text x="181" y="238">C</text><text x="258" y="238">D</text><text x="305" y="238">M</text><text x="212" y="144">E</text><text x="225" y="86">F</text><text x="94" y="124">O</text>
-  </g>
-  <g fill="#c2562b" font-size="12">
-    <text x="114" y="48">1</text><text x="126" y="212">2</text><text x="190" y="152">3</text><text x="208" y="168">5</text><text x="244" y="214">4</text>
-  </g>
-</svg><figcaption>∠1 = ∠BAE，∠2 = ∠CBE，∠3 = ∠BEC，∠5 = ∠CED，∠4 = ∠EDC</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (110,20)
+B = (110,220)
+O = mid(A, B)
+k = circle(O, A)
+E = on(k, 206.6,145.9)
+u = rotate(A, B, 90)
+lB = line(B, u)
+D = inter(A, E, B, u)
+q = rotate(O, E, 90)
+lE = line(E, q)
+C = inter(B, u, E, q)
+F = on(lE, 222,88)
+M = on(lB, 315,220)
+draw seg A B
+draw seg A D
+draw seg B M
+draw seg B E
+draw seg C F
+draw circle k
+</pre><figcaption>∠1 = ∠BAE，∠2 = ∠CBE，∠3 = ∠BEC，∠5 = ∠CED，∠4 = ∠EDC</figcaption></figure>
 (1) $CB$、$CE$ 是從 $C$ 到圓的兩條切線，所以 $BC=CE$。⟦顯然｜從圓外一點到圓的兩條切線段等長（切線長定理）。⟧ 因此要證 $BC=CD$，
 (2) 只須證 $CE=CD$，
 (3) 只須證 $\angle4=\angle5$（三角形中，等角對等邊）。

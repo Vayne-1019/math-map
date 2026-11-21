@@ -37,16 +37,16 @@ $$x_0=\frac{-b+\sqrt{b^2-4a(c+p)}}{2a}.$$
 
 === 例 2
 zh: 在凸四邊形 $ABCD$ 中，$AB+BD\le AC+CD$。求證 $AB&lt;AC$。
-sol: <figure class="bkfig"><svg viewBox="0 0 320 175" width="300" role="img" aria-label="凸四邊形ABCD與對角線">
-  <g fill="none" stroke="currentColor" stroke-width="1.5">
-    <polygon points="110,150 40,60 300,20 270,150"/>
-    <line x1="110" y1="150" x2="300" y2="20"/><line x1="40" y1="60" x2="270" y2="150"/>
-  </g>
-  <g fill="currentColor" font-size="15" font-style="italic">
-    <text x="104" y="168">A</text><text x="22" y="62">B</text><text x="304" y="20">C</text><text x="274" y="166">D</text>
-  </g>
-  <g fill="#c2562b" font-size="12"><text x="274" y="40">1</text><text x="52" y="78">2</text></g>
-</svg><figcaption>∠1 = ∠ACB，∠2 = ∠ABC</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (110,150)
+B = (40,60)
+C = (300,20)
+D = (270,150)
+draw poly A B C D
+draw seg A C
+draw seg B D
+angle A C B accent
+angle A B C accent
+</pre><figcaption>∠1 = ∠ACB，∠2 = ∠ABC</figcaption></figure>
 反設 $AB\ge AC$。在 $\triangle ABC$ 中大邊對大角，所以 $\angle1\ge\angle2$。
 四邊形是凸的，$CA$ 在 $\angle BCD$ 內部、$BD$ 在 $\angle ABC$ 內部，所以 $\angle BCD>\angle1$，$\angle2>\angle CBD$。連起來：
 $$\angle BCD>\angle1\ge\angle2>\angle CBD.$$
@@ -69,24 +69,22 @@ $$(ap-cm)^2&lt;0,$$
 === 例 4
 zh: 平面上有 $A,B,C,D$ 四點，任三點不共線。求證：總能從中選出三點，使它們構成的三角形至少有一個內角不大於 $45^\circ$。
 sol: 「能選出」的反面是「選不出」，「至少有一個」的反面是「一個也沒有」，「不大於 $45^\circ$」的反面是「大於 $45^\circ$」。所以反設是：<b>任選三點構成的三角形，所有內角都大於 $45^\circ$。</b>分兩種情形：
-<figure class="bkfig"><svg viewBox="0 0 340 210" width="330" role="img" aria-label="左：凸四邊形與兩條對角線；右：B在三角形ACD內部">
-  <g fill="none" stroke="currentColor" stroke-width="1.5">
-    <polygon points="45,35 25,175 165,180 150,20"/>
-    <line x1="45" y1="35" x2="165" y2="180"/><line x1="25" y1="175" x2="150" y2="20"/>
-    <polygon points="320,20 205,110 320,190"/>
-    <line x1="285" y1="110" x2="320" y2="20"/><line x1="285" y1="110" x2="205" y2="110"/><line x1="285" y1="110" x2="320" y2="190"/>
-  </g>
-  <g fill="currentColor" font-size="15" font-style="italic">
-    <text x="30" y="32">A</text><text x="10" y="190">B</text><text x="168" y="196">C</text><text x="152" y="16">D</text>
-    <text x="324" y="20">A</text><text x="188" y="115">C</text><text x="324" y="200">D</text><text x="282" y="102">B</text>
-  </g>
-  <g fill="#c2562b" font-size="11">
-    <text x="62" y="44">1</text><text x="44" y="58">2</text><text x="32" y="150">3</text><text x="46" y="170">4</text>
-    <text x="142" y="172">5</text><text x="150" y="158">6</text><text x="140" y="42">7</text><text x="124" y="30">8</text>
-    <text x="226" y="106">2</text><text x="226" y="122">1</text><text x="304" y="48">3</text><text x="314" y="56">4</text>
-    <text x="314" y="166">5</text><text x="302" y="172">6</text>
-  </g>
-</svg><figcaption>左：凸四邊形，兩條對角線把四個頂角分成 8 個角。右：凹的情形，B 在 △ACD 內部，6 個角都是 △ACD 頂角的一部分。</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A = (45,35)
+B = (25,175)
+C = (165,180)
+D = (150,20)
+draw poly A B C D
+draw seg A C
+draw seg B D
+A2 = (320,20)
+B2 = (285,110)
+C2 = (205,110)
+D2 = (320,190)
+draw poly A2 C2 D2
+draw seg B2 A2
+draw seg B2 C2
+draw seg B2 D2
+</pre><figcaption>左：凸四邊形，兩條對角線把四個頂角分成 8 個角。右：凹的情形，B 在 △ACD 內部，6 個角都是 △ACD 頂角的一部分。</figcaption></figure>
 (1) $A,B,C,D$ 構成凸四邊形。對角線把四個頂角分成 $\angle1,\dots,\angle8$，每一個都是某個「三點三角形」的內角⟦為什麼｜例如 $\angle1=\angle CAD$ 是 $\triangle ACD$ 的內角，$\angle2=\angle BAC$ 是 $\triangle ABC$ 的內角，其餘類推。⟧，依反設都大於 $45^\circ$，所以
 $$\angle ABC+\angle BCD+\angle CDA+\angle DAB=\angle1+\dots+\angle8>8\times45^\circ=360^\circ,$$
 與四邊形內角和 $360^\circ$ 矛盾。
@@ -101,21 +99,24 @@ $$\angle ACD+\angle CDA+\angle DAC>6\times45^\circ=270^\circ,$$
 === 例 5
 zh: 求證：圓內接 $n$ 邊形中，周長最大的一定是正 $n$ 邊形。
 sol: <b>分析</b>：直接證明的話，要拿任意一個內接 $n$ 邊形和正 $n$ 邊形比周長，任意的多邊形沒有特殊性質可用，很難比。改用反證法就不一樣了：反設「周長最大的那個不是正的」，我們只要<b>造出一個周長更大的</b>，就和「最大」矛盾。要造一個特殊的多邊形比較容易。
-<figure class="bkfig"><svg viewBox="0 0 280 330" width="270" role="img" aria-label="圓內接多邊形，用弧中點M取代頂點An">
-  <g fill="none" stroke="currentColor" stroke-width="1.5">
-    <circle cx="140" cy="235" r="85"/>
-    <polyline points="223.7,249.8 175.9,312 104.1,312 56.3,249.8 188.8,165.4 223.7,249.8"/>
-    <line x1="56.3" y1="249.8" x2="140" y2="150" stroke="#c2562b"/><line x1="140" y1="150" x2="223.7" y2="249.8" stroke="#c2562b"/>
-  </g>
-  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4">
-    <line x1="56.3" y1="249.8" x2="128.6" y2="20.3"/><line x1="188.8" y1="165.4" x2="92.5" y2="135"/>
-    <line x1="188.8" y1="165.4" x2="128.6" y2="20.3"/><line x1="140" y1="150" x2="128.6" y2="20.3"/>
-  </g>
-  <g fill="currentColor" font-size="14" font-style="italic">
-    <text x="36" y="254">A₁</text><text x="88" y="327">A₂</text><text x="172" y="327">Aₙ₋₂</text><text x="228" y="254">Aₙ₋₁</text>
-    <text x="194" y="162">Aₙ</text><text x="136" y="168">M</text><text x="76" y="132">C</text><text x="134" y="18">A₁′</text>
-  </g>
-</svg><figcaption>紅線：用 M 取代 Aₙ。虛線：把 A₁ 對直線 AₙM 作鏡射得 A₁′，A₁′、Aₙ、Aₙ₋₁ 共線</figcaption></figure>
+<figure class="bkfig"><pre class="geo">o = (140,235)
+k = circler(o, 85)
+A1 = on(k, 56.3,249.8)
+A2 = on(k, 104.1,312)
+An2 = on(k, 175.9,312)
+An1 = on(k, 223.7,249.8)
+An = on(k, 188.8,165.4)
+M = on(k, 140,150)
+C = foot(A1, An, M)
+A1p = reflect(A1, An, M)
+draw circle k
+draw poly An1 An2 A2 A1 An
+draw seg A1 M An1 accent
+draw seg A1 A1p dash
+draw seg An A1p dash
+draw seg M A1p dash
+draw seg An C dash
+</pre><figcaption>紅線：用 M 取代 Aₙ。虛線：把 A₁ 對直線 AₙM 作鏡射得 A₁′，A₁′、Aₙ、Aₙ₋₁ 共線</figcaption></figure>
 <b>證明</b>：反設 $A_1A_2\cdots A_n$ 是所有圓內接 $n$ 邊形中周長最大的，但它不是正 $n$ 邊形。⟦最大的一定存在嗎｜原書直接假定周長最大的內接 $n$ 邊形存在。這是對的（頂點在圓上連續移動，周長是連續函數，在這種「封閉有界」的範圍內一定取得到最大值），但嚴格證明要用到高中以後的分析工具。⟧ 內接多邊形若各邊都相等就是正多邊形，所以至少有一對鄰邊不相等，不妨設 $A_{n-1}A_n\ne A_nA_1$。
 取 $\overset{\frown}{A_1A_nA_{n-1}}$（經過 $A_n$ 的那段弧）的中點 $M$，則 $M\ne A_n$。我們證明：用 $M$ 取代 $A_n$，周長會變大，也就是
 $$A_{n-1}M+MA_1>A_{n-1}A_n+A_nA_1.$$
@@ -183,21 +184,28 @@ sol: 反設 $c$ 與 $d$ 不相交，即 $c\parallel d$。因為 $a\perp c$，所
 === 習題 3
 zh: 從半圓直徑 $AB$ 的兩端點作弦 $AC$ 與 $BD$，兩弦交於 $E$；過 $C,D$ 作切線 $CP$、$DP$，交於 $P$。求證：$PE\perp AB$。
 hint: 原書用反證法：設直線 $PE$ 交 $AB$ 於 $H$，若 $\angle PHB$ 不是直角，比較角度得出 $PD\ne PC$，與切線長相等矛盾。下面給一個直接證法。
-sol: <figure class="bkfig"><svg viewBox="0 0 320 265" width="300" role="img" aria-label="半圓、弦AC與BD交於E、兩切線交於P，AD與BC延長交於F">
-  <g fill="none" stroke="currentColor" stroke-width="1.5">
-    <path d="M70,248 A90,90 0 0 1 250,248"/><line x1="70" y1="248" x2="250" y2="248"/>
-    <line x1="70" y1="248" x2="211.6" y2="174.3"/><line x1="250" y1="248" x2="91.1" y2="190.1"/>
-    <line x1="211.6" y1="174.3" x2="144.1" y2="127"/><line x1="91.1" y1="190.1" x2="144.1" y2="127"/>
-  </g>
-  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4">
-    <line x1="91.1" y1="190.1" x2="144.1" y2="44.5"/><line x1="211.6" y1="174.3" x2="144.1" y2="44.5"/>
-    <line x1="144.1" y1="44.5" x2="144.1" y2="248" stroke="#c2562b"/>
-  </g>
-  <g fill="currentColor" font-size="15" font-style="italic">
-    <text x="54" y="262">A</text><text x="252" y="262">B</text><text x="216" y="172">C</text><text x="74" y="188">D</text>
-    <text x="150" y="214">E</text><text x="150" y="44">F</text><text x="150" y="124">P</text><text x="148" y="262">H</text>
-  </g>
-</svg><figcaption>虛線：延長 AD、BC 交於 F；紅色虛線 FH ⊥ AB，P 是 FE 的中點</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">O = (160,248)
+k = circler(O, 90)
+A = on(k, 70,248)
+B = on(k, 250,248)
+C = on(k, 211.6,174.3)
+D = on(k, 91.1,190.1)
+E = inter(A, C, B, D)
+F = inter(A, D, B, C)
+qC = rotate(O, C, 90)
+qD = rotate(O, D, 90)
+P = inter(C, qC, D, qD)
+H = foot(F, A, B)
+draw circle k
+draw seg A B
+draw seg A C
+draw seg B D
+draw seg C P
+draw seg D P
+draw seg D F dash
+draw seg C F dash
+draw seg F H dash accent
+</pre><figcaption>虛線：延長 AD、BC 交於 F；紅色虛線 FH ⊥ AB，P 是 FE 的中點</figcaption></figure>
 延長 $AD$、$BC$ 交於 $F$。$AB$ 是直徑，所以 $\angle ACB=\angle ADB=90^\circ$，即 $AC\perp BF$，$BD\perp AF$，$E$ 是 $\triangle ABF$ 兩條高的交點（垂心），所以 $FE\perp AB$，設垂足為 $H$。
 取 $FE$ 的中點 $P'$。$\triangle FCE$、$\triangle FDE$ 都以 $FE$ 為斜邊，所以 $P'C=P'E=P'D$。⟦為什麼｜直角三角形斜邊上的中線等於斜邊的一半。⟧
 在等腰 $\triangle P'CE$ 中 $\angle P'CE=\angle CEF$，而
