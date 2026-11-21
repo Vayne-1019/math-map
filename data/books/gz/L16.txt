@@ -62,12 +62,12 @@ lca = line(C,A)
 P = on(lab, 51.2, 96.3)
 Q = on(lab, 246.1, 96.3)
 R = on(lca, 180.8, 36.9)
-Q2 = on(lab, 218.9, 96.3)
+Q′ = on(lab, 218.9, 96.3)
 draw poly A B C
 draw seg P R
 draw seg Q R
-draw seg R Q2 dash
-</pre><figcaption>$P,Q,R$ 把周長三等分；虛線 $RQ'$ 中 $AQ'=PQ$（$Q'$ 在圖中記為 $Q_2$）</figcaption></figure>
+draw seg R Q′ dash
+</pre><figcaption>$P,Q,R$ 把周長三等分；虛線 $RQ'$ 中 $AQ'=PQ$</figcaption></figure>
 設 $R$ 在 $CA$ 上（$Q$ 與 $B$ 之間、$B$ 到 $C$、$C$ 到 $R$ 合起來是三分之一周長）。在 $AB$ 上取 $Q'$，使 $AQ'=PQ$，則
 $$AQ'=PQ=\frac13(AB+BC+CA)>\frac13(AB+AB)=\frac23AB,$$
 ⟦為什麼｜$BC+CA>AB$（三角形不等式）。⟧ 且 $AP\lt \frac13AB$⟦為什麼｜$AP+PQ\le AB$，所以 $AP\le AB-PQ\lt AB-\frac23AB$。⟧，於是

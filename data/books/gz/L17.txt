@@ -188,16 +188,16 @@ B = (256,178.7)
 C = (256,24)
 m1 = mid(A,C)
 D = reflectp(B, m1)
-B2 = (128.4,178.7)
-C2 = (128.4,101.3)
-m2 = mid(A,C2)
-D2 = reflectp(B2, m2)
+B′ = (128.4,178.7)
+C′ = (128.4,101.3)
+m2 = mid(A,C′)
+D′ = reflectp(B′, m2)
 P = (47.2,120.7)
 Q = (109.1,163.2)
 R = (201.9,47.2)
 T = (47.2,163.2)
 draw poly A B C D
-draw poly A B2 C2 D2
+draw poly A B′ C′ D′
 draw poly P Q R
 draw seg P T dash
 draw seg T Q dash
