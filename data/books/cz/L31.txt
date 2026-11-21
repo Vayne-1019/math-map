@@ -14,6 +14,7 @@ zh: $E$、$F$ 分別在正方形 $ABCD$ 的邊 $BC$ 及 $CD$ 上，且 $\angle E
 sol: <figure class="bkfig"><pre class="geo">A = (22, 161.4)
 C = (161.4, 22)
 O = mid(A, C)
+hide O
 B = rotate(A, O, 90)
 D = rotate(C, O, 90)
 BC = line(B, C)
