@@ -159,12 +159,14 @@ k1 = circler(O1, 79.6)
 k2 = circler(O2, 49.8)
 A = on(k1, 135.7, 35.5)
 B = reflectp(A, O1)
-X = rotate(O1, A, 90)
-C = foot(O2, A, X)
+x = rotate(O1, A, 90)
+C = foot(O2, A, x)
 P = along(O1, O2, 0.6152)
 Q = tangent(B, k2, 226.8, 184.1)
-X2 = rotate(O1, P, 90)
-D = inter(A, C, P, X2)
+x2 = rotate(O1, P, 90)
+D = inter(A, C, P, x2)
+hide x
+hide x2
 draw circle k1
 draw circle k2
 draw seg A B
