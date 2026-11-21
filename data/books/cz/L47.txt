@@ -114,13 +114,21 @@ sol: <b>分析</b>：$6$ 點兩兩相連共 $15$ 條，顯然 $n\ne15$；$n$ 也
 (1) 若這 $2$ 對有公共點，例如 $A_1A_2$、$A_2A_3$ 沒連，則 $A_1,A_3,A_4,A_5$ 這 $4$ 點兩兩相連⟦為什麼｜這 4 點中沒有 $A_2$，兩對沒連的都含 $A_2$，所以都不在其中。⟧。
 (2) 若這 $2$ 對沒有公共點，例如 $A_1A_2$、$A_3A_4$ 沒連，則 $A_1,A_3,A_5,A_6$ 兩兩相連。
 所以 $n\le12$。下圖是連了 $12$ 條線、任 $4$ 點中至少有 $2$ 點不相連的例子：
-<figure class="bkfig"><svg viewBox="0 0 200 180" width="190" role="img" aria-label="正六邊形頂點，連了除三條長對角線外的12條線段">
-  <g fill="none" stroke="currentColor" stroke-width="1.2">
-    <polygon points="100,15 170,55 170,135 100,175 30,135 30,55"/>
-    <line x1="100" y1="15" x2="170" y2="135"/><line x1="100" y1="15" x2="30" y2="135"/><line x1="170" y1="55" x2="100" y2="175"/><line x1="170" y1="55" x2="30" y2="55"/><line x1="170" y1="135" x2="30" y2="135"/><line x1="100" y1="175" x2="30" y2="55"/>
-  </g>
-  <g fill="currentColor" font-size="12" font-style="italic"><text x="94" y="11">A₁</text><text x="174" y="54">A₂</text><text x="174" y="142">A₃</text><text x="94" y="190">A₄</text><text x="8" y="142">A₅</text><text x="8" y="54">A₆</text></g>
-</svg><figcaption>只有三條長對角線 A₁A₄、A₂A₅、A₃A₆ 沒連</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A₁ = (100, 15)
+o = (100, 95)
+A₂ = rotate(A₁, o, 60)
+A₃ = rotate(A₁, o, 120)
+A₄ = rotate(A₁, o, 180)
+A₅ = rotate(A₁, o, 240)
+A₆ = rotate(A₁, o, 300)
+draw poly A₁ A₂ A₃ A₄ A₅ A₆
+draw seg A₁ A₃
+draw seg A₁ A₅
+draw seg A₂ A₄
+draw seg A₂ A₆
+draw seg A₃ A₅
+draw seg A₄ A₆
+</pre><figcaption>只有三條長對角線 A₁A₄、A₂A₅、A₃A₆ 沒連</figcaption></figure>
 ⟦為什麼這個例子可以｜沒連的三對是 $\{A_1,A_4\}$、$\{A_2,A_5\}$、$\{A_3,A_6\}$。任取 4 點，要分到這 3 對中，必有一對的兩點都被取到（抽屜原則），這兩點沒有連線。⟧
 所以 $n$ 的最大值是 $12$。
 ans: $12$

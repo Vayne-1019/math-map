@@ -20,12 +20,18 @@ ans: $1,2,3$
 
 === 例 2
 zh: 在 $\triangle ABC$ 內任取一點 $P$，連 $AP,BP,CP$ 並延長，分別交對邊於 $D,E,F$。求證：三個比值 $AP:PD$，$BP:PE$，$CP:PF$ 中必有一個不大於 $2$，也必有一個不小於 $2$。
-sol: <figure class="bkfig"><svg viewBox="0 0 250 190" width="240" role="img" aria-label="三角形ABC內一點P，AD、BE、CF過P">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="20,170 230,170 190,15"/></g>
-  <g fill="none" stroke="currentColor" stroke-width="1.2"><line x1="20" y1="170" x2="207.6" y2="83.4"/><line x1="230" y1="170" x2="114.8" y2="83.6"/><line x1="190" y1="15" x2="124.7" y2="170"/></g>
-  <g fill="currentColor"><circle cx="150" cy="110" r="2.5"/></g>
-  <g fill="currentColor" font-size="14" font-style="italic"><text x="4" y="184">A</text><text x="234" y="184">B</text><text x="194" y="14">C</text><text x="212" y="82">D</text><text x="98" y="80">E</text><text x="118" y="186">F</text><text x="150" y="128">P</text></g>
-</svg></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (20, 170)
+B = (230, 170)
+C = (190, 15)
+P = (150, 110)
+D = inter(A, P, B, C)
+E = inter(B, P, C, A)
+F = inter(C, P, A, B)
+draw poly A B C
+draw seg A D
+draw seg B E
+draw seg C F
+</pre></figure>
 <b>分析</b>：$\dfrac{AP}{PD}=\dfrac{AD-PD}{PD}=\dfrac{AD}{PD}-1=\dfrac{S_{\triangle ABC}}{S_{\triangle PBC}}-1$⟦最後一步｜$\triangle ABC$ 與 $\triangle PBC$ 同底 $BC$，面積比等於高之比，也等於 $AD:PD$（共邊比定理）。⟧，其他兩個比值也一樣。所以先把 $S_{\triangle PBC},S_{\triangle PAB},S_{\triangle PCA}$ 按大小排好會有幫助。
 <b>證明</b>：$P$ 在 $\triangle ABC$ 內，三個小三角形地位對稱，不妨設 $S_{\triangle PBC}\ge S_{\triangle PAB}\ge S_{\triangle PCA}$。三者之和是 $S=S_{\triangle ABC}$，最大的不小於平均，最小的不大於平均：
 $$S_{\triangle PBC}\ge\tfrac13S,\quad\frac S{S_{\triangle PBC}}\le3;\qquad S_{\triangle PCA}\le\tfrac13S,\quad\frac S{S_{\triangle PCA}}\ge3.$$
@@ -74,11 +80,23 @@ $$2(0+1+\dots+99)+100=9900+100=10000.$$
 
 === 例 7
 zh: 已知凸五邊形 $ABCDE$ 的邊和對角線中，沒有互相平行的線段。把邊 $AB$ 延長，與對角線 $CE$ 的延長線交於某一點，在邊 $AB$ 上標一個箭頭，指向交點的方向（即指向 $A$ 或 $B$）。仿此在五條邊上都標上箭頭（每條邊配不含它端點的那條對角線）。證明：必有兩個箭頭指向五邊形的同一個頂點。
-sol: <figure class="bkfig"><svg viewBox="0 0 280 165" width="270" role="img" aria-label="凸五邊形ABCDE，A與D到BC的垂線">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="120,115 150,145 215,145 260,60 215,15"/><line x1="120" y1="115" x2="260" y2="60"/><line x1="120" y1="115" x2="215" y2="145"/><line x1="150" y1="145" x2="260" y2="60"/></g>
-  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="56.4" y1="145" x2="150" y2="145"/><line x1="56.4" y1="145" x2="120" y2="115"/><line x1="120" y1="115" x2="120" y2="145"/><line x1="260" y1="60" x2="260" y2="145"/><line x1="215" y1="145" x2="260" y2="145"/></g>
-  <g fill="currentColor" font-size="14" font-style="italic"><text x="104" y="112">A</text><text x="146" y="160">B</text><text x="210" y="160">C</text><text x="264" y="60">D</text><text x="214" y="12">E</text><text x="114" y="160">K</text><text x="256" y="160">L</text></g>
-</svg><figcaption>△ABC 面積最小；虛線：AK、DL ⊥ BC，直線 DA 與 CB 交於 B 的一方</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (120, 115)
+B = (150, 145)
+C = (215, 145)
+D = (260, 60)
+E = (215, 15)
+K = foot(A, B, C)
+L = foot(D, B, C)
+x = inter(D, A, B, C)
+draw poly A B C D E
+draw seg A D
+draw seg A C
+draw seg B D
+draw seg A K dash
+draw seg D L dash
+draw seg x B dash
+draw seg x A dash
+</pre><figcaption>△ABC 面積最小；虛線：AK、DL ⊥ BC，直線 DA 與 CB 交於 B 的一方</figcaption></figure>
 五邊形每三個相鄰頂點構成一個三角形，共 $5$ 個，其中必有一個面積最小（極端原則），設為 $\triangle ABC$。我們證明 $BC$ 和 $AB$ 上的箭頭都指向 $B$。
 $BC$ 對應的對角線是 $DA$。由 $A,D$ 分別作直線 $BC$ 的垂線，垂足 $K,L$。$S_{\triangle ABC}&lt;S_{\triangle BCD}$（$AD$ 不平行於 $BC$，所以不取等號⟦為什麼｜兩個三角形同底 $BC$，面積相等表示 $A,D$ 到 $BC$ 的距離相等，即 $AD\parallel BC$，題設排除了。⟧），所以 $AK&lt;DL$：$A$ 比 $D$ 更靠近直線 $BC$，直線 $DA$ 會在 $B$ 的那一方與直線 $CB$ 相交，$BC$ 上的箭頭指向 $B$。
 同理（用 $S_{\triangle ABC}&lt;S_{\triangle EAB}$），$AB$ 上的箭頭也指向 $B$。結論得證。

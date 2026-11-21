@@ -72,12 +72,22 @@ $$\begin{aligned}A&=u\times10^n+2u=u(10^n+2)\\&=u(9u+3)=3u\,(3u+1).\end{aligned}
 === 例 6
 zh: 一張紙片的邊界是一條長度為 $4$ 的封閉曲線 $L$。求證：一定可以用一張半徑為 $1$ 的圓形紙片把它完全蓋住。
 sol: <b>分析</b>：憑直覺，關鍵是找出圓心 $O$ 的位置，剩下的就是證明：對 $L$ 上任一點 $P$，$OP\le1$。容易想到：如果 $L$ 有對稱中心，$O$ 可能就是它。例如 $L$ 是半徑 $r$ 的圓，$2\pi r=4$，$r=\dfrac2\pi&lt;1$，命題成立。
-<figure class="bkfig"><svg viewBox="0 0 280 180" width="270" role="img" aria-label="平行四邊形ABCD，中心O，P在CD上，Q在AB上">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="30,150 200,150 260,40 90,40"/><line x1="30" y1="150" x2="260" y2="40"/><line x1="200" y1="150" x2="90" y2="40"/></g>
-  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="140" y1="40" x2="150" y2="150"/><line x1="30" y1="150" x2="140" y2="40"/><line x1="150" y1="150" x2="260" y2="40"/></g>
-  <g fill="currentColor"><circle cx="145" cy="95" r="2.5"/></g>
-  <g fill="currentColor" font-size="14" font-style="italic"><text x="14" y="166">A</text><text x="204" y="166">B</text><text x="264" y="40">C</text><text x="74" y="38">D</text><text x="136" y="32">P</text><text x="146" y="168">Q</text><text x="152" y="104">O</text></g>
-</svg><figcaption>虛線：PQ 過中心 O，APCQ 也是平行四邊形</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A = (30, 150)
+B = (200, 150)
+D = (90, 40)
+m = mid(B, D)
+C = reflectp(A, m)
+O = mid(A, C)
+CD = line(C, D)
+P = on(CD, 140, 40)
+Q = reflectp(P, O)
+draw poly A B C D
+draw seg A C
+draw seg B D
+draw seg A P dash
+draw seg P Q dash
+draw seg Q C dash
+</pre><figcaption>虛線：PQ 過中心 O，APCQ 也是平行四邊形</figcaption></figure>
 再看 $L$ 是平行四邊形 $ABCD$（周長 $4$）的情形。設 $P$ 是邊上任一點，不妨設在 $CD$ 上。連 $PO$ 並延長交 $AB$ 於 $Q$，則 $APCQ$ 是平行四邊形⟦為什麼｜$O$ 是對稱中心，$Q$ 是 $P$ 關於 $O$ 的對稱點，$AC$、$PQ$ 互相平分，所以 $APCQ$ 是平行四邊形，$PC=AQ$。⟧。所以
 $$OP=\tfrac12PQ\le\tfrac12(AP+AQ)\le\tfrac12(AD+DP+PC)=\tfrac12(AD+CD)=1.$$
 ⟦兩個 ≤ 的理由｜第一個：$\triangle APQ$ 中 $PQ\le AP+AQ$。第二個：$AP\le AD+DP$（折線比線段長），而 $AQ=PC$。最後 $AD+CD$ 是周長的一半，等於 $2$。⟧
@@ -107,11 +117,18 @@ $$x>\sqrt{2+x}>\sqrt{2+\sqrt{2+x}}>\dots>\sqrt{2+\sqrt{2+\sqrt{2+\sqrt{2+x}}}},$
 === 例 8
 zh: 在平面上適當放置 $n$ 個點，使其中任意三點都恰是一個直角三角形的頂點。求 $n$ 的最大值。
 sol: <b>分析</b>：直覺猜最大值是 $4$。要證明這個猜測只要做兩件事：(1) $n=4$ 做得到：取矩形的四個頂點即可；(2) 平面上不存在 $5$ 個點使任三點都構成直角三角形（由此 $5$ 個以上更不可能）。
-<figure class="bkfig"><svg viewBox="0 0 230 200" width="210" role="img" aria-label="以A1A2為直徑的圓，A3、A4在圓上">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="110" cy="100" r="80"/><line x1="30" y1="100" x2="190" y2="100"/><line x1="48.7" y1="151.4" x2="171.3" y2="48.6"/></g>
-  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="30" y1="100" x2="171.3" y2="48.6"/><line x1="30" y1="100" x2="48.7" y2="151.4"/></g>
-  <g fill="currentColor" font-size="13" font-style="italic"><text x="4" y="104">A₁</text><text x="194" y="104">A₂</text><text x="30" y="168">A₃</text><text x="174" y="44">A₄</text></g>
-</svg><figcaption>A₃、A₄、A₅ 都在以 A₁A₂ 為直徑的圓上</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A₁ = (30, 100)
+A₂ = (190, 100)
+o = mid(A₁, A₂)
+k = circle(o, A₁)
+A₃ = on(k, 48.7, 151.4)
+A₄ = on(k, 171.3, 48.6)
+draw seg A₁ A₂
+draw seg A₃ A₄
+draw seg A₁ A₄ dash
+draw seg A₁ A₃ dash
+draw circle k
+</pre><figcaption>A₃、A₄ 都在以 A₁A₂ 為直徑的圓上（虛線為 A₁A₃、A₁A₄）</figcaption></figure>
 <b>證明</b>：先證 $n&lt;5$。反設有 $5$ 點 $A_1,\dots,A_5$，任三點都構成直角三角形。把 $5$ 點兩兩連線（共 $10$ 條），取最長的一條（若有幾條一樣長，任取其一），設為 $A_1A_2$。$\triangle A_1A_2A_i$（$i=3,4,5$）是直角三角形，而 $A_1A_2$ 是最長邊，所以是斜邊，$A_3,A_4,A_5$ 都在以 $A_1A_2$ 為直徑的圓 $\odot O$ 上。
 看 $\triangle A_1A_3A_4$：$\angle A_1A_3A_4\ne90^\circ$，否則 $A_1A_4$ 是 $\odot O$ 的直徑，$A_4$ 與 $A_2$ 重合；同理 $\angle A_1A_4A_3\ne90^\circ$。所以只能 $\angle A_3A_1A_4=90^\circ$，$A_3A_4$ 是 $\odot O$ 的直徑⟦為什麼｜圓周角是直角，所對的弦是直徑。⟧。同理 $A_3A_5$ 也是直徑，於是 $A_4$ 與 $A_5$ 都是 $A_3$ 的對徑點，兩點重合，矛盾。
 $n=4$ 做得到（矩形的四個頂點），所以最大值是 $4$。

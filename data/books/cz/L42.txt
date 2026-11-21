@@ -43,16 +43,38 @@ sol: <figure class="bkfig"><svg viewBox="0 0 330 90" width="320" role="img" aria
 === 例 2
 zh: 在直徑為 $5$ 的圓內放進 $10$ 個點。證明其中必有 $2$ 點的距離小於 $2$。
 sol: <b>分析</b>：把圓分成 $9$ 個扇形是不行的：雖然必有一個扇形裡有 $2$ 點，但扇形的半徑長 $2.5$，同一扇形內一點在圓心附近、一點在外緣，距離就超過 $2$。改用一個同心的小圓（半徑要小於 $1$，但不能小太多），再把外面的圓環等分成 $8$ 塊。
-<figure class="bkfig"><svg viewBox="0 0 240 230" width="230" role="img" aria-label="圓分成中心小圓和8塊環扇形">
-  <g fill="none" stroke="currentColor" stroke-width="1.5">
-    <circle cx="120" cy="115" r="100"/><circle cx="120" cy="115" r="36"/>
-    <line x1="156" y1="115" x2="220" y2="115"/><line x1="145.5" y1="89.5" x2="190.7" y2="44.3"/><line x1="120" y1="79" x2="120" y2="15"/><line x1="94.5" y1="89.5" x2="49.3" y2="44.3"/>
-    <line x1="84" y1="115" x2="20" y2="115"/><line x1="94.5" y1="140.5" x2="49.3" y2="185.7"/><line x1="120" y1="151" x2="120" y2="215"/><line x1="145.5" y1="140.5" x2="190.7" y2="185.7"/>
-  </g>
-  <g fill="none" stroke="#c2562b" stroke-width="1.3" stroke-dasharray="5 4"><line x1="145.5" y1="89.5" x2="220" y2="115"/><line x1="120" y1="115" x2="145.5" y2="89.5"/></g>
-  <g fill="currentColor"><circle cx="120" cy="115" r="2.5"/></g>
-  <g fill="currentColor" font-size="14" font-style="italic"><text x="104" y="128">O</text><text x="144" y="84">C</text><text x="224" y="119">A</text></g>
-</svg><figcaption>小圓半徑 0.9，外面的圓環等分成 8 塊；虛線 AC 是一塊環扇形內最遠的兩點</figcaption></figure>
+<figure class="bkfig"><pre class="geo">O = (120, 115)
+k = circler(O, 100)
+kin = circler(O, 36)
+A = on(k, 220, 115)
+C = on(kin, 145.5, 89.5)
+a1 = rotate(A, O, 45)
+a2 = rotate(A, O, 90)
+a3 = rotate(A, O, 135)
+a4 = rotate(A, O, 180)
+a5 = rotate(A, O, 225)
+a6 = rotate(A, O, 270)
+a7 = rotate(A, O, 315)
+b0 = along(O, A, 0.36)
+b2 = along(O, a2, 0.36)
+b3 = along(O, a3, 0.36)
+b4 = along(O, a4, 0.36)
+b5 = along(O, a5, 0.36)
+b6 = along(O, a6, 0.36)
+b7 = along(O, a7, 0.36)
+draw seg b0 A
+draw seg C a1
+draw seg b2 a2
+draw seg b3 a3
+draw seg b4 a4
+draw seg b5 a5
+draw seg b6 a6
+draw seg b7 a7
+draw seg C A dash
+draw seg O C dash
+draw circle k
+draw circle kin
+</pre><figcaption>小圓半徑 0.9，外面的圓環等分成 8 塊；虛線 AC 是一塊環扇形內最遠的兩點</figcaption></figure>
 <b>證明</b>：設圓心為 $O$。把圓分成 $9$ 塊：一塊是圓心 $O$、半徑 $0.9$ 的小圓，另外 $8$ 塊是相等的環扇形（每塊圓心角 $45^\circ$）。$10$ 個點放進 $9$ 塊，必有一塊含兩點 $M,N$。
 若 $M,N$ 在小圓內，$MN\le2\times0.9=1.8&lt;2$。
 若 $M,N$ 在同一塊環扇形內，它們的距離不超過這塊環扇形內最遠兩點的距離，也就是內弧一端 $C$ 到外弧另一端 $A$ 的距離⟦為什麼最遠的是 AC｜環扇形內候選的「最遠兩點」只有三種：外弧兩端（弦長 $2\times2.5\sin22.5^\circ\approx1.91$）、同一條半徑的兩端（$2.5-0.9=1.6$）、內弧一端到外弧另一端（$AC$）。用下面的算法 $AC\approx1.97$，是三者中最大的。⟧。由餘弦定理，
@@ -123,15 +145,23 @@ sol: 每一列（直的 $3$ 格）的塗法只有 $2^3=8$ 種，記為 $A,B,\dot
 
 === 例 9
 zh: 平面上有 $9$ 條直線，每一條都把正方形 $ABCD$ 分成兩個四邊形，面積比為 $2:3$。求證：這 $9$ 條直線中至少有 $3$ 條過同一點。
-sol: <figure class="bkfig"><svg viewBox="0 0 240 215" width="230" role="img" aria-label="正方形ABCD，直線l交AB於M、CD於N，與中位線EF交於P">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><rect x="30" y="30" width="180" height="160"/><line x1="30" y1="110" x2="210" y2="110"/></g>
-  <line x1="86.25" y1="200" x2="117.75" y2="20" stroke="#c2562b" stroke-width="1.5"/>
-  <g fill="currentColor"><circle cx="102" cy="110" r="2.5"/><circle cx="138" cy="110" r="2.5"/></g>
-  <g fill="currentColor" font-size="14" font-style="italic">
-    <text x="14" y="204">A</text><text x="214" y="204">B</text><text x="214" y="28">C</text><text x="14" y="28">D</text><text x="14" y="114">F</text><text x="214" y="114">E</text>
-    <text x="94" y="204">M</text><text x="124" y="24">N</text><text x="100" y="126">P</text><text x="140" y="126">Q</text><text x="70" y="206">l</text>
-  </g>
-</svg><figcaption>P、Q 把中位線 EF 分成 2:3 和 3:2</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (30, 190)
+B = (210, 190)
+C = (210, 30)
+D = (30, 30)
+E = mid(B, C)
+F = mid(A, D)
+EF = line(F, E)
+AB = line(A, B)
+CD = line(C, D)
+M = on(AB, 86.25, 190)
+P = along(F, E, 0.4)
+Q = along(F, E, 0.6)
+N = inter(M, P, C, D)
+draw poly A B C D
+draw line M N accent
+draw seg F E dash
+</pre><figcaption>P、Q 把中位線 EF 分成 2:3 和 3:2</figcaption></figure>
 直線 $l$ 把正方形分成兩個四邊形，所以 $l$ 不會和正方形的鄰邊相交（否則切出一個三角形和一個五邊形），只能和一組對邊相交。設 $l$ 與 $AB,CD$ 分別交於 $M,N$，分出梯形 $AMND$ 和梯形 $MBCN$，面積記為 $S_1,S_2$。設 $EF$ 是與 $AB$ 平行的中位線，$l$ 與 $EF$ 交於 $P$。兩個梯形等高，梯形面積 = 中位線 × 高，所以
 $$S_1:S_2=FP:PE.$$
 ⟦為什麼｜梯形 $AMND$ 的中位線就是 $FP$（$F,P$ 分別是 $AD,MN$ 的中點），梯形 $MBCN$ 的中位線是 $PE$，兩者的高都是正方形邊長。⟧
