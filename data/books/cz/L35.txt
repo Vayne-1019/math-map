@@ -14,21 +14,41 @@ status: 完成
 === 例 1
 zh: 設 $ABCD$ 是等腰梯形，$E$、$F$ 分別是兩腰 $AB$、$CD$ 上的動點，且 $AE=CF$。求 $EF$ 的最小值。
 sol: <p><b>分析</b>　第 34 講例 1 已證 $EF\ge\frac12(AD+BC)$，右邊是常量。再分析那裡的證明（① 式），等號當且僅當 $F$ 在線段 $EG$ 上，即 $E$、$F$ 分別是 $AB$、$CD$ 的中點時成立，這時 $EF$ 取得最小值。</p>
-<figure class="bkfig"><svg viewBox="0 0 183 160" width="183" role="img" aria-label="等腰梯形兩腰上的點">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="45.2,22 22,138 161.2,138 138,22"/><line x1="33.6" y1="80" x2="149.6" y2="80" stroke="#c2562b" stroke-width="2"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="45.2" y="15.9" text-anchor="middle">A</text><text x="14.2" y="150.7" text-anchor="middle">B</text><text x="169" y="150.7" text-anchor="middle">C</text><text x="138" y="15.9" text-anchor="middle">D</text><text x="22.6" y="84.9" text-anchor="middle">E</text><text x="160.6" y="84.9" text-anchor="middle">F</text></g>
-</svg><figcaption>$E$、$F$ 是兩腰中點時 $EF$ 最短，等於 $\frac12(AD+BC)$</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A = (45.2, 22)
+B = (22, 138)
+C = (161.2, 138)
+D = (138, 22)
+E = along(A, B, 0.5)
+F = along(C, D, 0.5)
+draw poly A B C D
+draw seg E F accent
+</pre><figcaption>$E$、$F$ 是兩腰中點時 $EF$ 最短，等於 $\frac12(AD+BC)$</figcaption></figure>
 ans: $EF_{\min}=\frac12(AD+BC)$
 
 === 例 2
 zh: 在已知 $\odot O$ 中，$MN$ 是過點 $P$ 的直徑。求證：在所有過 $P$ 的弦中，以過 $P$ 且與 $MN$ 垂直的弦 $AB$ 為最短。
 sol: <p><b>分析</b>　過 $P$ 任作一條弦 $CD$，只需證 $AB\lt CD$。</p>
-<figure class="bkfig"><svg viewBox="0 0 210 210" width="210" role="img" aria-label="過圓內一點的最短弦">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="105" cy="105" r="83"/><line x1="22" y1="105" x2="188" y2="105"/><line x1="71.8" y1="28.9" x2="71.8" y2="181.1" stroke="#c2562b" stroke-width="2"/><line x1="127.7" y1="184.8" x2="37.7" y2="56.4"/><line x1="105" y1="105" x2="82.7" y2="120.6" stroke-dasharray="5 4"/><line x1="105" y1="105" x2="37.7" y2="56.4" stroke-dasharray="5 4"/><line x1="105" y1="105" x2="71.8" y2="28.9" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"><circle cx="105" cy="105" r="2.4"/></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="11" y="109.9" text-anchor="middle">M</text><text x="199" y="109.9" text-anchor="middle">N</text><text x="64" y="117.7" text-anchor="middle">P</text><text x="105" y="98.9" text-anchor="middle">O</text><text x="71.8" y="22.8" text-anchor="middle">A</text><text x="71.8" y="197" text-anchor="middle">B</text><text x="135.5" y="197.5" text-anchor="middle">C</text><text x="30" y="53.5" text-anchor="middle">D</text><text x="93.7" y="125.5" text-anchor="middle">E</text></g>
-</svg><figcaption>$MN$ 是過 $P$ 的直徑；與它垂直的弦 $AB$（紅）最短；$OE\perp CD$（虛線）</figcaption></figure>
+<figure class="bkfig"><pre class="geo">M = (22, 105)
+N = (188, 105)
+O = mid(M, N)
+k = circle(O, M)
+l = line(M, N)
+P = on(l, 71.8, 105)
+u = rotate(M, P, 90)
+t = line(P, u)
+A = meet(k, t, 71.8, 28.9)
+B = second(k, A, P)
+D = on(k, 37.7, 56.4)
+C = second(k, D, P)
+E = foot(O, C, D)
+draw circle k
+draw seg M N
+draw seg A B accent
+draw seg C D
+draw seg O A dash
+draw seg O D dash
+draw seg O E dash
+</pre><figcaption>$MN$ 是過 $P$ 的直徑；與它垂直的弦 $AB$（紅）最短；$OE\perp CD$（虛線）</figcaption></figure>
 <p><b>證</b>　過 $P$ 任作弦 $CD$（不是 $AB$），作 $OE\perp CD$ 於 $E$，設半徑為 $R$。由勾股定理 $AP=\sqrt{R^2-OP^2}$，$DE=\sqrt{R^2-OE^2}$。在直角 $\triangle OEP$ 中 $OP\gt OE$，所以 $AP\lt DE$，$AB=2AP\lt 2DE=CD$。</p>
 <p><b>說明</b>　例 1、例 2 都是透過幾何不等式解決最值問題。一般說來，若已證得 $l\ge m$（$m$ 為常量）或 $l\le n$，再分析出不等式成為等式的條件，就得到 $l_{\min}=m$ 或 $l_{\max}=n$。要注意：解任何最值問題都必須說明何時取得最值。</p>
 === 例 3
@@ -36,11 +56,22 @@ zh: $A$、$B$ 是 $\odot O$ 外兩個定點，$P$ 是 $\odot O$ 上的動點。�
 sol: <p><b>分析</b>　在 $\odot O$ 上任取一點 $P$，連 $PA,PB,AB,PC$（$C$ 是 $AB$ 的中點）。涉及兩條線段平方和的定理，除了勾股定理還有<b>中線長定理</b>（第 37 講），這就是取 $AB$ 中點 $C$ 的根據：</p>
 $$PA^2+PB^2=2(AC^2+PC^2).$$
 <p>$AC$ 是常量，所以 $PA^2+PB^2$ 隨 $PC$ 變化，當且僅當 $PC$ 最小、最大時，它取最小值、最大值。</p>
-<figure class="bkfig"><svg viewBox="0 0 220 197" width="220" role="img" aria-label="圓上一點到兩定點距離的平方和">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="92.4" cy="68.9" r="46.9"/><line x1="22" y1="174.5" x2="198" y2="174.5" stroke-dasharray="5 4"/><line x1="48.3" y1="52.9" x2="22" y2="174.5" stroke-dasharray="5 4"/><line x1="48.3" y1="52.9" x2="198" y2="174.5" stroke-dasharray="5 4"/><line x1="48.3" y1="52.9" x2="110" y2="174.5" stroke-dasharray="5 4"/><line x1="84.7" y1="22.6" x2="110" y2="174.5" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"><circle cx="92.4" cy="68.9" r="2.4"/><circle cx="100.1" cy="115.2" r="2.4"/><circle cx="84.7" cy="22.6" r="2.4"/></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="103.4" y="73.8" text-anchor="middle">O</text><text x="11" y="179.4" text-anchor="middle">A</text><text x="209" y="179.4" text-anchor="middle">B</text><text x="110" y="190.4" text-anchor="middle">C</text><text x="37.3" y="57.8" text-anchor="middle">P</text><text x="114.6" y="120.1" text-anchor="middle">P<tspan font-size="10">1</tspan></text><text x="84.7" y="16.5" text-anchor="middle">P<tspan font-size="10">2</tspan></text></g>
-</svg><figcaption>$C$ 是 $AB$ 中點；$PC$ 最短在 $P_1$、最長在 $P_2$（直線 $CO$ 與圓的兩個交點）</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A = (22, 174.5)
+B = (198, 174.5)
+C = mid(A, B)
+O = (92.4, 68.9)
+k = circler(O, 46.9)
+P = on(k, 48.3, 52.9)
+lco = line(C, O)
+P1 = meet(lco, k, 100.1, 115.2)
+P2 = meet(lco, k, 84.7, 22.6)
+draw circle k
+draw seg A B dash
+draw seg A P dash
+draw seg B P dash
+draw seg P C dash
+draw seg P2 C dash
+</pre><figcaption>$C$ 是 $AB$ 中點；$PC$ 最短在 $P_1$、最長在 $P_2$（直線 $CO$ 與圓的兩個交點）</figcaption></figure>
 <p>顯然當且僅當 $P$ 是線段 $OC$ 與 $\odot O$ 的交點 $P_1$ 時 $PC$ 最小，當且僅當 $P$ 是 $CO$ 延長線與 $\odot O$ 的交點 $P_2$ 時 $PC$ 最大⟦為什麼｜由三角不等式 $|OC-R|\le PC\le OC+R$，等號分別在 $P$ 落在直線 $OC$ 上靠近、遠離 $C$ 的交點時成立。⟧。所以</p>
 $$(PA^2+PB^2)_{\min}=P_1A^2+P_1B^2,\qquad(PA^2+PB^2)_{\max}=P_2A^2+P_2B^2.$$
 ans: 最小值 $2AC^2+2(OC-R)^2$，最大值 $2AC^2+2(OC+R)^2$（$R$ 為半徑）
@@ -48,11 +79,26 @@ ans: 最小值 $2AC^2+2(OC-R)^2$，最大值 $2AC^2+2(OC+R)^2$（$R$ 為半徑�
 === 例 4
 zh: 設 $\angle MON=20^\circ$，$A$ 是 $OM$ 上一點，$OA=4\sqrt3$，$D$ 是 $ON$ 上一點，$OD=8\sqrt3$，$B$、$C$ 分別是 $OD$ 和 $AM$ 上的動點。求折線 $ABCD$ 的長 $AB+BC+CD$ 的最小值。
 sol: <p><b>分析</b>　求線段和的最小值常用直化法，而直化常透過反射或旋轉等幾何變換完成。</p>
-<figure class="bkfig"><svg viewBox="0 0 290 207" width="290" role="img" aria-label="角內折線的最小值">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><line x1="22" y1="150.9" x2="253.2" y2="66.7"/><line x1="22" y1="150.9" x2="268" y2="150.9"/><polyline points="116.2,116.6 128.7,150.9 145,106.1 222.5,150.9" stroke="#c2562b" stroke-width="2"/><line x1="22" y1="150.9" x2="116.2" y2="185.2" stroke-dasharray="5 4"/><line x1="22" y1="150.9" x2="175.6" y2="22" stroke-dasharray="5 4"/><line x1="116.2" y1="185.2" x2="175.6" y2="22" stroke-dasharray="5 4"/><line x1="116.2" y1="116.6" x2="116.2" y2="185.2" stroke-dasharray="5 4"/><line x1="222.5" y1="150.9" x2="175.6" y2="22" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="11" y="155.8" text-anchor="middle">O</text><text x="264.2" y="71.6" text-anchor="middle">M</text><text x="279" y="155.8" text-anchor="middle">N</text><text x="116.2" y="110.5" text-anchor="middle">A</text><text x="222.5" y="166.8" text-anchor="middle">D</text><text x="128.7" y="166.8" text-anchor="middle">B</text><text x="145" y="100" text-anchor="middle">C</text><text x="116.2" y="201.1" text-anchor="middle">A<tspan font-size="10">1</tspan></text><text x="175.6" y="15.9" text-anchor="middle">D<tspan font-size="10">1</tspan></text></g>
-</svg><figcaption>$A_1$、$D_1$ 是 $A$、$D$ 關於 $ON$、$OM$ 的對稱點；紅色折線最短時 $B,C$ 都在直線 $A_1D_1$ 上</figcaption></figure>
+<figure class="bkfig"><pre class="geo">O = (22, 150.9)
+N = (268, 150.9)
+M = (253.2, 66.7)
+ln = line(O, N)
+lm = line(O, M)
+A = on(lm, 116.2, 116.6)
+D = on(ln, 222.5, 150.9)
+A1 = reflect(A, O, N)
+D1 = reflect(D, O, M)
+B = inter(A1, D1, O, N)
+C = inter(A1, D1, O, M)
+draw ray O M
+draw ray O N
+draw seg A B C D accent
+draw seg O A1 dash
+draw seg O D1 dash
+draw seg A1 D1 dash
+draw seg A A1 dash
+draw seg D D1 dash
+</pre><figcaption>$A_1$、$D_1$ 是 $A$、$D$ 關於 $ON$、$OM$ 的對稱點；紅色折線最短時 $B,C$ 都在直線 $A_1D_1$ 上</figcaption></figure>
 <p><b>解</b>　作 $A$ 關於 $ON$ 的對稱點 $A_1$，$D$ 關於 $OM$ 的對稱點 $D_1$，連 $OA_1,A_1B,OD_1,D_1C$。則 $A_1B=AB$，$CD_1=CD$，所以</p>
 $$AB+BC+CD=A_1B+BC+CD_1\ge A_1D_1.$$
 <p>$A_1D_1$ 是定線段，當且僅當 $B$、$C$ 分別是 $A_1D_1$ 與射線 $ON$、$OM$ 的交點時取最小值 $A_1D_1$。這裡假定了 $A_1D_1$ 與兩條射線都相交，需要說明：由作圖 $\angle A_1ON=\angle MON=\angle MOD_1=20^\circ$，所以 $\angle A_1OD_1=60^\circ\lt 180^\circ$，$A_1D_1$ 與射線 $OM$、$ON$ 都相交。</p>
@@ -63,11 +109,27 @@ ans: $12$
 
 === 例 5
 zh: 設有邊長為 $1$ 的正方形 $ABCD$，在它所有的內接正三角形中，找出一個面積最大的和一個面積最小的，並求出它們的面積。
-sol: <figure class="bkfig"><svg viewBox="0 0 210 210" width="210" role="img" aria-label="正方形的內接正三角形">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,22 22,188 188,188 188,22"/><polygon points="134.9,22 22,148.5 188,183" stroke="#c2562b" stroke-width="2"/><line x1="134.9" y1="22" x2="105" y2="165.8"/><line x1="22" y1="188" x2="188" y2="143.5" stroke-dasharray="5 4"/><line x1="105" y1="22" x2="105" y2="188" stroke-dasharray="5 4"/><line x1="22" y1="22" x2="105" y2="165.8" stroke-dasharray="5 4"/><line x1="188" y1="22" x2="105" y2="165.8" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="19.1" text-anchor="middle">A</text><text x="14.2" y="200.7" text-anchor="middle">B</text><text x="195.8" y="200.7" text-anchor="middle">C</text><text x="195.8" y="19.1" text-anchor="middle">D</text><text x="134.9" y="15.9" text-anchor="middle">E</text><text x="11" y="153.4" text-anchor="middle">F</text><text x="199" y="187.9" text-anchor="middle">G</text><text x="105" y="181.7" text-anchor="middle">K</text><text x="199" y="148.4" text-anchor="middle">M</text><text x="105" y="15.9" text-anchor="middle">E<tspan font-size="10">1</tspan></text><text x="105" y="203.9" text-anchor="middle">N</text></g>
-</svg><figcaption>內接正 $\triangle EFG$（紅）；$EK\perp FG$，$K$ 是定點（$\triangle KAD$ 是正三角形）</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (22, 22)
+B = (22, 188)
+C = (188, 188)
+D = (188, 22)
+lad = line(A, D)
+E = on(lad, 134.9, 22)
+lab = line(A, B)
+F = on(lab, 22, 148.5)
+G = rotate(F, E, 60)
+K = foot(E, F, G)
+E1 = mid(A, D)
+N = mid(B, C)
+M = inter(B, K, D, C)
+draw poly A B C D
+draw poly E F G accent
+draw seg E K
+draw seg A K dash
+draw seg D K dash
+draw seg E1 N dash
+draw seg B M dash
+</pre><figcaption>內接正 $\triangle EFG$（紅）；$EK\perp FG$，$K$ 是定點（$\triangle KAD$ 是正三角形）</figcaption></figure>
 <p><b>解</b>　易知正方形的任何內接正三角形的三個頂點至少落在正方形的三條邊上⟦為什麼｜這是原書直接給出的事實。粗略地說，三個頂點若只用到兩條邊，必有兩個頂點在同一條邊上，第三個頂點離這條邊 $\frac{\sqrt3}2$ 倍的邊長，檢查它的位置就能化成三條邊的情形。⟧，不妨設內接正 $\triangle EFG$ 的三個頂點 $E,F,G$ 分別在 $AD,AB,CD$ 上，作 $EK\perp FG$ 於 $K$。$\angle EKG+\angle EDG=180^\circ$，所以 $E,K,G,D$ 四點共圓，連 $KD$，則 $\angle EDK=\angle EGK=60^\circ$。同理 $\angle KAE=60^\circ$。所以 $\triangle KAD$ 是邊長 $1$ 的正三角形，$A,D$ 是定點，$K$ 在正方形內，所以 $K$（內接正三角形邊 $FG$ 的中點，$F,G$ 分在正方形一組對邊上）是定點。</p>
 <p>$\triangle EFG$ 的面積 $S=\frac{\sqrt3}4FG^2$，$FG$ 越大 $S$ 越大。$F,G$ 分在兩條平行邊 $AB$、$DC$ 上，當 $FG\parallel BC$ 時（此時 $E$ 是 $AD$ 中點）$FG$ 最小，長為 $1$，所以 $S_{\min}=\frac{\sqrt3}4$。</p>
 <p>當 $FG$ 在直線 $BK$（或 $CK$）上時 $FG$ 最大。連 $BK$ 並延長交 $CD$ 於 $M$，過 $K$ 作 $E_1N\perp AD$ 分別交 $AD,BC$ 於 $E_1,N$。$E_1K=\frac{\sqrt3}2$，所以 $KN=1-\frac{\sqrt3}2$，$CM=2KN=2-\sqrt3$，</p>
@@ -77,11 +139,14 @@ ans: 最小 $\frac{\sqrt3}4$，最大 $2\sqrt3-3$
 
 === 例 6
 zh: 甲、乙、丙三人分別住在地面上三個不同地點，他們相約去某處會面，已知他們所備交通工具的速度比是 $1:2:3$。問約會地點選在何處時，三人在路上花費的總時間最少？這個最小總時間是多少？
-sol: <figure class="bkfig"><svg viewBox="0 0 214 180" width="214" role="img" aria-label="三人約會地點">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,101.3 135.3,22 192,95.7 146.7,158"/><line x1="22" y1="101.3" x2="192" y2="95.7"/><line x1="135.3" y1="22" x2="146.7" y2="158"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="11" y="106.2" text-anchor="middle">A</text><text x="146.7" y="173.9" text-anchor="middle">B</text><text x="203" y="100.6" text-anchor="middle">C</text><text x="135.3" y="15.9" text-anchor="middle">P</text></g>
-</svg><figcaption>三人住在 $A,B,C$，約在 $P$ 會面</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (22, 101.3)
+P = (135.3, 22)
+C = (192, 95.7)
+B = (146.7, 158)
+draw poly A P C B
+draw seg A C
+draw seg P B
+</pre><figcaption>三人住在 $A,B,C$，約在 $P$ 會面</figcaption></figure>
 <p><b>解</b>　設三人住處分別為 $A,B,C$，$P$ 是地面上任一點，甲的速度為 $v$，乙、丙的速度為 $2v$、$3v$。總時間</p>
 $$T=\frac{AP}v+\frac{BP}{2v}+\frac{CP}{3v}.$$
 <p>因為 $AP+BP\ge AB$①，$AP+CP\ge AC$②，$AP\ge0$③，所以</p>
@@ -91,20 +156,39 @@ ans: 約在甲家（$A$），$T_{\min}=\frac1v\big(\frac{AB}2+\frac{AC}3\big)$
 
 === 例 7
 zh: 設 $A$ 是定圓 $\odot O$ 內一定點（$A\ne O$），試在圓周上求一點 $P$，使 $\angle OPA$ 最大。
-sol: <figure class="bkfig"><svg viewBox="0 0 200 200" width="200" role="img" aria-label="圓內定點的張角">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="100" cy="100" r="78"/><line x1="127.3" y1="26.9" x2="127.3" y2="173.1"/><line x1="127.3" y1="26.9" x2="72.7" y2="173.1"/><line x1="100" y1="100" x2="127.3" y2="96.1"/><line x1="72.7" y1="173.1" x2="127.3" y2="173.1"/></g>
-<g fill="currentColor"><circle cx="100" cy="100" r="2.4"/><circle cx="127.3" cy="96.1" r="2.4"/></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="89" y="104.9" text-anchor="middle">O</text><text x="138.3" y="101" text-anchor="middle">A</text><text x="127.3" y="20.8" text-anchor="middle">P</text><text x="127.3" y="189" text-anchor="middle">P<tspan font-size="10">1</tspan></text><text x="64.9" y="185.7" text-anchor="middle">Q</text></g>
-</svg><figcaption>$PA\perp OA$ 時 $\angle OPA$ 最大；$PQ$ 是直徑</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">O = (100, 100)
+k = circler(O, 78)
+A = (127.3, 96.1)
+u = rotate(O, A, 90)
+ta = line(A, u)
+P = meet(ta, k, 127.3, 26.9)
+P1 = second(k, P, A)
+Q = reflectp(P, O)
+draw circle k
+draw seg O A
+draw seg P P1
+draw seg P Q
+draw seg P1 Q
+right O A P
+right P P1 Q
+</pre><figcaption>$PA\perp OA$ 時 $\angle OPA$ 最大；$PQ$ 是直徑</figcaption></figure>
 <p><b>解一</b>　設 $P$ 是所求點，由正弦定理 $\sin\angle OPA=\frac{OA}{OP}\sin\angle PAO$。$OA$、$OP$ 是定長，且 $0\lt \angle OPA\lt 90^\circ$⟦為什麼｜$OP\gt OA$，所以 $\angle OPA$ 是 $\triangle OPA$ 的較小角之一，不會是鈍角或直角。⟧，所以當 $\sin\angle PAO$ 最大（即 $PA\perp OA$）時 $\angle OPA$ 最大。所求的點有兩個：過 $A$ 引與 $OA$ 垂直的弦與圓的兩個交點 $P$、$P_1$。</p>
 <p><b>解二</b>　設 $P$ 是所求點，作直徑 $PQ$，連 $PA$ 與圓交於另一點 $P_1$。因 $\angle PQP_1+\angle OPA=90^\circ$⟦為什麼｜$PQ$ 是直徑，$\angle PP_1Q=90^\circ$，所以 $\angle PQP_1+\angle QPP_1=90^\circ$，而 $\angle QPP_1=\angle OPA$。⟧，要使 $\angle OPA$ 最大，就要 $\angle PQP_1$ 最小，而 $\angle PQP_1$ 由弦 $PP_1$ 的長決定；過 $A$ 的所有弦中以與 $OA$ 垂直的弦最短（例 2），得到與解一相同的結論。</p>
 === 例 8
 zh: $\angle A$ 內有一定點 $P$，過 $P$ 作直線交兩邊於 $B$、$C$。求 $\dfrac1{PB}+\dfrac1{PC}$ 的最大值。
-sol: <figure class="bkfig"><svg viewBox="0 0 230 180" width="230" role="img" aria-label="角內定點的截線">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><line x1="22" y1="141.3" x2="207.6" y2="141.3"/><line x1="22" y1="141.3" x2="164.1" y2="22"/><line x1="162.2" y1="158" x2="114.9" y2="40.9"/><line x1="22" y1="141.3" x2="136.7" y2="94.9" stroke-dasharray="5 4"/><polyline points="132.1,96.8 130.2,92.2 134.8,90.3" stroke-width="1"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="11" y="146.2" text-anchor="middle">A</text><text x="144.5" y="107.6" text-anchor="middle">P</text><text x="155.4" y="157.2" text-anchor="middle">B</text><text x="113.9" y="54.8" text-anchor="middle">C</text></g>
-</svg><figcaption>過 $P$ 的直線交兩邊於 $B,C$；$BC\perp PA$ 時 $\frac1{PB}+\frac1{PC}$ 最大（圖中即為此位置）</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (22, 141.3)
+x = (207.6, 141.3)
+y = (164.1, 22)
+P = (136.7, 94.9)
+u = rotate(A, P, 90)
+B = inter(P, u, A, x)
+C = inter(P, u, A, y)
+draw ray A x
+draw ray A y
+draw line B C
+draw seg A P dash
+right A P B
+</pre><figcaption>過 $P$ 的直線交兩邊於 $B,C$；$BC\perp PA$ 時 $\frac1{PB}+\frac1{PC}$ 最大（圖中即為此位置）</figcaption></figure>
 <p><b>解</b>　連 $AP$，過 $A$ 作 $AD\perp BC$ 於 $D$。記 $\angle PAB=\alpha$，$\angle PAC=\beta$（定角），$AD=h$，以 $h$ 為參數計算。因 $\frac12PC\cdot h=S_{\triangle PAC}$，$\frac12PB\cdot h=S_{\triangle PAB}$，所以</p>
 $$\begin{aligned}\frac1{PB}+\frac1{PC}&=\frac h2\Big(\frac1{S_{\triangle PAB}}+\frac1{S_{\triangle PAC}}\Big)=\frac h2\cdot\frac{S_{\triangle ABC}}{S_{\triangle PAB}\cdot S_{\triangle PAC}}\\&=\frac h2\cdot\frac{2AB\cdot AC\sin A}{AB\cdot AC\cdot PA^2\sin\alpha\sin\beta}=\frac h{PA^2}\cdot\frac{\sin A}{\sin\alpha\sin\beta}\\&\le\frac{\sin A}{PA\cdot\sin\alpha\sin\beta}\quad(\text{定值，因 }h\le PA).\end{aligned}$$
 <p>⟦第二行｜$S_{\triangle PAB}=\frac12AB\cdot PA\sin\alpha$，$S_{\triangle PAC}=\frac12AC\cdot PA\sin\beta$，$S_{\triangle ABC}=\frac12AB\cdot AC\sin A$。⟧當且僅當 $h=PA$（即 $PA\perp BC$）時等號成立。所以</p>
@@ -114,11 +198,25 @@ ans: $\dfrac{\sin A}{PA\sin\alpha\sin\beta}$，在 $BC\perp PA$ 時取得
 === 例 9
 zh: 已知 $\triangle ABC$ 的周長為 $2p$，在 $AB$ 和 $AC$ 上分別取點 $M$ 和 $N$，使 $MN\parallel BC$，且 $MN$ 與 $\triangle ABC$ 的內切圓相切。試求 $MN$ 的最大值。
 sol: <p><b>分析</b>　周長固定為 $2p$，$\triangle ABC$ 可以變動，$MN$ 也隨之變動。因 $MN\parallel BC$，選 $BC$ 的長為參數計算 $MN$ 比較容易。</p>
-<figure class="bkfig"><svg viewBox="0 0 180 236" width="180" role="img" aria-label="與內切圓相切的平行線">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="90,22 22,214.3 158,214.3"/><circle cx="90" cy="166.2" r="48.1"/><line x1="56" y1="118.2" x2="124" y2="118.2" stroke="#c2562b" stroke-width="2"/><line x1="90" y1="22" x2="90" y2="214.3" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="90" y="15.9" text-anchor="middle">A</text><text x="14.2" y="227" text-anchor="middle">B</text><text x="165.8" y="227" text-anchor="middle">C</text><text x="45" y="123.1" text-anchor="middle">M</text><text x="135" y="123.1" text-anchor="middle">N</text><text x="90" y="230.2" text-anchor="middle">D</text><text x="97.8" y="115.3" text-anchor="middle">E</text></g>
-</svg><figcaption>$MN\parallel BC$ 且切內切圓；圖是 $BC=\frac p2$、$MN$ 取最大值 $\frac p4$ 的情形</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A = (90, 22)
+B = (22, 214.3)
+C = (158, 214.3)
+i = incenter(A, B, C)
+D = foot(A, B, C)
+d0 = foot(i, B, C)
+k = circle(i, d0)
+b1 = reflectp(B, d0)
+b2 = reflectp(b1, i)
+c1 = reflectp(C, d0)
+c2 = reflectp(c1, i)
+M = inter(b2, c2, A, B)
+N = inter(b2, c2, A, C)
+E = inter(b2, c2, A, D)
+draw poly A B C
+draw seg M N accent
+draw seg A D dash
+draw circle k
+</pre><figcaption>$MN\parallel BC$ 且切內切圓；圖是 $BC=\frac p2$、$MN$ 取最大值 $\frac p4$ 的情形</figcaption></figure>
 <p><b>解</b>　作 $BC$ 邊上的高 $AD$，交 $MN$ 於 $E$。令 $BC=a$，$AD=h$，內切圓半徑為 $r$。$\triangle AMN\sim\triangle ABC$，所以 $\frac{MN}{BC}=\frac{AE}{AD}$，即 $\frac{MN}a=\frac{h-2r}h$⟦為什麼 AE=h−2r｜$MN$ 與 $BC$ 都切內切圓且互相平行，兩者距離是直徑 $2r$。⟧，$MN=a\big(1-\frac{2r}h\big)$。還要消去 $r$、$h$：因 $\frac12ah=S_{\triangle ABC}=rp$，$\frac{2r}h=\frac ap$。於是由算幾不等式</p>
 $$MN=a\Big(1-\frac ap\Big)=\frac{a(p-a)}p\le\frac1p\Big[\frac{a+(p-a)}2\Big]^2=\frac p4,$$
 <p>當且僅當 $a=p-a$（即 $a=\frac p2$）時取等號。所以當且僅當 $BC=\frac p2$ 時 $MN$ 取最大值 $\frac p4$。</p>
@@ -126,25 +224,56 @@ ans: $\dfrac p4$
 
 === 習題 1
 zh: 證明：同底等高的三角形中，以等腰三角形的周長為最小。（原書誤植為「等腰直角三角形」。）
-sol: <figure class="bkfig"><svg viewBox="0 0 190 170" width="190" role="img" aria-label="同底等高的三角形">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="89.5,85 22,148 157,148"/><polygon points="139,85 22,148 157,148"/><line x1="46.7" y1="85" x2="168.3" y2="85"/><line x1="89.5" y1="85" x2="157" y2="22" stroke-dasharray="5 4"/><line x1="139" y1="85" x2="157" y2="22" stroke-dasharray="5 4"/><line x1="89.5" y1="85" x2="139" y2="85"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="89.5" y="78.9" text-anchor="middle">A</text><text x="14.2" y="160.7" text-anchor="middle">B</text><text x="164.8" y="160.7" text-anchor="middle">C</text><text x="149.3" y="82.1" text-anchor="middle">A<tspan font-size="10">1</tspan></text><text x="157" y="15.9" text-anchor="middle">C<tspan font-size="10">1</tspan></text></g>
-</svg><figcaption>$AA_1\parallel BC$；延長 $BA$ 到 $C_1$ 使 $AC_1=AC$（虛線）</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (89.5, 85)
+B = (22, 148)
+C = (157, 148)
+m = mid(B, C)
+z1 = reflectp(A, B)
+Z = reflectp(z1, m)
+lA = line(A, Z)
+A1 = on(lA, 139, 85)
+C1 = along(B, A, 2)
+draw poly A B C
+draw poly A1 B C
+draw seg A C1 dash
+draw seg A1 C1 dash
+draw line A A1
+</pre><figcaption>$AA_1\parallel BC$；延長 $BA$ 到 $C_1$ 使 $AC_1=AC$（虛線）</figcaption></figure>
 <p>設 $\triangle ABC$ 與 $\triangle A_1BC$（$A\ne A_1$）同底等高，$AB=AC$，不妨設 $A_1$ 與 $A$ 在 $BC$ 同側，則 $AA_1\parallel BC$。延長 $BA$ 到 $C_1$ 使 $AC_1=AC$，則 $\angle C_1AA_1=\angle ABC=\angle ACB=\angle CAA_1$，所以 $\triangle A_1AC_1\cong\triangle A_1AC$（SAS），$A_1C_1=A_1C$。從而 $A_1B+A_1C=A_1B+A_1C_1\gt BC_1=AB+AC$，所以 $A_1B+A_1C+BC\gt AB+AC+BC$。</p>
 === 習題 2
 zh: 給定 $\angle MAN$ 及角內一定點 $O$，過 $O$ 作一直線 $l$，分別交 $AM$、$AN$ 於 $B$、$C$。試問：(1) $l$ 應如何作，才能使乘積 $BO\cdot CO$ 最小？(2) $l$ 應如何作，才能使 $\triangle ABC$ 的面積最小？
-sol: <figure class="bkfig"><svg viewBox="0 0 229 200" width="229" role="img" aria-label="過角內定點的直線">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><line x1="22" y1="100" x2="189.3" y2="22"/><line x1="22" y1="100" x2="189.3" y2="178"/><line x1="22" y1="100" x2="206.6" y2="100" stroke-dasharray="5 4"/><line x1="120.4" y1="54.1" x2="120.4" y2="145.9"/><circle cx="141.8" cy="100" r="50.6" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"><circle cx="120.4" cy="84.6" r="2.4"/><circle cx="141.8" cy="100" r="2.4"/></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="11" y="104.9" text-anchor="middle">A</text><text x="109.4" y="89.5" text-anchor="middle">O</text><text x="120.4" y="48" text-anchor="middle">B</text><text x="120.4" y="161.8" text-anchor="middle">C</text><text x="152.8" y="104.9" text-anchor="middle">P</text><text x="200.3" y="26.9" text-anchor="middle">M</text><text x="200.3" y="182.9" text-anchor="middle">N</text><text x="217.6" y="104.9" text-anchor="middle">K</text></g>
-</svg><figcaption>(1) $BC\perp AK$（$AK$ 是角平分線）時 $BO\cdot CO$ 最小；虛線圓切兩邊於 $B,C$</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (22, 100)
+M = (189.3, 22)
+N = (189.3, 178)
+mxy = mid(M, N)
+K = along(A, mxy, 1.1035)
+O = (120.4, 84.6)
+F0 = foot(O, A, mxy)
+B = inter(O, F0, A, M)
+C = inter(O, F0, A, N)
+Q = rotate(A, B, 90)
+P = inter(A, mxy, B, Q)
+kP = circle(P, B)
+draw ray A M
+draw ray A N
+draw seg B C
+draw ray A K dash
+draw circle kP dash
+</pre><figcaption>(1) $BC\perp AK$（$AK$ 是角平分線）時 $BO\cdot CO$ 最小；虛線圓切兩邊於 $B,C$</figcaption></figure>
 <p>(1) 作 $\angle MAN$ 的平分線 $AK$，過 $O$ 作 $BC\perp AK$，交 $AM,AN$ 於 $B,C$。再過 $O$ 任作另一直線交 $AM,AN$ 於 $B_1,C_1$。作 $PC\perp AN$ 交 $AK$ 於 $P$，以 $P$ 為圓心、$PC$ 為半徑作圓，$AM,AN$ 分別切此圓於 $B,C$。設 $B_1C_1$ 交圓於 $E,F$，由相交弦定理 $BO\cdot CO=EO\cdot FO\lt B_1O\cdot C_1O$⟦為什麼｜$E,F$ 在圓上，而 $B_1,C_1$ 在圓外（兩邊是切線），所以 $EO\lt B_1O$、$FO\lt C_1O$。⟧。所以 $BC\perp AK$ 時乘積最小。</p>
-<figure class="bkfig"><svg viewBox="0 0 211 200" width="211" role="img" aria-label="面積最小的截線">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><line x1="22" y1="100" x2="189.3" y2="22"/><line x1="22" y1="100" x2="189.3" y2="178"/><line x1="131.5" y1="48.9" x2="76.5" y2="125.4"/><polygon points="22,100 131.5,48.9 186.1,74.4 76.5,125.4" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"><circle cx="104" cy="87.2" r="2.4"/></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="11" y="104.9" text-anchor="middle">A</text><text x="104" y="81.1" text-anchor="middle">O</text><text x="131.5" y="42.8" text-anchor="middle">B</text><text x="76.5" y="141.3" text-anchor="middle">C</text><text x="200.6" y="79.3" text-anchor="middle">A<tspan font-size="10">1</tspan></text></g>
-</svg><figcaption>(2) $O$ 是 $BC$ 中點時 $\triangle ABC$ 面積最小；$ACA_1B$ 是平行四邊形（虛線）</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A = (22, 100)
+M = (189.3, 22)
+N = (189.3, 178)
+O = (104, 87.2)
+lam = line(A, M)
+B = on(lam, 131.5, 48.9)
+C = inter(B, O, A, N)
+A1 = reflectp(A, O)
+draw ray A M
+draw ray A N
+draw seg B C
+draw poly A B A1 C dash
+</pre><figcaption>(2) $O$ 是 $BC$ 中點時 $\triangle ABC$ 面積最小；$ACA_1B$ 是平行四邊形（虛線）</figcaption></figure>
 <p>(2) 連 $AO$ 並延長到 $A_1$ 使 $A_1O=AO$；過 $A_1$ 作 $A_1B\parallel AN$ 交 $AM$ 於 $B$，作 $A_1C\parallel AM$ 交 $AN$ 於 $C$。則 $ACA_1B$ 是平行四邊形，$O$ 是 $BC$ 的中點。過 $O$ 任作另一直線，分別交 $AM,A_1B,AN,A_1C$ 於 $B_1,D,C_1,E$，易知 $S_{\triangle AB_1C_1}=S_{\triangle A_1DE}$（關於 $O$ 中心對稱），所以</p>
 $$S_{\triangle AB_1C_1}=\tfrac12(S_{\triangle AB_1C_1}+S_{\triangle A_1DE})=\tfrac12(S_{ACA_1B}+S_{\triangle BDB_1}+S_{\triangle CEC_1})=S_{\triangle ABC}+\tfrac12(S_{\triangle BDB_1}+S_{\triangle CEC_1})\gt S_{\triangle ABC}.$$
 <p>所以使 $O$ 成為 $BC$ 中點的直線就是所求。</p>
@@ -159,11 +288,15 @@ ans: $M$ 是 $C$ 到 $AB$ 的垂足
 
 === 習題 4
 zh: 凸四邊形 $ABCD$ 的兩條對角線 $AC$、$BD$ 交於 $O$，已知 $S_{\triangle AOB}=4$，$S_{\triangle COD}=9$。試求這樣的四邊形面積的最小值。
-sol: <figure class="bkfig"><svg viewBox="0 0 230 133" width="230" role="img" aria-label="對角線分出的面積">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="30.9,29.1 154.9,22 208,99.9 22,110.6"/><line x1="30.9" y1="29.1" x2="208" y2="99.9"/><line x1="154.9" y1="22" x2="22" y2="110.6"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="23.1" y="26.2" text-anchor="middle">A</text><text x="162.6" y="19.1" text-anchor="middle">B</text><text x="215.8" y="112.6" text-anchor="middle">C</text><text x="14.2" y="123.2" text-anchor="middle">D</text><text x="101.7" y="51.3" text-anchor="middle">O</text></g>
-</svg><figcaption>$S_{\triangle AOB}=4$、$S_{\triangle COD}=9$</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (30.9, 29.1)
+B = (154.9, 22)
+C = (208, 99.9)
+D = (22, 110.6)
+O = inter(A, C, B, D)
+draw poly A B C D
+draw seg A C
+draw seg B D
+</pre><figcaption>$S_{\triangle AOB}=4$、$S_{\triangle COD}=9$</figcaption></figure>
 <p>$\frac{S_{\triangle AOB}}{S_{\triangle BOC}}=\frac{AO}{OC}=\frac{S_{\triangle AOD}}{S_{\triangle DOC}}$，所以 $S_{\triangle BOC}\cdot S_{\triangle AOD}=S_{\triangle AOB}\cdot S_{\triangle COD}=36$，$S_{\triangle BOC}+S_{\triangle AOD}\ge2\sqrt{36}=12$。等號在 $S_{\triangle BOC}=S_{\triangle AOD}$（從而 $S_{\triangle ABC}=S_{\triangle ABD}$，即 $AB\parallel CD$）時成立。所以面積最小值是 $4+9+12=25$。</p>
 ans: $25$
 
