@@ -158,6 +158,8 @@ draw seg B H dash
 draw seg C G dash
 hide H
 hide G
+text H ne hb
+text G w hc
 </pre><figcaption>虛線是 $B$、$C$ 兩點的高</figcaption></figure>
 把 $h_b,h_c$ 都用 $\sin A$ 表示：$h_c=b\sin A$，$h_b=c\sin A$⟦為什麼｜$C$ 到 $AB$ 的高是 $AC\cdot\sin A=b\sin A$；$B$ 到 $AC$ 的高是 $AB\sin A=c\sin A$。⟧，得
 $$c+h_c-(b+h_b)=c+b\sin A-b-c\sin A=(c-b)(1-\sin A).$$
@@ -282,6 +284,7 @@ draw seg A′ E dash
 draw seg A′ F dash
 draw seg F B dash
 draw seg F D dash
+text D e l
 </pre><figcaption>$A'B=CD$；$F$ 是 $E$ 關於 $A'D$（也是 $BC$）中點的對稱點</figcaption></figure>
 不妨設 $AB\ge CD$（否則把 $A,B$ 與 $D,C$ 對調）。原不等式等價於 $$AE+ED+AB-CD>BE+CE$$。在 $AB$ 上取 $A'$ 使 $A'B=CD$。由 $AE+AA'\ge A'E$ 得 $AE+AB\ge A'E+A'B$，於是
 $$\text{左邊}\ge A'E+ED+A'B-CD=A'E+ED.$$

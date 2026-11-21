@@ -102,6 +102,9 @@ draw seg P F
 draw seg P A dash
 draw seg P B dash
 draw seg P C dash
+text P s x
+text P e y
+text P w z
 </pre><figcaption>$PD=x$，$PE=y$，$PF=z$</figcaption></figure>
 設三邊 $BC=a,\ CA=b,\ AB=c$，面積為 $\triangle$，記 $PD=x,\ PE=y,\ PF=z$，則 $ax+by+cz=2\triangle$（定值）。由柯西不等式，
 $$\Big(\frac ax+\frac by+\frac cz\Big)(ax+by+cz)\ge\Big(\sqrt{\tfrac ax}\sqrt{ax}+\sqrt{\tfrac by}\sqrt{by}+\sqrt{\tfrac cz}\sqrt{cz}\Big)^2=(a+b+c)^2.$$
