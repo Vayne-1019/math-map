@@ -22,18 +22,23 @@ $5k^2$ 的個位數字是 $0$ 或 $5$，所以由②，$n^2$ 的個位數字是 
 
 === 例 2
 zh: 試證：$\triangle ABC$ 內部不存在這樣的點 $P$：過 $P$ 的<b>任何一條</b>直線都把 $\triangle ABC$ 的面積分成相等的兩部分。
-sol: <figure class="bkfig"><svg viewBox="0 0 320 210" width="300" role="img" aria-label="三角形ABC，三中線交於重心P，MN過P平行BC">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="150,20 30,180 300,190"/></g>
-  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4">
-    <line x1="150" y1="20" x2="165" y2="185"/><line x1="30" y1="180" x2="225" y2="105"/><line x1="300" y1="190" x2="90" y2="100"/>
-    <line x1="70" y1="126.7" x2="250" y2="133.3" stroke="#c2562b"/>
-  </g>
-  <g fill="currentColor"><circle cx="160" cy="130" r="2.5"/></g>
-  <g fill="currentColor" font-size="15" font-style="italic">
-    <text x="145" y="15">A</text><text x="14" y="190">B</text><text x="304" y="200">C</text><text x="160" y="203">D</text>
-    <text x="230" y="102">E</text><text x="74" y="98">F</text><text x="164" y="124">P</text><text x="54" y="128">M</text><text x="256" y="138">N</text>
-  </g>
-</svg><figcaption>虛線：AD、BE、CF 是中線；紅色虛線 MN 過 P 且平行於 BC</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (150,20)
+B = (30,180)
+C = (300,190)
+D = mid(B, C)
+E = mid(A, C)
+F = mid(A, B)
+P = centroid(A, B, C)
+lAB = line(A, B)
+lAC = line(A, C)
+M = on(lAB, 70,126.7)
+N = on(lAC, 250,133.3)
+draw poly A B C
+draw seg A D dash
+draw seg B E dash
+draw seg C F dash
+draw seg M N accent dash
+</pre><figcaption>虛線：AD、BE、CF 是中線；紅色虛線 MN 過 P 且平行於 BC</figcaption></figure>
 反設 $\triangle ABC$ 內有一點 $P$，過 $P$ 的任何直線都平分 $\triangle ABC$ 的面積。連 $AP,BP,CP$ 並延長，分別交對邊於 $D,E,F$。
 $AD$ 平分面積，即 $\triangle ABD$ 與 $\triangle ACD$ 面積相等，兩者同高，所以 $BD=DC$，$D$ 是 $BC$ 的中點。同理 $E,F$ 是 $AC,AB$ 的中點，所以 $P$ 是三條中線的交點，即重心。
 過 $P$ 作 $MN\parallel BC$，分別交 $AB,AC$ 於 $M,N$。重心把中線分成 $2:1$，$\dfrac{AP}{AD}=\dfrac23$，而 $\triangle AMN\sim\triangle ABC$，相似比就是 $\dfrac{AP}{AD}$，所以
@@ -171,7 +176,11 @@ $$5a&lt;4(b+c),\quad①\qquad5b&lt;4(c+a),\quad②\qquad5c&lt;4(a+b).\quad③$$
 
 === 習題 8
 zh: 從 $n$ 個機場各起飛一架飛機，都飛往離它最近的機場（設任兩個機場間的距離都不相同）。證明：任何一個機場降落的飛機都不超過 $6$ 架。
-sol: <figure class="bkfig"><svg viewBox="0 0 220 120" width="200" role="img" aria-label="三角形O A1 A2"><g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="20,100 190,100 170,15"/></g><g fill="currentColor" font-size="14" font-style="italic"><text x="6" y="112">O</text><text x="186" y="116">A₂</text><text x="172" y="12">A₁</text></g></svg></figure>
+sol: <figure class="bkfig"><pre class="geo">O = (20,100)
+A2 = (190,100)
+A1 = (170,15)
+draw poly O A2 A1
+</pre></figure>
 反設機場 $O$ 降落的飛機多於 $6$ 架，它們來自 $A_1,A_2,\dots,A_m$（$m\ge7$，依繞 $O$ 的方向排好）。
 $$\angle A_1OA_2+\angle A_2OA_3+\dots+\angle A_mOA_1=360^\circ,$$
 $m\ge7$ 個角加起來 $360^\circ$，至少有一個小於 $60^\circ$，不妨設 $\angle A_1OA_2&lt;60^\circ$。在 $\triangle OA_1A_2$ 中另兩個角的和大於 $120^\circ$，至少有一個大於 $60^\circ$，不妨設 $\angle A_2>60^\circ>\angle A_1OA_2$。大角對大邊：$OA_1>A_1A_2$。那麼從 $A_1$ 起飛的飛機應飛往比 $O$ 更近的 $A_2$，不會飛到 $O$，矛盾。

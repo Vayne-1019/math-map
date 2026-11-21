@@ -11,11 +11,12 @@ status: 完成
 
 === 例 1
 zh: 設 $A,B,C$ 是三角形的三個內角，且方程 $(\sin B-\sin A)x^2+(\sin A-\sin C)x+(\sin C-\sin B)=0$ 的兩根相等。求證：$\angle B\le60^\circ$。
-sol: <figure class="bkfig"><svg viewBox="0 0 161 200" width="161" role="img" aria-label="三邊成等差的三角形">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="139,22 22,178 139,178"/><path d="M36 178A14 14 0 0 0 30.4 166.8" stroke-width="1"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="139" y="15.9" text-anchor="middle">A</text><text x="14.2" y="190.7" text-anchor="middle">B</text><text x="146.8" y="190.7" text-anchor="middle">C</text><text x="80.5" y="193.9" text-anchor="middle">a</text><text x="150" y="104.9" text-anchor="middle">b</text><text x="69.5" y="104.9" text-anchor="middle">c</text></g>
-</svg><figcaption>$a+c=2b$ 的三角形（例如 $a=3,b=4,c=5$），$\angle B\le60^\circ$</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (139,22)
+B = (22,178)
+C = (139,178)
+draw poly A B C
+angle A B C
+</pre><figcaption>$a+c=2b$ 的三角形（例如 $a=3,b=4,c=5$），$\angle B\le60^\circ$</figcaption></figure>
 <p><b>證</b>　設 $R$ 是外接圓半徑，則 $\sin A=\frac a{2R}$，$\sin B=\frac b{2R}$，$\sin C=\frac c{2R}$。代入原方程化簡得 $(b-a)x^2+(a-c)x+(c-b)=0$。所以</p>
 $$\Delta=(a-c)^2-4(b-a)(c-b)=a^2+c^2+4b^2+2ac-4bc-4ab=(a+c-2b)^2=0,$$
 <p>即 $a+c=2b$，$b=\frac{a+c}2$。所以</p>
@@ -23,11 +24,17 @@ $$\cos B=\frac{a^2+c^2-b^2}{2ac}=\frac{3(a^2+c^2)-2ac}{8ac}.$$
 <p>因為 $a^2+c^2\ge2ac$，所以 $\cos B\ge\frac12$，又 $0\lt B\lt 180^\circ$，所以 $B\le60^\circ$。</p>
 === 例 2
 zh: 已知 $\triangle ABC$ 中 $\angle B$ 為銳角，從 $A$ 向邊 $BC$ 或其延長線引垂線，交 $BC$ 於 $H$；從 $C$ 向邊 $AB$ 或其延長線引垂線，交 $AB$ 於 $K$。試問：當 $\frac{2BH}{BC}$、$\frac{2BK}{BA}$ 都是整數時，$\triangle ABC$ 是怎樣的三角形？並證明你的結論。
-sol: <figure class="bkfig"><svg viewBox="0 0 220 179" width="220" role="img" aria-label="兩條高的垂足">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="139.3,22 22,156.9 198,156.9"/><line x1="139.3" y1="22" x2="139.3" y2="156.9"/><line x1="198" y1="156.9" x2="97.8" y2="69.8"/><polyline points="139.3,151.9 144.3,151.9 144.3,156.9" stroke-width="1"/><polyline points="101.6,73.1 104.8,69.3 101.1,66" stroke-width="1"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="139.3" y="15.9" text-anchor="middle">A</text><text x="14.2" y="169.6" text-anchor="middle">B</text><text x="205.8" y="169.6" text-anchor="middle">C</text><text x="139.3" y="172.8" text-anchor="middle">H</text><text x="90" y="66.9" text-anchor="middle">K</text></g>
-</svg><figcaption>$AH\perp BC$，$CK\perp AB$</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (139.3,22)
+B = (22,156.9)
+C = (198,156.9)
+H = foot(A, B, C)
+K = foot(C, A, B)
+draw poly A B C
+draw seg A H
+draw seg C K
+right A H C
+right C K A
+</pre><figcaption>$AH\perp BC$，$CK\perp AB$</figcaption></figure>
 <p><b>解法一</b>　設 $BC=a$，$AB=c$，又設 $\frac{2BH}{BC}=m$，$\frac{2BK}{BA}=n$（$m,n$ 是正整數），則 $BH=\frac{ma}2$，$BK=\frac{nc}2$。因為 $BH\lt c$、$BK\lt a$⟦為什麼｜直角三角形 $ABH$ 中斜邊 $AB=c$ 大於直角邊 $BH$；同理 $BK\lt BC$。⟧，所以 $\frac{ma}2\lt c$，$\frac{nc}2\lt a$，相乘得 $mn\lt 4$。$m,n$ 是正整數，只有五種可能：$(m,n)=(1,1),(1,2),(1,3),(2,1),(3,1)$。</p>
 <p>(1) $m=n=1$：$BH=\frac a2$，$BK=\frac c2$，高也是中線，$\triangle ABC$ 是正三角形。</p>
 <p>(2) $m=1,n=2$：$BH=\frac a2$，$BK=c$，即 $K$ 與 $A$ 重合，$\triangle ABC$ 是 $\angle A$ 為直角的等腰直角三角形。</p>
@@ -45,32 +52,45 @@ ans: 正三角形、等腰直角三角形，或頂角 $120^\circ$ 的等腰三�
 === 例 3
 zh: 在銳角 $\triangle ABC$ 中，$AC=1$，$AB=c$，外接圓半徑 $R\le1$。求證：$\cos A\lt c\le\cos A+\sqrt3\sin A$。
 sol: <p><b>分析</b>　結論涉及 $\cos A$、$\sin A$ 及邊 $c$，條件給了外接圓半徑，容易想到在餘弦定理中把 $a$ 用 $2R\sin A$ 表示，再用 $R\le1$ 得一個不等式。</p>
-<figure class="bkfig"><svg viewBox="0 0 187 200" width="187" role="img" aria-label="外接圓半徑不超過 1 的銳角三角形">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="113,22 22,178 165,178"/><line x1="165" y1="178" x2="58.3" y2="115.8"/><polyline points="62.6,118.3 65.1,114 60.8,111.4" stroke-width="1"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="113" y="15.9" text-anchor="middle">A</text><text x="14.2" y="190.7" text-anchor="middle">B</text><text x="172.8" y="190.7" text-anchor="middle">C</text><text x="50.5" y="112.9" text-anchor="middle">D</text></g>
-</svg><figcaption>銳角三角形，$CD\perp AB$，$D$ 在 $AB$ 上</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A = (113,22)
+B = (22,178)
+C = (165,178)
+D = foot(C, A, B)
+draw poly A B C
+draw seg C D
+right C D B
+</pre><figcaption>銳角三角形，$CD\perp AB$，$D$ 在 $AB$ 上</figcaption></figure>
 <p><b>證</b>　設 $BC=a$，則 $4R^2\sin^2A=a^2=c^2+1-2c\cos A$。因 $R\le1$，$c^2-2(\cos A)c+1=4R^2\sin^2A\le4\sin^2A$，即</p>
 $$c^2-2(\cos A)c+(1-4\sin^2A)\le0,$$
 <p>解得 $\cos A-\sqrt3\sin A\le c\le\cos A+\sqrt3\sin A$⟦解二次不等式｜兩根是 $\cos A\pm\sqrt{\cos^2A-1+4\sin^2A}=\cos A\pm\sqrt3\sin A$。⟧。再作 $CD\perp AB$，因三角形是銳角三角形，$D$ 在 $AB$ 上，所以 $c=AB\gt AD=AC\cos A=\cos A$。</p>
 === 例 4
 zh: $AE$ 是半圓的直徑，且 $AE=2$，$B,C,D$ 在半圓上，又 $AB=a$，$BC=b$，$CD=c$，$DE=d$。求證：$a^2+b^2+c^2+d^2+abc+bcd\lt 4$。
-sol: <figure class="bkfig"><svg viewBox="0 0 250 147" width="250" role="img" aria-label="半圓上的折線">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M228 125A103 103 0 0 0 22 125"/><line x1="22" y1="125" x2="228" y2="125"/><polyline points="22,125 46.1,58.8 116,22.4 203.9,58.8 228,125"/><line x1="22" y1="125" x2="116" y2="22.4" stroke-dasharray="5 4"/><line x1="116" y1="22.4" x2="228" y2="125" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="137.7" text-anchor="middle">A</text><text x="38.3" y="55.9" text-anchor="middle">B</text><text x="116" y="16.3" text-anchor="middle">C</text><text x="211.7" y="55.9" text-anchor="middle">D</text><text x="235.8" y="137.7" text-anchor="middle">E</text><text x="42.5" y="99.2" font-size="12" text-anchor="middle">a</text><text x="85.2" y="52.8" font-size="12" text-anchor="middle">b</text><text x="156.5" y="53.1" font-size="12" text-anchor="middle">c</text><text x="207.5" y="99.2" font-size="12" text-anchor="middle">d</text></g>
-</svg><figcaption>$AE=2$ 是半圓直徑；連 $AC$、$CE$（虛線）</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (22,125)
+E = (228,125)
+O = mid(A, E)
+k = circle(O, A)
+B = on(k, 46.1,58.8)
+C = on(k, 116,22.4)
+D = on(k, 203.9,58.8)
+draw seg A E
+draw seg A B C D E
+draw seg A C dash
+draw seg C E dash
+draw circle k dash
+</pre><figcaption>$AE=2$ 是半圓直徑；連 $AC$、$CE$（虛線）</figcaption></figure>
 <p><b>證</b>　連 $AC$、$CE$。$\angle B=180^\circ-\angle AEC$（圓內接四邊形 $ABCE$），所以</p>
 $$AC^2=a^2+b^2-2ab\cos B=a^2+b^2+2ab\cos\angle AEC.$$
 <p>而 $2\cos\angle AEC=CE\gt c$⟦為什麼｜直角 $\triangle ACE$ 中 $CE=AE\cos\angle AEC=2\cos\angle AEC$；又 $\angle D$ 是鈍角（$\triangle CDE$ 內接於半圓、在直徑同側），所以 $CE\gt CD=c$。⟧，所以 $AC^2\gt a^2+b^2+abc$。同理 $CE^2\gt c^2+d^2+bcd$。再由勾股定理</p>
 $$a^2+b^2+c^2+d^2+abc+bcd\lt AC^2+CE^2=AE^2=4.$$
 === 例 5
 zh: 平面上有定線段 $AB=\sqrt3$，動點 $M$、$N$ 滿足 $AM=MN=NB=1$。記 $\triangle AMB$ 及 $\triangle MNB$ 的面積分別為 $S$、$T$，問在什麼條件下 $S^2+T^2$ 取最大值？
-sol: <figure class="bkfig"><svg viewBox="0 0 220 141" width="220" role="img" aria-label="一條定線段與三條單位線段">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,119.3 198,119.3 152.8,28.3 51.3,22"/><line x1="51.3" y1="22" x2="198" y2="119.3"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="132" text-anchor="middle">A</text><text x="205.8" y="132" text-anchor="middle">B</text><text x="43.6" y="19.1" text-anchor="middle">M</text><text x="160.5" y="25.4" text-anchor="middle">N</text><text x="110" y="134.5" font-style="normal" font-size="12" text-anchor="middle">√3</text><text x="25.7" y="74.8" font-style="normal" font-size="12" text-anchor="middle">1</text><text x="102" y="18.4" font-style="normal" font-size="12" text-anchor="middle">1</text><text x="186.4" y="78" font-style="normal" font-size="12" text-anchor="middle">1</text><text x="90.4" y="86.9" font-style="normal" font-size="12" text-anchor="middle">S</text><text x="134" y="56.5" font-style="normal" font-size="12" text-anchor="middle">T</text></g>
-</svg><figcaption>$AB=\sqrt3$，$AM=MN=NB=1$；圖是 $\cos A=\frac{\sqrt3}6$、$S^2+T^2$ 取最大值的位置</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (22,119.3)
+B = (198,119.3)
+M = (51.3,22)
+N = (152.8,28.3)
+draw poly A B N M
+draw seg M B
+</pre><figcaption>$AB=\sqrt3$，$AM=MN=NB=1$；圖是 $\cos A=\frac{\sqrt3}6$、$S^2+T^2$ 取最大值的位置</figcaption></figure>
 <p><b>解</b>　在 $\triangle AMB$ 及 $\triangle MNB$ 中分別用餘弦定理：</p>
 $$MB^2=1+3-2\sqrt3\cos A=4-2\sqrt3\cos A,\qquad MB^2=1+1-2\cos N=2-2\cos N.$$
 <p>兩式相減得 $\cos N=\sqrt3\cos A-1$。由面積公式</p>
@@ -80,11 +100,22 @@ ans: $\cos A=\frac{\sqrt3}6$ 時，最大值 $\frac78$
 
 === 例 6
 zh: 已知邊長為 $4$ 的正方形 $CDEF$，截去一角成為五邊形 $ABCDE$，且 $AF=2$，$BF=1$。試在 $AB$ 上求一點 $P$，使矩形 $PNDM$ 有最大面積。
-sol: <figure class="bkfig"><svg viewBox="0 0 200 200" width="200" role="img" aria-label="截角正方形中的矩形">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="100,22 178,61 178,178 22,178 22,22"/><polyline points="100,22 178,22 178,61" stroke-dasharray="5 4"/><polygon points="135.1,39.6 135.1,178 22,178 22,39.6" stroke="#c2562b" stroke-width="2"/><line x1="135.1" y1="39.6" x2="135.1" y2="22" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="100" y="15.9" text-anchor="middle">A</text><text x="189" y="65.9" text-anchor="middle">B</text><text x="185.8" y="190.7" text-anchor="middle">C</text><text x="14.2" y="190.7" text-anchor="middle">D</text><text x="14.2" y="19.1" text-anchor="middle">E</text><text x="185.8" y="19.1" text-anchor="middle">F</text><text x="127.3" y="52.2" text-anchor="middle">P</text><text x="135.1" y="193.9" text-anchor="middle">N</text><text x="135.1" y="15.9" text-anchor="middle">Q</text><text x="11" y="44.5" text-anchor="middle">M</text></g>
-</svg><figcaption>從邊長 $4$ 的正方形截去一角（$AF=2$、$BF=1$）；紅色是矩形 $PNDM$。面積最大時 $P$ 恰好是 $B$</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">E = (22,22)
+F = (178,22)
+C = (178,178)
+D = (22,178)
+A = along(F, E, 0.5)
+B = along(F, C, 0.25)
+l = line(A, B)
+P = on(l, 135.1,39.6)
+N = foot(P, D, C)
+M = foot(P, E, D)
+Q = inter(P, N, E, F)
+draw poly A B C D E
+draw seg A F B dash
+draw seg P Q dash
+draw poly P N D M accent
+</pre><figcaption>從邊長 $4$ 的正方形截去一角（$AF=2$、$BF=1$）；紅色是矩形 $PNDM$。面積最大時 $P$ 恰好是 $B$</figcaption></figure>
 <p><b>解</b>　延長 $NP$ 與 $EF$ 交於 $Q$。設 $PN=x$，則 $PQ=4-x$。$\triangle AQP\sim\triangle AFB$，$\frac{PQ}{BF}=\frac{AQ}{AF}$，所以</p>
 $$AQ=\frac{AF}{BF}PQ=2PQ=8-2x,\quad FQ=AF-AQ=2x-6,\quad PM=EQ=4-FQ=10-2x.$$
 <p>所以</p>
@@ -98,11 +129,20 @@ ans: $P$ 取在 $B$，最大面積 $12$
 
 === 例 7
 zh: 從 $A$ 出發的一條光線在平面內行進，在直線 $AD$ 和 $CD$ 之間反射了 $n$ 次後，垂直地射到 $B$（$B$ 可能在 $AD$ 上，也可能在 $CD$ 上），然後按原路返回 $A$。已知每個反射點（$R_1,R_2,\dots$）處入射光線和反射光線與 $CD$（或 $AD$）所成的角相等，$\angle ADC=8^\circ$。試求 $n$ 的最大值。
-sol: <figure class="bkfig"><svg viewBox="0 0 300 80" width="300" role="img" aria-label="兩直線間的反射光線">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><line x1="33.5" y1="58" x2="278" y2="58"/><line x1="278" y1="58" x2="22" y2="22"/><polyline points="33.5,58 53.2,26.4 62.3,58 70.6,28.8 70.6,58" stroke="#c2562b" stroke-width="2"/><polyline points="70.6,53 75.6,53 75.6,58" stroke-width="1"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="25.7" y="70.7" text-anchor="middle">A</text><text x="289" y="62.9" text-anchor="middle">D</text><text x="22" y="15.9" text-anchor="middle">C</text><text x="70.6" y="73.9" text-anchor="middle">B</text><text x="53.2" y="20.3" text-anchor="middle">R<tspan font-size="10">1</tspan></text><text x="62.3" y="73.9" text-anchor="middle">R<tspan font-size="10">2</tspan></text><text x="70.6" y="22.7" text-anchor="middle">R<tspan font-size="10">3</tspan></text></g>
-</svg><figcaption>$\angle ADC=8^\circ$；光線反射 $3$ 次後垂直射到 $B$（$\theta=58^\circ$）</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (33.5,58)
+D = (278,58)
+C = (22,22)
+lAD = line(A, D)
+lCD = line(C, D)
+R1 = on(lCD, 53.2,26.4)
+R2 = on(lAD, 62.3,58)
+R3 = on(lCD, 70.6,28.8)
+B = on(lAD, 70.6,58)
+draw seg A D
+draw seg D C
+draw seg A R1 R2 R3 B accent
+right R3 B D
+</pre><figcaption>$\angle ADC=8^\circ$；光線反射 $3$ 次後垂直射到 $B$（$\theta=58^\circ$）</figcaption></figure>
 <p><b>解</b>　設 $\angle DAR_1=\theta$（參數），$\theta_i$ 是第 $i$ 個反射點處光線與 $AD$ 或 $CD$ 所夾的銳角。於是 $\theta_1=\theta+8^\circ$⟦為什麼｜$\triangle AR_1D$ 的外角：$\theta_1=\angle DAR_1+\angle ADR_1$。⟧。對 $\triangle R_1R_2D$，$\theta_2=\theta_1+8^\circ=\theta+2\times8^\circ$；同理 $\theta_3=\theta+3\times8^\circ$，……一般地 $\theta_n=\theta+n\times8^\circ$。最後在 $\triangle R_nBD$ 中 $\angle R_nBD=90^\circ$，所以</p>
 $$90^\circ=\theta_n+8^\circ=\theta+(n+1)\times8^\circ,\qquad\theta=90^\circ-(n+1)\times8^\circ.\quad\text{①}$$
 <p>因 $\theta\gt 0$，$90-(n+1)\times8\gt 0$，$n\lt \frac{82}8\lt 11$。由 ①，$\theta=2^\circ$ 時 $n$ 取最大值 $10$。</p>
@@ -110,11 +150,21 @@ ans: $10$
 
 === 例 8
 zh: 三個圓 $A$、$B$、$C$ 兩兩外切於 $X$、$Y$、$Z$。若把這些圓的圓心不變、半徑擴大到原來的 $\frac2{\sqrt3}$ 倍，求證：$\triangle XYZ$ 邊界上或內部的任一點，至少在某一個擴大後的圓內或圓周上。
-sol: <figure class="bkfig"><svg viewBox="0 0 205 230" width="205" role="img" aria-label="兩兩外切的三個圓">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="117.7" cy="79" r="57"/><circle cx="64.8" cy="163.7" r="42.8"/><circle cx="145.3" cy="170" r="38"/><polygon points="117.7,79 64.8,163.7 145.3,170"/><polygon points="87.4,127.4 107.4,167 134.3,133.6" stroke="#c2562b" stroke-width="2"/></g>
-<g fill="currentColor"><circle cx="117.7" cy="79" r="2.4"/><circle cx="64.8" cy="163.7" r="2.4"/><circle cx="145.3" cy="170" r="2.4"/></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="117.7" y="72.9" text-anchor="middle">A</text><text x="57" y="176.4" text-anchor="middle">B</text><text x="153.1" y="182.7" text-anchor="middle">C</text><text x="76.4" y="132.3" text-anchor="middle">X</text><text x="107.4" y="182.9" text-anchor="middle">Y</text><text x="145.3" y="138.5" text-anchor="middle">Z</text></g>
-</svg><figcaption>三圓兩兩外切於 $X,Y,Z$；紅色是 $\triangle XYZ$</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (117.7,79)
+B = (64.8,163.7)
+C = (145.3,170)
+a = circler(A, 57)
+b = circler(B, 42.8)
+c = circler(C, 38)
+X = along(A, B, 57/99.8)
+Y = along(B, C, 42.8/80.8)
+Z = along(A, C, 57/95)
+draw poly A B C
+draw circle a
+draw circle b
+draw circle c
+draw poly X Y Z accent
+</pre><figcaption>三圓兩兩外切於 $X,Y,Z$；紅色是 $\triangle XYZ$</figcaption></figure>
 <p><b>證</b>　在 $\triangle XYZ$ 內或邊上任取一點 $O$，只需證下面三個不等式至少有一個成立：</p>
 $$AO\le\frac2{\sqrt3}AX,\qquad BO\le\frac2{\sqrt3}BY,\qquad CO\le\frac2{\sqrt3}CZ.$$
 <p>因為 $\angle AOB+\angle BOC+\angle COA=360^\circ$，三個角中至少有一個不小於 $120^\circ$。不妨設 $\angle BOC\ge120^\circ$，則 $\cos\angle BOC\le-\frac12$。在 $\triangle BOC$ 中由餘弦定理</p>
@@ -122,11 +172,17 @@ $$\begin{aligned}BC^2&=BO^2+CO^2-2BO\cdot CO\cos\angle BOC\ge BO^2+CO^2+BO\cdot 
 <p>所以 $BO+CO\le\frac2{\sqrt3}BC=\frac2{\sqrt3}(BY+CZ)$⟦為什麼｜兩圓外切，連心線長等於半徑和：$BC=BY+CY$，而 $CY=CZ$（都是圓 $C$ 的半徑）。⟧。於是 $BO\le\frac2{\sqrt3}BY$ 與 $CO\le\frac2{\sqrt3}CZ$ 至少有一個成立。</p>
 === 例 9
 zh: $ABCD$ 是正方形，以 $CD$ 為一邊向形內作等腰 $\triangle CDE$，且 $\angle EDC=\angle ECD=15^\circ$。求證：$\triangle ABE$ 是正三角形。
-sol: <figure class="bkfig"><svg viewBox="0 0 190 190" width="190" role="img" aria-label="正方形中的 15° 角">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,168 168,168 168,22 22,22"/><polygon points="22,22 95,41.6 168,22"/><polygon points="22,168 168,168 95,41.6" stroke="#c2562b" stroke-width="2"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="180.7" text-anchor="middle">A</text><text x="175.8" y="180.7" text-anchor="middle">B</text><text x="175.8" y="19.1" text-anchor="middle">C</text><text x="14.2" y="19.1" text-anchor="middle">D</text><text x="95" y="35.5" text-anchor="middle">E</text></g>
-</svg><figcaption>$\angle EDC=\angle ECD=15^\circ$；紅色 $\triangle ABE$ 是正三角形</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (22,168)
+B = (168,168)
+C = (168,22)
+D = (22,22)
+x1 = rotate(C, D, -15)
+x2 = rotate(D, C, 15)
+E = inter(D, x1, C, x2)
+draw poly A B C D
+draw seg D E C
+draw poly A B E accent
+</pre><figcaption>$\angle EDC=\angle ECD=15^\circ$；紅色 $\triangle ABE$ 是正三角形</figcaption></figure>
 <p><b>說明</b>　這是平面幾何的一道名題，許多書以它作為同一法證題的範例，這裡用代數方法（比較角的大小）證明。</p>
 <p><b>證</b>　由題設易知 $AE=BE$⟦為什麼｜$E$ 在 $CD$ 的中垂線上，也就是 $AB$ 的中垂線上。⟧，所以只要證 $\angle AEB=60^\circ$。令 $\angle AEB=2x$，$\angle BEC=y$，則 $\angle EBC=x$，$\angle ABE=90^\circ-x$。</p>
 <p>若 $\angle AEB=2x\gt 60^\circ$，則 $x\gt 30^\circ$，於是 $180^\circ=\angle BEC+\angle BCE+\angle EBC=y+75^\circ+x\gt y+105^\circ$，所以 $\angle BEC=y\lt 75^\circ=\angle BCE$，從而 $BC\lt BE$。又 $BC=AB$，所以 $AB\lt BE$，$\angle AEB\lt \angle BAE=\angle ABE$，即 $2x\lt 90^\circ-x$，$x\lt 30^\circ$，與所設矛盾。</p>
@@ -139,11 +195,15 @@ $$ac\cdot\frac{b^2+c^2-a^2}{2bc}+bc\cdot\frac{c^2+a^2-b^2}{2ac}\lt 2ab\sin C\le2
 <p>化簡得 $c^2\lt a^2+b^2$⟦化簡｜兩邊乘以 $2ab$：$a^2(b^2+c^2-a^2)+b^2(c^2+a^2-b^2)\lt 4a^2b^2$，即 $c^2(a^2+b^2)\lt (a^2+b^2)^2$。⟧，所以最大角 $C$ 是銳角，三角形是銳角三角形。</p>
 === 習題 2
 zh: 在 $\triangle ABC$ 中，$AB=AC=a$，$D$ 是底邊 $BC$ 延長線上一點，且 $AD=d$。試求 $BD\cdot CD$。
-sol: <figure class="bkfig"><svg viewBox="0 0 230 147" width="230" role="img" aria-label="等腰三角形底邊延長線上一點">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="86.1,22 22,124.6 150.3,124.6"/><line x1="150.3" y1="124.6" x2="208" y2="124.6"/><line x1="86.1" y1="22" x2="208" y2="124.6"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="86.1" y="15.9" text-anchor="middle">A</text><text x="14.2" y="137.3" text-anchor="middle">B</text><text x="150.3" y="140.5" text-anchor="middle">C</text><text x="215.8" y="137.3" text-anchor="middle">D</text><text x="46.3" y="70.4" text-anchor="middle">a</text><text x="154.8" y="70.4" text-anchor="middle">d</text></g>
-</svg><figcaption>$AB=AC=a$，$D$ 在 $BC$ 的延長線上</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (86.1,22)
+B = (22,124.6)
+C = (150.3,124.6)
+lBC = line(B, C)
+D = on(lBC, 208,124.6)
+draw poly A B C
+draw seg C D
+draw seg A D
+</pre><figcaption>$AB=AC=a$，$D$ 在 $BC$ 的延長線上</figcaption></figure>
 <p>在 $\triangle ACD$ 中 $a^2=d^2+CD^2-2d\cdot CD\cos D$，即 $CD^2-(2d\cos D)CD+d^2-a^2=0$①；同理在 $\triangle ABD$ 中 $BD^2-(2d\cos D)BD+d^2-a^2=0$②。由 ①② 知 $BD$、$CD$ 都是方程 $x^2-(2d\cos D)x+d^2-a^2=0$ 的根，所以 $BD\cdot CD=d^2-a^2$。</p>
 ans: $d^2-a^2$
 
@@ -152,21 +212,33 @@ zh: 已知銳角 $\triangle ABC$ 的三條邊長為 $a,b,c$，外接圓半徑為
 sol: <p>銳角三角形中 $A\gt 90^\circ-B$⟦為什麼｜$A+B=180^\circ-C\gt 90^\circ$。⟧，所以 $\cos A\lt \cos(90^\circ-B)=\sin B$；同理 $\cos B\lt \sin C$，$\cos C\lt \sin A$。所以 $\cos A+\cos B+\cos C\lt \sin A+\sin B+\sin C$。再由 $\frac a{\sin A}=\frac b{\sin B}=\frac c{\sin C}=2$，$\sin A+\sin B+\sin C=\frac12(a+b+c)$。</p>
 === 習題 4
 zh: 在 $\triangle ABC$ 中，$AB=2\sqrt2$，$AC=\sqrt2$，$BC=2$。設 $P$ 是 $BC$ 上任一點，求證：$PA^2\gt PB\cdot PC$。
-sol: <figure class="bkfig"><svg viewBox="0 0 220 137" width="220" role="img" aria-label="邊上一點">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="198,22 22,115.1 162.8,115.1"/><line x1="198" y1="22" x2="106.5" y2="115.1"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="198" y="15.9" text-anchor="middle">A</text><text x="14.2" y="127.8" text-anchor="middle">B</text><text x="170.6" y="127.8" text-anchor="middle">C</text><text x="106.5" y="131" text-anchor="middle">P</text></g>
-</svg><figcaption>$AB=2\sqrt2$，$AC=\sqrt2$，$BC=2$</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (198,22)
+B = (22,115.1)
+C = (162.8,115.1)
+lBC = line(B, C)
+P = on(lBC, 106.5,115.1)
+draw poly A B C
+draw seg A P
+</pre><figcaption>$AB=2\sqrt2$，$AC=\sqrt2$，$BC=2$</figcaption></figure>
 <p>設 $BP=x$，則 $PC=2-x$。$\cos B=\frac{(2\sqrt2)^2+2^2-(\sqrt2)^2}{2\cdot2\sqrt2\cdot2}=\frac{5\sqrt2}8$，所以</p>
 $$PA^2=8+x^2-4\sqrt2x\cos B=x^2-5x+8,\qquad PB\cdot PC=2x-x^2.$$
 <p>所以 $PA^2-PB\cdot PC=2x^2-7x+8=2\big(x-\frac74\big)^2+\frac{15}8\gt 0$。</p>
 === 習題 5
 zh: 已知 $\odot O$ 的半徑為 $1$，正方形 $ABCD$ 的邊長也為 $1$，$A$ 點固定在圓周上，$B$、$C$、$D$ 在圓內變動。求 $OA^2+OB^2+OC^2+OD^2$ 的最大值和最小值。
-sol: <figure class="bkfig"><svg viewBox="0 0 200 200" width="200" role="img" aria-label="圓內的單位正方形">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="100" cy="100" r="78"/><polygon points="100,22 55.3,85.9 119.2,130.6 163.9,66.7"/><line x1="100" y1="22" x2="119.2" y2="130.6" stroke-dasharray="5 4"/><line x1="55.3" y1="85.9" x2="163.9" y2="66.7" stroke-dasharray="5 4"/><line x1="100" y1="100" x2="109.6" y2="76.3" stroke-dasharray="5 4"/><line x1="100" y1="100" x2="100" y2="22" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"><circle cx="100" cy="100" r="2.4"/><circle cx="109.6" cy="76.3" r="2.4"/></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="100" y="15.9" text-anchor="middle">A</text><text x="44.3" y="90.8" text-anchor="middle">B</text><text x="119.2" y="146.5" text-anchor="middle">C</text><text x="174.9" y="71.6" text-anchor="middle">D</text><text x="89" y="104.9" text-anchor="middle">O</text><text x="124.1" y="81.2" text-anchor="middle">O<tspan font-size="10">1</tspan></text></g>
-</svg><figcaption>$A$ 在圓上，正方形 $ABCD$ 邊長 $1$，對角線交於 $O_1$；$\theta=\angle OAO_1$</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">O = (100,100)
+k = circler(O, 78)
+A = on(k, 100,22)
+B = (55.3,85.9)
+C = (119.2,130.6)
+D = (163.9,66.7)
+O1 = mid(A, C)
+draw circle k
+draw poly A B C D
+draw seg A C dash
+draw seg B D dash
+draw seg O O1 dash
+draw seg O A dash
+</pre><figcaption>$A$ 在圓上，正方形 $ABCD$ 邊長 $1$，對角線交於 $O_1$；$\theta=\angle OAO_1$</figcaption></figure>
 <p>設正方形的對角線交於 $O_1$，$\angle OAO_1=\theta$。由中線公式 $OA^2+OC^2=\frac12AC^2+2OO_1^2$，$OB^2+OD^2=\frac12BD^2+2OO_1^2$，所以</p>
 $$l=OA^2+OB^2+OC^2+OD^2=2+4OO_1^2.$$
 <p>又 $OO_1^2=1^2+\big(\frac{\sqrt2}2\big)^2-2\cdot1\cdot\frac{\sqrt2}2\cos\theta=\frac32-\sqrt2\cos\theta$，所以 $l=8-4\sqrt2\cos\theta$。由題設可求得 $\theta$ 在 $0$ 到 $15^\circ$ 之間變化⟦為什麼是 15°｜$\theta$ 增大到 $15^\circ$ 時 $B$（或 $D$）恰好落在圓周上：這時 $OA=OD=1$、$AD=1$，$\triangle OAD$ 是正三角形，$\angle OAD=60^\circ$，而 $\angle O_1AD=45^\circ$，所以 $\theta=15^\circ$。⟧。所以 $\theta=0$ 時 $l_{\min}=8-4\sqrt2$；$\theta=15^\circ$ 時 $l_{\max}=8-4\sqrt2\cos15^\circ$。</p>
