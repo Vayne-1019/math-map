@@ -13,11 +13,18 @@ status: 完成
 === 例 1
 zh: 在 $\triangle ABC$ 與 $\triangle DEF$ 中，$\angle A=\angle E$，$\angle B=\angle F$，$AB=DE$，$AC=EF$。求證：$\triangle ABC$ 與 $\triangle DEF$ 都是等腰三角形。
 sol: <p><b>分析</b>　兩個三角形有兩邊兩角分別相等，但要先弄清楚<b>誰對應誰</b>。讓 $A\leftrightarrow E$：夾 $\angle A$ 的兩邊是 $BA$、$AC$，夾 $\angle E$ 的兩邊是 $DE$、$EF$，而已知 $BA=DE$、$AC=EF$，所以是「兩邊夾一角」對應相等。</p>
-<figure class="bkfig"><svg viewBox="0 0 222 200" width="222" role="img" aria-label="兩個三角形 ABC 與 EDF">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="88.9,22 22,75.5 200.3,75.5"/><polygon points="88.9,124.5 22,178 200.3,178"/><path d="M79.5 29.5A12 12 0 0 0 99.7 27.2" stroke-width="1"/><path d="M79.5 132A12 12 0 0 0 99.7 129.7" stroke-width="1"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="88.9" y="15.9" text-anchor="middle">A</text><text x="11" y="80.4" text-anchor="middle">B</text><text x="211.3" y="80.4" text-anchor="middle">C</text><text x="88.9" y="118.4" text-anchor="middle">E</text><text x="11" y="182.9" text-anchor="middle">D</text><text x="211.3" y="182.9" text-anchor="middle">F</text></g>
-</svg><figcaption>$\angle A=\angle E$，夾這兩角的邊對應相等：$BA=DE$、$AC=EF$</figcaption></figure>
+<figure class="bkfig"><pre class="geo">
+A = (88.9, 22)
+B = (22, 75.5)
+C = (200.3, 75.5)
+E = (88.9, 124.5)
+D = (22, 178)
+F = (200.3, 178)
+draw poly A B C
+draw poly E D F
+angle B A C
+angle D E F
+</pre><figcaption>$\angle A=\angle E$，夾這兩角的邊對應相等：$BA=DE$、$AC=EF$</figcaption></figure>
 <p><b>證</b>　在 $\triangle ABC$ 與 $\triangle EDF$ 中，$BA=DE$，$\angle A=\angle E$，$AC=EF$，所以 $\triangle ABC\cong\triangle EDF$（SAS）。於是對應角 $\angle B=\angle D$，$\angle C=\angle F$。</p>
 <p>又已知 $\angle B=\angle F$，所以 $\angle B=\angle C$⟦等量代換｜$\angle B=\angle F$（已知），$\angle F=\angle C$（剛證的對應角），所以 $\angle B=\angle C$。⟧，得 $AB=AC$（等角對等邊）。同時 $\angle D=\angle B=\angle F$，得 $ED=EF$。所以兩個三角形都是等腰三角形。</p>
 <p><b>注</b>　寫全等式時，字母順序必須是對應的順序。若對應關係是 $A\leftrightarrow C_1$、$B\leftrightarrow A_1$、$C\leftrightarrow B_1$，就要寫 $\triangle ABC\cong\triangle C_1A_1B_1$，不能隨手寫成 $\triangle ABC\cong\triangle A_1B_1C_1$。本題寫成 $\triangle ABC\cong\triangle EDF$ 而不是 $\triangle DEF$，就是這個原因。</p>
@@ -25,21 +32,36 @@ sol: <p><b>分析</b>　兩個三角形有兩邊兩角分別相等，但要先�
 zh: 已知 $\triangle ABC$ 是正三角形。延長 $BC$ 到 $D$，延長 $BA$ 到 $E$，使 $AE=BD$，連 $CE$、$DE$。求證：$CE=DE$。
 sol: <p><b>分析</b>　想造出以 $CE$、$DE$ 為對應邊的全等三角形。因為 $\angle B=60^\circ$，可以把 $BD$ 再延長，補成一個大正三角形，圖形變得對稱，全等三角形就看得出來了。</p>
 <p><b>證法一（補成對稱圖形）</b>　延長 $BD$ 到 $F$，使 $BF=BE$，連 $EF$。$\triangle BEF$ 是頂角 $60^\circ$ 的等腰三角形，所以是正三角形，$\angle B=\angle F=60^\circ$，$BE=FE$。</p>
-<figure class="bkfig"><svg viewBox="0 0 230 205" width="230" role="img" aria-label="正三角形 ABC 與延長線上的點 D、E">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,183.1 136.5,183.1 115,22"/><line x1="57.8" y1="121.1" x2="93.5" y2="183.1"/><line x1="93.5" y1="183.1" x2="115" y2="22"/><line x1="136.5" y1="183.1" x2="208" y2="183.1" stroke-dasharray="5 4"/><line x1="115" y1="22" x2="208" y2="183.1" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="195.8" text-anchor="middle">B</text><text x="93.5" y="199" text-anchor="middle">C</text><text x="136.5" y="199" text-anchor="middle">D</text><text x="46.8" y="126" text-anchor="middle">A</text><text x="115" y="15.9" text-anchor="middle">E</text><text x="208" y="199" text-anchor="middle">F</text></g>
-</svg><figcaption>證法一：延長 $BD$ 到 $F$ 使 $BF=BE$（虛線），$\triangle BEF$ 是正三角形</figcaption></figure>
+<figure class="bkfig"><pre class="geo">
+B = (22, 183.1)
+D = (136.5, 183.1)
+E = (115, 22)
+A = along(B, E, 0.385)
+C = along(B, D, 0.625)
+F = (208, 183.1)
+draw poly B D E
+draw seg A C
+draw seg C E
+draw seg D F dash
+draw seg E F dash
+</pre><figcaption>證法一：延長 $BD$ 到 $F$ 使 $BF=BE$（虛線），$\triangle BEF$ 是正三角形</figcaption></figure>
 <p>又因為 $BD=AE$，</p>
 $$BC=BA=BE-AE=BF-BD=FD.$$
 <p>所以 $\triangle BCE\cong\triangle FDE$（SAS：$BC=FD$，$\angle B=\angle F$，$BE=FE$），得 $CE=DE$。</p>
 <p>把不規則的圖形補成對稱圖形，讓隱藏的關係浮現，是添輔助線的重要想法。</p>
 <p><b>證法二（截取）</b>　在 $AE$ 上取 $AH=CD$，則 $BH=BA+AH=BC+CD=BD$。又 $\angle B=60^\circ$，所以 $\triangle BHD$ 是正三角形。</p>
-<figure class="bkfig"><svg viewBox="0 0 190 250" width="190" role="img" aria-label="正三角形 ABC 與延長線上的點 D、E">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,228 168.4,228 140.9,22"/><line x1="67.7" y1="148.8" x2="113.5" y2="228"/><line x1="113.5" y1="228" x2="140.9" y2="22"/><line x1="95.2" y1="101.2" x2="168.4" y2="228" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="240.7" text-anchor="middle">B</text><text x="113.5" y="243.9" text-anchor="middle">C</text><text x="168.4" y="243.9" text-anchor="middle">D</text><text x="56.7" y="153.7" text-anchor="middle">A</text><text x="140.9" y="15.9" text-anchor="middle">E</text><text x="84.2" y="106.1" text-anchor="middle">H</text></g>
-</svg><figcaption>證法二：在 $AE$ 上取 $AH=CD$，連 $HD$（虛線）</figcaption></figure>
+<figure class="bkfig"><pre class="geo">
+B = (22, 228)
+C = (113.5, 228)
+D = (168.4, 228)
+E = (140.9, 22)
+A = along(B, E, 0.384)
+H = along(A, E, 0.46)
+draw poly B D E
+draw seg A C
+draw seg C E
+draw seg H D dash
+</pre><figcaption>證法二：在 $AE$ 上取 $AH=CD$，連 $HD$（虛線）</figcaption></figure>
 <p>在 $\triangle EAC$ 與 $\triangle DHE$ 中：$DH=BD=EA$；$HE=AE-AH=BD-CD=BC=AC$；而 $\angle EAC=\angle DHE=120^\circ$⟦為什麼都是 120°｜$\angle EAC$ 是正三角形內角 $\angle BAC=60^\circ$ 的鄰補角；$\angle DHE$ 是正三角形 $BHD$ 內角 $\angle BHD=60^\circ$ 的鄰補角。⟧。所以 $\triangle EAC\cong\triangle DHE$（SAS），$EC=DE$。</p>
 <p><b>證法三（等腰三角形）</b>　只要證 $\triangle ECD$ 是等腰三角形，也就是證 $E$ 在 $CD$ 的中垂線上。作 $EF\perp BD$，垂足 $F$。設 $BC=a$，$CD=b$，則 $AE=BD=a+b$，$BE=2a+b$。在直角 $\triangle BEF$ 中 $\angle B=60^\circ$，所以 $BF$ 是斜邊 $BE$ 的一半⟦為什麼是一半｜$\angle B=60^\circ$、$\angle BFE=90^\circ$，所以 $\angle BEF=30^\circ$；$30^\circ$ 角所對的直角邊 $BF$ 是斜邊 $BE$ 的一半。⟧：</p>
 $$BF=\tfrac12BE=a+\tfrac b2.$$
