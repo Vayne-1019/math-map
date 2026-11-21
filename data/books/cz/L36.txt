@@ -135,19 +135,11 @@ $$\begin{aligned}AC&=\cos\alpha,&BC&=\sin\alpha,\\AD&=AC\cos\alpha=\cos^2\alpha,
 <p>所以 $AE\cdot BC^3=\cos^3\alpha\sin^3\alpha=BF\cdot AC^3$。（比較第 22 講例 5 的綜合證法。）</p>
 === 例 6
 zh: $O$ 是凸五邊形 $ABCDE$ 內一點，且 $\angle1=\angle2$，$\angle3=\angle4$，$\angle5=\angle6$，$\angle7=\angle8$（角的編號見圖）。求證：$\angle9$ 與 $\angle10$ 相等或互補。
-sol: <figure class="bkfig"><pre class="geo">A = (114.5, 22)
-B = (207.1, 89.2)
-C = (171.7, 198)
-D = (57.3, 198)
-E = (22, 89.2)
-O = (118.3, 126.8)
-draw poly A B C D E
-draw seg O A
-draw seg O B
-draw seg O C
-draw seg O D
-draw seg O E
-</pre><figcaption>角的編號：$\angle1=\angle OAB$、$\angle2=\angle OCB$、$\angle3=\angle OBC$、…、$\angle9=\angle OEA$、$\angle10=\angle OBA$（示意圖，不按題設比例）</figcaption></figure>
+sol: <figure class="bkfig"><svg viewBox="0 0 229 220" width="229" role="img" aria-label="五邊形內一點與十個角">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="114.5,22 207.1,89.2 171.7,198 57.3,198 22,89.2"/><line x1="118.3" y1="126.8" x2="114.5" y2="22"/><line x1="118.3" y1="126.8" x2="207.1" y2="89.2"/><line x1="118.3" y1="126.8" x2="171.7" y2="198"/><line x1="118.3" y1="126.8" x2="57.3" y2="198"/><line x1="118.3" y1="126.8" x2="22" y2="89.2"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="125.8" y="46.9" font-style="normal" font-size="10" text-anchor="middle">1</text><text x="104" y="47.3" font-style="normal" font-size="10" text-anchor="middle">8</text><text x="183.3" y="90.2" font-style="normal" font-size="10" text-anchor="middle">10</text><text x="190.9" y="110.6" font-style="normal" font-size="10" text-anchor="middle">3</text><text x="167.8" y="178.1" font-style="normal" font-size="10" text-anchor="middle">2</text><text x="150.3" y="191" font-style="normal" font-size="10" text-anchor="middle">5</text><text x="79.1" y="191.7" font-style="normal" font-size="10" text-anchor="middle">4</text><text x="62" y="178.3" font-style="normal" font-size="10" text-anchor="middle">7</text><text x="38.4" y="110.4" font-style="normal" font-size="10" text-anchor="middle">6</text><text x="45.8" y="89.9" font-style="normal" font-size="10" text-anchor="middle">9</text><text x="114.5" y="15.9" text-anchor="middle">A</text><text x="218.1" y="94.1" text-anchor="middle">B</text><text x="179.5" y="210.7" text-anchor="middle">C</text><text x="49.6" y="210.7" text-anchor="middle">D</text><text x="11" y="94.1" text-anchor="middle">E</text><text x="129.3" y="131.7" text-anchor="middle">O</text></g>
+</svg><figcaption>角的編號：$\angle1=\angle OAB$、$\angle2=\angle OCB$、$\angle3=\angle OBC$、…、$\angle9=\angle OEA$、$\angle10=\angle OBA$（示意圖，不按題設比例）</figcaption></figure>
 <p><b>分析</b>　$\angle9$、$\angle10$ 都是三角形的內角，只要證 $\sin\angle9=\sin\angle10$。怎樣把兩者聯繫起來？$\angle1$ 與 $\angle10$ 在同一個三角形內，正弦定理把 $\sin\angle1$ 與 $\sin\angle10$ 聯繫起來，再由 $\angle1=\angle2$ 把 $\sin\angle2$ 與 $\sin\angle10$ 聯繫起來；而 $\angle3$ 與 $\angle2$ 又在同一個三角形內……反覆利用相等的角與正弦定理，最終把 $\sin\angle9$ 與 $\sin\angle10$ 聯繫起來。</p>
 <p><b>證</b>　依次對 $\triangle AOB$、$\triangle BOC$、$\triangle COD$、$\triangle DOE$、$\triangle EOA$ 用正弦定理，並利用題設：</p>
 $$\frac{OA}{\sin\angle10}=\frac{OB}{\sin\angle1}=\frac{OB}{\sin\angle2}=\frac{OC}{\sin\angle3}=\frac{OC}{\sin\angle4}=\frac{OD}{\sin\angle5}=\frac{OD}{\sin\angle6}=\frac{OE}{\sin\angle7}=\frac{OE}{\sin\angle8}=\frac{OA}{\sin\angle9}.$$
@@ -212,18 +204,11 @@ zh: 設 $H$ 是 $\triangle ABC$ 的垂心，$O$ 是外心，且 $\angle B=60^\ci
 sol: <p>$\angle AHB+\angle C=180^\circ$⟦為什麼｜$H$ 與兩個垂足、$C$ 構成的四邊形有兩個直角。⟧，所以 $\sin\angle AHB=\sin C$。$\angle ABC=60^\circ$ 使 $\angle BAH=30^\circ$，在 $\triangle ABH$ 中由正弦定理 $BH=\frac{AB\sin30^\circ}{\sin\angle AHB}=\frac{AB}{2\sin C}$。又對 $\triangle ABC$ 用正弦定理 $\frac{AB}{\sin C}=2BO$（外接圓直徑），所以 $BH=BO$。</p>
 === 習題 2
 zh: <p>$\triangle ABC$ 被過一點 $P$ 的三條線段 $AD$、$BE$、$CF$ 分成 6 個小三角形，各小三角形的面積已標在圖上。求 $x$、$y$。</p>
-<figure class="bkfig"><pre class="geo">A = (126, 22)
-B = (22, 178)
-C = (230, 178)
-P = (137.6, 137.2)
-D = inter(A, P, B, C)
-E = inter(B, P, A, C)
-F = inter(C, P, A, B)
-draw poly A B C
-draw seg A D
-draw seg B E
-draw seg C F
-</pre><figcaption>六個小三角形的面積（按答案 $x=70$、$y=56$ 的比例畫）</figcaption></figure>
+<figure class="bkfig"><svg viewBox="0 0 252 200" width="252" role="img" aria-label="三角形分成六塊">
+<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="126,22 22,178 230,178"/><line x1="126" y1="22" x2="140.9" y2="178"/><line x1="22" y1="178" x2="195.3" y2="126"/><line x1="230" y1="178" x2="63.6" y2="115.6"/></g>
+<g fill="currentColor"></g>
+<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="109.1" y="97.5" font-style="normal" font-size="11" text-anchor="middle">84</text><text x="74.4" y="149.5" font-style="normal" font-size="11" text-anchor="middle">y</text><text x="100.1" y="170.3" font-style="normal" font-size="11" text-anchor="middle">40</text><text x="169.5" y="170.3" font-style="normal" font-size="11" text-anchor="middle">30</text><text x="187.6" y="153" font-style="normal" font-size="11" text-anchor="middle">35</text><text x="153" y="101" font-style="normal" font-size="11" text-anchor="middle">x</text><text x="126" y="15.9" text-anchor="middle">A</text><text x="11" y="182.9" text-anchor="middle">B</text><text x="241" y="182.9" text-anchor="middle">C</text><text x="140.9" y="193.9" text-anchor="middle">D</text><text x="203.1" y="123.1" text-anchor="middle">E</text><text x="55.8" y="112.7" text-anchor="middle">F</text><text x="137.6" y="137.2" text-anchor="middle">P</text></g>
+</svg><figcaption>六個小三角形的面積（按答案 $x=70$、$y=56$ 的比例畫）</figcaption></figure>
 sol: 利用同高三角形的面積比等於底邊之比：$BD:DC=40:30=4:3$，$BP:PE=S_{\triangle BPC}:S_{\triangle PEC}=70:35=2$。所以 $(84+y):x=2$，即 $2x=84+y$①；又 $(84+y+40):(x+35+30)=BD:DC=4:3$，即 $4x=112+3y$②。聯立解得 $x=70$，$y=56$。
 ans: $x=70$，$y=56$
 
