@@ -21,6 +21,24 @@ C = (167.6,141.1)
 draw line A B
 draw line A C
 draw line B C
+r1 = (119,31)
+r2 = (152.6,85.1)
+r3 = (188.1,152.2)
+r4 = (111.6,156)
+r5 = (35.1,152.2)
+r6 = (76.1,85.1)
+hide r1
+hide r2
+hide r3
+hide r4
+hide r5
+hide r6
+text r1 c ①
+text r2 c ②
+text r3 c ③
+text r4 c ④
+text r5 c ⑤
+text r6 c ⑥
 </pre><figcaption>三條邊所在直線把三角形外部分成六個區域</figcaption></figure>
 sol: <p>如果 $P$ 在 $\triangle ABC$ 外，它必在圖中六個區域之一（或它們的交界上）。若 $P$ 在區域 ①，則 $A$ 在 $\triangle PBC$ 中，$AB+AC\le PB+PC\lt PA+PB+PC$⟦為什麼｜$A$ 在 $\triangle PBC$ 內部（或邊上）時，折線 $BAC$ 被包在 $BPC$ 裡，長度不超過 $PB+PC$。⟧，即 $A$ 到三頂點的距離和小於 $P$ 的，$P$ 不是最小點。若 $P$ 在區域 ②，設 $PB$ 交 $AC$ 於 $P'$，則</p>
 $$P'A+P'B+P'C=P'B+AC\lt PB+AC\lt PA+PB+PC,$$
@@ -201,15 +219,17 @@ Q = on(lBC, 137.9,125)
 R = on(lCA, 171.4,96.7)
 Bp = reflectp(B, A)
 Cp = reflectp(C, A)
-Rp = reflectp(R, A)
-Qp = reflectp(Q, A)
-Dp = reflectp(D, A)
+hide Bp
+hide Cp
+R' = reflectp(R, A)
+Q' = reflectp(Q, A)
+D' = reflectp(D, A)
 draw poly A B C
 draw poly P Q R
 draw poly A Bp Cp dash
-draw seg P Rp Qp dash
+draw seg P R' Q' dash
 draw seg A D dash
-draw seg D Dp dash
+draw seg D D' dash
 </pre><figcaption>以 $A$ 為中心作中心對稱（虛線）；$\angle A\ge90^\circ$</figcaption></figure>
 <p>以 $A$ 為中心作中心對稱，得 $\triangle AB'C'$，$B'C'\parallel BC$。因 $\angle PAR\ge90^\circ\ge\angle PAR'$，所以 $PR\ge PR'$⟦為什麼｜$\triangle PAR$ 與 $\triangle PAR'$ 中 $AR=AR'$、$AP$ 公用，夾角大的對邊大；$\angle PAR'=180^\circ-\angle PAR\le90^\circ$。⟧。所以</p>
 $$PQ+PR+RQ\ge PQ+PR'+R'Q'\gt QQ'\ge DD'=2AD.$$
