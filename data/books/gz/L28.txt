@@ -74,6 +74,8 @@ draw poly p q r
 draw seg p d
 draw seg d e
 draw seg d f
+text b se n=3
+text d s n=4
 </pre><figcaption>左：連中心到三頂點，得 3 個頂角 120° 的等腰三角形；右：2 個小正三角形與 2 個頂角 120° 的等腰三角形</figcaption></figure>
 觀察發現，$n=3$ 和 $n=4$ 可以按上圖的方式分割。兩種分割中都出現了頂角 $120^\circ$、底角 $30^\circ$ 的等腰三角形，而這種三角形又可以分成 3 個等腰三角形：1 個正三角形和 2 個頂角 $120^\circ$ 的等腰三角形（見下圖）。
 <figure class="bkfig"><pre class="geo">p = (20.3,105.3)
@@ -90,6 +92,7 @@ draw poly p q r
 draw seg r s
 draw seg r t
 draw poly r s t accent fill
+text r nw 120°
 </pre><figcaption>底邊三等分：中間（紅）是正三角形，兩側仍是頂角 120° 的等腰三角形</figcaption></figure>
 ⟦為什麼下圖的三塊都是等腰｜設腰長 1，底長 $\sqrt3$，三等分點把底分成三段，每段 $\frac{\sqrt3}3$。頂點到三等分點的距離是 $\sqrt{\frac14+\frac1{12}}=\frac{\sqrt3}3$，所以中間是邊長 $\frac{\sqrt3}3$ 的正三角形；兩側三角形有兩邊都等於 $\frac{\sqrt3}3$。⟧
 這啟發了下面的證法：$n=3$、$n=4$ 時可以分割，命題成立。假設 $n=2k-1$ 與 $n=2k$ 時都可以分割，並且分出的三角形中都有一個頂角 $120^\circ$、底角 $30^\circ$ 的等腰三角形。把這個三角形照上圖再分成 3 個，三角形數目增加 2，所以 $n=2(k+1)-1=2k+1$ 與 $n=2(k+1)=2k+2$ 時命題也成立，而且分出的三角形中仍有這種三角形。所以對一切 $n\ge3$ 都能分割。

@@ -87,9 +87,9 @@ draw circle k
 draw seg O ω₀ accent
 draw seg O ω₁ accent
 draw seg O ω₂ accent
-label ω₀ e
-label ω₁ nw
-label ω₂ sw
+text ω₀ e ω₀=1
+text ω₁ nw ω₁
+text ω₂ sw ω₂
 </pre><figcaption>$m=3$：三個單位根平均分布在圓上，向量和為 0</figcaption></figure>
 
 === 例 4 | 單位根濾波公式
