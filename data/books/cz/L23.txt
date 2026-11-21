@@ -23,6 +23,18 @@ draw poly B C D E
 draw seg G B dash
 draw seg B D dash
 draw seg G D dash
+mAB = mid(A, B)
+mBC = mid(B, C)
+mAG = mid(A, G)
+mCD = mid(C, D)
+mGB = mid(G, B)
+mBD = mid(B, D)
+text mAB s a
+text mBC s b
+text mAG w b
+text mCD e a
+text mGB ne c
+text mBD nw c
 </pre><figcaption>兩個 $a\times b$ 的矩形一橫一豎；梯形 $ACDG$ 被虛線分成三個直角三角形</figcaption></figure>
 <p>梯形 $ACDG$ 的面積，一方面是 $\frac12(AG+CD)\cdot AC=\frac12(a+b)^2$；另一方面它分成三個三角形 $\triangle ABG$、$\triangle BCD$、$\triangle GBD$，面積分別是 $\frac12ab$、$\frac12ab$、$\frac12c^2$⟦為什麼是直角｜$GB=BD=c$；又 $\angle ABG+\angle CBD=\angle ABG+\angle AGB=90^\circ$，所以 $\angle GBD=90^\circ$。⟧。所以 $\frac12(a+b)^2=ab+\frac12c^2$，整理得 $a^2+b^2=c^2$。</p>
 <p><b>證法二（歐幾里得）</b>　現存最早的證明在歐幾里得《幾何原本》中，敘述成面積的形式：以直角三角形三邊為邊向外作正方形，斜邊上正方形的面積等於兩直角邊上正方形面積的和。</p>
@@ -157,6 +169,12 @@ D = foot(C, A, B)
 draw poly A B C
 draw seg C D
 right C D A
+mAC = mid(A, C)
+mBC2 = mid(B, C)
+mAB2 = mid(A, B)
+text mAC nw b
+text mBC2 ne a
+text mAB2 s c
 </pre><figcaption>情形 1：垂足 $D$ 在 $AB$ 上</figcaption></figure>
 <p>由勾股定理</p>
 $$b^2=h_c^2+q_1^2=a^2-q^2+(c-q)^2=a^2+c^2-2cq,\quad\text{①}$$
@@ -172,6 +190,12 @@ draw poly A B C
 draw seg B D dash
 draw seg C D dash
 right C D B
+mAC = mid(A, C)
+mBC = mid(B, C)
+mAB = mid(A, B)
+text mAC nw b
+text mBC se a
+text mAB s c
 </pre><figcaption>情形 2：垂足 $D$ 在 $AB$ 的延長線上</figcaption></figure>
 $$b^2=h_c^2+AD^2=a^2-q^2+(c+q)^2=a^2+c^2+2cq,\quad\text{③}$$
 <p>$q=\dfrac{b^2-a^2-c^2}{2c}$，$q^2$ 與情形 1 相同，由 $h_c^2=a^2-q^2$ 得到同樣的 ②。</p>
@@ -222,6 +246,12 @@ D = foot(A, B, C)
 draw poly A B C
 draw seg A D dash
 right A D C
+mCA = mid(C, A)
+mAB = mid(A, B)
+mCD2 = mid(C, D)
+text mCA nw n+1
+text mAB ne n−1
+text mCD2 s n
 </pre><figcaption>以 $13,14,15$ 為例：高 $AD=12$，$BD=5$、$CD=9$，相差 $4$</figcaption></figure>
 $$AD=\frac{2S}{BC}=\frac{2k\sqrt{3(k^2-1)}}{2k}=\sqrt{3(k^2-1)}$$
 <p>是整數，而</p>
@@ -326,6 +356,8 @@ draw seg C C1 dash
 draw seg B1 C1 dash
 draw seg A B1 dash
 draw seg C B1 dash
+lp = (235, 78)
+text lp c l
 </pre><figcaption>$l\parallel BC$ 過 $A$；$B_1$、$C_1$ 是 $B$、$C$ 關於 $l$ 的對稱點</figcaption></figure>
 <p>$AB_1=AB$，$BB_1=2h_a$，$\angle B_1BC=90^\circ$。所以</p>
 $$b+c=CA+AB_1\ge CB_1=\sqrt{a^2+4h_a^2},$$
@@ -359,6 +391,8 @@ draw seg A C dash
 draw seg B D dash
 draw seg E F dash
 draw seg O R dash
+lq = (221.6, 208)
+text lq c l
 </pre><figcaption>過 $A$ 作 $EF\parallel l$；對角線交於 $O$，$OR\perp l$（虛線）</figcaption></figure>
 <p>過 $A$ 作 $EF\parallel l$，交 $BN$ 於 $E$、$DQ$ 於 $F$。⟦易知｜$AB=DA$，$\angle BAE=90^\circ-\angle DAF=\angle ADF$，兩個直角三角形全等。⟧$\triangle ABE\cong\triangle DAF$，所以 $EA=DF$。記 $S=S_{ABCD}$，則</p>
 $$\begin{aligned}S&=BA^2=BE^2+EA^2=BE^2+DF^2\\&=(BN-AM)^2+(DQ-AM)^2\\&=BN^2+DQ^2-2AM(BN+DQ-AM).\end{aligned}$$
