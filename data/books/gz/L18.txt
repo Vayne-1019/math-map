@@ -125,6 +125,7 @@ draw seg A H
 draw seg O B dash
 draw circle k
 angle H B O
+text B e x
 </pre><figcaption>$\angle OBH=x$；虛線是半徑 $OB$</figcaption></figure>
 設 $\odot O$ 的半徑為 $r$，$\triangle ABC$ 是內接等腰三角形，$AH$ 是底邊 $BC$ 上的高，$OA=OB=r$。令 $\angle OBH=x$，則 $OH=r\sin x$，$BH=r\cos x$⟦若 O 在三角形外｜這時 $H$ 在 $O$ 的另一側，可把 $x$ 看成負角，$AH=r+r\sin x$ 仍成立。⟧，
 $$AH+BC=r+r\sin x+2r\cos x=r+\sqrt5\,r\sin(x+\theta)\qquad(\theta=\arctan2).$$

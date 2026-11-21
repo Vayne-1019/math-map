@@ -166,6 +166,15 @@ draw seg P D3 dash
 hide D1
 hide D2
 hide D3
+m1 = mid(B,C)
+m2 = mid(C,A)
+m3 = mid(A,B)
+text m1 s a₁
+text m2 e a₂
+text m3 w a₃
+text P s r₁
+text P e r₂
+text P w r₃
 </pre><figcaption>虛線是 $P$ 到三邊的垂線段</figcaption></figure>
 由柯西不等式，
 $$\begin{aligned}\sqrt{r_1}+\sqrt{r_2}+\sqrt{r_3}&=\sqrt{a_1r_1}\sqrt{\tfrac1{a_1}}+\sqrt{a_2r_2}\sqrt{\tfrac1{a_2}}+\sqrt{a_3r_3}\sqrt{\tfrac1{a_3}}\\&\le(a_1r_1+a_2r_2+a_3r_3)^{1/2}\Big(\frac1{a_1}+\frac1{a_2}+\frac1{a_3}\Big)^{1/2}.\end{aligned}$$
