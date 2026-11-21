@@ -5,11 +5,19 @@ order: 20
 
 === body
 <div class="hero">要證兩線段或兩角相等 → 找兩個<b>全等三角形</b>分別含有它們<br>圖上沒有現成的 → <b>添輔助線造一對</b></div>
-<figure class="bkfig"><svg viewBox="0 0 230 205" width="230" role="img" aria-label="正三角形 ABC 與延長線上的點 D、E">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,183.1 136.5,183.1 115,22"/><line x1="57.8" y1="121.1" x2="93.5" y2="183.1"/><line x1="93.5" y1="183.1" x2="115" y2="22"/><line x1="136.5" y1="183.1" x2="208" y2="183.1" stroke-dasharray="5 4"/><line x1="115" y1="22" x2="208" y2="183.1" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="195.8" text-anchor="middle">B</text><text x="93.5" y="199" text-anchor="middle">C</text><text x="136.5" y="199" text-anchor="middle">D</text><text x="46.8" y="126" text-anchor="middle">A</text><text x="115" y="15.9" text-anchor="middle">E</text><text x="208" y="199" text-anchor="middle">F</text></g>
-</svg><figcaption>證法一：延長 $BD$ 到 $F$ 使 $BF=BE$（虛線），$\triangle BEF$ 是正三角形</figcaption></figure>
+<figure class="bkfig"><pre class="geo">
+B = (22, 183.1)
+D = (136.5, 183.1)
+E = (115, 22)
+A = along(B, E, 0.385)
+C = along(B, D, 0.625)
+F = (208, 183.1)
+draw poly B D E
+draw seg A C
+draw seg C E
+draw seg D F dash
+draw seg E F dash
+</pre><figcaption>證法一：延長 $BD$ 到 $F$ 使 $BF=BE$（虛線），$\triangle BEF$ 是正三角形</figcaption></figure>
 <div class="cards">
 <div class="card"><h4>① 補成對稱圖形</h4><div class="rule">有 $60^\circ$ 角 → 補成正三角形</div>
 <div class="eg">例：延長 $BD$ 到 $F$ 使 $BF=BE$，$\triangle BEF$ 正三角形，$\triangle BCE\cong\triangle FDE$ <span class="pill">補全</span></div></div>
