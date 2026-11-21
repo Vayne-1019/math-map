@@ -13,32 +13,66 @@ status: 完成
 === 例 1
 zh: 在等腰梯形 $ABCD$ 中，$AD\parallel BC$，$AB=CD$，$E$、$F$ 分別在 $AB$、$CD$ 上，且 $AE=CF$。求證：$EF\ge\frac12(AD+BC)$。
 sol: <p><b>分析</b>　處理線段的和，常把各段集中在一起，作出一條長 $AD+BC$ 的線段，這種方法叫<b>直化法</b>。</p>
-<figure class="bkfig"><svg viewBox="0 0 299 160" width="299" role="img" aria-label="等腰梯形中的直化法">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="45.2,22 22,138 161.2,138 138,22"/><line x1="38.2" y1="56.8" x2="154.2" y2="103.2"/><line x1="138" y1="22" x2="277.2" y2="22" stroke-dasharray="5 4"/><line x1="161.2" y1="138" x2="254" y2="138" stroke-dasharray="5 4"/><line x1="277.2" y1="22" x2="254" y2="138" stroke-dasharray="5 4"/><line x1="154.2" y1="103.2" x2="270.2" y2="56.8" stroke-dasharray="5 4"/><line x1="38.2" y1="56.8" x2="270.2" y2="56.8" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="45.2" y="15.9" text-anchor="middle">A</text><text x="14.2" y="150.7" text-anchor="middle">B</text><text x="161.2" y="153.9" text-anchor="middle">C</text><text x="138" y="15.9" text-anchor="middle">D</text><text x="27.2" y="61.7" text-anchor="middle">E</text><text x="162" y="115.9" text-anchor="middle">F</text><text x="281.2" y="61.7" text-anchor="middle">G</text><text x="287.5" y="19.1" text-anchor="middle">D<tspan font-size="10">1</tspan></text><text x="264.3" y="150.7" text-anchor="middle">C<tspan font-size="10">1</tspan></text></g>
-</svg><figcaption>延長 $AD$ 到 $D_1$ 使 $DD_1=BC$，延長 $BC$ 到 $C_1$ 使 $CC_1=AD$；在 $D_1C_1$ 上取 $D_1G=AE$（虛線）</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A = (45.2, 22)
+B = (22, 138)
+C = (161.2, 138)
+D = (138, 22)
+D1 = along(A, D, 2.5)
+C1 = along(B, C, 1.6667)
+E = along(A, B, 0.3)
+F = along(C, D, 0.3)
+G = along(D1, C1, 0.3)
+draw poly A B C D
+draw seg E F
+draw seg D D1 dash
+draw seg C C1 dash
+draw seg D1 C1 dash
+draw seg F G dash
+draw seg E G dash
+</pre><figcaption>延長 $AD$ 到 $D_1$ 使 $DD_1=BC$，延長 $BC$ 到 $C_1$ 使 $CC_1=AD$；在 $D_1C_1$ 上取 $D_1G=AE$（虛線）</figcaption></figure>
 <p><b>證</b>　延長 $AD$ 到 $D_1$ 使 $DD_1=BC$；延長 $BC$ 到 $C_1$ 使 $CC_1=AD$；連 $C_1D_1$。則 $ABC_1D_1$ 是平行四邊形，梯形 $ABCD$ 與 $CDD_1C_1$ 全等⟦為什麼｜後者是前者繞 $CD$ 中點轉 $180^\circ$ 的像：$D\to C$、$C\to D$、$A\to C_1$、$B\to D_1$（因 $CC_1=AD$、$DD_1=BC$）。⟧。在 $D_1C_1$ 上取 $G$ 使 $D_1G=AE$，連 $FG$、$EG$。由 $AE=CF$ 得 $EF=FG$（$G$、$E$ 對應），又 $EG=AD_1$⟦為什麼｜$AE=D_1G$ 且 $AE\parallel D_1G$（$AB\parallel D_1C_1$），所以 $AEGD_1$ 是平行四邊形。⟧。所以</p>
 $$2EF=EF+FG\ge EG=AD_1=AD+BC,\quad\text{①}$$
 <p>即 $EF\ge\frac12(AD+BC)$。</p>
 <p><b>說明</b>　$F$ 可能在 $EG$ 上（當且僅當 $E$ 是 $AB$ 中點時），所以 ① 可能取等號。</p>
 === 例 2
 zh: 在 $\triangle ABC$ 中，$a,b,c$ 分別是 $\angle A,\angle B,\angle C$ 的對邊，若 $2b\lt a+c$，求證：$2\angle B\lt \angle A+\angle C$。
-sol: <figure class="bkfig"><svg viewBox="0 0 209 230" width="209" role="img" aria-label="補成等腰三角形">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="62.8,118.6 108.8,22 145.6,109.4" stroke-width="2"/><line x1="62.8" y1="118.6" x2="22" y2="204.2" stroke-dasharray="5 4"/><line x1="145.6" y1="109.4" x2="187.1" y2="208" stroke-dasharray="5 4"/><line x1="22" y1="204.2" x2="187.1" y2="208" stroke-dasharray="5 4"/><line x1="22" y1="204.2" x2="104.8" y2="195" stroke-dasharray="5 4"/><line x1="145.6" y1="109.4" x2="104.8" y2="195" stroke-dasharray="5 4"/><line x1="104.8" y1="195" x2="187.1" y2="208" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="51.8" y="123.5" text-anchor="middle">A</text><text x="108.8" y="15.9" text-anchor="middle">B</text><text x="156.6" y="114.3" text-anchor="middle">C</text><text x="14.2" y="216.9" text-anchor="middle">D</text><text x="194.9" y="220.7" text-anchor="middle">E</text><text x="104.8" y="188.9" text-anchor="middle">F</text></g>
-</svg><figcaption>延長 $BA$ 到 $D$ 使 $AD=a$，延長 $BC$ 到 $E$ 使 $CE=c$；$ADFC$ 是平行四邊形（虛線）</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (62.8, 118.6)
+B = (108.8, 22)
+C = (145.6, 109.4)
+D = along(B, A, 1.886)
+E = along(B, C, 2.1287)
+m = mid(D, C)
+F = reflectp(A, m)
+draw poly A B C
+draw seg A D dash
+draw seg C E dash
+draw seg D E dash
+draw seg D F dash
+draw seg C F dash
+draw seg F E dash
+</pre><figcaption>延長 $BA$ 到 $D$ 使 $AD=a$，延長 $BC$ 到 $E$ 使 $CE=c$；$ADFC$ 是平行四邊形（虛線）</figcaption></figure>
 <p><b>證</b>　延長 $BA$ 到 $D$ 使 $AD=BC=a$；延長 $BC$ 到 $E$ 使 $CE=BA=c$。則 $BD=BE=a+c$，圖形補成等腰三角形，$\angle BDE=\angle BED$。再作 $DF\parallel AC$、$CF\parallel AD$，交於 $F$，連 $EF$，$ADFC$ 是平行四邊形，所以 $CF=AD=a$，$DF=AC=b$，$\angle FCE=\angle CBA$。於是 $\triangle FCE\cong\triangle CBA$（SAS：$CF=BC$，$\angle FCE=\angle CBA$，$CE=BA$），$FE=AC=b$。所以</p>
 $$DE\le DF+FE=2b\lt a+c=BD=BE.$$
 <p>在 $\triangle BDE$ 中 $DE$ 是最小邊，對角 $\angle B\lt \angle BDE=\angle BED$，所以 $2\angle B\lt \angle BDE+\angle BED=180^\circ-\angle B=\angle A+\angle C$。</p>
 === 例 3
 zh: 在 $\triangle ABC$ 中，$\angle A$、$\angle B$、$\angle C$ 的平分線分別交外接圓於 $P$、$Q$、$R$。求證：$AP+BQ+CR\gt AB+BC+CA$。
-sol: <figure class="bkfig"><svg viewBox="0 0 210 210" width="210" role="img" aria-label="角平分線延長到外接圓">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="105" cy="105" r="83"/><polygon points="133.4,27 27,133.4 176.9,146.5"/><line x1="133.4" y1="27" x2="97.8" y2="187.7"/><line x1="27" y1="133.4" x2="183" y2="76.6"/><line x1="176.9" y1="146.5" x2="46.3" y2="46.3"/><line x1="27" y1="133.4" x2="97.8" y2="187.7" stroke-dasharray="5 4"/><line x1="176.9" y1="146.5" x2="97.8" y2="187.7" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="133.4" y="20.9" text-anchor="middle">A</text><text x="16" y="138.3" text-anchor="middle">B</text><text x="187.9" y="151.4" text-anchor="middle">C</text><text x="97.8" y="203.6" text-anchor="middle">P</text><text x="190.8" y="73.7" text-anchor="middle">Q</text><text x="38.5" y="43.4" text-anchor="middle">R</text><text x="124.8" y="97.7" text-anchor="middle">I</text></g>
-</svg><figcaption>三條角平分線交外接圓於 $P,Q,R$；$I$ 是內心；連 $BP,CP$（虛線）</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (133.4, 27)
+B = (27, 133.4)
+C = (176.9, 146.5)
+O = circumcenter(A, B, C)
+k = circle(O, A)
+I = incenter(A, B, C)
+P = second(k, A, I)
+Q = second(k, B, I)
+R = second(k, C, I)
+draw poly A B C
+draw seg A P
+draw seg B Q
+draw seg C R
+draw seg B P dash
+draw seg C P dash
+draw circle k
+</pre><figcaption>三條角平分線交外接圓於 $P,Q,R$；$I$ 是內心；連 $BP,CP$（虛線）</figcaption></figure>
 <p><b>證</b>　記內心為 $I$，顯然 $BI+CI\gt BC$，$CI+AI\gt AC$，$AI+BI\gt AB$。相加得 $2(AI+BI+CI)\gt AB+BC+CA$，即</p>
 $$2(AP-IP+BQ-IQ+CR-IR)\gt AB+BC+CA,$$
 $$AP+BQ+CR\gt \tfrac12(AB+BC+CA)+IP+IQ+IR.\quad\text{①}$$
@@ -47,11 +81,23 @@ $$\angle BIP=\angle BAI+\angle ABI=\angle PAC+\angle CBQ=\angle PBC+\angle CBQ=\
 <p>所以 $BP=IP$，從而 $IP=\frac12(BP+CP)\gt \frac12BC$。同理 $IQ\gt \frac12CA$，$IR\gt \frac12AB$，相加即得 ②。</p>
 === 例 4
 zh: 設在兩個凸四邊形 $ABCD$ 和 $A_1B_1C_1D_1$ 中，$AB=A_1B_1$，$BC=B_1C_1$，$CD=C_1D_1$，$DA=D_1A_1$，又 $\angle A\gt \angle A_1$。求證：$\angle B\lt \angle B_1$，$\angle C\gt \angle C_1$，$\angle D\lt \angle D_1$。
-sol: <figure class="bkfig"><svg viewBox="0 0 320 125" width="320" role="img" aria-label="邊長相同的兩個四邊形">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="29.1,103.4 128.9,103.4 112.6,28 22,22"/><line x1="128.9" y1="103.4" x2="22" y2="22" stroke-dasharray="5 4"/><polygon points="183.4,103.4 283.2,103.4 298,27.7 207.3,25.3"/><line x1="283.2" y1="103.4" x2="207.3" y2="25.3" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="21.3" y="116" text-anchor="middle">A</text><text x="128.9" y="119.3" text-anchor="middle">B</text><text x="120.3" y="25.1" text-anchor="middle">C</text><text x="14.2" y="19.1" text-anchor="middle">D</text><text x="173.1" y="116" text-anchor="middle">A<tspan font-size="10">1</tspan></text><text x="283.2" y="119.3" text-anchor="middle">B<tspan font-size="10">1</tspan></text><text x="308.3" y="24.8" text-anchor="middle">C<tspan font-size="10">1</tspan></text><text x="197" y="22.4" text-anchor="middle">D<tspan font-size="10">1</tspan></text></g>
-</svg><figcaption>四組邊對應相等，$\angle A\gt \angle A_1$；連對角線 $BD$、$B_1D_1$（虛線）</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (29.1, 103.4)
+B = (128.9, 103.4)
+C = (112.6, 28)
+D = (22, 22)
+A1 = (183.4, 103.4)
+kab = circler(A1, 99.8)
+B1 = on(kab, 283.2, 103.4)
+kbc = circler(B1, 77.1)
+C1 = on(kbc, 298, 27.7)
+kcd = circler(C1, 90.8)
+kda = circler(A1, 81.7)
+D1 = meet(kda, kcd, 207.3, 25.3)
+draw poly A B C D
+draw poly A1 B1 C1 D1
+draw seg B D dash
+draw seg B1 D1 dash
+</pre><figcaption>四組邊對應相等，$\angle A\gt \angle A_1$；連對角線 $BD$、$B_1D_1$（虛線）</figcaption></figure>
 <p><b>分析</b>　連 $BD$、$B_1D_1$。在 $\triangle ABD$ 與 $\triangle A_1B_1D_1$ 中，$AB=A_1B_1$，$AD=A_1D_1$，$\angle A\gt \angle A_1$，所以 $BD\gt B_1D_1$（兩組邊對應相等，夾角大的第三邊也大）。再比較 $\triangle BCD$ 與 $\triangle B_1C_1D_1$，得 $\angle C\gt \angle C_1$。由</p>
 $$\angle A+\angle ABC+\angle C+\angle CDA=\angle A_1+\angle A_1B_1C_1+\angle C_1+\angle C_1D_1A_1=360^\circ,$$
 <p>得 $\angle ABC+\angle CDA\lt \angle A_1B_1C_1+\angle C_1D_1A_1$，但由此直接推出兩個不等式是不可能的。這時如果想到反證法，再仿照前面的證明，問題就解決了。</p>
@@ -60,11 +106,23 @@ $$360^\circ=\angle A+\angle ABC+\angle C+\angle CDA\gt \angle A_1+\angle A_1B_1C
 <p>矛盾。所以 $\angle ABC\lt \angle A_1B_1C_1$。同理 $\angle CDA\lt \angle C_1D_1A_1$。</p>
 === 例 5
 zh: 在 $\triangle ABC$ 中，$AB\gt BC$，$AK$、$CM$ 都是角平分線（$K$ 在 $BC$ 上，$M$ 在 $AB$ 上）。求證：$AM\gt MK\gt KC$。
-sol: <figure class="bkfig"><svg viewBox="0 0 280 197" width="280" role="img" aria-label="角平分線與三段長度">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,175.4 175.4,22 258,175.4"/><line x1="22" y1="175.4" x2="215" y2="95.5"/><line x1="258" y1="175.4" x2="110.3" y2="87.1"/><line x1="110.3" y1="87.1" x2="215" y2="95.5"/><line x1="110.3" y1="87.1" x2="110.3" y2="175.4" stroke-dasharray="5 4"/><line x1="175.4" y1="22" x2="175.4" y2="175.4" stroke-dasharray="5 4"/><line x1="215" y1="95.5" x2="215" y2="175.4" stroke-dasharray="5 4"/><polyline points="110.3,171.4 114.3,171.4 114.3,175.4" stroke-width="1"/><polyline points="175.4,171.4 179.4,171.4 179.4,175.4" stroke-width="1"/><polyline points="215,171.4 219,171.4 219,175.4" stroke-width="1"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="188.1" text-anchor="middle">A</text><text x="175.4" y="15.9" text-anchor="middle">B</text><text x="265.8" y="188.1" text-anchor="middle">C</text><text x="226" y="100.4" text-anchor="middle">K</text><text x="102.5" y="84.3" text-anchor="middle">M</text><text x="110.3" y="191.3" text-anchor="middle">E</text><text x="175.4" y="191.3" text-anchor="middle">F</text><text x="215" y="191.3" text-anchor="middle">G</text></g>
-</svg><figcaption>$AK$、$CM$ 是角平分線；$ME,BF,KG$ 垂直 $AC$（虛線）</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (22, 175.4)
+B = (175.4, 22)
+C = (258, 175.4)
+i = incenter(A, B, C)
+K = inter(A, i, B, C)
+M = inter(C, i, A, B)
+E = foot(M, A, C)
+F = foot(B, A, C)
+G = foot(K, A, C)
+draw poly A B C
+draw seg A K
+draw seg C M
+draw seg M K
+draw seg M E dash
+draw seg B F dash
+draw seg K G dash
+</pre><figcaption>$AK$、$CM$ 是角平分線；$ME,BF,KG$ 垂直 $AC$（虛線）</figcaption></figure>
 <p><b>證</b>　由角平分線定理 $\frac{BM}{MA}=\frac{BC}{AC}$，$\frac{BK}{KC}=\frac{AB}{AC}$。因為 $AB\gt BC$，</p>
 $$\frac{AB}{AM}=1+\frac{BM}{AM}\lt 1+\frac{BK}{KC}=\frac{BC}{KC}.$$
 <p>分別作 $ME\perp AC$ 於 $E$、$BF\perp AC$ 於 $F$、$KG\perp AC$ 於 $G$，則 $\frac{BF}{KG}=\frac{BC}{KC}$，$\frac{BF}{ME}=\frac{AB}{AM}$，所以 $\frac{BF}{ME}\lt \frac{BF}{KG}$，$ME\gt KG$。由此</p>
@@ -75,21 +133,40 @@ $$\angle AKM\gt \angle KAC=\angle KAM,\qquad\angle KMC\lt \angle MCA=\angle MCK.
 
 === 例 6
 zh: 在 $\triangle ABC$ 中，$P$、$Q$、$R$ 將其周長三等分，且 $P$、$Q$ 在 $AB$ 上。求證：$\dfrac{S_{\triangle PQR}}{S_{\triangle ABC}}\gt \dfrac29$。
-sol: <figure class="bkfig"><svg viewBox="0 0 290 118" width="290" role="img" aria-label="三等分周長的三角形">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,95.8 268,95.8 224.9,22"/><polygon points="40.5,95.8 222.9,95.8 176.1,39.7"/><line x1="176.1" y1="39.7" x2="176.1" y2="95.8" stroke-dasharray="5 4"/><line x1="224.9" y1="22" x2="224.9" y2="95.8" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="11" y="100.7" text-anchor="middle">A</text><text x="279" y="100.7" text-anchor="middle">B</text><text x="224.9" y="15.9" text-anchor="middle">C</text><text x="40.5" y="111.7" text-anchor="middle">P</text><text x="222.9" y="111.7" text-anchor="middle">Q</text><text x="168.4" y="36.9" text-anchor="middle">R</text><text x="176.1" y="111.7" text-anchor="middle">H</text><text x="224.9" y="111.7" text-anchor="middle">L</text></g>
-</svg><figcaption>$P,Q,R$ 把周長三等分；作 $CL\perp AB$、$RH\perp PQ$（虛線）</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (22, 95.8)
+B = (268, 95.8)
+C = (224.9, 22)
+P = along(A, B, 0.0752)
+Q = along(A, B, 0.8167)
+R = along(C, A, 0.2404)
+H = foot(R, P, Q)
+L = foot(C, A, B)
+draw poly A B C
+draw poly P Q R
+draw seg R H dash
+draw seg C L dash
+</pre><figcaption>$P,Q,R$ 把周長三等分；作 $CL\perp AB$、$RH\perp PQ$（虛線）</figcaption></figure>
 <p><b>證</b>　作 $CL\perp AB$ 於 $L$，$RH\perp PQ$ 於 $H$。於是</p>
 $$\frac{S_{\triangle PQR}}{S_{\triangle ABC}}=\frac{PQ\cdot RH}{AB\cdot CL}=\frac{PQ\cdot AR}{AB\cdot AC}.$$
 <p>⟦第二個等號｜$\frac{RH}{CL}=\frac{AR}{AC}$（$\triangle ARH\sim\triangle ACL$）。⟧不妨設周長為 $1$，則 $PQ=\frac13$，$AB\lt \frac12$（兩邊之和大於第三邊），所以 $\frac{PQ}{AB}\gt \frac23$。又 $AP\le AP+BQ=AB-PQ\lt \frac12-\frac13=\frac16$，所以 $AR=\frac13-AP\gt \frac16$⟦為什麼｜$R$ 到 $P$ 沿周長（經過 $A$）是 $\frac13$，即 $AR+AP=\frac13$。⟧。又 $AC\lt \frac12$，所以 $\frac{AR}{AC}\gt \frac13$。於是 $\frac{S_{\triangle PQR}}{S_{\triangle ABC}}\gt \frac23\cdot\frac13=\frac29$。</p>
 === 例 7
 zh: 設 $\triangle ABC$ 所有角平分線的長都不超過 $1$。求證：$S_{\triangle ABC}\le\dfrac1{\sqrt3}$。
-sol: <figure class="bkfig"><svg viewBox="0 0 236 200" width="236" role="img" aria-label="角平分線與高">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="124,22 22,178 214,178"/><line x1="22" y1="178" x2="168.3" y2="98.8"/><line x1="214" y1="178" x2="74.6" y2="97.5"/><line x1="22" y1="178" x2="166.1" y2="94.9" stroke-dasharray="5 4"/><line x1="214" y1="178" x2="79.5" y2="90.1" stroke-dasharray="5 4"/><polyline points="162.6,96.9 160.6,93.4 164.1,91.4" stroke-width="1"/><polyline points="82.8,92.2 85,88.9 81.7,86.7" stroke-width="1"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="124" y="15.9" text-anchor="middle">A</text><text x="11" y="182.9" text-anchor="middle">B</text><text x="225" y="182.9" text-anchor="middle">C</text><text x="95.2" y="149.2" font-style="normal" font-size="11" text-anchor="middle">t<tspan font-size="8">b</tspan></text><text x="144.3" y="148.6" font-style="normal" font-size="11" text-anchor="middle">t<tspan font-size="8">c</tspan></text><text x="94" y="127.4" font-style="normal" font-size="11" text-anchor="middle">h<tspan font-size="8">b</tspan></text><text x="146.8" y="125" font-style="normal" font-size="11" text-anchor="middle">h<tspan font-size="8">c</tspan></text></g>
-</svg><figcaption>$t_b,t_c$ 是角平分線（實線），$h_b,h_c$ 是高（虛線）；高不超過同一頂點的角平分線</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (124, 22)
+B = (22, 178)
+C = (214, 178)
+i = incenter(A, B, C)
+tb = inter(B, i, A, C)
+tc = inter(C, i, A, B)
+hb = foot(B, A, C)
+hc = foot(C, A, B)
+draw poly A B C
+draw seg B tb
+draw seg C tc
+draw seg B hb dash
+draw seg C hc dash
+right A hb B
+right A hc C
+</pre><figcaption>$t_b,t_c$ 是角平分線（實線），$h_b,h_c$ 是高（虛線）；高不超過同一頂點的角平分線</figcaption></figure>
 <p><b>證</b>　設 $A$ 是最大角，分兩種情形。</p>
 <p>1. 若 $\triangle ABC$ 是銳角三角形，則 $60^\circ\le A\lt 90^\circ$，$\sin A\ge\sin60^\circ=\frac{\sqrt3}2$。設 $h_b,t_b$ 是 $AC$ 邊上的高與 $\angle B$ 的平分線長，$h_c,t_c$ 是 $AB$ 邊上的高與 $\angle C$ 的平分線長，則 $h_b\le t_b\le1$，$h_c\le t_c\le1$（垂線段最短），所以</p>
 $$S_{\triangle ABC}=\tfrac12h_c\cdot AB=\tfrac12h_c\cdot\frac{h_b}{\sin A}\le\frac12\cdot\frac1{\sin A}\le\frac1{\sqrt3}.$$
@@ -100,21 +177,34 @@ zh: 若 $a,b$ 是非負實數，則 $\dfrac{a+b}2\ge\sqrt{ab}$，等號當且僅
 sol: <p>$\frac a2-\sqrt{ab}+\frac b2=\frac12(\sqrt a-\sqrt b)^2\ge0$，等號當且僅當 $\sqrt a=\sqrt b$，即 $a=b$。</p>
 === 例 8
 zh: 在凸四邊形 $ABCD$ 中，$AC$ 與 $BD$ 交於 $O$，以 $S_1,S_2,S_3,S_4$ 記 $\triangle AOB$、$\triangle BOC$、$\triangle COD$、$\triangle DOA$ 的面積。已知 $S_1\gt 1$，$S_3\gt 1$。求證：$S_2+S_4\gt 2$。
-sol: <figure class="bkfig"><svg viewBox="0 0 250 189" width="250" role="img" aria-label="對角線分出的四個三角形">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="40.2,46.2 22,167.4 228,167.4 203.8,22"/><line x1="40.2" y1="46.2" x2="228" y2="167.4"/><line x1="22" y1="167.4" x2="203.8" y2="22"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="32.4" y="43.4" text-anchor="middle">A</text><text x="14.2" y="180.1" text-anchor="middle">B</text><text x="235.8" y="180.1" text-anchor="middle">C</text><text x="211.5" y="19.1" text-anchor="middle">D</text><text x="125" y="98.7" text-anchor="middle">O</text><text x="58.7" y="107.3" font-style="normal" font-size="11" text-anchor="middle">S₁</text><text x="121.3" y="147.7" font-style="normal" font-size="11" text-anchor="middle">S₂</text><text x="181.9" y="99.3" font-style="normal" font-size="11" text-anchor="middle">S₃</text><text x="119.3" y="58.9" font-style="normal" font-size="11" text-anchor="middle">S₄</text></g>
-</svg><figcaption>對角線把四邊形分成四個三角形，面積 $S_1,S_2,S_3,S_4$</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (40.2, 46.2)
+B = (22, 167.4)
+C = (228, 167.4)
+D = (203.8, 22)
+O = inter(A, C, B, D)
+draw poly A B C D
+draw seg A C
+draw seg B D
+</pre><figcaption>對角線把四邊形分成四個三角形，面積 $S_1,S_2,S_3,S_4$</figcaption></figure>
 <p><b>證</b>　令 $OB=b$，$OD=d$。$\triangle AOB$ 與 $\triangle AOD$ 同高，$\frac{S_4}{S_1}=\frac db$，$S_4=\frac dbS_1$；同理 $S_2=\frac bdS_3$。因為 $S_1\gt 1$、$S_3\gt 1$，由算幾不等式</p>
 $$S_2+S_4=\frac dbS_1+\frac bdS_3\gt \frac db+\frac bd\ge2\sqrt{\frac db\cdot\frac bd}=2.$$
 <p>透過面積對各種幾何量進行轉換，常是證明幾何不等式的有效方法。</p>
 === 例 9
 zh: 以 $h_a,h_b,h_c$ 分別表示三角形三邊 $a,b,c$ 上的高。已知 $h_a=12$，$h_b=20$。求證：$h_c\lt 30$。
-sol: <figure class="bkfig"><svg viewBox="0 0 250 189" width="250" role="img" aria-label="三角形的三條高與內切圓">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="88.6,22 22,167.4 228,167.4"/><circle cx="104.3" cy="114.6" r="52.8"/><line x1="88.6" y1="22" x2="88.6" y2="167.4" stroke-dasharray="5 4"/><line x1="22" y1="167.4" x2="129.4" y2="64.5" stroke-dasharray="5 4"/><line x1="228" y1="167.4" x2="57.8" y2="89.4" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="88.6" y="15.9" text-anchor="middle">A</text><text x="11" y="172.3" text-anchor="middle">B</text><text x="239" y="172.3" text-anchor="middle">C</text><text x="104.3" y="130.5" text-anchor="middle">I</text></g>
-</svg><figcaption>三條高 $h_a,h_b,h_c$（虛線）與內切圓</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (88.6, 22)
+B = (22, 167.4)
+C = (228, 167.4)
+I = incenter(A, B, C)
+da = foot(A, B, C)
+db = foot(B, A, C)
+dc = foot(C, A, B)
+k = circler(I, 52.8)
+draw poly A B C
+draw seg A da dash
+draw seg B db dash
+draw seg C dc dash
+draw circle k
+</pre><figcaption>三條高 $h_a,h_b,h_c$（虛線）與內切圓</figcaption></figure>
 <p><b>證</b>　設面積為 $S$，則 $a=\frac{2S}{h_a}$，$b=\frac{2S}{h_b}$，$c=\frac{2S}{h_c}$。三角形兩邊之差小於第三邊，$c\gt |a-b|$，即</p>
 $$\frac{2S}{h_c}\gt \Big|\frac{2S}{h_a}-\frac{2S}{h_b}\Big|=2S\cdot\frac{|h_a-h_b|}{h_ah_b},\qquad h_c\lt \frac{h_ah_b}{|h_a-h_b|}=\frac{12\times20}8=30.$$
 === 例 10
@@ -124,20 +214,33 @@ $$h_a+h_b+h_c=r\Big[3+\Big(\frac ba+\frac ab\Big)+\Big(\frac cb+\frac bc\Big)+\B
 <p>⟦每個括號 ≥ 2｜算幾不等式：$\frac ba+\frac ab\ge2\sqrt{\frac ba\cdot\frac ab}=2$。⟧</p>
 === 定理 | 多邊形內三角形的面積
 zh: <p>設 $\triangle ABC$ 的頂點 $A$ 在多邊形 $P_1P_2\cdots P_n$ 的內部或邊上，則一定有多邊形的一個頂點 $P_k$，使 $S_{\triangle P_kBC}\ge S_{\triangle ABC}$。</p>
-<figure class="bkfig"><svg viewBox="0 0 227 180" width="227" role="img" aria-label="多邊形內三角形的面積">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><line x1="22" y1="22" x2="199.4" y2="39.7"/><polygon points="116.6,30.9 39.7,158 205.3,158"/><polygon points="22,22 39.7,158 205.3,158" stroke-dasharray="5 4"/><polygon points="199.4,39.7 39.7,158 205.3,158" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="116.6" y="24.8" text-anchor="middle">A</text><text x="32" y="170.7" text-anchor="middle">B</text><text x="213.1" y="170.7" text-anchor="middle">C</text><text x="11.7" y="19.1" text-anchor="middle">P<tspan font-size="10">1</tspan></text><text x="209.6" y="36.9" text-anchor="middle">P<tspan font-size="10">2</tspan></text></g>
-</svg><figcaption>$A$ 在邊 $P_1P_2$ 上：$\triangle P_1BC$ 與 $\triangle P_2BC$（虛線）中總有一個面積不小於 $\triangle ABC$</figcaption></figure>
+<figure class="bkfig"><pre class="geo">P1 = (22, 22)
+P2 = (199.4, 39.7)
+l = line(P1, P2)
+A = on(l, 116.6, 30.9)
+B = (39.7, 158)
+C = (205.3, 158)
+draw seg P1 P2
+draw poly A B C
+draw poly P1 B C dash
+draw poly P2 B C dash
+</pre><figcaption>$A$ 在邊 $P_1P_2$ 上：$\triangle P_1BC$ 與 $\triangle P_2BC$（虛線）中總有一個面積不小於 $\triangle ABC$</figcaption></figure>
 sol: <p>分兩種情形。1. 若 $A$ 在某條邊上，不妨設在 $P_1P_2$ 上。若 $P_1P_2\parallel BC$，則 $S_{\triangle P_1BC}=S_{\triangle P_2BC}=S_{\triangle ABC}$；若不平行，$P_1$、$P_2$ 到 $BC$ 的距離一個大於、一個小於 $A$ 到 $BC$ 的距離⟦為什麼｜$A$ 在線段 $P_1P_2$ 上，它到直線 $BC$ 的距離介於兩端點的距離之間。⟧，所以 $S_{\triangle P_1BC}$、$S_{\triangle P_2BC}$ 中總有一個大於 $S_{\triangle ABC}$。2. 若 $A$ 在多邊形內部，過 $A$ 作直線 $l\parallel BC$，$l$ 必與多邊形的某條邊交於 $Q$，且 $S_{\triangle ABC}=S_{\triangle QBC}$，就化歸為前一種情形。</p>
 <p>這個定理對證明多邊形裡三角形的面積不等式很有用。</p>
 === 例 11
 zh: 在邊長為 $1$ 的正六邊形 $P_1P_2P_3P_4P_5P_6$ 的內部或邊上任取三點 $A$、$B$、$C$。求 $S_{\triangle ABC}$ 的最大可能值。（原書題目是「求證 $S_{\triangle ABC}\le\frac{\sqrt3}2$」，這個結論有誤，見註。）
-sol: <figure class="bkfig"><svg viewBox="0 0 179 200" width="179" role="img" aria-label="正六邊形中的三角形">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,61 89.5,22 157.1,61 157.1,139 89.5,178 22,139"/><polygon points="157.1,61 157.1,139 22,139" stroke-dasharray="5 4"/><polygon points="22,61 157.1,61 89.5,178" stroke="#c2562b" stroke-width="2"/><polyline points="157.1,133 151.1,133 151.1,139" stroke-width="1"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="9.4" y="60.4" text-anchor="middle">P<tspan font-size="10">1</tspan></text><text x="88.5" y="15.9" text-anchor="middle">P<tspan font-size="10">2</tspan></text><text x="169.1" y="59.7" text-anchor="middle">P<tspan font-size="10">3</tspan></text><text x="169.7" y="149.4" text-anchor="middle">P<tspan font-size="10">4</tspan></text><text x="88.5" y="193.9" text-anchor="middle">P<tspan font-size="10">5</tspan></text><text x="9" y="148.7" text-anchor="middle">P<tspan font-size="10">6</tspan></text></g>
-</svg><figcaption>邊長 $1$ 的正六邊形；虛線是原書比較的 $\triangle P_3P_4P_6$，紅線是真正最大的 $\triangle P_1P_3P_5$</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">P1 = (22, 61)
+P4 = (157.1, 139)
+o = mid(P1, P4)
+P2 = rotate(P1, o, 300)
+P3 = rotate(P1, o, 240)
+P5 = rotate(P1, o, 120)
+P6 = rotate(P1, o, 60)
+draw poly P1 P2 P3 P4 P5 P6
+draw poly P1 P3 P5 accent
+draw poly P3 P4 P6 dash
+right P3 P4 P6
+</pre><figcaption>邊長 $1$ 的正六邊形；虛線是原書比較的 $\triangle P_3P_4P_6$，紅線是真正最大的 $\triangle P_1P_3P_5$</figcaption></figure>
 <p><b>解</b>　依上述定理，必有一頂點 $P_k$ 使 $S_{\triangle P_kBC}\ge S_{\triangle ABC}$①；再對 $\triangle P_kBC$（這次讓 $B$ 當「$A$」）用定理，必有一頂點 $P_l$ 使 $S_{\triangle P_kP_lC}\ge S_{\triangle P_kBC}$②；最後對 $\triangle P_kP_lC$ 用定理，又有一頂點 $P_j$ 使 $S_{\triangle P_kP_lP_j}\ge S_{\triangle P_kP_lC}$。③ 由 ①②③ 得 $S_{\triangle P_kP_lP_j}\ge S_{\triangle ABC}$，所以只要比較以六邊形頂點為頂點的三角形。</p>
 <p>從 $P_1,\dots,P_6$ 中任取三點，三角形只有三種：相鄰三頂點（如 $\triangle P_4P_5P_6$，面積 $\frac{\sqrt3}4$）；一條邊加一條短對角線（如 $\triangle P_3P_4P_6$，$\angle P_4=90^\circ$，面積 $\frac12\cdot1\cdot\sqrt3=\frac{\sqrt3}2$）；隔一個取一個（$\triangle P_1P_3P_5$，邊長 $\sqrt3$ 的正三角形，面積 $\frac{3\sqrt3}4$）。最大的是 $\frac{3\sqrt3}4$，所以 $S_{\triangle ABC}\le\frac{3\sqrt3}4$，取 $A,B,C$ 為 $P_1,P_3,P_5$ 時等號成立。</p>
 <p><b>註</b>　原書只列了前兩種，因而寫成 $S_{\triangle ABC}\le\frac{\sqrt3}2$；但 $\triangle P_1P_3P_5$ 本身就在六邊形內，面積 $\frac{3\sqrt3}4\gt \frac{\sqrt3}2$，可見原書的結論不成立。方法本身沒有問題。</p>
@@ -151,11 +254,16 @@ zh: 在 $\triangle ABC$ 中，$2AC\le BC$。求證：$2\angle B\lt \angle A$。
 sol: <p>為了造出 $\frac12\angle A$，延長 $BA$ 到 $D$ 使 $AD=AC$，則 $\angle D=\frac12\angle BAC$。$CD\lt AD+AC=2AC\le BC$，所以在 $\triangle BCD$ 中 $\angle D\gt \angle B$，即 $\angle BAC\gt 2\angle B$。</p>
 === 習題 3
 zh: 平面上有 $n+2$ 個點 $A_1,A_2,\dots,A_n$；$P,Q$，且 $A_1,\dots,A_n$ 不在直線 $PQ$ 上。令 $PA_1+\cdots+PA_n+QA_1+\cdots+QA_n=S$。若 $M$ 是線段 $PQ$ 的中點，求證：$MA_1+MA_2+\cdots+MA_n\lt \dfrac S2$。
-sol: <figure class="bkfig"><svg viewBox="0 0 172 180" width="172" role="img" aria-label="中線長的上界">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,90 115.5,22 149.5,90"/><line x1="115.5" y1="22" x2="56" y2="158" stroke-dasharray="5 4"/><line x1="22" y1="90" x2="56" y2="158" stroke-dasharray="5 4"/><line x1="149.5" y1="90" x2="56" y2="158" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="11" y="94.9" text-anchor="middle">P</text><text x="160.5" y="94.9" text-anchor="middle">Q</text><text x="85.8" y="105.9" text-anchor="middle">M</text><text x="115.5" y="15.9" text-anchor="middle">A<tspan font-size="10">k</tspan></text><text x="56" y="173.9" text-anchor="middle">A′<tspan font-size="10">k</tspan></text></g>
-</svg><figcaption>延長 $A_kM$ 到 $A_k'$，$PA_kQA_k'$ 是平行四邊形（虛線）</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">P = (22, 90)
+Ak = (115.5, 22)
+Q = (149.5, 90)
+M = mid(P, Q)
+Ak2 = reflectp(Ak, M)
+draw poly P Ak Q
+draw seg Ak Ak2 dash
+draw seg P Ak2 dash
+draw seg Q Ak2 dash
+</pre><figcaption>延長 $A_kM$ 到 $A_k'$，$PA_kQA_k'$ 是平行四邊形（虛線）</figcaption></figure>
 <p>先看一點 $A_k$：延長 $A_kM$ 到 $A_k'$ 使 $MA_k'=A_kM$，則 $PA_kQA_k'$ 是平行四邊形，$PA_k+PA_k'\gt A_kA_k'=2A_kM$，即 $MA_k\lt \frac12(PA_k+QA_k)$（$PA_k'=QA_k$）。把這 $n$ 個不等式相加即得。</p>
 === 習題 4
 zh: 在直角 $\triangle ABC$ 中，斜邊 $AB=c$，$BC=a$，$r$ 是內切圓半徑。求證：(1) $r\lt \frac a2$；(2) $r\lt \frac14c$。
@@ -167,9 +275,19 @@ $$\frac{S_1}S=\alpha(1-\gamma),\quad\frac{S_2}S=\beta(1-\alpha),\quad\frac{S_3}S
 <p>三式相乘得 $\alpha(1-\alpha)\beta(1-\beta)\gamma(1-\gamma)\le\frac1{4^3}$（每個 $x(1-x)\le\frac14$），所以三個比值不可能都大於 $\frac14$。</p>
 === 習題 6
 zh: 在 $\triangle ABC$ 中，$AB=AC$，$\angle A\gt 100^\circ$，$BD$ 是 $\angle B$ 的平分線，交 $AC$ 於 $D$。求證：$BC\gt BD+AD$。
-sol: <figure class="bkfig"><svg viewBox="0 0 260 120" width="260" role="img" aria-label="頂角大於 100° 的等腰三角形">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="110.9,22 22,98.2 238,98.2"/><line x1="22" y1="98.2" x2="155.6" y2="48.8"/><line x1="155.6" y1="48.8" x2="139.1" y2="98.2" stroke-dasharray="5 4"/><line x1="155.6" y1="48.8" x2="172.1" y2="98.2" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="110.9" y="15.9" text-anchor="middle">A</text><text x="11" y="103.1" text-anchor="middle">B</text><text x="249" y="103.1" text-anchor="middle">C</text><text x="163.4" y="45.9" text-anchor="middle">D</text><text x="139.1" y="114.1" text-anchor="middle">E</text><text x="172.1" y="114.1" text-anchor="middle">F</text></g>
-</svg><figcaption>在 $BC$ 上取 $BE=BA$、$DF=DE$（虛線）</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (110.9, 22)
+B = (22, 98.2)
+C = rotate(B, A, 108)
+i = incenter(A, B, C)
+D = inter(B, i, A, C)
+kE = circle(B, A)
+lBC = line(B, C)
+E = meet(kE, lBC, 139.1, 98.2)
+kF = circle(D, E)
+F = meet(kF, lBC, 172.1, 98.2)
+draw poly A B C
+draw seg B D
+draw seg D E dash
+draw seg D F dash
+</pre><figcaption>在 $BC$ 上取 $BE=BA$、$DF=DE$（虛線）</figcaption></figure>
 <p>在 $BC$ 上取 $E$ 使 $BE=BA$，則 $\triangle ABD\cong\triangle EBD$，$AD=ED$，$\angle A=\angle DEB$。在 $BC$ 上取 $F$ 使 $DF=DE$，則 $\angle DEF=\angle DFE=180^\circ-\angle A$，$\angle DFC=\angle A$。又 $\angle C=\frac12(180^\circ-\angle A)$，所以 $\angle FDC=180^\circ-\angle A-\angle C=\angle C$，$\triangle FCD$ 是等腰三角形，$FC=DF=DE=AD$。在 $\triangle DBF$ 中 $\angle DBF=\frac14(180^\circ-\angle A)\lt 20^\circ$，$\angle BFD=180^\circ-\angle A\lt 80^\circ$，所以 $\angle BDF\gt 180^\circ-20^\circ-80^\circ=80^\circ\gt \angle BFD$，$BF\gt BD$。從而 $BC=BF+FC\gt BD+AD$。</p>

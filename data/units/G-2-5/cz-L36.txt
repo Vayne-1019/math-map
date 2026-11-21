@@ -5,11 +5,13 @@ order: 20
 
 === body
 <div class="hero">$D$ 在 $BC$ 上，$BD=q_1$、$DC=q_2$：<br>$AD^2=\dfrac{b^2q_1+c^2q_2}{q_1+q_2}-q_1q_2$</div>
-<figure class="bkfig"><svg viewBox="0 0 250 168" width="250" role="img" aria-label="斯特瓦爾特定理">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="155.9,22 22,145.6 228,145.6"/><line x1="155.9" y1="22" x2="99.2" y2="145.6"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="155.9" y="15.9" text-anchor="middle">A</text><text x="11" y="150.5" text-anchor="middle">B</text><text x="239" y="150.5" text-anchor="middle">C</text><text x="99.2" y="161.5" text-anchor="middle">D</text><text x="81.2" y="80.9" text-anchor="middle">c</text><text x="199.7" y="80.9" text-anchor="middle">b</text><text x="60.6" y="160.8" font-size="12" text-anchor="middle">q₁</text><text x="163.6" y="160.8" font-size="12" text-anchor="middle">q₂</text></g>
-</svg><figcaption>$D$ 把 $BC$ 分成 $q_1,q_2$</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A = (155.9, 22)
+B = (22, 145.6)
+C = (228, 145.6)
+D = along(B, C, 0.3748)
+draw poly A B C
+draw seg A D
+</pre><figcaption>$D$ 把 $BC$ 分成 $q_1,q_2$</figcaption></figure>
 <div class="cards">
 <div class="card"><h4>① 中線</h4><div class="rule">$m_a=\frac12\sqrt{2b^2+2c^2-a^2}$</div>
 <div class="eg">$3,4,5$ 的斜邊中線：$\frac12\sqrt{18+32-25}=\frac52$ <span class="pill">$q_1=q_2$</span></div></div>
