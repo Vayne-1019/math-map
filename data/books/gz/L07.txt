@@ -37,6 +37,8 @@ draw seg C G
 draw seg C d dash
 draw seg G e dash
 draw line G q dash
+r = along(q, G, 1.45)
+text r e l
 </pre><figcaption>G 到 AB 的距離是 C 到 AB 距離的三分之一（過 G 的虛線為 l，平行 AB）</figcaption></figure>
 過 $G$ 作直線 $l\parallel AB$。$\triangle ABG=\frac13\triangle ABC$，兩者同底 $AB$，由公式 (1)，$G$ 到 $AB$ 的距離是 $C$ 到 $AB$ 距離的三分之一，所以 $l$ 通過 $\triangle ABC$ 的重心⟦為什麼｜重心在中線上，把中線分成 $2:1$，所以重心到 $AB$ 的距離也是 $C$ 到 $AB$ 距離的 $\frac13$；到 $AB$ 距離等於這個值的點，全在 $l$ 上。⟧。
 <p>同理，過 $G$ 作 $AC$ 的平行線也通過重心。兩條直線的交點 $G$ 就是重心。</p>
