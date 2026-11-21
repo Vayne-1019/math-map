@@ -205,6 +205,18 @@ F = inter(R1, P1, P, R)
 draw poly P Q R
 draw poly P1 Q1 R1
 draw poly A B C D E F accent
+mAB = mid(A, B)
+mBC = mid(B, C)
+mCD = mid(C, D)
+mDE = mid(D, E)
+mEF = mid(E, F)
+mFA = mid(F, A)
+text mAB s a₁
+text mBC se b₁
+text mCD e a₂
+text mDE n b₂
+text mEF nw a₃
+text mFA w b₃
 </pre><figcaption>兩個全等正三角形疊成六角星，中間的六邊形（紅）邊長依序為 $a_1,b_1,a_2,b_2,a_3,b_3$</figcaption></figure>
 <p><b>證</b>　六個角上的小三角形</p>
 $$\triangle PAB\sim\triangle Q_1CB\sim\triangle QCD\sim\triangle R_1ED\sim\triangle REF\sim\triangle P_1AF,$$
@@ -324,6 +336,12 @@ draw poly A B C
 draw seg M N
 draw seg R P
 draw seg T P
+tc3 = centroid(P, R, T)
+text tc3 c t₃
+tc2 = (93.7, 80.6)
+text tc2 c t₂
+tc1 = (143.7, 84.5)
+text tc1 c t₁
 </pre><figcaption>三個小三角形都與 $\triangle ABC$ 相似（按 $4:9:49$ 的真實比例畫）</figcaption></figure>
 <p>設 $PN=q$、$MP=p$、$RT=r$，$AB=c$，$\triangle ABC$ 的面積為 $S$。三個小三角形都與 $\triangle ABC$ 相似，面積的平方根之比等於對應邊之比：</p>
 $$\frac{2}{\sqrt S}=\frac qc,\quad\frac3{\sqrt S}=\frac pc,\quad\frac7{\sqrt S}=\frac rc.$$
