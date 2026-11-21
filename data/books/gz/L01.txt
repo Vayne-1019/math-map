@@ -18,7 +18,21 @@ status: 完成
 
 === 例 1 | 頂角 100° 的等腰三角形
 zh: 在 $\triangle ABC$ 中，$AB=AC$，$\angle A=100^\circ$，$\angle B$ 的平分線交 $AC$ 於 $D$。證明：$BC=BD+AD$。
-sol: <figure class="bkfig"><svg viewBox="0 0 320 160" width="320" role="img" aria-label="等腰三角形 ABC，頂角 100°，BD 平分角 B"><g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="160.0,22.0 22.0,137.8 298.0,137.8"/><line x1="22.0" y1="137.8" x2="214.5" y2="67.7"/><line x1="214.5" y1="67.7" x2="202.1" y2="137.8" stroke-dasharray="5 4"/><line x1="214.5" y1="67.7" x2="226.9" y2="137.8" stroke-dasharray="5 4"/></g><g fill="currentColor" font-size="15" font-style="italic"><text x="155.0" y="14.0">A</text><text x="8.0" y="151.8">B</text><text x="302.0" y="151.8">C</text><text x="218.5" y="61.7">D</text><text x="194.1" y="154.8">A′</text><text x="224.9" y="154.8">D′</text></g></svg><figcaption>在 BC 上取 BA′＝BA、DD′＝DA′（虛線）</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (160, 22)
+B = (22, 137.8)
+C = (298, 137.8)
+BC = line(B, C)
+AC = line(A, C)
+k1 = circle(B, A)
+A' = meet(k1, BC, 200, 137.8)
+D = on(AC, 214.5, 67.7)
+k2 = circle(D, A')
+D' = meet(k2, BC, 226, 137.8)
+draw poly A B C
+draw seg B D
+draw seg D A' dash
+draw seg D D' dash
+</pre><figcaption>在 BC 上取 BA′＝BA、DD′＝DA′（虛線）</figcaption></figure>
 <b>想法</b>：要證「一段等於兩段的和」，就在長的那段 $BC$ 上切出一段等於 $BD$，再證剩下的等於 $AD$。
 <p>先把 $\triangle ABD$ 沿 $BD$ 翻折：在 $BC$ 上取 $A'$ 使 $BA'=BA$，連 $DA'$。⟦顯然｜$BA=BA'$，$\angle ABD=\angle A'BD$（$BD$ 是角平分線），$BD$ 共用，所以 SAS 全等。⟧$\triangle ABD\cong\triangle A'BD$，因此 $DA'=DA$，$\angle BA'D=\angle A=100^\circ$。</p>
 <p>再在 $BC$ 上取 $D'$ 使 $DD'=DA'$，連 $DD'$。由於 $\angle B=\angle C=40^\circ$，各角依序為：</p>
