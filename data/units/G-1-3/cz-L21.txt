@@ -5,11 +5,26 @@ order: 20
 
 === body
 <div class="hero">相似 ⇒ 對應角相等、對應邊<b>成比例</b><br>平行線一畫就有相似（<b>A 字型、X 字型</b>）<br>面積比 = 相似比的<b>平方</b></div>
-<figure class="bkfig"><svg viewBox="0 0 300 146" width="300" role="img" aria-label="平行四邊形對角線上一點">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="73.2,22 22,124.4 226.8,124.4 278,22"/><line x1="73.2" y1="22" x2="226.8" y2="124.4"/><line x1="52.7" y1="63" x2="242.9" y2="92.2"/><line x1="114.2" y1="124.4" x2="216.6" y2="22"/><line x1="52.7" y1="63" x2="216.6" y2="22" stroke="#c2562b" stroke-width="2"/><line x1="114.2" y1="124.4" x2="242.9" y2="92.2" stroke="#c2562b" stroke-width="2"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="65.4" y="19.1" text-anchor="middle">A</text><text x="14.2" y="137.1" text-anchor="middle">B</text><text x="234.6" y="137.1" text-anchor="middle">C</text><text x="285.8" y="19.1" text-anchor="middle">D</text><text x="159.2" y="73.2" text-anchor="middle">P</text><text x="41.7" y="67.9" text-anchor="middle">E</text><text x="253.9" y="97.1" text-anchor="middle">G</text><text x="114.2" y="140.3" text-anchor="middle">F</text><text x="216.6" y="15.9" text-anchor="middle">H</text></g>
-</svg><figcaption>過對角線上一點 $P$ 的兩條直線；要證兩條紅線平行</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A = (73.2, 22)
+B = (22, 124.4)
+C = (226.8, 124.4)
+m0 = mid(A, C)
+D = reflectp(B, m0)
+ac = line(A, C)
+ab = line(A, B)
+bc = line(B, C)
+P = on(ac, 159.2, 79.3)
+E = on(ab, 52.7, 63)
+F = on(bc, 114.2, 124.4)
+G = inter(E, P, C, D)
+H = inter(F, P, A, D)
+draw poly A B C D
+draw seg A C
+draw seg E G
+draw seg F H
+draw seg E H accent
+draw seg F G accent
+</pre><figcaption>過對角線上一點 $P$ 的兩條直線；要證兩條紅線平行</figcaption></figure>
 <div class="cards">
 <div class="card"><h4>① 平行出相似</h4><div class="rule">$AH\parallel FC$ ⇒ $\triangle PAH\sim\triangle PCF$</div>
 <div class="eg">X 字型：$\frac{PC}{PA}=\frac{PF}{PH}=\frac{PG}{PE}$ ⇒ $EH\parallel FG$ <span class="pill">比相等 ⇒ 平行</span></div></div>
