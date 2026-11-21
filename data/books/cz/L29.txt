@@ -11,31 +11,75 @@ status: 完成
 
 === 例 1
 zh: 在 $\triangle ABC$ 中，$\angle B$、$\angle C$ 的平分線 $BE$、$CF$ 交於 $O$，$AG\perp CF$，$AH\perp BE$。證明 $GH\parallel BC$。
-sol: <figure class="bkfig"><svg viewBox="0 0 269 190" width="269" role="img" aria-label="角平分線與對稱點">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="89.4,22 22,168 246.6,168"/><line x1="22" y1="168" x2="155" y2="82.9"/><line x1="246.6" y1="168" x2="56.5" y2="93.3"/><line x1="89.4" y1="22" x2="136.1" y2="95"/><line x1="89.4" y1="22" x2="60.7" y2="95"/><line x1="60.7" y1="95" x2="136.1" y2="95" stroke="#c2562b" stroke-width="2"/><line x1="136.1" y1="95" x2="182.8" y2="168" stroke-dasharray="5 4"/><line x1="60.7" y1="95" x2="32.1" y2="168" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="89.4" y="15.9" text-anchor="middle">A</text><text x="14.2" y="180.7" text-anchor="middle">B</text><text x="254.4" y="180.7" text-anchor="middle">C</text><text x="162.8" y="80" text-anchor="middle">E</text><text x="45.5" y="98.2" text-anchor="middle">F</text><text x="107.4" y="129.2" text-anchor="middle">O</text><text x="52.9" y="92.1" text-anchor="middle">G</text><text x="143.9" y="92.1" text-anchor="middle">H</text><text x="182.8" y="183.9" text-anchor="middle">A<tspan font-size="10">1</tspan></text><text x="32.1" y="183.9" text-anchor="middle">A<tspan font-size="10">2</tspan></text></g>
-</svg><figcaption>$A_1$、$A_2$ 是 $A$ 關於 $BE$、$CF$ 的對稱點，都在 $BC$ 上（延長 $AH$、$AG$，虛線）</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A = (89.4,22)
+B = (22,168)
+C = (246.6,168)
+lac = line(A, C)
+lab = line(A, B)
+E = on(lac, 155, 82.9)
+F = on(lab, 56.5, 93.3)
+O = inter(B, E, C, F)
+H = foot(A, B, E)
+G = foot(A, C, F)
+A1 = reflect(A, B, E)
+A2 = reflect(A, C, F)
+draw poly A B C
+draw seg B E
+draw seg C F
+draw seg A H
+draw seg H A1 dash
+draw seg A G
+draw seg G A2 dash
+draw seg G H accent
+</pre><figcaption>$A_1$、$A_2$ 是 $A$ 關於 $BE$、$CF$ 的對稱點，都在 $BC$ 上（延長 $AH$、$AG$，虛線）</figcaption></figure>
 <p><b>證</b>　$BE$ 是 $\angle B$ 的平分線，以 $BE$ 為對稱軸把 $\triangle ABH$ 翻過去，$A$ 的對稱點 $A_1$ 必落在 $BC$ 上。又 $AH\perp BE$，所以 $A,H,A_1$ 共線，且 $AH=HA_1$。同理 $A$ 關於 $CF$ 的對稱點 $A_2$ 也在 $BC$ 上，$A,G,A_2$ 共線且 $AG=GA_2$。於是 $GH$ 是 $\triangle AA_1A_2$ 的中位線，$GH\parallel A_1A_2$，即 $GH\parallel BC$。</p>
 <p>涉及角平分線時，常像這樣作反射變換，這是非常基本的手法。</p>
 === 例 2
 zh: 在四邊形 $ABCD$ 中，$AB\parallel CD$，且 $AB=AC=AD=a$，$BC=b$，求 $BD$ 的長度。
-sol: <figure class="bkfig"><svg viewBox="0 0 224 170" width="224" role="img" aria-label="四邊形與中垂線反射">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="112,121 202,121 163.6,47.3 60.4,47.3"/><line x1="112" y1="121" x2="163.6" y2="47.3"/><line x1="202" y1="121" x2="60.4" y2="47.3"/><line x1="22" y1="121" x2="112" y2="121" stroke-dasharray="5 4"/><line x1="22" y1="121" x2="60.4" y2="47.3" stroke-dasharray="5 4"/><line x1="112" y1="148" x2="112" y2="22" stroke-dasharray="5 4"/><path d="M202 121A90 90 0 0 0 22 121" stroke-width="1"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="112" y="136.9" text-anchor="middle">A</text><text x="213" y="125.9" text-anchor="middle">B</text><text x="171.4" y="44.4" text-anchor="middle">C</text><text x="52.6" y="44.4" text-anchor="middle">D</text><text x="7.5" y="125.9" text-anchor="middle">B′</text><text x="123" y="152.9" text-anchor="middle">l</text></g>
-</svg><figcaption>$l$ 是 $DC$ 的中垂線；$\triangle ABC$ 關於 $l$ 的像是 $\triangle AB'D$（虛線）；$B,C,D,B'$ 在以 $A$ 為圓心的圓上</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (112,121)
+B = (202,121)
+C = (163.6,47.3)
+D = (60.4,47.3)
+M = mid(D, C)
+hide M
+q = rotate(C, M, 90)
+Bp = reflect(B, M, q)
+k = circle(A, B)
+draw poly A B C D
+draw seg A C
+draw seg B D
+draw seg Bp A dash
+draw seg Bp D dash
+draw line M q dash
+draw circle k
+</pre><figcaption>$l$ 是 $DC$ 的中垂線；$\triangle ABC$ 關於 $l$ 的像是 $\triangle AB'D$（虛線）；$B,C,D,B'$ 在以 $A$ 為圓心的圓上</figcaption></figure>
 <p><b>解</b>　作 $DC$ 的中垂線 $l$，把 $\triangle ABC$ 作關於 $l$ 的反射。⟦顯然｜$AC=AD$，所以 $A$ 在 $DC$ 的中垂線 $l$ 上，反射後 $A$ 不動；$AB\parallel DC$，所以直線 $AB$ 垂直於 $l$，反射後還是自己；$C$ 的像就是 $D$。⟧$B$ 的對稱點 $B'$ 在直線 $AB$ 上，$C$ 的對稱點是 $D$，且 $B'D=BC=b$。由於 $AB=AC=AD=AB'=a$，$B,C,D,B'$ 都在以 $A$ 為圓心、$a$ 為半徑的圓上，$BB'$ 是直徑，$\angle BDB'=90^\circ$。由勾股定理</p>
 $$BD=\sqrt{B'B^2-B'D^2}=\sqrt{4a^2-b^2}.$$
 ans: $\sqrt{4a^2-b^2}$
 
 === 例 3
 zh: 證明：若圓外切四邊形有兩條對邊相等，則圓心到另外兩邊中點的距離相等。
-sol: <figure class="bkfig"><svg viewBox="0 0 260 195" width="260" role="img" aria-label="外切四邊形與對稱">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,22 238,22 183,173.2 77,173.2"/><circle cx="130" cy="97.6" r="75.6"/><line x1="130" y1="97.6" x2="130" y2="22" stroke-dasharray="5 4"/><line x1="130" y1="97.6" x2="130" y2="173.2" stroke-dasharray="5 4"/><line x1="130" y1="97.6" x2="22" y2="22" stroke-dasharray="5 4"/><line x1="130" y1="97.6" x2="238" y2="22" stroke-dasharray="5 4"/><line x1="130" y1="97.6" x2="183" y2="173.2" stroke-dasharray="5 4"/><line x1="130" y1="97.6" x2="77" y2="173.2" stroke-dasharray="5 4"/><line x1="130" y1="97.6" x2="77" y2="22" stroke-dasharray="5 4"/><line x1="130" y1="97.6" x2="183" y2="22" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="19.1" text-anchor="middle">A</text><text x="245.8" y="19.1" text-anchor="middle">B</text><text x="190.7" y="185.9" text-anchor="middle">C</text><text x="69.3" y="185.9" text-anchor="middle">D</text><text x="141" y="102.5" text-anchor="middle">I</text><text x="130" y="15.9" text-anchor="middle">E</text><text x="130" y="189.1" text-anchor="middle">F</text><text x="77" y="15.9" text-anchor="middle">C′</text><text x="183" y="15.9" text-anchor="middle">D′</text></g>
-</svg><figcaption>$D'$、$C'$ 是 $D$、$C$ 關於 $AI$、$BI$ 的對稱點，都落在 $AB$ 上</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (22,22)
+B = (238,22)
+C = (183,173.2)
+D = (77,173.2)
+I = (130,97.6)
+E = mid(A, B)
+F = mid(C, D)
+k = circle(I, E)
+Cp = reflect(C, B, I)
+Dp = reflect(D, A, I)
+draw poly A B C D
+draw circle k
+draw seg I E dash
+draw seg I F dash
+draw seg I A dash
+draw seg I B dash
+draw seg I C dash
+draw seg I D dash
+draw seg I Cp dash
+draw seg I Dp dash
+</pre><figcaption>$D'$、$C'$ 是 $D$、$C$ 關於 $AI$、$BI$ 的對稱點，都落在 $AB$ 上</figcaption></figure>
 <p><b>證</b>　設四邊形 $ABCD$ 中 $a=AB$，$b=BC$，$c=CD$，$d=DA$，內切圓圓心為 $I$。設 $b=d$，$a\ge c$，$E$、$F$ 是 $AB$、$CD$ 的中點，要證 $IE=IF$。</p>
 <p>連 $IA$、$IB$，它們分別平分 $\angle A$、$\angle B$。以 $AI$、$BI$ 為對稱軸，作出 $D$、$C$ 的對稱點 $D'$、$C'$，它們都落在 $AB$ 上（例 1 的招數）。因為 $AD'=d=b=BC'$，$E$ 也是 $C'D'$ 的中點。又 $ABCD$ 外切於圓，$a+c=b+d$，所以</p>
 $$C'D'=AD'+BC'-a=d+b-a=c.$$
@@ -43,30 +87,77 @@ $$C'D'=AD'+BC'-a=d+b-a=c.$$
 <p>這裡透過反射，把對稱軸一側的圖形搬到另一側，讓條件集中，這是軸對稱變換的另一種功效，也是常用手法。</p>
 === 例 4 | 蝴蝶定理
 zh: 在 $\odot O$ 中，過弦 $BC$ 的中點 $A$ 任作兩條弦 $PQ$、$RS$，$SQ$、$PR$ 分別與 $BC$ 交於 $M$、$N$。證明：$AM=AN$。
-sol: <figure class="bkfig"><svg viewBox="0 0 223 250" width="223" role="img" aria-label="蝴蝶定理">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="111.6" cy="125" r="89.6"/><line x1="27.7" y1="93.7" x2="195.5" y2="93.7"/><line x1="24.1" y1="144.2" x2="171.9" y2="58.8"/><line x1="83.1" y1="40.1" x2="166" y2="196.1"/><line x1="83.1" y1="40.1" x2="24.1" y2="144.2"/><line x1="171.9" y1="58.8" x2="166" y2="196.1"/><line x1="111.6" y1="22" x2="111.6" y2="228" stroke-dasharray="5 4"/><line x1="111.6" y1="93.7" x2="57.1" y2="196.1" stroke-dasharray="5 4"/><line x1="52.7" y1="93.7" x2="57.1" y2="196.1" stroke-dasharray="5 4"/><line x1="24.1" y1="144.2" x2="57.1" y2="196.1" stroke-dasharray="5 4"/><line x1="166" y1="196.1" x2="57.1" y2="196.1" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"><circle cx="111.6" cy="125" r="2.4"/></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="119.3" y="90.8" text-anchor="middle">A</text><text x="206.5" y="98.6" text-anchor="middle">B</text><text x="16.7" y="98.6" text-anchor="middle">C</text><text x="13.1" y="149.1" text-anchor="middle">P</text><text x="179.7" y="55.9" text-anchor="middle">Q</text><text x="83.1" y="34" text-anchor="middle">R</text><text x="173.8" y="208.8" text-anchor="middle">S</text><text x="170.4" y="109.6" text-anchor="middle">M</text><text x="52.7" y="109.6" text-anchor="middle">N</text><text x="46.8" y="208.8" text-anchor="middle">S′</text><text x="122.6" y="129.9" text-anchor="middle">O</text><text x="122.6" y="26.9" text-anchor="middle">L</text></g>
-</svg><figcaption>$A$ 是弦 $BC$ 的中點；$l$ 是 $BC$ 的中垂線（虛線），$S'$ 是 $S$ 關於 $l$ 的對稱點</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">P = (24.1,144.2)
+O = (111.6,125)
+k = circle(O, P)
+Q = on(k, 171.9, 58.8)
+R = on(k, 83.1, 40.1)
+S = on(k, 166, 196.1)
+B = on(k, 195.5, 93.7)
+C = on(k, 27.7, 93.7)
+A = mid(B, C)
+l = line(O, A)
+Sp = reflect(S, O, A)
+M = inter(S, Q, B, C)
+N = inter(P, R, B, C)
+draw circle k
+draw seg B C
+draw seg P Q
+draw seg R S
+draw seg S Q
+draw seg P R
+draw line O A dash
+draw seg A Sp dash
+draw seg N Sp dash
+draw seg P Sp dash
+draw seg S Sp dash
+</pre><figcaption>$A$ 是弦 $BC$ 的中點；$l$ 是 $BC$ 的中垂線（虛線），$S'$ 是 $S$ 關於 $l$ 的對稱點</figcaption></figure>
 <p><b>證</b>　過 $A$ 作弦 $BC$ 的中垂線 $l$（$l$ 必過圓心 $O$），要證的就是 $AM$ 與 $AN$ 關於 $l$ 對稱。作 $S$ 關於 $l$ 的對稱點 $S'$，$S'$ 必在圓上（也可以作 $P$ 的對稱點）。下面證 $\triangle AMS$ 與 $\triangle ANS'$ 關於 $l$ 對稱，也就是 $\triangle AMS\cong\triangle ANS'$。</p>
 <p>連 $AS'$、$NS'$、$PS'$、$SS'$。⟦顯然｜$SS'$ 與 $BC$ 都垂直於 $l$。⟧$BC\parallel SS'$，所以 $\angle CAS'=\angle AS'S=\angle ASS'$（後者由 $AS=AS'$）。而圓內接四邊形 $RPS'S$ 中 $\angle RPS'+\angle RSS'=180^\circ$，即 $\angle RPS'+\angle CAS'=180^\circ$⟦為什麼｜$\angle RSS'=\angle ASS'$（$R,A,S$ 共線），又剛證了 $\angle ASS'=\angle CAS'$。⟧，也就是 $\angle NPS'+\angle NAS'=180^\circ$，所以 $A,S',P,N$ 四點共圓，$\angle APN=\angle AS'N$。</p>
 <p>又 $\angle APN=\angle QPR=\angle QSR=\angle ASM$（同對弧 $QR$），所以 $\angle ASM=\angle AS'N$。由對稱 $\angle NAS'=\angle MAS$，$AS=AS'$，所以 $\triangle AS'N\cong\triangle ASM$（ASA），$AM=AN$。</p>
 === 例 5
 zh: 在等腰直角三角形 $ABC$ 中，$\angle A=90^\circ$，$D$ 是 $AC$ 的中點，$AE\perp BD$ 於 $E$，$AE$ 的延長線交 $BC$ 於 $F$。證明 $\angle ADB=\angle FDC$。
 sol: <p><b>證法一</b>　兩個角分屬 $\triangle ABD$ 與 $\triangle CDF$，沒有明顯聯繫，用反射讓問題明朗化。以 $AC$ 的中垂線 $l$ 為對稱軸，作 $\triangle ABD$ 的對稱圖形（$B'$ 是 $B$ 的對稱點），則 $\angle ADB=\angle CDB'$。所以只要證 $\angle FDC=\angle B'DC$，也就是證 $D,F,B'$ 共線。</p>
-<figure class="bkfig"><svg viewBox="0 0 230 230" width="230" role="img" aria-label="等腰直角三角形與中線">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="114.9,22.2 22,115.1 207.8,115.1"/><line x1="22" y1="115.1" x2="161.3" y2="68.7"/><line x1="114.9" y1="22.2" x2="145.8" y2="115.1"/><line x1="161.3" y1="68.7" x2="145.8" y2="115.1"/><polyline points="132.2,74.2 136,72.9 137.3,76.7" stroke-width="1"/><line x1="114.9" y1="22.2" x2="114.9" y2="208" stroke-dasharray="5 4"/><line x1="114.9" y1="208" x2="207.8" y2="115.1" stroke-dasharray="5 4"/><line x1="114.9" y1="208" x2="161.3" y2="68.7" stroke-dasharray="5 4"/><line x1="114.9" y1="84.2" x2="145.8" y2="115.1" stroke-dasharray="5 4"/><line x1="133.5" y1="78" x2="114.9" y2="115.1" stroke-dasharray="5 4"/><line x1="100.7" y1="129.3" x2="208" y2="22" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="114.9" y="16.1" text-anchor="middle">A</text><text x="11" y="120" text-anchor="middle">B</text><text x="218.8" y="120" text-anchor="middle">C</text><text x="169.1" y="65.8" text-anchor="middle">D</text><text x="133.5" y="71.9" text-anchor="middle">E</text><text x="145.8" y="131" text-anchor="middle">F</text><text x="114.9" y="131" text-anchor="middle">G</text><text x="103.9" y="89.1" text-anchor="middle">I</text><text x="114.9" y="223.9" text-anchor="middle">B′</text><text x="218.5" y="27.4" text-anchor="middle">l</text></g>
-</svg><figcaption>證法一：$l$ 是 $AC$ 的中垂線，$B'$ 是 $B$ 的對稱點；$AB'$ 交 $BD$、$BC$ 於 $I$、$G$</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A = (114.9,22.2)
+B = (22,115.1)
+C = (207.8,115.1)
+D = mid(A, C)
+E = foot(A, B, D)
+F = inter(A, E, B, C)
+p = rotate(A, D, 90)
+Bp = reflect(B, D, p)
+G = mid(B, C)
+I = inter(A, Bp, B, D)
+draw poly A B C
+draw seg B D
+draw seg D F
+draw seg A F
+draw seg A Bp dash
+draw seg Bp C dash
+draw seg Bp D dash
+draw seg I F dash
+draw seg E G dash
+draw line D p dash
+right A E D
+</pre><figcaption>證法一：$l$ 是 $AC$ 的中垂線，$B'$ 是 $B$ 的對稱點；$AB'$ 交 $BD$、$BC$ 於 $I$、$G$</figcaption></figure>
 <p>連 $AB'$，交 $BD$、$BC$ 於 $I$、$G$，再連 $IF$、$EG$。⟦為什麼 AB′⊥BC｜以 $BC$ 中點為原點，$A=(0,1)$、$B=(-1,0)$、$C=(1,0)$，則 $AC$ 的中垂線 $l$ 是直線 $y=x$，$B$ 的對稱點 $B'=(0,-1)$，所以 $AB'$ 就是 $BC$ 的中垂線。⟧$AB'$ 垂直平分 $BC$，$G$ 是 $BC$ 中點，$I$ 是中線 $BD$ 與 $AG$ 的交點，即 $\triangle ABC$ 的重心。</p>
 <p>由 $AE\perp BD$、$AG\perp BC$，$A,B,G,E$ 四點共圓，$\angle BEG=\angle BAG=45^\circ$。又 $E,I,G,F$ 四點共圓（$\angle IEF=\angle IGF=90^\circ$），所以 $\angle IFG=\angle IEG=\angle BEG=45^\circ=\angle ACB$，$IF\parallel AC$。$I$ 是重心，結合 $IF\parallel AC$ 得 $\frac{GF}{FC}=\frac{GI}{IA}=\frac12$。而 $F$ 在 $\triangle AB'C$ 的中線 $GC$ 上，$CF=\frac23CG$，所以 $F$ 是 $\triangle AB'C$ 的重心，它的中線 $B'D$ 必過 $F$，即 $D,F,B'$ 共線。</p>
 <p><b>證法二（較簡單）</b>　換一個角度：過 $C$ 作 $AC$ 的垂線，與 $AF$ 的延長線交於 $D'$。</p>
-<figure class="bkfig"><svg viewBox="0 0 210 210" width="210" role="img" aria-label="另一種對稱">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="105,22 22,105 188,105"/><line x1="22" y1="105" x2="146.5" y2="63.5"/><line x1="105" y1="22" x2="132.7" y2="105"/><line x1="146.5" y1="63.5" x2="132.7" y2="105"/><line x1="132.7" y1="105" x2="188" y2="188" stroke-dasharray="5 4"/><line x1="188" y1="105" x2="188" y2="188" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="105" y="15.9" text-anchor="middle">A</text><text x="11" y="109.9" text-anchor="middle">B</text><text x="199" y="109.9" text-anchor="middle">C</text><text x="154.3" y="60.6" text-anchor="middle">D</text><text x="121.6" y="65.7" text-anchor="middle">E</text><text x="132.7" y="120.9" text-anchor="middle">F</text><text x="198.3" y="200.7" text-anchor="middle">D′</text></g>
-</svg><figcaption>證法二：過 $C$ 作 $AC$ 的垂線交 $AF$ 的延長線於 $D'$（虛線）</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A = (105,22)
+B = (22,105)
+C = (188,105)
+D = mid(A, C)
+E = foot(A, B, D)
+F = inter(A, E, B, C)
+p = rotate(A, C, 90)
+Dp = inter(A, F, C, p)
+draw poly A B C
+draw seg B D
+draw seg A F
+draw seg D F
+draw seg F Dp dash
+draw seg C Dp dash
+</pre><figcaption>證法二：過 $C$ 作 $AC$ 的垂線交 $AF$ 的延長線於 $D'$（虛線）</figcaption></figure>
 <p>由 $AE\perp BD$ 及 $\angle A=90^\circ$，$\angle ABD=\angle D'AC$，易知 $\triangle ABD\cong\triangle CAD'$（ASA），所以 $\angle ADB=\angle AD'C$，$AD=CD'$，從而 $CD=CD'$。又 $\angle DCF=\angle FCD'=45^\circ$，所以 $\triangle DCF\cong\triangle D'CF$，$\angle FD'C=\angle FDC$。於是 $\angle ADB=\angle FDC$。</p>
 <p>這個解法的實質是證明 $D$ 關於 $BC$ 的對稱點和 $A$、$F$ 共線。換個角度運用軸對稱，有時更方便；前面其他例子也都可以這樣做。</p>
 === text
@@ -74,68 +165,158 @@ sol: <p><b>證法一</b>　兩個角分屬 $\triangle ABD$ 與 $\triangle CDF$�
 
 === 例 6
 zh: 凸四邊形 $ABCD$ 的對角線 $AC$ 與 $BD$ 交於 $O$，且 $AC\perp BD$，已知 $OA\gt OC$，$OB\gt OD$。證明 $BC+AD\gt AB+CD$。
-sol: <figure class="bkfig"><svg viewBox="0 0 240 204" width="240" role="img" aria-label="對角線垂直的四邊形">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="218,128.9 99.2,22 22,128.9 99.2,182.4"/><line x1="218" y1="128.9" x2="22" y2="128.9"/><line x1="99.2" y1="22" x2="99.2" y2="182.4"/><line x1="218" y1="128.9" x2="99.2" y2="75.5" stroke-dasharray="5 4"/><line x1="99.2" y1="22" x2="176.4" y2="128.9" stroke-dasharray="5 4"/><line x1="176.4" y1="128.9" x2="99.2" y2="75.5" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="229" y="133.8" text-anchor="middle">A</text><text x="99.2" y="15.9" text-anchor="middle">B</text><text x="11" y="133.8" text-anchor="middle">C</text><text x="99.2" y="198.3" text-anchor="middle">D</text><text x="91.4" y="141.6" text-anchor="middle">O</text><text x="176.4" y="144.8" text-anchor="middle">C′</text><text x="84.7" y="80.4" text-anchor="middle">D′</text><text x="164.2" y="98.3" text-anchor="middle">E</text></g>
-</svg><figcaption>$C'$、$D'$ 是 $C$、$D$ 關於 $BD$、$AC$ 的對稱點；連 $AD'$、$BC'$ 交於 $E$（虛線）</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (218,128.9)
+B = (99.2,22)
+C = (22,128.9)
+D = (99.2,182.4)
+O = inter(A, C, B, D)
+Cp = reflect(C, B, D)
+Dp = reflect(D, A, C)
+E = inter(A, Dp, B, Cp)
+draw poly A B C D
+draw seg A C
+draw seg B D
+draw seg A Dp dash
+draw seg B Cp dash
+draw seg Cp Dp dash
+</pre><figcaption>$C'$、$D'$ 是 $C$、$D$ 關於 $BD$、$AC$ 的對稱點；連 $AD'$、$BC'$ 交於 $E$（虛線）</figcaption></figure>
 <p><b>證</b>　以 $BD$、$AC$ 為對稱軸，分別作 $BC$、$AD$ 的反射。因為 $AC\perp BD$ 且 $OA\gt OC$、$OB\gt OD$，$C$ 關於 $BD$ 的對稱點 $C'$ 落在線段 $OA$ 內部，$D$ 關於 $AC$ 的對稱點 $D'$ 落在線段 $OB$ 內部。連 $AD'$、$BC'$，設交點為 $E$。由三角不等式</p>
 $$BE+AE\gt AB,\qquad EC'+ED'\gt C'D'.$$
 <p>相加，並注意 $C'D'=CD$⟦為什麼｜$OC'=OC$、$OD'=OD$，且 $\angle C'OD'=\angle COD=90^\circ$。⟧、$AD'=AD$、$BC'=BC$，得 $AD'+BC'\gt AB+CD$，即 $AD+BC\gt AB+CD$。</p>
 <p>這裡透過反射把有關的線段集中到 $\triangle ABO$ 內，結論便顯而易見。這種「透過反射使條件集中」的手法，例 3 也用過。</p>
 === 例 7
 zh: $\triangle DEF$ 是正 $\triangle ABC$ 的內接三角形，頂點 $D,E,F$ 分別在 $BC,CA,AB$ 上。證明：$\triangle DEF$ 的周長不小於 $\triangle ABC$ 周長的一半。
-sol: <figure class="bkfig"><svg viewBox="0 0 320 112" width="320" role="img" aria-label="正三角形的反射展開">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="61.4,22 22,90.3 100.9,90.3" stroke-width="2"/><polygon points="45.7,90.3 85.1,63 47.6,45.9"/><polygon points="61.4,22 140.3,22 100.9,90.3" stroke-width="1"/><polygon points="179.7,90.3 140.3,22 100.9,90.3" stroke-width="1"/><polygon points="179.7,90.3 140.3,22 219.1,22" stroke-width="1"/><polygon points="179.7,90.3 258.6,90.3 219.1,22" stroke-width="1"/><polygon points="298,22 258.6,90.3 219.1,22" stroke-width="1"/><polyline points="47.6,45.9 85.1,63 128.5,42.5 165.9,66.4 203.4,49.3 246.7,69.8 284.2,45.9" stroke="#c2562b" stroke-width="2"/><line x1="47.6" y1="45.9" x2="284.2" y2="45.9" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="61.4" y="15.9" text-anchor="middle">A</text><text x="11" y="95.2" text-anchor="middle">B</text><text x="100.9" y="106.2" text-anchor="middle">C</text><text x="45.7" y="106.2" text-anchor="middle">D</text><text x="92.9" y="60.1" text-anchor="middle">E</text><text x="36.6" y="50.8" text-anchor="middle">F</text><text x="298.7" y="50.8" text-anchor="middle">F<tspan font-size="10">4</tspan></text></g>
-</svg><figcaption>把 $\triangle ABC$ 連續反射五次；紅色折線長是 $\triangle DEF$ 周長的 2 倍，虛線 $FF_4$ 等於 $\triangle ABC$ 的周長</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (61.4,22)
+B = (22,90.3)
+C = (100.9,90.3)
+lbc = line(B, C)
+lca = line(C, A)
+lab = line(A, B)
+D = on(lbc, 45.7, 90.3)
+E = on(lca, 85.1, 63)
+F = on(lab, 47.6, 45.9)
+b1 = reflect(B, A, C)
+x1 = reflect(A, C, b1)
+y1 = reflect(C, b1, x1)
+z1 = reflect(b1, x1, y1)
+w1 = reflect(x1, y1, z1)
+D1 = reflect(D, A, C)
+F2 = reflect(F, C, b1)
+E2 = reflect(E, C, b1)
+lyz = line(y1, z1)
+D3 = on(lyz, 246.7, 69.8)
+lzw = line(z1, w1)
+F4 = on(lzw, 284.2, 45.9)
+draw poly A B C
+draw poly A C b1
+draw poly C b1 x1
+draw poly b1 x1 y1
+draw poly x1 y1 z1
+draw poly y1 z1 w1
+draw poly D E F
+draw seg F E D1 F2 E2 D3 F4 accent
+draw seg F F4 dash
+hide b1
+hide x1
+hide y1
+hide z1
+hide w1
+hide D1
+hide F2
+hide E2
+hide D3
+</pre><figcaption>把 $\triangle ABC$ 連續反射五次；紅色折線長是 $\triangle DEF$ 周長的 2 倍，虛線 $FF_4$ 等於 $\triangle ABC$ 的周長</figcaption></figure>
 <p><b>證</b>　以 $AC$ 為對稱軸把 $\triangle ABC$ 反射，$B_1,D_1,F_1$ 是 $B,D,F$ 的對稱點；$\triangle ABC$ 是正三角形，所以 $AB_1\parallel BC$。再以 $B_1C$ 為軸把 $\triangle AB_1C$ 反射……如此共反射五次，得到一條由六個正三角形排成的帶子。</p>
 <p>折線 $FED_1F_2E_2D_3F_4$ 的長恰為 $\triangle DEF$ 周長的兩倍⟦為什麼｜每經過一次反射，$\triangle DEF$ 的一條邊被搬成折線的一段；六段依序是 $FE,ED,DF,FE,ED,DF$ 的像。⟧，而折線不小於直線段 $FF_4$。$FF_4$ 恰好等於 $\triangle ABC$ 的周長⟦為什麼｜五次反射合起來是一個平移，把 $F$ 搬到 $F_4$，平移量等於三個邊長（帶子上下兩條邊都由三條邊長拼成）。⟧，所以 $\triangle DEF$ 的周長不小於 $\triangle ABC$ 周長的一半。</p>
 === 例 8
 zh: 證明：在底邊長及兩側邊長度之和都給定的所有三角形中，以等腰三角形的面積最大。
-sol: <figure class="bkfig"><svg viewBox="0 0 270 189" width="270" role="img" aria-label="底邊與兩腰和固定的三角形">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="43.1,166.9 210.2,166.9 126.6,94.4"/><polygon points="43.1,166.9 210.2,166.9 211.4,120.3"/><line x1="22" y1="94.4" x2="248" y2="94.4"/><line x1="126.6" y1="94.4" x2="210.2" y2="22" stroke-dasharray="5 4"/><line x1="210.2" y1="166.9" x2="210.2" y2="22" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="35.3" y="179.5" text-anchor="middle">A</text><text x="218" y="179.5" text-anchor="middle">B</text><text x="126.6" y="88.3" text-anchor="middle">C</text><text x="225.9" y="125.2" text-anchor="middle">C′</text><text x="210.2" y="15.9" text-anchor="middle">B′</text><text x="257.4" y="99.3" text-anchor="middle">l</text></g>
-</svg><figcaption>$AC+BC=AC'+BC'$；$l$ 過 $C$ 平行 $AB$，$B'$ 是 $B$ 關於 $l$ 的對稱點，$A,C,B'$ 共線（虛線）。$C'$ 必在 $l$ 與 $AB$ 之間</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (43.1,166.9)
+B = (210.2,166.9)
+m = mid(A, B)
+pm = rotate(A, m, 90)
+lm = line(m, pm)
+C = on(lm, 126.6, 94.4)
+mcb = mid(C, B)
+q = reflectp(A, mcb)
+l = line(C, q)
+Bp = reflect(B, C, q)
+Cp = (211.4,120.3)
+draw poly A B C
+draw poly A B Cp
+draw line C q
+draw seg C Bp dash
+draw seg B Bp dash
+</pre><figcaption>$AC+BC=AC'+BC'$；$l$ 過 $C$ 平行 $AB$，$B'$ 是 $B$ 關於 $l$ 的對稱點，$A,C,B'$ 共線（虛線）。$C'$ 必在 $l$ 與 $AB$ 之間</figcaption></figure>
 <p><b>證</b>　設 $\triangle ABC$ 是等腰三角形（$CA=CB$），$\triangle ABC'$ 不等腰，公共底邊 $AB$ 長度固定，且 $AC+BC=AC'+BC'$。下面證 $S_{\triangle ABC}\gt S_{\triangle ABC'}$。不妨設 $C$、$C'$ 在 $AB$ 同側。過 $C$ 作直線 $l\parallel AB$，只要證 $C'$ 在 $l$ 與 $AB$ 之間（高較小）。</p>
 <p>假設相反，設 $AC'$ 與 $l$ 交於 $P$（$C'$ 可能就在 $l$ 上；但 $P$ 不會是 $C$，否則 $AC'+BC'\gt AC+BC$）。作 $B$ 關於 $l$ 的對稱點 $B'$，因為 $\triangle ABC$ 等腰，$A,C,B'$ 共線⟦為什麼｜$l\parallel AB$，所以 $l$ 與 $CA$、$CB$ 的夾角都等於底角 $\angle CAB=\angle CBA$。反射後 $CB'$ 與 $l$ 的夾角也是這個底角，位在 $l$ 的另一側，正好落在 $CA$ 的延長線上。⟧。連 $BP$、$B'P$，則 $BP=B'P$，</p>
 $$AC'+BC'=AP+PC'+BC'\ge AP+BP=AP+B'P\gt AB'=AC+BC,$$
 <p>與 $AC'+BC'=AC+BC$ 矛盾。</p>
 === 例 9
 zh: 證明：任意凸四邊形的面積不大於兩組對邊乘積之和的一半。
-sol: <figure class="bkfig"><svg viewBox="0 0 211 190" width="211" role="img" aria-label="四邊形面積的上界">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,121.1 168,22 188.9,121.1 68.9,168"/><line x1="22" y1="121.1" x2="188.9" y2="121.1"/><line x1="22" y1="121.1" x2="141.9" y2="168" stroke-dasharray="5 4"/><line x1="188.9" y1="121.1" x2="141.9" y2="168" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="11" y="126" text-anchor="middle">A</text><text x="168" y="15.9" text-anchor="middle">B</text><text x="199.9" y="126" text-anchor="middle">C</text><text x="61.2" y="180.7" text-anchor="middle">D</text><text x="152.2" y="180.7" text-anchor="middle">D′</text><text x="105.4" y="169.6" text-anchor="middle">E</text></g>
-</svg><figcaption>$D'$ 是 $D$ 關於 $AC$ 中垂線的對稱點（虛線）</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (22,121.1)
+B = (168,22)
+C = (188.9,121.1)
+D = (68.9,168)
+m = mid(A, C)
+pm = rotate(A, m, 90)
+Dp = reflect(D, m, pm)
+E = inter(A, Dp, C, D)
+draw poly A B C D
+draw seg A C
+draw seg A Dp dash
+draw seg C Dp dash
+</pre><figcaption>$D'$ 是 $D$ 關於 $AC$ 中垂線的對稱點（虛線）</figcaption></figure>
 <p><b>證</b>　設凸四邊形為 $ABCD$。作 $D$ 關於線段 $AC$ 中垂線的對稱點 $D'$，連 $AD'$、$D'C$，設 $AD'$ 與 $CD$ 交於 $E$。⟦顯然｜反射把 $A,C$ 互換，所以 $AD'=CD$、$CD'=AD$，$\triangle ACD\cong\triangle CAD'$，面積相同。⟧$AD'=DC$，$AD=CD'$，四邊形 $ABCD$ 與 $ABCD'$ 面積相等。而</p>
 $$S_{ABCD'}=S_{\triangle BAD'}+S_{\triangle BCD'}=\tfrac12AB\cdot AD'\sin\angle BAD'+\tfrac12BC\cdot CD'\sin\angle BCD'\le\tfrac12(AB\cdot CD+BC\cdot AD).$$
 === 習題 1
 zh: 在 $\triangle ABC$ 中，$\angle A=2\angle B$，$\angle C$ 的平分線交 $AB$ 於 $D$。證明：$BC=AC+AD$。
-sol: <figure class="bkfig"><svg viewBox="0 0 262 160" width="262" role="img" aria-label="∠A = 2∠B 的三角形">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="240.2,22 22,138 228,138"/><line x1="228" y1="138" x2="161.3" y2="63.9"/><line x1="161.3" y1="63.9" x2="111.3" y2="138" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="240.2" y="15.9" text-anchor="middle">A</text><text x="11" y="142.9" text-anchor="middle">B</text><text x="239" y="142.9" text-anchor="middle">C</text><text x="153.5" y="61.1" text-anchor="middle">D</text><text x="111.3" y="153.9" text-anchor="middle">A′</text></g>
-</svg><figcaption>$A'$ 是 $A$ 關於 $CD$ 的對稱點，落在 $BC$ 上</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (240.2,22)
+B = (22,138)
+C = (228,138)
+lab = line(A, B)
+D = on(lab, 161.3, 63.9)
+Ap = reflect(A, C, D)
+draw poly A B C
+draw seg C D
+draw seg D Ap dash
+</pre><figcaption>$A'$ 是 $A$ 關於 $CD$ 的對稱點，落在 $BC$ 上</figcaption></figure>
 <p>以 $CD$ 為對稱軸作 $\triangle ACD$ 的對稱圖形，$A$ 的對稱點 $A'$ 落在 $BC$ 上。$\angle DA'C=\angle A=2\angle B$，而 $\angle DA'C=\angle B+\angle A'DB$，所以 $\angle A'DB=\angle B$，$A'B=A'D=AD$。所以 $BC=BA'+A'C=AD+AC$。</p>
 === 習題 2
 zh: 在正方形 $ABCD$ 中，$F$ 是 $CD$ 的中點，$E$ 是 $BC$ 邊上一點，且 $AF$ 平分 $\angle DAE$。證明：$AE=EC+CD$。
 hint: 以 $AF$ 為對稱軸作 $\triangle ADF$ 的對稱圖形，連 $EF$，仿上題。
-sol: <figure class="bkfig"><svg viewBox="0 0 200 200" width="200" role="img" aria-label="正方形與角平分線">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="22,22 22,178 178,178 178,22"/><line x1="22" y1="22" x2="178" y2="100"/><line x1="22" y1="22" x2="139" y2="178"/><line x1="178" y1="100" x2="115.6" y2="146.8" stroke-dasharray="5 4"/><line x1="178" y1="100" x2="139" y2="178" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="14.2" y="19.1" text-anchor="middle">A</text><text x="14.2" y="190.7" text-anchor="middle">B</text><text x="185.8" y="190.7" text-anchor="middle">C</text><text x="185.8" y="19.1" text-anchor="middle">D</text><text x="189" y="104.9" text-anchor="middle">F</text><text x="139" y="193.9" text-anchor="middle">E</text><text x="101.1" y="151.7" text-anchor="middle">D′</text></g>
-</svg><figcaption>$D'$ 是 $D$ 關於 $AF$ 的對稱點，在 $AE$ 上；連 $EF$（虛線）</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (22,22)
+B = (22,178)
+C = (178,178)
+D = (178,22)
+F = mid(C, D)
+Dp = reflect(D, A, F)
+E = inter(A, Dp, B, C)
+draw poly A B C D
+draw seg A F
+draw seg A E
+draw seg F Dp dash
+draw seg F E dash
+</pre><figcaption>$D'$ 是 $D$ 關於 $AF$ 的對稱點，在 $AE$ 上；連 $EF$（虛線）</figcaption></figure>
 <p>$D$ 的對稱點 $D'$ 在 $AE$ 上，$AD'=AD$、$FD'=FD=FC$、$\angle AD'F=90^\circ$。直角 $\triangle FD'E\cong\triangle FCE$（HL），$D'E=CE$。所以 $AE=AD'+D'E=CD+EC$。</p>
 === 習題 3
 zh: 設點 $M$ 在圓的直徑 $AB$ 上，弦 $CD$ 過 $M$ 且與 $AB$ 成 $45^\circ$ 角。證明：$CM^2+DM^2$ 是定值（與 $M$ 的選取無關）。
-sol: <figure class="bkfig"><svg viewBox="0 0 200 200" width="200" role="img" aria-label="過直徑上一點的 45° 弦">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="100" cy="100" r="78"/><line x1="22" y1="100" x2="178" y2="100"/><line x1="32.9" y1="139.8" x2="139.8" y2="32.9"/><line x1="72.7" y1="100" x2="32.9" y2="60.2" stroke-dasharray="5 4"/><line x1="32.9" y1="139.8" x2="32.9" y2="60.2" stroke-dasharray="5 4"/><line x1="32.9" y1="60.2" x2="139.8" y2="32.9" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="11" y="104.9" text-anchor="middle">A</text><text x="189" y="104.9" text-anchor="middle">B</text><text x="72.7" y="93.9" text-anchor="middle">M</text><text x="25.1" y="152.5" text-anchor="middle">C</text><text x="147.6" y="30" text-anchor="middle">D</text><text x="22.7" y="57.3" text-anchor="middle">C′</text></g>
-</svg><figcaption>$C'$ 是 $C$ 關於 $AB$ 的對稱點；$\angle C'MD=90^\circ$</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">O = (100,100)
+A = (22,100)
+k = circle(O, A)
+B = reflectp(A, O)
+lab = line(A, B)
+M = on(lab, 72.7, 100)
+C = on(k, 32.9, 139.8)
+D = second(k, C, M)
+Cp = reflect(C, A, B)
+draw circle k
+draw seg A B
+draw seg C D
+draw seg M Cp dash
+draw seg C Cp dash
+draw seg Cp D dash
+hide O
+</pre><figcaption>$C'$ 是 $C$ 關於 $AB$ 的對稱點；$\angle C'MD=90^\circ$</figcaption></figure>
 <p>用 $C'$、$D'$ 表示 $C$、$D$ 關於直線 $AB$ 的對稱點，則 $\angle C'MD=90^\circ$，$CM^2+DM^2=C'M^2+DM^2=C'D^2$。而 $\angle C'CD=45^\circ$，弦 $C'D$ 所對的圓周角固定，$C'D$ 是定長：$C'D=2R\sin45^\circ=\sqrt2R$。</p>
 ans: $CM^2+DM^2=2R^2$（$R$ 為半徑）
 
@@ -144,9 +325,19 @@ zh: 已知直線 $l$ 及位於 $l$ 同側的兩點 $A$、$B$。試在 $l$ 上取
 sol: <p>作 $A$ 關於 $l$ 的對稱點 $A'$，連 $A'B$ 與 $l$ 的交點就是所求的 $P$。對 $l$ 上任一點 $Q$，$QA+QB=QA'+QB\ge A'B=PA'+PB=PA+PB$。</p>
 === 習題 5
 zh: $P$ 是 $\triangle ABC$ 中 $\angle A$ 的外角平分線上一點（$P\ne A$）。證明：$PB+PC\gt AB+AC$。
-sol: <figure class="bkfig"><svg viewBox="0 0 168 200" width="168" role="img" aria-label="外角平分線上一點">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="83.2,93.3 22,178 106.7,178"/><line x1="138.8" y1="103.2" x2="22" y2="178"/><line x1="138.8" y1="103.2" x2="106.7" y2="178"/><line x1="62.3" y1="89.5" x2="145.7" y2="104.5"/><line x1="83.2" y1="93.3" x2="134.7" y2="22" stroke-dasharray="5 4"/><line x1="138.8" y1="103.2" x2="134.7" y2="22" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="75.4" y="90.4" text-anchor="middle">A</text><text x="14.2" y="190.7" text-anchor="middle">B</text><text x="106.7" y="193.9" text-anchor="middle">C</text><text x="149.8" y="108.1" text-anchor="middle">P</text><text x="134.7" y="15.9" text-anchor="middle">D</text></g>
-</svg><figcaption>$C$ 關於 $AP$ 的對稱點 $D$ 落在 $BA$ 的延長線上（虛線）</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (83.2,93.3)
+B = (22,178)
+C = (106.7,178)
+q = (145.7,104.5)
+hide q
+lb = line(A, q)
+P = on(lb, 138.8, 103.2)
+D = reflect(C, A, P)
+draw poly A B C
+draw seg P B
+draw seg P C
+draw line A P
+draw seg A D dash
+draw seg P D dash
+</pre><figcaption>$C$ 關於 $AP$ 的對稱點 $D$ 落在 $BA$ 的延長線上（虛線）</figcaption></figure>
 <p>$C$ 關於 $AP$ 的對稱點 $D$ 必在 $BA$ 的延長線上，$PD=PC$、$AD=AC$。所以 $PB+PC=PB+PD\gt BD=AB+AD=AB+AC$。這裡透過反射把折線 $AB+AC$ 化為直線段 $BD$，並把有關線段集中到 $\triangle BPD$ 中，參考例 6。</p>

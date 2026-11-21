@@ -5,11 +5,23 @@ order: 40
 
 === body
 <div class="hero">過一點 $O$ 的<b>每一條</b>直線都平分面積（或周長）⇒ 四邊形是<b>平行四邊形</b></div>
-<figure class="bkfig"><svg viewBox="0 0 230 193" width="230" role="img" aria-label="過定點的直線平分面積">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="37.9,37.9 22,170.8 192.1,154.9 208,22"/><line x1="30" y1="104.4" x2="200" y2="88.4"/><line x1="32.7" y1="81.8" x2="197.3" y2="111"/><line x1="27.3" y1="127" x2="202.7" y2="65.8"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="30.2" y="35.1" text-anchor="middle">A</text><text x="14.2" y="183.5" text-anchor="middle">B</text><text x="199.8" y="167.5" text-anchor="middle">C</text><text x="215.8" y="19.1" text-anchor="middle">D</text><text x="115" y="112.3" text-anchor="middle">O</text><text x="19" y="109.3" text-anchor="middle">E</text><text x="211" y="93.3" text-anchor="middle">F</text><text x="21.7" y="86.7" text-anchor="middle">P</text><text x="16.3" y="131.9" text-anchor="middle">M</text><text x="208.3" y="115.9" text-anchor="middle">Q</text><text x="213.7" y="70.7" text-anchor="middle">N</text></g>
-</svg><figcaption>過 $O$ 的三條直線 $EF$、$PQ$、$MN$（結論是 $ABCD$ 為平行四邊形，圖按結論畫）</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A = (37.9,37.9)
+B = (22,170.8)
+C = (192.1,154.9)
+D = (208,22)
+O = (115,112.3)
+l = line(A, B)
+E = on(l, 30, 104.4)
+F = inter(E, O, C, D)
+P = on(l, 32.7, 81.8)
+Q = inter(P, O, C, D)
+M = on(l, 27.3, 127)
+N = inter(M, O, C, D)
+draw poly A B C D
+draw line E F
+draw line P Q
+draw line M N
+</pre><figcaption>過 $O$ 的三條直線 $EF$、$PQ$、$MN$（結論是 $ABCD$ 為平行四邊形，圖按結論畫）</figcaption></figure>
 <div class="cards">
 <div class="card"><h4>① 面積：兩個小三角形相等</h4><div class="rule">$S_{\triangle OEP}=S_{\triangle OFQ}$ ⇒ $PO\cdot EO=QO\cdot FO$</div>
 <div class="eg">兩條線各一式，相除得 $\frac{PO}{MO}=\frac{QO}{NO}$ ⇒ $AB\parallel CD$ <span class="pill">比例 ⇒ 平行</span></div></div>
