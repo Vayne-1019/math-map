@@ -51,10 +51,15 @@ $$a_5^2\ge2a_1^2+3a_2^2&gt;a_1^2+a_2^2+2a_1a_2=(a_1+a_2)^2,$$
 
 === 例 5 | 等邊五邊形
 zh: 設凸五邊形 $ABCDE$ 的各邊相等，且 $\angle A\ge\angle B\ge\angle C\ge\angle D\ge\angle E$。證明它是正五邊形。
-sol: <figure class="bkfig"><svg viewBox="0 0 200 193" width="200" role="img" aria-label="五邊形 ABCDE 與對角線 BE、CE">
-<g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="100,31.2 34.6,78.7 59.6,155.7 140.4,155.7 165.4,78.7"/><line x1="34.6" y1="78.7" x2="165.4" y2="78.7" stroke-dasharray="5 4"/><line x1="59.6" y1="155.7" x2="165.4" y2="78.7" stroke-dasharray="5 4"/></g>
-<g fill="currentColor" font-size="15" font-style="italic"><text x="96" y="27.2">A</text><text x="21.6" y="83.7">B</text><text x="47.6" y="169.7">C</text><text x="143.4" y="169.7">D</text><text x="169.4" y="83.7">E</text></g>
-</svg><figcaption>比較等腰三角形 ABE 與 DCE，再看 △EBC</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (100,31.2)
+B = (34.6,78.7)
+C = (59.6,155.7)
+D = (140.4,155.7)
+E = (165.4,78.7)
+draw poly A B C D E
+draw seg B E dash
+draw seg C E dash
+</pre><figcaption>比較等腰三角形 ABE 與 DCE，再看 △EBC</figcaption></figure>
 只要證明 5 個內角相等。分兩步：先證 $\angle A=\angle B=\angle C=\angle D$，再證 $\angle B=\angle C=\angle D=\angle E$，兩者合起來就是結論。
 <br>先設 $\angle A&gt;\angle D$。看等腰三角形 $ABE$ 和 $DCE$：它們的腰長相同（都是五邊形的邊長），而頂角 $\angle A&gt;\angle D$，所以底邊與底角都不同⟦為什麼｜腰長相同時，頂角越大，底邊越長（餘弦定理），底角 $\frac{180^\circ-\text{頂角}}2$ 越小。⟧：
 $$BE&gt;CE,\qquad\angle EBA&lt;\angle ECD.$$
@@ -80,11 +85,29 @@ ans: 不能。
 
 === 例 7 | 剪三角形的紙帶
 zh: 要從無限長的紙帶上剪出任何形狀、面積為 1 的三角形，紙帶的寬度至少應是多少？
-sol: <figure class="bkfig"><svg viewBox="0 0 300 173" width="300" role="img" aria-label="紙帶中的三角形 ABC，BB1 垂直於紙帶邊，交 AC 於 M">
-<g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="14" y1="132.3" x2="286" y2="132.3"/><line x1="14" y1="37.7" x2="286" y2="37.7"/><polygon points="49.5,117.5 150,46.5 244.6,129.3"/><line x1="49.5" y1="117.5" x2="49.5" y2="132.3" stroke-dasharray="5 4" stroke-width="1"/><line x1="150" y1="46.5" x2="150" y2="132.3" stroke-dasharray="5 4" stroke-width="1"/><line x1="244.6" y1="129.3" x2="244.6" y2="132.3" stroke-dasharray="5 4" stroke-width="1"/><line x1="150" y1="46.5" x2="150" y2="123.6" stroke="#c2562b" stroke-width="2"/></g>
-<g fill="currentColor"><circle cx="49.5" cy="117.5" r="2.6"/><circle cx="150" cy="46.5" r="2.6"/><circle cx="244.6" cy="129.3" r="2.6"/><circle cx="150" cy="123.6" r="2.6"/><circle cx="150" cy="132.3" r="2.6"/></g>
-<g fill="currentColor" font-size="15" font-style="italic"><text x="36.5" y="122.5">A</text><text x="146" y="40.5">B</text><text x="248.6" y="134.3">C</text><text x="154" y="128.6">M</text><text x="45.5" y="149.3">A<tspan font-size="11" dy="3">1</tspan></text><text x="146" y="149.3">B<tspan font-size="11" dy="3">1</tspan></text><text x="240.6" y="149.3">C<tspan font-size="11" dy="3">1</tspan></text><text x="246" y="32.7" font-style="normal" font-size="12">紙帶寬</text></g>
-</svg><figcaption>B 的投影 $B_1$ 夾在 $A_1$、$C_1$ 之間；紅色 $BM$ 不超過紙帶寬，而三角形的高不超過 $BM$</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (49.5,117.5)
+B = (150,46.5)
+C = (244.6,129.3)
+p = (14,132.3)
+q = (286,132.3)
+r = (14,37.7)
+t = (286,37.7)
+hide p
+hide q
+hide r
+hide t
+A1 = foot(A, p, q)
+B1 = foot(B, p, q)
+C1 = foot(C, p, q)
+M = inter(A, C, B, B1)
+draw poly A B C
+draw line p q
+draw line r t
+draw seg A A1 dash
+draw seg B B1 dash
+draw seg C C1 dash
+draw seg B M accent
+</pre><figcaption>B 的投影 $B_1$ 夾在 $A_1$、$C_1$ 之間；紅色 $BM$ 不超過紙帶寬，而三角形的高不超過 $BM$</figcaption></figure>
 這也是以問句出現的題目，需要對紙帶寬度給出估計，可以先從特殊的三角形看起，這正好為使用反證法提供基礎。
 <br>面積為 1 的正三角形，邊長 $a=\dfrac2{\sqrt[4]3}$，高 $h=\sqrt[4]3$⟦計算｜$\frac{\sqrt3}4a^2=1$ 得 $a^2=\frac4{\sqrt3}$，$a=\frac2{\sqrt[4]3}$；$h=\frac{\sqrt3}2a=\frac{\sqrt3}{\sqrt[4]3}=\sqrt[4]3$。⟧。所以猜測紙寬至少應為 $\sqrt[4]3$。
 <br><b>紙寬不能小於 $\sqrt[4]3$。</b>假設從寬度小於 $\sqrt[4]3$ 的紙帶上可以剪出面積為 1 的正三角形 $ABC$。把三個頂點投影到紙帶的一邊上，不妨設 $B$ 的投影 $B_1$ 位於 $A$、$C$ 的投影 $A_1$、$C_1$ 之間。連 $BB_1$，設它與 $AC$ 交於 $M$。三角形從 $B$ 出發的高不超過 $BM$（垂線段最短），而 $BM$ 不超過紙帶寬度，所以正三角形的高小於 $\sqrt[4]3$，面積小於 1，矛盾。

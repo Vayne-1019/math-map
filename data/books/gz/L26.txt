@@ -26,11 +26,21 @@ ans: 不能。
 
 === 例 3 | 垂足在邊上
 zh: 從凸多邊形內部任一點向各邊所在直線引垂線。證明：至少有一個垂足位於某條邊上，而不是全都位於各邊的延長線上。
-sol: <figure class="bkfig"><svg viewBox="0 0 280 222" width="280" role="img" aria-label="凸多邊形內一點 O，到最近邊所在直線的垂足 P 若在邊外，OP 會先穿過另一邊">
-<g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="19.3" y1="182" x2="260.8" y2="182" stroke-dasharray="5 4" stroke-width="1"/><polygon points="56,182 192.5,182 234.5,134.8 239.8,77 161,29.8 66.5,61.3"/><line x1="213.5" y1="121.6" x2="213.5" y2="182" stroke="#c2562b"/></g>
-<g fill="currentColor"><circle cx="213.5" cy="121.6" r="2.6"/><circle cx="213.5" cy="182" r="2.6"/><circle cx="213.5" cy="158.4" r="2.6"/></g>
-<g fill="currentColor" font-size="15" font-style="italic"><text x="45" y="195">A</text><text x="188.5" y="199">B</text><text x="222.5" y="139.8">C</text><text x="243.8" y="82">D</text><text x="217.5" y="126.6">O</text><text x="215.5" y="195">P</text><text x="217.5" y="163.4">Q</text></g>
-</svg><figcaption>若垂足 $P$ 落在邊 $AB$ 的延長線上，$OP$ 必先穿過另一條邊（圖中是 $BC$）於 $Q$</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (56,182)
+B = (192.5,182)
+C = (234.5,134.8)
+D = (239.8,77)
+E = (161,29.8)
+F = (66.5,61.3)
+O = (213.5,121.6)
+P = foot(O, A, B)
+Q = inter(O, P, B, C)
+draw poly A B C D E F
+draw line A B dash
+draw seg O P accent
+hide E
+hide F
+</pre><figcaption>若垂足 $P$ 落在邊 $AB$ 的延長線上，$OP$ 必先穿過另一條邊（圖中是 $BC$）於 $Q$</figcaption></figure>
 無法具體找出這個垂足，仍用反證法。假設從凸多邊形內一點 $O$ 向各邊所作垂線的垂足，都位於邊的延長線上。設 $AB$ 是離 $O$ 最近的邊（指 $O$ 到該邊所在直線的距離最小），作直線 $AB$ 的垂線 $OP$，$P$ 為垂足，於是 $P$ 在線段 $AB$ 之外，當然也在多邊形之外。所以線段 $OP$ 必與多邊形的某條邊相交⟦為什麼｜$O$ 在多邊形內、$P$ 在多邊形外，連接它們的線段必穿過多邊形的邊界。⟧，這條邊顯然不是 $AB$，設它為 $CD$，交點為 $Q$，則 $OQ&lt;OP$。但 $O$ 到直線 $CD$ 的距離不超過 $OQ$，因而小於 $O$ 到 $AB$ 的距離 $OP$，與 $AB$ 的選取矛盾。可見垂足 $P$ 必位於 $AB$ 邊的內部。
 
 === text

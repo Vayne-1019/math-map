@@ -46,24 +46,72 @@ $m=1$ 時右邊是 $2\le k+1$；$m\ge2$ 時右邊 $=2+2+3+\cdots+m$ 共 $m$ 項�
 
 === 例 3 | 分成等腰三角形
 zh: 設正整數 $n\ge3$，證明：可以把一個正三角形分成 $n$ 個等腰三角形。
-sol: <figure class="bkfig"><svg viewBox="0 0 320 161" width="320" role="img" aria-label="正三角形分成 3 個、4 個等腰三角形">
-<g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="82.8,29.9 23.5,132.7 142.2,132.7"/><line x1="82.8" y1="98.4" x2="82.8" y2="29.9"/><line x1="82.8" y1="98.4" x2="23.5" y2="132.7"/><line x1="82.8" y1="98.4" x2="142.2" y2="132.7"/><polygon points="237.2,29.9 177.8,132.7 296.5,132.7"/><line x1="237.2" y1="29.9" x2="237.2" y2="132.7"/><line x1="237.2" y1="132.7" x2="207.5" y2="81.3"/><line x1="237.2" y1="132.7" x2="266.8" y2="81.3"/></g>
-<g fill="currentColor" font-size="15" font-style="italic"><text x="66.8" y="149.1" font-style="normal" font-size="12">n = 3</text><text x="221.2" y="149.1" font-style="normal" font-size="12">n = 4</text></g>
-</svg><figcaption>左：連中心到三頂點，得 3 個頂角 120° 的等腰三角形；右：2 個小正三角形與 2 個頂角 120° 的等腰三角形</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">a = (82.8,29.9)
+b = (23.5,132.7)
+c = (142.2,132.7)
+o = centroid(a, b, c)
+p = (237.2,29.9)
+q = (177.8,132.7)
+r = (296.5,132.7)
+d = mid(q, r)
+e = mid(p, q)
+f = mid(p, r)
+hide a
+hide b
+hide c
+hide o
+hide p
+hide q
+hide r
+hide d
+hide e
+hide f
+draw poly a b c
+draw seg o a
+draw seg o b
+draw seg o c
+draw poly p q r
+draw seg p d
+draw seg d e
+draw seg d f
+</pre><figcaption>左：連中心到三頂點，得 3 個頂角 120° 的等腰三角形；右：2 個小正三角形與 2 個頂角 120° 的等腰三角形</figcaption></figure>
 觀察發現，$n=3$ 和 $n=4$ 可以按上圖的方式分割。兩種分割中都出現了頂角 $120^\circ$、底角 $30^\circ$ 的等腰三角形，而這種三角形又可以分成 3 個等腰三角形：1 個正三角形和 2 個頂角 $120^\circ$ 的等腰三角形（見下圖）。
-<figure class="bkfig"><svg viewBox="0 0 260 134" width="260" role="img" aria-label="頂角 120° 的等腰三角形分成 1 個正三角形與 2 個頂角 120° 的等腰三角形">
-<g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="20.3,105.3 239.9,105.3 130.1,41.9"/><line x1="130.1" y1="41.9" x2="93.5" y2="105.3"/><line x1="130.1" y1="41.9" x2="166.7" y2="105.3"/><polygon points="130.1,41.9 93.5,105.3 166.7,105.3" fill="#c2562b" fill-opacity="0.12" stroke="#c2562b"/></g>
-<g fill="currentColor" font-size="15" font-style="italic"><text x="118.1" y="35.9" font-style="normal" font-size="11">120°</text></g>
-</svg><figcaption>底邊三等分：中間（紅）是正三角形，兩側仍是頂角 120° 的等腰三角形</figcaption></figure>
+<figure class="bkfig"><pre class="geo">p = (20.3,105.3)
+q = (239.9,105.3)
+r = (130.1,41.9)
+s = along(p, q, 1/3)
+t = along(p, q, 2/3)
+hide p
+hide q
+hide r
+hide s
+hide t
+draw poly p q r
+draw seg r s
+draw seg r t
+draw poly r s t accent fill
+</pre><figcaption>底邊三等分：中間（紅）是正三角形，兩側仍是頂角 120° 的等腰三角形</figcaption></figure>
 ⟦為什麼下圖的三塊都是等腰｜設腰長 1，底長 $\sqrt3$，三等分點把底分成三段，每段 $\frac{\sqrt3}3$。頂點到三等分點的距離是 $\sqrt{\frac14+\frac1{12}}=\frac{\sqrt3}3$，所以中間是邊長 $\frac{\sqrt3}3$ 的正三角形；兩側三角形有兩邊都等於 $\frac{\sqrt3}3$。⟧
 這啟發了下面的證法：$n=3$、$n=4$ 時可以分割，命題成立。假設 $n=2k-1$ 與 $n=2k$ 時都可以分割，並且分出的三角形中都有一個頂角 $120^\circ$、底角 $30^\circ$ 的等腰三角形。把這個三角形照上圖再分成 3 個，三角形數目增加 2，所以 $n=2(k+1)-1=2k+1$ 與 $n=2(k+1)=2k+2$ 時命題也成立，而且分出的三角形中仍有這種三角形。所以對一切 $n\ge3$ 都能分割。
 <br>這裡根據「這種三角形容易一分為三、數目增加 2，且仍保有這種三角形」的特點，選擇了<b>以跨度 2 前進</b>。為了證到所有 $n\ge3$，用了兩個起點：從 $n=3$ 出發跨遍所有奇數，從 $n=4$ 出發跨遍所有偶數。<b>跨度加大，起點也要跟著增多</b>，這點切不可忽略。
 <br><b>也可以用跨度 3。</b>先分出 $n=4,5,6$ 的情形，並使分出的三角形中都至少有一個正三角形⟦怎麼分｜$n=4$：連三邊中點，得 4 個正三角形。$n=5$：$n=3$ 的分割中取一個頂角 $120^\circ$ 的三角形一分為三。$n=6$：$n=4$ 那種分割（上圖右）中取一個頂角 $120^\circ$ 的三角形一分為三。這兩種都含有正三角形。⟧；之後把一個正三角形按中點連線分成 4 個正三角形，數目增加 3，且仍有正三角形。分別從這 3 個起點出發，3 步一跨，就跨遍了所有 $3k+1$、$3k+2$、$3k+3$ 形的整數；$n=3$ 另照上面的方法分出即可。
 <br><b>甚至可以用跨度 1。</b>$n=3,4$ 按前面的方式分割；$n=5$ 用下圖的方案：
-<figure class="bkfig"><svg viewBox="0 0 230 207" width="230" role="img" aria-label="正三角形分成 5 個等腰三角形，其中 PBC 是等腰直角三角形">
-<g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="115,28.6 27.9,179.4 202.1,179.4"/><line x1="115" y1="92.4" x2="115" y2="28.6"/><line x1="115" y1="92.4" x2="27.9" y2="179.4"/><line x1="115" y1="92.4" x2="202.1" y2="179.4"/><line x1="115" y1="92.4" x2="59.8" y2="124.2"/><line x1="115" y1="92.4" x2="170.2" y2="124.2"/><polygon points="115,92.4 27.9,179.4 202.1,179.4" fill="#c2562b" fill-opacity="0.12" stroke="#c2562b"/><line x1="115" y1="92.4" x2="115" y2="179.4" stroke-dasharray="5 4" stroke="#c2562b" stroke-width="1"/></g>
-<g fill="currentColor" font-size="15" font-style="italic"><text x="111" y="24.6">A</text><text x="15.9" y="193.4">B</text><text x="205.1" y="193.4">C</text><text x="117" y="89.4">P</text><text x="46.8" y="129.2">X</text><text x="174.2" y="129.2">Y</text></g>
-</svg><figcaption>紅色 △PBC 是等腰直角三角形（$\angle BPC=90^\circ$），沿斜邊上的高（虛線）可再一分為二；其餘四個：$XB=XP$、$PA=PX$、$YC=YP$、$PA=PY$</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A = (115,28.6)
+B = (27.9,179.4)
+C = (202.1,179.4)
+P = rotate(C, B, 45)
+M = mid(B, C)
+X = along(A, B, 0.61)
+Y = along(A, C, 0.61)
+draw poly A B C
+draw seg P A
+draw seg P B
+draw seg P C
+draw seg P X
+draw seg P Y
+draw seg P M dash
+draw poly P B C accent fill
+</pre><figcaption>紅色 △PBC 是等腰直角三角形（$\angle BPC=90^\circ$），沿斜邊上的高（虛線）可再一分為二；其餘四個：$XB=XP$、$PA=PX$、$YC=YP$、$PA=PY$</figcaption></figure>
 ⟦下圖為什麼可以｜$\angle BPC=90^\circ$、$PB=PC$，$\triangle PBC$ 等腰直角。$\triangle ABP$ 中 $\angle PAB=30^\circ$、$\angle PBA=15^\circ$；在 $AB$ 上取 $X$ 使 $XB=XP$，則 $\angle XPB=15^\circ$，$\angle AXP=30^\circ=\angle XAP$，所以 $PA=PX$。兩個三角形都等腰，$\triangle ACP$ 同理。⟧
 分出的 5 個等腰三角形中有一個是等腰直角三角形；作它斜邊上的高，就把它分成兩個等腰直角三角形，數目加 1 且仍有等腰直角三角形。這樣就以跨度 1 從 $n=5$ 向前推進了。
 <br>例 3 說明歸納法在跨度的選取上非常靈活。但要提醒：<b>變動跨度時，起點的設置一定要相應變動</b>，千萬不可在邏輯上造成漏洞。1988 年全國高中聯賽第二試有一道需要以跨度 3 前進的題目，因為還牽涉命題的轉化，放在第 29 講介紹。
