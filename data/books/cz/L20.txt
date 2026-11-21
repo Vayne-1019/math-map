@@ -85,6 +85,8 @@ draw seg C F
 draw seg E F
 draw seg A D
 draw seg C G dash
+lp = (170.2, 178.3)
+text lp c l
 </pre><figcaption>$AB\gt AC$ 的情形：$l$ 平分 $\angle A$，$EF\perp l$ 於 $D$；作 $CG\parallel AB$（虛線）</figcaption></figure>
 <p>$\angle BEM=\angle CGM$（內錯角），$\angle BME=\angle CMG$（對頂角），$BM=CM$，所以 $\triangle BEM\cong\triangle CGM$，$BE=CG$。</p>
 <p>又 $AD$ 平分 $\angle A$ 且 $AD\perp EF$，所以 $\triangle AEF$ 是等腰三角形，$\angle AEF=\angle AFE$。而 $\angle AEF=\angle CGF$（同位角），所以 $\angle CGF=\angle CFG$，$CG=CF$。從而 $BE=CF$。最後</p>
@@ -152,6 +154,8 @@ draw seg A C dash
 draw seg O D dash
 draw seg A E dash
 draw line P1 P2
+tl = (225.3, 26.9)
+text tl c t
 </pre><figcaption>$OD\perp t$（$D$ 是切點）、$AE\perp t$，連 $AD$（虛線）；三條垂線互相平行</figcaption></figure>
 <p><b>證</b>　過 $O$ 作 $OD\perp t$ 於 $D$，過 $A$ 作 $AE\perp t$ 於 $E$，連 $AD$。$D$ 是 $t$ 與 $\odot O$ 的切點，且 $OD\parallel AE\parallel BC$，所以 $\angle BCA=\angle CAE$。因為 $OA=AB$，三條平行線在 $t$ 上截出 $DE=EC$⟦為什麼｜平行線截比例線段：$O$、$A$、$B$ 共線且 $OA=AB$，三條平行線 $OD$、$AE$、$BC$ 在另一條直線 $t$ 上截出的兩段也相等。⟧。又 $AE\perp DC$，所以直角 $\triangle AED\cong\triangle AEC$，$\angle DAE=\angle CAE$。最後 $OA=OD$，所以</p>
 $$\angle OAD=\angle ODA=\angle DAE=\angle CAE=\angle ACB,$$
@@ -163,11 +167,12 @@ sol: <p><b>分析</b>　在 $BF$ 上取 $D$ 使 $FD=AF$，則 $AD=2AF$，問題�
 A = (218.5, 68.1)
 B = (32.1, 175.6)
 C = (218.5, 191.9)
-O = circumcenter(A, B, C)
-k = circle(O, A)
+o = circumcenter(A, B, C)
+k = circle(o, A)
 E = on(k, 139.4, 22.4)
 G = on(k, 139.4, 237.6)
 H = along(C, A, 1.37)
+D = (128.4, 118.6)
 F = foot(E, A, B)
 draw poly A B C
 draw seg A H
@@ -230,6 +235,8 @@ draw seg A F
 draw seg F M
 draw seg B M dash
 draw seg C M dash
+D = (167.2, 107.9)
+H = (143.8, 164.6)
 </pre><figcaption>$EF\parallel AN$；作 $BH\perp FM$、$CD\perp FM$（虛線）</figcaption></figure>
 <p>直角 $\triangle MBH\cong\triangle MCD$，所以 $BH=CD$。因為 $AN\parallel FH$ 且 $AN$ 平分 $\angle BAC$，所以 $\angle F=\angle CAN=\angle NAB=\angle FEA$，$AE=AF$，並且 $\angle BEH=\angle CFD$。於是直角 $\triangle BEH\cong\triangle CFD$，$BE=CF$。而</p>
 $$BE+CF=(AB-AE)+(AC+AF)=AB+AC,$$
