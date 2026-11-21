@@ -178,12 +178,12 @@ ans: $\big(a+\frac{a_1}2\big)x+\big(b+\frac{b_1}2\big)y+\frac{aa_1+bb_1}2+c_1=0$
 
 === 例 7 | 三條公共弦
 zh: 已知三個圓兩兩相交。證明：所得的三條公共弦所在直線，或者交於一點，或者兩兩平行。
-sol: <figure class="bkfig"><pre class="geo">O1 = (98, 171)
-O2 = (193, 156.4)
-O3 = (134.5, 83.4)
-k1 = circler(O1, 73)
-k2 = circler(O2, 62.1)
-k3 = circler(O3, 58.4)
+sol: <figure class="bkfig"><pre class="geo">o1 = (98, 171)
+o2 = (193, 156.4)
+o3 = (134.5, 83.4)
+k1 = circler(o1, 73)
+k2 = circler(o2, 62.1)
+k3 = circler(o3, 58.4)
 a1 = meet(k1, k2, 142.3, 92.6)
 b1 = meet(k1, k2, 163.9, 232.5)
 a2 = meet(k2, k3, 117.8, 153.7)

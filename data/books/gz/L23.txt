@@ -13,26 +13,26 @@ status: 完成
 <p>$z=x+iy$ 的<b>共軛複數</b>是 $\bar z=x-iy$，兩者在複數平面上對實軸對稱。注意</p>
 $$z\bar z=x^2+y^2=|z|^2,\qquad(1)$$
 <p>其中 $|z|=\sqrt{x^2+y^2}$ 是點 $z$ 到原點的距離。$z=x+iy$ 稱為複數的<b>代數形式</b>。</p>
-<figure class="bkfig"><pre class="geo">O = (62.1, 115)
-Z = (167.9, 47.7)
-Z' = (167.9, 182.3)
+<figure class="bkfig"><pre class="geo">o = (62.1, 115)
+z = (167.9, 47.7)
+z' = (167.9, 182.3)
 x = (216, 115)
-draw seg O Z accent
-draw seg O Z' dash
-draw seg Z Z' dash
-angle x O Z
+draw seg o z accent
+draw seg o z' dash
+draw seg z z' dash
+angle x o z
 </pre><figcaption>z 與 z̄ 對實軸對稱；|z| 是長度，θ 是輻角</figcaption></figure>
 <p>設 $z_1=x_1+iy_1$、$z_2=x_2+iy_2$，則 $z_1+z_2=(x_1+x_2)+i(y_1+y_2)$，所以複數的加法符合平行四邊形法則。也就是說，複數 $z$ 也可以看成從原點出發、終點為 $z$ 的向量，複數加法就是向量加法。</p>
-<figure class="bkfig"><pre class="geo">O = (38, 129.2)
-Z1 = (153.2, 105.2)
-Z2 = (76.4, 52.4)
-m = mid(Z1, Z2)
-Z12 = reflectp(O, m)
-draw seg O Z1
-draw seg O Z2
-draw seg O Z12 accent
-draw seg Z1 Z12 dash
-draw seg Z2 Z12 dash
+<figure class="bkfig"><pre class="geo">o = (38, 129.2)
+z1 = (153.2, 105.2)
+z2 = (76.4, 52.4)
+m = mid(z1, z2)
+z12 = reflectp(o, m)
+draw seg o z1
+draw seg o z2
+draw seg o z12 accent
+draw seg z1 z12 dash
+draw seg z2 z12 dash
 </pre><figcaption>加法 = 向量相加（平行四邊形法則）</figcaption></figure>
 <p>從正實軸逆時針轉到向量 $\overrightarrow{OZ}$ 所轉的角 $\theta$ 稱為 $z$ 的<b>輻角</b>，記作 $\arg z$（只有 0 沒有輻角）。由 $x=|z|\cos\theta$、$y=|z|\sin\theta$ 得</p>
 $$z=|z|(\cos\theta+i\sin\theta),\qquad(3)$$
@@ -45,16 +45,16 @@ $$z\,e^{i\varphi}=|z|e^{i(\theta+\varphi)}.\qquad(6)$$
 <p><b>用 $e^{i\varphi}$ 乘 $z$，不改變模長，只把向量 $\overrightarrow{OZ}$ 繞原點旋轉 $\varphi$ 角。</b>這個認識是用複數解幾何題的關鍵。</p>
 <h3>二、兩點間的距離</h3>
 <p>設 $z_1=x_1+iy_1$、$z_2=x_2+iy_2$，則 $z_2-z_1=z_2+(-z_1)$ 代表向量 $\overrightarrow{Z_1Z_2}$。所以 $Z_1,Z_2$ 兩點的距離是 $|z_2-z_1|$，用實部虛部寫出來就是 $\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$，正是解析幾何的距離公式。</p>
-<figure class="bkfig"><pre class="geo">O = (99.9, 95.6)
-Z1 = (31.2, 95.6)
-Z2 = (142.9, 39.8)
-q = mid(Z2, O)
-W = reflectp(Z1, q)
-draw seg Z1 Z2 accent
-draw seg O Z1
-draw seg O Z2
-draw seg O W dash
-draw seg Z2 W dash
+<figure class="bkfig"><pre class="geo">o = (99.9, 95.6)
+z1 = (31.2, 95.6)
+z2 = (142.9, 39.8)
+q = mid(z2, o)
+w = reflectp(z1, q)
+draw seg z1 z2 accent
+draw seg o z1
+draw seg o z2
+draw seg o w dash
+draw seg z2 w dash
 </pre><figcaption>紅色向量 $\overrightarrow{Z_1Z_2}$ 平移到原點，就是 $z_2-z_1$</figcaption></figure>
 <p>滿足 $|z|=1$ 的點全體，是以 $O$ 為圓心、1 為半徑的<b>單位圓</b>。$|z|=1$ 也可寫成 $z\bar z=1$，用實部虛部表示就是 $x^2+y^2=1$，與解析幾何一致。一般地，以 $z_0$ 為圓心、$r$ 為半徑的圓是</p>
 $$|z-z_0|=r.\qquad(7)$$
@@ -66,8 +66,8 @@ k = circler(O, 68.6)
 Z1 = on(k, 170.2, 77.1)
 Z2 = on(k, 51.4, 74.3)
 m = mid(Z1, Z2)
-R = reflectp(O, m)
-Z3 = reflectp(R, O)
+r = reflectp(O, m)
+Z3 = reflectp(r, O)
 draw circle k dash
 draw poly Z1 Z2 Z3 accent
 draw seg O Z1
@@ -128,15 +128,15 @@ $$a+c=b+d.\qquad(9)$$
 
 === 例 4 | 中點四邊形
 zh: 在任意給定的四邊形每一條邊上取中點，證明這四點構成一個平行四邊形。
-sol: <figure class="bkfig"><pre class="geo">A = (27.4, 143.5)
-B = (192.6, 125.6)
-C = (156.9, 27.4)
-D = (58.7, 54.2)
-m1 = mid(A, B)
-m2 = mid(B, C)
-m3 = mid(C, D)
-m4 = mid(D, A)
-draw poly A B C D
+sol: <figure class="bkfig"><pre class="geo">a = (27.4, 143.5)
+b = (192.6, 125.6)
+c = (156.9, 27.4)
+d = (58.7, 54.2)
+m1 = mid(a, b)
+m2 = mid(b, c)
+m3 = mid(c, d)
+m4 = mid(d, a)
+draw poly a b c d
 draw poly m1 m2 m3 m4 accent
 </pre><figcaption>紅色是四邊中點連成的平行四邊形</figcaption></figure>
 設原四邊形的四個頂點依次表示複數 $a,b,c,d$，四邊中點依次是
