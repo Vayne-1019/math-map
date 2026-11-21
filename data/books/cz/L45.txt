@@ -103,12 +103,15 @@ $BC$ 對應的對角線是 $DA$。由 $A,D$ 分別作直線 $BC$ 的垂線，垂
 
 === 例 8
 zh: 用 $n$（$n\ge5$）根硬細棒以鉸鏈連成一個平面活動 $n$ 邊形 $AB\cdots CD\cdots E$。求證：一定可以把這個 $n$ 邊形拉成一個三角形。
-sol: <figure class="bkfig"><svg viewBox="0 0 250 200" width="230" role="img" aria-label="n邊形，最大邊AB=a，M在CD上">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="55,180 205,180 185,45 105,30 45,115"/></g>
-  <g fill="currentColor"><circle cx="145" cy="37.5" r="2.5"/></g>
-  <g fill="currentColor" font-size="14" font-style="italic"><text x="40" y="196">A</text><text x="206" y="196">B</text><text x="190" y="44">C</text><text x="96" y="24">D</text><text x="28" y="116">E</text><text x="140" y="28">M</text>
-  <text x="126" y="174">a</text><text x="142" y="56">b</text><text x="40" y="152">u</text><text x="66" y="70">v</text></g>
-</svg><figcaption>示意圖（只畫出五個頂點）：a 是最大邊，M 是其餘各邊連起來的中點</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">A = (55, 180)
+B = (205, 180)
+C = (185, 45)
+D = (105, 30)
+E = (45, 115)
+cd = line(C, D)
+M = on(cd, 145, 37.5)
+draw poly A B C D E
+</pre><figcaption>示意圖（只畫出五個頂點，頂點位置為近似）：AB 是最大邊（記為 a），M 是其餘各邊連起來的中點（M 在 CD 上為近似位置）；b、u、v 為其他各段的長度</figcaption></figure>
 <b>證明</b>：問題等於證明：可以找到三個頂點，把它們之間的折線（一條或幾條邊）拉直後，三條線段能構成三角形。設 $AB=a$ 是最大邊；除 $AB$ 外其餘 $n-1$ 條邊連成的折線，拉直後的中點記為 $M$。設這條折線總長 $2s$，則 $a&lt;2s$（多邊形一邊小於其餘各邊之和）。
 若 $M$ 恰好是某個頂點 $C$，可以拉成等腰三角形 $ABC$（三邊 $a,s,s$，$a&lt;2s$）。
 若 $M$ 不是頂點，設 $M$ 在邊 $CD=b$ 上（如圖）。記折線 $B\cdots C$ 長 $x$，折線 $D\cdots A$ 長 $y$，則 $x&lt;s$，$y&lt;s$，折線 $B\cdots D$ 長 $x+b$，折線 $C\cdots A$ 長 $b+y$。分三種情形：

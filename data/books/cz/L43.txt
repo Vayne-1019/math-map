@@ -78,16 +78,19 @@ $$S_{\triangle B'D'C}=\tfrac12(\lambda+\mu-\lambda\mu)ab,$$
 zh: 設四邊形 $ABCD$ 有外接圓。求證：對任意自然數 $n\ge4$，可以把 $ABCD$ 分成 $n$ 個都有外接圓的四邊形。
 sol: 若 $ABCD$ 是等腰梯形：等腰梯形一定有外接圓，只要在梯形內作 $n-1$ 條與底邊平行的線段，就把它分成 $n$ 個等腰梯形，結論成立。
 若 $ABCD$ 不是等腰梯形，只要把它分成幾個有外接圓的四邊形，其中一個是等腰梯形，問題就化歸成上面的情形。
-<figure class="bkfig"><svg viewBox="0 0 270 200" width="260" role="img" aria-label="圓內接四邊形ABCD分成四塊，其中APQD是等腰梯形">
-  <g fill="none" stroke="currentColor" stroke-width="1.5">
-    <polygon points="187.6,16.6 240.1,183.1 54.7,175 65.7,49.3"/>
-    <polyline points="193.8,181.1 150.8,44.9 111.7,55.3 101.1,177"/><line x1="187.6" y1="16.6" x2="150.8" y2="44.9"/><line x1="65.7" y1="49.3" x2="111.7" y2="55.3"/>
-  </g>
-  <g fill="currentColor" font-size="14" font-style="italic">
-    <text x="190" y="14">A</text><text x="244" y="194">B</text><text x="38" y="190">C</text><text x="48" y="46">D</text>
-    <text x="146" y="62">P</text><text x="110" y="72">Q</text><text x="96" y="194">R</text><text x="190" y="196">S</text>
-  </g>
-</svg><figcaption>ABSP、CDQR、APQD 是等腰梯形，PSRQ 的四個角與 ABCD 的對應相等</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A = (187.6, 16.6)
+B = (240.1, 183.1)
+C = (54.7, 175)
+D = (65.7, 49.3)
+P = (150.8, 44.9)
+Q = (111.7, 55.3)
+R = (101.1, 177)
+S = (193.8, 181.1)
+draw poly A B C D
+draw poly S P Q R
+draw seg A P
+draw seg D Q
+</pre><figcaption>ABSP、CDQR、APQD 是等腰梯形，PSRQ 的四個角與 ABCD 的對應相等（P、Q、R、S 為近似位置，角度條件未用作圖求出）</figcaption></figure>
 設 $ABCD$ 不是等腰梯形。圓內接四邊形對角互補：$\angle A+\angle C=\angle B+\angle D=180^\circ$。不妨設 $\angle A\ge\angle C$，$\angle D\ge\angle B$，則 $\angle A\ge90^\circ\ge\angle C$，$\angle D\ge90^\circ\ge\angle B$。於是可以在 $ABCD$ 內取點 $P,Q$，使 $\angle BAP=\angle B$，$\angle CDQ=\angle C$，且 $PQ\parallel AD$；再作 $PS\parallel AB$，$QR\parallel DC$，分別交 $BC$ 於 $S,R$。
 $ABSP$ 和 $CDQR$ 都是等腰梯形（一組對邊平行、底角相等）。又
 $$\angle PAD=\angle A-\angle B=\angle D-\angle C=\angle ADQ,$$

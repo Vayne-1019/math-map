@@ -38,15 +38,31 @@ $$4x-1=4m^2-1=(2m+1)(2m-1),$$
 === 例 3
 zh: 求證：存在這樣的三角形紙片，它可以剪成 $13$ 張全等的三角形紙片而沒有剩餘。
 sol: <b>分析</b>：連接三角形三邊的中點，可以把它分成 $4$ 個全等的三角形；把每邊三等分，再用平行於各邊的線段連接分點，可以分成 $9$ 個全等的三角形。由 $4+9=13$，構造的思路就不難想到了。
-<figure class="bkfig"><svg viewBox="0 0 285 155" width="280" role="img" aria-label="直角三角形ABC，高CD，分成4個與9個小三角形">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="15,140 267.4,140 189.7,23.5"/><line x1="189.7" y1="23.5" x2="189.7" y2="140"/></g>
-  <g fill="none" stroke="currentColor" stroke-width="1">
-    <line x1="73.2" y1="140" x2="73.2" y2="101.2"/><line x1="131.5" y1="140" x2="131.5" y2="62.3"/><line x1="73.2" y1="101.2" x2="189.7" y2="101.2"/><line x1="131.5" y1="62.3" x2="189.7" y2="62.3"/>
-    <line x1="73.2" y1="140" x2="189.7" y2="62.3"/><line x1="131.5" y1="140" x2="189.7" y2="101.2"/>
-    <line x1="228.6" y1="81.8" x2="228.6" y2="140"/><line x1="228.6" y1="140" x2="189.7" y2="81.8"/><line x1="189.7" y1="81.8" x2="228.6" y2="81.8"/>
-  </g>
-  <g fill="currentColor" font-size="14" font-style="italic"><text x="0" y="152">A</text><text x="270" y="152">B</text><text x="184" y="18">C</text><text x="184" y="154">D</text></g>
-</svg><figcaption>左邊 △ACD 分成 9 塊，右邊 △CBD 分成 4 塊，13 塊斜邊都是 1</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A = (15, 140)
+B = (267.4, 140)
+C = (189.7, 23.5)
+D = foot(C, A, B)
+e = along(A, B, 1/3)
+f = along(A, B, 2/3)
+g = along(A, C, 1/3)
+h = along(A, C, 2/3)
+g2 = along(D, C, 1/3)
+h2 = along(D, C, 2/3)
+lp = mid(D, B)
+m1 = mid(C, B)
+n1 = mid(D, C)
+draw poly A B C
+draw seg C D
+draw seg e g
+draw seg f h
+draw seg g g2
+draw seg h h2
+draw seg e h2
+draw seg f g2
+draw seg lp m1
+draw seg lp n1
+draw seg n1 m1
+</pre><figcaption>左邊 △ACD 分成 9 塊，右邊 △CBD 分成 4 塊，13 塊斜邊都是 1</figcaption></figure>
 <b>證明</b>：取 $\triangle ABC$，$\angle C=90^\circ$，$AC=3$，$BC=2$。作高 $CD\perp AB$，則 Rt$\triangle ACD\sim$Rt$\triangle CBD\sim$Rt$\triangle ABC$⟦為什麼相似｜直角三角形斜邊上的高把它分成兩個與原三角形相似的直角三角形（各與原三角形共用一個銳角）。⟧。再把 $\triangle CBD$（斜邊 $2$）分成 $4$ 個、$\triangle ACD$（斜邊 $3$）分成 $9$ 個小三角形。這 $13$ 個小三角形都相似於 $\triangle ABC$，而且斜邊都是 $1$，所以全等。
 
 === 例 4
@@ -62,11 +78,31 @@ sol: 不妨設 $a_1&lt;a_2&lt;\dots&lt;a_{10}$（排序！），用下面的方�
 === 例 5
 zh: 求證：任何一個鈍角三角形紙片，都可以剪成 $7$ 個銳角三角形而沒有剩餘。
 sol: 設 $\triangle ABC$ 中 $\angle ABC$ 是鈍角。在 $\angle A$ 處沿一條與兩邊相交的線段 $DE$ 剪下一個銳角 $\triangle ADE$（$D$ 不能與 $B$ 重合，否則剩下的 $\triangle BCE$ 是鈍角三角形，又回到原來的問題）；同樣在 $\angle C$ 處沿 $FG$ 剪下銳角 $\triangle CFG$。剩下一個五邊形 $BDEFG$，它的每個內角都是鈍角，再沿 $5$ 條線剪開，就可能得到 $5$ 個銳角三角形。為了保證這一點，只要這 $5$ 條線 $BO,DO,EO,FO,GO$ 都是五邊形五個內角的平分線就行，這讓人想到利用 $\triangle ABC$ 的內切圓。
-<figure class="bkfig"><svg viewBox="0 0 280 92" width="280" role="img" aria-label="鈍角三角形ABC，內切圓O，切線DE與FG，五條虛線">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="10,80 101,22.8 270,80"/><circle cx="104.5" cy="52.8" r="27.2"/><line x1="72.7" y1="40.6" x2="84" y2="80"/><line x1="127.7" y1="80" x2="135.2" y2="34.4"/></g>
-  <g fill="none" stroke="currentColor" stroke-width="1.1" stroke-dasharray="4 3"><line x1="104.5" y1="52.8" x2="101" y2="22.8"/><line x1="104.5" y1="52.8" x2="72.7" y2="40.6"/><line x1="104.5" y1="52.8" x2="84" y2="80"/><line x1="104.5" y1="52.8" x2="127.7" y2="80"/><line x1="104.5" y1="52.8" x2="135.2" y2="34.4"/></g>
-  <g fill="currentColor" font-size="12" font-style="italic"><text x="0" y="90">A</text><text x="97" y="17">B</text><text x="272" y="90">C</text><text x="62" y="38">D</text><text x="80" y="91">E</text><text x="124" y="91">F</text><text x="138" y="32">G</text><text x="108" y="58">O</text></g>
-</svg><figcaption>DE、FG 與內切圓相切；虛線是五邊形 BDEFG 的五條角平分線</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A = (10, 80)
+B = (101, 22.8)
+C = (270, 80)
+ab = line(A, B)
+bc = line(B, C)
+ac = line(A, C)
+O = incenter(A, B, C)
+T0 = foot(O, A, C)
+k = circle(O, T0)
+D = on(ab, 72.7, 40.6)
+t1 = tangent(D, k, 80, 60)
+E = inter(D, t1, A, C)
+G = on(bc, 135.2, 34.4)
+t2 = tangent(G, k, 110, 80)
+F = inter(G, t2, A, C)
+draw poly A B C
+draw circle k
+draw seg D E
+draw seg F G
+draw seg O B dash
+draw seg O D dash
+draw seg O E dash
+draw seg O F dash
+draw seg O G dash
+</pre><figcaption>DE、FG 與內切圓相切；虛線是五邊形 BDEFG 的五條角平分線</figcaption></figure>
 作鈍角 $\triangle ABC$ 的內切圓 $\odot O$。作與 $\odot O$ 相切的線段 $DE$（$D$ 在 $AB$ 上、$E$ 在 $AC$ 上），使 $\triangle ADE$ 是銳角三角形；同樣作切線段 $FG$（$F$ 在 $AC$ 上、$G$ 在 $BC$ 上），使 $\triangle CFG$ 是銳角三角形⟦怎麼保證是銳角｜例如取 $DE$ 垂直於 $\angle A$ 的平分線，則 $AD=AE$，$\triangle ADE$ 是頂角 $\angle A$ 為銳角的等腰三角形，兩底角都是 $\frac{180^\circ-\angle A}2&lt;90^\circ$。原書的作法是先任作一個銳角 $\triangle AD'E'$，再把 $D'E'$ 平移到與圓相切。⟧。沿 $DE,FG,BO,DO,EO,FO,GO$ 這 $7$ 條線段剪開，得到的 $7$ 個三角形都是銳角三角形。
 事實上，由作法 $\triangle ADE$、$\triangle CFG$ 都是銳角三角形。五邊形 $BDEFG$ 的各邊都與 $\odot O$ 相切，所以 $O$ 與各頂點的連線平分該頂點的內角。$\angle BDE=180^\circ-\angle ADE$ 是鈍角，$DO$ 平分它，所以 $45^\circ&lt;\angle BDO&lt;90^\circ$；同理 $\angle ABC$ 是鈍角，$45^\circ&lt;\angle DBO&lt;90^\circ$，於是 $\angle BOD&lt;90^\circ$，$\triangle BOD$ 是銳角三角形⟦為什麼｜$\angle BOD=180^\circ-\angle BDO-\angle DBO&lt;180^\circ-45^\circ-45^\circ=90^\circ$，另兩個角也都小於 $90^\circ$。⟧。同理其餘三個三角形也都是銳角三角形。
 
