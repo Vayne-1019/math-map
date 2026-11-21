@@ -100,16 +100,17 @@ draw poly r s t accent fill
 B = (27.9,179.4)
 C = (202.1,179.4)
 P = rotate(C, B, 45)
-M = mid(B, C)
+m = mid(B, C)
 X = along(A, B, 0.61)
 Y = along(A, C, 0.61)
+hide m
 draw poly A B C
 draw seg P A
 draw seg P B
 draw seg P C
 draw seg P X
 draw seg P Y
-draw seg P M dash
+draw seg P m dash
 draw poly P B C accent fill
 </pre><figcaption>紅色 △PBC 是等腰直角三角形（$\angle BPC=90^\circ$），沿斜邊上的高（虛線）可再一分為二；其餘四個：$XB=XP$、$PA=PX$、$YC=YP$、$PA=PY$</figcaption></figure>
 ⟦下圖為什麼可以｜$\angle BPC=90^\circ$、$PB=PC$，$\triangle PBC$ 等腰直角。$\triangle ABP$ 中 $\angle PAB=30^\circ$、$\angle PBA=15^\circ$；在 $AB$ 上取 $X$ 使 $XB=XP$，則 $\angle XPB=15^\circ$，$\angle AXP=30^\circ=\angle XAP$，所以 $PA=PX$。兩個三角形都等腰，$\triangle ACP$ 同理。⟧
