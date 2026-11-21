@@ -43,15 +43,19 @@ D = (60.4,47.3)
 M = mid(D, C)
 hide M
 q = rotate(C, M, 90)
-Bp = reflect(B, M, q)
+B' = reflect(B, M, q)
 k = circle(A, B)
+lm = line(M, q)
+la = on(lm, 112, 140)
+hide la
 draw poly A B C D
 draw seg A C
 draw seg B D
-draw seg Bp A dash
-draw seg Bp D dash
+draw seg B' A dash
+draw seg B' D dash
 draw line M q dash
 draw circle k
+text la se l
 </pre><figcaption>$l$ 是 $DC$ 的中垂線；$\triangle ABC$ 關於 $l$ 的像是 $\triangle AB'D$（虛線）；$B,C,D,B'$ 在以 $A$ 為圓心的圓上</figcaption></figure>
 <p><b>解</b>　作 $DC$ 的中垂線 $l$，把 $\triangle ABC$ 作關於 $l$ 的反射。⟦顯然｜$AC=AD$，所以 $A$ 在 $DC$ 的中垂線 $l$ 上，反射後 $A$ 不動；$AB\parallel DC$，所以直線 $AB$ 垂直於 $l$，反射後還是自己；$C$ 的像就是 $D$。⟧$B$ 的對稱點 $B'$ 在直線 $AB$ 上，$C$ 的對稱點是 $D$，且 $B'D=BC=b$。由於 $AB=AC=AD=AB'=a$，$B,C,D,B'$ 都在以 $A$ 為圓心、$a$ 為半徑的圓上，$BB'$ 是直徑，$\angle BDB'=90^\circ$。由勾股定理</p>
 $$BD=\sqrt{B'B^2-B'D^2}=\sqrt{4a^2-b^2}.$$
@@ -67,8 +71,8 @@ I = (130,97.6)
 E = mid(A, B)
 F = mid(C, D)
 k = circle(I, E)
-Cp = reflect(C, B, I)
-Dp = reflect(D, A, I)
+C' = reflect(C, B, I)
+D' = reflect(D, A, I)
 draw poly A B C D
 draw circle k
 draw seg I E dash
@@ -77,8 +81,8 @@ draw seg I A dash
 draw seg I B dash
 draw seg I C dash
 draw seg I D dash
-draw seg I Cp dash
-draw seg I Dp dash
+draw seg I C' dash
+draw seg I D' dash
 </pre><figcaption>$D'$、$C'$ 是 $D$、$C$ 關於 $AI$、$BI$ 的對稱點，都落在 $AB$ 上</figcaption></figure>
 <p><b>證</b>　設四邊形 $ABCD$ 中 $a=AB$，$b=BC$，$c=CD$，$d=DA$，內切圓圓心為 $I$。設 $b=d$，$a\ge c$，$E$、$F$ 是 $AB$、$CD$ 的中點，要證 $IE=IF$。</p>
 <p>連 $IA$、$IB$，它們分別平分 $\angle A$、$\angle B$。以 $AI$、$BI$ 為對稱軸，作出 $D$、$C$ 的對稱點 $D'$、$C'$，它們都落在 $AB$ 上（例 1 的招數）。因為 $AD'=d=b=BC'$，$E$ 也是 $C'D'$ 的中點。又 $ABCD$ 外切於圓，$a+c=b+d$，所以</p>
@@ -99,7 +103,8 @@ A = mid(B, C)
 l = line(O, A)
 L = on(l, 111.6, 22)
 Lb = on(l, 111.6, 228)
-Sp = reflect(S, O, A)
+hide Lb
+S' = reflect(S, O, A)
 M = inter(S, Q, B, C)
 N = inter(P, R, B, C)
 draw circle k
@@ -109,10 +114,10 @@ draw seg R S
 draw seg S Q
 draw seg P R
 draw seg L Lb dash
-draw seg A Sp dash
-draw seg N Sp dash
-draw seg P Sp dash
-draw seg S Sp dash
+draw seg A S' dash
+draw seg N S' dash
+draw seg P S' dash
+draw seg S S' dash
 </pre><figcaption>$A$ 是弦 $BC$ 的中點；$l$ 是 $BC$ 的中垂線（虛線），$S'$ 是 $S$ 關於 $l$ 的對稱點</figcaption></figure>
 <p><b>證</b>　過 $A$ 作弦 $BC$ 的中垂線 $l$（$l$ 必過圓心 $O$），要證的就是 $AM$ 與 $AN$ 關於 $l$ 對稱。作 $S$ 關於 $l$ 的對稱點 $S'$，$S'$ 必在圓上（也可以作 $P$ 的對稱點）。下面證 $\triangle AMS$ 與 $\triangle ANS'$ 關於 $l$ 對稱，也就是 $\triangle AMS\cong\triangle ANS'$。</p>
 <p>連 $AS'$、$NS'$、$PS'$、$SS'$。⟦顯然｜$SS'$ 與 $BC$ 都垂直於 $l$。⟧$BC\parallel SS'$，所以 $\angle CAS'=\angle AS'S=\angle ASS'$（後者由 $AS=AS'$）。而圓內接四邊形 $RPS'S$ 中 $\angle RPS'+\angle RSS'=180^\circ$，即 $\angle RPS'+\angle CAS'=180^\circ$⟦為什麼｜$\angle RSS'=\angle ASS'$（$R,A,S$ 共線），又剛證了 $\angle ASS'=\angle CAS'$。⟧，也就是 $\angle NPS'+\angle NAS'=180^\circ$，所以 $A,S',P,N$ 四點共圓，$\angle APN=\angle AS'N$。</p>
@@ -127,19 +132,23 @@ D = mid(A, C)
 E = foot(A, B, D)
 F = inter(A, E, B, C)
 p = rotate(A, D, 90)
-Bp = reflect(B, D, p)
+B' = reflect(B, D, p)
 G = mid(B, C)
-I = inter(A, Bp, B, D)
+I = inter(A, B', B, D)
+lp = line(D, p)
+lb2 = on(lp, 200, 30)
+hide lb2
 draw poly A B C
 draw seg B D
 draw seg D F
 draw seg A F
-draw seg A Bp dash
-draw seg Bp C dash
-draw seg Bp D dash
+draw seg A B' dash
+draw seg B' C dash
+draw seg B' D dash
 draw seg I F dash
 draw seg E G dash
 draw line D p dash
+text lb2 se l
 right A E D
 </pre><figcaption>證法一：$l$ 是 $AC$ 的中垂線，$B'$ 是 $B$ 的對稱點；$AB'$ 交 $BD$、$BC$ 於 $I$、$G$</figcaption></figure>
 <p>連 $AB'$，交 $BD$、$BC$ 於 $I$、$G$，再連 $IF$、$EG$。⟦為什麼 AB′⊥BC｜以 $BC$ 中點為原點，$A=(0,1)$、$B=(-1,0)$、$C=(1,0)$，則 $AC$ 的中垂線 $l$ 是直線 $y=x$，$B$ 的對稱點 $B'=(0,-1)$，所以 $AB'$ 就是 $BC$ 的中垂線。⟧$AB'$ 垂直平分 $BC$，$G$ 是 $BC$ 中點，$I$ 是中線 $BD$ 與 $AG$ 的交點，即 $\triangle ABC$ 的重心。</p>
@@ -152,13 +161,13 @@ D = mid(A, C)
 E = foot(A, B, D)
 F = inter(A, E, B, C)
 p = rotate(A, C, 90)
-Dp = inter(A, F, C, p)
+D' = inter(A, F, C, p)
 draw poly A B C
 draw seg B D
 draw seg A F
 draw seg D F
-draw seg F Dp dash
-draw seg C Dp dash
+draw seg F D' dash
+draw seg C D' dash
 </pre><figcaption>證法二：過 $C$ 作 $AC$ 的垂線交 $AF$ 的延長線於 $D'$（虛線）</figcaption></figure>
 <p>由 $AE\perp BD$ 及 $\angle A=90^\circ$，$\angle ABD=\angle D'AC$，易知 $\triangle ABD\cong\triangle CAD'$（ASA），所以 $\angle ADB=\angle AD'C$，$AD=CD'$，從而 $CD=CD'$。又 $\angle DCF=\angle FCD'=45^\circ$，所以 $\triangle DCF\cong\triangle D'CF$，$\angle FD'C=\angle FDC$。於是 $\angle ADB=\angle FDC$。</p>
 <p>這個解法的實質是證明 $D$ 關於 $BC$ 的對稱點和 $A$、$F$ 共線。換個角度運用軸對稱，有時更方便；前面其他例子也都可以這樣做。</p>
@@ -172,15 +181,15 @@ B = (99.2,22)
 C = (22,128.9)
 D = (99.2,182.4)
 O = inter(A, C, B, D)
-Cp = reflect(C, B, D)
-Dp = reflect(D, A, C)
-E = inter(A, Dp, B, Cp)
+C' = reflect(C, B, D)
+D' = reflect(D, A, C)
+E = inter(A, D', B, C')
 draw poly A B C D
 draw seg A C
 draw seg B D
-draw seg A Dp dash
-draw seg B Cp dash
-draw seg Cp Dp dash
+draw seg A D' dash
+draw seg B C' dash
+draw seg C' D' dash
 </pre><figcaption>$C'$、$D'$ 是 $C$、$D$ 關於 $BD$、$AC$ 的對稱點；連 $AD'$、$BC'$ 交於 $E$（虛線）</figcaption></figure>
 <p><b>證</b>　以 $BD$、$AC$ 為對稱軸，分別作 $BC$、$AD$ 的反射。因為 $AC\perp BD$ 且 $OA\gt OC$、$OB\gt OD$，$C$ 關於 $BD$ 的對稱點 $C'$ 落在線段 $OA$ 內部，$D$ 關於 $AC$ 的對稱點 $D'$ 落在線段 $OB$ 內部。連 $AD'$、$BC'$，設交點為 $E$。由三角不等式</p>
 $$BE+AE\gt AB,\qquad EC'+ED'\gt C'D'.$$
@@ -241,13 +250,16 @@ C = on(lm, 126.6, 94.4)
 mcb = mid(C, B)
 q = reflectp(A, mcb)
 l = line(C, q)
-Bp = reflect(B, C, q)
-Cp = (211.4,120.3)
+B' = reflect(B, C, q)
+C' = (211.4,120.3)
+la2 = on(l, 245, 94.4)
+hide la2
 draw poly A B C
-draw poly A B Cp
+draw poly A B C'
 draw line C q
-draw seg C Bp dash
-draw seg B Bp dash
+draw seg C B' dash
+draw seg B B' dash
+text la2 se l
 </pre><figcaption>$AC+BC=AC'+BC'$；$l$ 過 $C$ 平行 $AB$，$B'$ 是 $B$ 關於 $l$ 的對稱點，$A,C,B'$ 共線（虛線）。$C'$ 必在 $l$ 與 $AB$ 之間</figcaption></figure>
 <p><b>證</b>　設 $\triangle ABC$ 是等腰三角形（$CA=CB$），$\triangle ABC'$ 不等腰，公共底邊 $AB$ 長度固定，且 $AC+BC=AC'+BC'$。下面證 $S_{\triangle ABC}\gt S_{\triangle ABC'}$。不妨設 $C$、$C'$ 在 $AB$ 同側。過 $C$ 作直線 $l\parallel AB$，只要證 $C'$ 在 $l$ 與 $AB$ 之間（高較小）。</p>
 <p>假設相反，設 $AC'$ 與 $l$ 交於 $P$（$C'$ 可能就在 $l$ 上；但 $P$ 不會是 $C$，否則 $AC'+BC'\gt AC+BC$）。作 $B$ 關於 $l$ 的對稱點 $B'$，因為 $\triangle ABC$ 等腰，$A,C,B'$ 共線⟦為什麼｜$l\parallel AB$，所以 $l$ 與 $CA$、$CB$ 的夾角都等於底角 $\angle CAB=\angle CBA$。反射後 $CB'$ 與 $l$ 的夾角也是這個底角，位在 $l$ 的另一側，正好落在 $CA$ 的延長線上。⟧。連 $BP$、$B'P$，則 $BP=B'P$，</p>
@@ -261,12 +273,12 @@ C = (188.9,121.1)
 D = (68.9,168)
 m = mid(A, C)
 pm = rotate(A, m, 90)
-Dp = reflect(D, m, pm)
-E = inter(A, Dp, C, D)
+D' = reflect(D, m, pm)
+E = inter(A, D', C, D)
 draw poly A B C D
 draw seg A C
-draw seg A Dp dash
-draw seg C Dp dash
+draw seg A D' dash
+draw seg C D' dash
 </pre><figcaption>$D'$ 是 $D$ 關於 $AC$ 中垂線的對稱點（虛線）</figcaption></figure>
 <p><b>證</b>　設凸四邊形為 $ABCD$。作 $D$ 關於線段 $AC$ 中垂線的對稱點 $D'$，連 $AD'$、$D'C$，設 $AD'$ 與 $CD$ 交於 $E$。⟦顯然｜反射把 $A,C$ 互換，所以 $AD'=CD$、$CD'=AD$，$\triangle ACD\cong\triangle CAD'$，面積相同。⟧$AD'=DC$，$AD=CD'$，四邊形 $ABCD$ 與 $ABCD'$ 面積相等。而</p>
 $$S_{ABCD'}=S_{\triangle BAD'}+S_{\triangle BCD'}=\tfrac12AB\cdot AD'\sin\angle BAD'+\tfrac12BC\cdot CD'\sin\angle BCD'\le\tfrac12(AB\cdot CD+BC\cdot AD).$$
@@ -277,10 +289,10 @@ B = (22,138)
 C = (228,138)
 lab = line(A, B)
 D = on(lab, 161.3, 63.9)
-Ap = reflect(A, C, D)
+A' = reflect(A, C, D)
 draw poly A B C
 draw seg C D
-draw seg D Ap dash
+draw seg D A' dash
 </pre><figcaption>$A'$ 是 $A$ 關於 $CD$ 的對稱點，落在 $BC$ 上</figcaption></figure>
 <p>以 $CD$ 為對稱軸作 $\triangle ACD$ 的對稱圖形，$A$ 的對稱點 $A'$ 落在 $BC$ 上。$\angle DA'C=\angle A=2\angle B$，而 $\angle DA'C=\angle B+\angle A'DB$，所以 $\angle A'DB=\angle B$，$A'B=A'D=AD$。所以 $BC=BA'+A'C=AD+AC$。</p>
 === 習題 2
@@ -291,12 +303,12 @@ B = (22,178)
 C = (178,178)
 D = (178,22)
 F = mid(C, D)
-Dp = reflect(D, A, F)
-E = inter(A, Dp, B, C)
+D' = reflect(D, A, F)
+E = inter(A, D', B, C)
 draw poly A B C D
 draw seg A F
 draw seg A E
-draw seg F Dp dash
+draw seg F D' dash
 draw seg F E dash
 </pre><figcaption>$D'$ 是 $D$ 關於 $AF$ 的對稱點，在 $AE$ 上；連 $EF$（虛線）</figcaption></figure>
 <p>$D$ 的對稱點 $D'$ 在 $AE$ 上，$AD'=AD$、$FD'=FD=FC$、$\angle AD'F=90^\circ$。直角 $\triangle FD'E\cong\triangle FCE$（HL），$D'E=CE$。所以 $AE=AD'+D'E=CD+EC$。</p>
@@ -310,13 +322,13 @@ lab = line(A, B)
 M = on(lab, 72.7, 100)
 C = on(k, 32.9, 139.8)
 D = second(k, C, M)
-Cp = reflect(C, A, B)
+C' = reflect(C, A, B)
 draw circle k
 draw seg A B
 draw seg C D
-draw seg M Cp dash
-draw seg C Cp dash
-draw seg Cp D dash
+draw seg M C' dash
+draw seg C C' dash
+draw seg C' D dash
 hide O
 </pre><figcaption>$C'$ 是 $C$ 關於 $AB$ 的對稱點；$\angle C'MD=90^\circ$</figcaption></figure>
 <p>用 $C'$、$D'$ 表示 $C$、$D$ 關於直線 $AB$ 的對稱點，則 $\angle C'MD=90^\circ$，$CM^2+DM^2=C'M^2+DM^2=C'D^2$。而 $\angle C'CD=45^\circ$，弦 $C'D$ 所對的圓周角固定，$C'D$ 是定長：$C'D=2R\sin45^\circ=\sqrt2R$。</p>

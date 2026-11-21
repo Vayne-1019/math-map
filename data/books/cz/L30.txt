@@ -45,12 +45,12 @@ mFC = mid(F, C)
 Q = reflectp(B, mFC)
 hide Q
 G = inter(F, Q, A, C)
-Cp = reflectp(G, mFC)
+C' = reflectp(G, mFC)
 draw poly A B C
 draw seg B D
 draw seg A E
 draw seg F G
-draw seg F Cp dash
+draw seg F C' dash
 </pre><figcaption>$FG\parallel BC$；把 $GC$ 平移到 $FC'$（虛線）</figcaption></figure>
 <p><b>證</b>　$\angle ADF+\angle ABD=90^\circ=\angle EFB+\angle EBF$，而 $\angle ABD=\angle EBF$，所以 $\angle ADF=\angle EFB=\angle AFD$，$AD=AF$。下面證 $AF=GC$。</p>
 <p>把 $GC$ 平移到 $FC'$（$FG\parallel BC$，所以 $C'$ 在 $BC$ 上）。易知 $\angle FC'B=\angle ACB=\angle FAB$⟦為什麼｜$FC'\parallel GC$ 給第一個等號；第二個：$\angle ACB$ 與 $\angle BAE$ 都是 $\angle ABC$ 的餘角。⟧，又 $\angle ABF=\angle C'BF$，$BF=BF$，所以 $\triangle ABF\cong\triangle C'BF$（AAS），$AF=C'F=GC$。</p>
@@ -104,15 +104,15 @@ mBD = mid(B, D)
 C = reflectp(A, mBD)
 P = (71.3,59.8)
 mPC = mid(P, C)
-Pp = reflectp(B, mPC)
+P' = reflectp(B, mPC)
 draw poly A B C D
 draw seg P A
 draw seg P B
 draw seg P C
 draw seg P D
-draw seg P Pp dash
-draw seg Pp C dash
-draw seg Pp D dash
+draw seg P P' dash
+draw seg P' C dash
+draw seg P' D dash
 </pre><figcaption>$\angle PAB=\angle PCB$；把 $PB$ 平移到 $P'C$（虛線）</figcaption></figure>
 <p><b>證</b>　把線段 $PB$ 平移到 $P'C$，連 $P'C$、$P'D$、$P'P$。則 $BCP'P$ 是平行四邊形，從而 $APP'D$ 也是平行四邊形⟦為什麼｜$PP'$ 與 $BC$ 平行且相等，$BC$ 又與 $AD$ 平行且相等。⟧。由 $AB\parallel DC$ 及 $AP\parallel DP'$，$\angle PAB=\angle P'DC$。另一方面 $\angle P'PC=\angle PCB=\angle PAB$（$PP'\parallel BC$ 的內錯角）。所以 $\angle P'DC=\angle P'PC$，$C,P',D,P$ 四點共圓，進而 $\angle DPP'=\angle DCP'$。而 $\angle DPP'=\angle PDA$（$PP'\parallel AD$），$\angle DCP'=\angle PBA$（$\triangle DCP'$ 是 $\triangle ABP$ 平移的像），所以 $\angle PDA=\angle PBA$。</p>
 === 例 5
@@ -125,15 +125,15 @@ C = reflectp(A, mBD)
 K = foot(B, A, D)
 H = foot(B, C, D)
 H1 = orthocenter(B, K, H)
-Bp = reflectp(K, mBD)
+B' = reflectp(K, mBD)
 draw poly A B C D
 draw seg B D
 draw seg B K
 draw seg B H
 draw seg K H
-draw seg Bp K dash
-draw seg Bp H dash
-draw seg Bp D dash
+draw seg B' K dash
+draw seg B' H dash
+draw seg B' D dash
 draw seg B H1 dash
 draw seg K H1 dash
 draw seg H H1 dash
@@ -222,14 +222,14 @@ N = (187.8,72.6)
 m1 = foot(M, A, B)
 k = circle(M, m1)
 mCM = mid(C, M)
-Cp = reflectp(N, mCM)
+C' = reflectp(N, mCM)
 mDM = mid(D, M)
-Dp = reflectp(N, mDM)
+D' = reflectp(N, mDM)
 draw poly A B C D
 draw circle k
-draw seg Cp Dp dash
-draw seg M Cp dash
-draw seg M Dp dash
+draw seg C' D' dash
+draw seg M C' dash
+draw seg M D' dash
 </pre><figcaption>把 $\triangle CDN$ 沿底邊方向平移成 $\triangle C'D'N'$，使 $N'$ 與 $M$ 重合（虛線）</figcaption></figure>
 <p><b>證</b>　以 $M$ 為圓心、$M$ 到 $AB$ 的距離為半徑作圓，此圓與 $AB$、$BC$、$AD$ 都相切⟦為什麼｜$M$ 在 $\angle A$ 的平分線上，到 $AB$、$AD$ 等距；在 $\angle B$ 的平分線上，到 $AB$、$BC$ 等距。⟧。把 $\triangle CDN$ 沿底邊方向平移到 $\triangle C'D'N'$，使 $N'$ 與 $M$ 重合，則 $C'D'$ 也與這個圓相切。對梯形 $ABC'D'$，</p>
 $$2MN'=|AB+C'D'-BC'-AD'|\quad\text{①}$$
@@ -249,12 +249,12 @@ M = on(lac, 111.2, 100.3)
 lbd = line(B, D)
 N = on(lbd, 174.7, 79)
 mBM = mid(B, M)
-Mp = reflectp(N, mBM)
+M' = reflectp(N, mBM)
 draw seg A C
 draw seg B D
-draw seg B Mp dash
-draw seg M Mp dash
-draw line A Mp
+draw seg B M' dash
+draw seg M M' dash
+draw line A M'
 draw seg M N accent
 </pre><figcaption>$AM=BN$；把 $NM$ 平移到 $BM'$（虛線），$M'$ 總在過 $A$ 的定直線 $l$ 上；圖中是 $MN$ 最短（$BM'\perp l$）的位置</figcaption></figure>
 <p><b>解</b>　把 $NM$ 平移到 $BM'$，連 $AM'$、$MM'$。$BNMM'$ 是平行四邊形，所以 $MM'=BN=AM$，$\triangle MAM'$ 是等腰三角形。記 $AC$ 與 $BD$ 的夾角為 $\alpha$，則 $\angle MAM'=90^\circ-\frac\alpha2$⟦為什麼｜$MM'\parallel NB$，所以 $\angle AMM'$ 等於直線 $AC$ 與 $BD$ 的夾角 $\alpha$（或其補角）；等腰三角形的底角 $=\frac12(180^\circ-\alpha)$。⟧。所以無論 $M$、$N$ 在哪裡，$M'$ 總在一條定直線 $l$ 上（過定點 $A$、與 $AC$ 夾角 $90^\circ-\frac\alpha2$）。</p>
@@ -266,15 +266,15 @@ B = (248,137.1)
 C = (227.5,91.9)
 D = (157.6,67.2)
 mAD = mid(A, D)
-Ap = reflectp(B, mAD)
+A' = reflectp(B, mAD)
 mCD = mid(C, D)
-Cp = reflectp(B, mCD)
-E = inter(A, Cp, Ap, C)
+C' = reflectp(B, mCD)
+E = inter(A, C', A', C)
 draw poly A B C D
 draw seg A C
 draw seg B D
-draw poly Ap D Cp dash
-draw poly A C Cp Ap dash
+draw poly A' D C' dash
+draw poly A C C' A' dash
 </pre><figcaption>把 $\triangle ABC$ 沿 $BD$ 方向平移成 $\triangle A'B'C'$，$B'$ 與 $D$ 重合；$ACC'A'$ 是固定的平行四邊形（虛線）</figcaption></figure>
 <p><b>解</b>　設四邊形 $ABCD$ 中 $AC=d_1$，$BD=d_2$，$AC$ 與 $BD$ 的夾角為 $\alpha$。把 $\triangle ABC$ 沿 $BD$ 方向平移成 $\triangle A'B'C'$，使 $B'$ 與 $D$ 重合。則 $ABDA'$、$BCC'D$、$ACC'A'$ 都是平行四邊形，所以 $A'D=AB$，$C'D=BC$，$AA'=BD=d_2$，$A'C'=AC=d_1$，$\angle AA'C'=\alpha$（或其補角）。平行四邊形 $ACC'A'$ 完全確定，它的對角線 $AC'$、$A'C$ 也是定值。而周長</p>
 $$AB+BC+CD+DA=(A'D+DC)+(DA+DC')\ge A'C+AC',$$
@@ -291,17 +291,17 @@ lbc = line(B, C)
 P = on(lbc, 111.7, 158.7)
 M = foot(P, A, B)
 N = foot(P, A, C)
-Np = reflect(N, B, C)
-mBNp = mid(B, Np)
-Np2 = reflectp(M, mBNp)
+N' = reflect(N, B, C)
+mBNp = mid(B, N')
+N″ = reflectp(M, mBNp)
 draw poly A B C
 draw seg P M
 draw seg P N
-draw seg P Np dash
-draw seg M Np dash
-draw seg B Np2 dash
-draw seg Np Np2 dash
-draw seg C Np2 dash
+draw seg P N' dash
+draw seg M N' dash
+draw seg B N″ dash
+draw seg N' N″ dash
+draw seg C N″ dash
 </pre><figcaption>$N'$ 是 $N$ 關於 $BC$ 的對稱點；把 $MN'$ 平移到 $BN''$（虛線）</figcaption></figure>
 <p>設 $N'$ 是 $N$ 關於 $BC$ 的對稱點，易知 $M,P,N'$ 共線且 $MN'=PM+PN$（反射把折線化為直線段）。再把 $MN'$ 平移到 $BN''$。由於 $\angle BN''C=90^\circ$、$\angle BCN''=\angle ACB$ 是定角，$BN''$ 是定長（它就是 $B$ 到 $AC$ 的距離）。</p>
 === 習題 2
@@ -311,12 +311,12 @@ B = (156,128)
 C = (162.1,45.8)
 D = (117.4,22)
 mAD = mid(A, D)
-Ap = reflectp(C, mAD)
+A' = reflectp(C, mAD)
 draw poly A B C D
 draw seg A C
 draw seg B D
-draw seg Ap D dash
-draw seg Ap A dash
+draw seg A' D dash
+draw seg A' A dash
 </pre><figcaption>把 $AC$ 平移到 $A'D$（虛線）</figcaption></figure>
 <p>把 $AC$ 平移到 $A'D$，則 $A'D\perp BD$，$A'$ 在直線 $AB$ 上且 $A'A=DC$。於是 $A'D^2+BD^2=A'B^2$，即 $AC^2+BD^2=(AB+DC)^2$。</p>
 === 習題 3
@@ -327,12 +327,12 @@ C = (135.7,22)
 D = (140.8,120.2)
 E = mid(A, B)
 F = mid(D, C)
-Cp = reflectp(B, F)
+C' = reflectp(B, F)
 draw poly A B C D
 draw seg E F
-draw seg B Cp dash
-draw seg D Cp dash
-draw seg A Cp dash
+draw seg B C' dash
+draw seg D C' dash
+draw seg A C' dash
 </pre><figcaption>把 $BC$ 平移到 $DC'$；$EF$ 是 $\triangle ABC'$ 的中位線（虛線）</figcaption></figure>
 <p>設 $E$、$F$ 是 $AB$、$CD$ 的中點，且 $EF=\frac12(AD+BC)$。把 $BC$ 平移到 $DC'$，則 $F$ 也是 $BC'$ 的中點，$B,F,C'$ 共線，$EF$ 是 $\triangle ABC'$ 的中位線，$AC'=2EF=AD+BC$。若 $D$ 不在 $AC'$ 上（即 $AD$ 與 $BC$ 不平行），則 $AC'\lt AD+DC'=AD+BC$，矛盾。所以 $AD\parallel BC$。</p>
 === 習題 4
@@ -346,13 +346,13 @@ C = (189.1,133.4)
 D = (189.1,22)
 M = (116.7,66.6)
 mBM = mid(B, M)
-Mp = reflectp(A, mBM)
+M' = reflectp(A, mBM)
 draw poly A B C D
 draw seg M A
 draw seg M B
 draw seg M C
 draw seg M D
-draw poly B M C Mp dash
-draw seg M Mp dash
+draw poly B M C M' dash
+draw seg M M' dash
 </pre><figcaption>把 $AM$ 平移到 $BM'$；四邊形 $BMCM'$（虛線）就是所求</figcaption></figure>
 <p>構造：把 $AM$ 平移到 $BM'$，則 $BM'=AM$，$CM'=DM$，$MM'=AB$ 且 $MM'\perp BC$。四邊形 $BMCM'$ 就滿足要求（參考例 10 的解法）。</p>
