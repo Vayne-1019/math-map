@@ -16,13 +16,19 @@ zh: 若對點集 $M$ 中的任意兩點 $A,B$，線段 $AB$ 上的每一點都�
 
 === 例 1 | 圓是凸集
 zh: 證明圓（圓面）是凸集。
-sol: <figure class="bkfig"><svg viewBox="0 0 200 200" width="200" role="img" aria-label="圓內兩點 A、B 與線段上一點 C，虛線連圓心 O">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="171.4" y1="74.0" x2="58.6" y2="40.9"/></g>
-  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="100.0" y1="100.0" x2="171.4" y2="74.0"/><line x1="100.0" y1="100.0" x2="58.6" y2="40.9"/><line x1="100.0" y1="100.0" x2="98.1" y2="52.5"/></g>
-  <g fill="currentColor"><circle cx="100.0" cy="100.0" r="2.6"/><circle cx="171.4" cy="74.0" r="2.6"/><circle cx="58.6" cy="40.9" r="2.6"/><circle cx="98.1" cy="52.5" r="2.6"/></g>
-  <circle cx="100.0" cy="100.0" r="76.0" fill="none" stroke="currentColor" stroke-width="1.3"/>
-  <g fill="currentColor" font-size="14" font-style="italic"><text x="96.0" y="118.0">O</text><text x="177.4" y="74.0">A</text><text x="44.6" y="36.9">B</text><text x="94.1" y="44.5">C</text></g>
-</svg><figcaption>$C$ 在弦 $AB$ 上；虛線連圓心</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">
+A = (171.4,74)
+O = (100,100)
+k = circle(O, A)
+B = (58.6,40.9)
+l = line(A,B)
+C = on(l, 98.1, 52.5)
+draw seg A B
+draw circle k
+draw seg O A dash
+draw seg O B dash
+draw seg O C dash
+</pre><figcaption>$C$ 在弦 $AB$ 上；虛線連圓心</figcaption></figure>
 設圓心為 $O$、半徑為 $r$。若 $A,B$ 屬於這個圓，則 $OA\le r$，$OB\le r$。設 $C$ 是線段 $AB$ 上任一點，$\angle OCA$ 與 $\angle OCB$ 互補，其中必有一個不小於直角，不妨設 $\angle OCB\ge90^\circ$。在 $\triangle OCB$ 中，$\angle OCB$ 是最大角，所以 $OC\le OB\le r$⟦為什麼｜三角形中大角對大邊：$\angle OCB\ge90^\circ$ 比另兩個角都大，它的對邊 $OB$ 最長。$C=B$ 時直接成立。⟧，即 $C$ 屬於這個圓。所以圓是凸集。
 
 === text
@@ -41,19 +47,26 @@ zh: 每個平面點集 $M$ 都有包含它的凸集（例如整個平面）。�
 
 === text
 <p>有限點集的凸包是一個凸多邊形或一條線段（或一點）。例如 $M$ 由四點 $A_1,A_2,A_3,A_4$ 組成，有三種情況：(1) $\overline M$ 是凸四邊形 $A_1A_2A_3A_4$；(2) $\overline M$ 是三角形，例如 $\triangle A_1A_2A_3$，$A_4$ 在裡面；(3) $\overline M$ 是一條線段，例如 $A_1A_2$。</p>
-<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center"><figure class="bkfig"><svg viewBox="0 0 110 119" width="110" role="img" aria-label="凸包是四邊形">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="31.2,24.0 24.0,95.5 86.0,95.5 81.2,31.2"/></g>
-  <g fill="currentColor"><circle cx="31.2" cy="24.0" r="2.6"/><circle cx="24.0" cy="95.5" r="2.6"/><circle cx="86.0" cy="95.5" r="2.6"/><circle cx="81.2" cy="31.2" r="2.6"/></g>
-  <g fill="currentColor" font-size="14" font-style="italic"><text x="25.2" y="16.0">A₁</text><text x="10.0" y="109.5">A₂</text><text x="88.0" y="109.5">A₃</text><text x="85.2" y="25.2">A₄</text></g>
-</svg><figcaption>(1)</figcaption></figure><figure class="bkfig"><svg viewBox="0 0 110 114" width="110" role="img" aria-label="凸包是三角形，A₄ 在內部">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="55.0,24.0 24.0,90.4 86.0,90.4"/></g>
-  <g fill="currentColor"><circle cx="55.0" cy="24.0" r="2.6"/><circle cx="24.0" cy="90.4" r="2.6"/><circle cx="86.0" cy="90.4" r="2.6"/><circle cx="55.0" cy="66.1" r="2.6"/></g>
-  <g fill="currentColor" font-size="14" font-style="italic"><text x="49.0" y="16.0">A₁</text><text x="10.0" y="104.4">A₂</text><text x="88.0" y="104.4">A₃</text><text x="47.0" y="58.1">A₄</text></g>
-</svg><figcaption>(2)</figcaption></figure><figure class="bkfig"><svg viewBox="0 0 110 72" width="110" role="img" aria-label="凸包是線段 A₁A₂">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="24.0" y1="36.4" x2="86.0" y2="36.4"/></g>
-  <g fill="currentColor"><circle cx="24.0" cy="36.4" r="2.6"/><circle cx="42.6" cy="36.4" r="2.6"/><circle cx="59.1" cy="36.4" r="2.6"/><circle cx="86.0" cy="36.4" r="2.6"/></g>
-  <g fill="currentColor" font-size="14" font-style="italic"><text x="18.0" y="52.4">A₁</text><text x="36.6" y="52.4">A₃</text><text x="53.1" y="52.4">A₄</text><text x="80.0" y="52.4">A₂</text></g>
-</svg><figcaption>(3)</figcaption></figure></div>
+<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center"><figure class="bkfig"><pre class="geo">
+A1 = (31.2,24)
+A2 = (24,95.5)
+A3 = (86,95.5)
+A4 = (81.2,31.2)
+draw poly A1 A2 A3 A4
+</pre><figcaption>(1)</figcaption></figure><figure class="bkfig"><pre class="geo">
+A1 = (55,24)
+A2 = (24,90.4)
+A3 = (86,90.4)
+A4 = (55,66.1)
+draw poly A1 A2 A3
+</pre><figcaption>(2)</figcaption></figure><figure class="bkfig"><pre class="geo">
+A1 = (24,36.4)
+A2 = (86,36.4)
+l = line(A1,A2)
+A3 = on(l, 42.6, 36.4)
+A4 = on(l, 59.1, 36.4)
+draw seg A1 A2
+</pre><figcaption>(3)</figcaption></figure></div>
 <p>⟦直觀的想法｜把每個點想成釘在板上的釘子，用橡皮筋套住所有釘子再放手，橡皮筋圍成的就是凸包。⟧
 無窮點集的凸包比較複雜：兩個半平面的凸包可能是一個半平面，也可能是整個平面。又如兩個相離的圓組成的集合，凸包是下圖的陰影部分，其中 $AB,CD$ 是兩圓的外公切線。</p>
 <figure class="bkfig"><svg viewBox="0 0 300 169" width="300" role="img" aria-label="兩個相離的圓組成的點集，凸包是陰影部分，AB、CD 是外公切線">
@@ -71,13 +84,16 @@ sol: 設這 5 點為 $A_1,\dots,A_5$，考慮它們的凸包，有三種情況�
 (1) 凸包是凸五邊形：其中任意 4 點都構成凸四邊形。
 (2) 凸包是凸四邊形，例如 $A_1A_2A_3A_4$：這 4 點即為所求。
 (3) 凸包是三角形，設 $A_4,A_5$ 在 $\triangle A_1A_2A_3$ 內。直線 $A_4A_5$ 只能與三角形的兩條邊相交⟦為什麼｜直線穿過三角形內部，進去一次、出來一次，交兩條邊；任三點不共線，所以不會穿過頂點。⟧，例如與 $A_1A_2,\ A_1A_3$ 相交，則 $A_2A_3A_5A_4$ 是凸四邊形⟦為什麼是凸的｜四點構成凸四邊形 ⟺ 沒有一點落在另三點的三角形裡。$A_2,A_3$ 是整個點集凸包的頂點，不可能在別的三角形裡。直線 $A_4A_5$ 把 $A_1$ 與 $A_2,A_3$ 分在兩側，所以 $\triangle A_2A_3A_5$ 只在直線上碰到 $A_5$ 一點，$A_4$ 不在它裡面；同理 $A_5$ 不在 $\triangle A_2A_3A_4$ 裡。⟧。
-<figure class="bkfig"><svg viewBox="0 0 220 187" width="220" role="img" aria-label="三角形 A₁A₂A₃ 內有 A₄、A₅，直線 A₄A₅ 交 A₁A₂、A₁A₃，紅色是凸四邊形 A₂A₃A₅A₄">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="105.9,24.0 24.0,163.2 196.0,163.2"/></g>
-  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="36.0" y1="105.0" x2="175.8" y2="94.2"/></g>
-  <g fill="none" stroke="#c2562b" stroke-width="2"><line x1="24.0" y1="163.2" x2="196.0" y2="163.2"/><line x1="196.0" y1="163.2" x2="130.5" y2="97.7"/><line x1="130.5" y1="97.7" x2="77.2" y2="101.8"/><line x1="77.2" y1="101.8" x2="24.0" y2="163.2"/></g>
-  <g fill="currentColor"><circle cx="77.2" cy="101.8" r="2.6"/><circle cx="130.5" cy="97.7" r="2.6"/></g>
-  <g fill="currentColor" font-size="14" font-style="italic"><text x="99.9" y="16.0">A₁</text><text x="8.0" y="177.2">A₂</text><text x="198.0" y="177.2">A₃</text><text x="71.2" y="117.8">A₄</text><text x="128.5" y="113.7">A₅</text></g>
-</svg><figcaption>虛線是直線 $A_4A_5$；紅色是凸四邊形 $A_2A_3A_5A_4$</figcaption></figure>
+<figure class="bkfig"><pre class="geo">
+A1 = (105.9,24)
+A2 = (24,163.2)
+A3 = (196,163.2)
+A4 = (77.2,101.8)
+A5 = (130.5,97.7)
+draw poly A1 A2 A3
+draw poly A2 A3 A5 A4 accent
+draw line A4 A5 dash
+</pre><figcaption>虛線是直線 $A_4A_5$；紅色是凸四邊形 $A_2A_3A_5A_4$</figcaption></figure>
 這題看似簡單，但不用凸包很難描述清楚。
 
 === 例 3 | 銳角三角形至多 7 個
@@ -86,21 +102,37 @@ sol: 5 點共可組成 $\mathrm C_5^3=10$ 個三角形，所以只要證等價�
 (1) 凸包是五邊形 $A_1A_2A_3A_4A_5$。內角和 $540^\circ$，至少有兩個內角是非銳角⟦為什麼｜若至多一個非銳角，其餘四個都 $\lt 90^\circ$，總和 $\lt 4\times90^\circ+180^\circ=540^\circ$，矛盾。⟧，而內角 $\angle A_i$ 非銳角，就表示 $\triangle A_{i-1}A_iA_{i+1}$ 是非銳角三角形。
 ① 兩個非銳角內角不相鄰，例如 $A_1,A_4$：得到 $\triangle A_5A_1A_2$ 與 $\triangle A_3A_4A_5$。再連 $A_1A_4$，四邊形 $A_1A_2A_3A_4$ 內角和 $360^\circ$，至少有一個非銳角，又得一個非銳角三角形（它的三個頂點都在 $A_1,\dots,A_4$ 中，與前兩個不同）。共至少 3 個。
 ② 兩個非銳角內角相鄰，例如 $A_1,A_2$：得到 $\triangle A_5A_1A_2$ 與 $\triangle A_1A_2A_3$。連 $A_2A_5$，四邊形 $A_2A_3A_4A_5$ 至少有一個非銳角內角，又得一個。共至少 3 個。
-<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center"><figure class="bkfig"><svg viewBox="0 0 150 150" width="150" role="img" aria-label="凸五邊形，A₁、A₄ 不相鄰，虛線連 A₁A₄">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="24.0,63.7 41.0,126.0 109.0,126.0 126.0,60.8 77.8,24.0"/></g>
-  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="24.0" y1="63.7" x2="126.0" y2="60.8"/></g>
-  <g fill="currentColor" font-size="14" font-style="italic"><text x="4.0" y="67.7">A₁</text><text x="33.0" y="142.0">A₂</text><text x="109.0" y="142.0">A₃</text><text x="132.0" y="64.8">A₄</text><text x="73.8" y="16.0">A₅</text></g>
-</svg><figcaption>①</figcaption></figure><figure class="bkfig"><svg viewBox="0 0 150 156" width="150" role="img" aria-label="凸五邊形，A₁、A₂ 相鄰，虛線連 A₂A₅">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="24.0,60.0 33.0,132.0 114.0,132.0 126.0,60.0 66.0,24.0"/></g>
-  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="33.0" y1="132.0" x2="66.0" y2="24.0"/></g>
-  <g fill="currentColor" font-size="14" font-style="italic"><text x="4.0" y="64.0">A₁</text><text x="25.0" y="148.0">A₂</text><text x="114.0" y="148.0">A₃</text><text x="132.0" y="64.0">A₄</text><text x="62.0" y="16.0">A₅</text></g>
-</svg><figcaption>②</figcaption></figure></div>
+<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center"><figure class="bkfig"><pre class="geo">
+A1 = (24,63.7)
+A2 = (41,126)
+A3 = (109,126)
+A4 = (126,60.8)
+A5 = (77.8,24)
+draw poly A1 A2 A3 A4 A5
+draw seg A1 A4 dash
+</pre><figcaption>①</figcaption></figure><figure class="bkfig"><pre class="geo">
+A1 = (24,60)
+A2 = (33,132)
+A3 = (114,132)
+A4 = (126,60)
+A5 = (66,24)
+draw poly A1 A2 A3 A4 A5
+draw seg A2 A5 dash
+</pre><figcaption>②</figcaption></figure></div>
 (2) 凸包是四邊形，設 $A_5$ 在四邊形 $A_1A_2A_3A_4$ 內，不妨設 $A_5$ 在 $\triangle A_1A_2A_3$ 內。
-<figure class="bkfig"><svg viewBox="0 0 200 187" width="200" role="img" aria-label="凸四邊形 A₁A₂A₃A₄，A₅ 在三角形 A₁A₂A₃ 內">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="24.0,36.7 32.4,163.3 176.0,159.1 163.3,24.0"/><line x1="70.4" y1="104.2" x2="24.0" y2="36.7"/><line x1="70.4" y1="104.2" x2="32.4" y2="163.3"/><line x1="70.4" y1="104.2" x2="176.0" y2="159.1"/><line x1="24.0" y1="36.7" x2="176.0" y2="159.1"/></g>
-  <g fill="currentColor"><circle cx="70.4" cy="104.2" r="2.6"/></g>
-  <g fill="currentColor" font-size="14" font-style="italic"><text x="4.0" y="36.7">A₁</text><text x="14.4" y="177.3">A₂</text><text x="180.0" y="173.1">A₃</text><text x="167.3" y="20.0">A₄</text><text x="66.4" y="96.2">A₅</text></g>
-</svg><figcaption>$A_5$ 在 $\triangle A_1A_2A_3$ 內</figcaption></figure>
+<figure class="bkfig"><pre class="geo">
+A1 = (24,36.7)
+A2 = (32.4,163.3)
+A3 = (176,159.1)
+A4 = (163.3,24)
+A5 = (70.4,104.2)
+draw poly A1 A2 A3 A4
+draw seg A5 A1 dash
+draw seg A5 A2 dash
+draw seg A5 A3 dash
+draw seg A1 A3
+</pre><figcaption>$A_5$ 在 $\triangle A_1A_2A_3$ 內</figcaption></figure>
+
 四邊形 $A_1A_2A_3A_4$ 至少有一個非銳角內角，得一個非銳角三角形；而 $\triangle A_1A_2A_5,\ \triangle A_2A_3A_5,\ \triangle A_3A_1A_5$ 中至少有兩個是非銳角三角形⟦為什麼｜這三個三角形在 $A_5$ 的角加起來是 $360^\circ$，每個 $\lt 180^\circ$。若至多一個 $\ge90^\circ$，總和 $\lt 180^\circ+90^\circ+90^\circ=360^\circ$，矛盾。⟧。共至少 3 個。
 (3) 凸包是三角形，設 $A_4,A_5$ 在 $\triangle A_1A_2A_3$ 內。同上理由，$\triangle A_1A_2A_4,\triangle A_2A_3A_4,\triangle A_3A_1A_4$ 中至少兩個非銳角，$\triangle A_1A_2A_5,\triangle A_2A_3A_5,\triangle A_3A_1A_5$ 中也至少兩個，這種情況至少有 4 個非銳角三角形。
 綜合三種情況，命題得證。
@@ -139,22 +171,44 @@ sol: 這個問題也還沒有深入研究。中國科學技術大學學生李文
 $$\mu_5\ge\frac{\triangle A_1A_2A_3}{\min(\triangle A_1A_2A_4,\triangle A_2A_3A_4,\triangle A_3A_1A_4)}\ge3>\frac{\sqrt5+1}2.$$
 (2) 凸包是凸五邊形 $A_1A_2A_3A_4A_5$。作直線 $MN\parallel A_3A_4$，交 $A_1A_3$、$A_1A_4$ 於 $M,N$，且 $\dfrac{A_1M}{MA_3}=\dfrac{A_1N}{NA_4}=\dfrac{\sqrt5-1}2$。
 ① 若 $A_2,A_5$ 中有一點（設為 $A_2$）與 $A_3,A_4$ 在 $MN$ 的同側：
-<figure class="bkfig"><svg viewBox="0 0 220 263" width="220" role="img" aria-label="凸五邊形，MN 平行 A₃A₄，A₂ 在 MN 與 A₃A₄ 之間">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="110.0,24.0 36.9,196.0 24.0,239.0 178.8,239.0 196.0,110.0"/><line x1="41.7" y1="106.1" x2="171.8" y2="106.1"/><line x1="110.0" y1="24.0" x2="24.0" y2="239.0"/><line x1="110.0" y1="24.0" x2="178.8" y2="239.0"/></g>
-  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="36.9" y1="196.0" x2="178.8" y2="239.0"/></g>
-  <g fill="currentColor"><circle cx="77.2" cy="106.1" r="2.6"/><circle cx="136.3" cy="106.1" r="2.6"/></g>
-  <g fill="currentColor" font-size="14" font-style="italic"><text x="106.0" y="16.0">A₁</text><text x="16.9" y="200.0">A₂</text><text x="8.0" y="253.0">A₃</text><text x="182.8" y="253.0">A₄</text><text x="202.0" y="110.0">A₅</text><text x="59.2" y="102.1">M</text><text x="142.3" y="102.1">N</text></g>
-</svg><figcaption>$A_2$ 落在 $MN$ 與 $A_3A_4$ 之間</figcaption></figure>
+<figure class="bkfig"><pre class="geo">
+A1 = (110,24)
+A2 = (36.9,196)
+A3 = (24,239)
+A4 = (178.8,239)
+A5 = (196,110)
+l1 = line(A1,A3)
+l2 = line(A1,A4)
+M = on(l1, 77.2, 106.1)
+N = on(l2, 136.3, 106.1)
+draw poly A1 A2 A3 A4 A5
+draw line M N
+draw seg A1 A3
+draw seg A1 A4
+draw seg A2 A4 dash
+</pre><figcaption>$A_2$ 落在 $MN$ 與 $A_3A_4$ 之間</figcaption></figure>
 兩個三角形同底 $A_3A_4$，$A_2$ 到 $A_3A_4$ 的距離不超過 $M$ 到 $A_3A_4$ 的距離，所以
 $$\mu_5\ge\frac{\triangle A_1A_3A_4}{\triangle A_2A_3A_4}\ge\frac{A_1A_3}{MA_3}=1+\frac{A_1M}{MA_3}=1+\frac{\sqrt5-1}2=\frac{\sqrt5+1}2.$$
 ⟦第二個 ≥｜同底的三角形面積比是高的比；$A_1$ 與 $M$ 到 $A_3A_4$ 的距離之比等於 $A_1A_3:MA_3$（相似）。⟧
 ② 若 $A_2,A_5$ 都與 $A_1$ 在 $MN$ 的同側：
-<figure class="bkfig"><svg viewBox="0 0 220 243" width="220" role="img" aria-label="凸五邊形，A₂、A₅ 都在 MN 上方，A₂A₅ 交 A₁A₃ 於 O">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="113.9,24.0 24.0,78.7 35.7,219.5 176.5,219.5 196.0,86.5"/><line x1="51.8" y1="98.7" x2="170.1" y2="98.7"/><line x1="113.9" y1="24.0" x2="35.7" y2="219.5"/><line x1="113.9" y1="24.0" x2="176.5" y2="219.5"/><line x1="24.0" y1="78.7" x2="196.0" y2="86.5"/></g>
-  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="35.7" y1="219.5" x2="24.0" y2="78.7"/><line x1="35.7" y1="219.5" x2="196.0" y2="86.5"/></g>
-  <g fill="currentColor"><circle cx="84.0" cy="98.7" r="2.6"/><circle cx="137.8" cy="98.7" r="2.6"/><circle cx="90.8" cy="81.8" r="2.6"/></g>
-  <g fill="currentColor" font-size="14" font-style="italic"><text x="109.9" y="16.0">A₁</text><text x="4.0" y="82.7">A₂</text><text x="19.7" y="233.5">A₃</text><text x="180.5" y="233.5">A₄</text><text x="202.0" y="86.5">A₅</text><text x="66.0" y="94.7">M</text><text x="143.8" y="94.7">N</text><text x="74.8" y="77.8">O</text></g>
-</svg><figcaption>$A_2A_5$ 交 $A_1A_3$ 於 $O$，$O$ 在 $MN$ 上方</figcaption></figure>
+<figure class="bkfig"><pre class="geo">
+A1 = (113.9,24)
+A2 = (24,78.7)
+A3 = (35.7,219.5)
+A4 = (176.5,219.5)
+A5 = (196,86.5)
+l1 = line(A1,A3)
+l2 = line(A1,A4)
+M = on(l1, 84, 98.7)
+N = on(l2, 137.8, 98.7)
+draw poly A1 A2 A3 A4 A5
+draw line M N
+draw seg A1 A3
+draw seg A1 A4
+draw seg A2 A5
+draw seg A3 A5 dash
+O = inter(A2,A5,A1,A3)
+</pre><figcaption>$A_2A_5$ 交 $A_1A_3$ 於 $O$，$O$ 在 $MN$ 上方</figcaption></figure>
 設 $A_2A_5$ 交 $A_1A_3$ 於 $O$，則 $A_1O\le A_1M$。$\triangle A_2A_3A_5$ 與 $\triangle A_1A_2A_5$ 同底 $A_2A_5$，面積比等於 $A_3$ 與 $A_1$ 到 $A_2A_5$ 的距離比，也就是 $OA_3:A_1O$，所以
 $$\mu_5\ge\frac{\triangle A_2A_3A_5}{\triangle A_1A_2A_5}=\frac{OA_3}{A_1O}\ge\frac{MA_3}{A_1M}=\frac1{\frac{\sqrt5-1}2}=\frac{\sqrt5+1}2.$$
 ⟦第二個 ≥｜$A_1O\le A_1M$，所以 $$OA_3=A_1A_3-A_1O\ge A_1A_3-A_1M=MA_3$$，分子變大、分母變小。⟧

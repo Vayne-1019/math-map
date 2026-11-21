@@ -87,12 +87,22 @@ ans: $\frac{16}5$
 === 例 9 | 到三邊距離的倒數加權
 src: 第 22 屆 IMO 第 1 題（1981）
 zh: $P$ 為 $\triangle ABC$ 內一點，$D,E,F$ 分別為 $P$ 到 $BC,CA,AB$ 所引垂線的垂足。求所有使 $\dfrac{BC}{PD}+\dfrac{CA}{PE}+\dfrac{AB}{PF}$ 最小的點 $P$。
-sol: <figure class="bkfig"><svg viewBox="0 0 260 220" width="260" role="img" aria-label="三角形 ABC 內一點 P 到三邊的距離 x、y、z">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="110.1,24.0 24.0,196.2 236.0,196.2"/><line x1="120.1" y1="136.6" x2="120.1" y2="196.2"/><line x1="120.1" y1="136.6" x2="167.2" y2="102.2"/><line x1="120.1" y1="136.6" x2="67.1" y2="110.1"/></g>
-  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="120.1" y1="136.6" x2="110.1" y2="24.0"/><line x1="120.1" y1="136.6" x2="24.0" y2="196.2"/><line x1="120.1" y1="136.6" x2="236.0" y2="196.2"/></g>
-  <g fill="currentColor"><circle cx="120.1" cy="136.6" r="2.6"/></g>
-  <g fill="currentColor" font-size="14" font-style="italic"><text x="106.1" y="16.0">A</text><text x="10.0" y="202.2">B</text><text x="242.0" y="202.2">C</text><text x="104.1" y="140.6">P</text><text x="116.1" y="212.2">D</text><text x="173.2" y="102.2">E</text><text x="51.1" y="110.1">F</text><text x="124.1" y="170.4">x</text><text x="145.6" y="115.4">y</text><text x="89.6" y="117.4">z</text></g>
-</svg><figcaption>$PD=x$，$PE=y$，$PF=z$</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">
+A = (110.1,24)
+B = (24,196.2)
+C = (236,196.2)
+P = (120.1,136.6)
+D = foot(P,B,C)
+E = foot(P,C,A)
+F = foot(P,A,B)
+draw poly A B C
+draw seg P D
+draw seg P E
+draw seg P F
+draw seg P A dash
+draw seg P B dash
+draw seg P C dash
+</pre><figcaption>$PD=x$，$PE=y$，$PF=z$</figcaption></figure>
 設三邊 $BC=a,\ CA=b,\ AB=c$，面積為 $\triangle$，記 $PD=x,\ PE=y,\ PF=z$，則 $ax+by+cz=2\triangle$（定值）。由柯西不等式，
 $$\Big(\frac ax+\frac by+\frac cz\Big)(ax+by+cz)\ge\Big(\sqrt{\tfrac ax}\sqrt{ax}+\sqrt{\tfrac by}\sqrt{by}+\sqrt{\tfrac cz}\sqrt{cz}\Big)^2=(a+b+c)^2.$$
 所以

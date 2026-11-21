@@ -12,22 +12,38 @@ status: 完成
 
 === 例 1 | 中線和與周長
 zh: 在 $\triangle ABC$ 中，求證：$$\dfrac34(a+b+c)\lt m_a+m_b+m_c\lt a+b+c$$。
-sol: <figure class="bkfig"><svg viewBox="0 0 260 350" width="260" role="img" aria-label="三角形 ABC 的三條中線交於重心 O，中線 AD 延長一倍到 A₁">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="120.9,24.0 24.0,175.4 236.0,175.4"/></g>
-  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="120.9" y1="24.0" x2="139.1" y2="326.9"/><line x1="24.0" y1="175.4" x2="178.5" y2="99.7"/><line x1="236.0" y1="175.4" x2="72.5" y2="99.7"/></g>
-  <g fill="none" stroke="#c2562b" stroke-width="1.5" stroke-dasharray="5 4"><line x1="24.0" y1="175.4" x2="139.1" y2="326.9"/></g>
-  <g fill="currentColor"><circle cx="127.0" cy="125.0" r="2.6"/></g>
-  <g fill="currentColor" font-size="14" font-style="italic"><text x="116.9" y="16.0">A</text><text x="8.0" y="179.4">B</text><text x="242.0" y="179.4">C</text><text x="134.0" y="191.4">D</text><text x="145.1" y="332.9">A₁</text><text x="133.0" y="121.0">O</text></g>
-</svg><figcaption>把中線 $AD$ 延長一倍到 $A_1$；$O$ 是重心</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">
+A = (120.9,24)
+B = (24,175.4)
+C = (236,175.4)
+D = mid(B,C)
+E = mid(A,C)
+F = mid(A,B)
+O = centroid(A,B,C)
+A1 = along(A,D,2)
+draw poly A B C
+draw seg A A1 dash
+draw seg B E dash
+draw seg C F dash
+draw seg B A1 dash accent
+hide E
+hide F
+</pre><figcaption>把中線 $AD$ 延長一倍到 $A_1$；$O$ 是重心</figcaption></figure>
 <b>右邊.</b> 把 $BC$ 上的中線 $AD$ 延長到 $A_1$，使 $A_1D=AD=m_a$。$ABA_1C$ 是平行四邊形⟦為什麼｜對角線 $AA_1$ 與 $BC$ 互相平分（$D$ 是兩者的中點），所以是平行四邊形，$BA_1=AC=b$。⟧，所以在 $\triangle ABA_1$ 中 $AB+BA_1>AA_1$，即 $c+b>2m_a$。同理 $c+a>2m_b$，$a+b>2m_c$。三式相加除以 2 得 $m_a+m_b+m_c\lt a+b+c$。
 <b>左邊.</b> 設 $O$ 為重心，則 $AO=\frac23m_a$，$BO=\frac23m_b$。在 $\triangle ABO$ 中 $AO+BO>AB$，即 $\frac23m_a+\frac23m_b>c$。同理 $\frac23m_b+\frac23m_c>a$，$\frac23m_c+\frac23m_a>b$。三式相加再除以 $\frac43$，得 $m_a+m_b+m_c>\frac34(a+b+c)$。
 
 === 例 2 | 凸四邊形
 zh: 在凸四邊形 $ABCD$ 中，已知 $AB+BD\le AC+CD$。求證：$AB\lt AC$。
-sol: <figure class="bkfig"><svg viewBox="0 0 240 170" width="240" role="img" aria-label="凸四邊形 ABCD，對角線交於 O">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="24.0,146.2 198.5,146.2 216.0,24.0 38.5,58.9"/><line x1="24.0" y1="146.2" x2="216.0" y2="24.0"/><line x1="198.5" y1="146.2" x2="38.5" y2="58.9"/></g>
-  <g fill="currentColor" font-size="14" font-style="italic"><text x="10.0" y="160.2">A</text><text x="202.5" y="160.2">B</text><text x="222.0" y="24.0">C</text><text x="22.5" y="58.9">D</text><text x="100.6" y="86.9">O</text></g>
-</svg><figcaption>凸四邊形的兩條對角線交於 $O$</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">
+A = (24,146.2)
+B = (198.5,146.2)
+C = (216,24)
+D = (38.5,58.9)
+O = inter(A,C,B,D)
+draw poly A B C D
+draw seg A C
+draw seg B D
+</pre><figcaption>凸四邊形的兩條對角線交於 $O$</figcaption></figure>
 <b>證法一.</b> 凸四邊形的對角線交於 $O$，則
 $$\begin{aligned}AC+BD&=(AO+OC)+(BO+OD)\\&=(AO+OB)+(CO+OD)>AB+CD.\end{aligned}$$
 ⟦最後一步｜$\triangle AOB$ 中 $AO+OB>AB$；$\triangle COD$ 中 $CO+OD>CD$。⟧
@@ -37,11 +53,21 @@ $$\begin{aligned}AC+BD&=(AO+OC)+(BO+OD)\\&=(AO+OB)+(CO+OD)>AB+CD.\end{aligned}$$
 === 例 3 | 周長三等分點
 src: 1988 年全國高中數學聯賽
 zh: 在 $\triangle ABC$ 中，$P,Q,R$ 把它的周長三等分，且 $P,Q$ 在 $AB$ 邊上。求證：$\dfrac{S_{\triangle PQR}}{S_{\triangle ABC}}>\dfrac29$。
-sol: <figure class="bkfig"><svg viewBox="0 0 320 120" width="320" role="img" aria-label="三角形 ABC，P、Q 在 AB 上，R 在 CA 上，三點把周長三等分；Q′ 使 AQ′=PQ">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="24.0,96.3 296.0,96.3 214.7,24.0"/><line x1="51.2" y1="96.3" x2="180.8" y2="36.9"/><line x1="246.1" y1="96.3" x2="180.8" y2="36.9"/></g>
-  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="180.8" y1="36.9" x2="218.9" y2="96.3"/></g>
-  <g fill="currentColor" font-size="14" font-style="italic"><text x="10.0" y="110.3">A</text><text x="300.0" y="110.3">B</text><text x="218.7" y="18.0">C</text><text x="47.2" y="112.3">P</text><text x="242.1" y="112.3">Q</text><text x="166.8" y="30.9">R</text><text x="210.9" y="112.3">Q′</text></g>
-</svg><figcaption>$P,Q,R$ 把周長三等分；虛線 $RQ'$ 中 $AQ'=PQ$</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">
+A = (24,96.3)
+B = (296,96.3)
+C = (214.7,24)
+lab = line(A,B)
+lca = line(C,A)
+P = on(lab, 51.2, 96.3)
+Q = on(lab, 246.1, 96.3)
+R = on(lca, 180.8, 36.9)
+Q2 = on(lab, 218.9, 96.3)
+draw poly A B C
+draw seg P R
+draw seg Q R
+draw seg R Q2 dash
+</pre><figcaption>$P,Q,R$ 把周長三等分；虛線 $RQ'$ 中 $AQ'=PQ$（$Q'$ 在圖中記為 $Q_2$）</figcaption></figure>
 設 $R$ 在 $CA$ 上（$Q$ 與 $B$ 之間、$B$ 到 $C$、$C$ 到 $R$ 合起來是三分之一周長）。在 $AB$ 上取 $Q'$，使 $AQ'=PQ$，則
 $$AQ'=PQ=\frac13(AB+BC+CA)>\frac13(AB+AB)=\frac23AB,$$
 ⟦為什麼｜$BC+CA>AB$（三角形不等式）。⟧ 且 $AP\lt \frac13AB$⟦為什麼｜$AP+PQ\le AB$，所以 $AP\le AB-PQ\lt AB-\frac23AB$。⟧，於是
@@ -53,11 +79,30 @@ $$\frac{S_{\triangle PQR}}{S_{\triangle ABC}}=\frac{S_{\triangle ABR}-S_{\triang
 
 === 例 4 | 兩個全等矩形的公共部分
 zh: 兩個全等矩形的邊有 8 個交點，即它們的公共部分是一個八邊形。求證：$S_{\text{八邊形}}>\dfrac12S_{\text{矩形}}$。
-sol: <figure class="bkfig"><svg viewBox="0 0 320 277" width="320" role="img" aria-label="兩個全等矩形 PQRS 與 P₁Q₁R₁S₁ 交成八邊形 A₁…A₈，虛線 A₁A₅ 與 A₃A₇ 互相垂直">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="31.8,65.8 31.8,199.9 268.5,199.9 268.5,65.8"/><polygon points="24.0,135.1 87.0,253.6 296.0,142.4 233.0,24.0"/></g>
-  <g fill="none" stroke="#c2562b" stroke-width="1.5" stroke-dasharray="5 4"><line x1="154.4" y1="65.8" x2="187.9" y2="199.9"/><line x1="31.8" y1="149.8" x2="268.5" y2="90.7"/></g>
-  <g fill="currentColor" font-size="14" font-style="italic"><text x="17.8" y="61.8">P</text><text x="17.8" y="211.9">Q</text><text x="272.5" y="211.9">R</text><text x="276.5" y="64.8">S</text><text x="4.0" y="122.0">P₁</text><text x="81.0" y="269.6">Q₁</text><text x="302.0" y="148.4">R₁</text><text x="237.0" y="20.0">S₁</text><text x="148.3" y="56.8">A₁</text><text x="14.0" y="152.0">A₂</text><text x="11.9" y="156.3">A₃</text><text x="40.8" y="212.7">A₄</text><text x="188.2" y="217.4">A₅</text><text x="276.3" y="164.6">A₆</text><text x="275.5" y="90.6">A₇</text><text x="254.0" y="84.0">A₈</text></g>
-</svg><figcaption>兩個全等矩形交出八邊形；紅虛線 $A_1A_5\perp A_3A_7$</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">
+P = (31.8,65.8)
+Q = (31.8,199.9)
+R = (268.5,199.9)
+m1 = mid(P,R)
+S = reflectp(Q, m1)
+P1 = (24,135.1)
+Q1 = (87,253.6)
+R1 = (296,142.4)
+m2 = mid(P1,R1)
+S1 = reflectp(Q1, m2)
+A1 = inter(P,S,S1,P1)
+A2 = inter(P,Q,S1,P1)
+A3 = inter(P,Q,P1,Q1)
+A4 = inter(Q,R,P1,Q1)
+A5 = inter(Q,R,Q1,R1)
+A6 = inter(R,S,Q1,R1)
+A7 = inter(R,S,R1,S1)
+A8 = inter(P,S,R1,S1)
+draw poly P Q R S
+draw poly P1 Q1 R1 S1
+draw seg A1 A5 dash accent
+draw seg A3 A7 dash accent
+</pre><figcaption>兩個全等矩形交出八邊形；紅虛線 $A_1A_5\perp A_3A_7$</figcaption></figure>
 設全等矩形 $PQRS$ 與 $P_1Q_1R_1S_1$ 的邊長為 $a$（$PS$ 方向）和 $b$（$PQ$ 方向），有 8 個交點 $A_1,\dots,A_8$（必然是每邊都與另一矩形的兩邊相交）。如圖，$A_1$ 是 $PS$ 與 $P_1S_1$ 的交點，$A_5$ 是 $QR$ 與 $Q_1R_1$ 的交點。
 $A_5$ 在 $QR$ 上，到對邊 $PS$ 的距離是 $b$；$A_5$ 也在 $Q_1R_1$ 上，到對邊 $P_1S_1$ 的距離也是 $b$。到兩條直線距離相等的點在它們交角的平分線上，所以 $A_1A_5$ 是 $PS$ 與 $P_1S_1$ 交角的平分線。⟦細節｜作 $A_5N\perp PS$、$A_5M\perp P_1S_1$，則 $A_5N=A_5M=b$，直角三角形 $A_5A_1N\cong A_5A_1M$（斜邊、一股），所以 $\angle A_5A_1N=\angle A_5A_1M$。⟧
 同理，$A_3A_7$ 是 $PQ$（或 $RS$）與 $P_1Q_1$（或 $R_1S_1$）交角的平分線。因為 $PS\perp PQ$、$P_1S_1\perp P_1Q_1$，兩條平分線的方向也相差 $90^\circ$⟦為什麼｜把 $PS$ 與 $P_1S_1$ 同時轉 $90^\circ$ 就得到 $PQ$ 與 $P_1Q_1$ 的方向，它們交角的平分線也跟著轉 $90^\circ$。⟧，所以 $A_1A_5\perp A_3A_7$ 或 $A_1A_5\parallel A_3A_7$；但兩者是凸八邊形中的兩條對角線，必相交，只能 $A_1A_5\perp A_3A_7$。
@@ -68,12 +113,23 @@ $$S_{A_1A_2\cdots A_8}>S_{A_1A_3A_5A_7}=\frac12A_1A_5\cdot A_3A_7\ge\frac12ab=\f
 === 例 5 | 直角三角形中的兩個內心
 src: 第 29 屆 IMO 第 5 題（1988）
 zh: 在直角三角形 $ABC$ 中，$\angle A=90^\circ$，$AD$ 是斜邊上的高，$M,N$ 分別是 $\triangle ABD$ 與 $\triangle ACD$ 的內心，連 $MN$ 並延長分別交 $AB,AC$ 於 $K,L$。求證：$S_{\triangle ABC}\ge2S_{\triangle AKL}$。
-sol: （原書題目印作「Rt△ABD」，依題意應為 Rt△ABC。）<figure class="bkfig"><svg viewBox="0 0 280 226" width="280" role="img" aria-label="直角三角形 ABC，AD 是斜邊上的高，M、N 是兩個小三角形的內心，直線 MN 交 AB、AC 於 K、L">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="24.0,202.5 24.0,24.0 256.0,202.5"/><line x1="24.0" y1="202.5" x2="110.2" y2="90.3"/><line x1="24.0" y1="61.0" x2="165.5" y2="202.5"/></g>
-  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="24.0" y1="202.5" x2="59.9" y2="96.9"/><line x1="24.0" y1="202.5" x2="118.8" y2="155.8"/><line x1="110.2" y1="90.3" x2="59.9" y2="96.9"/><line x1="110.2" y1="90.3" x2="118.8" y2="155.8"/></g>
-  <g fill="currentColor"><circle cx="59.9" cy="96.9" r="2.6"/><circle cx="118.8" cy="155.8" r="2.6"/></g>
-  <g fill="currentColor" font-size="14" font-style="italic"><text x="10.0" y="216.5">A</text><text x="10.0" y="24.0">B</text><text x="260.0" y="216.5">C</text><text x="114.2" y="84.3">D</text><text x="45.9" y="92.9">M</text><text x="120.8" y="171.8">N</text><text x="8.0" y="65.0">K</text><text x="161.5" y="218.5">L</text></g>
-</svg><figcaption>虛線連 $AM,AN,DM,DN$</figcaption></figure>
+sol: （原書題目印作「Rt△ABD」，依題意應為 Rt△ABC。）<figure class="bkfig"><pre class="geo">
+A = (24,202.5)
+B = (24,24)
+C = (256,202.5)
+D = foot(A,B,C)
+M = incenter(A,B,D)
+N = incenter(A,C,D)
+K = inter(M,N,A,B)
+L = inter(M,N,A,C)
+draw poly A B C
+draw seg A D
+draw line M N
+draw seg A M dash
+draw seg A N dash
+draw seg D M dash
+draw seg D N dash
+</pre><figcaption>虛線連 $AM,AN,DM,DN$</figcaption></figure>
 連 $AM,AN,DM,DN$。$\triangle ADB\sim\triangle CDA$⟦為什麼相似｜兩者在 $D$ 都是直角，且 $\angle B=90^\circ-\angle BAD=\angle DAC$。⟧，而 $DM,DN$ 是這兩個相似三角形中對應角（$D$ 處的直角）的平分線，$M,N$ 又分別是它們的內心，所以
 $$\frac{DM}{DN}=\frac{BD}{AD}\quad(\text{相似比}).$$
 又 $\angle MDN=45^\circ+45^\circ=90^\circ$，所以 $\triangle MDN\sim\triangle BDA$（$M\leftrightarrow B$，$N\leftrightarrow A$）。兩個三角形的對應邊夾角相等：$DM$ 由 $DB$ 轉 $45^\circ$ 而來，所以 $MN$ 與 $AB$ 的交角也是 $45^\circ$，即 $\angle LKA=45^\circ$⟦更仔細｜$\triangle MDN$ 可看成 $\triangle BDA$ 繞 $D$ 轉 $45^\circ$ 再縮放，對應邊 $MN$ 與 $BA$ 的夾角就等於旋轉角 $45^\circ$。⟧，$\triangle AKL$ 是等腰直角三角形。
@@ -91,11 +147,18 @@ $$\begin{aligned}S_{\triangle ABC}&=\frac12AB\cdot AC,\\ S_{\triangle AKL}&=\fra
 
 === 例 6 | 邊加高
 zh: 證明：在 $\triangle ABC$ 中，$c\ge b\iff c+h_c\ge b+h_b$。
-sol: <figure class="bkfig"><svg viewBox="0 0 240 192" width="240" role="img" aria-label="三角形 ABC 中 B、C 兩點的高 h_b、h_c">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="216.0,168.0 94.4,24.0 24.0,168.0"/></g>
-  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="94.4" y1="24.0" x2="94.4" y2="168.0"/><line x1="24.0" y1="168.0" x2="136.1" y2="73.4"/></g>
-  <g fill="currentColor" font-size="14" font-style="italic"><text x="222.0" y="174.0">A</text><text x="90.4" y="16.0">B</text><text x="10.0" y="174.0">C</text><text x="98.4" y="138.0">h<tspan font-size="10">b</tspan></text><text x="106.1" y="77.4">h<tspan font-size="10">c</tspan></text></g>
-</svg><figcaption>虛線是 $B$、$C$ 兩點的高</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">
+A = (216,168)
+B = (94.4,24)
+C = (24,168)
+H = foot(B,A,C)
+G = foot(C,A,B)
+draw poly A B C
+draw seg B H dash
+draw seg C G dash
+hide H
+hide G
+</pre><figcaption>虛線是 $B$、$C$ 兩點的高</figcaption></figure>
 把 $h_b,h_c$ 都用 $\sin A$ 表示：$h_c=b\sin A$，$h_b=c\sin A$⟦為什麼｜$C$ 到 $AB$ 的高是 $AC\cdot\sin A=b\sin A$；$B$ 到 $AC$ 的高是 $AB\sin A=c\sin A$。⟧，得
 $$c+h_c-(b+h_b)=c+b\sin A-b-c\sin A=(c-b)(1-\sin A).$$
 當 $A\ne90^\circ$ 時 $1-\sin A>0$，所以 $c\ge b\iff c+h_c\ge b+h_b$。（原書未提 $A=90^\circ$ 的情形：這時 $c+h_c=b+h_b$ 恆成立，「$\Leftarrow$」不必成立，所以要排除直角。）
@@ -135,12 +198,22 @@ $$\begin{aligned}\cos A+\cos B+\cos C&=\frac{b^2+c^2-a^2}{2bc}+\frac{c^2+a^2-b^2
 zh: 設 $P$ 為 $\triangle ABC$ 內部或邊上一點，$P$ 到三邊的距離為 $PD,PE,PF$，則
 $$PA+PB+PC\ge2(PD+PE+PF),$$
 當且僅當 $\triangle ABC$ 是正三角形且 $P$ 為中心時等號成立。
-sol: <figure class="bkfig"><svg viewBox="0 0 280 236" width="280" role="img" aria-label="三角形 ABC 內一點 P，PD、PE、PF 垂直於三邊，虛線連 PA、PB、PC">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="118.2,24.0 24.0,212.5 256.0,212.5"/><line x1="129.1" y1="147.2" x2="129.1" y2="212.5"/><line x1="129.1" y1="147.2" x2="180.7" y2="109.5"/><line x1="129.1" y1="147.2" x2="71.1" y2="118.2"/></g>
-  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="129.1" y1="147.2" x2="118.2" y2="24.0"/><line x1="129.1" y1="147.2" x2="24.0" y2="212.5"/><line x1="129.1" y1="147.2" x2="256.0" y2="212.5"/></g>
-  <g fill="currentColor"><circle cx="129.1" cy="147.2" r="2.6"/></g>
-  <g fill="currentColor" font-size="14" font-style="italic"><text x="114.2" y="16.0">A</text><text x="10.0" y="218.5">B</text><text x="262.0" y="218.5">C</text><text x="113.1" y="151.2">P</text><text x="125.1" y="228.5">D</text><text x="186.7" y="109.5">E</text><text x="55.1" y="118.2">F</text></g>
-</svg><figcaption>$PD,PE,PF$ 垂直於三邊；虛線是 $PA,PB,PC$</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">
+A = (118.2,24)
+B = (24,212.5)
+C = (256,212.5)
+P = (129.1,147.2)
+D = foot(P,B,C)
+E = foot(P,C,A)
+F = foot(P,A,B)
+draw poly A B C
+draw seg P D
+draw seg P E
+draw seg P F
+draw seg P A dash
+draw seg P B dash
+draw seg P C dash
+</pre><figcaption>$PD,PE,PF$ 垂直於三邊；虛線是 $PA,PB,PC$</figcaption></figure>
 記 $PD=p,\ PE=q,\ PF=r$。四邊形 $PDCE$ 在 $D,E$ 是直角，所以 $\angle DPE=180^\circ-\angle C=A+B$，
 $$\begin{aligned}DE&=\sqrt{p^2+q^2-2pq\cos(A+B)}\\&=\sqrt{(p\sin B+q\sin A)^2+(p\cos B-q\cos A)^2}\ge p\sin B+q\sin A.\end{aligned}$$
 ⟦第二個等號｜展開 $$(p\sin B+q\sin A)^2+(p\cos B-q\cos A)^2=p^2+q^2+2pq(\sin A\sin B-\cos A\cos B)=p^2+q^2-2pq\cos(A+B)$$。⟧
@@ -155,11 +228,16 @@ $$\begin{aligned}PA+PB+PC&\ge p\Big(\frac{\sin B}{\sin C}+\frac{\sin C}{\sin B}\
 zh: 設 $\triangle ABC$ 及 $\triangle A_1B_1C_1$ 的邊長分別為 $a,b,c$ 及 $a_1,b_1,c_1$，面積分別為 $\triangle$ 及 $\triangle_1$。求證
 $$a^2(b_1^2+c_1^2-a_1^2)+b^2(c_1^2+a_1^2-b_1^2)+c^2(a_1^2+b_1^2-c_1^2)\ge16\triangle\triangle_1,\qquad(15)$$
 並問等號何時成立。
-sol: <figure class="bkfig"><svg viewBox="0 0 240 155" width="240" role="img" aria-label="以 BC 為一邊，在 A 的同側作與 △A₁B₁C₁ 相似的 △A′BC，α 是 ∠ACB 與 ∠A′CB 的差">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="161.6,35.2 24.0,131.2 216.0,131.2"/></g>
-  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="81.0" y1="24.0" x2="24.0" y2="131.2"/><line x1="81.0" y1="24.0" x2="216.0" y2="131.2"/><line x1="161.6" y1="35.2" x2="81.0" y2="24.0"/></g>
-  <g fill="currentColor" font-size="14" font-style="italic"><text x="167.6" y="35.2">A</text><text x="10.0" y="137.2">B</text><text x="222.0" y="137.2">C</text><text x="75.0" y="16.0">A′</text></g>
-</svg><figcaption>$\triangle A'BC\sim\triangle A_1B_1C_1$，$A'$ 與 $A$ 在 $BC$ 同側</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">
+A = (161.6,35.2)
+B = (24,131.2)
+C = (216,131.2)
+A′ = (81,24)
+draw poly A B C
+draw seg A A′ dash
+draw seg A′ B dash
+draw seg A′ C dash
+</pre><figcaption>$\triangle A'BC\sim\triangle A_1B_1C_1$，$A'$ 與 $A$ 在 $BC$ 同側（$A'$ 的位置為示意）</figcaption></figure>
 以 $BC$ 為一邊，在 $A$ 的同側作 $\triangle A'BC\sim\triangle A_1B_1C_1$，則 $A'C=\dfrac{ab_1}{a_1}$。不妨設 $\angle C\ge\angle C_1$，令 $\alpha=\angle C-\angle C_1$（即 $\angle ACA'$）。在 $\triangle AA'C$ 用餘弦定理：
 $$AA'^2=b^2+\Big(\frac{ab_1}{a_1}\Big)^2-2b\cdot\frac{ab_1}{a_1}\cos\alpha\ge0,$$
 乘以 $a_1^2$：
@@ -185,11 +263,26 @@ sol: 兩個三角形內角和都是 $180^\circ$，而 $\angle ADC>\angle ADB$，
 
 === 習題 3
 zh: 直線 $l$ 上依次有四點 $A,B,C,D$。求證：對 $l$ 外任一點 $E$，$$AE+ED+|AB-CD|>BE+CE$$。
-sol: <figure class="bkfig"><svg viewBox="0 0 300 200" width="300" role="img" aria-label="直線上依序 A A′ B C D，E 在上方，F 是 E 關於 A′D 中點的對稱點">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><line x1="10" y1="100" x2="290" y2="100"/><line x1="30" y1="100" x2="190" y2="20"/><line x1="190" y1="20" x2="260" y2="100"/><line x1="190" y1="20" x2="120" y2="100"/><line x1="190" y1="20" x2="200" y2="100"/></g>
-  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="60" y1="100" x2="190" y2="20"/><line x1="60" y1="100" x2="130" y2="180"/><line x1="130" y1="180" x2="120" y2="100"/><line x1="130" y1="180" x2="260" y2="100"/></g>
-  <g fill="currentColor" font-size="14" font-style="italic"><text x="22" y="118">A</text><text x="52" y="118">A′</text><text x="108" y="118">B</text><text x="200" y="118">C</text><text x="262" y="118">D</text><text x="186" y="14">E</text><text x="134" y="194">F</text><text x="280" y="92">l</text></g>
-</svg><figcaption>$A'B=CD$；$F$ 是 $E$ 關於 $A'D$（也是 $BC$）中點的對稱點</figcaption></figure>
+sol: <figure class="bkfig"><pre class="geo">
+A = (30,100)
+B = (120,100)
+C = (200,100)
+D = (260,100)
+E = (190,20)
+m3 = mid(B,C)
+A′ = reflectp(D, m3)
+m4 = mid(A′,D)
+F = reflectp(E, m4)
+draw line A D
+draw seg A E
+draw seg E D
+draw seg E B
+draw seg E C
+draw seg A′ E dash
+draw seg A′ F dash
+draw seg F B dash
+draw seg F D dash
+</pre><figcaption>$A'B=CD$；$F$ 是 $E$ 關於 $A'D$（也是 $BC$）中點的對稱點</figcaption></figure>
 不妨設 $AB\ge CD$（否則把 $A,B$ 與 $D,C$ 對調）。原不等式等價於 $$AE+ED+AB-CD>BE+CE$$。在 $AB$ 上取 $A'$ 使 $A'B=CD$。由 $AE+AA'\ge A'E$ 得 $AE+AB\ge A'E+A'B$，於是
 $$\text{左邊}\ge A'E+ED+A'B-CD=A'E+ED.$$
 設 $F$ 是 $E$ 關於線段 $A'D$ 中點的對稱點，則 $A'F=ED$。又因為 $A'B=CD$，$A'D$ 的中點也是 $BC$ 的中點，所以 $BF=CE$⟦為什麼｜$E,F$ 關於這個中點對稱，$B,C$ 也關於它對稱，所以 $BF$ 是 $CE$ 的對稱像。⟧。$B$ 在 $\triangle A'EF$ 內部（在中線上），所以
