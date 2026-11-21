@@ -12,11 +12,15 @@ status: 完成
 === 例 1
 zh: 已知 $a^2+b^2=1$，$x^2+y^2=1$，$ax+by=0$。求證：$a^2+x^2=1$，$b^2+y^2=1$，$ab+xy=0$。
 sol: <b>分析</b>：條件 $x^2+y^2=1$、$a^2+b^2=1$ 提示可以用斜邊為 $1$ 的直角三角形。
-<figure class="bkfig"><svg viewBox="0 0 240 150" width="230" role="img" aria-label="矩形ABCD與對角線">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><rect x="40" y="20" width="160" height="110"/><line x1="40" y1="20" x2="200" y2="130"/><line x1="40" y1="130" x2="200" y2="20"/></g>
-  <g fill="currentColor" font-size="13"><text x="112" y="14">|a|</text><text x="112" y="146">|y|</text><text x="10" y="80">|x|</text><text x="206" y="80">|b|</text>
-  <g font-style="italic" font-size="14"><text x="26" y="18">A</text><text x="204" y="18">D</text><text x="26" y="142">B</text><text x="204" y="142">C</text></g></g>
-</svg><figcaption>兩個斜邊為 1 的直角三角形拼成矩形</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A = (40, 20)
+B = (40, 130)
+D = (200, 20)
+m = mid(B, D)
+C = reflectp(A, m)
+draw poly A D C B
+draw seg A C
+draw seg B D
+</pre><figcaption>兩個斜邊為 1 的直角三角形拼成矩形（邊長 |a|、|x|、|y|、|b| 見證明）</figcaption></figure>
 <b>證明</b>：若 $a,b,x,y$ 都不為 $0$：因 $x^2+y^2=1$，可作 Rt$\triangle ABC$，$AB=|x|$，$BC=|y|$，$\angle B=90^\circ$，斜邊 $AC=1$。同理在 $AC$ 的另一側作 Rt$\triangle ACD$，$AD=|a|$，$CD=|b|$，$\angle D=90^\circ$。由 $ax+by=0$ 得 $|ax|=|by|$，即
 $$\frac{|b|}{|a|}=\frac{|x|}{|y|},\qquad\frac{CD}{AD}=\frac{AB}{CB}.$$
 所以 Rt$\triangle ABC\sim$Rt$\triangle CDA$⟦對應關係｜兩直角三角形兩股成比例：$AB:CB=CD:AD$，所以 $\triangle ABC\sim\triangle CDA$（$A\leftrightarrow C$，$B\leftrightarrow D$，$C\leftrightarrow A$）。⟧，而斜邊都是 $AC$，所以全等，$ABCD$ 是矩形。於是 $AD=BC$，$AB=CD$，即 $|a|=|y|$，$|x|=|b|$。在 Rt$\triangle ABD$ 中 $AD^2+AB^2=BD^2=1$，即 $a^2+x^2=1$；同理 $b^2+y^2=1$。
@@ -27,12 +31,26 @@ $$\frac{|b|}{|a|}=\frac{|x|}{|y|},\qquad\frac{CD}{AD}=\frac{AB}{CB}.$$
 zh: 已知 $0&lt;a&lt;1$，$0&lt;b&lt;1$。求證
 $$\sqrt{a^2+b^2}+\sqrt{(1-a)^2+b^2}+\sqrt{a^2+(1-b)^2}+\sqrt{(1-a)^2+(1-b)^2}\ge2\sqrt2.$$
 sol: <b>分析</b>：左邊四個根式恰好是四個直角三角形的斜邊，而且 $a+(1-a)=b+(1-b)=1$，會想到用邊長 $1$ 的正方形。
-<figure class="bkfig"><svg viewBox="0 0 220 200" width="210" role="img" aria-label="正方形ABCD內一點O">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><rect x="30" y="20" width="160" height="160"/><line x1="150" y1="20" x2="150" y2="180"/><line x1="30" y1="76" x2="190" y2="76"/>
-    <line x1="150" y1="76" x2="30" y2="20" stroke="#c2562b"/><line x1="150" y1="76" x2="30" y2="180" stroke="#c2562b"/><line x1="150" y1="76" x2="190" y2="180" stroke="#c2562b"/><line x1="150" y1="76" x2="190" y2="20" stroke="#c2562b"/></g>
-  <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"><line x1="30" y1="20" x2="190" y2="180"/><line x1="30" y1="180" x2="190" y2="20"/></g>
-  <g fill="currentColor" font-size="14" font-style="italic"><text x="14" y="18">A</text><text x="14" y="194">B</text><text x="194" y="194">C</text><text x="194" y="18">D</text><text x="146" y="14">F</text><text x="14" y="80">G</text><text x="194" y="80">E</text><text x="146" y="196">H</text><text x="154" y="92">O</text><text x="86" y="14">b</text><text x="16" y="50">a</text></g>
-</svg><figcaption>紅線是四個根式；虛線是兩條對角線</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A = (30, 20)
+B = (30, 180)
+D = (190, 20)
+m = mid(B, D)
+C = reflectp(A, m)
+G = along(A, B, 0.35)
+F = along(A, D, 0.75)
+E = along(D, C, 0.35)
+H = along(B, C, 0.75)
+O = inter(G, E, F, H)
+draw poly A B C D
+draw seg F H
+draw seg G E
+draw seg O A accent
+draw seg O B accent
+draw seg O C accent
+draw seg O D accent
+draw seg A C dash
+draw seg B D dash
+</pre><figcaption>紅線是四個根式；虛線是兩條對角線（AG = a、AF = b，見證明）</figcaption></figure>
 <b>證明</b>：作邊長 $1$ 的正方形 $ABCD$，在 $AB$、$AD$ 上取點 $G,F$，使 $AG=a$，$AF=b$。過 $F,G$ 作 $FH\parallel AB$，$GE\parallel AD$，分別交 $BC,CD$ 於 $H,E$，設 $GE$ 與 $FH$ 交於 $O$。由勾股定理，
 $$\begin{aligned}AO&=\sqrt{a^2+b^2},&BO&=\sqrt{(1-a)^2+b^2},\\CO&=\sqrt{(1-a)^2+(1-b)^2},&DO&=\sqrt{a^2+(1-b)^2}.\end{aligned}$$
 ⟦例如 BO｜$O$ 到 $AB$ 的距離是 $AF=b$，$O$ 到 $BC$ 的距離是 $BG=1-a$，這兩段是以 $BO$ 為斜邊的直角三角形的兩股。⟧
@@ -47,12 +65,15 @@ sol: <b>分析</b>：第二個方程像勾股定理，第一、三個方程有�
 $$\begin{cases}x^2+\left(\dfrac y{\sqrt3}\right)^2-2x\cdot\dfrac y{\sqrt3}\cos150^\circ=25,\\[1mm]\left(\dfrac y{\sqrt3}\right)^2+z^2=9,\\[1mm]z^2+x^2-2xz\cos120^\circ=16.\end{cases}$$
 ⟦怎麼改的｜$\cos150^\circ=-\frac{\sqrt3}2$，所以 $-2x\cdot\frac y{\sqrt3}\cdot\left(-\frac{\sqrt3}2\right)=xy$；$\cos120^\circ=-\frac12$，$-2xz\cdot\left(-\frac12\right)=xz$。⟧
 因為 $120^\circ+150^\circ+90^\circ=360^\circ$，可以構造直角 $\triangle ABC$，$AB=5$，$BC=3$，$CA=4$，並在 $\triangle ABC$ 內取一點 $O$，使 $OA=x$，$OB=\dfrac y{\sqrt3}$，$OC=z$，$\angle AOB=150^\circ$，$\angle BOC=90^\circ$，$\angle AOC=120^\circ$。
-<figure class="bkfig"><svg viewBox="0 0 270 180" width="260" role="img" aria-label="直角三角形ABC內一點O">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="20,160 250,160 167.2,49.6"/></g>
-  <g fill="none" stroke="currentColor" stroke-width="1.2"><line x1="144.1" y1="129.4" x2="20" y2="160"/><line x1="144.1" y1="129.4" x2="250" y2="160"/><line x1="144.1" y1="129.4" x2="167.2" y2="49.6"/></g>
-  <g fill="currentColor" font-size="14" font-style="italic"><text x="4" y="174">A</text><text x="252" y="174">B</text><text x="164" y="44">C</text><text x="128" y="124">O</text><text x="80" y="136">x</text><text x="162" y="94">z</text><text x="196" y="138">y/√3</text></g>
-  <g fill="currentColor" font-size="13"><text x="80" y="98">4</text><text x="214" y="98">3</text><text x="130" y="176">5</text></g>
-</svg><figcaption>∠AOB = 150°，∠BOC = 90°，∠COA = 120°</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A = (20, 160)
+B = (250, 160)
+C = (167.2, 49.6)
+O = (144.1, 129.4)
+draw poly A B C
+draw seg O A
+draw seg O B
+draw seg O C
+</pre><figcaption>三角形三邊 AC = 4、BC = 3、AB = 5；OA = x、OB = y/√3、OC = z；∠AOB = 150°，∠BOC = 90°，∠COA = 120°（O 的位置為近似）</figcaption></figure>
 ⟦O 真的存在嗎｜在 $\triangle ABC$ 內，看 $AB$ 成 $150^\circ$ 角的點組成一段圓弧，看 $BC$ 成 $90^\circ$ 的點也是一段圓弧，兩弧在三角形內交於一點 $O$；這時 $\angle AOC=360^\circ-150^\circ-90^\circ=120^\circ$。由餘弦定理，$OA,OB,OC$ 滿足的方程正是上面三式，所以 $(OA,\sqrt3\,OB,OC)$ 就是方程組的正數解。⟧
 三塊面積相加等於整個三角形：$S_{\triangle ABC}=S_{\triangle AOB}+S_{\triangle BOC}+S_{\triangle COA}$，即
 $$\begin{aligned}6&=\tfrac12x\cdot\tfrac y{\sqrt3}\sin150^\circ+\tfrac12\cdot\tfrac y{\sqrt3}\cdot z+\tfrac12zx\sin120^\circ\\&=\frac{xy}{4\sqrt3}+\frac{yz}{2\sqrt3}+\frac{\sqrt3}4zx.\end{aligned}$$

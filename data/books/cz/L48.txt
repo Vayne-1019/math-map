@@ -11,12 +11,19 @@ status: 完成
 === 例 1
 zh: 判斷下面命題的真偽：若 $P,Q$ 是直線 $l$ 同側的兩個不同點，則一定存在兩個不同的圓，都過 $P,Q$ 且和直線 $l$ 相切。
 sol: <b>分析</b>：在題設條件下，$P,Q$ 兩點與直線 $l$ 的位置關係有兩種可能：(1) 直線 $PQ\parallel l$；(2) 直線 $PQ$ 與 $l$ 相交。命題會不會在某個情形下不成立？
-<figure class="bkfig"><svg viewBox="0 0 260 195" width="240" role="img" aria-label="PQ平行於l，圓過P、Q且切l於M">
-  <g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="130" cy="100" r="70"/><line x1="20" y1="170" x2="245" y2="170"/><line x1="30" y1="70" x2="235" y2="70"/></g>
-  <line x1="130" y1="10" x2="130" y2="180" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"/>
-  <g fill="currentColor"><circle cx="66.8" cy="70" r="2.5"/><circle cx="193.2" cy="70" r="2.5"/><circle cx="130" cy="100" r="2.5"/></g>
-  <g fill="currentColor" font-size="14" font-style="italic"><text x="52" y="64">P</text><text x="198" y="64">Q</text><text x="136" y="104">O</text><text x="120" y="188">M</text><text x="236" y="186">l</text><text x="134" y="18">m</text></g>
-</svg><figcaption>虛線 m 是 PQ 的垂直平分線</figcaption></figure>
+<figure class="bkfig"><pre class="geo">O = (130, 100)
+L1 = (20, 170)
+L2 = (245, 170)
+M = foot(O, L1, L2)
+k = circle(O, M)
+P = on(k, 66.8, 70)
+v = (130, 10)
+Q = reflect(P, O, v)
+draw line L1 L2
+draw line P Q
+draw line O v dash
+draw circle k
+</pre><figcaption>虛線 m 是 PQ 的垂直平分線</figcaption></figure>
 <b>解</b>：若直線 $PQ\parallel l$：所求圓的圓心 $O$ 一定在線段 $PQ$ 的垂直平分線 $m$ 上，這時 $m\perp l$，設垂足為 $M$。圓與 $l$ 相切，切點就是圓心到 $l$ 的垂足⟦為什麼切點是 M｜圓心到切線的連線垂直於切線。圓心在 $m$ 上，從 $m$ 上的點作 $l$ 的垂線，垂足都是 $M$。⟧ $M$。所以這個圓過不共線的三點 $P,Q,M$；$M$ 是唯一確定的，所以合要求的圓有且只有一個。這個反例說明命題是假的。
 <br><b>說明</b>：當直線 $PQ$ 與 $l$ 相交時，命題是真的。建議讀者自己證明。⟦提示｜設直線 $PQ$ 交 $l$ 於 $T$，由切割線定理，切點 $X$ 滿足 $TX^2=TP\cdot TQ$，所以 $X$ 在 $T$ 的兩側各有一個，各對應一個圓。⟧
 
