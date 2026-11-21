@@ -47,6 +47,14 @@ draw seg A C
 draw seg P Q
 draw seg N P accent
 draw seg N Q accent
+xo = (19, 256.2)
+xe = (236, 256.2)
+yo = (120, 276.4)
+ye = (120, 14)
+draw arrow xo xe
+draw arrow yo ye
+text xe se x
+text ye e y
 </pre><figcaption>N 為原點、NM 為 y 軸；紅線 NP、NQ 對稱於 y 軸</figcaption></figure>
 如圖建立坐標系，以 $N$ 為原點、$NM$ 為 $y$ 軸。設 $C(a,0)$、$M(0,b)$，則 $A(-a,b)$、$D(a,b)$。設直線 $PM$ 的斜率為 $k$，則
 $$PQ:\ kx-y+b=0,\qquad(6)$$
@@ -78,6 +86,14 @@ draw seg H K dash
 draw seg K P accent
 draw seg A e dash
 draw seg B f dash
+xo = (18.7, 159.4)
+xe = (286, 159.4)
+yo = (135.9, 182.8)
+ye = (135.9, 14)
+draw arrow xo xe
+draw arrow yo ye
+text xe se x
+text ye e y
 </pre><figcaption>H 為原點、CH 為 y 軸；虛線 AE、BE′ 是另兩條高，紅線 KP 經過它們的垂足</figcaption></figure>
 以 $H$ 為原點、$AB$ 為 $x$ 軸、$HC$ 為 $y$ 軸，設 $A(a,0)$、$B(b,0)$、$C(0,c)$。$BC$ 的方程是
 $$cx+by-bc=0.\qquad(12)$$
@@ -136,6 +152,15 @@ draw circle k1
 draw circle k2
 draw circle k3 accent
 dot p
+text p nw (−2, 1)
+xo = (16.4, 86.4)
+xe = (306, 86.4)
+yo = (195, 204.6)
+ye = (195, 14)
+draw arrow xo xe
+draw arrow yo ye
+text xe se x
+text ye e y
 </pre><figcaption>紅色是所求的圓 $x^2+y^2+8x+3y+8=0$，它通過兩已知圓的兩個交點</figcaption></figure>
 兩圓圓心 $(1,-\frac32)$、$(0,-\frac32)$，半徑 $\frac{\sqrt{41}}2\approx3.2$、$\frac52$。圓心距 1 介於半徑差與半徑和之間⟦為什麼這樣就相交｜半徑差約 $0.7$、半徑和約 $5.7$，而 $0.7&lt;1&lt;5.7$，所以兩圓交於兩點。⟧，兩圓確實相交。又 $x^2+y^2+3y-4=0$ 不經過 $(-2,1)$（代入得 $4\ne0$），所以可設所求的圓為
 $$x^2+y^2-2x+3y-7+\alpha(x^2+y^2+3y-4)=0,$$
@@ -256,6 +281,7 @@ draw seg A N accent
 draw seg B N accent
 draw seg N z accent
 dot z
+text z s 定點
 </pre><figcaption>AF、BC 交於 N；直線 MN 恆過 AB 下方的定點（以 AB 為邊的正方形中心）</figcaption></figure>
 設 $B(a,0)$、$M(t,0)$，$0&lt;t&lt;a$。則 $C(t,t)$、$D(0,t)$、$E(a,a-t)$、$F(t,a-t)$。兩個正方形的外接圓分別是
 $$x^2+y^2-tx-ty=0,\qquad x^2+y^2-(a+t)x-(a-t)y+at=0.$$

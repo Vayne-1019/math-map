@@ -21,6 +21,18 @@ draw seg o z accent
 draw seg o z' dash
 draw seg z z' dash
 angle x o z
+xo = (18.8, 115)
+yo = (62.1, 201.6)
+ye = (62.1, 14)
+draw arrow xo x
+draw arrow yo ye
+text o sw O
+text z ne z = x + iy
+text z' se z̄ = x − iy
+text z nw |z|
+text o ne θ
+text x n 實軸
+text ye e 虛軸
 </pre><figcaption>z 與 z̄ 對實軸對稱；|z| 是長度，θ 是輻角</figcaption></figure>
 <p>設 $z_1=x_1+iy_1$、$z_2=x_2+iy_2$，則 $z_1+z_2=(x_1+x_2)+i(y_1+y_2)$，所以複數的加法符合平行四邊形法則。也就是說，複數 $z$ 也可以看成從原點出發、終點為 $z$ 的向量，複數加法就是向量加法。</p>
 <figure class="bkfig"><pre class="geo">o = (38, 129.2)
@@ -33,6 +45,18 @@ draw seg o z2
 draw seg o z12 accent
 draw seg z1 z12 dash
 draw seg z2 z12 dash
+xo = (18.8, 129.2)
+xe = (206, 129.2)
+yo = (38, 143.6)
+ye = (38, 14)
+draw arrow xo xe
+draw arrow yo ye
+text xe se x
+text ye e y
+text o sw O
+text z1 ne z₁
+text z2 nw z₂
+text z12 ne z₁ + z₂
 </pre><figcaption>加法 = 向量相加（平行四邊形法則）</figcaption></figure>
 <p>從正實軸逆時針轉到向量 $\overrightarrow{OZ}$ 所轉的角 $\theta$ 稱為 $z$ 的<b>輻角</b>，記作 $\arg z$（只有 0 沒有輻角）。由 $x=|z|\cos\theta$、$y=|z|\sin\theta$ 得</p>
 $$z=|z|(\cos\theta+i\sin\theta),\qquad(3)$$
@@ -45,16 +69,25 @@ $$z\,e^{i\varphi}=|z|e^{i(\theta+\varphi)}.\qquad(6)$$
 <p><b>用 $e^{i\varphi}$ 乘 $z$，不改變模長，只把向量 $\overrightarrow{OZ}$ 繞原點旋轉 $\varphi$ 角。</b>這個認識是用複數解幾何題的關鍵。</p>
 <h3>二、兩點間的距離</h3>
 <p>設 $z_1=x_1+iy_1$、$z_2=x_2+iy_2$，則 $z_2-z_1=z_2+(-z_1)$ 代表向量 $\overrightarrow{Z_1Z_2}$。所以 $Z_1,Z_2$ 兩點的距離是 $|z_2-z_1|$，用實部虛部寫出來就是 $\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$，正是解析幾何的距離公式。</p>
-<figure class="bkfig"><pre class="geo">o = (99.9, 95.6)
-z1 = (31.2, 95.6)
-z2 = (142.9, 39.8)
-q = mid(z2, o)
-w = reflectp(z1, q)
-draw seg z1 z2 accent
-draw seg o z1
-draw seg o z2
-draw seg o w dash
-draw seg z2 w dash
+<figure class="bkfig"><pre class="geo">O = (99.9, 95.6)
+Z1 = (31.2, 95.6)
+Z2 = (142.9, 39.8)
+q = mid(Z2, O)
+w = reflectp(Z1, q)
+draw seg Z1 Z2 accent
+draw seg O Z1
+draw seg O Z2
+draw seg O w dash
+draw seg Z2 w dash
+xo = (18.3, 95.6)
+xe = (241.7, 95.6)
+yo = (99.9, 112.8)
+ye = (99.9, 14)
+draw arrow xo xe
+draw arrow yo ye
+text xe se x
+text ye e y
+text w e z₂−z₁
 </pre><figcaption>紅色向量 $\overrightarrow{Z_1Z_2}$ 平移到原點，就是 $z_2-z_1$</figcaption></figure>
 <p>滿足 $|z|=1$ 的點全體，是以 $O$ 為圓心、1 為半徑的<b>單位圓</b>。$|z|=1$ 也可寫成 $z\bar z=1$，用實部虛部表示就是 $x^2+y^2=1$，與解析幾何一致。一般地，以 $z_0$ 為圓心、$r$ 為半徑的圓是</p>
 $$|z-z_0|=r.\qquad(7)$$
@@ -73,6 +106,14 @@ draw poly Z1 Z2 Z3 accent
 draw seg O Z1
 draw seg O Z2
 draw seg O Z3
+xo = (17.4, 110)
+xe = (206, 110)
+yo = (110, 199.1)
+ye = (110, 14)
+draw arrow xo xe
+draw arrow yo ye
+text xe se x
+text ye e y
 </pre><figcaption>三個單位向量相加為 0，三點把圓三等分</figcaption></figure>
 不妨設 $|z_1|=|z_2|=|z_3|=1$⟦為什麼可以｜三個數同除以它們共同的模 $r$，條件不變，三角形只是縮放了 $\frac1r$ 倍，是不是正三角形不受影響。⟧。要證的是 $|z_1-z_2|=|z_2-z_3|=|z_3-z_1|$。由 (1)，
 $$\begin{aligned}|z_1-z_2|^2&amp;=(z_1-z_2)(\bar z_1-\bar z_2)\\&amp;=|z_1|^2+|z_2|^2-(z_1\bar z_2+\bar z_1z_2)\\&amp;=2-(z_1\bar z_2+\bar z_1z_2).\end{aligned}$$
@@ -95,6 +136,15 @@ Z = on(loc, 122.2, 65.1)
 draw line m n dash
 draw circle loc accent
 dot c
+xo = (17.1, 119.5)
+xe = (256, 119.5)
+yo = (131.9, 234.3)
+ye = (131.9, 14)
+draw arrow xo xe
+draw arrow yo ye
+text xe se x
+text ye e y
+text c sw −1/z₀
 </pre><figcaption>虛線：$Z_1$ 的軌跡（$OZ_0$ 的中垂線）；紅圓：$Z$ 的軌跡，圓心 $-1/z_0$，經過原點（原點要除去）</figcaption></figure>
 由 $z_1z=-1$ 知 $z\ne0$，於是 $z_1=-\frac1z$。代入 $|z_1-z_0|=|z_1|$：
 $$\Big|\frac1z+z_0\Big|=\Big|\frac1z\Big|,$$
@@ -138,6 +188,10 @@ m3 = mid(c, d)
 m4 = mid(d, a)
 draw poly a b c d
 draw poly m1 m2 m3 m4 accent
+text a sw a
+text b se b
+text c ne c
+text d nw d
 </pre><figcaption>紅色是四邊中點連成的平行四邊形</figcaption></figure>
 設原四邊形的四個頂點依次表示複數 $a,b,c,d$，四邊中點依次是
 $$\frac{a+b}2,\quad\frac{b+c}2,\quad\frac{c+d}2,\quad\frac{d+a}2.$$

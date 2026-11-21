@@ -49,6 +49,14 @@ draw seg B E
 draw seg C F
 draw seg H E accent
 draw seg H F accent
+xo = (19, 226.1)
+xe = (286, 226.1)
+yo = (180, 253.7)
+ye = (180, 14)
+draw arrow xo xe
+draw arrow yo ye
+text xe se x
+text ye e y
 </pre><figcaption>以 BC 為 x 軸、高 AH 為 y 軸；紅線 HE、HF 對稱於 y 軸</figcaption></figure>
 以 $BC$ 為 $x$ 軸、$AH$ 為 $y$ 軸（$H$ 為原點），設 $A(0,a)$、$B(b,0)$、$C(c,0)$、$D(0,d)$，其中 $b&lt;0&lt;c$，$0&lt;d&lt;a$。用截距式，$BD$ 與 $AC$ 的方程是
 $$\frac xb+\frac yd=1,\qquad \frac xc+\frac ya=1.$$
@@ -109,6 +117,14 @@ draw circle k
 draw line A B accent
 draw seg O P dash
 draw seg O A dash
+xo = (18.2, 114.8)
+xe = (261.8, 114.8)
+yo = (123.2, 211.4)
+ye = (123.2, 14)
+draw arrow xo xe
+draw arrow yo ye
+text xe s x
+text ye e y
 </pre><figcaption>OP 是圓心到直線的垂線，P 是弦 AB 的中點</figcaption></figure>
 用幾何的想法：直線與圓相交於兩點，充要條件是圓心到直線的距離小於半徑，寫成式子就是
 $$\frac{|c|}{\sqrt{a^2+b^2}}&lt;r,\quad\text{即}\quad c^2&lt;r^2(a^2+b^2).$$
@@ -186,6 +202,14 @@ draw circle k accent
 draw seg P A dash
 draw seg P B dash
 draw seg P C dash
+xo = (17.7, 161.7)
+xe = (206, 161.7)
+yo = (36.2, 180.2)
+ye = (36.2, 14)
+draw arrow xo xe
+draw arrow yo ye
+text xe se x
+text ye e y
 </pre><figcaption>A 為原點、AB 在 x 軸上</figcaption></figure>
 $B(2,0)$、$C(1,\sqrt3)$，內心 $\big(1,\frac{\sqrt3}3\big)$，內切圓半徑 $\frac{\sqrt3}3$，方程
 $$(x-1)^2+\Big(y-\frac{\sqrt3}3\Big)^2=\frac13,\ \text{即}\ x^2+y^2-2x-\frac{2\sqrt3}3y=-1.\qquad(1)$$

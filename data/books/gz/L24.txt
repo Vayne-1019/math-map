@@ -59,16 +59,17 @@ $$\begin{aligned}&amp;(1-u^2)(u^2w_1-uw_2+w_3)\\&amp;=(1+u^3)z_1+z_2(u^2-u^2)+z_
 
 === 例 2 | 繞三點回到原處
 zh: 設 $A,B,C$ 是平面上的三點。有一個人從平面上另一點 $P_0$ 出發，朝 $A$ 直線前進；到達 $A$ 後，向左轉 $60^\circ$ 再直線前進到 $P_1$，且 $P_0A=AP_1$。接著從 $P_1$ 出發往 $B$ 直線前進，到 $B$ 後左轉 $60^\circ$ 繼續直線前進到 $P_2$，且 $P_1B=BP_2$。對 $C$ 再做一次同樣的動作到達 $P_3$。這時他發現自己回到了出發點 $P_0$。證明 $\triangle ABC$ 是正三角形。（可與第 23 講習題 4、第 27 屆國際數學奧林匹亞第 2 題對照。）
-sol: <figure class="bkfig"><pre class="geo">P0 = (128, 192.3)
+sol: <figure class="bkfig"><pre class="geo">p0 = (128, 192.3)
 P1 = (34.5, 172.4)
 P2 = (221.4, 30.4)
-r1 = rotate(P1, P0, -30)
-A = scale(r1, P0, 0.57735)
+r1 = rotate(P1, p0, -30)
+A = scale(r1, p0, 0.57735)
 r2 = rotate(P2, P1, -30)
 B = scale(r2, P1, 0.57735)
-r3 = rotate(P0, P2, -30)
+r3 = rotate(p0, P2, -30)
 C = scale(r3, P2, 0.57735)
-draw poly P0 P1 P2 dash
+text p0 s P₀ = P₃
+draw poly p0 P1 P2 dash
 draw poly A B C accent
 </pre><figcaption>實線是走過的路線（終點 $P_3$ 與 $P_0$ 重合）；$A,B,C$ 是虛線 △$P_0P_1P_2$ 的外拿破崙三角形頂點</figcaption></figure>
 由題設，在 $A$ 處前進方向左轉 $60^\circ$，所以 $\angle P_0AP_1=180^\circ-60^\circ=120^\circ$，同理
