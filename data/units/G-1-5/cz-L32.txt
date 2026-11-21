@@ -12,6 +12,9 @@ P = (151.6, 108.4)
 d1 = foot(P, B, C)
 d2 = foot(P, C, A)
 d3 = foot(P, A, B)
+text P s x₁
+text P e x₂
+text P nw x₃
 draw poly A B C
 draw seg P d1
 draw seg P d2

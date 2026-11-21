@@ -153,6 +153,7 @@ B = inter(A, O, E, F)
 P = inter(O, C, E, F)
 draw circle kO
 draw seg l1 l2
+text l1 s l
 draw seg A E
 draw seg A F
 draw seg E F
