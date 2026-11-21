@@ -26,6 +26,9 @@ P = (151.6, 108.4)
 d1 = foot(P, B, C)
 d2 = foot(P, C, A)
 d3 = foot(P, A, B)
+text P s x₁
+text P e x₂
+text P nw x₃
 draw poly A B C
 draw seg P d1
 draw seg P d2
@@ -213,6 +216,7 @@ E = on(AB, 71, 79.2)
 F = inter(E, I, A, C)
 draw poly A B C
 draw line E F
+text E nw l
 draw seg A I dash
 draw seg E I dash
 draw seg F I dash
