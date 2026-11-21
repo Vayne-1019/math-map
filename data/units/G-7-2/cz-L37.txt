@@ -9,6 +9,8 @@ order: 30
 B = (198,119.3)
 M = (51.3,22)
 N = (152.8,28.3)
+S = (90.4,86.9)
+T = (134,56.5)
 draw poly A B N M
 draw seg M B
 </pre><figcaption>$AB=\sqrt3$，$AM=MN=NB=1$；圖是 $\cos A=\frac{\sqrt3}6$、$S^2+T^2$ 取最大值的位置</figcaption></figure>
