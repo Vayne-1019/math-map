@@ -97,6 +97,8 @@ B = on(k, 195.5, 93.7)
 C = on(k, 27.7, 93.7)
 A = mid(B, C)
 l = line(O, A)
+L = on(l, 111.6, 22)
+Lb = on(l, 111.6, 228)
 Sp = reflect(S, O, A)
 M = inter(S, Q, B, C)
 N = inter(P, R, B, C)
@@ -106,7 +108,7 @@ draw seg P Q
 draw seg R S
 draw seg S Q
 draw seg P R
-draw line O A dash
+draw seg L Lb dash
 draw seg A Sp dash
 draw seg N Sp dash
 draw seg P Sp dash
