@@ -5,11 +5,22 @@ order: 30
 
 === body
 <div class="hero">直線截 $\triangle ABC$ 三邊（或延長線）於 $D,E,F$：<br>$\dfrac{BD}{DC}\cdot\dfrac{CE}{EA}\cdot\dfrac{AF}{FB}=1$，反過來也成立</div>
-<figure class="bkfig"><svg viewBox="0 0 280 187" width="280" role="img" aria-label="孟氏定理">
-<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="109.8,22 22,164.7 186.7,164.7"/><line x1="186.7" y1="164.7" x2="258" y2="164.7"/><line x1="258" y1="164.7" x2="79.1" y2="71.9"/><line x1="186.7" y1="164.7" x2="61.8" y2="100" stroke-dasharray="5 4"/></g>
-<g fill="currentColor"></g>
-<g fill="currentColor" font-size="14" font-style="italic" font-family="serif"><text x="109.8" y="15.9" text-anchor="middle">A</text><text x="14.2" y="177.4" text-anchor="middle">B</text><text x="186.7" y="180.6" text-anchor="middle">C</text><text x="265.8" y="177.4" text-anchor="middle">D</text><text x="166.8" y="110.5" text-anchor="middle">E</text><text x="71.3" y="69.1" text-anchor="middle">F</text><text x="50.8" y="104.9" text-anchor="middle">G</text></g>
-</svg><figcaption>直線 $DEF$ 截 $\triangle ABC$；作 $CG\parallel DF$（虛線）</figcaption></figure>
+<figure class="bkfig"><pre class="geo">A = (109.8, 22)
+B = (22, 164.7)
+C = (186.7, 164.7)
+D = along(B, C, 1.4329)
+F = along(A, B, 0.3496)
+E = inter(D, F, A, C)
+m1 = mid(C, F)
+x = reflectp(D, m1)
+hide m1
+hide x
+G = inter(A, B, C, x)
+draw poly A B C
+draw seg B D
+draw seg D F
+draw seg C G dash
+</pre><figcaption>直線 $DEF$ 截 $\triangle ABC$；作 $CG\parallel DF$（虛線）</figcaption></figure>
 <div class="cards">
 <div class="card"><h4>① 證明：作平行線</h4><div class="rule">$CG\parallel DF$</div>
 <div class="eg">$\frac{BD}{DC}=\frac{BF}{FG}$，$\frac{CE}{EA}=\frac{GF}{FA}$，乘起來約光 <span class="pill">平行截比例</span></div></div>
